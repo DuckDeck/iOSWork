@@ -356,6 +356,21 @@
 		AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBBA27255C20007D51CD /* GrandTextView.swift */; };
 		AE62CBDE27255C20007D51CD /* GrandTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBBA27255C20007D51CD /* GrandTextView.swift */; };
 		AE62CBDF27255C20007D51CD /* GrandTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBBA27255C20007D51CD /* GrandTextView.swift */; };
+		AE62CBE727256690007D51CD /* UIMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBE627256690007D51CD /* UIMenuViewController.swift */; };
+		AE62CBE827256690007D51CD /* UIMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBE627256690007D51CD /* UIMenuViewController.swift */; };
+		AE62CBE927256690007D51CD /* UIMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBE627256690007D51CD /* UIMenuViewController.swift */; };
+		AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */; };
+		AE62CBEC2725669C007D51CD /* DataMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */; };
+		AE62CBED2725669C007D51CD /* DataMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */; };
+		AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEE272566A2007D51CD /* ProjectMenuViewController.swift */; };
+		AE62CBF0272566A2007D51CD /* ProjectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEE272566A2007D51CD /* ProjectMenuViewController.swift */; };
+		AE62CBF1272566A2007D51CD /* ProjectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEE272566A2007D51CD /* ProjectMenuViewController.swift */; };
+		AE62CBF3272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
+		AE62CBF4272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
+		AE62CBF5272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
+		AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
+		AE62CBF8272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
+		AE62CBF9272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
 		AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7425272251E300F0C19C /* AppDelegate.swift */; };
 		AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7427272251E300F0C19C /* SceneDelegate.swift */; };
 		AE7E742A272251E300F0C19C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7429272251E300F0C19C /* ViewController.swift */; };
@@ -572,6 +587,11 @@
 		AE62CBB827255C1F007D51CD /* FlowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
 		AE62CBB927255C1F007D51CD /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		AE62CBBA27255C20007D51CD /* GrandTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandTextView.swift; sourceTree = "<group>"; };
+		AE62CBE627256690007D51CD /* UIMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMenuViewController.swift; sourceTree = "<group>"; };
+		AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMenuViewController.swift; sourceTree = "<group>"; };
+		AE62CBEE272566A2007D51CD /* ProjectMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMenuViewController.swift; sourceTree = "<group>"; };
+		AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMenuViewController.swift; sourceTree = "<group>"; };
+		AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
 		AE7E7422272251E300F0C19C /* iOSWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7E7425272251E300F0C19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7E7427272251E300F0C19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -983,6 +1003,46 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AE62CBE1272565EF007D51CD /* UI_Layout */ = {
+			isa = PBXGroup;
+			children = (
+				AE62CBE627256690007D51CD /* UIMenuViewController.swift */,
+			);
+			path = UI_Layout;
+			sourceTree = "<group>";
+		};
+		AE62CBE227256603007D51CD /* Data_Network */ = {
+			isa = PBXGroup;
+			children = (
+				AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */,
+			);
+			path = Data_Network;
+			sourceTree = "<group>";
+		};
+		AE62CBE32725660A007D51CD /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				AE62CBEE272566A2007D51CD /* ProjectMenuViewController.swift */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
+			isa = PBXGroup;
+			children = (
+				AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */,
+			);
+			path = Media_Hardware;
+			sourceTree = "<group>";
+		};
+		AE62CBE527256630007D51CD /* Base_Web */ = {
+			isa = PBXGroup;
+			children = (
+				AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */,
+			);
+			path = Base_Web;
+			sourceTree = "<group>";
+		};
 		AE7E7419272251E300F0C19C = {
 			isa = PBXGroup;
 			children = (
@@ -1015,6 +1075,11 @@
 		AE7E7424272251E300F0C19C /* iOSWork */ = {
 			isa = PBXGroup;
 			children = (
+				AE62CBE527256630007D51CD /* Base_Web */,
+				AE62CBE42725661A007D51CD /* Media_Hardware */,
+				AE62CBE32725660A007D51CD /* Project */,
+				AE62CBE227256603007D51CD /* Data_Network */,
+				AE62CBE1272565EF007D51CD /* UI_Layout */,
 				AE7E7425272251E300F0C19C /* AppDelegate.swift */,
 				AE7E7427272251E300F0C19C /* SceneDelegate.swift */,
 				AE7E7429272251E300F0C19C /* ViewController.swift */,
@@ -1405,7 +1470,9 @@
 				AE62CB6B27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CA9E272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE62CA562725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
+				AE62CBF3272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
 				AE62CAD1272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
+				AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */,
 				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
 				AE62CBDA27255C20007D51CD /* FlowLayout.swift in Sources */,
@@ -1418,13 +1485,16 @@
 				AE62CB1F2725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CB8A27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAEF272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
+				AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE62CB1527254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CB3A27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CA5C2725429B007D51CD /* TZProgressView.m in Sources */,
+				AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CACE272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE62CA742725429B007D51CD /* TZLocationManager.m in Sources */,
+				AE62CBE727256690007D51CD /* UIMenuViewController.swift in Sources */,
 				AE62CB5227254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE62CA98272542D1007D51CD /* PaletteColorUtils.m in Sources */,
 				AE62CA132725425A007D51CD /* FMDatabase.m in Sources */,
@@ -1498,6 +1568,7 @@
 				AE62CBC927255C20007D51CD /* HintView.swift in Sources */,
 				AE62CA7B2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CB3827254946007D51CD /* UIViewController+Extension.swift in Sources */,
+				AE62CBF8272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE62CB6C27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
@@ -1543,6 +1614,7 @@
 				AE62CAA3272542D1007D51CD /* UIImage+Palette.m in Sources */,
 				AE62CA4F2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE62CA5D2725429B007D51CD /* TZProgressView.m in Sources */,
+				AE62CBE827256690007D51CD /* UIMenuViewController.swift in Sources */,
 				AE62CB5927254947007D51CD /* UIView+Base.swift in Sources */,
 				AE62CAE4272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
 				AE62CA462725429A007D51CD /* TZAssetCell.m in Sources */,
@@ -1556,6 +1628,7 @@
 				AE62CACC272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
 				AE62CB8827254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CB6127254977007D51CD /* Dict+Extension.swift in Sources */,
+				AE62CBEC2725669C007D51CD /* DataMenuViewController.swift in Sources */,
 				AE62CAFF272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CB3227254946007D51CD /* UIWindow+Base.swift in Sources */,
 				AE62CAAE272542D1007D51CD /* PriorityBoxArray.m in Sources */,
@@ -1568,8 +1641,10 @@
 				AE62CB02272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AE62CA492725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE62CA1D2725425A007D51CD /* FMResultSet.m in Sources */,
+				AE62CBF4272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
 				AE62CA572725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE62CB65272549A3007D51CD /* String+Extension.swift in Sources */,
+				AE62CBF0272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CB4A27254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE62CA112725425A007D51CD /* FMDatabaseAdditions.m in Sources */,
 				AE62CBD227255C20007D51CD /* SlideMenuView.swift in Sources */,
@@ -1625,6 +1700,7 @@
 				AE62CA9D272542D1007D51CD /* Palette.m in Sources */,
 				AE62CB66272549A3007D51CD /* String+Extension.swift in Sources */,
 				AE62CB8F27254DD7007D51CD /* DBTool.swift in Sources */,
+				AE62CBE927256690007D51CD /* UIMenuViewController.swift in Sources */,
 				AE62CB7327254B12007D51CD /* Toast.swift in Sources */,
 				AE62CA502725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE62CBAE27255C0E007D51CD /* LayoutButton.swift in Sources */,
@@ -1667,6 +1743,7 @@
 				AE62CAEB272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CB3927254947007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE62CB4827254947007D51CD /* UITableView+Extension.swift in Sources */,
+				AE62CBF1272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CB6227254977007D51CD /* Dict+Extension.swift in Sources */,
 				AE62CB03272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AE62CB8327254DD7007D51CD /* Tool.swift in Sources */,
@@ -1685,8 +1762,10 @@
 				AE62CAD9272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CB8C27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAAF272542D1007D51CD /* PriorityBoxArray.m in Sources */,
+				AE62CBF9272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE62CAF1272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE62CA682725429B007D51CD /* TZPhotoPickerController.m in Sources */,
+				AE62CBF5272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
 				AE62CB4527254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CB1D27254873007D51CD /* BaseModel.swift in Sources */,
 				AE62CAF4272542DC007D51CD /* CameraModel.swift in Sources */,
@@ -1705,6 +1784,7 @@
 				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE62CB10272542F8007D51CD /* TransformMP3.m in Sources */,
 				AE62CB8627254DD7007D51CD /* FPSTool.swift in Sources */,
+				AE62CBED2725669C007D51CD /* DataMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
