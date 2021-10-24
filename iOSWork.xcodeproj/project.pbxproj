@@ -320,6 +320,42 @@
 		AE62CBA5272559AB007D51CD /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE62CBA4272559AB007D51CD /* GrandKit */; };
 		AE62CBA7272559BA007D51CD /* KRProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = AE62CBA6272559BA007D51CD /* KRProgressHUD */; };
 		AE62CBA9272559D1007D51CD /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AE62CBA8272559D1007D51CD /* SwiftyJSON */; };
+		AE62CBAC27255C0E007D51CD /* LayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBAB27255C0E007D51CD /* LayoutButton.swift */; };
+		AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBAB27255C0E007D51CD /* LayoutButton.swift */; };
+		AE62CBAE27255C0E007D51CD /* LayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBAB27255C0E007D51CD /* LayoutButton.swift */; };
+		AE62CBBC27255C20007D51CD /* BarSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBAF27255C1F007D51CD /* BarSlider.swift */; };
+		AE62CBBD27255C20007D51CD /* BarSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBAF27255C1F007D51CD /* BarSlider.swift */; };
+		AE62CBBE27255C20007D51CD /* BarSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBAF27255C1F007D51CD /* BarSlider.swift */; };
+		AE62CBBF27255C20007D51CD /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB027255C1F007D51CD /* TimerButton.swift */; };
+		AE62CBC027255C20007D51CD /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB027255C1F007D51CD /* TimerButton.swift */; };
+		AE62CBC127255C20007D51CD /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB027255C1F007D51CD /* TimerButton.swift */; };
+		AE62CBC227255C20007D51CD /* LimitTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB127255C1F007D51CD /* LimitTextView.swift */; };
+		AE62CBC327255C20007D51CD /* LimitTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB127255C1F007D51CD /* LimitTextView.swift */; };
+		AE62CBC427255C20007D51CD /* LimitTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB127255C1F007D51CD /* LimitTextView.swift */; };
+		AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB227255C1F007D51CD /* ProgressButton.swift */; };
+		AE62CBC627255C20007D51CD /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB227255C1F007D51CD /* ProgressButton.swift */; };
+		AE62CBC727255C20007D51CD /* ProgressButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB227255C1F007D51CD /* ProgressButton.swift */; };
+		AE62CBC827255C20007D51CD /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB327255C1F007D51CD /* HintView.swift */; };
+		AE62CBC927255C20007D51CD /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB327255C1F007D51CD /* HintView.swift */; };
+		AE62CBCA27255C20007D51CD /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB327255C1F007D51CD /* HintView.swift */; };
+		AE62CBCE27255C20007D51CD /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB527255C1F007D51CD /* GridView.swift */; };
+		AE62CBCF27255C20007D51CD /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB527255C1F007D51CD /* GridView.swift */; };
+		AE62CBD027255C20007D51CD /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB527255C1F007D51CD /* GridView.swift */; };
+		AE62CBD127255C20007D51CD /* SlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB627255C1F007D51CD /* SlideMenuView.swift */; };
+		AE62CBD227255C20007D51CD /* SlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB627255C1F007D51CD /* SlideMenuView.swift */; };
+		AE62CBD327255C20007D51CD /* SlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB627255C1F007D51CD /* SlideMenuView.swift */; };
+		AE62CBD427255C20007D51CD /* ImageBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB727255C1F007D51CD /* ImageBrowserViewController.swift */; };
+		AE62CBD527255C20007D51CD /* ImageBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB727255C1F007D51CD /* ImageBrowserViewController.swift */; };
+		AE62CBD627255C20007D51CD /* ImageBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB727255C1F007D51CD /* ImageBrowserViewController.swift */; };
+		AE62CBD727255C20007D51CD /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB827255C1F007D51CD /* FlowView.swift */; };
+		AE62CBD827255C20007D51CD /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB827255C1F007D51CD /* FlowView.swift */; };
+		AE62CBD927255C20007D51CD /* FlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB827255C1F007D51CD /* FlowView.swift */; };
+		AE62CBDA27255C20007D51CD /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB927255C1F007D51CD /* FlowLayout.swift */; };
+		AE62CBDB27255C20007D51CD /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB927255C1F007D51CD /* FlowLayout.swift */; };
+		AE62CBDC27255C20007D51CD /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBB927255C1F007D51CD /* FlowLayout.swift */; };
+		AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBBA27255C20007D51CD /* GrandTextView.swift */; };
+		AE62CBDE27255C20007D51CD /* GrandTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBBA27255C20007D51CD /* GrandTextView.swift */; };
+		AE62CBDF27255C20007D51CD /* GrandTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBBA27255C20007D51CD /* GrandTextView.swift */; };
 		AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7425272251E300F0C19C /* AppDelegate.swift */; };
 		AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7427272251E300F0C19C /* SceneDelegate.swift */; };
 		AE7E742A272251E300F0C19C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7429272251E300F0C19C /* ViewController.swift */; };
@@ -524,6 +560,18 @@
 		AE62CB7C27254DD6007D51CD /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		AE62CB7D27254DD7007D51CD /* log4cplus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = log4cplus.h; sourceTree = "<group>"; };
 		AE62CB9B27254E3A007D51CD /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		AE62CBAB27255C0E007D51CD /* LayoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutButton.swift; sourceTree = "<group>"; };
+		AE62CBAF27255C1F007D51CD /* BarSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarSlider.swift; sourceTree = "<group>"; };
+		AE62CBB027255C1F007D51CD /* TimerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerButton.swift; sourceTree = "<group>"; };
+		AE62CBB127255C1F007D51CD /* LimitTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitTextView.swift; sourceTree = "<group>"; };
+		AE62CBB227255C1F007D51CD /* ProgressButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressButton.swift; sourceTree = "<group>"; };
+		AE62CBB327255C1F007D51CD /* HintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
+		AE62CBB527255C1F007D51CD /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		AE62CBB627255C1F007D51CD /* SlideMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuView.swift; sourceTree = "<group>"; };
+		AE62CBB727255C1F007D51CD /* ImageBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBrowserViewController.swift; sourceTree = "<group>"; };
+		AE62CBB827255C1F007D51CD /* FlowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowView.swift; sourceTree = "<group>"; };
+		AE62CBB927255C1F007D51CD /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		AE62CBBA27255C20007D51CD /* GrandTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrandTextView.swift; sourceTree = "<group>"; };
 		AE7E7422272251E300F0C19C /* iOSWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7E7425272251E300F0C19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7E7427272251E300F0C19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -669,7 +717,7 @@
 		AE62C9EC272541F2007D51CD /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				AE62CB6727254B12007D51CD /* GrandCue */,
+				AE62CB6727254B12007D51CD /* Toast */,
 				AE62CB04272542F8007D51CD /* Lame */,
 				AE62CA85272542D1007D51CD /* Palette */,
 				AE62CA7E272542AF007D51CD /* FishHook */,
@@ -890,14 +938,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		AE62CB6727254B12007D51CD /* GrandCue */ = {
+		AE62CB6727254B12007D51CD /* Toast */ = {
 			isa = PBXGroup;
 			children = (
 				AE62CB6827254B12007D51CD /* GandAlert.swift */,
 				AE62CB6927254B12007D51CD /* GrandCue.swift */,
 				AE62CB6A27254B12007D51CD /* Toast.swift */,
 			);
-			path = GrandCue;
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		AE62CB7427254DC9007D51CD /* Tool */ = {
@@ -914,6 +962,25 @@
 				AE62CB7627254DD5007D51CD /* Tool.swift */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		AE62CBAA27255BE2007D51CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE62CBAF27255C1F007D51CD /* BarSlider.swift */,
+				AE62CBB927255C1F007D51CD /* FlowLayout.swift */,
+				AE62CBB827255C1F007D51CD /* FlowView.swift */,
+				AE62CBBA27255C20007D51CD /* GrandTextView.swift */,
+				AE62CBB527255C1F007D51CD /* GridView.swift */,
+				AE62CBB327255C1F007D51CD /* HintView.swift */,
+				AE62CBB727255C1F007D51CD /* ImageBrowserViewController.swift */,
+				AE62CBB127255C1F007D51CD /* LimitTextView.swift */,
+				AE62CBB227255C1F007D51CD /* ProgressButton.swift */,
+				AE62CBB627255C1F007D51CD /* SlideMenuView.swift */,
+				AE62CBB027255C1F007D51CD /* TimerButton.swift */,
+				AE62CBAB27255C0E007D51CD /* LayoutButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		AE7E7419272251E300F0C19C = {
@@ -1014,6 +1081,7 @@
 		AE890D0427240DEC00FAB7D7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				AE62CBAA27255BE2007D51CD /* View */,
 				AE62CB7427254DC9007D51CD /* Tool */,
 				AE62CB22272548B6007D51CD /* Extension */,
 				AE62CB1127254873007D51CD /* Base */,
@@ -1318,14 +1386,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE62CBC827255C20007D51CD /* HintView.swift in Sources */,
 				AE62CB5527254947007D51CD /* UIImage+Base.swift in Sources */,
 				AE62CB3727254946007D51CD /* UIViewController+Extension.swift in Sources */,
+				AE62CBCE27255C20007D51CD /* GridView.swift in Sources */,
 				AE62CAB0272542D1007D51CD /* PaletteTarget.m in Sources */,
 				AE62CA0B2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AE62CB9027254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CB4C27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CB3427254946007D51CD /* Number+Extension.swift in Sources */,
 				AE890D1127240DFE00FAB7D7 /* Global.swift in Sources */,
+				AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */,
+				AE62CBC227255C20007D51CD /* LimitTextView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE62CAFB272542DC007D51CD /* ShadowEncoder.swift in Sources */,
@@ -1336,11 +1408,13 @@
 				AE62CAD1272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
 				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
+				AE62CBDA27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE62CAA2272542D1007D51CD /* UIImage+Palette.m in Sources */,
 				AE62CAE9272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CB4927254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE62CACB272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
 				AE62CB5827254947007D51CD /* UIView+Base.swift in Sources */,
+				AE62CBD427255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
 				AE62CB1F2725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CB8A27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAEF272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
@@ -1355,6 +1429,7 @@
 				AE62CA98272542D1007D51CD /* PaletteColorUtils.m in Sources */,
 				AE62CA132725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB8127254DD7007D51CD /* Tool.swift in Sources */,
+				AE62CBBF27255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CAD4272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
 				AE62CB1B27254873007D51CD /* BaseModel.swift in Sources */,
 				AE62CB6E27254B12007D51CD /* GrandCue.swift in Sources */,
@@ -1368,6 +1443,7 @@
 				AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */,
 				AE62CB3127254946007D51CD /* UIWindow+Base.swift in Sources */,
 				AE62CB4F27254947007D51CD /* UICollectView+Extension.swift in Sources */,
+				AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
 				AE62CA712725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE62CA532725429A007D51CD /* UIView+Layout.m in Sources */,
@@ -1375,18 +1451,21 @@
 				AE62CAE3272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
 				AE62CB7E27254DD7007D51CD /* LogTool.swift in Sources */,
 				AE62CAE6272542DC007D51CD /* ShadowDownloader.swift in Sources */,
+				AE62CBBC27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CA192725425A007D51CD /* FMDatabasePool.m in Sources */,
 				AE62CB5C2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE62CA1C2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE62CA7A2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CA692725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE62CB8D27254DD7007D51CD /* DBTool.swift in Sources */,
+				AE62CBAC27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA622725429B007D51CD /* TZImageManager.m in Sources */,
 				AE62CA4E2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE62CADD272542DC007D51CD /* ShadowPlayer.swift in Sources */,
 				AE62CAFE272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CA412725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAF5272542DC007D51CD /* FocusFrameView.swift in Sources */,
+				AE62CBD727255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CA772725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
 				AE62CA81272542AF007D51CD /* fishhook.c in Sources */,
 				AE62CB4327254947007D51CD /* UINavigationController+Extension.swift in Sources */,
@@ -1401,6 +1480,7 @@
 				AE62CB1827254873007D51CD /* ResultInfo.swift in Sources */,
 				AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE62CB4627254947007D51CD /* UITableView+Extension.swift in Sources */,
+				AE62CBD127255C20007D51CD /* SlideMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1415,13 +1495,16 @@
 				AE62CB8227254DD7007D51CD /* Tool.swift in Sources */,
 				AE62CA6A2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE62CB3E27254947007D51CD /* WKWebView+Extension.swift in Sources */,
+				AE62CBC927255C20007D51CD /* HintView.swift in Sources */,
 				AE62CA7B2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CB3827254946007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE62CB6C27254B12007D51CD /* GandAlert.swift in Sources */,
+				AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE62CAD8272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CB3B27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CB8E27254DD7007D51CD /* DBTool.swift in Sources */,
+				AE62CBC627255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE62CA752725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CB5D2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE62CAD5272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
@@ -1440,6 +1523,7 @@
 				AE62CAB1272542D1007D51CD /* PaletteTarget.m in Sources */,
 				AE62CB1C27254873007D51CD /* BaseModel.swift in Sources */,
 				AE62CAF3272542DC007D51CD /* CameraModel.swift in Sources */,
+				AE62CBC327255C20007D51CD /* LimitTextView.swift in Sources */,
 				AE62CA632725429B007D51CD /* TZImageManager.m in Sources */,
 				AE62CAD2272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
 				AE62CAFC272542DC007D51CD /* ShadowEncoder.swift in Sources */,
@@ -1453,6 +1537,9 @@
 				AE62CAAB272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AE890D1227240DFE00FAB7D7 /* Global.swift in Sources */,
 				AE62CAF9272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
+				AE62CBBD27255C20007D51CD /* BarSlider.swift in Sources */,
+				AE62CBD827255C20007D51CD /* FlowView.swift in Sources */,
+				AE62CBD527255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
 				AE62CAA3272542D1007D51CD /* UIImage+Palette.m in Sources */,
 				AE62CA4F2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE62CA5D2725429B007D51CD /* TZProgressView.m in Sources */,
@@ -1464,6 +1551,7 @@
 				AE62CAED272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
 				AE62CB0F272542F8007D51CD /* TransformMP3.m in Sources */,
 				AE62CA672725429B007D51CD /* TZPhotoPickerController.m in Sources */,
+				AE62CBC027255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CB5027254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE62CACC272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
 				AE62CB8827254DD7007D51CD /* HttpClient.swift in Sources */,
@@ -1484,11 +1572,15 @@
 				AE62CB65272549A3007D51CD /* String+Extension.swift in Sources */,
 				AE62CB4A27254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE62CA112725425A007D51CD /* FMDatabaseAdditions.m in Sources */,
+				AE62CBD227255C20007D51CD /* SlideMenuView.swift in Sources */,
 				AE62CA82272542AF007D51CD /* fishhook.c in Sources */,
 				AE62CB8B27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CB5627254947007D51CD /* UIImage+Base.swift in Sources */,
+				AE62CBDB27255C20007D51CD /* FlowLayout.swift in Sources */,
+				AE62CBDE27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE62CB3527254946007D51CD /* Number+Extension.swift in Sources */,
 				AE62CAEA272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
+				AE62CBCF27255C20007D51CD /* GridView.swift in Sources */,
 				AE62CA722725429B007D51CD /* TZImagePickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1525,6 +1617,8 @@
 				AE62CAE2272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CA1E2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */,
+				AE62CBC127255C20007D51CD /* TimerButton.swift in Sources */,
+				AE62CBCA27255C20007D51CD /* HintView.swift in Sources */,
 				AE62CAD6272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
 				AE62CAFD272542DC007D51CD /* ShadowEncoder.swift in Sources */,
 				AE62CA4D2725429A007D51CD /* TZAssetModel.m in Sources */,
@@ -1533,6 +1627,7 @@
 				AE62CB8F27254DD7007D51CD /* DBTool.swift in Sources */,
 				AE62CB7327254B12007D51CD /* Toast.swift in Sources */,
 				AE62CA502725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
+				AE62CBAE27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA83272542AF007D51CD /* fishhook.c in Sources */,
 				AE62CACD272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
 				AE62CADC272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
@@ -1547,6 +1642,7 @@
 				AE62CAD3272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
 				AE62CB3F27254947007D51CD /* WKWebView+Extension.swift in Sources */,
 				AE62CB1A27254873007D51CD /* ResultInfo.swift in Sources */,
+				AE62CBD327255C20007D51CD /* SlideMenuView.swift in Sources */,
 				AE62CB4E27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CAFA272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE62CB3627254946007D51CD /* Number+Extension.swift in Sources */,
@@ -1556,12 +1652,14 @@
 				AE62CB8027254DD7007D51CD /* LogTool.swift in Sources */,
 				AE62CA432725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAE5272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
+				AE62CBDF27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE62CB4227254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AE62CA6B2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE62CA552725429B007D51CD /* UIView+Layout.m in Sources */,
 				AE62CB5127254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE62CA5E2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE62CB3C27254947007D51CD /* Foundation+Extension.swift in Sources */,
+				AE62CBC727255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE62CB6D27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CB5427254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE62CA792725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
@@ -1574,9 +1672,12 @@
 				AE62CB8327254DD7007D51CD /* Tool.swift in Sources */,
 				AE62CA152725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB5E2725495E007D51CD /* Array+Extension.swift in Sources */,
+				AE62CBD027255C20007D51CD /* GridView.swift in Sources */,
 				AE62CAAC272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AE62CA7C2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
+				AE62CBBE27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CB9227254DD7007D51CD /* Auth.swift in Sources */,
+				AE62CBD927255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CA582725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE62CAE8272542DC007D51CD /* ShadowDownloader.swift in Sources */,
 				AE62CB5A27254947007D51CD /* UIView+Base.swift in Sources */,
@@ -1589,12 +1690,15 @@
 				AE62CB4527254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CB1D27254873007D51CD /* BaseModel.swift in Sources */,
 				AE62CAF4272542DC007D51CD /* CameraModel.swift in Sources */,
+				AE62CBDC27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE62CB212725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CAB2272542D1007D51CD /* PaletteTarget.m in Sources */,
 				AE62CAA0272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE62CB4B27254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE62CADF272542DC007D51CD /* ShadowPlayer.swift in Sources */,
 				AE62CB3327254946007D51CD /* UIWindow+Base.swift in Sources */,
+				AE62CBD627255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
+				AE62CBC427255C20007D51CD /* LimitTextView.swift in Sources */,
 				AE62CB1727254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
