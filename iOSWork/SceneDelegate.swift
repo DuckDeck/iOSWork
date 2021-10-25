@@ -16,9 +16,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let sc = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: sc)
-        let mainViewController = ViewController()
-        let rootNavigationController = UINavigationController(rootViewController: mainViewController)
-        window?.rootViewController = rootNavigationController
+        let tabbarCtl = UITabBarController()
+        let baseVC = BaseMenuViewController()
+        baseVC.tabBarItem.image = UIImage(named: "apple")
+        baseVC.tabBarItem.title = "基本&Web"
+        let nav1 = UINavigationController(rootViewController: baseVC)
+        
+        let uiVC = UIMenuViewController()
+        uiVC.tabBarItem.image = UIImage(named: "pineapple")
+        uiVC.tabBarItem.title = "UI&布局"
+        let nav2 = UINavigationController(rootViewController: uiVC)
+        
+        let dataVC = DataMenuViewController()
+        dataVC.tabBarItem.image = UIImage(named: "watermelon")
+        dataVC.tabBarItem.title = "数据&网络"
+        let nav3 = UINavigationController(rootViewController: dataVC)
+        
+        let mediaVC = MediaMenuViewController()
+        mediaVC.tabBarItem.image = UIImage(named: "watermelon")
+        mediaVC.tabBarItem.title = "多媒体&硬件"
+        let nav4 = UINavigationController(rootViewController: mediaVC)
+        
+        let projectVC = ProjectMenuViewController()
+        projectVC.tabBarItem.image = UIImage(named: "strawberry")
+        projectVC.tabBarItem.title = "独立项目"
+
+        let nav5 = UINavigationController(rootViewController: projectVC)
+        tabbarCtl.viewControllers = [nav1,nav2,nav3,nav4,nav5]
+        
+        
+        window?.rootViewController = tabbarCtl
         window?.makeKeyAndVisible()
     }
 
