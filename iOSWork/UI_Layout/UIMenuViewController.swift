@@ -7,5 +7,8 @@
 
 import Foundation
 class UIMenuViewController:BaseViewController{
-    
+    override func viewDidLoad() {
+        view.backgroundColor = UIColor.white
+    }
+
 }

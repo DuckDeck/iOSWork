@@ -7,5 +7,8 @@
 
 import Foundation
 class MediaMenuViewController:BaseViewController{
-    
+    override func viewDidLoad() {
+        view.backgroundColor = UIColor.white
+    }
+
 }

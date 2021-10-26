@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: sc)
         let tabbarCtl = UITabBarController()
         let baseVC = BaseMenuViewController()
-        baseVC.tabBarItem.image = UIImage(named: "apple")
+        baseVC.tabBarItem.image = UIImage(named: "apple")?.withRenderingMode(.alwaysOriginal)
         baseVC.tabBarItem.title = "基本&Web"
         let nav1 = UINavigationController(rootViewController: baseVC)
         
@@ -44,7 +44,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let nav5 = UINavigationController(rootViewController: projectVC)
         tabbarCtl.viewControllers = [nav1,nav2,nav3,nav4,nav5]
         
-        
+        tabbarCtl.tabBar.barTintColor = UIColor.white
         window?.rootViewController = tabbarCtl
         window?.makeKeyAndVisible()
     }
