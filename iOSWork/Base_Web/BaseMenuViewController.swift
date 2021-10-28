@@ -45,6 +45,8 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(ThreadViewController(), animated: true)
         case 1:
             navigationController?.pushViewController(MemoryViewController(), animated: true)
+        case 2:
+            navigationController?.pushViewController(OffSreenRenderViewController(), animated: true)
 
         default:
             break

@@ -69,7 +69,9 @@ class ThreadViewController: UIViewController {
     }
     
     deinit {
-        pthread_mutex_destroy(&pRecursiveLock)
+        if pRecursiveLock != nil{
+            pthread_mutex_destroy(&pRecursiveLock)
+        }
     }
 }
 extension ThreadViewController:UITableViewDelegate,UITableViewDataSource{

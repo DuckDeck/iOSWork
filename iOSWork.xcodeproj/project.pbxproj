@@ -386,6 +386,13 @@
 		AE7E746D2722533800F0C19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E746C2722533800F0C19C /* main.m */; };
 		AE7F912A272AC23C00733BC8 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */; };
 		AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */; };
+		AE7F912D272AC35E00733BC8 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */; };
+		AE7F912E272AC35F00733BC8 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */; };
+		AE7F912F272AC36200733BC8 /* MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */; };
+		AE7F9130272AC36200733BC8 /* MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */; };
+		AE7F9133272AC3C900733BC8 /* OffSreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */; };
+		AE7F9134272AC3CB00733BC8 /* OffSreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */; };
+		AE7F9135272AC3CC00733BC8 /* OffSreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */; };
 		AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; };
 		AE890D0A27240DEC00FAB7D7 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
@@ -627,6 +634,7 @@
 		AE7E746C2722533800F0C19C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 		AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeak.swift; sourceTree = "<group>"; };
+		AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffSreenRenderViewController.swift; sourceTree = "<group>"; };
 		AE890CFD2724085D00FAB7D7 /* GrandKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GrandKit; path = ../GrandKit; sourceTree = "<group>"; };
 		AE890D0327240DEC00FAB7D7 /* Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE890D0F27240DFC00FAB7D7 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -1058,6 +1066,7 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
+				AE7F9131272AC3BC00733BC8 /* Render */,
 				AE7F9128272AC21A00733BC8 /* Memory */,
 				AEF0EBE2272946E400DCA7B8 /* Thread */,
 				AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */,
@@ -1164,6 +1173,14 @@
 				AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */,
 			);
 			path = Memory;
+			sourceTree = "<group>";
+		};
+		AE7F9131272AC3BC00733BC8 /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */,
+			);
+			path = Render;
 			sourceTree = "<group>";
 		};
 		AE890CF92724080E00FAB7D7 /* Packages */ = {
@@ -1551,6 +1568,7 @@
 				AE62CADA272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				AE62CB6027254977007D51CD /* Dict+Extension.swift in Sources */,
 				AE62CAAA272542D1007D51CD /* PaletteColorModel.m in Sources */,
+				AE7F9133272AC3C900733BC8 /* OffSreenRenderViewController.swift in Sources */,
 				AE62CB4027254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AE62CAF8272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE62CB8427254DD7007D51CD /* FPSTool.swift in Sources */,
@@ -1630,6 +1648,7 @@
 				AEF0EBF12729479B00DCA7B8 /* Apply.swift in Sources */,
 				AE62CAE7272542DC007D51CD /* ShadowDownloader.swift in Sources */,
 				AE7E74422722528200F0C19C /* ContentView.swift in Sources */,
+				AE7F9134272AC3CB00733BC8 /* OffSreenRenderViewController.swift in Sources */,
 				AE62CAF0272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE62CA0C2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AE62CA9C272542D1007D51CD /* Palette.m in Sources */,
@@ -1675,6 +1694,7 @@
 				AE62CBC027255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CB5027254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE62CACC272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
+				AE7F912D272AC35E00733BC8 /* MemoryViewController.swift in Sources */,
 				AE62CB8827254DD7007D51CD /* HttpClient.swift in Sources */,
 				AEF0EBEF2729479900DCA7B8 /* Group.swift in Sources */,
 				AE62CB6127254977007D51CD /* Dict+Extension.swift in Sources */,
@@ -1694,6 +1714,7 @@
 				AE62CA1D2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE62CBF4272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
 				AE62CA572725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
+				AE7F912F272AC36200733BC8 /* MemoryLeak.swift in Sources */,
 				AE62CB65272549A3007D51CD /* String+Extension.swift in Sources */,
 				AE62CBF0272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CB4A27254947007D51CD /* UIImageView+Extension.swift in Sources */,
@@ -1743,6 +1764,7 @@
 				AE62CB5727254947007D51CD /* UIImage+Base.swift in Sources */,
 				AE62CAE2272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CA1E2725425A007D51CD /* FMResultSet.m in Sources */,
+				AE7F912E272AC35F00733BC8 /* MemoryViewController.swift in Sources */,
 				AEF0EBF02729479900DCA7B8 /* Group.swift in Sources */,
 				AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */,
 				AE62CBC127255C20007D51CD /* TimerButton.swift in Sources */,
@@ -1767,6 +1789,7 @@
 				AE62CB8927254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CAEE272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
 				AEF0EBF22729479C00DCA7B8 /* Apply.swift in Sources */,
+				AE7F9135272AC3CC00733BC8 /* OffSreenRenderViewController.swift in Sources */,
 				AE62CA122725425A007D51CD /* FMDatabaseAdditions.m in Sources */,
 				AE62CA732725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE62CAD3272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
@@ -1833,6 +1856,7 @@
 				AE62CADF272542DC007D51CD /* ShadowPlayer.swift in Sources */,
 				AE62CB3327254946007D51CD /* UIWindow+Base.swift in Sources */,
 				AE62CBD627255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
+				AE7F9130272AC36200733BC8 /* MemoryLeak.swift in Sources */,
 				AE62CBC427255C20007D51CD /* LimitTextView.swift in Sources */,
 				AE62CB1727254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
