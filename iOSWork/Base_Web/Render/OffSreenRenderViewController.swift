@@ -14,7 +14,6 @@ class OffSreenRenderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hidesBottomBarWhenPushed = true
 
         view.backgroundColor = UIColor.white
         view.addSubview(v)

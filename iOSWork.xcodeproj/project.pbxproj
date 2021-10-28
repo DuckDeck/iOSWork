@@ -371,6 +371,9 @@
 		AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
 		AE62CBF8272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
 		AE62CBF9272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
+		AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
+		AE633910272AF37D00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
+		AE633911272AF37E00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
 		AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7425272251E300F0C19C /* AppDelegate.swift */; };
 		AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7427272251E300F0C19C /* SceneDelegate.swift */; };
 		AE7E742A272251E300F0C19C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7429272251E300F0C19C /* ViewController.swift */; };
@@ -613,6 +616,7 @@
 		AE62CBEE272566A2007D51CD /* ProjectMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMenuViewController.swift; sourceTree = "<group>"; };
 		AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMenuViewController.swift; sourceTree = "<group>"; };
 		AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
+		AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationViewController.swift; sourceTree = "<group>"; };
 		AE7E7422272251E300F0C19C /* iOSWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7E7425272251E300F0C19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7E7427272251E300F0C19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1066,12 +1070,21 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
+				AE63390D272AF36300FBAAA3 /* Notifcation */,
 				AE7F9131272AC3BC00733BC8 /* Render */,
 				AE7F9128272AC21A00733BC8 /* Memory */,
 				AEF0EBE2272946E400DCA7B8 /* Thread */,
 				AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */,
 			);
 			path = Base_Web;
+			sourceTree = "<group>";
+		};
+		AE63390D272AF36300FBAAA3 /* Notifcation */ = {
+			isa = PBXGroup;
+			children = (
+				AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */,
+			);
+			path = Notifcation;
 			sourceTree = "<group>";
 		};
 		AE7E7419272251E300F0C19C = {
@@ -1553,6 +1566,7 @@
 				AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CACE272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
+				AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */,
 				AE62CA742725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CBE727256690007D51CD /* UIMenuViewController.swift in Sources */,
 				AE62CB5227254947007D51CD /* UIScrollView+Extension.swift in Sources */,
@@ -1702,6 +1716,7 @@
 				AE62CAFF272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CB3227254946007D51CD /* UIWindow+Base.swift in Sources */,
 				AE62CAAE272542D1007D51CD /* PriorityBoxArray.m in Sources */,
+				AE633910272AF37D00FBAAA3 /* NotifcationViewController.swift in Sources */,
 				AE62CB4D27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CAF6272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AEF0EBED2729479700DCA7B8 /* Semaphore.swift in Sources */,
@@ -1828,6 +1843,7 @@
 				AE62CB5E2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE62CBD027255C20007D51CD /* GridView.swift in Sources */,
 				AE62CAAC272542D1007D51CD /* PaletteColorModel.m in Sources */,
+				AE633911272AF37E00FBAAA3 /* NotifcationViewController.swift in Sources */,
 				AE62CA7C2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CBBE27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CB9227254DD7007D51CD /* Auth.swift in Sources */,

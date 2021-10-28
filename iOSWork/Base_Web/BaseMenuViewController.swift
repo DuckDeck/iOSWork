@@ -12,7 +12,7 @@ class BaseMenuViewController:BaseViewController{
       
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.hidesBottomBarWhenPushed = true
+        navigationItem.title = "基本&WEB"
 
         view.backgroundColor = UIColor.white
         tbMenu.dataSource = self
@@ -42,11 +42,21 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            navigationController?.pushViewController(ThreadViewController(), animated: true)
+            let vc = ThreadViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         case 1:
-            navigationController?.pushViewController(MemoryViewController(), animated: true)
+            let vc = MemoryViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         case 2:
-            navigationController?.pushViewController(OffSreenRenderViewController(), animated: true)
+            let vc = OffSreenRenderViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 3:
+            let vc = NotifcationViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
 
         default:
             break
