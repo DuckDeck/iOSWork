@@ -1,19 +1,17 @@
 //
-//  BaseMenuViewController.swift
+//  MemoryViewController.swift
 //  iOSWork
 //
-//  Created by Stan Hu on 2021/10/24.
+//  Created by Stan Hu on 2021/10/28.
 //
 
 import Foundation
-class BaseMenuViewController:BaseViewController{
-    var arrData = ["多线程","内存","渲染","通知"]
+class MemoryViewController: UIViewController {
+    var arrData = ["内存泄漏"]
     var tbMenu = UITableView()
       
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.hidesBottomBarWhenPushed = true
-
         view.backgroundColor = UIColor.white
         tbMenu.dataSource = self
         tbMenu.delegate = self
@@ -23,9 +21,10 @@ class BaseMenuViewController:BaseViewController{
             m.edges.equalTo(0)
         }
     }
+
 }
 
-extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
+extension MemoryViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrData.count
     }
@@ -42,14 +41,10 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            navigationController?.pushViewController(ThreadViewController(), animated: true)
-        case 1:
-            navigationController?.pushViewController(MemoryViewController(), animated: true)
-
+            navigationController?.pushViewController(MemeryLeakTestViewController(), animated: true)
         default:
             break
         }
     }
     
-
 }

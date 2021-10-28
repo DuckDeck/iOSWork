@@ -384,6 +384,8 @@
 		AE7E7456272252AC00F0C19C /* KeyboardWork.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AE7E744F272252AC00F0C19C /* KeyboardWork.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AE7E7462272252E700F0C19C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7461272252E700F0C19C /* main.swift */; };
 		AE7E746D2722533800F0C19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E746C2722533800F0C19C /* main.m */; };
+		AE7F912A272AC23C00733BC8 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */; };
+		AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */; };
 		AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; };
 		AE890D0A27240DEC00FAB7D7 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
@@ -623,6 +625,8 @@
 		AE7E7461272252E700F0C19C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		AE7E746A2722533800F0C19C /* OCWork */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OCWork; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7E746C2722533800F0C19C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
+		AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeak.swift; sourceTree = "<group>"; };
 		AE890CFD2724085D00FAB7D7 /* GrandKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GrandKit; path = ../GrandKit; sourceTree = "<group>"; };
 		AE890D0327240DEC00FAB7D7 /* Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE890D0F27240DFC00FAB7D7 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -1054,6 +1058,7 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
+				AE7F9128272AC21A00733BC8 /* Memory */,
 				AEF0EBE2272946E400DCA7B8 /* Thread */,
 				AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */,
 			);
@@ -1150,6 +1155,15 @@
 				AE7E746C2722533800F0C19C /* main.m */,
 			);
 			path = OCWork;
+			sourceTree = "<group>";
+		};
+		AE7F9128272AC21A00733BC8 /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */,
+				AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */,
+			);
+			path = Memory;
 			sourceTree = "<group>";
 		};
 		AE890CF92724080E00FAB7D7 /* Packages */ = {
@@ -1546,6 +1560,7 @@
 				AE62CB4F27254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
+				AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */,
 				AE62CA712725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE62CA532725429A007D51CD /* UIView+Layout.m in Sources */,
 				AE62CAAD272542D1007D51CD /* PriorityBoxArray.m in Sources */,
@@ -1578,6 +1593,7 @@
 				AE62CB3D27254947007D51CD /* WKWebView+Extension.swift in Sources */,
 				AE62CB64272549A3007D51CD /* String+Extension.swift in Sources */,
 				AE62CB0E272542F8007D51CD /* TransformMP3.m in Sources */,
+				AE7F912A272AC23C00733BC8 /* MemoryViewController.swift in Sources */,
 				AE62CAEC272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
 				AE62CB1827254873007D51CD /* ResultInfo.swift in Sources */,
 				AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */,
