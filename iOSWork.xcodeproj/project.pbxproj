@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
+		AE4D08E9273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
+		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
+		AE4D08ED273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
+		AE4D08EE273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
+		AE4D08EF2730264100899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE62C9BC27253D70007D51CD /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9BB27253D70007D51CD /* GrandKit */; };
 		AE62C9C227253EFF007D51CD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9C127253EFF007D51CD /* Kingfisher */; };
 		AE62C9C527253F1C007D51CD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9C427253F1C007D51CD /* SnapKit */; };
@@ -476,6 +482,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
+		AE4D08EB273025DB00899D2C /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		AE62C9E1272541C3007D51CD /* cxk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cxk.mp4; sourceTree = "<group>"; };
 		AE62C9E5272541D0007D51CD /* gif0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif0.gif; sourceTree = "<group>"; };
 		AE62C9E9272541E1007D51CD /* question.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = question.html; sourceTree = "<group>"; };
@@ -725,6 +733,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE4D08E52730259200899D2C /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */,
+			);
+			path = WKWebView;
+			sourceTree = "<group>";
+		};
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,6 +777,7 @@
 		AE62C9E8272541D5007D51CD /* HTML */ = {
 			isa = PBXGroup;
 			children = (
+				AE4D08EB273025DB00899D2C /* demo.html */,
 				AE62C9E9272541E1007D51CD /* question.html */,
 			);
 			path = HTML;
@@ -1070,6 +1087,7 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
+				AE4D08E52730259200899D2C /* WKWebView */,
 				AE63390D272AF36300FBAAA3 /* Notifcation */,
 				AE7F9131272AC3BC00733BC8 /* Render */,
 				AE7F9128272AC21A00733BC8 /* Memory */,
@@ -1429,6 +1447,7 @@
 					};
 					AE7E74692722533800F0C19C = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 					AE890D0227240DEC00FAB7D7 = {
 						CreatedOnToolsVersion = 13.0;
@@ -1477,6 +1496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE62C9F827254238007D51CD /* AMap.bundle in Resources */,
+				AE4D08EC273025DB00899D2C /* demo.html in Resources */,
 				AE62C9E2272541C3007D51CD /* cxk.mp4 in Resources */,
 				AE7E7432272251E500F0C19C /* LaunchScreen.storyboard in Resources */,
 				AE62C9E6272541D0007D51CD /* gif0.gif in Resources */,
@@ -1491,6 +1511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE62C9F927254238007D51CD /* AMap.bundle in Resources */,
+				AE4D08ED273025DB00899D2C /* demo.html in Resources */,
 				AE62C9E3272541C3007D51CD /* cxk.mp4 in Resources */,
 				AE7E74472722528400F0C19C /* Preview Assets.xcassets in Resources */,
 				AE62C9E7272541D0007D51CD /* gif0.gif in Resources */,
@@ -1512,6 +1533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE62C9FA27254238007D51CD /* AMap.bundle in Resources */,
+				AE4D08EE273025DB00899D2C /* demo.html in Resources */,
 				AE62CA5B2725429B007D51CD /* TZImagePickerController.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1563,6 +1585,7 @@
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CB3A27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CA5C2725429B007D51CD /* TZProgressView.m in Sources */,
+				AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */,
 				AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CACE272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
@@ -1717,6 +1740,7 @@
 				AE62CB3227254946007D51CD /* UIWindow+Base.swift in Sources */,
 				AE62CAAE272542D1007D51CD /* PriorityBoxArray.m in Sources */,
 				AE633910272AF37D00FBAAA3 /* NotifcationViewController.swift in Sources */,
+				AE4D08E9273025BA00899D2C /* HandleJSViewController.swift in Sources */,
 				AE62CB4D27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CAF6272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AEF0EBED2729479700DCA7B8 /* Semaphore.swift in Sources */,
@@ -1841,6 +1865,7 @@
 				AE62CB8327254DD7007D51CD /* Tool.swift in Sources */,
 				AE62CA152725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB5E2725495E007D51CD /* Array+Extension.swift in Sources */,
+				AE4D08EF2730264100899D2C /* HandleJSViewController.swift in Sources */,
 				AE62CBD027255C20007D51CD /* GridView.swift in Sources */,
 				AE62CAAC272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AE633911272AF37E00FBAAA3 /* NotifcationViewController.swift in Sources */,
@@ -2042,6 +2067,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSWork/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "看一下相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -2079,6 +2105,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSWork/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "看一下相册";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -2256,24 +2283,41 @@
 		AE7E746F2722533800F0C19C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSWork/Base_Web/WKWebView/OCWork-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		AE7E74702722533800F0C19C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSWork/Base_Web/WKWebView/OCWork-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

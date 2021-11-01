@@ -7,7 +7,7 @@
 
 import Foundation
 class BaseMenuViewController:BaseViewController{
-    var arrData = ["多线程","内存","渲染","通知"]
+    var arrData = ["多线程","内存","渲染","通知","JS交互"]
     var tbMenu = UITableView()
       
     override func viewDidLoad() {
@@ -55,6 +55,10 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 3:
             let vc = NotifcationViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 4:
+            let vc = HandleJSViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
 
