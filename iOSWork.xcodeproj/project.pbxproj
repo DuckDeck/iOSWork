@@ -13,6 +13,40 @@
 		AE4D08ED273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08EE273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08EF2730264100899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
+		AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */; };
+		AE4D08F4273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */; };
+		AE4D08F5273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */; };
+		AE4D08FB273032E700899D2C /* DiskFileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F7273032E700899D2C /* DiskFileCache.swift */; };
+		AE4D08FC273032E700899D2C /* DiskFileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F7273032E700899D2C /* DiskFileCache.swift */; };
+		AE4D08FD273032E700899D2C /* DiskFileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F7273032E700899D2C /* DiskFileCache.swift */; };
+		AE4D08FE273032E700899D2C /* MemeryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F8273032E700899D2C /* MemeryCache.swift */; };
+		AE4D08FF273032E700899D2C /* MemeryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F8273032E700899D2C /* MemeryCache.swift */; };
+		AE4D0900273032E700899D2C /* MemeryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F8273032E700899D2C /* MemeryCache.swift */; };
+		AE4D0901273032E700899D2C /* H5ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F9273032E700899D2C /* H5ResourceCache.swift */; };
+		AE4D0902273032E700899D2C /* H5ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F9273032E700899D2C /* H5ResourceCache.swift */; };
+		AE4D0903273032E700899D2C /* H5ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F9273032E700899D2C /* H5ResourceCache.swift */; };
+		AE4D0904273032E700899D2C /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08FA273032E700899D2C /* CacheProtocol.swift */; };
+		AE4D0905273032E700899D2C /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08FA273032E700899D2C /* CacheProtocol.swift */; };
+		AE4D0906273032E700899D2C /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08FA273032E700899D2C /* CacheProtocol.swift */; };
+		AE4D0908273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */; };
+		AE4D0909273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */; };
+		AE4D090A273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */; };
+		AE4D0910273032F300899D2C /* WebViewReusePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090C273032F300899D2C /* WebViewReusePool.swift */; };
+		AE4D0911273032F300899D2C /* WebViewReusePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090C273032F300899D2C /* WebViewReusePool.swift */; };
+		AE4D0912273032F300899D2C /* WebViewReusePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090C273032F300899D2C /* WebViewReusePool.swift */; };
+		AE4D0914273032F400899D2C /* ReuseWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090E273032F300899D2C /* ReuseWebView.swift */; };
+		AE4D0915273032F400899D2C /* ReuseWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090E273032F300899D2C /* ReuseWebView.swift */; };
+		AE4D0916273032F400899D2C /* ReuseWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090E273032F300899D2C /* ReuseWebView.swift */; };
+		AE4D091B273032FC00899D2C /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D091A273032FC00899D2C /* upload.html */; };
+		AE4D091C273032FC00899D2C /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D091A273032FC00899D2C /* upload.html */; };
+		AE4D091D273032FC00899D2C /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D091A273032FC00899D2C /* upload.html */; };
+		AE4D091F2730331100899D2C /* HttpIntercept.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D091E2730331100899D2C /* HttpIntercept.swift */; };
+		AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
+		AE4D09242730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
+		AE4D09252730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
+		AE4D09272730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */; };
+		AE4D09282730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */; };
+		AE4D09292730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */; };
 		AE62C9BC27253D70007D51CD /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9BB27253D70007D51CD /* GrandKit */; };
 		AE62C9C227253EFF007D51CD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9C127253EFF007D51CD /* Kingfisher */; };
 		AE62C9C527253F1C007D51CD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9C427253F1C007D51CD /* SnapKit */; };
@@ -484,6 +518,18 @@
 /* Begin PBXFileReference section */
 		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
 		AE4D08EB273025DB00899D2C /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
+		AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomURLSchemeHandler.swift; sourceTree = "<group>"; };
+		AE4D08F7273032E700899D2C /* DiskFileCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskFileCache.swift; sourceTree = "<group>"; };
+		AE4D08F8273032E700899D2C /* MemeryCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeryCache.swift; sourceTree = "<group>"; };
+		AE4D08F9273032E700899D2C /* H5ResourceCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H5ResourceCache.swift; sourceTree = "<group>"; };
+		AE4D08FA273032E700899D2C /* CacheProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheProtocol.swift; sourceTree = "<group>"; };
+		AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = H5SecondOpenUtil.swift; sourceTree = "<group>"; };
+		AE4D090C273032F300899D2C /* WebViewReusePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewReusePool.swift; sourceTree = "<group>"; };
+		AE4D090E273032F300899D2C /* ReuseWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseWebView.swift; sourceTree = "<group>"; };
+		AE4D091A273032FC00899D2C /* upload.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = upload.html; sourceTree = "<group>"; };
+		AE4D091E2730331100899D2C /* HttpIntercept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpIntercept.swift; sourceTree = "<group>"; };
+		AE4D09222730333100899D2C /* CacheWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheWebViewController.swift; sourceTree = "<group>"; };
+		AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpInterceptWebViewController.swift; sourceTree = "<group>"; };
 		AE62C9E1272541C3007D51CD /* cxk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cxk.mp4; sourceTree = "<group>"; };
 		AE62C9E5272541D0007D51CD /* gif0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif0.gif; sourceTree = "<group>"; };
 		AE62C9E9272541E1007D51CD /* question.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = question.html; sourceTree = "<group>"; };
@@ -741,6 +787,56 @@
 			path = WKWebView;
 			sourceTree = "<group>";
 		};
+		AE4D08F0273032BB00899D2C /* HttpIntercept */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D092B2730351500899D2C /* CustomProtocal */,
+				AE4D08F1273032D100899D2C /* Swizzle */,
+			);
+			path = HttpIntercept;
+			sourceTree = "<group>";
+		};
+		AE4D08F1273032D100899D2C /* Swizzle */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */,
+				AE4D09222730333100899D2C /* CacheWebViewController.swift */,
+				AE4D091E2730331100899D2C /* HttpIntercept.swift */,
+				AE4D090B273032F300899D2C /* ReusePool */,
+				AE4D08F6273032E700899D2C /* Cache */,
+				AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */,
+				AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */,
+			);
+			path = Swizzle;
+			sourceTree = "<group>";
+		};
+		AE4D08F6273032E700899D2C /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D08F7273032E700899D2C /* DiskFileCache.swift */,
+				AE4D08F8273032E700899D2C /* MemeryCache.swift */,
+				AE4D08F9273032E700899D2C /* H5ResourceCache.swift */,
+				AE4D08FA273032E700899D2C /* CacheProtocol.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		AE4D090B273032F300899D2C /* ReusePool */ = {
+			isa = PBXGroup;
+			children = (
+				AE4D090C273032F300899D2C /* WebViewReusePool.swift */,
+				AE4D090E273032F300899D2C /* ReuseWebView.swift */,
+			);
+			path = ReusePool;
+			sourceTree = "<group>";
+		};
+		AE4D092B2730351500899D2C /* CustomProtocal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomProtocal;
+			sourceTree = "<group>";
+		};
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -777,6 +873,7 @@
 		AE62C9E8272541D5007D51CD /* HTML */ = {
 			isa = PBXGroup;
 			children = (
+				AE4D091A273032FC00899D2C /* upload.html */,
 				AE4D08EB273025DB00899D2C /* demo.html */,
 				AE62C9E9272541E1007D51CD /* question.html */,
 			);
@@ -1087,6 +1184,7 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
+				AE4D08F0273032BB00899D2C /* HttpIntercept */,
 				AE4D08E52730259200899D2C /* WKWebView */,
 				AE63390D272AF36300FBAAA3 /* Notifcation */,
 				AE7F9131272AC3BC00733BC8 /* Render */,
@@ -1501,6 +1599,7 @@
 				AE7E7432272251E500F0C19C /* LaunchScreen.storyboard in Resources */,
 				AE62C9E6272541D0007D51CD /* gif0.gif in Resources */,
 				AE62CA592725429B007D51CD /* TZImagePickerController.bundle in Resources */,
+				AE4D091B273032FC00899D2C /* upload.html in Resources */,
 				AE62C9EA272541E2007D51CD /* question.html in Resources */,
 				AE7E742F272251E500F0C19C /* Assets.xcassets in Resources */,
 			);
@@ -1516,6 +1615,7 @@
 				AE7E74472722528400F0C19C /* Preview Assets.xcassets in Resources */,
 				AE62C9E7272541D0007D51CD /* gif0.gif in Resources */,
 				AE62CA5A2725429B007D51CD /* TZImagePickerController.bundle in Resources */,
+				AE4D091C273032FC00899D2C /* upload.html in Resources */,
 				AE62C9EB272541E2007D51CD /* question.html in Resources */,
 				AE7E74442722528400F0C19C /* Assets.xcassets in Resources */,
 			);
@@ -1535,6 +1635,7 @@
 				AE62C9FA27254238007D51CD /* AMap.bundle in Resources */,
 				AE4D08EE273025DB00899D2C /* demo.html in Resources */,
 				AE62CA5B2725429B007D51CD /* TZImagePickerController.bundle in Resources */,
+				AE4D091D273032FC00899D2C /* upload.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1563,10 +1664,13 @@
 				AE62CAFB272542DC007D51CD /* ShadowEncoder.swift in Sources */,
 				AE62CB8727254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CB6B27254B12007D51CD /* GandAlert.swift in Sources */,
+				AE4D0904273032E700899D2C /* CacheProtocol.swift in Sources */,
 				AE62CA9E272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE62CA562725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE62CBF3272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
+				AE4D0914273032F400899D2C /* ReuseWebView.swift in Sources */,
 				AE62CAD1272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
+				AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */,
 				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
@@ -1575,11 +1679,13 @@
 				AE62CAE9272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CB4927254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE62CACB272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
+				AE4D09272730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */,
 				AE62CB5827254947007D51CD /* UIView+Base.swift in Sources */,
 				AE62CBD427255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
 				AE62CB1F2725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CB8A27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAEF272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
+				AE4D0908273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
 				AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE62CB1527254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
@@ -1588,9 +1694,13 @@
 				AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */,
 				AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CACE272542DC007D51CD /* ShadowDataManager.swift in Sources */,
+				AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */,
 				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */,
+				AE4D091F2730331100899D2C /* HttpIntercept.swift in Sources */,
 				AE62CA742725429B007D51CD /* TZLocationManager.m in Sources */,
+				AE4D0901273032E700899D2C /* H5ResourceCache.swift in Sources */,
+				AE4D08FE273032E700899D2C /* MemeryCache.swift in Sources */,
 				AE62CBE727256690007D51CD /* UIMenuViewController.swift in Sources */,
 				AE62CB5227254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE62CA98272542D1007D51CD /* PaletteColorUtils.m in Sources */,
@@ -1612,6 +1722,7 @@
 				AE62CB7127254B12007D51CD /* Toast.swift in Sources */,
 				AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */,
 				AE62CB3127254946007D51CD /* UIWindow+Base.swift in Sources */,
+				AE4D08FB273032E700899D2C /* DiskFileCache.swift in Sources */,
 				AE62CB4F27254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
@@ -1651,6 +1762,7 @@
 				AE7F912A272AC23C00733BC8 /* MemoryViewController.swift in Sources */,
 				AE62CAEC272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
 				AE62CB1827254873007D51CD /* ResultInfo.swift in Sources */,
+				AE4D0910273032F300899D2C /* WebViewReusePool.swift in Sources */,
 				AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE62CB4627254947007D51CD /* UITableView+Extension.swift in Sources */,
 				AE62CBD127255C20007D51CD /* SlideMenuView.swift in Sources */,
@@ -1665,6 +1777,7 @@
 				AE62CB9127254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CA782725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
 				AE62CB4727254947007D51CD /* UITableView+Extension.swift in Sources */,
+				AE4D08F4273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CB8227254DD7007D51CD /* Tool.swift in Sources */,
 				AE62CA6A2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE62CB3E27254947007D51CD /* WKWebView+Extension.swift in Sources */,
@@ -1675,6 +1788,7 @@
 				AE62CB6C27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
+				AE4D0905273032E700899D2C /* CacheProtocol.swift in Sources */,
 				AE62CAD8272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CB3B27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CB8E27254DD7007D51CD /* DBTool.swift in Sources */,
@@ -1684,13 +1798,16 @@
 				AE62CAD5272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
 				AEF0EBF12729479B00DCA7B8 /* Apply.swift in Sources */,
 				AE62CAE7272542DC007D51CD /* ShadowDownloader.swift in Sources */,
+				AE4D08FF273032E700899D2C /* MemeryCache.swift in Sources */,
 				AE7E74422722528200F0C19C /* ContentView.swift in Sources */,
 				AE7F9134272AC3CB00733BC8 /* OffSreenRenderViewController.swift in Sources */,
+				AE4D0909273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
 				AE62CAF0272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE62CA0C2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AE62CA9C272542D1007D51CD /* Palette.m in Sources */,
 				AE62CB1627254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CB8527254DD7007D51CD /* FPSTool.swift in Sources */,
+				AE4D09282730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */,
 				AE62CB5327254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE62CA9F272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE62CB7227254B12007D51CD /* Toast.swift in Sources */,
@@ -1707,16 +1824,19 @@
 				AE62CA142725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB202725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CA1A2725425A007D51CD /* FMDatabasePool.m in Sources */,
+				AE4D0915273032F400899D2C /* ReuseWebView.swift in Sources */,
 				AE62CB1927254873007D51CD /* ResultInfo.swift in Sources */,
 				AE62CB4427254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CACF272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CAAB272542D1007D51CD /* PaletteColorModel.m in Sources */,
+				AE4D09242730333100899D2C /* CacheWebViewController.swift in Sources */,
 				AE890D1227240DFE00FAB7D7 /* Global.swift in Sources */,
 				AE62CAF9272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE62CBBD27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CBD827255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CBD527255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
 				AE62CAA3272542D1007D51CD /* UIImage+Palette.m in Sources */,
+				AE4D08FC273032E700899D2C /* DiskFileCache.swift in Sources */,
 				AE62CA4F2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE62CA5D2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE62CBE827256690007D51CD /* UIMenuViewController.swift in Sources */,
@@ -1749,6 +1869,7 @@
 				AE62CA422725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CADB272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				AE62CB02272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
+				AE4D0911273032F300899D2C /* WebViewReusePool.swift in Sources */,
 				AE62CA492725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE62CA1D2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE62CBF4272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
@@ -1763,6 +1884,7 @@
 				AE62CB8B27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AEF0EBEB2729479400DCA7B8 /* ThreadViewController.swift in Sources */,
 				AE62CB5627254947007D51CD /* UIImage+Base.swift in Sources */,
+				AE4D0902273032E700899D2C /* H5ResourceCache.swift in Sources */,
 				AE62CBDB27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE62CBDE27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE62CB3527254946007D51CD /* Number+Extension.swift in Sources */,
@@ -1801,6 +1923,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE62CB5727254947007D51CD /* UIImage+Base.swift in Sources */,
+				AE4D08F5273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CAE2272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CA1E2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE7F912E272AC35F00733BC8 /* MemoryViewController.swift in Sources */,
@@ -1838,6 +1961,7 @@
 				AE62CB4E27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CAFA272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE62CB3627254946007D51CD /* Number+Extension.swift in Sources */,
+				AE4D09252730333100899D2C /* CacheWebViewController.swift in Sources */,
 				AE62CB7027254B12007D51CD /* GrandCue.swift in Sources */,
 				AE62CB00272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CA9A272542D1007D51CD /* PaletteColorUtils.m in Sources */,
@@ -1845,6 +1969,7 @@
 				AE62CA432725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAE5272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
 				AE62CBDF27255C20007D51CD /* GrandTextView.swift in Sources */,
+				AE4D0916273032F400899D2C /* ReuseWebView.swift in Sources */,
 				AE62CB4227254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AE62CA6B2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE62CA552725429B007D51CD /* UIView+Layout.m in Sources */,
@@ -1852,6 +1977,7 @@
 				AE62CA5E2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE62CB3C27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CBC727255C20007D51CD /* ProgressButton.swift in Sources */,
+				AE4D08FD273032E700899D2C /* DiskFileCache.swift in Sources */,
 				AE62CB6D27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CB5427254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE62CA792725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
@@ -1861,6 +1987,7 @@
 				AE62CB4827254947007D51CD /* UITableView+Extension.swift in Sources */,
 				AE62CBF1272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CB6227254977007D51CD /* Dict+Extension.swift in Sources */,
+				AE4D0912273032F300899D2C /* WebViewReusePool.swift in Sources */,
 				AE62CB03272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AE62CB8327254DD7007D51CD /* Tool.swift in Sources */,
 				AE62CA152725425A007D51CD /* FMDatabase.m in Sources */,
@@ -1872,6 +1999,8 @@
 				AE62CA7C2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CBBE27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CB9227254DD7007D51CD /* Auth.swift in Sources */,
+				AE4D090A273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
+				AE4D0900273032E700899D2C /* MemeryCache.swift in Sources */,
 				AEF0EBEC2729479500DCA7B8 /* ThreadViewController.swift in Sources */,
 				AE62CBD927255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CA582725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
@@ -1881,6 +2010,7 @@
 				AE62CAD9272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AEF0EBEE2729479700DCA7B8 /* Semaphore.swift in Sources */,
 				AE62CB8C27254DD7007D51CD /* CatoMonitor.swift in Sources */,
+				AE4D0906273032E700899D2C /* CacheProtocol.swift in Sources */,
 				AE62CAAF272542D1007D51CD /* PriorityBoxArray.m in Sources */,
 				AE62CBF9272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE62CAF1272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
@@ -1890,6 +2020,7 @@
 				AE62CB1D27254873007D51CD /* BaseModel.swift in Sources */,
 				AE62CAF4272542DC007D51CD /* CameraModel.swift in Sources */,
 				AE62CBDC27255C20007D51CD /* FlowLayout.swift in Sources */,
+				AE4D0903273032E700899D2C /* H5ResourceCache.swift in Sources */,
 				AE62CB212725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CAB2272542D1007D51CD /* PaletteTarget.m in Sources */,
 				AE62CAA0272542D1007D51CD /* PaletteSwatch.m in Sources */,
@@ -1903,6 +2034,7 @@
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
+				AE4D09292730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */,
 				AE62CB10272542F8007D51CD /* TransformMP3.m in Sources */,
 				AE62CB8627254DD7007D51CD /* FPSTool.swift in Sources */,
 				AE62CBED2725669C007D51CD /* DataMenuViewController.swift in Sources */,

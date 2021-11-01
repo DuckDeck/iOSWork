@@ -7,7 +7,7 @@
 
 import Foundation
 class BaseMenuViewController:BaseViewController{
-    var arrData = ["多线程","内存","渲染","通知","JS交互"]
+    var arrData = ["多线程","内存","渲染","通知","JS交互","WKWebView拦截请求"]
     var tbMenu = UITableView()
       
     override func viewDidLoad() {
@@ -61,6 +61,11 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let vc = HandleJSViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
+        case 5:
+            let vc = HttpInterceptWebViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+
 
         default:
             break
