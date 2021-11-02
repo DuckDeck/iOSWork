@@ -40,7 +40,7 @@
 		AE4D091B273032FC00899D2C /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D091A273032FC00899D2C /* upload.html */; };
 		AE4D091C273032FC00899D2C /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D091A273032FC00899D2C /* upload.html */; };
 		AE4D091D273032FC00899D2C /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D091A273032FC00899D2C /* upload.html */; };
-		AE4D091F2730331100899D2C /* HttpIntercept.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D091E2730331100899D2C /* HttpIntercept.swift */; };
+		AE4D091F2730331100899D2C /* HttpInterceptWebMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D091E2730331100899D2C /* HttpInterceptWebMenuViewController.swift */; };
 		AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
 		AE4D09242730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
 		AE4D09252730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
@@ -409,8 +409,6 @@
 		AE62CBF4272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
 		AE62CBF5272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
 		AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
-		AE62CBF8272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
-		AE62CBF9272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
 		AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
 		AE633910272AF37D00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
 		AE633911272AF37E00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
@@ -527,7 +525,7 @@
 		AE4D090C273032F300899D2C /* WebViewReusePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewReusePool.swift; sourceTree = "<group>"; };
 		AE4D090E273032F300899D2C /* ReuseWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseWebView.swift; sourceTree = "<group>"; };
 		AE4D091A273032FC00899D2C /* upload.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = upload.html; sourceTree = "<group>"; };
-		AE4D091E2730331100899D2C /* HttpIntercept.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpIntercept.swift; sourceTree = "<group>"; };
+		AE4D091E2730331100899D2C /* HttpInterceptWebMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpInterceptWebMenuViewController.swift; sourceTree = "<group>"; };
 		AE4D09222730333100899D2C /* CacheWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheWebViewController.swift; sourceTree = "<group>"; };
 		AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpInterceptWebViewController.swift; sourceTree = "<group>"; };
 		AE62C9E1272541C3007D51CD /* cxk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cxk.mp4; sourceTree = "<group>"; };
@@ -800,12 +798,6 @@
 			isa = PBXGroup;
 			children = (
 				AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */,
-				AE4D09222730333100899D2C /* CacheWebViewController.swift */,
-				AE4D091E2730331100899D2C /* HttpIntercept.swift */,
-				AE4D090B273032F300899D2C /* ReusePool */,
-				AE4D08F6273032E700899D2C /* Cache */,
-				AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */,
-				AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */,
 			);
 			path = Swizzle;
 			sourceTree = "<group>";
@@ -833,6 +825,12 @@
 		AE4D092B2730351500899D2C /* CustomProtocal */ = {
 			isa = PBXGroup;
 			children = (
+				AE4D090B273032F300899D2C /* ReusePool */,
+				AE4D08F6273032E700899D2C /* Cache */,
+				AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */,
+				AE4D09222730333100899D2C /* CacheWebViewController.swift */,
+				AE4D091E2730331100899D2C /* HttpInterceptWebMenuViewController.swift */,
+				AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */,
 			);
 			path = CustomProtocal;
 			sourceTree = "<group>";
@@ -1697,7 +1695,7 @@
 				AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */,
 				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */,
-				AE4D091F2730331100899D2C /* HttpIntercept.swift in Sources */,
+				AE4D091F2730331100899D2C /* HttpInterceptWebMenuViewController.swift in Sources */,
 				AE62CA742725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE4D0901273032E700899D2C /* H5ResourceCache.swift in Sources */,
 				AE4D08FE273032E700899D2C /* MemeryCache.swift in Sources */,
@@ -1784,7 +1782,6 @@
 				AE62CBC927255C20007D51CD /* HintView.swift in Sources */,
 				AE62CA7B2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CB3827254946007D51CD /* UIViewController+Extension.swift in Sources */,
-				AE62CBF8272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE62CB6C27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
@@ -2012,7 +2009,6 @@
 				AE62CB8C27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE4D0906273032E700899D2C /* CacheProtocol.swift in Sources */,
 				AE62CAAF272542D1007D51CD /* PriorityBoxArray.m in Sources */,
-				AE62CBF9272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE62CAF1272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE62CA682725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE62CBF5272566B6007D51CD /* MediaMenuViewController.swift in Sources */,

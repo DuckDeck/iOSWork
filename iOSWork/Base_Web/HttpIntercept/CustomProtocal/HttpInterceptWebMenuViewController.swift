@@ -3,11 +3,9 @@ import UIKit
 import WebKit
 import SwiftUI
 import SnapKit
-class InterceptViewController: UIViewController {
+class HttpInterceptWebMenuViewController: UIViewController {
     var arrData = [("网易","https://www.163.com"),("sohu","https://www.sohu.com/"),("the verge","https://www.theverge.com/")]
     var tbMenu = UITableView()
-    var isHooked = false
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,23 +20,11 @@ class InterceptViewController: UIViewController {
             m.edges.equalTo(0)
         }
         
-        let btn = UIBarButtonItem(title: "Swizzle", style: .plain, target: self, action: #selector(swizzleSchame))
-        navigationItem.rightBarButtonItem = btn
-    }
-    
-    @objc func swizzleSchame(){
-        if !isHooked{
-            (UIApplication.shared.delegate as? AppDelegate)?.hookMethod()
-            WebViewReusePool.load()
-            isHooked = true
-        }
-        let vc = HttpInterceptWebViewController()
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 
-extension InterceptViewController:UITableViewDelegate,UITableViewDataSource{
+extension HttpInterceptWebMenuViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrData.count
     }

@@ -11,6 +11,7 @@ import WebKit
 import SwiftyJSON
 class HttpInterceptWebViewController:BaseViewController{
     var webView:WKWebView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let config = WKWebViewConfiguration()

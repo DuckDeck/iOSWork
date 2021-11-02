@@ -7,9 +7,10 @@
 
 import Foundation
 class BaseMenuViewController:BaseViewController{
-    var arrData = ["多线程","内存","渲染","通知","JS交互","WKWebView拦截请求"]
+    var arrData = ["多线程","内存","渲染","通知","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)"]
     var tbMenu = UITableView()
-      
+    var isHooked = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "基本&WEB"
@@ -62,11 +63,19 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         case 5:
-            let vc = HttpInterceptWebViewController()
+            let vc = HttpInterceptWebMenuViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
 
-
+        case 6:
+            if !isHooked{
+                (UIApplication.shared.delegate as? AppDelegate)?.hookMethod()
+                WebViewReusePool.load()
+                isHooked = true
+            }
+            let vc = HttpInterceptWebViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }
