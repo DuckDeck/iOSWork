@@ -7,7 +7,7 @@
 
 import Foundation
 class BaseMenuViewController:BaseViewController{
-    var arrData = ["多线程","内存","渲染","通知","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)"]
+    var arrData = ["多线程","内存","渲染","通知","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)","扫码","分享"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -76,6 +76,15 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let vc = HttpInterceptWebViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
+        case 7:
+            let vc = ScanCodeViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 8:
+            let vc = ShareViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+
         default:
             break
         }
