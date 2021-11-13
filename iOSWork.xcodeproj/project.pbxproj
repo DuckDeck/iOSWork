@@ -368,6 +368,14 @@
 		AE62CBF3272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
 		AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
 		AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
+		AE6E5DB6273FB48E00523EA8 /* ImageRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */; };
+		AE6E5DBF273FB6FF00523EA8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB8273FB6FF00523EA8 /* Settings.swift */; };
+		AE6E5DC0273FB6FF00523EA8 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB9273FB6FF00523EA8 /* Line.swift */; };
+		AE6E5DC1273FB6FF00523EA8 /* Trace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DBA273FB6FF00523EA8 /* Trace.swift */; };
+		AE6E5DC2273FB6FF00523EA8 /* CrossLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DBB273FB6FF00523EA8 /* CrossLine.swift */; };
+		AE6E5DC3273FB6FF00523EA8 /* TouchTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DBC273FB6FF00523EA8 /* TouchTestViewController.swift */; };
+		AE6E5DC4273FB6FF00523EA8 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DBD273FB6FF00523EA8 /* DrawView.swift */; };
+		AE6E5DC5273FB6FF00523EA8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DBE273FB6FF00523EA8 /* SettingViewController.swift */; };
 		AE72F528273EB9A50060456A /* CitySearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F51F273EB9A40060456A /* CitySearchResultView.swift */; };
 		AE72F529273EB9A50060456A /* CityDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F520273EB9A40060456A /* CityDB.swift */; };
 		AE72F52B273EB9A50060456A /* CityChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F522273EB9A40060456A /* CityChooseViewController.swift */; };
@@ -644,6 +652,14 @@
 		AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMenuViewController.swift; sourceTree = "<group>"; };
 		AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
 		AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationViewController.swift; sourceTree = "<group>"; };
+		AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotationViewController.swift; sourceTree = "<group>"; };
+		AE6E5DB8273FB6FF00523EA8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		AE6E5DB9273FB6FF00523EA8 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		AE6E5DBA273FB6FF00523EA8 /* Trace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trace.swift; sourceTree = "<group>"; };
+		AE6E5DBB273FB6FF00523EA8 /* CrossLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrossLine.swift; sourceTree = "<group>"; };
+		AE6E5DBC273FB6FF00523EA8 /* TouchTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchTestViewController.swift; sourceTree = "<group>"; };
+		AE6E5DBD273FB6FF00523EA8 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		AE6E5DBE273FB6FF00523EA8 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		AE72F51F273EB9A40060456A /* CitySearchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchResultView.swift; sourceTree = "<group>"; };
 		AE72F520273EB9A40060456A /* CityDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDB.swift; sourceTree = "<group>"; };
 		AE72F522273EB9A40060456A /* CityChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityChooseViewController.swift; sourceTree = "<group>"; };
@@ -1140,6 +1156,8 @@
 		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
 			isa = PBXGroup;
 			children = (
+				AE6E5DB7273FB6F000523EA8 /* Touch */,
+				AE6E5DB4273FB46F00523EA8 /* Motion */,
 				AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */,
 			);
 			path = Media_Hardware;
@@ -1167,6 +1185,28 @@
 				AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */,
 			);
 			path = Notifcation;
+			sourceTree = "<group>";
+		};
+		AE6E5DB4273FB46F00523EA8 /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */,
+			);
+			path = Motion;
+			sourceTree = "<group>";
+		};
+		AE6E5DB7273FB6F000523EA8 /* Touch */ = {
+			isa = PBXGroup;
+			children = (
+				AE6E5DBB273FB6FF00523EA8 /* CrossLine.swift */,
+				AE6E5DBD273FB6FF00523EA8 /* DrawView.swift */,
+				AE6E5DB9273FB6FF00523EA8 /* Line.swift */,
+				AE6E5DB8273FB6FF00523EA8 /* Settings.swift */,
+				AE6E5DBE273FB6FF00523EA8 /* SettingViewController.swift */,
+				AE6E5DBC273FB6FF00523EA8 /* TouchTestViewController.swift */,
+				AE6E5DBA273FB6FF00523EA8 /* Trace.swift */,
+			);
+			path = Touch;
 			sourceTree = "<group>";
 		};
 		AE72F51E273EB9820060456A /* CityChoose */ = {
@@ -1653,10 +1693,12 @@
 				AE62CB9027254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CB4C27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CB3427254946007D51CD /* Number+Extension.swift in Sources */,
+				AE6E5DC0273FB6FF00523EA8 /* Line.swift in Sources */,
 				AE890D1127240DFE00FAB7D7 /* Global.swift in Sources */,
 				AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE62CBC227255C20007D51CD /* LimitTextView.swift in Sources */,
 				AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */,
+				AE6E5DC2273FB6FF00523EA8 /* CrossLine.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE62CAFB272542DC007D51CD /* ShadowEncoder.swift in Sources */,
@@ -1668,6 +1710,7 @@
 				AE62CBF3272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
 				AE4D0914273032F400899D2C /* ReuseWebView.swift in Sources */,
 				AE62CAD1272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
+				AE6E5DC4273FB6FF00523EA8 /* DrawView.swift in Sources */,
 				AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */,
 				AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */,
@@ -1682,6 +1725,7 @@
 				AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */,
 				AE62CB5827254947007D51CD /* UIView+Base.swift in Sources */,
 				AE62CBD427255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
+				AE6E5DC3273FB6FF00523EA8 /* TouchTestViewController.swift in Sources */,
 				AE62CB1F2725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CB8A27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAEF272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
@@ -1714,6 +1758,7 @@
 				AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */,
 				AE72F529273EB9A50060456A /* CityDB.swift in Sources */,
 				AE62CB1B27254873007D51CD /* BaseModel.swift in Sources */,
+				AE6E5DB6273FB48E00523EA8 /* ImageRotationViewController.swift in Sources */,
 				AE62CB6E27254B12007D51CD /* GrandCue.swift in Sources */,
 				AE72F52B273EB9A50060456A /* CityChooseViewController.swift in Sources */,
 				AE62CADA272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
@@ -1729,7 +1774,9 @@
 				AE4D08FB273032E700899D2C /* DiskFileCache.swift in Sources */,
 				AE62CB4F27254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */,
+				AE6E5DC5273FB6FF00523EA8 /* SettingViewController.swift in Sources */,
 				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
+				AE6E5DC1273FB6FF00523EA8 /* Trace.swift in Sources */,
 				AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */,
 				AE62CA712725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE62CA532725429A007D51CD /* UIView+Layout.m in Sources */,
@@ -1772,6 +1819,7 @@
 				AE4D0910273032F300899D2C /* WebViewReusePool.swift in Sources */,
 				AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE62CB4627254947007D51CD /* UITableView+Extension.swift in Sources */,
+				AE6E5DBF273FB6FF00523EA8 /* Settings.swift in Sources */,
 				AE62CBD127255C20007D51CD /* SlideMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
