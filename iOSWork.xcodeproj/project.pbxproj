@@ -8,45 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
-		AE4D08E9273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08ED273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08EE273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
-		AE4D08EF2730264100899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */; };
-		AE4D08F4273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */; };
-		AE4D08F5273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */; };
 		AE4D08FB273032E700899D2C /* DiskFileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F7273032E700899D2C /* DiskFileCache.swift */; };
-		AE4D08FC273032E700899D2C /* DiskFileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F7273032E700899D2C /* DiskFileCache.swift */; };
-		AE4D08FD273032E700899D2C /* DiskFileCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F7273032E700899D2C /* DiskFileCache.swift */; };
 		AE4D08FE273032E700899D2C /* MemeryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F8273032E700899D2C /* MemeryCache.swift */; };
-		AE4D08FF273032E700899D2C /* MemeryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F8273032E700899D2C /* MemeryCache.swift */; };
-		AE4D0900273032E700899D2C /* MemeryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F8273032E700899D2C /* MemeryCache.swift */; };
 		AE4D0901273032E700899D2C /* H5ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F9273032E700899D2C /* H5ResourceCache.swift */; };
-		AE4D0902273032E700899D2C /* H5ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F9273032E700899D2C /* H5ResourceCache.swift */; };
-		AE4D0903273032E700899D2C /* H5ResourceCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08F9273032E700899D2C /* H5ResourceCache.swift */; };
 		AE4D0904273032E700899D2C /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08FA273032E700899D2C /* CacheProtocol.swift */; };
-		AE4D0905273032E700899D2C /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08FA273032E700899D2C /* CacheProtocol.swift */; };
-		AE4D0906273032E700899D2C /* CacheProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08FA273032E700899D2C /* CacheProtocol.swift */; };
 		AE4D0908273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */; };
-		AE4D0909273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */; };
-		AE4D090A273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D0907273032EF00899D2C /* H5SecondOpenUtil.swift */; };
 		AE4D0910273032F300899D2C /* WebViewReusePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090C273032F300899D2C /* WebViewReusePool.swift */; };
-		AE4D0911273032F300899D2C /* WebViewReusePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090C273032F300899D2C /* WebViewReusePool.swift */; };
-		AE4D0912273032F300899D2C /* WebViewReusePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090C273032F300899D2C /* WebViewReusePool.swift */; };
 		AE4D0914273032F400899D2C /* ReuseWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090E273032F300899D2C /* ReuseWebView.swift */; };
-		AE4D0915273032F400899D2C /* ReuseWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090E273032F300899D2C /* ReuseWebView.swift */; };
-		AE4D0916273032F400899D2C /* ReuseWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D090E273032F300899D2C /* ReuseWebView.swift */; };
 		AE4D091B273032FC00899D2C /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D091A273032FC00899D2C /* upload.html */; };
 		AE4D091C273032FC00899D2C /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D091A273032FC00899D2C /* upload.html */; };
 		AE4D091D273032FC00899D2C /* upload.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D091A273032FC00899D2C /* upload.html */; };
 		AE4D091F2730331100899D2C /* HttpInterceptWebMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D091E2730331100899D2C /* HttpInterceptWebMenuViewController.swift */; };
 		AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
-		AE4D09242730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
-		AE4D09252730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
 		AE4D09272730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */; };
-		AE4D09282730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */; };
-		AE4D09292730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */; };
 		AE62C9BC27253D70007D51CD /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9BB27253D70007D51CD /* GrandKit */; };
 		AE62C9C227253EFF007D51CD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9C127253EFF007D51CD /* Kingfisher */; };
 		AE62C9C527253F1C007D51CD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9C427253F1C007D51CD /* SnapKit */; };
@@ -64,18 +42,6 @@
 		AE62C9E7272541D0007D51CD /* gif0.gif in Resources */ = {isa = PBXBuildFile; fileRef = AE62C9E5272541D0007D51CD /* gif0.gif */; };
 		AE62C9EA272541E2007D51CD /* question.html in Resources */ = {isa = PBXBuildFile; fileRef = AE62C9E9272541E1007D51CD /* question.html */; };
 		AE62C9EB272541E2007D51CD /* question.html in Resources */ = {isa = PBXBuildFile; fileRef = AE62C9E9272541E1007D51CD /* question.html */; };
-		AE62C9F227254238007D51CD /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62C9EE27254231007D51CD /* AMapLocationKit.framework */; };
-		AE62C9F327254238007D51CD /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62C9EE27254231007D51CD /* AMapLocationKit.framework */; };
-		AE62C9F427254238007D51CD /* AMapLocationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62C9EE27254231007D51CD /* AMapLocationKit.framework */; };
-		AE62C9F527254238007D51CD /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62C9EF27254232007D51CD /* AMapFoundationKit.framework */; };
-		AE62C9F627254238007D51CD /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62C9EF27254232007D51CD /* AMapFoundationKit.framework */; };
-		AE62C9F727254238007D51CD /* AMapFoundationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62C9EF27254232007D51CD /* AMapFoundationKit.framework */; };
-		AE62C9F827254238007D51CD /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE62C9F027254233007D51CD /* AMap.bundle */; };
-		AE62C9F927254238007D51CD /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE62C9F027254233007D51CD /* AMap.bundle */; };
-		AE62C9FA27254238007D51CD /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE62C9F027254233007D51CD /* AMap.bundle */; };
-		AE62C9FB27254238007D51CD /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62C9F127254238007D51CD /* MAMapKit.framework */; };
-		AE62C9FC27254238007D51CD /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62C9F127254238007D51CD /* MAMapKit.framework */; };
-		AE62C9FD27254238007D51CD /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE62C9F127254238007D51CD /* MAMapKit.framework */; };
 		AE62CA0A2725425A007D51CD /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62C9FF27254259007D51CD /* FMDatabase.h */; };
 		AE62CA0B2725425A007D51CD /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA0027254259007D51CD /* FMDatabaseQueue.m */; };
 		AE62CA0C2725425A007D51CD /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA0027254259007D51CD /* FMDatabaseQueue.m */; };
@@ -397,21 +363,36 @@
 		AE62CBDE27255C20007D51CD /* GrandTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBBA27255C20007D51CD /* GrandTextView.swift */; };
 		AE62CBDF27255C20007D51CD /* GrandTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBBA27255C20007D51CD /* GrandTextView.swift */; };
 		AE62CBE727256690007D51CD /* UIMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBE627256690007D51CD /* UIMenuViewController.swift */; };
-		AE62CBE827256690007D51CD /* UIMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBE627256690007D51CD /* UIMenuViewController.swift */; };
-		AE62CBE927256690007D51CD /* UIMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBE627256690007D51CD /* UIMenuViewController.swift */; };
 		AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */; };
-		AE62CBEC2725669C007D51CD /* DataMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */; };
-		AE62CBED2725669C007D51CD /* DataMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */; };
 		AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEE272566A2007D51CD /* ProjectMenuViewController.swift */; };
-		AE62CBF0272566A2007D51CD /* ProjectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEE272566A2007D51CD /* ProjectMenuViewController.swift */; };
-		AE62CBF1272566A2007D51CD /* ProjectMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBEE272566A2007D51CD /* ProjectMenuViewController.swift */; };
 		AE62CBF3272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
-		AE62CBF4272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
-		AE62CBF5272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
 		AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
 		AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
-		AE633910272AF37D00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
-		AE633911272AF37E00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
+		AE72F528273EB9A50060456A /* CitySearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F51F273EB9A40060456A /* CitySearchResultView.swift */; };
+		AE72F529273EB9A50060456A /* CityDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F520273EB9A40060456A /* CityDB.swift */; };
+		AE72F52B273EB9A50060456A /* CityChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F522273EB9A40060456A /* CityChooseViewController.swift */; };
+		AE72F52C273EB9A50060456A /* CitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F523273EB9A50060456A /* CitySearchView.swift */; };
+		AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F525273EB9A50060456A /* CityChooseViewController+Delegate.swift */; };
+		AE72F52F273EB9A50060456A /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = AE72F526273EB9A50060456A /* city.json */; };
+		AE72F530273EB9A50060456A /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F527273EB9A50060456A /* CityTableViewCell.swift */; };
+		AE72F532273EBDA60060456A /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F524273EB9A50060456A /* AddressInfo.swift */; };
+		AE72F533273EBDA80060456A /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F524273EB9A50060456A /* AddressInfo.swift */; };
+		AE72F536273EBDAC0060456A /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = AE72F526273EB9A50060456A /* city.json */; };
+		AE72F537273EBDAE0060456A /* CityChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F522273EB9A40060456A /* CityChooseViewController.swift */; };
+		AE72F538273EBDB10060456A /* CityChooseViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F525273EB9A50060456A /* CityChooseViewController+Delegate.swift */; };
+		AE72F539273EBDB30060456A /* CityDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F520273EB9A40060456A /* CityDB.swift */; };
+		AE72F53B273EBDD20060456A /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F527273EB9A50060456A /* CityTableViewCell.swift */; };
+		AE72F53C273EBDD40060456A /* CitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F523273EB9A50060456A /* CitySearchView.swift */; };
+		AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F51F273EB9A40060456A /* CitySearchResultView.swift */; };
+		AE72F53E273EBDDB0060456A /* CitySearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F51F273EB9A40060456A /* CitySearchResultView.swift */; };
+		AE72F53F273EBDDD0060456A /* CitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F523273EB9A50060456A /* CitySearchView.swift */; };
+		AE72F540273EBDDF0060456A /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F524273EB9A50060456A /* AddressInfo.swift */; };
+		AE72F541273EBDE20060456A /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = AE72F526273EB9A50060456A /* city.json */; };
+		AE72F542273EBDE40060456A /* CityChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F522273EB9A40060456A /* CityChooseViewController.swift */; };
+		AE72F543273EBDE60060456A /* CityChooseViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F525273EB9A50060456A /* CityChooseViewController+Delegate.swift */; };
+		AE72F544273EBDE80060456A /* CityDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F520273EB9A40060456A /* CityDB.swift */; };
+		AE72F545273EBDEC0060456A /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F527273EB9A50060456A /* CityTableViewCell.swift */; };
+		AE72F548273EBEC20060456A /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; };
 		AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7425272251E300F0C19C /* AppDelegate.swift */; };
 		AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7427272251E300F0C19C /* SceneDelegate.swift */; };
 		AE7E742A272251E300F0C19C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7429272251E300F0C19C /* ViewController.swift */; };
@@ -427,13 +408,7 @@
 		AE7E746D2722533800F0C19C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E746C2722533800F0C19C /* main.m */; };
 		AE7F912A272AC23C00733BC8 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */; };
 		AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */; };
-		AE7F912D272AC35E00733BC8 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */; };
-		AE7F912E272AC35F00733BC8 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */; };
-		AE7F912F272AC36200733BC8 /* MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */; };
-		AE7F9130272AC36200733BC8 /* MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */; };
 		AE7F9133272AC3C900733BC8 /* OffSreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */; };
-		AE7F9134272AC3CB00733BC8 /* OffSreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */; };
-		AE7F9135272AC3CC00733BC8 /* OffSreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */; };
 		AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; };
 		AE890D0A27240DEC00FAB7D7 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
@@ -445,14 +420,6 @@
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
 		AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */; };
-		AEF0EBEB2729479400DCA7B8 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */; };
-		AEF0EBEC2729479500DCA7B8 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */; };
-		AEF0EBED2729479700DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
-		AEF0EBEE2729479700DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
-		AEF0EBEF2729479900DCA7B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE3272946FF00DCA7B8 /* Group.swift */; };
-		AEF0EBF02729479900DCA7B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE3272946FF00DCA7B8 /* Group.swift */; };
-		AEF0EBF12729479B00DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
-		AEF0EBF22729479C00DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -473,6 +440,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		AE72F552273EBFC70060456A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE7E745A272252AC00F0C19C /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -533,10 +510,6 @@
 		AE62C9E1272541C3007D51CD /* cxk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cxk.mp4; sourceTree = "<group>"; };
 		AE62C9E5272541D0007D51CD /* gif0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif0.gif; sourceTree = "<group>"; };
 		AE62C9E9272541E1007D51CD /* question.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = question.html; sourceTree = "<group>"; };
-		AE62C9EE27254231007D51CD /* AMapLocationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapLocationKit.framework; sourceTree = "<group>"; };
-		AE62C9EF27254232007D51CD /* AMapFoundationKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapFoundationKit.framework; sourceTree = "<group>"; };
-		AE62C9F027254233007D51CD /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
-		AE62C9F127254238007D51CD /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		AE62C9FF27254259007D51CD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		AE62CA0027254259007D51CD /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		AE62CA0127254259007D51CD /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
@@ -671,6 +644,14 @@
 		AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMenuViewController.swift; sourceTree = "<group>"; };
 		AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
 		AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationViewController.swift; sourceTree = "<group>"; };
+		AE72F51F273EB9A40060456A /* CitySearchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchResultView.swift; sourceTree = "<group>"; };
+		AE72F520273EB9A40060456A /* CityDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDB.swift; sourceTree = "<group>"; };
+		AE72F522273EB9A40060456A /* CityChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityChooseViewController.swift; sourceTree = "<group>"; };
+		AE72F523273EB9A50060456A /* CitySearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchView.swift; sourceTree = "<group>"; };
+		AE72F524273EB9A50060456A /* AddressInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressInfo.swift; sourceTree = "<group>"; };
+		AE72F525273EB9A50060456A /* CityChooseViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CityChooseViewController+Delegate.swift"; sourceTree = "<group>"; };
+		AE72F526273EB9A50060456A /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
+		AE72F527273EB9A50060456A /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		AE7E7422272251E300F0C19C /* iOSWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7E7425272251E300F0C19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7E7427272251E300F0C19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -711,7 +692,6 @@
 			files = (
 				AE62C9CE27254009007D51CD /* IQKeyboardManagerSwift in Frameworks */,
 				AE62CB0A272542F8007D51CD /* libmp3lame.a in Frameworks */,
-				AE62C9F227254238007D51CD /* AMapLocationKit.framework in Frameworks */,
 				AE62C9C227253EFF007D51CD /* Kingfisher in Frameworks */,
 				AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */,
 				AE62C9D42725405D007D51CD /* KRProgressHUD in Frameworks */,
@@ -719,10 +699,8 @@
 				AE62C9BC27253D70007D51CD /* GrandKit in Frameworks */,
 				AE62C9DE27254113007D51CD /* SwiftyJSON in Frameworks */,
 				AE62C9C827253F33007D51CD /* Alamofire in Frameworks */,
-				AE62C9FB27254238007D51CD /* MAMapKit.framework in Frameworks */,
 				AE62C9DA272540AA007D51CD /* SwiftSoup in Frameworks */,
 				AE62C9C527253F1C007D51CD /* SnapKit in Frameworks */,
-				AE62C9F527254238007D51CD /* AMapFoundationKit.framework in Frameworks */,
 				AE62C9D127254039007D51CD /* Kanna in Frameworks */,
 				AE62C9CB27253FE1007D51CD /* Gifu in Frameworks */,
 			);
@@ -732,10 +710,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE62C9FC27254238007D51CD /* MAMapKit.framework in Frameworks */,
 				AE62CB0B272542F8007D51CD /* libmp3lame.a in Frameworks */,
-				AE62C9F327254238007D51CD /* AMapLocationKit.framework in Frameworks */,
-				AE62C9F627254238007D51CD /* AMapFoundationKit.framework in Frameworks */,
+				AE72F548273EBEC20060456A /* Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,13 +742,10 @@
 			files = (
 				AE62CBA12725593F007D51CD /* IQKeyboardManagerSwift in Frameworks */,
 				AE62CBA3272559A7007D51CD /* Alamofire in Frameworks */,
-				AE62C9FD27254238007D51CD /* MAMapKit.framework in Frameworks */,
 				AE62CB0C272542F8007D51CD /* libmp3lame.a in Frameworks */,
 				AE62CBA9272559D1007D51CD /* SwiftyJSON in Frameworks */,
 				AE62CBA5272559AB007D51CD /* GrandKit in Frameworks */,
-				AE62C9F427254238007D51CD /* AMapLocationKit.framework in Frameworks */,
 				AE62CB9F2725593A007D51CD /* SnapKit in Frameworks */,
-				AE62C9F727254238007D51CD /* AMapFoundationKit.framework in Frameworks */,
 				AE62CBA7272559BA007D51CD /* KRProgressHUD in Frameworks */,
 				AE62CB9D27255937007D51CD /* Kingfisher in Frameworks */,
 			);
@@ -885,26 +858,15 @@
 		AE62C9EC272541F2007D51CD /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AE72F51E273EB9820060456A /* CityChoose */,
 				AE62CB6727254B12007D51CD /* Toast */,
 				AE62CB04272542F8007D51CD /* Lame */,
 				AE62CA85272542D1007D51CD /* Palette */,
 				AE62CA7E272542AF007D51CD /* FishHook */,
 				AE62CA1F2725429A007D51CD /* TZImagePickerController */,
 				AE62C9FE27254259007D51CD /* fmdb */,
-				AE62C9ED27254216007D51CD /* AMap */,
 			);
 			path = Vender;
-			sourceTree = "<group>";
-		};
-		AE62C9ED27254216007D51CD /* AMap */ = {
-			isa = PBXGroup;
-			children = (
-				AE62C9F027254233007D51CD /* AMap.bundle */,
-				AE62C9EF27254232007D51CD /* AMapFoundationKit.framework */,
-				AE62C9EE27254231007D51CD /* AMapLocationKit.framework */,
-				AE62C9F127254238007D51CD /* MAMapKit.framework */,
-			);
-			path = AMap;
 			sourceTree = "<group>";
 		};
 		AE62C9FE27254259007D51CD /* fmdb */ = {
@@ -1205,6 +1167,21 @@
 				AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */,
 			);
 			path = Notifcation;
+			sourceTree = "<group>";
+		};
+		AE72F51E273EB9820060456A /* CityChoose */ = {
+			isa = PBXGroup;
+			children = (
+				AE72F524273EB9A50060456A /* AddressInfo.swift */,
+				AE72F526273EB9A50060456A /* city.json */,
+				AE72F522273EB9A40060456A /* CityChooseViewController.swift */,
+				AE72F525273EB9A50060456A /* CityChooseViewController+Delegate.swift */,
+				AE72F520273EB9A40060456A /* CityDB.swift */,
+				AE72F51F273EB9A40060456A /* CitySearchResultView.swift */,
+				AE72F523273EB9A50060456A /* CitySearchView.swift */,
+				AE72F527273EB9A50060456A /* CityTableViewCell.swift */,
+			);
+			path = CityChoose;
 			sourceTree = "<group>";
 		};
 		AE7E7419272251E300F0C19C = {
@@ -1522,6 +1499,7 @@
 				AE890CFF27240DEC00FAB7D7 /* Sources */,
 				AE890D0027240DEC00FAB7D7 /* Frameworks */,
 				AE890D0127240DEC00FAB7D7 /* Resources */,
+				AE72F552273EBFC70060456A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1613,12 +1591,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE62C9F827254238007D51CD /* AMap.bundle in Resources */,
 				AE4D08EC273025DB00899D2C /* demo.html in Resources */,
 				AE62C9E2272541C3007D51CD /* cxk.mp4 in Resources */,
 				AE7E7432272251E500F0C19C /* LaunchScreen.storyboard in Resources */,
 				AE62C9E6272541D0007D51CD /* gif0.gif in Resources */,
 				AE62CA592725429B007D51CD /* TZImagePickerController.bundle in Resources */,
+				AE72F52F273EB9A50060456A /* city.json in Resources */,
 				AE4D091B273032FC00899D2C /* upload.html in Resources */,
 				AE62C9EA272541E2007D51CD /* question.html in Resources */,
 				AE7E742F272251E500F0C19C /* Assets.xcassets in Resources */,
@@ -1629,12 +1607,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE62C9F927254238007D51CD /* AMap.bundle in Resources */,
 				AE4D08ED273025DB00899D2C /* demo.html in Resources */,
 				AE62C9E3272541C3007D51CD /* cxk.mp4 in Resources */,
 				AE7E74472722528400F0C19C /* Preview Assets.xcassets in Resources */,
 				AE62C9E7272541D0007D51CD /* gif0.gif in Resources */,
 				AE62CA5A2725429B007D51CD /* TZImagePickerController.bundle in Resources */,
+				AE72F541273EBDE20060456A /* city.json in Resources */,
 				AE4D091C273032FC00899D2C /* upload.html in Resources */,
 				AE62C9EB272541E2007D51CD /* question.html in Resources */,
 				AE7E74442722528400F0C19C /* Assets.xcassets in Resources */,
@@ -1652,7 +1630,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE62C9FA27254238007D51CD /* AMap.bundle in Resources */,
+				AE72F536273EBDAC0060456A /* city.json in Resources */,
 				AE4D08EE273025DB00899D2C /* demo.html in Resources */,
 				AE62CA5B2725429B007D51CD /* TZImagePickerController.bundle in Resources */,
 				AE4D091D273032FC00899D2C /* upload.html in Resources */,
@@ -1692,6 +1670,7 @@
 				AE62CAD1272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
 				AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */,
+				AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
 				AE62CBDA27255C20007D51CD /* FlowLayout.swift in Sources */,
@@ -1707,6 +1686,7 @@
 				AE62CB8A27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAEF272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE4D0908273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
+				AE72F533273EBDA80060456A /* AddressInfo.swift in Sources */,
 				AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE62CB1527254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
@@ -1732,8 +1712,10 @@
 				AE62CBBF27255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CAD4272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
 				AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */,
+				AE72F529273EB9A50060456A /* CityDB.swift in Sources */,
 				AE62CB1B27254873007D51CD /* BaseModel.swift in Sources */,
 				AE62CB6E27254B12007D51CD /* GrandCue.swift in Sources */,
+				AE72F52B273EB9A50060456A /* CityChooseViewController.swift in Sources */,
 				AE62CADA272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				AE62CB6027254977007D51CD /* Dict+Extension.swift in Sources */,
 				AE62CAAA272542D1007D51CD /* PaletteColorModel.m in Sources */,
@@ -1757,6 +1739,7 @@
 				AE62CAE6272542DC007D51CD /* ShadowDownloader.swift in Sources */,
 				AE62CBBC27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CA192725425A007D51CD /* FMDatabasePool.m in Sources */,
+				AE72F52C273EB9A50060456A /* CitySearchView.swift in Sources */,
 				AE62CB5C2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE62CA1C2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE62CA7A2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
@@ -1772,8 +1755,10 @@
 				AE62CBD727255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CA772725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
 				AE62CA81272542AF007D51CD /* fishhook.c in Sources */,
+				AE72F530273EB9A50060456A /* CityTableViewCell.swift in Sources */,
 				AE62CB4327254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CB01272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
+				AE72F528273EB9A50060456A /* CitySearchResultView.swift in Sources */,
 				AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */,
 				AE62CAF2272542DC007D51CD /* CameraModel.swift in Sources */,
 				AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */,
@@ -1799,17 +1784,17 @@
 				AE62CB9127254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CA782725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
 				AE62CB4727254947007D51CD /* UITableView+Extension.swift in Sources */,
-				AE4D08F4273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CB8227254DD7007D51CD /* Tool.swift in Sources */,
 				AE62CA6A2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
+				AE72F543273EBDE60060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE62CB3E27254947007D51CD /* WKWebView+Extension.swift in Sources */,
 				AE62CBC927255C20007D51CD /* HintView.swift in Sources */,
 				AE62CA7B2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CB3827254946007D51CD /* UIViewController+Extension.swift in Sources */,
+				AE72F544273EBDE80060456A /* CityDB.swift in Sources */,
 				AE62CB6C27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
-				AE4D0905273032E700899D2C /* CacheProtocol.swift in Sources */,
 				AE62CAD8272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CB3B27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CB8E27254DD7007D51CD /* DBTool.swift in Sources */,
@@ -1817,18 +1802,14 @@
 				AE62CA752725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CB5D2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE62CAD5272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
-				AEF0EBF12729479B00DCA7B8 /* Apply.swift in Sources */,
 				AE62CAE7272542DC007D51CD /* ShadowDownloader.swift in Sources */,
-				AE4D08FF273032E700899D2C /* MemeryCache.swift in Sources */,
 				AE7E74422722528200F0C19C /* ContentView.swift in Sources */,
-				AE7F9134272AC3CB00733BC8 /* OffSreenRenderViewController.swift in Sources */,
-				AE4D0909273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
+				AE72F540273EBDDF0060456A /* AddressInfo.swift in Sources */,
 				AE62CAF0272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE62CA0C2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AE62CA9C272542D1007D51CD /* Palette.m in Sources */,
 				AE62CB1627254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CB8527254DD7007D51CD /* FPSTool.swift in Sources */,
-				AE4D09282730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */,
 				AE62CB5327254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE62CA9F272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE62CB7227254B12007D51CD /* Toast.swift in Sources */,
@@ -1845,26 +1826,24 @@
 				AE62CA142725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB202725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CA1A2725425A007D51CD /* FMDatabasePool.m in Sources */,
-				AE4D0915273032F400899D2C /* ReuseWebView.swift in Sources */,
 				AE62CB1927254873007D51CD /* ResultInfo.swift in Sources */,
+				AE72F542273EBDE40060456A /* CityChooseViewController.swift in Sources */,
 				AE62CB4427254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CACF272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CAAB272542D1007D51CD /* PaletteColorModel.m in Sources */,
-				AE4D09242730333100899D2C /* CacheWebViewController.swift in Sources */,
 				AE890D1227240DFE00FAB7D7 /* Global.swift in Sources */,
 				AE62CAF9272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE62CBBD27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CBD827255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CBD527255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
 				AE62CAA3272542D1007D51CD /* UIImage+Palette.m in Sources */,
-				AE4D08FC273032E700899D2C /* DiskFileCache.swift in Sources */,
 				AE62CA4F2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE62CA5D2725429B007D51CD /* TZProgressView.m in Sources */,
-				AE62CBE827256690007D51CD /* UIMenuViewController.swift in Sources */,
 				AE62CB5927254947007D51CD /* UIView+Base.swift in Sources */,
 				AE62CAE4272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
 				AE62CA462725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE62CB6F27254B12007D51CD /* GrandCue.swift in Sources */,
+				AE72F53F273EBDDD0060456A /* CitySearchView.swift in Sources */,
 				AE62CB7F27254DD7007D51CD /* LogTool.swift in Sources */,
 				AE62CAED272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
 				AE62CB0F272542F8007D51CD /* TransformMP3.m in Sources */,
@@ -1872,40 +1851,30 @@
 				AE62CBC027255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CB5027254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE62CACC272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
-				AE7F912D272AC35E00733BC8 /* MemoryViewController.swift in Sources */,
 				AE62CB8827254DD7007D51CD /* HttpClient.swift in Sources */,
-				AEF0EBEF2729479900DCA7B8 /* Group.swift in Sources */,
 				AE62CB6127254977007D51CD /* Dict+Extension.swift in Sources */,
-				AE62CBEC2725669C007D51CD /* DataMenuViewController.swift in Sources */,
 				AE62CAFF272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CB3227254946007D51CD /* UIWindow+Base.swift in Sources */,
 				AE62CAAE272542D1007D51CD /* PriorityBoxArray.m in Sources */,
-				AE633910272AF37D00FBAAA3 /* NotifcationViewController.swift in Sources */,
-				AE4D08E9273025BA00899D2C /* HandleJSViewController.swift in Sources */,
 				AE62CB4D27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CAF6272542DC007D51CD /* FocusFrameView.swift in Sources */,
-				AEF0EBED2729479700DCA7B8 /* Semaphore.swift in Sources */,
 				AE62CB4127254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AE62CA99272542D1007D51CD /* PaletteColorUtils.m in Sources */,
 				AE62CA422725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CADB272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				AE62CB02272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
-				AE4D0911273032F300899D2C /* WebViewReusePool.swift in Sources */,
 				AE62CA492725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE62CA1D2725425A007D51CD /* FMResultSet.m in Sources */,
-				AE62CBF4272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
 				AE62CA572725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
-				AE7F912F272AC36200733BC8 /* MemoryLeak.swift in Sources */,
+				AE72F545273EBDEC0060456A /* CityTableViewCell.swift in Sources */,
 				AE62CB65272549A3007D51CD /* String+Extension.swift in Sources */,
-				AE62CBF0272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CB4A27254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE62CA112725425A007D51CD /* FMDatabaseAdditions.m in Sources */,
 				AE62CBD227255C20007D51CD /* SlideMenuView.swift in Sources */,
+				AE72F53E273EBDDB0060456A /* CitySearchResultView.swift in Sources */,
 				AE62CA82272542AF007D51CD /* fishhook.c in Sources */,
 				AE62CB8B27254DD7007D51CD /* CatoMonitor.swift in Sources */,
-				AEF0EBEB2729479400DCA7B8 /* ThreadViewController.swift in Sources */,
 				AE62CB5627254947007D51CD /* UIImage+Base.swift in Sources */,
-				AE4D0902273032E700899D2C /* H5ResourceCache.swift in Sources */,
 				AE62CBDB27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE62CBDE27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE62CB3527254946007D51CD /* Number+Extension.swift in Sources */,
@@ -1944,21 +1913,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE62CB5727254947007D51CD /* UIImage+Base.swift in Sources */,
-				AE4D08F5273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CAE2272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CA1E2725425A007D51CD /* FMResultSet.m in Sources */,
-				AE7F912E272AC35F00733BC8 /* MemoryViewController.swift in Sources */,
-				AEF0EBF02729479900DCA7B8 /* Group.swift in Sources */,
 				AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */,
 				AE62CBC127255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CBCA27255C20007D51CD /* HintView.swift in Sources */,
 				AE62CAD6272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
 				AE62CAFD272542DC007D51CD /* ShadowEncoder.swift in Sources */,
+				AE72F53C273EBDD40060456A /* CitySearchView.swift in Sources */,
 				AE62CA4D2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE62CA9D272542D1007D51CD /* Palette.m in Sources */,
+				AE72F538273EBDB10060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE62CB66272549A3007D51CD /* String+Extension.swift in Sources */,
 				AE62CB8F27254DD7007D51CD /* DBTool.swift in Sources */,
-				AE62CBE927256690007D51CD /* UIMenuViewController.swift in Sources */,
 				AE62CB7327254B12007D51CD /* Toast.swift in Sources */,
 				AE62CA502725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE62CBAE27255C0E007D51CD /* LayoutButton.swift in Sources */,
@@ -1971,18 +1938,17 @@
 				AE62CAF7272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE62CB8927254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CAEE272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
-				AEF0EBF22729479C00DCA7B8 /* Apply.swift in Sources */,
-				AE7F9135272AC3CC00733BC8 /* OffSreenRenderViewController.swift in Sources */,
 				AE62CA122725425A007D51CD /* FMDatabaseAdditions.m in Sources */,
 				AE62CA732725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE62CAD3272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
+				AE72F532273EBDA60060456A /* AddressInfo.swift in Sources */,
 				AE62CB3F27254947007D51CD /* WKWebView+Extension.swift in Sources */,
 				AE62CB1A27254873007D51CD /* ResultInfo.swift in Sources */,
 				AE62CBD327255C20007D51CD /* SlideMenuView.swift in Sources */,
 				AE62CB4E27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CAFA272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE62CB3627254946007D51CD /* Number+Extension.swift in Sources */,
-				AE4D09252730333100899D2C /* CacheWebViewController.swift in Sources */,
+				AE72F539273EBDB30060456A /* CityDB.swift in Sources */,
 				AE62CB7027254B12007D51CD /* GrandCue.swift in Sources */,
 				AE62CB00272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CA9A272542D1007D51CD /* PaletteColorUtils.m in Sources */,
@@ -1990,7 +1956,6 @@
 				AE62CA432725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAE5272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
 				AE62CBDF27255C20007D51CD /* GrandTextView.swift in Sources */,
-				AE4D0916273032F400899D2C /* ReuseWebView.swift in Sources */,
 				AE62CB4227254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AE62CA6B2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE62CA552725429B007D51CD /* UIView+Layout.m in Sources */,
@@ -1998,7 +1963,6 @@
 				AE62CA5E2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE62CB3C27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CBC727255C20007D51CD /* ProgressButton.swift in Sources */,
-				AE4D08FD273032E700899D2C /* DiskFileCache.swift in Sources */,
 				AE62CB6D27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CB5427254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE62CA792725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
@@ -2006,41 +1970,32 @@
 				AE62CAEB272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CB3927254947007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE62CB4827254947007D51CD /* UITableView+Extension.swift in Sources */,
-				AE62CBF1272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AE62CB6227254977007D51CD /* Dict+Extension.swift in Sources */,
-				AE4D0912273032F300899D2C /* WebViewReusePool.swift in Sources */,
 				AE62CB03272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AE62CB8327254DD7007D51CD /* Tool.swift in Sources */,
 				AE62CA152725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB5E2725495E007D51CD /* Array+Extension.swift in Sources */,
-				AE4D08EF2730264100899D2C /* HandleJSViewController.swift in Sources */,
 				AE62CBD027255C20007D51CD /* GridView.swift in Sources */,
 				AE62CAAC272542D1007D51CD /* PaletteColorModel.m in Sources */,
-				AE633911272AF37E00FBAAA3 /* NotifcationViewController.swift in Sources */,
 				AE62CA7C2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CBBE27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CB9227254DD7007D51CD /* Auth.swift in Sources */,
-				AE4D090A273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
-				AE4D0900273032E700899D2C /* MemeryCache.swift in Sources */,
-				AEF0EBEC2729479500DCA7B8 /* ThreadViewController.swift in Sources */,
 				AE62CBD927255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CA582725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE62CAE8272542DC007D51CD /* ShadowDownloader.swift in Sources */,
 				AE62CB5A27254947007D51CD /* UIView+Base.swift in Sources */,
 				AE62CA642725429B007D51CD /* TZImageManager.m in Sources */,
 				AE62CAD9272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
-				AEF0EBEE2729479700DCA7B8 /* Semaphore.swift in Sources */,
 				AE62CB8C27254DD7007D51CD /* CatoMonitor.swift in Sources */,
-				AE4D0906273032E700899D2C /* CacheProtocol.swift in Sources */,
 				AE62CAAF272542D1007D51CD /* PriorityBoxArray.m in Sources */,
 				AE62CAF1272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
+				AE72F537273EBDAE0060456A /* CityChooseViewController.swift in Sources */,
 				AE62CA682725429B007D51CD /* TZPhotoPickerController.m in Sources */,
-				AE62CBF5272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
 				AE62CB4527254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CB1D27254873007D51CD /* BaseModel.swift in Sources */,
 				AE62CAF4272542DC007D51CD /* CameraModel.swift in Sources */,
 				AE62CBDC27255C20007D51CD /* FlowLayout.swift in Sources */,
-				AE4D0903273032E700899D2C /* H5ResourceCache.swift in Sources */,
+				AE72F53B273EBDD20060456A /* CityTableViewCell.swift in Sources */,
 				AE62CB212725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CAB2272542D1007D51CD /* PaletteTarget.m in Sources */,
 				AE62CAA0272542D1007D51CD /* PaletteSwatch.m in Sources */,
@@ -2048,16 +2003,14 @@
 				AE62CADF272542DC007D51CD /* ShadowPlayer.swift in Sources */,
 				AE62CB3327254946007D51CD /* UIWindow+Base.swift in Sources */,
 				AE62CBD627255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
-				AE7F9130272AC36200733BC8 /* MemoryLeak.swift in Sources */,
 				AE62CBC427255C20007D51CD /* LimitTextView.swift in Sources */,
 				AE62CB1727254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
-				AE4D09292730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */,
+				AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */,
 				AE62CB10272542F8007D51CD /* TransformMP3.m in Sources */,
 				AE62CB8627254DD7007D51CD /* FPSTool.swift in Sources */,
-				AE62CBED2725669C007D51CD /* DataMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2139,7 +2092,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2194,7 +2147,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2372,6 +2325,7 @@
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KeyboardWork;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2397,6 +2351,7 @@
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KeyboardWork;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2497,6 +2452,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2538,6 +2494,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
