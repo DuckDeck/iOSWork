@@ -26,6 +26,10 @@
 		AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
 		AE4D09272730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */; };
 		AE61165B27410CF8008466AB /* TwoSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165A27410CF8008466AB /* TwoSideView.swift */; };
+		AE61165F27410F2C008466AB /* GrandSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165E27410F2C008466AB /* GrandSlider.swift */; };
+		AE61166027410F2F008466AB /* GrandSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165E27410F2C008466AB /* GrandSlider.swift */; };
+		AE61166127410F30008466AB /* GrandSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165E27410F2C008466AB /* GrandSlider.swift */; };
+		AE6116632741280B008466AB /* GradientLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6116622741280B008466AB /* GradientLabel.swift */; };
 		AE62C9BC27253D70007D51CD /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9BB27253D70007D51CD /* GrandKit */; };
 		AE62C9C227253EFF007D51CD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9C127253EFF007D51CD /* Kingfisher */; };
 		AE62C9C527253F1C007D51CD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE62C9C427253F1C007D51CD /* SnapKit */; };
@@ -525,6 +529,8 @@
 		AE4D09222730333100899D2C /* CacheWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheWebViewController.swift; sourceTree = "<group>"; };
 		AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpInterceptWebViewController.swift; sourceTree = "<group>"; };
 		AE61165A27410CF8008466AB /* TwoSideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSideView.swift; sourceTree = "<group>"; };
+		AE61165E27410F2C008466AB /* GrandSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandSlider.swift; sourceTree = "<group>"; };
+		AE6116622741280B008466AB /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
 		AE62C9E1272541C3007D51CD /* cxk.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cxk.mp4; sourceTree = "<group>"; };
 		AE62C9E5272541D0007D51CD /* gif0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gif0.gif; sourceTree = "<group>"; };
 		AE62C9E9272541E1007D51CD /* question.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = question.html; sourceTree = "<group>"; };
@@ -1143,6 +1149,7 @@
 				AE62CBB627255C1F007D51CD /* SlideMenuView.swift */,
 				AE62CBB027255C1F007D51CD /* TimerButton.swift */,
 				AE62CBAB27255C0E007D51CD /* LayoutButton.swift */,
+				AE61165E27410F2C008466AB /* GrandSlider.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1418,6 +1425,7 @@
 				AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */,
 				AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */,
 				AE61165A27410CF8008466AB /* TwoSideView.swift */,
+				AE6116622741280B008466AB /* GradientLabel.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -1791,6 +1799,7 @@
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CB3A27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CA5C2725429B007D51CD /* TZProgressView.m in Sources */,
+				AE61166027410F2F008466AB /* GrandSlider.swift in Sources */,
 				AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */,
 				AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */,
 				AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
@@ -1814,6 +1823,7 @@
 				AE72F529273EB9A50060456A /* CityDB.swift in Sources */,
 				AE62CB1B27254873007D51CD /* BaseModel.swift in Sources */,
 				AE6E5DB6273FB48E00523EA8 /* ImageRotationViewController.swift in Sources */,
+				AE6116632741280B008466AB /* GradientLabel.swift in Sources */,
 				AE62CB6E27254B12007D51CD /* GrandCue.swift in Sources */,
 				AE72F52B273EB9A50060456A /* CityChooseViewController.swift in Sources */,
 				AE62CADA272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
@@ -1905,6 +1915,7 @@
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE62CAD8272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CB3B27254947007D51CD /* Foundation+Extension.swift in Sources */,
+				AE61166127410F30008466AB /* GrandSlider.swift in Sources */,
 				AE62CB8E27254DD7007D51CD /* DBTool.swift in Sources */,
 				AE62CBC627255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE62CA752725429B007D51CD /* TZLocationManager.m in Sources */,
@@ -2091,6 +2102,7 @@
 				AE62CBD927255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CA582725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE62CAE8272542DC007D51CD /* ShadowDownloader.swift in Sources */,
+				AE61165F27410F2C008466AB /* GrandSlider.swift in Sources */,
 				AE62CB5A27254947007D51CD /* UIView+Base.swift in Sources */,
 				AE62CA642725429B007D51CD /* TZImageManager.m in Sources */,
 				AE62CAD9272542DC007D51CD /* ShadowPlayBack.swift in Sources */,

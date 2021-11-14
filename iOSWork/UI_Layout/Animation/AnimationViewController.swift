@@ -16,6 +16,11 @@ class AnimationViewController:BaseViewController{
     let viewlayer = UIView()
     let viewRotation = UIView()
     let vTwoSide = TwoSideView()
+    var slider:GrandSlider?
+    var currentImageNameCount = 1
+    var views:[UIView] = [UIView]()
+    var viewReplication = UIView(frame: CGRect(x: 0, y: 2100, width: UIScreen.main.bounds.size.width, height: 100))
+    var viewReplication2 = UIView(frame: CGRect(x: 0, y: 2200, width: UIScreen.main.bounds.size.width, height: 100))
 
     
     override func viewDidLoad() {
@@ -162,7 +167,6 @@ class AnimationViewController:BaseViewController{
         lbl3.snp.makeConstraints { make in
             make.left.equalTo(10)
             make.top.equalTo(lbl2.snp.bottom).offset(400)
-            make.bottom.equalTo(-700)
             make.height.equalTo(25)
         }
 
@@ -197,7 +201,102 @@ class AnimationViewController:BaseViewController{
             }
         }
 
+        let lbl4 = UILabel().text(text: "轮番图").color(color: UIColor.red).addTo(view: sc)
+        lbl4.snp.makeConstraints { make in
+            make.left.equalTo(10)
+            make.top.equalTo(lbl3.snp.bottom).offset(650)
+            make.height.equalTo(25)
+        }
+
+        
+        var img = UIImageView()
+        img.frame = CGRect(x: 0, y: 0, width: 300, height: 240)
+        img.kf.setImage(with:URL(string: "https://up.enterdesk.com/edpic/8f/3f/54/8f3f541605b08c893226e6f593b5905f.jpg"))
+        img.layer.borderWidth = 0.5
+        img.layer.borderColor = UIColor.red.cgColor
+        views.append(img)
+        img = UIImageView()
+        img.frame = CGRect(x: 0, y: 0, width: 300, height: 240)
+        img.kf.setImage(with: URL(string: "https://up.enterdesk.com/edpic/0e/76/f7/0e76f703c83883674702228a504550fd.jpg"))
+        views.append(img)
+        img = UIImageView()
+        img.frame = CGRect(x: 0, y: 0, width: 300, height: 240)
+        img.kf.setImage(with: URL(string: "https://up.enterdesk.com/edpic/18/cd/fd/18cdfdef962cb5b8c58bf69b7bdc3905.jpg"))
+        views.append(img)
+        img = UIImageView()
+        img.frame = CGRect(x: 0, y: 0, width: 300, height: 240)
+        img.kf.setImage(with: URL(string: "https://img1.gamersky.com/upimg/users/2021/05/23/origin_202105231402365717.jpg"))
+        views.append(img)
+        img = UIImageView()
+        img.frame = CGRect(x: 0, y: 0, width: 300, height: 240)
+        img.kf.setImage(with: URL(string: "https://img1.gamersky.com/upimg/users/2021/05/23/origin_202105231358568024.jpg"))
+        views.append(img)
+        img = UIImageView()
+        img.frame = CGRect(x: 0, y: 0, width: 300, height: 240)
+        img.kf.setImage(with: URL(string: "https://img1.gamersky.com/upimg/users/2021/05/23/origin_202105231401022973.jpg"))
+        views.append(img)
+        img = UIImageView()
+        img.frame = CGRect(x: 0, y: 0, width: 300, height: 240)
+        img.kf.setImage(with: URL(string: "https://img1.gamersky.com/upimg/users/2021/10/31/origin_202110311359353552.jpg"))
+        views.append(img)
+        slider = GrandSlider(frame: CGRect(x: 100, y: vTwoSide.bottom + 20, width: 300, height: 240),animationDuration:2)
+        slider?.views = views
+        slider?.tap   = {(view,index) in
+            
+        }
+        slider?.dotGap = 10
+        slider?.dotWidth = 20
+        slider?.normalDotColor = UIColor.blue
+        slider?.highlightedDotColor = UIColor.red
+        sc.addSubview(slider!)
+
+        let lbl5 = UILabel().text(text: "Replication动画").color(color: UIColor.red).addTo(view: sc)
+        lbl5.snp.makeConstraints { make in
+            make.centerX.equalTo(ScreenWidth / 2)
+            make.top.equalTo(lbl4.snp.bottom).offset(160)
+            make.height.equalTo(25)
+        }
+
+        
+        setupView1()
+        
+        setupView2()
     
+    
+        let lbl6 = UILabel().text(text: "Gradient动画").color(color: UIColor.red).addTo(view: sc)
+        lbl6.snp.makeConstraints { make in
+            make.centerX.equalTo(ScreenWidth / 2)
+            make.top.equalTo(lbl5.snp.bottom).offset(280)
+            make.bottom.equalTo(-500)
+            make.height.equalTo(25)
+        }
+        
+        let lblGradient = GradientLabel(frame: CGRect(x: ScreenWidth / 2 - 150, y: 2400, width: 300, height: 44))
+        lblGradient.text = ">---滑动来解锁"
+        sc.addSubview(lblGradient)
+
+        let imgGra = UIImageView(frame: CGRect(x: 80, y: 2380, width: ScreenWidth - 160, height: 240))
+        imgGra.clipsToBounds = true
+        imgGra.contentMode = .scaleAspectFill
+        imgGra.image = UIImage(named: "4")
+        sc.addSubview(imgGra)
+        let viewGradient = UIView(frame: imgGra.frame)
+        sc.addSubview(viewGradient)
+        let gradientColor = CAGradientLayer()
+        gradientColor.frame = img.bounds
+        let color1 = UIColor.white.withAlphaComponent(0.1)
+        let color2 = UIColor.white
+        gradientColor.colors = [color1.cgColor,color2.cgColor]
+        //设置渲染的起始结束位置（纵向渐变）
+        gradientColor.startPoint = CGPoint(x: 0, y: 0)
+        gradientColor.endPoint = CGPoint(x: 0, y: 1)
+        gradientColor.cornerRadius = 21
+        //定义每种颜色所在的位置
+        let gradientLocations:[NSNumber] = [0.0, 1.0]
+        gradientColor.locations = gradientLocations
+        viewGradient.layer.addSublayer(gradientColor)
+
+        
     }
     
     
@@ -243,4 +342,124 @@ class AnimationViewController:BaseViewController{
         view3D.layer.sublayerTransform = transform
     }
 
+    
+    func setupView1()  {
+        sc.addSubview(viewReplication)
+        // Do any additional setup after loading the view.
+        
+        //CALayer的子类CAReplicatorLayer通过它可以对其创建的对象进行复制,从而做出复杂的效果.
+        let replicator = CAReplicatorLayer()
+        let dot = CALayer()
+        let dotLength:CGFloat = 6.0
+        let dotOffset:CGFloat = 8.0
+        replicator.frame = viewReplication.bounds
+        viewReplication.layer.addSublayer(replicator)
+        
+        dot.frame = CGRect(x: replicator.frame.size.width - dotLength, y: replicator.position.y, width: dotLength, height: dotLength)
+        dot.backgroundColor = UIColor.lightGray.cgColor
+        dot.borderColor = UIColor(white: 1.0, alpha: 1.0).cgColor
+        dot.borderWidth = 0.5
+        dot.cornerRadius = 1.5
+        replicator.addSublayer(dot)
+        
+        replicator.instanceCount = Int(viewReplication.frame.size.width / dotOffset)
+        replicator.instanceTransform = CATransform3DMakeTranslation(-dotOffset, 0.0, 0.0)
+        
+        //2 . 让它动起来,并且让每一个dot做一点延迟.
+        //        let move = CABasicAnimation(keyPath: "position.y")
+        //        move.fromValue = dot.position.y
+        //        move.toValue = dot.position.y - 50
+        //        move.duration  = 1.0
+        //        move.repeatCount = 10
+        //        dot.addAnimation(move, forKey: nil)
+        //        replicator.instanceDelay = 0.02
+        
+        //加个更大的动画效果
+        
+        replicator.instanceDelay = 0.02
+        let scale = CABasicAnimation(keyPath: "transform")
+        scale.fromValue = NSValue(caTransform3D:CATransform3DIdentity)
+        scale.toValue = NSValue(caTransform3D:CATransform3DMakeScale(1.4, 15, 1.0))
+        scale.duration = 0.33
+        scale.repeatCount = Float.infinity
+        scale.autoreverses = true
+        scale.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        dot.add(scale, forKey: "dotScale")
+        
+        //4 .添加一个渐变色
+        let fade = CABasicAnimation(keyPath: "opacity")
+        fade.fromValue = 1.0
+        fade.toValue = 0.2
+        fade.duration = 0.33
+        fade.beginTime = CACurrentMediaTime() + 0.33
+        fade.repeatCount = Float.infinity
+        fade.autoreverses = true
+        fade.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        dot.add(fade, forKey: "dotOpacity")
+        //5 . 添加渐变的颜色
+        let tint = CABasicAnimation(keyPath: "backgroundColor")
+        tint.fromValue = UIColor.magenta.cgColor
+        tint.toValue = UIColor.cyan.cgColor
+        tint.duration = 0.66
+        tint.beginTime = CACurrentMediaTime() + 0.28
+        tint.fillMode = CAMediaTimingFillMode.backwards
+        tint.repeatCount = Float.infinity
+        tint.autoreverses = true
+        tint.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        dot.add(tint, forKey: "dotColor")
+        
+        //设置成上下摇摆
+        let initialRotation = CABasicAnimation(keyPath: "instanceTransform.rotation")
+        initialRotation.fromValue = 0.0
+        initialRotation.toValue = 0.01
+        initialRotation.duration = 0.33
+        initialRotation.isRemovedOnCompletion = false
+        initialRotation.fillMode = CAMediaTimingFillMode.backwards
+        initialRotation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        replicator.add(initialRotation, forKey: "initialRocation")
+        
+        let rotation = CABasicAnimation(keyPath: "instanceTransform.rotation")
+        rotation.fromValue = 0.01
+        rotation.toValue = -0.01
+        rotation.duration = 0.99
+        rotation.beginTime = CACurrentMediaTime() + 0.33
+        rotation.repeatCount = Float.infinity
+        rotation.autoreverses = true
+        rotation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        replicator.add(rotation, forKey: "replicatorRotation")
+    }
+    
+    func setupView2()  {
+        sc.addSubview(viewReplication2)
+        let layer = CALayer()
+        layer.frame = CGRect(x: 0, y: 0, width: 10, height: 80)
+        layer.backgroundColor = UIColor.white.cgColor
+        layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        layer.add(scaleYAnimation(), forKey: "scaleAnimation")
+        
+       
+        let replicator = CAReplicatorLayer()
+        replicator.instanceCount = 10  //        设置复制层里面包含子层的个数
+        replicator.instanceTransform = CATransform3DMakeTranslation(45, 10, 0) //        设置子层相对于前一个层的偏移量
+        replicator.instanceDelay = 0.2 //        设置子层相对于前一个层的延迟时间
+        replicator.instanceColor = UIColor.green.cgColor //        设置层的颜色，(前提是要设置层的背景颜色，如果没有设置背景颜色，默认是透明的，再设置这个属性不会有效果。
+        replicator.instanceGreenOffset = -0.2 //        颜色的渐变，相对于前一个层的渐变（取值-1~+1）.RGB有三种颜色，所以这里也是绿红蓝三种。
+        replicator.instanceRedOffset = -0.2
+        replicator.instanceBlueOffset = -0.2
+        replicator.addSublayer(layer) //        需要把子层加入到复制层中，复制层按照前面设置的参数自动复制
+        
+        viewReplication2.layer.addSublayer(replicator)
+    }
+    
+ 
+   
+    
+    func scaleYAnimation() -> CABasicAnimation {
+        let anim = CABasicAnimation(keyPath: "transform.scale.y")
+        anim.toValue = 0.1
+        anim.duration = 0.4
+        anim.autoreverses = true
+        anim.repeatCount = MAXFLOAT
+        return anim
+    }
 }
