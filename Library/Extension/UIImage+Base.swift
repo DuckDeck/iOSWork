@@ -54,7 +54,7 @@ extension UIImage{
     
     
     
-    func imageByScalingAspectToMinSize(targetSize:CGSize)->UIImage{
+   open func imageByScalingAspectToMinSize(targetSize:CGSize)->UIImage{
         // 获取源图片的宽和高
         let imgSize  = self.size
         let width = imgSize.width
@@ -105,7 +105,7 @@ extension UIImage{
     }
     
     
-    class func reSizeImage(sourceImage : UIImage) -> UIImage{
+    open class func reSizeImage(sourceImage : UIImage) -> UIImage{
         let maxImageSize : CGFloat = 1024.0
         var newSize =  CGSize.init(width: sourceImage.size.width, height: sourceImage.size.height)
         var tempHeight = newSize.height / maxImageSize;
@@ -186,7 +186,7 @@ extension UIImage{
         return newImage ?? self
     }
     
-    func imageByScalingAspectToMaxSize(targetSize:CGSize) -> UIImage
+    open  func imageByScalingAspectToMaxSize(targetSize:CGSize) -> UIImage
     {
         // 获取源图片的宽和高
         let imgSize  = self.size
@@ -237,7 +237,7 @@ extension UIImage{
     }
     
     
-    func imageByScalingToSize(targetSize:CGSize) -> UIImage{
+    open func imageByScalingToSize(targetSize:CGSize) -> UIImage{
         UIGraphicsBeginImageContext(targetSize)
         var anchorRect = CGRect()
         anchorRect.origin = CGPoint()
@@ -248,7 +248,7 @@ extension UIImage{
         return newImg!
     }
     
-    func imageRotatedByRadians(radians:CGFloat) -> UIImage{
+    open func imageRotatedByRadians(radians:CGFloat) -> UIImage{
         let t = CGAffineTransform(rotationAngle: radians)
         let rotatedRect = CGRect(x: 0.0, y: 0.0, width: self.size.width, height: self.size.height).applying(t)
         let rotatedSize = rotatedRect.size
@@ -263,11 +263,11 @@ extension UIImage{
         return newImg!
     }
     
-    func imageRotatedByDegrees(degrees:CGFloat) -> UIImage{
+    open  func imageRotatedByDegrees(degrees:CGFloat) -> UIImage{
         return imageRotatedByRadians(radians: degrees * CGFloat(Double.pi) / 180)
     }
     
-    func fixImageOrientation() -> UIImage {
+    open func fixImageOrientation() -> UIImage {
         if self.imageOrientation == .up{
             return self
         }
@@ -309,14 +309,14 @@ extension UIImage{
         return self
     }
     
-    func saveToDocuments(imgName:String){
+    open  func saveToDocuments(imgName:String){
 //        var path = (NSHomeDirectory() as NSString).appendingPathComponent("Document").appendingPathComponent(imgName)
 //        UIImagePNGRepresentation(self).writeToFile(path, atomically: true)
         // Save to document
     }
     
     
-    func addWatermark(text:String,point:CGPoint,repeatMark:Bool = true,attribute:[NSAttributedString.Key:Any]? = [NSAttributedString.Key.foregroundColor:UIColor.white]) -> UIImage {
+    open  func addWatermark(text:String,point:CGPoint,repeatMark:Bool = true,attribute:[NSAttributedString.Key:Any]? = [NSAttributedString.Key.foregroundColor:UIColor.white]) -> UIImage {
         
         UIGraphicsBeginImageContext(self.size)
         let fontSize = self.size.width / 23
@@ -331,7 +331,7 @@ extension UIImage{
         return newImage ?? self
     }
     
-    func addWatermark(maskImage:UIImage,point:CGPoint = CGPoint(x: 0, y: 0), repeatMark:Bool = true,  scale:CGFloat = 1) -> UIImage {
+    open func addWatermark(maskImage:UIImage,point:CGPoint = CGPoint(x: 0, y: 0), repeatMark:Bool = true,  scale:CGFloat = 1) -> UIImage {
         UIGraphicsBeginImageContext(self.size)
         //        print("self.size")
         //        print(self.size)
@@ -384,14 +384,14 @@ extension UIImage{
     }
     
     
-    func saveToAlbum() {
+    open  func saveToAlbum() {
         try? PHPhotoLibrary.shared().performChangesAndWait {
             PHAssetChangeRequest.creationRequestForAsset(from: self)
         }
     }
     
     
-    func compressWithMaxLength(maxLength:UInt) -> Data? {
+    open func compressWithMaxLength(maxLength:UInt) -> Data? {
         var compression:CGFloat = 1
         guard var data = self.jpegData(compressionQuality: compression) else{
             return nil
@@ -434,7 +434,7 @@ extension UIImage{
         return data
     }
     //wrong size
-    func getFileSize() -> (Double,String) {
+    open  func getFileSize() -> (Double,String) {
          var data = self.pngData()
         if data == nil {
             data = self.jpegData(compressionQuality: 1.0)
@@ -452,7 +452,7 @@ extension UIImage{
         return (dataLength,String.init(format: "%.3f%@",dataLength, arrType[index]));
     }
     
-    func getFileSizeInfo(allowedUnits: ByteCountFormatter.Units = .useMB,
+    open  func getFileSizeInfo(allowedUnits: ByteCountFormatter.Units = .useMB,
                              countStyle: ByteCountFormatter.CountStyle = .file) -> String? {
             // https://developer.apple.com/documentation/foundation/bytecountformatter
         let formatter = ByteCountFormatter()
@@ -461,18 +461,18 @@ extension UIImage{
         return getSizeInfo(formatter: formatter)
     }
 
-    func getFileSize(allowedUnits: ByteCountFormatter.Units = .useMB,
+    open func getFileSize(allowedUnits: ByteCountFormatter.Units = .useMB,
                      countStyle: ByteCountFormatter.CountStyle = .memory) -> Double? {
         guard let num = getFileSizeInfo(allowedUnits: allowedUnits, countStyle: countStyle)?.getNumbers().first else { return nil }
         return Double(truncating: num)
     }
 
-    func getSizeInfo(formatter: ByteCountFormatter, compressionQuality: CGFloat = 1.0) -> String? {
+    open  func getSizeInfo(formatter: ByteCountFormatter, compressionQuality: CGFloat = 1.0) -> String? {
         guard let imageData = jpegData(compressionQuality: compressionQuality) else { return nil }
         return formatter.string(fromByteCount: Int64(imageData.count))
     }
     
-    static func LoadBigImage(url: URL, to pointSize: CGSize, scale: CGFloat) ->UIImage {
+    public  static func LoadBigImage(url: URL, to pointSize: CGSize, scale: CGFloat) ->UIImage {
         
         let imageSourceOptions = [kCGImageSourceShouldCache:false] as CFDictionary
         let imageSource = CGImageSourceCreateWithURL(url as CFURL,imageSourceOptions)!
@@ -486,7 +486,7 @@ extension UIImage{
     }
     
     ///解码图片
-    func decodeImage(scale:CGFloat) -> UIImage? {
+    open  func decodeImage(scale:CGFloat) -> UIImage? {
         //获取当前图片数据源
         guard var imageRef = self.cgImage else{
             return nil

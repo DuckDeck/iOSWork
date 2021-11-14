@@ -7,7 +7,7 @@
 
 import UIKit
 class UIMenuViewController:BaseViewController{
-    var arrData = ["无限滚动的横向Table","样式Table","优化的Table","流式布局","GRID 布局","自己适应高度 Table"]
+    var arrData = ["无限滚动的横向Table","样式Table","优化的Table","流式布局","GRID 布局","自己适应高度 Table","动画效果"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -64,6 +64,10 @@ extension UIMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 5:
             let vc = SnapkitTableViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 6:
+            let vc = AnimationViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
 
