@@ -11,6 +11,6 @@
 #import "iOSPalette.h"
 #import "FMDB.h"
 #import "TZImagePickerController.h"
-
+#import "MJRefresh.h"
 
 #endif /* bridge_h */
