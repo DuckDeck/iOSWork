@@ -18,7 +18,7 @@ struct FiveStroke: Codable { //好像GrandModel的自动保存已经失效？一
     static let FiveStrokeLog = GrandStore(name: "FiveStrokeLog", defaultValue: [FiveStroke]())
     
     static func getFiveStroke(key:String,completed:@escaping ((_ result:ResultInfo)->Void)){
-        let url = "http://lovelive.ink:7110/five/\(key)"
+        let url = "http://lovelive.ink:9000/five/\(key)"
         
         HttpClient.get(url.urlEncoded()).completion { (data, err) in
             var result = ResultInfo(rawData: data)
