@@ -22,6 +22,10 @@ class AnimationViewController:BaseViewController{
     var viewReplication = UIView(frame: CGRect(x: 0, y: 2100, width: UIScreen.main.bounds.size.width, height: 100))
     var viewReplication2 = UIView(frame: CGRect(x: 0, y: 2200, width: UIScreen.main.bounds.size.width, height: 100))
 
+    let imgCombine = UIImageView(frame: CGRect(x: 70, y: 2700, width: ScreenWidth - 140, height: 200))
+    let imgSpring = UIImageView(frame: CGRect(x: 70, y: 2970, width: ScreenWidth - 140, height: 200))
+    let imgKeyframe = UIImageView(frame: CGRect(x: 70, y: 3250, width: ScreenWidth - 140, height: 200))
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -195,7 +199,7 @@ class AnimationViewController:BaseViewController{
         vTwoSide.frontView = imgFront
         vTwoSide.backView = imgBack
 
-        UIButton(frame: CGRect(x: 10, y: vTwoSide.top + 100, width: 50, height: 30)).title(title: "翻转").color(color: UIColor.green).addTo(view: sc).addClickEvent { btn in
+        UIButton(frame: CGRect(x: 10, y: vTwoSide.top + 100, width: 50, height: 30)).title(title: "点我翻转").color(color: UIColor.green).addTo(view: sc).addClickEvent { btn in
             self.vTwoSide.turn(duration: 1) {
                 
             }
@@ -244,8 +248,8 @@ class AnimationViewController:BaseViewController{
         slider?.tap   = {(view,index) in
             
         }
-        slider?.dotGap = 10
-        slider?.dotWidth = 20
+        slider?.dotGap = 5
+        slider?.dotWidth = 15
         slider?.normalDotColor = UIColor.blue
         slider?.highlightedDotColor = UIColor.red
         sc.addSubview(slider!)
@@ -267,7 +271,7 @@ class AnimationViewController:BaseViewController{
         lbl6.snp.makeConstraints { make in
             make.centerX.equalTo(ScreenWidth / 2)
             make.top.equalTo(lbl5.snp.bottom).offset(280)
-            make.bottom.equalTo(-500)
+            make.bottom.equalTo(-1200)
             make.height.equalTo(25)
         }
         
@@ -297,6 +301,29 @@ class AnimationViewController:BaseViewController{
         viewGradient.layer.addSublayer(gradientColor)
 
         
+        
+        UIButton(frame: CGRect(x: 80, y: imgGra.bottom + 30, width: ScreenWidth - 160, height: 30)).title(title: "点我开始组合动画").color(color: UIColor.green).addTo(view: sc).addClickEvent { btn in
+            self.startCombineAnimation()
+        }
+
+        imgCombine.image = UIImage(named: "5")
+        sc.addSubview(imgCombine)
+        
+
+        UIButton(frame: CGRect(x: 80, y: imgCombine.bottom + 30, width: ScreenWidth - 160, height: 30)).title(title: "点我开始弹性动画").color(color: UIColor.green).addTo(view: sc).addClickEvent { btn in
+            self.startSpringAnimation()
+        }
+
+        imgSpring.image = UIImage(named: "3")
+        sc.addSubview(imgSpring)
+
+        UIButton(frame: CGRect(x: 80, y: imgSpring.bottom + 30, width: ScreenWidth - 160, height: 30)).title(title: "点我开始关键动画").color(color: UIColor.green).addTo(view: sc).addClickEvent { btn in
+            self.startKeyFrameAnimation()
+        }
+
+        imgKeyframe.image = UIImage(named: "4")
+        sc.addSubview(imgKeyframe)
+
     }
     
     
@@ -462,4 +489,66 @@ class AnimationViewController:BaseViewController{
         anim.repeatCount = MAXFLOAT
         return anim
     }
+    
+    @objc func startCombineAnimation(){
+        let groupAnimation = CAAnimationGroup()
+        groupAnimation.beginTime = CACurrentMediaTime() + 1
+        groupAnimation.duration = 3
+        groupAnimation.isRemovedOnCompletion = false
+        groupAnimation.fillMode = CAMediaTimingFillMode.both
+        
+        groupAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        groupAnimation.repeatCount = 4.5
+        groupAnimation.autoreverses = true
+        groupAnimation.speed = 2.0
+        
+        let scaleDown = CABasicAnimation(keyPath: "transform.scale")
+        scaleDown.fromValue = 1.5
+        scaleDown.toValue = 1.0
+        
+        let rotate = CABasicAnimation(keyPath: "transform.rotation")
+        rotate.fromValue = CGFloat(Double.pi / 4)
+        rotate.toValue = 0.0
+        
+        let fade = CABasicAnimation(keyPath: "opacity")
+        fade.fromValue = 0.5
+        fade.toValue = 1.0
+        groupAnimation.animations = [scaleDown,rotate,fade]
+        imgCombine.layer.add(groupAnimation, forKey: "groupAnimation")
+
+    }
+    @objc func startSpringAnimation(){
+        let scaleDown = CASpringAnimation(keyPath: "transform.scale")
+        scaleDown.fromValue = 1.5
+        scaleDown.toValue  = 1.0
+        // settlingDuration：结算时间（根据动画参数估算弹簧开始运动到停止的时间，动画设置的时间最好根据此时间来设置）
+        scaleDown.duration = scaleDown.settlingDuration
+        // mass：质量（影响弹簧的惯性，质量越大，弹簧惯性越大，运动的幅度越大) 默认值为1
+        scaleDown.mass = 3.0
+        // stiffness：弹性系数（弹性系数越大，弹簧的运动越快）默认值为100
+        scaleDown.stiffness = 150.0
+        // damping：阻尼系数（阻尼系数越大，弹簧的停止越快）默认值为10
+        scaleDown.damping = 50
+        // initialVelocity：初始速率（弹簧动画的初始速度大小，弹簧运动的初始方向与初始速率的正负一致，若初始速率为0，表示忽略该属性）默认值为0
+        scaleDown.initialVelocity = 100
+        imgSpring.layer.add(scaleDown, forKey: nil)
+    }
+
+    @objc func startKeyFrameAnimation(){
+        let scaleDown = CASpringAnimation(keyPath: "transform.scale")
+        scaleDown.fromValue = 1.5
+        scaleDown.toValue  = 1.0
+        // settlingDuration：结算时间（根据动画参数估算弹簧开始运动到停止的时间，动画设置的时间最好根据此时间来设置）
+        scaleDown.duration = scaleDown.settlingDuration
+        // mass：质量（影响弹簧的惯性，质量越大，弹簧惯性越大，运动的幅度越大) 默认值为1
+        scaleDown.mass = 3.0
+        // stiffness：弹性系数（弹性系数越大，弹簧的运动越快）默认值为100
+        scaleDown.stiffness = 150.0
+        // damping：阻尼系数（阻尼系数越大，弹簧的停止越快）默认值为10
+        scaleDown.damping = 50
+        // initialVelocity：初始速率（弹簧动画的初始速度大小，弹簧运动的初始方向与初始速率的正负一致，若初始速率为0，表示忽略该属性）默认值为0
+        scaleDown.initialVelocity = 100
+        imgKeyframe.layer.add(scaleDown, forKey: nil)
+    }
+
 }
