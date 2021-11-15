@@ -610,6 +610,15 @@
 		AEE0118B274275E500C155D8 /* MsgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE0118A274275E500C155D8 /* MsgSend.m */; };
 		AEE0118C274277A600C155D8 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA7F272542AF007D51CD /* fishhook.c */; };
 		AEE0118D274277A700C155D8 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA7F272542AF007D51CD /* fishhook.c */; };
+		AEE01193274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇二：让Model实现自动归档.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0118F274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇二：让Model实现自动归档.swift */; };
+		AEE01194274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇三：让Model实现自动映射--将字典转化成Model).swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE01190274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇三：让Model实现自动映射--将字典转化成Model).swift */; };
+		AEE01195274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇一：让Model自我描述).swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE01191274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇一：让Model自我描述).swift */; };
+		AEE01196274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇四：使用Swift反射).swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE01192274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇四：使用Swift反射).swift */; };
+		AEE011982742780600C155D8 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE011972742780500C155D8 /* Regex.swift */; };
+		AEE0119A2742780A00C155D8 /* Fundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE011992742780A00C155D8 /* Fundation.swift */; };
+		AEE011A22742788000C155D8 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = AEE011A12742788000C155D8 /* main.c */; };
+		AEE011A82742788B00C155D8 /* a.c in Sources */ = {isa = PBXBuildFile; fileRef = AEE011A62742788B00C155D8 /* a.c */; };
+		AEE011A92742788B00C155D8 /* b.c in Sources */ = {isa = PBXBuildFile; fileRef = AEE011A72742788B00C155D8 /* b.c */; };
 		AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE3272946FF00DCA7B8 /* Group.swift */; };
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
@@ -683,6 +692,15 @@
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEE0119D2742788000C155D8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -1034,6 +1052,16 @@
 		AEE01185274275D300C155D8 /* Lock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lock.m; sourceTree = "<group>"; };
 		AEE01189274275E400C155D8 /* MsgSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgSend.h; sourceTree = "<group>"; };
 		AEE0118A274275E500C155D8 /* MsgSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgSend.m; sourceTree = "<group>"; };
+		AEE0118F274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇二：让Model实现自动归档.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOS开发技巧系列---打造强大的BaseModel(篇二：让Model实现自动归档.swift"; sourceTree = "<group>"; };
+		AEE01190274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇三：让Model实现自动映射--将字典转化成Model).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOS开发技巧系列---打造强大的BaseModel(篇三：让Model实现自动映射--将字典转化成Model).swift"; sourceTree = "<group>"; };
+		AEE01191274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇一：让Model自我描述).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOS开发技巧系列---打造强大的BaseModel(篇一：让Model自我描述).swift"; sourceTree = "<group>"; };
+		AEE01192274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇四：使用Swift反射).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOS开发技巧系列---打造强大的BaseModel(篇四：使用Swift反射).swift"; sourceTree = "<group>"; };
+		AEE011972742780500C155D8 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		AEE011992742780A00C155D8 /* Fundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fundation.swift; sourceTree = "<group>"; };
+		AEE0119F2742788000C155D8 /* CLangWork */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLangWork; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEE011A12742788000C155D8 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		AEE011A62742788B00C155D8 /* a.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = a.c; sourceTree = "<group>"; };
+		AEE011A72742788B00C155D8 /* b.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = b.c; sourceTree = "<group>"; };
 		AEF0EBE3272946FF00DCA7B8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AEF0EBE42729470000DCA7B8 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
@@ -1103,6 +1131,13 @@
 				AE62CB9F2725593A007D51CD /* SnapKit in Frameworks */,
 				AE62CBA7272559BA007D51CD /* KRProgressHUD in Frameworks */,
 				AE62CB9D27255937007D51CD /* Kingfisher in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEE0119C2742788000C155D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1610,6 +1645,7 @@
 				AE7E7450272252AC00F0C19C /* KeyboardWork */,
 				AE7E7460272252E700F0C19C /* ConsoleWork */,
 				AE7E746B2722533800F0C19C /* OCWork */,
+				AEE011A02742788000C155D8 /* CLangWork */,
 				AE7E7423272251E300F0C19C /* Products */,
 				AE62C9B827253D68007D51CD /* Frameworks */,
 			);
@@ -1624,6 +1660,7 @@
 				AE7E745F272252E700F0C19C /* ConsoleWork */,
 				AE7E746A2722533800F0C19C /* OCWork */,
 				AE890D0327240DEC00FAB7D7 /* Library.framework */,
+				AEE0119F2742788000C155D8 /* CLangWork */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1678,6 +1715,9 @@
 		AE7E7460272252E700F0C19C /* ConsoleWork */ = {
 			isa = PBXGroup;
 			children = (
+				AEE0118E274277FF00C155D8 /* iOS开发技巧 */,
+				AEE011992742780A00C155D8 /* Fundation.swift */,
+				AEE011972742780500C155D8 /* Regex.swift */,
 				AE7E7461272252E700F0C19C /* main.swift */,
 			);
 			path = ConsoleWork;
@@ -2119,6 +2159,27 @@
 			path = Thread;
 			sourceTree = "<group>";
 		};
+		AEE0118E274277FF00C155D8 /* iOS开发技巧 */ = {
+			isa = PBXGroup;
+			children = (
+				AEE0118F274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇二：让Model实现自动归档.swift */,
+				AEE01190274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇三：让Model实现自动映射--将字典转化成Model).swift */,
+				AEE01191274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇一：让Model自我描述).swift */,
+				AEE01192274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇四：使用Swift反射).swift */,
+			);
+			path = "iOS开发技巧";
+			sourceTree = "<group>";
+		};
+		AEE011A02742788000C155D8 /* CLangWork */ = {
+			isa = PBXGroup;
+			children = (
+				AEE011A62742788B00C155D8 /* a.c */,
+				AEE011A72742788B00C155D8 /* b.c */,
+				AEE011A12742788000C155D8 /* main.c */,
+			);
+			path = CLangWork;
+			sourceTree = "<group>";
+		};
 		AEF0EBE2272946E400DCA7B8 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
@@ -2328,6 +2389,23 @@
 			productReference = AE890D0327240DEC00FAB7D7 /* Library.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		AEE0119E2742788000C155D8 /* CLangWork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEE011A32742788000C155D8 /* Build configuration list for PBXNativeTarget "CLangWork" */;
+			buildPhases = (
+				AEE0119B2742788000C155D8 /* Sources */,
+				AEE0119C2742788000C155D8 /* Frameworks */,
+				AEE0119D2742788000C155D8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CLangWork;
+			productName = CLangWork;
+			productReference = AEE0119F2742788000C155D8 /* CLangWork */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -2357,6 +2435,9 @@
 					AE890D0227240DEC00FAB7D7 = {
 						CreatedOnToolsVersion = 13.0;
 						LastSwiftMigration = 1300;
+					};
+					AEE0119E2742788000C155D8 = {
+						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
@@ -2391,6 +2472,7 @@
 				AE7E745E272252E700F0C19C /* ConsoleWork */,
 				AE7E74692722533800F0C19C /* OCWork */,
 				AE890D0227240DEC00FAB7D7 /* Library */,
+				AEE0119E2742788000C155D8 /* CLangWork */,
 			);
 		};
 /* End PBXProject section */
@@ -2837,8 +2919,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE01194274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇三：让Model实现自动映射--将字典转化成Model).swift in Sources */,
+				AEE01195274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇一：让Model自我描述).swift in Sources */,
+				AEE0119A2742780A00C155D8 /* Fundation.swift in Sources */,
 				AEE0118D274277A700C155D8 /* fishhook.c in Sources */,
+				AEE011982742780600C155D8 /* Regex.swift in Sources */,
+				AEE01196274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇四：使用Swift反射).swift in Sources */,
 				AE7E7462272252E700F0C19C /* main.swift in Sources */,
+				AEE01193274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇二：让Model实现自动归档.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2993,6 +3081,16 @@
 				AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */,
 				AE62CB10272542F8007D51CD /* TransformMP3.m in Sources */,
 				AE62CB8627254DD7007D51CD /* FPSTool.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AEE0119B2742788000C155D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE011A92742788B00C155D8 /* b.c in Sources */,
+				AEE011A22742788000C155D8 /* main.c in Sources */,
+				AEE011A82742788B00C155D8 /* a.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3501,6 +3599,30 @@
 			};
 			name = Release;
 		};
+		AEE011A42742788000C155D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3YCGH6CCXA;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AEE011A52742788000C155D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3YCGH6CCXA;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -3563,6 +3685,15 @@
 			buildConfigurations = (
 				AE890D0C27240DEC00FAB7D7 /* Debug */,
 				AE890D0D27240DEC00FAB7D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEE011A32742788000C155D8 /* Build configuration list for PBXNativeTarget "CLangWork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AEE011A42742788000C155D8 /* Debug */,
+				AEE011A52742788000C155D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
