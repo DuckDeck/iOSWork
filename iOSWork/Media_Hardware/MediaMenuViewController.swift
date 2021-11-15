@@ -7,7 +7,7 @@
 
 import Foundation
 class MediaMenuViewController:BaseViewController{
-    var arrData = ["图片旋转","多点Touch","拍照片","视频列表","音频列表","GIF图片","水印"]
+    var arrData = ["图片旋转","多点Touch","拍照片","视频列表","音频列表","GIF图片","水印","Palette图片着色主题"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -69,6 +69,10 @@ extension MediaMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 6:
             let vc = WatermarkViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 7:
+            let vc = PaletteViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
 

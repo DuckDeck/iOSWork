@@ -448,6 +448,10 @@
 		AEE0104627424EE700C155D8 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0104527424EE700C155D8 /* TakePhotoViewController.swift */; };
 		AEE010492742500100C155D8 /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE010482742500100C155D8 /* GifViewController.swift */; };
 		AEE0104C2742509300C155D8 /* WatermarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0104B2742509300C155D8 /* WatermarkViewController.swift */; };
+		AEE0104F2742526700C155D8 /* PaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0104E2742526700C155D8 /* PaletteViewController.swift */; };
+		AEE010512742547C00C155D8 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE010502742547C00C155D8 /* CaptureSession.swift */; };
+		AEE010522742547C00C155D8 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE010502742547C00C155D8 /* CaptureSession.swift */; };
+		AEE010532742547C00C155D8 /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE010502742547C00C155D8 /* CaptureSession.swift */; };
 		AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE3272946FF00DCA7B8 /* Group.swift */; };
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
@@ -741,6 +745,8 @@
 		AEE0104527424EE700C155D8 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
 		AEE010482742500100C155D8 /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
 		AEE0104B2742509300C155D8 /* WatermarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkViewController.swift; sourceTree = "<group>"; };
+		AEE0104E2742526700C155D8 /* PaletteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteViewController.swift; sourceTree = "<group>"; };
+		AEE010502742547C00C155D8 /* CaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
 		AEF0EBE3272946FF00DCA7B8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AEF0EBE42729470000DCA7B8 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
@@ -1037,6 +1043,7 @@
 		AE62CAB4272542DC007D51CD /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				AEE010502742547C00C155D8 /* CaptureSession.swift */,
 				AE62CAB5272542DC007D51CD /* ShadowPlayer */,
 				AE62CAC1272542DC007D51CD /* VideoRecord */,
 				AE62CAC7272542DC007D51CD /* ShadowCamera */,
@@ -1206,6 +1213,7 @@
 		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
 			isa = PBXGroup;
 			children = (
+				AEE0104D2742525C00C155D8 /* Palette */,
 				AEE0104A2742508500C155D8 /* Watermark */,
 				AEE0104727424FEE00C155D8 /* GIF */,
 				AEE0104427424ED500C155D8 /* TakePhoto */,
@@ -1501,6 +1509,14 @@
 				AEE0104B2742509300C155D8 /* WatermarkViewController.swift */,
 			);
 			path = Watermark;
+			sourceTree = "<group>";
+		};
+		AEE0104D2742525C00C155D8 /* Palette */ = {
+			isa = PBXGroup;
+			children = (
+				AEE0104E2742526700C155D8 /* PaletteViewController.swift */,
+			);
+			path = Palette;
 			sourceTree = "<group>";
 		};
 		AEF0EBE2272946E400DCA7B8 /* Thread */ = {
@@ -1849,9 +1865,11 @@
 				AE6E5DC4273FB6FF00523EA8 /* DrawView.swift in Sources */,
 				AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */,
+				AEE010512742547C00C155D8 /* CaptureSession.swift in Sources */,
 				AEE0104627424EE700C155D8 /* TakePhotoViewController.swift in Sources */,
 				AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
+				AEE0104F2742526700C155D8 /* PaletteViewController.swift in Sources */,
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
 				AEE010492742500100C155D8 /* GifViewController.swift in Sources */,
 				AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */,
@@ -1998,6 +2016,7 @@
 				AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE62CAD8272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
+				AEE010522742547C00C155D8 /* CaptureSession.swift in Sources */,
 				AE62CB3B27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE61166127410F30008466AB /* GrandSlider.swift in Sources */,
 				AE62CB8E27254DD7007D51CD /* DBTool.swift in Sources */,
@@ -2158,6 +2177,7 @@
 				AE62CB8027254DD7007D51CD /* LogTool.swift in Sources */,
 				AE62CA432725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAE5272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
+				AEE010532742547C00C155D8 /* CaptureSession.swift in Sources */,
 				AE62CBDF27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE62CB4227254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AE62CA6B2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
