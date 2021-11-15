@@ -25,6 +25,18 @@ class AnimationViewController:BaseViewController{
     let imgCombine = UIImageView(frame: CGRect(x: 70, y: 2700, width: ScreenWidth - 140, height: 200))
     let imgSpring = UIImageView(frame: CGRect(x: 70, y: 2970, width: ScreenWidth - 140, height: 200))
     let imgKeyframe = UIImageView(frame: CGRect(x: 70, y: 3250, width: ScreenWidth - 140, height: 200))
+    
+    lazy var avatar1:AnimationVIew = {
+        let avaterView = AnimationVIew()
+        avaterView.frame = CGRect(x: ScreenWidth - 90 - 20, y: 3500, width: 90, height: 90)
+        return avaterView
+    }()
+    
+    lazy var avatar2:AnimationVIew = {
+        let avaterView = AnimationVIew()
+        avaterView.frame = CGRect(x: 20, y: 3500, width: 90, height: 90)
+        return avaterView
+    }()
 
     
     override func viewDidLoad() {
@@ -271,7 +283,7 @@ class AnimationViewController:BaseViewController{
         lbl6.snp.makeConstraints { make in
             make.centerX.equalTo(ScreenWidth / 2)
             make.top.equalTo(lbl5.snp.bottom).offset(280)
-            make.bottom.equalTo(-1200)
+            make.bottom.equalTo(-1300)
             make.height.equalTo(25)
         }
         
@@ -324,6 +336,24 @@ class AnimationViewController:BaseViewController{
         imgKeyframe.image = UIImage(named: "4")
         sc.addSubview(imgKeyframe)
 
+        
+        UIButton(frame: CGRect(x: 80, y: imgKeyframe.bottom + 30, width: ScreenWidth - 160, height: 30)).title(title: "点我开始特别动画").color(color: UIColor.green).addTo(view: sc).addClickEvent { btn in
+            let avaterSize = self.avatar1.frame.size
+            let morphSize = CGSize(width: avaterSize.width * 0.85, height: avaterSize.height * 1.05)
+            let bounceXOffset = ScreenWidth / 2.0 - self.avatar1.lineWidth * 2 - self.avatar1.frame.width
+            self.avatar2.boundsOffset(bounceXOffset, morphSize: morphSize)
+            self.avatar1.boundsOffset(self.avatar1.frame.origin.x - bounceXOffset, morphSize: morphSize)
+        }
+        
+        avatar1.image = UIImage(named: "2")!
+        avatar2.image = UIImage(named: "3")!
+        avatar1.lblName.text = "FOX"
+        avatar2.lblName.text = "DOG"
+        
+        sc.addSubview(avatar1)
+        sc.addSubview(avatar2)
+
+        
     }
     
     
@@ -535,20 +565,12 @@ class AnimationViewController:BaseViewController{
     }
 
     @objc func startKeyFrameAnimation(){
-        let scaleDown = CASpringAnimation(keyPath: "transform.scale")
-        scaleDown.fromValue = 1.5
-        scaleDown.toValue  = 1.0
-        // settlingDuration：结算时间（根据动画参数估算弹簧开始运动到停止的时间，动画设置的时间最好根据此时间来设置）
-        scaleDown.duration = scaleDown.settlingDuration
-        // mass：质量（影响弹簧的惯性，质量越大，弹簧惯性越大，运动的幅度越大) 默认值为1
-        scaleDown.mass = 3.0
-        // stiffness：弹性系数（弹性系数越大，弹簧的运动越快）默认值为100
-        scaleDown.stiffness = 150.0
-        // damping：阻尼系数（阻尼系数越大，弹簧的停止越快）默认值为10
-        scaleDown.damping = 50
-        // initialVelocity：初始速率（弹簧动画的初始速度大小，弹簧运动的初始方向与初始速率的正负一致，若初始速率为0，表示忽略该属性）默认值为0
-        scaleDown.initialVelocity = 100
-        imgKeyframe.layer.add(scaleDown, forKey: nil)
+        let swagger = CAKeyframeAnimation(keyPath: "transform.rotation")
+        swagger.duration = 3
+        swagger.repeatCount = MAXFLOAT
+        swagger.values = [0.0,-Double.pi / 16,0.0,Double.pi / 12,0.0]
+        swagger.keyTimes = [0.0,0.25,0.5,0.75,1.0]
+        imgKeyframe.layer.add(swagger, forKey: nil)
     }
 
 }

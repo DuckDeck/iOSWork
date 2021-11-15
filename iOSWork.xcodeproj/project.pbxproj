@@ -431,6 +431,7 @@
 		AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AE890D1127240DFE00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AE890D1227240DFE00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
+		AE94D3332742421A00ACEDDC /* AnimationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94D3322742421A00ACEDDC /* AnimationVIew.swift */; };
 		AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */; };
 		AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2CB273D66A700153D20 /* ShareViewController.swift */; };
 		AEB649BE273FCCB100BCBF4E /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649BD273FCCB100BCBF4E /* GridViewController.swift */; };
@@ -713,6 +714,7 @@
 		AE890CFD2724085D00FAB7D7 /* GrandKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = GrandKit; path = ../GrandKit; sourceTree = "<group>"; };
 		AE890D0327240DEC00FAB7D7 /* Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE890D0F27240DFC00FAB7D7 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		AE94D3322742421A00ACEDDC /* AnimationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVIew.swift; sourceTree = "<group>"; };
 		AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		AEADA2CB273D66A700153D20 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		AEB649BD273FCCB100BCBF4E /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
@@ -1426,6 +1428,7 @@
 				AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */,
 				AE61165A27410CF8008466AB /* TwoSideView.swift */,
 				AE6116622741280B008466AB /* GradientLabel.swift */,
+				AE94D3322742421A00ACEDDC /* AnimationVIew.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -1859,6 +1862,7 @@
 				AE62CA1C2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE62CA7A2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE6E5DCA273FC34600523EA8 /* StyleTableViewController.swift in Sources */,
+				AE94D3332742421A00ACEDDC /* AnimationVIew.swift in Sources */,
 				AE62CA692725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE62CB8D27254DD7007D51CD /* DBTool.swift in Sources */,
 				AE62CBAC27255C0E007D51CD /* LayoutButton.swift in Sources */,
