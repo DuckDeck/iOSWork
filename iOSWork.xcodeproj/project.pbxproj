@@ -591,6 +591,25 @@
 		AEE0115327425D8800C155D8 /* FullBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0112D27425D8700C155D8 /* FullBoard.swift */; };
 		AEE0115427425D8800C155D8 /* BaseBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0112E27425D8700C155D8 /* BaseBoard.swift */; };
 		AEE0115527425D8800C155D8 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0112F27425D8700C155D8 /* GameService.swift */; };
+		AEE0115B274275C200C155D8 /* SelDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01157274275C200C155D8 /* SelDemo.m */; };
+		AEE0115C274275C200C155D8 /* CFDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE0115A274275C200C155D8 /* CFDemo.m */; };
+		AEE01161274275C700C155D8 /* block相关.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE0115F274275C700C155D8 /* block相关.m */; };
+		AEE01162274275C700C155D8 /* BlockChain.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01160274275C700C155D8 /* BlockChain.m */; };
+		AEE0116C274275CB00C155D8 /* Hydron.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01164274275CB00C155D8 /* Hydron.m */; };
+		AEE0116D274275CB00C155D8 /* Invoke.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01165274275CB00C155D8 /* Invoke.m */; };
+		AEE0116E274275CB00C155D8 /* AspectProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01166274275CB00C155D8 /* AspectProxy.m */; };
+		AEE0116F274275CB00C155D8 /* HydronForward.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE0116A274275CB00C155D8 /* HydronForward.m */; };
+		AEE0117A274275CF00C155D8 /* MessageSend.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01171274275CF00C155D8 /* MessageSend.m */; };
+		AEE0117B274275CF00C155D8 /* CategoryDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01172274275CF00C155D8 /* CategoryDemo.m */; };
+		AEE0117C274275CF00C155D8 /* AboutKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01173274275CF00C155D8 /* AboutKVC.m */; };
+		AEE0117D274275CF00C155D8 /* object_setClass.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01174274275CF00C155D8 /* object_setClass.m */; };
+		AEE0117E274275CF00C155D8 /* Runspector.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01179274275CF00C155D8 /* Runspector.m */; };
+		AEE01186274275D400C155D8 /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01180274275D300C155D8 /* GCD.m */; };
+		AEE01187274275D400C155D8 /* ConcurrentProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01183274275D300C155D8 /* ConcurrentProcessor.m */; };
+		AEE01188274275D400C155D8 /* Lock.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE01185274275D300C155D8 /* Lock.m */; };
+		AEE0118B274275E500C155D8 /* MsgSend.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE0118A274275E500C155D8 /* MsgSend.m */; };
+		AEE0118C274277A600C155D8 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA7F272542AF007D51CD /* fishhook.c */; };
+		AEE0118D274277A700C155D8 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA7F272542AF007D51CD /* fishhook.c */; };
 		AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE3272946FF00DCA7B8 /* Group.swift */; };
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
@@ -983,6 +1002,38 @@
 		AEE0112D27425D8700C155D8 /* FullBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullBoard.swift; sourceTree = "<group>"; };
 		AEE0112E27425D8700C155D8 /* BaseBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBoard.swift; sourceTree = "<group>"; };
 		AEE0112F27425D8700C155D8 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		AEE01157274275C200C155D8 /* SelDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelDemo.m; sourceTree = "<group>"; };
+		AEE01158274275C200C155D8 /* CFDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFDemo.h; sourceTree = "<group>"; };
+		AEE01159274275C200C155D8 /* SelDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelDemo.h; sourceTree = "<group>"; };
+		AEE0115A274275C200C155D8 /* CFDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFDemo.m; sourceTree = "<group>"; };
+		AEE0115E274275C700C155D8 /* BlockChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockChain.h; sourceTree = "<group>"; };
+		AEE0115F274275C700C155D8 /* block相关.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "block相关.m"; sourceTree = "<group>"; };
+		AEE01160274275C700C155D8 /* BlockChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockChain.m; sourceTree = "<group>"; };
+		AEE01164274275CB00C155D8 /* Hydron.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hydron.m; sourceTree = "<group>"; };
+		AEE01165274275CB00C155D8 /* Invoke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invoke.m; sourceTree = "<group>"; };
+		AEE01166274275CB00C155D8 /* AspectProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AspectProxy.m; sourceTree = "<group>"; };
+		AEE01167274275CB00C155D8 /* HydronForward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HydronForward.h; sourceTree = "<group>"; };
+		AEE01168274275CB00C155D8 /* Invoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invoke.h; sourceTree = "<group>"; };
+		AEE01169274275CB00C155D8 /* Hydron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hydron.h; sourceTree = "<group>"; };
+		AEE0116A274275CB00C155D8 /* HydronForward.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HydronForward.m; sourceTree = "<group>"; };
+		AEE0116B274275CB00C155D8 /* AspectProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AspectProxy.h; sourceTree = "<group>"; };
+		AEE01171274275CF00C155D8 /* MessageSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSend.m; sourceTree = "<group>"; };
+		AEE01172274275CF00C155D8 /* CategoryDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryDemo.m; sourceTree = "<group>"; };
+		AEE01173274275CF00C155D8 /* AboutKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutKVC.m; sourceTree = "<group>"; };
+		AEE01174274275CF00C155D8 /* object_setClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = object_setClass.m; sourceTree = "<group>"; };
+		AEE01175274275CF00C155D8 /* Runspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Runspector.h; sourceTree = "<group>"; };
+		AEE01176274275CF00C155D8 /* CategoryDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryDemo.h; sourceTree = "<group>"; };
+		AEE01177274275CF00C155D8 /* MessageSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSend.h; sourceTree = "<group>"; };
+		AEE01178274275CF00C155D8 /* AboutKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutKVC.h; sourceTree = "<group>"; };
+		AEE01179274275CF00C155D8 /* Runspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Runspector.m; sourceTree = "<group>"; };
+		AEE01180274275D300C155D8 /* GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD.m; sourceTree = "<group>"; };
+		AEE01181274275D300C155D8 /* ConcurrentProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcurrentProcessor.h; sourceTree = "<group>"; };
+		AEE01182274275D300C155D8 /* Lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lock.h; sourceTree = "<group>"; };
+		AEE01183274275D300C155D8 /* ConcurrentProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcurrentProcessor.m; sourceTree = "<group>"; };
+		AEE01184274275D300C155D8 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
+		AEE01185274275D300C155D8 /* Lock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lock.m; sourceTree = "<group>"; };
+		AEE01189274275E400C155D8 /* MsgSend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgSend.h; sourceTree = "<group>"; };
+		AEE0118A274275E500C155D8 /* MsgSend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgSend.m; sourceTree = "<group>"; };
 		AEF0EBE3272946FF00DCA7B8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AEF0EBE42729470000DCA7B8 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
@@ -1635,6 +1686,13 @@
 		AE7E746B2722533800F0C19C /* OCWork */ = {
 			isa = PBXGroup;
 			children = (
+				AEE0117F274275D300C155D8 /* Thread */,
+				AEE01170274275CF00C155D8 /* Runtime */,
+				AEE01163274275CB00C155D8 /* MessagForward */,
+				AEE0115D274275C700C155D8 /* Block */,
+				AEE01156274275C200C155D8 /* CoreFoundation */,
+				AEE01189274275E400C155D8 /* MsgSend.h */,
+				AEE0118A274275E500C155D8 /* MsgSend.m */,
 				AE7E746C2722533800F0C19C /* main.m */,
 			);
 			path = OCWork;
@@ -1994,6 +2052,71 @@
 				AEE0112F27425D8700C155D8 /* GameService.swift */,
 			);
 			path = Board;
+			sourceTree = "<group>";
+		};
+		AEE01156274275C200C155D8 /* CoreFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				AEE01157274275C200C155D8 /* SelDemo.m */,
+				AEE01158274275C200C155D8 /* CFDemo.h */,
+				AEE01159274275C200C155D8 /* SelDemo.h */,
+				AEE0115A274275C200C155D8 /* CFDemo.m */,
+			);
+			path = CoreFoundation;
+			sourceTree = "<group>";
+		};
+		AEE0115D274275C700C155D8 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				AEE0115E274275C700C155D8 /* BlockChain.h */,
+				AEE0115F274275C700C155D8 /* block相关.m */,
+				AEE01160274275C700C155D8 /* BlockChain.m */,
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
+		AEE01163274275CB00C155D8 /* MessagForward */ = {
+			isa = PBXGroup;
+			children = (
+				AEE01164274275CB00C155D8 /* Hydron.m */,
+				AEE01165274275CB00C155D8 /* Invoke.m */,
+				AEE01166274275CB00C155D8 /* AspectProxy.m */,
+				AEE01167274275CB00C155D8 /* HydronForward.h */,
+				AEE01168274275CB00C155D8 /* Invoke.h */,
+				AEE01169274275CB00C155D8 /* Hydron.h */,
+				AEE0116A274275CB00C155D8 /* HydronForward.m */,
+				AEE0116B274275CB00C155D8 /* AspectProxy.h */,
+			);
+			path = MessagForward;
+			sourceTree = "<group>";
+		};
+		AEE01170274275CF00C155D8 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				AEE01171274275CF00C155D8 /* MessageSend.m */,
+				AEE01172274275CF00C155D8 /* CategoryDemo.m */,
+				AEE01173274275CF00C155D8 /* AboutKVC.m */,
+				AEE01174274275CF00C155D8 /* object_setClass.m */,
+				AEE01175274275CF00C155D8 /* Runspector.h */,
+				AEE01176274275CF00C155D8 /* CategoryDemo.h */,
+				AEE01177274275CF00C155D8 /* MessageSend.h */,
+				AEE01178274275CF00C155D8 /* AboutKVC.h */,
+				AEE01179274275CF00C155D8 /* Runspector.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		AEE0117F274275D300C155D8 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				AEE01180274275D300C155D8 /* GCD.m */,
+				AEE01181274275D300C155D8 /* ConcurrentProcessor.h */,
+				AEE01182274275D300C155D8 /* Lock.h */,
+				AEE01183274275D300C155D8 /* ConcurrentProcessor.m */,
+				AEE01184274275D300C155D8 /* GCD.h */,
+				AEE01185274275D300C155D8 /* Lock.m */,
+			);
+			path = Thread;
 			sourceTree = "<group>";
 		};
 		AEF0EBE2272946E400DCA7B8 /* Thread */ = {
@@ -2714,6 +2837,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE0118D274277A700C155D8 /* fishhook.c in Sources */,
 				AE7E7462272252E700F0C19C /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2722,7 +2846,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE01186274275D400C155D8 /* GCD.m in Sources */,
+				AEE0118C274277A600C155D8 /* fishhook.c in Sources */,
+				AEE01162274275C700C155D8 /* BlockChain.m in Sources */,
+				AEE01188274275D400C155D8 /* Lock.m in Sources */,
+				AEE0116D274275CB00C155D8 /* Invoke.m in Sources */,
+				AEE01187274275D400C155D8 /* ConcurrentProcessor.m in Sources */,
+				AEE0116F274275CB00C155D8 /* HydronForward.m in Sources */,
+				AEE0117B274275CF00C155D8 /* CategoryDemo.m in Sources */,
+				AEE0117C274275CF00C155D8 /* AboutKVC.m in Sources */,
+				AEE0116E274275CB00C155D8 /* AspectProxy.m in Sources */,
+				AEE0118B274275E500C155D8 /* MsgSend.m in Sources */,
+				AEE0117E274275CF00C155D8 /* Runspector.m in Sources */,
+				AEE0117D274275CF00C155D8 /* object_setClass.m in Sources */,
+				AEE0115C274275C200C155D8 /* CFDemo.m in Sources */,
 				AE7E746D2722533800F0C19C /* main.m in Sources */,
+				AEE0116C274275CB00C155D8 /* Hydron.m in Sources */,
+				AEE0117A274275CF00C155D8 /* MessageSend.m in Sources */,
+				AEE01161274275C700C155D8 /* block相关.m in Sources */,
+				AEE0115B274275C200C155D8 /* SelDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3240,6 +3382,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -3261,6 +3404,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
