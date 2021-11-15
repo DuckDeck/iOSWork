@@ -438,6 +438,16 @@
 		AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */; };
 		AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */; };
 		AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */; };
+		AEE0103627424A0100C155D8 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103527424A0100C155D8 /* VideoListViewController.swift */; };
+		AEE0103827424A1000C155D8 /* VideoRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103727424A1000C155D8 /* VideoRecordViewController.swift */; };
+		AEE0103A27424A3600C155D8 /* VideoFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103927424A3600C155D8 /* VideoFileManager.swift */; };
+		AEE0103C27424AA300C155D8 /* VideoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103B27424AA300C155D8 /* VideoPlayViewController.swift */; };
+		AEE0103F27424D2000C155D8 /* AudioRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103E27424D2000C155D8 /* AudioRecordViewController.swift */; };
+		AEE0104127424D4500C155D8 /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0104027424D4500C155D8 /* VolumeView.swift */; };
+		AEE0104327424D6200C155D8 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0104227424D6200C155D8 /* AudioListViewController.swift */; };
+		AEE0104627424EE700C155D8 /* TakePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0104527424EE700C155D8 /* TakePhotoViewController.swift */; };
+		AEE010492742500100C155D8 /* GifViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE010482742500100C155D8 /* GifViewController.swift */; };
+		AEE0104C2742509300C155D8 /* WatermarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0104B2742509300C155D8 /* WatermarkViewController.swift */; };
 		AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE3272946FF00DCA7B8 /* Group.swift */; };
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
@@ -721,6 +731,16 @@
 		AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapkitTableViewController.swift; sourceTree = "<group>"; };
 		AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleAnimtaionView.swift; sourceTree = "<group>"; };
+		AEE0103527424A0100C155D8 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+		AEE0103727424A1000C155D8 /* VideoRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordViewController.swift; sourceTree = "<group>"; };
+		AEE0103927424A3600C155D8 /* VideoFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFileManager.swift; sourceTree = "<group>"; };
+		AEE0103B27424AA300C155D8 /* VideoPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
+		AEE0103E27424D2000C155D8 /* AudioRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordViewController.swift; sourceTree = "<group>"; };
+		AEE0104027424D4500C155D8 /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
+		AEE0104227424D6200C155D8 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
+		AEE0104527424EE700C155D8 /* TakePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakePhotoViewController.swift; sourceTree = "<group>"; };
+		AEE010482742500100C155D8 /* GifViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifViewController.swift; sourceTree = "<group>"; };
+		AEE0104B2742509300C155D8 /* WatermarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkViewController.swift; sourceTree = "<group>"; };
 		AEF0EBE3272946FF00DCA7B8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AEF0EBE42729470000DCA7B8 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
@@ -1186,6 +1206,11 @@
 		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
 			isa = PBXGroup;
 			children = (
+				AEE0104A2742508500C155D8 /* Watermark */,
+				AEE0104727424FEE00C155D8 /* GIF */,
+				AEE0104427424ED500C155D8 /* TakePhoto */,
+				AEE0103D27424D0300C155D8 /* AudioRecord */,
+				AEE01034274249E600C155D8 /* VideoRecord */,
 				AE6E5DB7273FB6F000523EA8 /* Touch */,
 				AE6E5DB4273FB46F00523EA8 /* Motion */,
 				AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */,
@@ -1431,6 +1456,51 @@
 				AE94D3322742421A00ACEDDC /* AnimationVIew.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		AEE01034274249E600C155D8 /* VideoRecord */ = {
+			isa = PBXGroup;
+			children = (
+				AEE0103527424A0100C155D8 /* VideoListViewController.swift */,
+				AEE0103727424A1000C155D8 /* VideoRecordViewController.swift */,
+				AEE0103927424A3600C155D8 /* VideoFileManager.swift */,
+				AEE0103B27424AA300C155D8 /* VideoPlayViewController.swift */,
+			);
+			path = VideoRecord;
+			sourceTree = "<group>";
+		};
+		AEE0103D27424D0300C155D8 /* AudioRecord */ = {
+			isa = PBXGroup;
+			children = (
+				AEE0103E27424D2000C155D8 /* AudioRecordViewController.swift */,
+				AEE0104027424D4500C155D8 /* VolumeView.swift */,
+				AEE0104227424D6200C155D8 /* AudioListViewController.swift */,
+			);
+			path = AudioRecord;
+			sourceTree = "<group>";
+		};
+		AEE0104427424ED500C155D8 /* TakePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				AEE0104527424EE700C155D8 /* TakePhotoViewController.swift */,
+			);
+			path = TakePhoto;
+			sourceTree = "<group>";
+		};
+		AEE0104727424FEE00C155D8 /* GIF */ = {
+			isa = PBXGroup;
+			children = (
+				AEE010482742500100C155D8 /* GifViewController.swift */,
+			);
+			path = GIF;
+			sourceTree = "<group>";
+		};
+		AEE0104A2742508500C155D8 /* Watermark */ = {
+			isa = PBXGroup;
+			children = (
+				AEE0104B2742509300C155D8 /* WatermarkViewController.swift */,
+			);
+			path = Watermark;
 			sourceTree = "<group>";
 		};
 		AEF0EBE2272946E400DCA7B8 /* Thread */ = {
@@ -1758,10 +1828,12 @@
 				AE6E5DC0273FB6FF00523EA8 /* Line.swift in Sources */,
 				AE890D1127240DFE00FAB7D7 /* Global.swift in Sources */,
 				AE6E5DCF273FC5E500523EA8 /* FlowLayoutViewController.swift in Sources */,
+				AEE0103627424A0100C155D8 /* VideoListViewController.swift in Sources */,
 				AE61165B27410CF8008466AB /* TwoSideView.swift in Sources */,
 				AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE62CBC227255C20007D51CD /* LimitTextView.swift in Sources */,
 				AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */,
+				AEE0104127424D4500C155D8 /* VolumeView.swift in Sources */,
 				AE6E5DC2273FB6FF00523EA8 /* CrossLine.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */,
@@ -1777,9 +1849,11 @@
 				AE6E5DC4273FB6FF00523EA8 /* DrawView.swift in Sources */,
 				AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */,
+				AEE0104627424EE700C155D8 /* TakePhotoViewController.swift in Sources */,
 				AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
+				AEE010492742500100C155D8 /* GifViewController.swift in Sources */,
 				AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */,
 				AE62CBDA27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE6E5DC8273FBC3D00523EA8 /* HorizontalTableViewController.swift in Sources */,
@@ -1787,6 +1861,7 @@
 				AE62CAE9272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CB4927254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE62CACB272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
+				AEE0103827424A1000C155D8 /* VideoRecordViewController.swift in Sources */,
 				AE4D09272730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */,
 				AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */,
 				AE62CB5827254947007D51CD /* UIView+Base.swift in Sources */,
@@ -1812,11 +1887,14 @@
 				AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */,
 				AE4D091F2730331100899D2C /* HttpInterceptWebMenuViewController.swift in Sources */,
 				AE62CA742725429B007D51CD /* TZLocationManager.m in Sources */,
+				AEE0104327424D6200C155D8 /* AudioListViewController.swift in Sources */,
 				AE4D0901273032E700899D2C /* H5ResourceCache.swift in Sources */,
+				AEE0103C27424AA300C155D8 /* VideoPlayViewController.swift in Sources */,
 				AE4D08FE273032E700899D2C /* MemeryCache.swift in Sources */,
 				AE62CBE727256690007D51CD /* UIMenuViewController.swift in Sources */,
 				AE62CB5227254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE62CA98272542D1007D51CD /* PaletteColorUtils.m in Sources */,
+				AEE0103F27424D2000C155D8 /* AudioRecordViewController.swift in Sources */,
 				AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */,
 				AE62CA132725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB8127254DD7007D51CD /* Tool.swift in Sources */,
@@ -1845,6 +1923,7 @@
 				AE4D08FB273032E700899D2C /* DiskFileCache.swift in Sources */,
 				AE62CB4F27254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */,
+				AEE0104C2742509300C155D8 /* WatermarkViewController.swift in Sources */,
 				AE6E5DC5273FB6FF00523EA8 /* SettingViewController.swift in Sources */,
 				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
 				AE6E5DC1273FB6FF00523EA8 /* Trace.swift in Sources */,
@@ -1891,6 +1970,7 @@
 				AE62CAEC272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
 				AE62CB1827254873007D51CD /* ResultInfo.swift in Sources */,
 				AE4D0910273032F300899D2C /* WebViewReusePool.swift in Sources */,
+				AEE0103A27424A3600C155D8 /* VideoFileManager.swift in Sources */,
 				AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE62CB4627254947007D51CD /* UITableView+Extension.swift in Sources */,
 				AE6E5DBF273FB6FF00523EA8 /* Settings.swift in Sources */,
