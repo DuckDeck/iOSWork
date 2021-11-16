@@ -17,6 +17,9 @@ class HandleJSViewController: BaseViewController {
         navigationItem.rightBarButtonItem = btnRunjs
         let config = WKWebViewConfiguration()
         let hander = ScriptMessageHandler()
+        let controller = WKUserContentController()
+        controller.add(self, name: "error")
+        config.userContentController = controller
         hander.delegate = self
         let param = [1,2,3,4,5]
         let script = WKUserScript(source: "function callJs(){passAnArray(\(param));}", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
@@ -48,29 +51,36 @@ class HandleJSViewController: BaseViewController {
 
 extension HandleJSViewController:WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler{
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard message.name == "mobile" else {
-            print("不是绑定的响应对象")
-            return
-        }
-        let dict = message.body as! [String:Any]
-        let title = dict["title"] as? String
-        let message = dict["message"] as? String
-        //这些信息要商量好
-       
-        if let t = title , t == "openPrompt"{
-            web.evaluate(script: "confirm('Hello from evaluateJavascript()')") { (res, err) in
-                UIAlertController.title(title:  "不支持", message: "WKWebView不支持调用confirm和prompt").action(title: "OK", handle: nil).show()
+      
+        if message.name == "mobile"{
+            let dict = message.body as! [String:Any]
+            let title = dict["title"] as? String
+            let message = dict["message"] as? String
+            //这些信息要商量好
+           
+            if let t = title , t == "openPrompt"{
+                web.evaluate(script: "confirm('Hello from evaluateJavascript()')") { (res, err) in
+                    UIAlertController.title(title:  "不支持", message: "WKWebView不支持调用confirm和prompt").action(title: "OK", handle: nil).show()
+                }
             }
-        }
-        else if let t = title , t == "openAlbum"{
-            imagePickerController = TZImagePickerController(maxImagesCount: 1, delegate: self)
-            imagePickerController.didFinishPickingPhotosHandle = {(images,assert,isSelectOriginalPhoto) in
-               
+            else if let t = title , t == "openAlbum"{
+                imagePickerController = TZImagePickerController(maxImagesCount: 1, delegate: self)
+                imagePickerController.didFinishPickingPhotosHandle = {(images,assert,isSelectOriginalPhoto) in
+                   
+                }
+                present(imagePickerController, animated: true, completion: nil)
             }
-            present(imagePickerController, animated: true, completion: nil)
+            else{
+                UIAlertController.title(title: title ?? "", message: message ?? "").action(title: "OK", handle: nil).show()
+            }
+
         }
-        else{
-            UIAlertController.title(title: title ?? "", message: message ?? "").action(title: "OK", handle: nil).show()
+        
+        else if message.name == "error"{
+            let error = (message.body as? [String: Any])?["message"] as? String ?? "unknown"
+//            assertionFailure("JavaScript error: \(error)")
+            Toast.showToast(msg: error.localizedLowercase)
+
         }
         
         
@@ -82,7 +92,17 @@ extension HandleJSViewController:WKUIDelegate,WKNavigationDelegate,WKScriptMessa
         completionHandler()
     }
     
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        print("didCommit navigation")
+    }
     
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("didFinish navigation")
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print("navigation: WKNavigation")
+    }
 }
 
 extension HandleJSViewController:TZImagePickerControllerDelegate{
