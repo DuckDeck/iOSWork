@@ -7,7 +7,7 @@
 
 import Foundation
 class BaseMenuViewController:BaseViewController{
-    var arrData = ["多线程","内存","渲染","通知","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)","扫码","分享","城市选择","二进制合并"]
+    var arrData = ["多线程","内存","渲染","通知","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)","扫码","分享","城市选择","二进制合并","二进制插桩"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -90,6 +90,10 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 10:
             let vc = PatchViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 11:
+            let vc = RerangeBinaryViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
 

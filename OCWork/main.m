@@ -74,6 +74,9 @@ int main(int argc, const char * argv[]) {
         
         GCD* gcd = [GCD new];
         [gcd testGCDGroup];
+        
+        [gcd testTaskSeq];
+        
         //不知道这个是干什么的
         
         //测试消息转发

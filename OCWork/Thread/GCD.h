@@ -10,4 +10,8 @@
 
 @interface GCD : NSObject
 -(void)testGCDGroup;
+-(void)testDoSomething;
+
+-(void)testTaskSeq;
+-(void)testSemaphore;
 @end

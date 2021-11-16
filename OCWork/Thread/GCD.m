@@ -49,5 +49,57 @@
 -(void)taskComplete {
     NSLog(@"All task finished.");
 }
+-(void)testDoSomething{
+    [self doSomeThingForFlag:1 finish:^{
+        
+    }];
+    
+    [self doSomeThingForFlag:2 finish:^{
+        
+    }];
+    
+    [self doSomeThingForFlag:3 finish:^{
+        
+    }];
+    
+    [self doSomeThingForFlag:4 finish:^{
+        
+    }];
+}
+- (void)doSomeThingForFlag:(NSInteger)flag finish:(void(^)(void))finish {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"do:%ld",(long)flag);
+        sleep(2+arc4random_uniform(4));
+        NSLog(@"finish:%ld",flag);
+        if (finish) finish();
+    });
+}
 
+-(void)testTaskSeq{
+    NSLog(@"任务1");
+   dispatch_queue_t queue = dispatch_queue_create("myQueue", DISPATCH_QUEUE_SERIAL);
+   dispatch_queue_t queue2 = dispatch_queue_create("myQueue2", DISPATCH_QUEUE_CONCURRENT);
+   dispatch_async(queue, ^{
+       NSLog(@"任务2");
+       dispatch_sync(queue2, ^{
+           NSLog(@"任务3");
+       });
+       NSLog(@"任务4");
+   });
+   NSLog(@"任务5");
+
+}
+-(void)testSemaphore{
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+   __block int a = 0;
+    while (a < 5) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            a++;
+            dispatch_semaphore_signal(semaphore);
+        });
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    }
+    NSLog(@"a的值是：%d",a);
+
+}
 @end

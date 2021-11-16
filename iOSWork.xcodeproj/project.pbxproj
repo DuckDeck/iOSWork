@@ -56,6 +56,7 @@
 		AE1C4F6D274346BD0097EAC1 /* bsdiff.c in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F5C274346BD0097EAC1 /* bsdiff.c */; };
 		AE1C4F702743476E0097EAC1 /* PatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F6F2743476E0097EAC1 /* PatchViewController.m */; };
 		AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F7227434E300097EAC1 /* ADViewController.swift */; };
+		AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08ED273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -786,6 +787,8 @@
 		AE1C4F6F2743476E0097EAC1 /* PatchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatchViewController.m; sourceTree = "<group>"; };
 		AE1C4F712743488F0097EAC1 /* diff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = diff.h; sourceTree = "<group>"; };
 		AE1C4F7227434E300097EAC1 /* ADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
+		AE1C4F75274380910097EAC1 /* RerangeBinaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RerangeBinaryViewController.h; sourceTree = "<group>"; };
+		AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RerangeBinaryViewController.m; sourceTree = "<group>"; };
 		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
 		AE4D08EB273025DB00899D2C /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomURLSchemeHandler.swift; sourceTree = "<group>"; };
@@ -1302,6 +1305,15 @@
 			path = "bsdiff-4.3";
 			sourceTree = "<group>";
 		};
+		AE1C4F74274380790097EAC1 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				AE1C4F75274380910097EAC1 /* RerangeBinaryViewController.h */,
+				AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
 		AE4D08E52730259200899D2C /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1714,6 +1726,7 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
+				AE1C4F74274380790097EAC1 /* RunLoop */,
 				AE1C4F462743468F0097EAC1 /* Patch */,
 				AEADA2CA273D669600153D20 /* Share */,
 				AEADA2C7273D65BB00153D20 /* ScanCode */,
@@ -2261,9 +2274,9 @@
 		AEE01156274275C200C155D8 /* CoreFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				AEE01159274275C200C155D8 /* SelDemo.h */,
 				AEE01157274275C200C155D8 /* SelDemo.m */,
 				AEE01158274275C200C155D8 /* CFDemo.h */,
-				AEE01159274275C200C155D8 /* SelDemo.h */,
 				AEE0115A274275C200C155D8 /* CFDemo.m */,
 			);
 			path = CoreFoundation;
@@ -2273,8 +2286,8 @@
 			isa = PBXGroup;
 			children = (
 				AEE0115E274275C700C155D8 /* BlockChain.h */,
-				AEE0115F274275C700C155D8 /* block相关.m */,
 				AEE01160274275C700C155D8 /* BlockChain.m */,
+				AEE0115F274275C700C155D8 /* block相关.m */,
 			);
 			path = Block;
 			sourceTree = "<group>";
@@ -2282,14 +2295,14 @@
 		AEE01163274275CB00C155D8 /* MessagForward */ = {
 			isa = PBXGroup;
 			children = (
+				AEE01169274275CB00C155D8 /* Hydron.h */,
 				AEE01164274275CB00C155D8 /* Hydron.m */,
+				AEE01168274275CB00C155D8 /* Invoke.h */,
 				AEE01165274275CB00C155D8 /* Invoke.m */,
+				AEE0116B274275CB00C155D8 /* AspectProxy.h */,
 				AEE01166274275CB00C155D8 /* AspectProxy.m */,
 				AEE01167274275CB00C155D8 /* HydronForward.h */,
-				AEE01168274275CB00C155D8 /* Invoke.h */,
-				AEE01169274275CB00C155D8 /* Hydron.h */,
 				AEE0116A274275CB00C155D8 /* HydronForward.m */,
-				AEE0116B274275CB00C155D8 /* AspectProxy.h */,
 			);
 			path = MessagForward;
 			sourceTree = "<group>";
@@ -2297,14 +2310,14 @@
 		AEE01170274275CF00C155D8 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				AEE01177274275CF00C155D8 /* MessageSend.h */,
 				AEE01171274275CF00C155D8 /* MessageSend.m */,
+				AEE01176274275CF00C155D8 /* CategoryDemo.h */,
 				AEE01172274275CF00C155D8 /* CategoryDemo.m */,
+				AEE01178274275CF00C155D8 /* AboutKVC.h */,
 				AEE01173274275CF00C155D8 /* AboutKVC.m */,
 				AEE01174274275CF00C155D8 /* object_setClass.m */,
 				AEE01175274275CF00C155D8 /* Runspector.h */,
-				AEE01176274275CF00C155D8 /* CategoryDemo.h */,
-				AEE01177274275CF00C155D8 /* MessageSend.h */,
-				AEE01178274275CF00C155D8 /* AboutKVC.h */,
 				AEE01179274275CF00C155D8 /* Runspector.m */,
 			);
 			path = Runtime;
@@ -2313,12 +2326,12 @@
 		AEE0117F274275D300C155D8 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
-				AEE01180274275D300C155D8 /* GCD.m */,
-				AEE01181274275D300C155D8 /* ConcurrentProcessor.h */,
-				AEE01182274275D300C155D8 /* Lock.h */,
-				AEE01183274275D300C155D8 /* ConcurrentProcessor.m */,
 				AEE01184274275D300C155D8 /* GCD.h */,
+				AEE01180274275D300C155D8 /* GCD.m */,
+				AEE01182274275D300C155D8 /* Lock.h */,
 				AEE01185274275D300C155D8 /* Lock.m */,
+				AEE01181274275D300C155D8 /* ConcurrentProcessor.h */,
+				AEE01183274275D300C155D8 /* ConcurrentProcessor.m */,
 			);
 			path = Thread;
 			sourceTree = "<group>";
@@ -2954,6 +2967,7 @@
 				AE4D0910273032F300899D2C /* WebViewReusePool.swift in Sources */,
 				AEE0103A27424A3600C155D8 /* VideoFileManager.swift in Sources */,
 				AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */,
+				AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */,
 				AEE010AA2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
 				AE1C4F5F274346BD0097EAC1 /* compress.c in Sources */,
 				AE62CB4627254947007D51CD /* UITableView+Extension.swift in Sources */,

@@ -14,4 +14,5 @@
 #import "MJRefresh.h"
 #import "diff.h"
 #import "PatchViewController.h"
+#import "RerangeBinaryViewController.h"
 #endif /* bridge_h */
