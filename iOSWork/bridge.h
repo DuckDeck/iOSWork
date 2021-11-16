@@ -12,5 +12,6 @@
 #import "FMDB.h"
 #import "TZImagePickerController.h"
 #import "MJRefresh.h"
-
+#import "diff.h"
+#import "PatchViewController.h"
 #endif /* bridge_h */

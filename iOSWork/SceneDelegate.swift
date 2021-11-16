@@ -16,42 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let sc = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: sc)
-        let tabbarCtl = UITabBarController()
-        let baseVC = BaseMenuViewController()
-        baseVC.tabBarItem.image = UIImage(named: "house_black")?.withRenderingMode(.alwaysOriginal)
-        baseVC.tabBarItem.selectedImage = UIImage(named: "house_blue")?.withRenderingMode(.alwaysOriginal)
-        baseVC.tabBarItem.title = "基本&Web"
-        let nav1 = UINavigationController(rootViewController: baseVC)
-        
-        let uiVC = UIMenuViewController()
-        uiVC.tabBarItem.image = UIImage(named: "menu_black")?.withRenderingMode(.alwaysOriginal)
-        uiVC.tabBarItem.selectedImage = UIImage(named: "menu_blue")?.withRenderingMode(.alwaysOriginal)
-
-        uiVC.tabBarItem.title = "UI&布局"
-        let nav2 = UINavigationController(rootViewController: uiVC)
-        
-        let dataVC = DataMenuViewController()
-        dataVC.tabBarItem.image = UIImage(named: "data_black")?.withRenderingMode(.alwaysOriginal)
-        dataVC.tabBarItem.selectedImage = UIImage(named: "data_blue")?.withRenderingMode(.alwaysOriginal)
-        dataVC.tabBarItem.title = "数据&网络"
-        let nav3 = UINavigationController(rootViewController: dataVC)
-        
-        let mediaVC = MediaMenuViewController()
-        mediaVC.tabBarItem.image = UIImage(named: "media_black")?.withRenderingMode(.alwaysOriginal)
-        mediaVC.tabBarItem.selectedImage = UIImage(named: "media_blue")?.withRenderingMode(.alwaysOriginal)
-        mediaVC.tabBarItem.title = "多媒体&硬件"
-        let nav4 = UINavigationController(rootViewController: mediaVC)
-        
-        let projectVC = ProjectMenuViewController()
-        projectVC.tabBarItem.image = UIImage(named: "project_black")?.withRenderingMode(.alwaysOriginal)
-        projectVC.tabBarItem.selectedImage = UIImage(named: "project_blue")?.withRenderingMode(.alwaysOriginal)
-        projectVC.tabBarItem.title = "独立项目"
-
-        let nav5 = UINavigationController(rootViewController: projectVC)
-        tabbarCtl.viewControllers = [nav1,nav2,nav3,nav4,nav5]
-        
-        tabbarCtl.tabBar.barTintColor = UIColor.white
-        window?.rootViewController = tabbarCtl
+        window?.rootViewController = AdViewController()
         window?.makeKeyAndVisible()
     }
 

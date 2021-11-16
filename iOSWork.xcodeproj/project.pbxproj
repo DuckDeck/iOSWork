@@ -54,6 +54,8 @@
 		AE1C4F6B274346BD0097EAC1 /* new.zip in Resources */ = {isa = PBXBuildFile; fileRef = AE1C4F59274346BD0097EAC1 /* new.zip */; };
 		AE1C4F6C274346BD0097EAC1 /* bspatch.c in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F5B274346BD0097EAC1 /* bspatch.c */; };
 		AE1C4F6D274346BD0097EAC1 /* bsdiff.c in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F5C274346BD0097EAC1 /* bsdiff.c */; };
+		AE1C4F702743476E0097EAC1 /* PatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F6F2743476E0097EAC1 /* PatchViewController.m */; };
+		AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F7227434E300097EAC1 /* ADViewController.swift */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08ED273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -780,6 +782,10 @@
 		AE1C4F59274346BD0097EAC1 /* new.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = new.zip; sourceTree = "<group>"; };
 		AE1C4F5B274346BD0097EAC1 /* bspatch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bspatch.c; sourceTree = "<group>"; };
 		AE1C4F5C274346BD0097EAC1 /* bsdiff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bsdiff.c; sourceTree = "<group>"; };
+		AE1C4F6E2743476E0097EAC1 /* PatchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PatchViewController.h; sourceTree = "<group>"; };
+		AE1C4F6F2743476E0097EAC1 /* PatchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PatchViewController.m; sourceTree = "<group>"; };
+		AE1C4F712743488F0097EAC1 /* diff.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = diff.h; sourceTree = "<group>"; };
+		AE1C4F7227434E300097EAC1 /* ADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
 		AE4D08EB273025DB00899D2C /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomURLSchemeHandler.swift; sourceTree = "<group>"; };
@@ -1248,6 +1254,8 @@
 			isa = PBXGroup;
 			children = (
 				AE1C4F472743469E0097EAC1 /* PatchLib */,
+				AE1C4F6E2743476E0097EAC1 /* PatchViewController.h */,
+				AE1C4F6F2743476E0097EAC1 /* PatchViewController.m */,
 			);
 			path = Patch;
 			sourceTree = "<group>";
@@ -1831,6 +1839,8 @@
 				AE7E7430272251E500F0C19C /* LaunchScreen.storyboard */,
 				AE7E7433272251E500F0C19C /* Info.plist */,
 				AE62CB9B27254E3A007D51CD /* bridge.h */,
+				AE1C4F712743488F0097EAC1 /* diff.h */,
+				AE1C4F7227434E300097EAC1 /* ADViewController.swift */,
 			);
 			path = iOSWork;
 			sourceTree = "<group>";
@@ -2751,6 +2761,7 @@
 				AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE1C4F5D274346BD0097EAC1 /* randtable.c in Sources */,
 				AE62CBC227255C20007D51CD /* LimitTextView.swift in Sources */,
+				AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */,
 				AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */,
 				AE1C4F68274346BD0097EAC1 /* bzlib.c in Sources */,
 				AEE0104127424D4500C155D8 /* VolumeView.swift in Sources */,
@@ -2806,6 +2817,7 @@
 				AE4D0908273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
 				AE72F533273EBDA80060456A /* AddressInfo.swift in Sources */,
 				AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
+				AE1C4F702743476E0097EAC1 /* PatchViewController.m in Sources */,
 				AE62CB1527254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CB3A27254947007D51CD /* Foundation+Extension.swift in Sources */,
@@ -3453,6 +3465,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/AMap",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSWork/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = " 用一下相机";
@@ -3494,6 +3507,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/AMap",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = iOSWork/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = " 用一下相机";
