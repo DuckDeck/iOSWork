@@ -21,7 +21,7 @@
     self.navigationItem.rightBarButtonItems = @[[[UIBarButtonItem alloc] initWithTitle:@"差分" style:UIBarButtonItemStylePlain target:self action:@selector(createDiffPackage)],[[UIBarButtonItem alloc] initWithTitle:@"合并" style:UIBarButtonItemStylePlain target:self action:@selector(joinPackage)]];
     
      _txt = [UITextField new];
-    _txt.frame = CGRectMake(10, 50, 200, 100);
+    _txt.frame = CGRectMake(10, 150, 200, 100);
     _txt.layer.borderWidth = 1;
     [self.view addSubview:_txt];
 }
