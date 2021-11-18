@@ -46,10 +46,8 @@ extension TriggerErrorViewController: UITableViewDelegate, UITableViewDataSource
             var arr = [1,3,4,5]
             arr.insert(9, at: 10)
         case 1:
-            let vc = MemoryViewController()
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
-
+            Toast.showToast(msg: "怎么引发sigle错误？")
+            
         default:
             break
         }

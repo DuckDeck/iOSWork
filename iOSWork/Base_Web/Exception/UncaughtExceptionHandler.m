@@ -21,7 +21,7 @@ const int32_t UncaughtExceptionMaximum = 10;
 const NSInteger UncaughtExceptionHandlerSkipAddressCount = 4;
 const NSInteger UncaughtExceptionHandlerReportAddressCount = 5;
 
-void MySignalHandler(int signal);
+void SignalHandler(int signal);
 void MyUncaughtExceptionHandler(NSException * exception);
 
 
@@ -204,5 +204,21 @@ void SignalHandler(int signal)
 }
 
 
-
+void MyUncaughtExceptionHandler(NSException * exception) {
+    
+    // 异常的堆栈信息
+    NSArray *stackArray = [exception callStackSymbols];
+    
+    // 出现异常的原因
+    NSString *reason = [exception reason];
+    
+    // 异常名称
+    NSString *name = [exception name];
+    
+    NSString *exceptionInfo = [NSString stringWithFormat:@"Exception reason：%@\nException name：%@\nException stack：%@",name, reason, stackArray];
+    
+    NSLog(@"%@", exceptionInfo);
+    NSString *logPath=[NSString stringWithFormat:@"%@/Documents/error.log",NSHomeDirectory()];
+    [exceptionInfo writeToFile:logPath  atomically:YES encoding:NSUTF8StringEncoding error:nil];
+}
 @end
