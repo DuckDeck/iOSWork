@@ -482,6 +482,7 @@
 		AE890D1127240DFE00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AE890D1227240DFE00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AE94D3332742421A00ACEDDC /* AnimationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94D3322742421A00ACEDDC /* AnimationVIew.swift */; };
+		AE97D3322745FCAF00157DBE /* TriggerErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97D3312745FCAF00157DBE /* TriggerErrorViewController.swift */; };
 		AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */; };
 		AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2CB273D66A700153D20 /* ShareViewController.swift */; };
 		AEB649BE273FCCB100BCBF4E /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649BD273FCCB100BCBF4E /* GridViewController.swift */; };
@@ -990,6 +991,7 @@
 		AE890D0327240DEC00FAB7D7 /* Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE890D0F27240DFC00FAB7D7 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		AE94D3322742421A00ACEDDC /* AnimationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVIew.swift; sourceTree = "<group>"; };
+		AE97D3312745FCAF00157DBE /* TriggerErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerErrorViewController.swift; sourceTree = "<group>"; };
 		AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		AEADA2CB273D66A700153D20 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		AEB649BD273FCCB100BCBF4E /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
@@ -1991,6 +1993,7 @@
 			children = (
 				AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */,
 				AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */,
+				AE97D3312745FCAF00157DBE /* TriggerErrorViewController.swift */,
 			);
 			path = Exception;
 			sourceTree = "<group>";
@@ -2961,6 +2964,7 @@
 				AE72F530273EB9A50060456A /* CityTableViewCell.swift in Sources */,
 				AE62CB4327254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CB01272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
+				AE97D3322745FCAF00157DBE /* TriggerErrorViewController.swift in Sources */,
 				AEE0115327425D8800C155D8 /* FullBoard.swift in Sources */,
 				AE72F528273EB9A50060456A /* CitySearchResultView.swift in Sources */,
 				AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */,
