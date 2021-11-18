@@ -488,6 +488,7 @@
 		AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */; };
 		AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */; };
 		AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */; };
+		AECDC15B2745E3090038BE68 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */; };
 		AEE0103627424A0100C155D8 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103527424A0100C155D8 /* VideoListViewController.swift */; };
 		AEE0103827424A1000C155D8 /* VideoRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103727424A1000C155D8 /* VideoRecordViewController.swift */; };
 		AEE0103A27424A3600C155D8 /* VideoFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103927424A3600C155D8 /* VideoFileManager.swift */; };
@@ -995,6 +996,8 @@
 		AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapkitTableViewController.swift; sourceTree = "<group>"; };
 		AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleAnimtaionView.swift; sourceTree = "<group>"; };
+		AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		AEE0103527424A0100C155D8 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
 		AEE0103727424A1000C155D8 /* VideoRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordViewController.swift; sourceTree = "<group>"; };
 		AEE0103927424A3600C155D8 /* VideoFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFileManager.swift; sourceTree = "<group>"; };
@@ -1726,6 +1729,7 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
+				AECDC1562745E2AB0038BE68 /* Exception */,
 				AE1C4F74274380790097EAC1 /* RunLoop */,
 				AE1C4F462743468F0097EAC1 /* Patch */,
 				AEADA2CA273D669600153D20 /* Share */,
@@ -1980,6 +1984,15 @@
 				AE94D3322742421A00ACEDDC /* AnimationVIew.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		AECDC1562745E2AB0038BE68 /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */,
+				AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */,
+			);
+			path = Exception;
 			sourceTree = "<group>";
 		};
 		AEE01034274249E600C155D8 /* VideoRecord */ = {
@@ -2826,6 +2839,7 @@
 				AE62CB1F2725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CB8A27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAEF272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
+				AECDC15B2745E3090038BE68 /* UncaughtExceptionHandler.m in Sources */,
 				AEE010EA2742569200C155D8 /* MJRefreshFooter.m in Sources */,
 				AE4D0908273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
 				AE72F533273EBDA80060456A /* AddressInfo.swift in Sources */,

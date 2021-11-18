@@ -15,4 +15,5 @@
 #import "diff.h"
 #import "PatchViewController.h"
 #import "RerangeBinaryViewController.h"
+#import "UncaughtExceptionHandler.h"
 #endif /* bridge_h */
