@@ -11,16 +11,22 @@ class AdViewController: UIViewController {
     lazy var timer  = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.global())
     var seconds = 5
     lazy var btnCount = UIButton()
+    lazy var imgBg = UIImageView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        imgBg.image = UIImage(named: "h1")
+        imgBg.contentMode = .scaleAspectFill
+        view.addSubview(imgBg)
+        imgBg.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+
         timeCountDown()
         
-        btnCount.backgroundColor = UIColor(white: 0.8, alpha: 0.3)
-        btnCount.frame = CGRect(x: UIScreen.main.bounds.size.width - 80, y: 120, width: 80, height: 30)
+        btnCount.backgroundColor = UIColor(white: 0.3, alpha: 0.7)
+        btnCount.frame = CGRect(x: UIScreen.main.bounds.size.width - 120, y: 120, width: 80, height: 30)
         btnCount.addTarget(self, action: #selector(skipToHome), for: .touchUpInside)
         view.addSubview(btnCount)
-        
         
     }
     
