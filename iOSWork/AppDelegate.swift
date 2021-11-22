@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import Library
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //这里的代码目前用不了，不知为何
         UncaughtExceptionHandler.installUncaughtExceptionHandler()
+        
+//
+//        NSSetUncaughtExceptionHandler { exp in
+//            print(exp.name)
+//            print(exp.callStackReturnAddresses)
+//            var errors = Store.AppErrors.Value
+//            let err = AppError(name: exp.name.rawValue)
+//            errors.append(err)
+//            Store.AppErrors.Value = errors
+//        }
+        
         // Override point for customization after application launch.
         return true
     }

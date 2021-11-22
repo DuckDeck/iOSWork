@@ -11,3 +11,7 @@ import UIKit
 class BaseModel {
     var cellHeight:CGFloat = 0
 }
+struct AppError:Codable{
+    var name = ""
+    
+}

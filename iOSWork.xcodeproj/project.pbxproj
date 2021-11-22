@@ -20,8 +20,6 @@
 		AE1C4F2A274341140097EAC1 /* SymbolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F21274341140097EAC1 /* SymbolCell.swift */; };
 		AE1C4F2B274341140097EAC1 /* WordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F22274341140097EAC1 /* WordsCell.swift */; };
 		AE1C4F2D2743416D0097EAC1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE1C4F2C2743416D0097EAC1 /* Kingfisher */; };
-		AE1C4F2E274341CD0097EAC1 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2627254946007D51CD /* Foundation+Extension.swift */; };
-		AE1C4F2F274341D00097EAC1 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2627254946007D51CD /* Foundation+Extension.swift */; };
 		AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2427254946007D51CD /* Number+Extension.swift */; };
 		AE1C4F31274341D50097EAC1 /* Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2427254946007D51CD /* Number+Extension.swift */; };
 		AE1C4F32274341D70097EAC1 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2827254946007D51CD /* UIButton+Extension.swift */; };
@@ -34,8 +32,6 @@
 		AE1C4F39274341FE0097EAC1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB5B2725495E007D51CD /* Array+Extension.swift */; };
 		AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2727254946007D51CD /* WKWebView+Extension.swift */; };
 		AE1C4F3B274342010097EAC1 /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2727254946007D51CD /* WKWebView+Extension.swift */; };
-		AE1C4F3C274342030097EAC1 /* UIWindow+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2327254946007D51CD /* UIWindow+Base.swift */; };
-		AE1C4F3D274342030097EAC1 /* UIWindow+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2327254946007D51CD /* UIWindow+Base.swift */; };
 		AE1C4F3F274342050097EAC1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2527254946007D51CD /* UIViewController+Extension.swift */; };
 		AE1C4F41274342070097EAC1 /* UIView+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB3027254946007D51CD /* UIView+Base.swift */; };
 		AE1C4F43274342510097EAC1 /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE1C4F42274342510097EAC1 /* GrandKit */; };
@@ -678,6 +674,11 @@
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
 		AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */; };
+		AEF8665A274B6F5B002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
+		AEF8665B274B6F97002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
+		AEF8665C274B6F98002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
+		AEF8665D274B7023002E33E5 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2627254946007D51CD /* Foundation+Extension.swift */; };
+		AEF8665E274B7025002E33E5 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2627254946007D51CD /* Foundation+Extension.swift */; };
 		D041815A9CC7AAAF62FC71C3 /* Pods_ConsoleWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7CAFD203AF3AB070FDE21F /* Pods_ConsoleWork.framework */; };
 		D1BBBB6976FBEF339615E107 /* Pods_KeyboardWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F57584843CAE9C4103FED2 /* Pods_KeyboardWork.framework */; };
 		FA1903311DC70AF999EB312A /* Pods_OCWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ED39A76819A2B0EE8A035A /* Pods_OCWork.framework */; };
@@ -1176,6 +1177,7 @@
 		AEF0EBE42729470000DCA7B8 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
+		AEF86659274B6F5B002E33E5 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B40729E3A2D7297B9088E89F /* Pods_SwiftUIWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F57584843CAE9C4103FED2 /* Pods_KeyboardWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF41C2448DDF4DA4DA08F90D /* Pods-OCWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWork.debug.xcconfig"; path = "Target Support Files/Pods-OCWork/Pods-OCWork.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1700,6 +1702,7 @@
 				AE62CB7527254DD5007D51CD /* LogTool.swift */,
 				AE62CB7C27254DD6007D51CD /* Singleton.h */,
 				AE62CB7627254DD5007D51CD /* Tool.swift */,
+				AEF86659274B6F5B002E33E5 /* Store.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2453,7 +2456,6 @@
 				43E0A75636DDB92D61FA9831 /* Pods-iOSWork.debug.xcconfig */,
 				262A6BDC82465DA86DA9E62A /* Pods-iOSWork.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -3043,6 +3045,7 @@
 				AEE010D82742569200C155D8 /* MJRefreshAutoGifFooter.m in Sources */,
 				AE1C4F61274346BD0097EAC1 /* blocksort.c in Sources */,
 				AE62CB5527254947007D51CD /* UIImage+Base.swift in Sources */,
+				AEF8665B274B6F97002E33E5 /* Store.swift in Sources */,
 				AE1C4F67274346BD0097EAC1 /* unzcrash.c in Sources */,
 				AE62CB3727254946007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE62CBCE27255C20007D51CD /* GridView.swift in Sources */,
@@ -3301,6 +3304,7 @@
 				AE62CBC627255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE62CA752725429B007D51CD /* TZLocationManager.m in Sources */,
 				AEE010D62742569200C155D8 /* MJRefreshAutoStateFooter.m in Sources */,
+				AEF8665C274B6F98002E33E5 /* Store.swift in Sources */,
 				AE62CB5D2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE62CAD5272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
 				AE62CAE7272542DC007D51CD /* ShadowDownloader.swift in Sources */,
@@ -3405,7 +3409,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE1C4F26274341140097EAC1 /* KeyboardModel.swift in Sources */,
-				AE1C4F2E274341CD0097EAC1 /* Foundation+Extension.swift in Sources */,
 				AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
 				AE1C4F32274341D70097EAC1 /* UIButton+Extension.swift in Sources */,
 				AE1C4F25274341140097EAC1 /* PinyinStore.swift in Sources */,
@@ -3416,9 +3419,9 @@
 				AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */,
 				AE1C4F34274341F90097EAC1 /* String+Extension.swift in Sources */,
 				AE1C4F29274341140097EAC1 /* KeyView.swift in Sources */,
-				AE1C4F3C274342030097EAC1 /* UIWindow+Base.swift in Sources */,
 				AE1C4F24274341140097EAC1 /* SymbolKeyStore.swift in Sources */,
 				AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */,
+				AEF8665D274B7023002E33E5 /* Foundation+Extension.swift in Sources */,
 				AE7E7452272252AC00F0C19C /* KeyboardViewController.swift in Sources */,
 				AE1C4F23274341140097EAC1 /* WordsStore.swift in Sources */,
 				AE1C4F2B274341140097EAC1 /* WordsCell.swift in Sources */,
@@ -3431,7 +3434,6 @@
 			files = (
 				AEE01194274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇三：让Model实现自动映射--将字典转化成Model).swift in Sources */,
 				AEE01195274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇一：让Model自我描述).swift in Sources */,
-				AE1C4F2F274341D00097EAC1 /* Foundation+Extension.swift in Sources */,
 				AE1C4F3B274342010097EAC1 /* WKWebView+Extension.swift in Sources */,
 				AE1C4F3F274342050097EAC1 /* UIViewController+Extension.swift in Sources */,
 				AE1C4F33274341D70097EAC1 /* UIButton+Extension.swift in Sources */,
@@ -3441,9 +3443,9 @@
 				AEE011982742780600C155D8 /* Regex.swift in Sources */,
 				AE1C4F31274341D50097EAC1 /* Number+Extension.swift in Sources */,
 				AE1C4F41274342070097EAC1 /* UIView+Base.swift in Sources */,
-				AE1C4F3D274342030097EAC1 /* UIWindow+Base.swift in Sources */,
 				AEE01196274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇四：使用Swift反射).swift in Sources */,
 				AE7E7462272252E700F0C19C /* main.swift in Sources */,
+				AEF8665E274B7025002E33E5 /* Foundation+Extension.swift in Sources */,
 				AE1C4F39274341FE0097EAC1 /* Array+Extension.swift in Sources */,
 				AE1C4F36274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
 				AEE01193274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇二：让Model实现自动归档.swift in Sources */,
@@ -3483,6 +3485,7 @@
 				AE62CB5727254947007D51CD /* UIImage+Base.swift in Sources */,
 				AE62CAE2272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CA1E2725425A007D51CD /* FMResultSet.m in Sources */,
+				AEF8665A274B6F5B002E33E5 /* Store.swift in Sources */,
 				AEE010DD2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
 				AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */,
 				AE62CBC127255C20007D51CD /* TimerButton.swift in Sources */,
