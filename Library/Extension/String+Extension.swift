@@ -8,6 +8,25 @@
 import UIKit
 import CommonCrypto
 import Kingfisher
+
+//ForwardFilter从最前面开始,出现数字后一直到没有数字为止
+//BackwordFilter从最后面开始,出现数字后一直到没有数字为止
+//AllFilter获取所的数字
+public enum FilterToInt:Int{
+    case ForwardFilter = 0,
+         BackwordFilter,
+         AllFilter
+    static func toFilter(type:Int)->Self{
+        switch type{
+        case 0:return .ForwardFilter
+        case 1:return .BackwordFilter
+        case 2:return .AllFilter
+        default:return AllFilter
+        }
+    }
+}
+
+
 extension String{
      func bitEllipsis(bitCount:Int) -> String {
         if bitCount <= 0{

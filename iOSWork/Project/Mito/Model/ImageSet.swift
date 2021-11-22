@@ -200,18 +200,7 @@ struct ImageSet:Codable {
                 img.cellHeight = Float(ScreenWidth / 2 - 10) / Float(img.resolution.ratio) + 70.0
                 arrImageSets.append(img)
             }
-            let mitoCount = doc.xpath("//a[@class='a1']")
-            if mitoCount.count <= 0{
-                result.count = arrImageSets.count
-            }
-            else{
-                if let count = mitoCount.first!.text?.filteToInt(filter: .ForwardFilter){
-                    result.count = count
-                }
-                else{
-                    result.count = arrImageSets.count
-                }
-            }
+            result.count = arrImageSets.count
             result.data = arrImageSets
             completed(result)
         }

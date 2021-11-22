@@ -8,6 +8,7 @@
 
 import UIKit
 import Photos
+import ImageIO
 extension UIImage{
     static func captureView(view:UIView)->UIImage{
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
@@ -507,4 +508,22 @@ extension UIImage{
     }
     
    
+}
+
+
+extension CGImagePropertyOrientation{
+    init(_ orientation: UIImage.Orientation) {
+        switch orientation {
+            case .up: self = .up
+            case .down: self = .down
+            case .left: self = .left
+            case .right: self = .right
+            case .upMirrored: self = .upMirrored
+            case .downMirrored: self = .downMirrored
+            case .leftMirrored: self = .leftMirrored
+            case .rightMirrored: self = .rightMirrored
+            @unknown default: self = .up
+        }
+    }
+
 }

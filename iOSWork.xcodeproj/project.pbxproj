@@ -24,7 +24,6 @@
 		AE1C4F31274341D50097EAC1 /* Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2427254946007D51CD /* Number+Extension.swift */; };
 		AE1C4F32274341D70097EAC1 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2827254946007D51CD /* UIButton+Extension.swift */; };
 		AE1C4F33274341D70097EAC1 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2827254946007D51CD /* UIButton+Extension.swift */; };
-		AE1C4F34274341F90097EAC1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB63272549A3007D51CD /* String+Extension.swift */; };
 		AE1C4F35274341FA0097EAC1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB63272549A3007D51CD /* String+Extension.swift */; };
 		AE1C4F36274341FC0097EAC1 /* Dict+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB5F27254977007D51CD /* Dict+Extension.swift */; };
 		AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB5F27254977007D51CD /* Dict+Extension.swift */; };
@@ -679,6 +678,12 @@
 		AEF8665C274B6F98002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
 		AEF8665D274B7023002E33E5 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2627254946007D51CD /* Foundation+Extension.swift */; };
 		AEF8665E274B7025002E33E5 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2627254946007D51CD /* Foundation+Extension.swift */; };
+		AEF86663274B9A38002E33E5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB63272549A3007D51CD /* String+Extension.swift */; };
+		AEF86666274B9B52002E33E5 /* ClassifyingImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86665274B9B52002E33E5 /* ClassifyingImagesViewController.swift */; };
+		AEF86668274B9B5D002E33E5 /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86667274B9B5D002E33E5 /* ImagePredictor.swift */; };
+		AEF8666D274B9BCD002E33E5 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AEF8666A274B9BCD002E33E5 /* MobileNet.mlmodel */; };
+		AEF8666E274B9BCD002E33E5 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEF8666B274B9BCD002E33E5 /* NOTICE.txt */; };
+		AEF8666F274B9BCD002E33E5 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEF8666C274B9BCD002E33E5 /* LICENSE.txt */; };
 		D041815A9CC7AAAF62FC71C3 /* Pods_ConsoleWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7CAFD203AF3AB070FDE21F /* Pods_ConsoleWork.framework */; };
 		D1BBBB6976FBEF339615E107 /* Pods_KeyboardWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F57584843CAE9C4103FED2 /* Pods_KeyboardWork.framework */; };
 		FA1903311DC70AF999EB312A /* Pods_OCWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ED39A76819A2B0EE8A035A /* Pods_OCWork.framework */; };
@@ -1178,6 +1183,11 @@
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 		AEF86659274B6F5B002E33E5 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		AEF86665274B9B52002E33E5 /* ClassifyingImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyingImagesViewController.swift; sourceTree = "<group>"; };
+		AEF86667274B9B5D002E33E5 /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
+		AEF8666A274B9BCD002E33E5 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		AEF8666B274B9BCD002E33E5 /* NOTICE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTICE.txt; sourceTree = "<group>"; };
+		AEF8666C274B9BCD002E33E5 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		B40729E3A2D7297B9088E89F /* Pods_SwiftUIWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F57584843CAE9C4103FED2 /* Pods_KeyboardWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF41C2448DDF4DA4DA08F90D /* Pods-OCWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWork.debug.xcconfig"; path = "Target Support Files/Pods-OCWork/Pods-OCWork.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1741,6 +1751,7 @@
 		AE62CBE227256603007D51CD /* Data_Network */ = {
 			isa = PBXGroup;
 			children = (
+				AEF86664274B9B38002E33E5 /* ClassifyingImages */,
 				AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */,
 			);
 			path = Data_Network;
@@ -2438,6 +2449,26 @@
 			path = Thread;
 			sourceTree = "<group>";
 		};
+		AEF86664274B9B38002E33E5 /* ClassifyingImages */ = {
+			isa = PBXGroup;
+			children = (
+				AEF86669274B9BCD002E33E5 /* Models */,
+				AEF86665274B9B52002E33E5 /* ClassifyingImagesViewController.swift */,
+				AEF86667274B9B5D002E33E5 /* ImagePredictor.swift */,
+			);
+			path = ClassifyingImages;
+			sourceTree = "<group>";
+		};
+		AEF86669274B9BCD002E33E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AEF8666A274B9BCD002E33E5 /* MobileNet.mlmodel */,
+				AEF8666B274B9BCD002E33E5 /* NOTICE.txt */,
+				AEF8666C274B9BCD002E33E5 /* LICENSE.txt */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F6858D3E5ACAC2756E0C8C01 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2774,10 +2805,12 @@
 				AE7E7432272251E500F0C19C /* LaunchScreen.storyboard in Resources */,
 				AE62C9E6272541D0007D51CD /* gif0.gif in Resources */,
 				AEE0113B27425D8800C155D8 /* room.jpg in Resources */,
+				AEF8666E274B9BCD002E33E5 /* NOTICE.txt in Resources */,
 				AEE0113927425D8800C155D8 /* p_19.png in Resources */,
 				AEE0114427425D8800C155D8 /* p_17.png in Resources */,
 				AEE0114827425D8800C155D8 /* p_5.png in Resources */,
 				AEE0113D27425D8800C155D8 /* selected.png in Resources */,
+				AEF8666F274B9BCD002E33E5 /* LICENSE.txt in Resources */,
 				AE62CA592725429B007D51CD /* TZImagePickerController.bundle in Resources */,
 				AEE0114027425D8800C155D8 /* p_13.png in Resources */,
 				AEE0115027425D8800C155D8 /* gu.mp3 in Resources */,
@@ -3114,10 +3147,12 @@
 				AE62CB5827254947007D51CD /* UIView+Base.swift in Sources */,
 				AE62CBD427255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
 				AE6E5DC3273FB6FF00523EA8 /* TouchTestViewController.swift in Sources */,
+				AEF8666D274B9BCD002E33E5 /* MobileNet.mlmodel in Sources */,
 				AEE0115127425D8800C155D8 /* Constants.swift in Sources */,
 				AE62CB1F2725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CB8A27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAEF272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
+				AEF86668274B9B5D002E33E5 /* ImagePredictor.swift in Sources */,
 				AECDC15B2745E3090038BE68 /* UncaughtExceptionHandler.m in Sources */,
 				AEE010EA2742569200C155D8 /* MJRefreshFooter.m in Sources */,
 				AE4D0908273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
@@ -3215,6 +3250,7 @@
 				AEE010D52742569200C155D8 /* MJRefreshAutoStateFooter.m in Sources */,
 				AE72F52C273EB9A50060456A /* CitySearchView.swift in Sources */,
 				AEE0106F2742560200C155D8 /* MitoListViewController.swift in Sources */,
+				AEF86666274B9B52002E33E5 /* ClassifyingImagesViewController.swift in Sources */,
 				AE62CB5C2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE62CA1C2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE62CA7A2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
@@ -3416,8 +3452,8 @@
 				AE1C4F27274341140097EAC1 /* PinyinDictionary.swift in Sources */,
 				AE1C4F38274341FE0097EAC1 /* Array+Extension.swift in Sources */,
 				AE1C4F2A274341140097EAC1 /* SymbolCell.swift in Sources */,
+				AEF86663274B9A38002E33E5 /* String+Extension.swift in Sources */,
 				AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */,
-				AE1C4F34274341F90097EAC1 /* String+Extension.swift in Sources */,
 				AE1C4F29274341140097EAC1 /* KeyView.swift in Sources */,
 				AE1C4F24274341140097EAC1 /* SymbolKeyStore.swift in Sources */,
 				AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */,

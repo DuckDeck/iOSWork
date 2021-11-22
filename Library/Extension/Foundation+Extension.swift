@@ -12,12 +12,6 @@ import GrandKit
 import AVKit
 import CommonCrypto
 import Kingfisher
-//ForwardFilter从最前面开始,出现数字后一直到没有数字为止
-//BackwordFilter从最后面开始,出现数字后一直到没有数字为止
-//AllFilter获取所的数字
-public enum FilterToInt{
-    case ForwardFilter,BackwordFilter,AllFilter
-}
 
 extension NSObject{
     func addDispose()  {
