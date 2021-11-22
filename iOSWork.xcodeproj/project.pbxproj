@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37514830E83D386CE9A947BD /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389C459C2A692F96F2C1BF39 /* Pods_Library.framework */; };
 		70E1C51AC3B328FF0D39A90F /* Pods_SwiftUIWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40729E3A2D7297B9088E89F /* Pods_SwiftUIWork.framework */; };
 		A2FBDD25B3319BA5096F29BC /* Pods_CLangWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */; };
 		AE1C4F23274341140097EAC1 /* WordsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F19274341140097EAC1 /* WordsStore.swift */; };
@@ -421,6 +420,8 @@
 		AE62CBF3272566B6007D51CD /* MediaMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */; };
 		AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */; };
 		AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */; };
+		AE6A7F4D274BE13B004A797A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7F4C274BE13B004A797A /* WebViewController.swift */; };
+		AE6A7F4F274BE303004A797A /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6A7F4E274BE303004A797A /* Pods_Library.framework */; };
 		AE6E5DB6273FB48E00523EA8 /* ImageRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */; };
 		AE6E5DBF273FB6FF00523EA8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB8273FB6FF00523EA8 /* Settings.swift */; };
 		AE6E5DC0273FB6FF00523EA8 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB9273FB6FF00523EA8 /* Line.swift */; };
@@ -685,7 +686,6 @@
 		AEF8666E274B9BCD002E33E5 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEF8666B274B9BCD002E33E5 /* NOTICE.txt */; };
 		AEF8666F274B9BCD002E33E5 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEF8666C274B9BCD002E33E5 /* LICENSE.txt */; };
 		D041815A9CC7AAAF62FC71C3 /* Pods_ConsoleWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7CAFD203AF3AB070FDE21F /* Pods_ConsoleWork.framework */; };
-		D1BBBB6976FBEF339615E107 /* Pods_KeyboardWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F57584843CAE9C4103FED2 /* Pods_KeyboardWork.framework */; };
 		FA1903311DC70AF999EB312A /* Pods_OCWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ED39A76819A2B0EE8A035A /* Pods_OCWork.framework */; };
 		FB1B59CA83911767848A98D4 /* Pods_iOSWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF858320072437C6DA25C19 /* Pods_iOSWork.framework */; };
 /* End PBXBuildFile section */
@@ -708,16 +708,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AE72F552273EBFC70060456A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AE7E745A272252AC00F0C19C /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -972,6 +962,8 @@
 		AE62CBF2272566B6007D51CD /* MediaMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaMenuViewController.swift; sourceTree = "<group>"; };
 		AE62CBF6272566C2007D51CD /* BaseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMenuViewController.swift; sourceTree = "<group>"; };
 		AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifcationViewController.swift; sourceTree = "<group>"; };
+		AE6A7F4C274BE13B004A797A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		AE6A7F4E274BE303004A797A /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotationViewController.swift; sourceTree = "<group>"; };
 		AE6E5DB8273FB6FF00523EA8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AE6E5DB9273FB6FF00523EA8 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -1236,7 +1228,6 @@
 				AE1C4F45274342560097EAC1 /* SnapKit in Frameworks */,
 				AE1C4F43274342510097EAC1 /* GrandKit in Frameworks */,
 				AE1C4F2D2743416D0097EAC1 /* Kingfisher in Frameworks */,
-				D1BBBB6976FBEF339615E107 /* Pods_KeyboardWork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1260,6 +1251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6A7F4F274BE303004A797A /* Pods_Library.framework in Frameworks */,
 				AE62CBA12725593F007D51CD /* IQKeyboardManagerSwift in Frameworks */,
 				AE62CBA3272559A7007D51CD /* Alamofire in Frameworks */,
 				AE62CB0C272542F8007D51CD /* libmp3lame.a in Frameworks */,
@@ -1268,7 +1260,6 @@
 				AE62CB9F2725593A007D51CD /* SnapKit in Frameworks */,
 				AE62CBA7272559BA007D51CD /* KRProgressHUD in Frameworks */,
 				AE62CB9D27255937007D51CD /* Kingfisher in Frameworks */,
-				37514830E83D386CE9A947BD /* Pods_Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1370,6 +1361,7 @@
 			isa = PBXGroup;
 			children = (
 				AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */,
+				AE6A7F4C274BE13B004A797A /* WebViewController.swift */,
 			);
 			path = WKWebView;
 			sourceTree = "<group>";
@@ -1427,6 +1419,7 @@
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE6A7F4E274BE303004A797A /* Pods_Library.framework */,
 				A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */,
 				CB7CAFD203AF3AB070FDE21F /* Pods_ConsoleWork.framework */,
 				B4F57584843CAE9C4103FED2 /* Pods_KeyboardWork.framework */,
@@ -2681,7 +2674,6 @@
 				AE890CFF27240DEC00FAB7D7 /* Sources */,
 				AE890D0027240DEC00FAB7D7 /* Frameworks */,
 				AE890D0127240DEC00FAB7D7 /* Resources */,
-				AE72F552273EBFC70060456A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3110,6 +3102,7 @@
 				AE62CAFB272542DC007D51CD /* ShadowEncoder.swift in Sources */,
 				AE62CB8727254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CB6B27254B12007D51CD /* GandAlert.swift in Sources */,
+				AE6A7F4D274BE13B004A797A /* WebViewController.swift in Sources */,
 				AE4D0904273032E700899D2C /* CacheProtocol.swift in Sources */,
 				AEE010E72742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
 				AEE0106E2742560200C155D8 /* Resolution.swift in Sources */,
@@ -4106,7 +4099,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/AMap",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Framework",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
@@ -4150,7 +4142,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/AMap",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Framework",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
