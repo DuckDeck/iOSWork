@@ -98,8 +98,8 @@ func GLog<T>(message:T,file:String = #file, method:String = #function,line:Int =
     if   let path = NSURL(string: file)
     {
         let log = "\(path.lastPathComponent!)[\(line)],\(method) \(message)"
-        let s = LogTool.sharedInstance.addLog(log: log)
-        print(s)
+    //    let s = LogTool.sharedInstance.addLog(log: log)
+        
         print(log)
     }
 }
