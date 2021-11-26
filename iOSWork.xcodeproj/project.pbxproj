@@ -10,6 +10,7 @@
 		70E1C51AC3B328FF0D39A90F /* Pods_SwiftUIWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40729E3A2D7297B9088E89F /* Pods_SwiftUIWork.framework */; };
 		72041D621849001868817C60 /* Pods_KeyboardWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F57584843CAE9C4103FED2 /* Pods_KeyboardWork.framework */; };
 		A2FBDD25B3319BA5096F29BC /* Pods_CLangWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */; };
+		AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */; };
 		AE1C4F23274341140097EAC1 /* WordsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F19274341140097EAC1 /* WordsStore.swift */; };
 		AE1C4F24274341140097EAC1 /* SymbolKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F1A274341140097EAC1 /* SymbolKeyStore.swift */; };
 		AE1C4F25274341140097EAC1 /* PinyinStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F1B274341140097EAC1 /* PinyinStore.swift */; };
@@ -781,6 +782,7 @@
 		9FDA7EC262925D7F3BAA1744 /* Pods-ConsoleWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConsoleWork.release.xcconfig"; path = "Target Support Files/Pods-ConsoleWork/Pods-ConsoleWork.release.xcconfig"; sourceTree = "<group>"; };
 		A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLangWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06737A9167AB79DD4D5235F /* Pods-CLangWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLangWork.release.xcconfig"; path = "Target Support Files/Pods-CLangWork/Pods-CLangWork.release.xcconfig"; sourceTree = "<group>"; };
+		AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebViewController.swift; sourceTree = "<group>"; };
 		AE1C4F19274341140097EAC1 /* WordsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsStore.swift; sourceTree = "<group>"; };
 		AE1C4F1A274341140097EAC1 /* SymbolKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolKeyStore.swift; sourceTree = "<group>"; };
 		AE1C4F1B274341140097EAC1 /* PinyinStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinyinStore.swift; sourceTree = "<group>"; };
@@ -1375,6 +1377,7 @@
 			isa = PBXGroup;
 			children = (
 				AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */,
+				AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */,
 				AE6A7F4C274BE13B004A797A /* WebViewController.swift */,
 			);
 			path = WKWebView;
@@ -3264,6 +3267,7 @@
 				AE62CBBC27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CA192725425A007D51CD /* FMDatabasePool.m in Sources */,
 				AEE010D52742569200C155D8 /* MJRefreshAutoStateFooter.m in Sources */,
+				AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */,
 				AE72F52C273EB9A50060456A /* CitySearchView.swift in Sources */,
 				AEE0106F2742560200C155D8 /* MitoListViewController.swift in Sources */,
 				AEF86666274B9B52002E33E5 /* ClassifyingImagesViewController.swift in Sources */,

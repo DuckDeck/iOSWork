@@ -9,57 +9,67 @@ import Foundation
 import WebKit
 import SwiftyJSON
 class WebViewController:BaseViewController{
-    var webView:WKWebView!
+    var arrData = ["打开网页","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)"]
+    var tbMenu = UITableView()
+    var isHooked = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let config = WKWebViewConfiguration()
-        
-        
-        let pre = WKPreferences()
-        pre.minimumFontSize = 13
-        pre.javaScriptEnabled = true
-        config.preferences = pre
-        let wkuser = WKUserContentController()
-        config.userContentController = wkuser
-        wkuser.add(self, name: "showMobile")
+        navigationItem.title = "基本&WEB"
 
-        
-        webView = WKWebView(frame: CGRect.zero, configuration: config)
-        view.addSubview(webView)
-        webView.snp.makeConstraints { (m) in
+        view.backgroundColor = UIColor.white
+        tbMenu.dataSource = self
+        tbMenu.delegate = self
+        tbMenu.tableFooterView = UIView()
+        view.addSubview(tbMenu)
+        tbMenu.snp.makeConstraints { (m) in
             m.edges.equalTo(0)
         }
-        webView?.uiDelegate = self;
-        webView?.navigationDelegate = self;
-
-        let url = URL(string: "https://mo.fish/?class_id=%E5%85%A8%E9%83%A8&hot_id=106")!
-        let request = URLRequest(url: url)
-        
-        _ =  webView?.load(request)
-
-        
-        let btn = UIBarButtonItem(title: "reload", style: .plain, target: self, action: #selector(reloadHTML))
-        navigationItem.rightBarButtonItem = btn
-    }
-    
-    @objc func reloadHTML(){
-        let path = Bundle.main.path(forResource: "upload", ofType: "html")
-        let url = URL(fileURLWithPath: path!)
-        let request = URLRequest(url: url)
-        
-        _ =  webView?.load(request)
-
     }
 }
-
-extension WebViewController:WKScriptMessageHandler,WKUIDelegate,WKNavigationDelegate{
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        let js = JSON(message.body)
-        let str = js["data"].stringValue
-        let d = Data(base64Encoded: str)!
-        
+extension WebViewController:UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrData.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        if cell == nil{
+            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        }
+        cell?.textLabel?.text = arrData[indexPath.row]
+        return cell!
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        switch indexPath.row {
+        case 0:
+            let vc = OpenWebViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 1:
+            let vc = HandleJSViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 2:
+            let vc = HttpInterceptWebMenuViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+
+        case 3:
+            if !isHooked{
+                (UIApplication.shared.delegate as? AppDelegate)?.hookMethod()
+                WebViewReusePool.load()
+                isHooked = true
+            }
+            let vc = HttpInterceptWebViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+
+        default:
+            break
+        }
+    }
     
+
 }
