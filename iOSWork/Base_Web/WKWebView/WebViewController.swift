@@ -9,7 +9,7 @@ import Foundation
 import WebKit
 import SwiftyJSON
 class WebViewController:BaseViewController{
-    var arrData = ["打开网页","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)"]
+    var arrData = ["本地使用js上传文件","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)"]
     var tbMenu = UITableView()
     var isHooked = false
 

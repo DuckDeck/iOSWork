@@ -11,6 +11,7 @@
 		72041D621849001868817C60 /* Pods_KeyboardWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F57584843CAE9C4103FED2 /* Pods_KeyboardWork.framework */; };
 		A2FBDD25B3319BA5096F29BC /* Pods_CLangWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */; };
 		AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */; };
+		AE1A875D27512195004FA0DA /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875C27512195004FA0DA /* Spirograph.swift */; };
 		AE1C4F23274341140097EAC1 /* WordsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F19274341140097EAC1 /* WordsStore.swift */; };
 		AE1C4F24274341140097EAC1 /* SymbolKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F1A274341140097EAC1 /* SymbolKeyStore.swift */; };
 		AE1C4F25274341140097EAC1 /* PinyinStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F1B274341140097EAC1 /* PinyinStore.swift */; };
@@ -783,6 +784,7 @@
 		A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLangWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06737A9167AB79DD4D5235F /* Pods-CLangWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLangWork.release.xcconfig"; path = "Target Support Files/Pods-CLangWork/Pods-CLangWork.release.xcconfig"; sourceTree = "<group>"; };
 		AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebViewController.swift; sourceTree = "<group>"; };
+		AE1A875C27512195004FA0DA /* Spirograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirograph.swift; sourceTree = "<group>"; };
 		AE1C4F19274341140097EAC1 /* WordsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsStore.swift; sourceTree = "<group>"; };
 		AE1C4F1A274341140097EAC1 /* SymbolKeyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymbolKeyStore.swift; sourceTree = "<group>"; };
 		AE1C4F1B274341140097EAC1 /* PinyinStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinyinStore.swift; sourceTree = "<group>"; };
@@ -1942,6 +1944,7 @@
 		AE7E743E2722528200F0C19C /* SwiftUIWork */ = {
 			isa = PBXGroup;
 			children = (
+				AE1A875C27512195004FA0DA /* Spirograph.swift */,
 				AE7E743F2722528200F0C19C /* SwiftUIWorkApp.swift */,
 				AE7E74412722528200F0C19C /* ContentView.swift */,
 				AE7E74432722528400F0C19C /* Assets.xcassets */,
@@ -3400,6 +3403,7 @@
 				AEE010AB2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
 				AE62CA5D2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE62CB5927254947007D51CD /* UIView+Base.swift in Sources */,
+				AE1A875D27512195004FA0DA /* Spirograph.swift in Sources */,
 				AEE010B12742569200C155D8 /* MJRefreshConfig.m in Sources */,
 				AED0C2CA274E8548007A3547 /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CAE4272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,

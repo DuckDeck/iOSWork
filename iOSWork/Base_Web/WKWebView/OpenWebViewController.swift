@@ -33,7 +33,8 @@ class OpenWebViewController:BaseViewController{
         webView?.uiDelegate = self;
         webView?.navigationDelegate = self;
 
-        let url = URL(string: "https://mo.fish/?class_id=%E5%85%A8%E9%83%A8&hot_id=106")!
+        let path = Bundle.main.path(forResource: "upload", ofType: "html")
+        let url = URL(fileURLWithPath: path!)
         let request = URLRequest(url: url)
         
         _ =  webView?.load(request)
