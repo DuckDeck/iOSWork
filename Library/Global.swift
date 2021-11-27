@@ -147,9 +147,6 @@ func +(lhs: Float,rhs:UInt)->Float{
     return lhs + Float(rhs)
 }
 
-
-
-
 func -(lhs: Int,rhs:Double)->Double{
     return Double(lhs) - rhs
 }
@@ -190,8 +187,6 @@ func -(lhs: UInt,rhs:Float)->Float{
 func -(lhs: Float,rhs:UInt)->Float{
     return lhs - Float(rhs)
 }
-
-
 
 func *(lhs: Int,rhs:Double)->Double{
     return Double(lhs) * rhs

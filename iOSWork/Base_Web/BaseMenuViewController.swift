@@ -14,7 +14,6 @@ class BaseMenuViewController:BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "基本&WEB"
-
         view.backgroundColor = UIColor.white
         tbMenu.dataSource = self
         tbMenu.delegate = self
