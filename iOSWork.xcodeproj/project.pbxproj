@@ -552,9 +552,17 @@
 		AE66E131275369D4006432FE /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E0B1275369D3006432FE /* libswscale.a */; };
 		AE66E132275369D4006432FE /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E0B1275369D3006432FE /* libswscale.a */; };
 		AE66E133275369D4006432FE /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E0B1275369D3006432FE /* libswscale.a */; };
-		AE66E13527536A19006432FE /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E13427536A18006432FE /* opencv2.framework */; };
-		AE66E13627536A19006432FE /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E13427536A18006432FE /* opencv2.framework */; };
-		AE66E13727536A19006432FE /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E13427536A18006432FE /* opencv2.framework */; };
+		AE66E15427537947006432FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E15327537947006432FE /* AVFoundation.framework */; };
+		AE66E1562753794F006432FE /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E1552753794F006432FE /* CoreMedia.framework */; };
+		AE66E15B27537992006432FE /* OpenCV.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66E15927537992006432FE /* OpenCV.h */; };
+		AE66E15C27537992006432FE /* OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE66E15A27537992006432FE /* OpenCV.mm */; };
+		AE66E18727537C36006432FE /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E14E2753791D006432FE /* opencv2.framework */; };
+		AE66E18827537C91006432FE /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E14E2753791D006432FE /* opencv2.framework */; };
+		AE66E18C27537CC9006432FE /* OpenCVMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E18B27537CC8006432FE /* OpenCVMenuViewController.swift */; };
+		AE66E18E27537D37006432FE /* GrayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E18D27537D37006432FE /* GrayVideoViewController.swift */; };
+		AE66E19027537E47006432FE /* ProcessVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E18F27537E47006432FE /* ProcessVideoViewController.swift */; };
+		AE66E19227537F98006432FE /* ImageRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E19127537F98006432FE /* ImageRecognitionViewController.swift */; };
+		AE66E19427537FBB006432FE /* OpenCVBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E19327537FBB006432FE /* OpenCVBaseViewController.swift */; };
 		AE6A7F4D274BE13B004A797A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7F4C274BE13B004A797A /* WebViewController.swift */; };
 		AE6A7F4F274BE303004A797A /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6A7F4E274BE303004A797A /* Pods_Library.framework */; };
 		AE6E5DB6273FB48E00523EA8 /* ImageRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */; };
@@ -1230,7 +1238,19 @@
 		AE66E0AF275369D3006432FE /* libavdevice.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libavdevice.a; sourceTree = "<group>"; };
 		AE66E0B0275369D3006432FE /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
 		AE66E0B1275369D3006432FE /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
-		AE66E13427536A18006432FE /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		AE66E14E2753791D006432FE /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		AE66E1512753793E006432FE /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		AE66E15327537947006432FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AE66E1552753794F006432FE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		AE66E15727537972006432FE /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		AE66E1582753797E006432FE /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
+		AE66E15927537992006432FE /* OpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCV.h; sourceTree = "<group>"; };
+		AE66E15A27537992006432FE /* OpenCV.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCV.mm; sourceTree = "<group>"; };
+		AE66E18B27537CC8006432FE /* OpenCVMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVMenuViewController.swift; sourceTree = "<group>"; };
+		AE66E18D27537D37006432FE /* GrayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayVideoViewController.swift; sourceTree = "<group>"; };
+		AE66E18F27537E47006432FE /* ProcessVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessVideoViewController.swift; sourceTree = "<group>"; };
+		AE66E19127537F98006432FE /* ImageRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionViewController.swift; sourceTree = "<group>"; };
+		AE66E19327537FBB006432FE /* OpenCVBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVBaseViewController.swift; sourceTree = "<group>"; };
 		AE6A7F4C274BE13B004A797A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AE6A7F4E274BE303004A797A /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotationViewController.swift; sourceTree = "<group>"; };
@@ -1471,20 +1491,22 @@
 				AE62C9C227253EFF007D51CD /* Kingfisher in Frameworks */,
 				AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */,
 				AE62C9D42725405D007D51CD /* KRProgressHUD in Frameworks */,
+				AE66E15427537947006432FE /* AVFoundation.framework in Frameworks */,
 				AE66E11F275369D3006432FE /* libavutil.a in Frameworks */,
 				AE62C9D727254088007D51CD /* SkeletonView in Frameworks */,
 				AE62C9BC27253D70007D51CD /* GrandKit in Frameworks */,
 				AE66E12B275369D4006432FE /* libavdevice.a in Frameworks */,
 				AE62C9DE27254113007D51CD /* SwiftyJSON in Frameworks */,
+				AE66E1562753794F006432FE /* CoreMedia.framework in Frameworks */,
 				AE62C9C827253F33007D51CD /* Alamofire in Frameworks */,
 				AE62C9DA272540AA007D51CD /* SwiftSoup in Frameworks */,
 				AE62C9C527253F1C007D51CD /* SnapKit in Frameworks */,
 				AE62C9D127254039007D51CD /* Kanna in Frameworks */,
 				AE62C9CB27253FE1007D51CD /* Gifu in Frameworks */,
 				FB1B59CA83911767848A98D4 /* Pods_iOSWork.framework in Frameworks */,
-				AE66E13527536A19006432FE /* opencv2.framework in Frameworks */,
 				AE66E122275369D4006432FE /* libavfilter.a in Frameworks */,
 				AE66E12E275369D4006432FE /* libswresample.a in Frameworks */,
+				AE66E18727537C36006432FE /* opencv2.framework in Frameworks */,
 				AE66E125275369D4006432FE /* libavcodec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1505,7 +1527,6 @@
 				AE62CB0B272542F8007D51CD /* libmp3lame.a in Frameworks */,
 				AE66E129275369D4006432FE /* libavformat.a in Frameworks */,
 				AE66E12C275369D4006432FE /* libavdevice.a in Frameworks */,
-				AE66E13627536A19006432FE /* opencv2.framework in Frameworks */,
 				AE66E132275369D4006432FE /* libswscale.a in Frameworks */,
 				AED0C2C2274E8461007A3547 /* SnapKit in Frameworks */,
 				AE66E03227536944006432FE /* libx264.a in Frameworks */,
@@ -1557,7 +1578,7 @@
 				AE62CBA5272559AB007D51CD /* GrandKit in Frameworks */,
 				AE66E12A275369D4006432FE /* libavformat.a in Frameworks */,
 				AE66E12D275369D4006432FE /* libavdevice.a in Frameworks */,
-				AE66E13727536A19006432FE /* opencv2.framework in Frameworks */,
+				AE66E18827537C91006432FE /* opencv2.framework in Frameworks */,
 				AE66E133275369D4006432FE /* libswscale.a in Frameworks */,
 				AE62CB9F2725593A007D51CD /* SnapKit in Frameworks */,
 				AE66E03327536944006432FE /* libx264.a in Frameworks */,
@@ -1723,6 +1744,11 @@
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E1582753797E006432FE /* libiconv.2.4.0.tbd */,
+				AE66E15727537972006432FE /* libbz2.1.0.tbd */,
+				AE66E1552753794F006432FE /* CoreMedia.framework */,
+				AE66E15327537947006432FE /* AVFoundation.framework */,
+				AE66E1512753793E006432FE /* AVFAudio.framework */,
 				AE6A7F4E274BE303004A797A /* Pods_Library.framework */,
 				A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */,
 				CB7CAFD203AF3AB070FDE21F /* Pods_ConsoleWork.framework */,
@@ -1738,6 +1764,7 @@
 		AE62C9DF2725411C007D51CD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E195275380BA006432FE /* Train */,
 				AE62C9E8272541D5007D51CD /* HTML */,
 				AE62C9E4272541C8007D51CD /* Image */,
 				AE62C9E027254183007D51CD /* Video */,
@@ -1774,9 +1801,9 @@
 		AE62C9EC272541F2007D51CD /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E14D2753790E006432FE /* FrameWork */,
 				AE66E034275369D3006432FE /* ffmpeg_ios */,
 				AE66E02927536944006432FE /* fat-x264 */,
-				AE671E152747DE34005D33D6 /* Framework */,
 				AEE010792742569200C155D8 /* MJRefresh */,
 				AE72F51E273EB9820060456A /* CityChoose */,
 				AE62CB6727254B12007D51CD /* Toast */,
@@ -2071,6 +2098,7 @@
 		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E18A27537CB5006432FE /* OpenCV */,
 				AEE0104D2742525C00C155D8 /* Palette */,
 				AEE0104A2742508500C155D8 /* Watermark */,
 				AEE0104727424FEE00C155D8 /* GIF */,
@@ -2332,12 +2360,40 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		AE671E152747DE34005D33D6 /* Framework */ = {
+		AE66E14127536DCB006432FE /* Mediator */ = {
 			isa = PBXGroup;
 			children = (
-				AE66E13427536A18006432FE /* opencv2.framework */,
+				AE66E15927537992006432FE /* OpenCV.h */,
+				AE66E15A27537992006432FE /* OpenCV.mm */,
 			);
-			path = Framework;
+			path = Mediator;
+			sourceTree = "<group>";
+		};
+		AE66E14D2753790E006432FE /* FrameWork */ = {
+			isa = PBXGroup;
+			children = (
+				AE66E14E2753791D006432FE /* opencv2.framework */,
+			);
+			path = FrameWork;
+			sourceTree = "<group>";
+		};
+		AE66E18A27537CB5006432FE /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				AE66E18B27537CC8006432FE /* OpenCVMenuViewController.swift */,
+				AE66E18D27537D37006432FE /* GrayVideoViewController.swift */,
+				AE66E18F27537E47006432FE /* ProcessVideoViewController.swift */,
+				AE66E19127537F98006432FE /* ImageRecognitionViewController.swift */,
+				AE66E19327537FBB006432FE /* OpenCVBaseViewController.swift */,
+			);
+			path = OpenCV;
+			sourceTree = "<group>";
+		};
+		AE66E195275380BA006432FE /* Train */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Train;
 			sourceTree = "<group>";
 		};
 		AE6E5DB4273FB46F00523EA8 /* Motion */ = {
@@ -2536,6 +2592,7 @@
 		AE890D0427240DEC00FAB7D7 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E14127536DCB006432FE /* Mediator */,
 				AE62CBAA27255BE2007D51CD /* View */,
 				AE62CB7427254DC9007D51CD /* Tool */,
 				AE62CB22272548B6007D51CD /* Extension */,
@@ -3180,6 +3237,7 @@
 				AE66E0F3275369D3006432FE /* channel_layout.h in Headers */,
 				AEE010C72742569200C155D8 /* MJRefreshBackStateFooter.h in Headers */,
 				AE62CA0E2725425A007D51CD /* FMResultSet.h in Headers */,
+				AE66E15B27537992006432FE /* OpenCV.h in Headers */,
 				AE66E11D275369D3006432FE /* version.h in Headers */,
 				AE66E11A275369D3006432FE /* vorbis_parser.h in Headers */,
 				AE62CA5F2725429B007D51CD /* TZGifPhotoPreviewController.h in Headers */,
@@ -3745,6 +3803,7 @@
 				AE1C4F68274346BD0097EAC1 /* bzlib.c in Sources */,
 				AEE0104127424D4500C155D8 /* VolumeView.swift in Sources */,
 				AE6E5DC2273FB6FF00523EA8 /* CrossLine.swift in Sources */,
+				AE66E19227537F98006432FE /* ImageRecognitionViewController.swift in Sources */,
 				AEE011022742581500C155D8 /* LockView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */,
@@ -3778,6 +3837,7 @@
 				AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */,
 				AE62CBDA27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE6E5DC8273FBC3D00523EA8 /* HorizontalTableViewController.swift in Sources */,
+				AE66E19427537FBB006432FE /* OpenCVBaseViewController.swift in Sources */,
 				AE62CAA2272542D1007D51CD /* UIImage+Palette.m in Sources */,
 				AE62CAE9272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CB4927254947007D51CD /* UIImageView+Extension.swift in Sources */,
@@ -3801,11 +3861,13 @@
 				AE72F533273EBDA80060456A /* AddressInfo.swift in Sources */,
 				AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE1C4F702743476E0097EAC1 /* PatchViewController.m in Sources */,
+				AE66E19027537E47006432FE /* ProcessVideoViewController.swift in Sources */,
 				AE62CB1527254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CB3A27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE1C4F62274346BD0097EAC1 /* huffman.c in Sources */,
 				AE62CA5C2725429B007D51CD /* TZProgressView.m in Sources */,
+				AE66E18C27537CC9006432FE /* OpenCVMenuViewController.swift in Sources */,
 				AE61166027410F2F008466AB /* GrandSlider.swift in Sources */,
 				AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */,
 				AEE010DB2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
@@ -3824,6 +3886,7 @@
 				AE4D0901273032E700899D2C /* H5ResourceCache.swift in Sources */,
 				AEE0103C27424AA300C155D8 /* VideoPlayViewController.swift in Sources */,
 				AE4D08FE273032E700899D2C /* MemeryCache.swift in Sources */,
+				AE66E15C27537992006432FE /* OpenCV.mm in Sources */,
 				AE62CBE727256690007D51CD /* UIMenuViewController.swift in Sources */,
 				AE62CB5227254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE1C4F63274346BD0097EAC1 /* spewG.c in Sources */,
@@ -3873,6 +3936,7 @@
 				AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AEE010772742560200C155D8 /* MitoConfig.swift in Sources */,
 				AEE0104C2742509300C155D8 /* WatermarkViewController.swift in Sources */,
+				AE66E18E27537D37006432FE /* GrayVideoViewController.swift in Sources */,
 				AEE010CF2742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				AE6E5DC5273FB6FF00523EA8 /* SettingViewController.swift in Sources */,
 				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
@@ -4435,6 +4499,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
@@ -4442,6 +4507,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/AMap",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Framework",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -4461,7 +4527,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Lame",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264的副本/lib",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264/lib",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/lib",
 				);
 				MARKETING_VERSION = 1.0;
@@ -4482,6 +4548,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
@@ -4489,6 +4556,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/AMap",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Framework",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -4508,7 +4576,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Lame",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264的副本/lib",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264/lib",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/lib",
 				);
 				MARKETING_VERSION = 1.0;
@@ -4551,7 +4619,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Lame",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264的副本/lib",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264/lib",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/lib",
 				);
 				MARKETING_VERSION = 1.0;
@@ -4593,7 +4661,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Lame",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264的副本/lib",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264/lib",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/lib",
 				);
 				MARKETING_VERSION = 1.0;
@@ -4747,6 +4815,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Framework",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -4760,7 +4829,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Lame",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264的副本/lib",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264/lib",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/lib",
 				);
 				MARKETING_VERSION = 1.0;
@@ -4792,6 +4861,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Framework",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -4805,7 +4875,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/Lame",
-					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264的副本/lib",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/fat-x264/lib",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/lib",
 				);
 				MARKETING_VERSION = 1.0;

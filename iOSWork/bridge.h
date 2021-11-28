@@ -16,4 +16,5 @@
 #import "PatchViewController.h"
 #import "RerangeBinaryViewController.h"
 #import "UncaughtExceptionHandler.h"
+#import "OpenCV.h"
 #endif /* bridge_h */
