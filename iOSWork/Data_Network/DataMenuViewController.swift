@@ -13,7 +13,7 @@ class DataMenuViewController:BaseViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "多媒体&硬件"
+        navigationItem.title = "数据&网编"
 
         view.backgroundColor = UIColor.white
         tbMenu.dataSource = self

@@ -88,4 +88,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
-AMap/
+ffmpeg_ios
+opencv2.framework
+*.DS_Store
