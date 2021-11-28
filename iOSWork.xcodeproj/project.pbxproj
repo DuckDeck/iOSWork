@@ -586,6 +586,10 @@
 		AE66E1CC275389FE006432FE /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E15727537972006432FE /* libbz2.1.0.tbd */; };
 		AE66E1CD27538A09006432FE /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E1582753797E006432FE /* libiconv.2.4.0.tbd */; };
 		AE66E1CF27538B81006432FE /* VideoBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1CE27538B81006432FE /* VideoBoxViewController.swift */; };
+		AE66E1D827538EE0006432FE /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1D427538EE0006432FE /* HeartView.swift */; };
+		AE66E1D927538EE0006432FE /* PullLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1D527538EE0006432FE /* PullLiveViewController.swift */; };
+		AE66E1DA27538EE0006432FE /* PushLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1D627538EE0006432FE /* PushLiveViewController.swift */; };
+		AE66E1DB27538EE0006432FE /* LivePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1D727538EE0006432FE /* LivePreview.swift */; };
 		AE6A7F4D274BE13B004A797A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7F4C274BE13B004A797A /* WebViewController.swift */; };
 		AE6A7F4F274BE303004A797A /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6A7F4E274BE303004A797A /* Pods_Library.framework */; };
 		AE6E5DB6273FB48E00523EA8 /* ImageRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */; };
@@ -1297,6 +1301,10 @@
 		AE66E1CA275388B2006432FE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		AE66E1CE27538B81006432FE /* VideoBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBoxViewController.swift; sourceTree = "<group>"; };
 		AE66E1D127538C50006432FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		AE66E1D427538EE0006432FE /* HeartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
+		AE66E1D527538EE0006432FE /* PullLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullLiveViewController.swift; sourceTree = "<group>"; };
+		AE66E1D627538EE0006432FE /* PushLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushLiveViewController.swift; sourceTree = "<group>"; };
+		AE66E1D727538EE0006432FE /* LivePreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePreview.swift; sourceTree = "<group>"; };
 		AE6A7F4C274BE13B004A797A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AE6A7F4E274BE303004A797A /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotationViewController.swift; sourceTree = "<group>"; };
@@ -2149,6 +2157,7 @@
 		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E1D327538ECB006432FE /* Live */,
 				AE66E19A27538621006432FE /* FFMpeg */,
 				AE66E18A27537CB5006432FE /* OpenCV */,
 				AEE0104D2742525C00C155D8 /* Palette */,
@@ -2481,6 +2490,17 @@
 				AE66E1AB27538679006432FE /* FFmpegVideoDecoder.mm */,
 			);
 			path = FFMpeg;
+			sourceTree = "<group>";
+		};
+		AE66E1D327538ECB006432FE /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				AE66E1D427538EE0006432FE /* HeartView.swift */,
+				AE66E1D727538EE0006432FE /* LivePreview.swift */,
+				AE66E1D527538EE0006432FE /* PullLiveViewController.swift */,
+				AE66E1D627538EE0006432FE /* PushLiveViewController.swift */,
+			);
+			path = Live;
 			sourceTree = "<group>";
 		};
 		AE6E5DB4273FB46F00523EA8 /* Motion */ = {
@@ -4086,9 +4106,12 @@
 				AE62CBD727255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CA772725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
 				AE62CA81272542AF007D51CD /* fishhook.c in Sources */,
+				AE66E1D927538EE0006432FE /* PullLiveViewController.swift in Sources */,
+				AE66E1DA27538EE0006432FE /* PushLiveViewController.swift in Sources */,
 				AEE010F22742569200C155D8 /* MJRefreshBackFooter.m in Sources */,
 				AE72F530273EB9A50060456A /* CityTableViewCell.swift in Sources */,
 				AE62CB4327254947007D51CD /* UINavigationController+Extension.swift in Sources */,
+				AE66E1DB27538EE0006432FE /* LivePreview.swift in Sources */,
 				AE62CB01272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AE97D3322745FCAF00157DBE /* TriggerErrorViewController.swift in Sources */,
 				AEE0115327425D8800C155D8 /* FullBoard.swift in Sources */,
@@ -4113,6 +4136,7 @@
 				AEE0103A27424A3600C155D8 /* VideoFileManager.swift in Sources */,
 				AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */,
+				AE66E1D827538EE0006432FE /* HeartView.swift in Sources */,
 				AEE010AA2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
 				AE1C4F5F274346BD0097EAC1 /* compress.c in Sources */,
 				AE62CB4627254947007D51CD /* UITableView+Extension.swift in Sources */,

@@ -45,7 +45,11 @@ extension FFmpegMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let vc = AudioDecoderViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
-      
+        case 1:
+            let vc = VideoBoxViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+
 
         default:
             break
