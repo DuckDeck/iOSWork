@@ -563,6 +563,29 @@
 		AE66E19027537E47006432FE /* ProcessVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E18F27537E47006432FE /* ProcessVideoViewController.swift */; };
 		AE66E19227537F98006432FE /* ImageRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E19127537F98006432FE /* ImageRecognitionViewController.swift */; };
 		AE66E19427537FBB006432FE /* OpenCVBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E19327537FBB006432FE /* OpenCVBaseViewController.swift */; };
+		AE66E19827538149006432FE /* lbpcascade_frontalface.xml in Resources */ = {isa = PBXBuildFile; fileRef = AE66E19627538149006432FE /* lbpcascade_frontalface.xml */; };
+		AE66E19927538149006432FE /* haarcascade_eye_tree_eyeglasses.xml in Resources */ = {isa = PBXBuildFile; fileRef = AE66E19727538149006432FE /* haarcascade_eye_tree_eyeglasses.xml */; };
+		AE66E1AC27538679006432FE /* AudioDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66E19C27538679006432FE /* AudioDecoder.h */; };
+		AE66E1AD27538679006432FE /* AVParseHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE66E19D27538679006432FE /* AVParseHandler.mm */; };
+		AE66E1AF27538679006432FE /* SortFrameHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66E19E27538679006432FE /* SortFrameHandler.h */; };
+		AE66E1B027538679006432FE /* AudioFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66E19F27538679006432FE /* AudioFileHandler.m */; };
+		AE66E1B227538679006432FE /* AudioDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1A027538679006432FE /* AudioDecoder.mm */; };
+		AE66E1B427538679006432FE /* PreviewView.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1A127538679006432FE /* PreviewView.mm */; };
+		AE66E1B627538679006432FE /* AudioQueueCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1A227538679006432FE /* AudioQueueCaptureManager.m */; };
+		AE66E1B827538679006432FE /* VideoDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66E1A327538679006432FE /* VideoDecoder.h */; };
+		AE66E1B927538679006432FE /* FFmpegVideoDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66E1A427538679006432FE /* FFmpegVideoDecoder.h */; };
+		AE66E1BA27538679006432FE /* PreviewView.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66E1A527538679006432FE /* PreviewView.h */; };
+		AE66E1BB27538679006432FE /* AVParseHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66E1A627538679006432FE /* AVParseHandler.h */; };
+		AE66E1BC27538679006432FE /* AudioFileHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66E1A727538679006432FE /* AudioFileHandler.h */; };
+		AE66E1BD27538679006432FE /* VideoDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1A827538679006432FE /* VideoDecoder.mm */; };
+		AE66E1BF27538679006432FE /* SortFrameHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1A927538679006432FE /* SortFrameHandler.m */; };
+		AE66E1C127538679006432FE /* AudioQueueCaptureManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AE66E1AA27538679006432FE /* AudioQueueCaptureManager.h */; };
+		AE66E1C227538679006432FE /* FFmpegVideoDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1AB27538679006432FE /* FFmpegVideoDecoder.mm */; };
+		AE66E1C5275386D8006432FE /* FFMpegMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1C4275386D8006432FE /* FFMpegMenuViewController.swift */; };
+		AE66E1C82753872C006432FE /* AudioDecoderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1C72753872C006432FE /* AudioDecoderViewController.swift */; };
+		AE66E1CC275389FE006432FE /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E15727537972006432FE /* libbz2.1.0.tbd */; };
+		AE66E1CD27538A09006432FE /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E1582753797E006432FE /* libiconv.2.4.0.tbd */; };
+		AE66E1CF27538B81006432FE /* VideoBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1CE27538B81006432FE /* VideoBoxViewController.swift */; };
 		AE6A7F4D274BE13B004A797A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7F4C274BE13B004A797A /* WebViewController.swift */; };
 		AE6A7F4F274BE303004A797A /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6A7F4E274BE303004A797A /* Pods_Library.framework */; };
 		AE6E5DB6273FB48E00523EA8 /* ImageRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */; };
@@ -1251,6 +1274,29 @@
 		AE66E18F27537E47006432FE /* ProcessVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessVideoViewController.swift; sourceTree = "<group>"; };
 		AE66E19127537F98006432FE /* ImageRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionViewController.swift; sourceTree = "<group>"; };
 		AE66E19327537FBB006432FE /* OpenCVBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVBaseViewController.swift; sourceTree = "<group>"; };
+		AE66E19627538149006432FE /* lbpcascade_frontalface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = lbpcascade_frontalface.xml; sourceTree = "<group>"; };
+		AE66E19727538149006432FE /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
+		AE66E19C27538679006432FE /* AudioDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioDecoder.h; sourceTree = "<group>"; };
+		AE66E19D27538679006432FE /* AVParseHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AVParseHandler.mm; sourceTree = "<group>"; };
+		AE66E19E27538679006432FE /* SortFrameHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortFrameHandler.h; sourceTree = "<group>"; };
+		AE66E19F27538679006432FE /* AudioFileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFileHandler.m; sourceTree = "<group>"; };
+		AE66E1A027538679006432FE /* AudioDecoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioDecoder.mm; sourceTree = "<group>"; };
+		AE66E1A127538679006432FE /* PreviewView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PreviewView.mm; sourceTree = "<group>"; };
+		AE66E1A227538679006432FE /* AudioQueueCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioQueueCaptureManager.m; sourceTree = "<group>"; };
+		AE66E1A327538679006432FE /* VideoDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDecoder.h; sourceTree = "<group>"; };
+		AE66E1A427538679006432FE /* FFmpegVideoDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFmpegVideoDecoder.h; sourceTree = "<group>"; };
+		AE66E1A527538679006432FE /* PreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewView.h; sourceTree = "<group>"; };
+		AE66E1A627538679006432FE /* AVParseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVParseHandler.h; sourceTree = "<group>"; };
+		AE66E1A727538679006432FE /* AudioFileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFileHandler.h; sourceTree = "<group>"; };
+		AE66E1A827538679006432FE /* VideoDecoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoDecoder.mm; sourceTree = "<group>"; };
+		AE66E1A927538679006432FE /* SortFrameHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortFrameHandler.m; sourceTree = "<group>"; };
+		AE66E1AA27538679006432FE /* AudioQueueCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioQueueCaptureManager.h; sourceTree = "<group>"; };
+		AE66E1AB27538679006432FE /* FFmpegVideoDecoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FFmpegVideoDecoder.mm; sourceTree = "<group>"; };
+		AE66E1C4275386D8006432FE /* FFMpegMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFMpegMenuViewController.swift; sourceTree = "<group>"; };
+		AE66E1C72753872C006432FE /* AudioDecoderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDecoderViewController.swift; sourceTree = "<group>"; };
+		AE66E1CA275388B2006432FE /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		AE66E1CE27538B81006432FE /* VideoBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBoxViewController.swift; sourceTree = "<group>"; };
+		AE66E1D127538C50006432FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		AE6A7F4C274BE13B004A797A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AE6A7F4E274BE303004A797A /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotationViewController.swift; sourceTree = "<group>"; };
@@ -1506,7 +1552,9 @@
 				FB1B59CA83911767848A98D4 /* Pods_iOSWork.framework in Frameworks */,
 				AE66E122275369D4006432FE /* libavfilter.a in Frameworks */,
 				AE66E12E275369D4006432FE /* libswresample.a in Frameworks */,
+				AE66E1CD27538A09006432FE /* libiconv.2.4.0.tbd in Frameworks */,
 				AE66E18727537C36006432FE /* opencv2.framework in Frameworks */,
+				AE66E1CC275389FE006432FE /* libbz2.1.0.tbd in Frameworks */,
 				AE66E125275369D4006432FE /* libavcodec.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1744,6 +1792,8 @@
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E1D127538C50006432FE /* AVFoundation.framework */,
+				AE66E1CA275388B2006432FE /* CoreMedia.framework */,
 				AE66E1582753797E006432FE /* libiconv.2.4.0.tbd */,
 				AE66E15727537972006432FE /* libbz2.1.0.tbd */,
 				AE66E1552753794F006432FE /* CoreMedia.framework */,
@@ -1923,6 +1973,7 @@
 			isa = PBXGroup;
 			children = (
 				AEE010502742547C00C155D8 /* CaptureSession.swift */,
+				AE66E19B27538679006432FE /* FFMpeg */,
 				AE62CAB5272542DC007D51CD /* ShadowPlayer */,
 				AE62CAC1272542DC007D51CD /* VideoRecord */,
 				AE62CAC7272542DC007D51CD /* ShadowCamera */,
@@ -2098,6 +2149,7 @@
 		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E19A27538621006432FE /* FFMpeg */,
 				AE66E18A27537CB5006432FE /* OpenCV */,
 				AEE0104D2742525C00C155D8 /* Palette */,
 				AEE0104A2742508500C155D8 /* Watermark */,
@@ -2392,8 +2444,43 @@
 		AE66E195275380BA006432FE /* Train */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E19727538149006432FE /* haarcascade_eye_tree_eyeglasses.xml */,
+				AE66E19627538149006432FE /* lbpcascade_frontalface.xml */,
 			);
 			path = Train;
+			sourceTree = "<group>";
+		};
+		AE66E19A27538621006432FE /* FFMpeg */ = {
+			isa = PBXGroup;
+			children = (
+				AE66E1C4275386D8006432FE /* FFMpegMenuViewController.swift */,
+				AE66E1C72753872C006432FE /* AudioDecoderViewController.swift */,
+				AE66E1CE27538B81006432FE /* VideoBoxViewController.swift */,
+			);
+			path = FFMpeg;
+			sourceTree = "<group>";
+		};
+		AE66E19B27538679006432FE /* FFMpeg */ = {
+			isa = PBXGroup;
+			children = (
+				AE66E19C27538679006432FE /* AudioDecoder.h */,
+				AE66E1A027538679006432FE /* AudioDecoder.mm */,
+				AE66E1A627538679006432FE /* AVParseHandler.h */,
+				AE66E19D27538679006432FE /* AVParseHandler.mm */,
+				AE66E19E27538679006432FE /* SortFrameHandler.h */,
+				AE66E1A927538679006432FE /* SortFrameHandler.m */,
+				AE66E1A727538679006432FE /* AudioFileHandler.h */,
+				AE66E19F27538679006432FE /* AudioFileHandler.m */,
+				AE66E1A527538679006432FE /* PreviewView.h */,
+				AE66E1A127538679006432FE /* PreviewView.mm */,
+				AE66E1AA27538679006432FE /* AudioQueueCaptureManager.h */,
+				AE66E1A227538679006432FE /* AudioQueueCaptureManager.m */,
+				AE66E1A327538679006432FE /* VideoDecoder.h */,
+				AE66E1A827538679006432FE /* VideoDecoder.mm */,
+				AE66E1A427538679006432FE /* FFmpegVideoDecoder.h */,
+				AE66E1AB27538679006432FE /* FFmpegVideoDecoder.mm */,
+			);
+			path = FFMpeg;
 			sourceTree = "<group>";
 		};
 		AE6E5DB4273FB46F00523EA8 /* Motion */ = {
@@ -3099,6 +3186,7 @@
 				AE66E0FC275369D3006432FE /* pixfmt.h in Headers */,
 				AE62CAA1272542D1007D51CD /* PriorityBoxArray.h in Headers */,
 				AE66E11B275369D3006432FE /* dxva2.h in Headers */,
+				AE66E1B927538679006432FE /* FFmpegVideoDecoder.h in Headers */,
 				AE62CA97272542D1007D51CD /* iOSPalette.h in Headers */,
 				AEE010F12742569200C155D8 /* MJRefreshAutoFooter.h in Headers */,
 				AE66E0CF275369D3006432FE /* file.h in Headers */,
@@ -3139,6 +3227,7 @@
 				AE66E0CD275369D3006432FE /* hwcontext_vdpau.h in Headers */,
 				AE66E0C5275369D3006432FE /* rational.h in Headers */,
 				AE66E10D275369D3006432FE /* version.h in Headers */,
+				AE66E1BC27538679006432FE /* AudioFileHandler.h in Headers */,
 				AE62CB9327254DD7007D51CD /* Singleton.h in Headers */,
 				AE66E0D0275369D3006432FE /* md5.h in Headers */,
 				AEE010D42742569200C155D8 /* MJRefreshAutoGifFooter.h in Headers */,
@@ -3168,6 +3257,8 @@
 				AE66E0C6275369D3006432FE /* sha.h in Headers */,
 				AE66E0D6275369D3006432FE /* tree.h in Headers */,
 				AE66E0E5275369D3006432FE /* eval.h in Headers */,
+				AE66E1AC27538679006432FE /* AudioDecoder.h in Headers */,
+				AE66E1AF27538679006432FE /* SortFrameHandler.h in Headers */,
 				AEE010B52742569200C155D8 /* NSBundle+MJRefresh.h in Headers */,
 				AE66E0DD275369D3006432FE /* hwcontext_dxva2.h in Headers */,
 				AE66E0DC275369D3006432FE /* sha512.h in Headers */,
@@ -3209,6 +3300,7 @@
 				AE66E0BC275369D3006432FE /* fifo.h in Headers */,
 				AEE010FD2742569200C155D8 /* MJRefreshBackFooter.h in Headers */,
 				AE66E118275369D3006432FE /* dirac.h in Headers */,
+				AE66E1BA27538679006432FE /* PreviewView.h in Headers */,
 				AE66E0F6275369D3006432FE /* hwcontext_videotoolbox.h in Headers */,
 				AE62CAA5272542D1007D51CD /* PaletteTarget.h in Headers */,
 				AE62CA3F2725429A007D51CD /* TZPhotoPreviewCell.h in Headers */,
@@ -3221,12 +3313,14 @@
 				AE62CA0F2725425A007D51CD /* FMDatabasePool.h in Headers */,
 				AE66E114275369D3006432FE /* d3d11va.h in Headers */,
 				AE66E0B2275369D3006432FE /* version.h in Headers */,
+				AE66E1C127538679006432FE /* AudioQueueCaptureManager.h in Headers */,
 				AE66E0F8275369D3006432FE /* parseutils.h in Headers */,
 				AE66E0E1275369D3006432FE /* pixelutils.h in Headers */,
 				AE66E0F7275369D3006432FE /* mem.h in Headers */,
 				AE66E0B4275369D3006432FE /* buffersink.h in Headers */,
 				AE62CA0A2725425A007D51CD /* FMDatabase.h in Headers */,
 				AE66E0CC275369D3006432FE /* crc.h in Headers */,
+				AE66E1BB27538679006432FE /* AVParseHandler.h in Headers */,
 				AE66E0E6275369D3006432FE /* dict.h in Headers */,
 				AEE010C82742569200C155D8 /* MJRefreshBackNormalFooter.h in Headers */,
 				AE66E02F27536944006432FE /* x264_config.h in Headers */,
@@ -3243,6 +3337,7 @@
 				AE62CA5F2725429B007D51CD /* TZGifPhotoPreviewController.h in Headers */,
 				AE66E0EB275369D3006432FE /* aes.h in Headers */,
 				AE66E0C4275369D3006432FE /* base64.h in Headers */,
+				AE66E1B827538679006432FE /* VideoDecoder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3496,6 +3591,7 @@
 			files = (
 				AEE0114D27425D8800C155D8 /* p_1.png in Resources */,
 				AE4D08EC273025DB00899D2C /* demo.html in Resources */,
+				AE66E19927538149006432FE /* haarcascade_eye_tree_eyeglasses.xml in Resources */,
 				AEE0114A27425D8800C155D8 /* p_6.png in Resources */,
 				AE1C4F6A274346BD0097EAC1 /* old.zip in Resources */,
 				AE62C9E2272541C3007D51CD /* cxk.mp4 in Resources */,
@@ -3523,6 +3619,7 @@
 				AEE0114927425D8800C155D8 /* p_7.png in Resources */,
 				AEE0113E27425D8800C155D8 /* p_10.png in Resources */,
 				AEE0114227425D8800C155D8 /* p_12.png in Resources */,
+				AE66E19827538149006432FE /* lbpcascade_frontalface.xml in Resources */,
 				AEE0114127425D8800C155D8 /* start_down.png in Resources */,
 				AEE0113627425D8800C155D8 /* p_8.png in Resources */,
 				AEE0114327425D8800C155D8 /* p_16.png in Resources */,
@@ -3787,6 +3884,7 @@
 				AE62CB4C27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CB3427254946007D51CD /* Number+Extension.swift in Sources */,
 				AEE0106D2742560200C155D8 /* ImageSet.swift in Sources */,
+				AE66E1B227538679006432FE /* AudioDecoder.mm in Sources */,
 				AE6E5DC0273FB6FF00523EA8 /* Line.swift in Sources */,
 				AEE010712742560200C155D8 /* AboutMitoViewController.swift in Sources */,
 				AE890D1127240DFE00FAB7D7 /* Global.swift in Sources */,
@@ -3794,6 +3892,7 @@
 				AE6E5DCF273FC5E500523EA8 /* FlowLayoutViewController.swift in Sources */,
 				AEE0103627424A0100C155D8 /* VideoListViewController.swift in Sources */,
 				AEE0106C2742560200C155D8 /* DownloadProgressView.swift in Sources */,
+				AE66E1B627538679006432FE /* AudioQueueCaptureManager.m in Sources */,
 				AE61165B27410CF8008466AB /* TwoSideView.swift in Sources */,
 				AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE1C4F5D274346BD0097EAC1 /* randtable.c in Sources */,
@@ -3824,6 +3923,7 @@
 				AE6E5DC4273FB6FF00523EA8 /* DrawView.swift in Sources */,
 				AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */,
+				AE66E1BF27538679006432FE /* SortFrameHandler.m in Sources */,
 				AEE010512742547C00C155D8 /* CaptureSession.swift in Sources */,
 				AEE0115527425D8800C155D8 /* GameService.swift in Sources */,
 				AEE0104627424EE700C155D8 /* TakePhotoViewController.swift in Sources */,
@@ -3879,6 +3979,7 @@
 				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AEE010732742560200C155D8 /* ImageSetListViewController.swift in Sources */,
 				AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */,
+				AE66E1B427538679006432FE /* PreviewView.mm in Sources */,
 				AEE010C92742569200C155D8 /* MJRefreshBackGifFooter.m in Sources */,
 				AE4D091F2730331100899D2C /* HttpInterceptWebMenuViewController.swift in Sources */,
 				AE62CA742725429B007D51CD /* TZLocationManager.m in Sources */,
@@ -3894,7 +3995,9 @@
 				AEE0113227425D8800C155D8 /* PieceImage.swift in Sources */,
 				AE62CA98272542D1007D51CD /* PaletteColorUtils.m in Sources */,
 				AEE0103F27424D2000C155D8 /* AudioRecordViewController.swift in Sources */,
+				AE66E1C227538679006432FE /* FFmpegVideoDecoder.mm in Sources */,
 				AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */,
+				AE66E1AD27538679006432FE /* AVParseHandler.mm in Sources */,
 				AEE010762742560200C155D8 /* MitoViewController.swift in Sources */,
 				AE62CA132725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB8127254DD7007D51CD /* Tool.swift in Sources */,
@@ -3928,6 +4031,7 @@
 				AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */,
 				AE62CB8427254DD7007D51CD /* FPSTool.swift in Sources */,
 				AE62CB7127254B12007D51CD /* Toast.swift in Sources */,
+				AE66E1C5275386D8006432FE /* FFMpegMenuViewController.swift in Sources */,
 				AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */,
 				AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */,
 				AE62CB3127254946007D51CD /* UIWindow+Base.swift in Sources */,
@@ -3937,6 +4041,7 @@
 				AEE010772742560200C155D8 /* MitoConfig.swift in Sources */,
 				AEE0104C2742509300C155D8 /* WatermarkViewController.swift in Sources */,
 				AE66E18E27537D37006432FE /* GrayVideoViewController.swift in Sources */,
+				AE66E1C82753872C006432FE /* AudioDecoderViewController.swift in Sources */,
 				AEE010CF2742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				AE6E5DC5273FB6FF00523EA8 /* SettingViewController.swift in Sources */,
 				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
@@ -3955,7 +4060,9 @@
 				AE62CA192725425A007D51CD /* FMDatabasePool.m in Sources */,
 				AEE010D52742569200C155D8 /* MJRefreshAutoStateFooter.m in Sources */,
 				AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */,
+				AE66E1BD27538679006432FE /* VideoDecoder.mm in Sources */,
 				AE72F52C273EB9A50060456A /* CitySearchView.swift in Sources */,
+				AE66E1B027538679006432FE /* AudioFileHandler.m in Sources */,
 				AEE0106F2742560200C155D8 /* MitoListViewController.swift in Sources */,
 				AEF86666274B9B52002E33E5 /* ClassifyingImagesViewController.swift in Sources */,
 				AE62CB5C2725495E007D51CD /* Array+Extension.swift in Sources */,
@@ -3988,6 +4095,7 @@
 				AE72F528273EB9A50060456A /* CitySearchResultView.swift in Sources */,
 				AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */,
 				AE1C4F6D274346BD0097EAC1 /* bsdiff.c in Sources */,
+				AE66E1CF27538B81006432FE /* VideoBoxViewController.swift in Sources */,
 				AE62CAF2272542DC007D51CD /* CameraModel.swift in Sources */,
 				AEE010B02742569200C155D8 /* MJRefreshConfig.m in Sources */,
 				AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */,
@@ -4511,6 +4619,11 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include",
+				);
 				INFOPLIST_FILE = iOSWork/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = " 用一下相机";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "用一下殃";
@@ -4560,6 +4673,11 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include",
+				);
 				INFOPLIST_FILE = iOSWork/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = " 用一下相机";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "用一下殃";
@@ -4818,6 +4936,7 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -4864,6 +4983,7 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

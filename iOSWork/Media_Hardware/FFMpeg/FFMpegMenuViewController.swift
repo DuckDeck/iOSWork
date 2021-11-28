@@ -1,19 +1,19 @@
 //
-//  OpenCVMenuViewController.swift
+//  FFMpegMenuViewController.swift
 //  iOSWork
 //
 //  Created by Stan Hu on 2021/11/28.
 //
 
 import Foundation
-class OpenCVMenuViewController:UIViewController{
-    var arrData = ["视频变成黑白","处理视频","图像识别（人脸）"]
+class FFmpegMenuViewController:UIViewController{
+    var arrData = ["AudioQueue 音频解编码","VideoBox硬解码"]
     var tbMenu = UITableView()
     var isHooked = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "OpenCV相关"
+        navigationItem.title = "FFMpeg相关"
 
         view.backgroundColor = UIColor.white
         tbMenu.dataSource = self
@@ -25,7 +25,7 @@ class OpenCVMenuViewController:UIViewController{
         }
     }
 }
-extension OpenCVMenuViewController:UITableViewDelegate,UITableViewDataSource{
+extension FFmpegMenuViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrData.count
     }
@@ -42,17 +42,10 @@ extension OpenCVMenuViewController:UITableViewDelegate,UITableViewDataSource{
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            let vc = GrayVideoViewController()
+            let vc = AudioDecoderViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
-        case 1:
-            let vc = ProcessVideoViewController()
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
-        case 2:
-            let vc = ImageRecognitionViewController()
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
+      
 
         default:
             break

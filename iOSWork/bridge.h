@@ -17,4 +17,9 @@
 #import "RerangeBinaryViewController.h"
 #import "UncaughtExceptionHandler.h"
 #import "OpenCV.h"
+#import "AudioQueueCaptureManager.h"
+#import "PreviewView.h"
+#import "SortFrameHandler.h"
+#import "VideoDecoder.h"
+#import "FFmpegVideoDecoder.h"
 #endif /* bridge_h */
