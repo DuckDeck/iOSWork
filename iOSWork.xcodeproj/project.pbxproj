@@ -590,6 +590,7 @@
 		AE66E1D927538EE0006432FE /* PullLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1D527538EE0006432FE /* PullLiveViewController.swift */; };
 		AE66E1DA27538EE0006432FE /* PushLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1D627538EE0006432FE /* PushLiveViewController.swift */; };
 		AE66E1DB27538EE0006432FE /* LivePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66E1D727538EE0006432FE /* LivePreview.swift */; };
+		AE66E1DD2753AFC1006432FE /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E1DC2753AFC1006432FE /* IJKMediaFramework.framework */; };
 		AE6A7F4D274BE13B004A797A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7F4C274BE13B004A797A /* WebViewController.swift */; };
 		AE6A7F4F274BE303004A797A /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6A7F4E274BE303004A797A /* Pods_Library.framework */; };
 		AE6E5DB6273FB48E00523EA8 /* ImageRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */; };
@@ -1305,6 +1306,7 @@
 		AE66E1D527538EE0006432FE /* PullLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullLiveViewController.swift; sourceTree = "<group>"; };
 		AE66E1D627538EE0006432FE /* PushLiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushLiveViewController.swift; sourceTree = "<group>"; };
 		AE66E1D727538EE0006432FE /* LivePreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePreview.swift; sourceTree = "<group>"; };
+		AE66E1DC2753AFC1006432FE /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		AE6A7F4C274BE13B004A797A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AE6A7F4E274BE303004A797A /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotationViewController.swift; sourceTree = "<group>"; };
@@ -1564,6 +1566,7 @@
 				AE66E18727537C36006432FE /* opencv2.framework in Frameworks */,
 				AE66E1CC275389FE006432FE /* libbz2.1.0.tbd in Frameworks */,
 				AE66E125275369D4006432FE /* libavcodec.a in Frameworks */,
+				AE66E1DD2753AFC1006432FE /* IJKMediaFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2433,6 +2436,7 @@
 		AE66E14D2753790E006432FE /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				AE66E1DC2753AFC1006432FE /* IJKMediaFramework.framework */,
 				AE66E14E2753791D006432FE /* opencv2.framework */,
 			);
 			path = FrameWork;
