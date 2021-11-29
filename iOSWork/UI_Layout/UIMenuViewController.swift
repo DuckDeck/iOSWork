@@ -71,28 +71,10 @@ extension UIMenuViewController:UITableViewDelegate,UITableViewDataSource{
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         case 7:
-//            var arrMedia = [MediaModel]()
-//            var m = MediaModel()
-//            m.type = .Image
-//            m.url = "https://pic.netbian.com/uploads/allimg/211127/001033-16379430335612.jpg"
-//            arrMedia.append(m)
-//             m = MediaModel()
-//            m.type = .Image
-//            m.url = "https://pic.netbian.com/uploads/allimg/211124/003353-1637685233484f.jpg"
-//            arrMedia.append(m)
-//             m = MediaModel()
-//            m.type = .Image
-//            m.url = "https://pic.netbian.com/uploads/allimg/211125/002326-163777100602af.jpg"
-//            arrMedia.append(m)
-//            let br = ImageBroswerView(media: arrMedia)
-//            br.frame = UIScreen.main.bounds
-//
-//            UIApplication.shared.keyWindow?.addSubview(br)
-            
-            let vc = ImageBrowserViewController()
-            vc.hidesBottomBarWhenPushed = true
-            vc.arrImages = ["https://pic.netbian.com/uploads/allimg/211127/001033-16379430335612.jpg","https://pic.netbian.com/uploads/allimg/211124/003353-1637685233484f.jpg","https://pic.netbian.com/uploads/allimg/211125/002326-163777100602af.jpg"]
-            navigationController?.pushViewController(vc, animated: true)
+            let vc = MediaBroswerViewController()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        
             
         default:
             break

@@ -593,6 +593,10 @@
 		AE66E1DD2753AFC1006432FE /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66E1DC2753AFC1006432FE /* IJKMediaFramework.framework */; };
 		AE6A7F4D274BE13B004A797A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6A7F4C274BE13B004A797A /* WebViewController.swift */; };
 		AE6A7F4F274BE303004A797A /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE6A7F4E274BE303004A797A /* Pods_Library.framework */; };
+		AE6B2DD827550E180066017F /* MediaBroswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6B2DD727550E180066017F /* MediaBroswerView.swift */; };
+		AE6B2DD927550E180066017F /* MediaBroswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6B2DD727550E180066017F /* MediaBroswerView.swift */; };
+		AE6B2DDB2755155F0066017F /* MediaBroswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6B2DDA2755155F0066017F /* MediaBroswerViewController.swift */; };
+		AE6B2DDC2755155F0066017F /* MediaBroswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6B2DDA2755155F0066017F /* MediaBroswerViewController.swift */; };
 		AE6E5DB6273FB48E00523EA8 /* ImageRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */; };
 		AE6E5DBF273FB6FF00523EA8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB8273FB6FF00523EA8 /* Settings.swift */; };
 		AE6E5DC0273FB6FF00523EA8 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DB9273FB6FF00523EA8 /* Line.swift */; };
@@ -1309,6 +1313,8 @@
 		AE66E1DC2753AFC1006432FE /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		AE6A7F4C274BE13B004A797A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AE6A7F4E274BE303004A797A /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6B2DD727550E180066017F /* MediaBroswerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaBroswerView.swift; sourceTree = "<group>"; };
+		AE6B2DDA2755155F0066017F /* MediaBroswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBroswerViewController.swift; sourceTree = "<group>"; };
 		AE6E5DB5273FB48E00523EA8 /* ImageRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRotationViewController.swift; sourceTree = "<group>"; };
 		AE6E5DB8273FB6FF00523EA8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		AE6E5DB9273FB6FF00523EA8 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -2121,6 +2127,7 @@
 				AE62CBB027255C1F007D51CD /* TimerButton.swift */,
 				AE62CBAB27255C0E007D51CD /* LayoutButton.swift */,
 				AE61165E27410F2C008466AB /* GrandSlider.swift */,
+				AE6B2DD727550E180066017F /* MediaBroswerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2545,6 +2552,7 @@
 			children = (
 				AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */,
 				AEB649BD273FCCB100BCBF4E /* GridViewController.swift */,
+				AE6B2DDA2755155F0066017F /* MediaBroswerViewController.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -3940,6 +3948,7 @@
 				AE62CA9E272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE62CA562725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE1C4F65274346BD0097EAC1 /* bzip2recover.c in Sources */,
+				AE6B2DD827550E180066017F /* MediaBroswerView.swift in Sources */,
 				AEE010572742551F00C155D8 /* FiveStroke.swift in Sources */,
 				AE62CBF3272566B6007D51CD /* MediaMenuViewController.swift in Sources */,
 				AE4D0914273032F400899D2C /* ReuseWebView.swift in Sources */,
@@ -4068,6 +4077,7 @@
 				AE66E1C82753872C006432FE /* AudioDecoderViewController.swift in Sources */,
 				AEE010CF2742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				AE6E5DC5273FB6FF00523EA8 /* SettingViewController.swift in Sources */,
+				AE6B2DDB2755155F0066017F /* MediaBroswerViewController.swift in Sources */,
 				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
 				AEE010702742560200C155D8 /* MitoPlayViewController.swift in Sources */,
 				AE6E5DC1273FB6FF00523EA8 /* Trace.swift in Sources */,
@@ -4422,6 +4432,7 @@
 				AE62CA472725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE62CAEB272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CB3927254947007D51CD /* UIViewController+Extension.swift in Sources */,
+				AE6B2DD927550E180066017F /* MediaBroswerView.swift in Sources */,
 				AEE010F72742569200C155D8 /* MJRefreshAutoFooter.m in Sources */,
 				AE62CB4827254947007D51CD /* UITableView+Extension.swift in Sources */,
 				AE62CB6227254977007D51CD /* Dict+Extension.swift in Sources */,
@@ -4449,6 +4460,7 @@
 				AE62CAAF272542D1007D51CD /* PriorityBoxArray.m in Sources */,
 				AE62CAF1272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE72F537273EBDAE0060456A /* CityChooseViewController.swift in Sources */,
+				AE6B2DDC2755155F0066017F /* MediaBroswerViewController.swift in Sources */,
 				AE62CA682725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE62CB4527254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CB1D27254873007D51CD /* BaseModel.swift in Sources */,
