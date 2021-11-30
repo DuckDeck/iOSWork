@@ -21,7 +21,7 @@ class ShadowVideoPlayerView: UIView {
     private let vScInfo = UIScrollView()
     private let vErrorVideo = UIView()
     private let lblError = UILabel()
-    private let vActivity = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.whiteLarge)
+    private let vActivity = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     private weak var currentVC: UIViewController?
     static var count = 0
     var isCached = false

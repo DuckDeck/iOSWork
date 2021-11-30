@@ -18,20 +18,29 @@ class Tool{
         return py as String
     }
     
-    static func thumbnailImageForVideo(url:URL,time:Double = 0)->UIImage?{
-        let asset = AVAsset(url: url)
-        let assetImageGenerator = AVAssetImageGenerator(asset: asset)
-        assetImageGenerator.appliesPreferredTrackTransform = true
-        assetImageGenerator.apertureMode =  AVAssetImageGenerator.ApertureMode.encodedPixels
-        let t = CMTime(seconds: time, preferredTimescale: 60)
-        do{
-            let thumbnailImageRef = try assetImageGenerator.copyCGImage(at: t, actualTime: nil)
-            return UIImage(cgImage: thumbnailImageRef)
+    static func thumbnailImageForVideo(url:URL,time:Double,loaded:@escaping((_ img:UIImage?)->Void)){
+        
+        DispatchQueue.global().async {
+            let asset = AVAsset(url: url)
+            let assetImageGenerator = AVAssetImageGenerator(asset: asset)
+            assetImageGenerator.appliesPreferredTrackTransform = true
+            assetImageGenerator.apertureMode =  AVAssetImageGenerator.ApertureMode.encodedPixels
+            let t = CMTime(seconds: time, preferredTimescale: 60)
+            do{
+                let thumbnailImageRef = try assetImageGenerator.copyCGImage(at: t, actualTime: nil)
+                DispatchQueue.main.async {
+                    loaded(UIImage(cgImage: thumbnailImageRef))
+                }
+            }
+            catch{
+                print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    loaded(nil)
+                }
+            }
+
         }
-        catch{
-            print(error.localizedDescription)
-            return nil
-        }
+        
         
     }
     

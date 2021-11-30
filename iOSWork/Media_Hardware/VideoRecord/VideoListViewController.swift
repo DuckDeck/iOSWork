@@ -20,14 +20,11 @@ class VideoListViewController: UIViewController {
     }
     
     func initView()  {
-        
-        
         authAudio()
         authVideo()
         
         let btnRecord = UIBarButtonItem(title: "录视频", style: .plain, target: self, action: #selector(recordVideo))
-        let btnNetwork = UIBarButtonItem(title: "网络视频", style: .plain, target: self, action: #selector(showNetworkVideo))
-        navigationItem.rightBarButtonItems = [btnNetwork,btnRecord]
+        navigationItem.rightBarButtonItem = btnRecord
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
@@ -48,30 +45,26 @@ class VideoListViewController: UIViewController {
     }
     
     func initData() {
-        guard let files = VideoFileManager.getAllVideos() else {
-            return
-        }
+        let files = VideoFileManager.getAllVideos()
         arrFile = files.map({ (url) -> VideoModel in
-            return VideoModel(url: url, coverImg: Tool.thumbnailImageForVideo(url: url), fileName: url.lastPathComponent)
+            return VideoModel(url: url,  fileName: url.lastPathComponent)
         })
+        
+        let url1 = URL(string: "http://lovelive.ink:9001/video/%5B%E5%90%90%E6%A7%BD%E5%A4%A7%E4%BC%9A%5D0707%E6%9C%9F%EF%BC%9A%E5%91%A8%E6%9D%B0%E8%A2%AB%E9%9B%AA%E5%A7%A8%E5%BD%93%E9%9D%A2%E5%90%90%E6%A7%BD_bd.mp4")!
+        let video1 = VideoModel(url: url1, fileName: "吐槽大会")
+        arrFile.append(video1)
+        let url2 = URL(string: "http://lovelive.ink:9001/video/%E4%BA%9A%E7%89%B9%E5%85%B0%E8%92%82%E6%96%AF%E5%B0%91%E5%A5%B3.mp4")!
+        let video2 = VideoModel(url: url2,  fileName: "TAEYEON")
+        arrFile.append(video2)
+
+       //不支持mkv
         vc.reloadData()
     }
-    
-    @objc func showNetworkVideo() {
-        //http://dev.qiniu-app.yihuivip.cn/15351672430
-        //http://download.3g.joy.cn/video/236/60236937/1451280942752_hd.mp4
-        let url = URL(string: "http://lovelive.ink:9003/api/raw/user/Share/%E8%A7%86%E9%A2%91/%E4%BA%9A%E7%89%B9%E5%85%B0%E8%92%82%E6%96%AF%E5%B0%91%E5%A5%B3.mp4?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJ6aC1jbiIsInZpZXdNb2RlIjoibGlzdCIsInNob3dIaWRkZW4iOmZhbHNlLCJwZXJtIjp7ImFkbWluIjp0cnVlLCJleGVjdXRlIjp0cnVlLCJjcmVhdGUiOnRydWUsInJlbmFtZSI6dHJ1ZSwibW9kaWZ5Ijp0cnVlLCJkZWxldGUiOnRydWUsInNoYXJlIjp0cnVlLCJkb3dubG9hZCI6dHJ1ZX0sImNvbW1hbmRzIjpbXSwibG9ja1Bhc3N3b3JkIjpmYWxzZSwib3RwIjpmYWxzZSwib3RwS2V5IjoiWklRN0tTRzJDSUJMSTdIVTI0UVZLU0RVSExMUEVZNVAifSwiZXhwIjoxNjM4MTc3ODg2LCJpYXQiOjE2MzgwOTE0ODYsImlzcyI6IkZpbGUgQnJvd3NlciAgdjIuOS4zLzRlMzFhZGE2XG5CdWlsdCBGb3IgICA6IGxpbnV4L2FtZDY0XG5HbyBWZXJzaW9uICA6IGdvMS4xNC4yXG5SZWxlYXNlIERhdGU6IDIwMjAwNDMwLTEwNDYifQ.Hjtlnu4ifhGT9Xzh8Vft5b42bQc8SgjodlVu1mFJhrw&inline=true")
-        let vc = ShadowVideoPlayerViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.url = url
-        
-        present(vc, animated: true, completion: nil)
-    }
-    
+
     @objc func recordVideo() {
         let vc = VideoRecordViewController()
         vc.uploadVideoBlock = {(url:URL) in
-            let m = VideoModel(url: url, coverImg: Tool.thumbnailImageForVideo(url: url), fileName: url.lastPathComponent)
+            let m = VideoModel(url: url, fileName: url.lastPathComponent)
             self.arrFile.insert(m, at: 0)
             self.vc.reloadData()
         }
@@ -182,7 +175,11 @@ class VideoImageCell: UICollectionViewCell {
             guard let m = model else {
                 return
             }
-            img.image = m.coverImg
+            Tool.thumbnailImageForVideo(url: m.url, time: 0) { image in
+                self.img.image = image
+                
+            }
+            
             lblTitle.text = m.fileName
         }
     }
@@ -213,7 +210,6 @@ class VideoImageCell: UICollectionViewCell {
 
 struct VideoModel {
     var url:URL!
-    var coverImg:UIImage?
     var fileName = ""
 }
 

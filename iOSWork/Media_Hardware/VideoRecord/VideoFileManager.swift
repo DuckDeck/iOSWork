@@ -21,14 +21,20 @@ class VideoFileManager {
         return URL.init(fileURLWithPath: path)
     }
     
-    static func getAllVideos()->[URL]?{
+    static func getAllVideos()->[URL]{
+        var videoUrls = [URL]()
         guard let urlStrs = try? FileManager.default.contentsOfDirectory(atPath: NSTemporaryDirectory()) else{
-            return nil
+            return videoUrls
         }
-        var urls = urlStrs.map { (str) -> URL in
+        let urls = urlStrs.map { (str) -> URL in
             return URL(fileURLWithPath: NSTemporaryDirectory() + str)
         }
-        
+        for url in urls{
+            let ass = AVURLAsset(url: url)
+            if ass.tracks(withMediaType: .video).count > 0{
+                videoUrls.append(url)
+            }
+        }
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         do {
             let files = try FileManager.default.contentsOfDirectory(at: documentsDirectory,
@@ -37,7 +43,7 @@ class VideoFileManager {
             for f in files{
                 let ass = AVURLAsset(url: f)
                 if ass.tracks(withMediaType: .video).count > 0{
-                    urls.append(f)
+                    videoUrls.append(f)
                 }
             }
             
@@ -46,7 +52,7 @@ class VideoFileManager {
             print(error.localizedDescription)
         }
         
-        return urls
+        return videoUrls
     }
     
     static func removeFile(url:URL){

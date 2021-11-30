@@ -10,7 +10,6 @@ import AVKit
 class VideoPlayViewController: BaseViewController {
 
     var url:URL!
-    var player:AVPlayer!
     let btnClose = UIButton()
     var dictDes = [String:String]()
     var shadowPlayer:ShadowVideoPlayerView!
@@ -24,76 +23,14 @@ class VideoPlayViewController: BaseViewController {
         navigationItem.title = "视频信息"
         btnClose.title(title: "关闭").color(color: UIColor.darkGray).addTo(view: view).snp.makeConstraints { (m) in
             m.centerX.equalTo(ScreenWidth * 0.2)
-            m.bottom.equalTo(-10)
+            m.bottom.equalTo(-50)
         }
         btnClose.addTarget(self, action: #selector(closePage), for: .touchUpInside)
         if url == nil{
             Toast.showToast(msg: "没有url")
             return
         }
-        
-        if let attr = try? FileManager.default.attributesOfItem(atPath: url.path){
-            let size = attr[FileAttributeKey.size] as! Int
-            dictDes["文件大小"] = "\(size / 1000000)M"
-            dictDes["创建日期"] = "\(attr[FileAttributeKey.creationDate]!)"
-        }
-        
-        let assert = AVURLAsset(url: url)
-        let item = AVPlayerItem(asset: assert)
-        player = AVPlayer(playerItem: item)
-       
-        
-        dictDes["扩展名"] = url.pathExtension
-        
-        if let a = assert.tracks.first?.formatDescriptions.first {
-            let format = a as! CMFormatDescription
-            
-            let type = CMFormatDescriptionGetMediaType(format)
-            if type == kCMMediaType_Video{
-                dictDes["类型"] = "视频"
-                guard let track = assert.tracks(withMediaType: .video).first else{
-                    return
-                }
-                
-                let res = track.naturalSize
-                dictDes["分辨率"] = "\(res.width) * \(res.height)"
-                dictDes["时长"] = "\(track.timeRange.duration.seconds)秒"
-                dictDes["帧率"] = "\(track.nominalFrameRate)帧每秒"
-                dictDes["码率"] = "\(track.estimatedDataRate / 8000000) M每秒"
-                
-            }
-            else if type == kCMMediaType_Audio{
-                dictDes["类型"] = "音频"
-                guard let track = assert.tracks(withMediaType: .audio).first else{
-                    return
-                }
-                dictDes["时长"] = "\(track.timeRange.duration.seconds)秒"
-                dictDes["帧率"] = "\(track.nominalFrameRate)帧每秒"
-                dictDes["码率"] = "\(track.estimatedDataRate / 8000000) M每秒"
-            }
-        }
-        
-       
-    
- 
-       
-        
-        var tmp:UIView! = nil
-        
-        for info in dictDes{
-            let lbl = UILabel().text(text: "\(info.key) : \(info.value)").color(color: UIColor.darkGray).addTo(view: view)
-            lbl.snp.makeConstraints { (m) in
-                m.left.equalTo(15)
-                if tmp == nil{
-                    m.top.equalTo(350)
-                }
-                else{
-                    m.top.equalTo(tmp.snp.bottom).offset(5)
-                }
-                m.height.equalTo(25)
-            }
-            tmp = lbl
-        }
+      
         
         shadowPlayer = ShadowVideoPlayerView(frame: CGRect(), url: url)
         
@@ -107,17 +44,46 @@ class VideoPlayViewController: BaseViewController {
         }
         shadowPlayer.play()
         
+        
         btnDelete.title(title: "删除").color(color: UIColor.darkGray).addTo(view: view).snp.makeConstraints { (m) in
             m.centerX.equalTo(ScreenWidth * 0.4)
-            m.bottom.equalTo(-10)
+            m.bottom.equalTo(-50)
         }
         btnDelete.addTarget(self, action: #selector(deleteFile), for: .touchUpInside)
       
         btnCompress.title(title: "压缩").color(color: UIColor.darkGray).addTo(view: view).snp.makeConstraints { (m) in
             m.centerX.equalTo(ScreenWidth * 0.6)
-            m.bottom.equalTo(-10)
+            m.bottom.equalTo(-50)
         }
         btnCompress.addTarget(self, action: #selector(compress), for: .touchUpInside)
+        
+//        if let attr = try? FileManager.default.attributesOfItem(atPath: url.path){
+//            let size = attr[FileAttributeKey.size] as! Int
+//            dictDes["文件大小"] = "\(size / 1000000)M"
+//            dictDes["创建日期"] = "\(attr[FileAttributeKey.creationDate]!)"
+//        }
+//        dictDes["扩展名"] = url.pathExtension
+//        let info = shadowPlayer.getVideoInfo()
+//        for item in info{
+//            dictDes[item.0] = item.1
+//        }
+//        var tmp:UIView! = nil
+//
+//        for info in dictDes{
+//            let lbl = UILabel().text(text: "\(info.key) : \(info.value)").color(color: UIColor.darkGray).addTo(view: view)
+//            lbl.snp.makeConstraints { (m) in
+//                m.left.equalTo(15)
+//                if tmp == nil{
+//                    m.top.equalTo(350)
+//                }
+//                else{
+//                    m.top.equalTo(tmp.snp.bottom).offset(5)
+//                }
+//                m.height.equalTo(25)
+//            }
+//            tmp = lbl
+//        }
+      
         
     }
 
@@ -182,6 +148,8 @@ class VideoPlayViewController: BaseViewController {
                 completed(exportSession)
             case .failed:
                 print("AVAssetExportSessionStatusFailed")
+            @unknown default:
+                break
             }
         }
         

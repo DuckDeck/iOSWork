@@ -23,7 +23,7 @@ enum ShadowUIConfig {
     case SilderProgressImage
 }
 
-protocol ShadowPlayDelegate:class {
+protocol ShadowPlayDelegate:NSObjectProtocol {
     func bufferProcess(current:Float,duration:Float)
     func playStateChange(status:PlayerStatus,info:MediaInfo?)
     func playProcess(current:Float,duration:Float)
@@ -189,7 +189,7 @@ class ShadowPlayer:NSObject {
 //        else{
 //            anAsset = AVURLAsset(url: url, options: dict)
 //        }
-        anAsset = AVURLAsset(url: url, options: dict)
+       anAsset = AVURLAsset(url: url, options: dict)
        loadAsset(asset: anAsset)
        
     }
@@ -199,6 +199,9 @@ class ShadowPlayer:NSObject {
         weak var weakself = self
         //如果使用第三方下载这个就不能用了
         anAsset.loadValuesAsynchronously(forKeys: keys) {
+            
+            print(Thread.current)
+            
             var error:NSError? = nil
             guard let tracksStatus = weakself?.anAsset.statusOfValue(forKey: "duration", error: &error) else{
                 return
@@ -305,6 +308,8 @@ class ShadowPlayer:NSObject {
                 status = .Failed
                 let err = NSError(domain: "视频加载失败", code: -1, userInfo: nil)
                 delegate?.loadMediaFail(error: err)
+            @unknown default:
+                break
             }
         }
         else if key == "loadedTimeRanges"{ //监听播放器的下载进度
@@ -383,7 +388,7 @@ class ShadowPlayer:NSObject {
             return
         }
         item.removeObserver(self, forKeyPath: "status")
-        player.removeTimeObserver(playbackTimerObserver)
+        player.removeTimeObserver(playbackTimerObserver!)
         item.removeObserver(self, forKeyPath: "loadedTimeRanges")
         item.removeObserver(self, forKeyPath: "playbackBufferEmpty")
         item.removeObserver(self, forKeyPath: "playbackLikelyToKeepUp")

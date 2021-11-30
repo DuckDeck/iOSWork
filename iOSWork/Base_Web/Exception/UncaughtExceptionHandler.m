@@ -95,9 +95,11 @@ static  UncaughtExceptionHandler *handler = nil;
     CFRunLoopRef runLoop = CFRunLoopGetCurrent();
     CFArrayRef allModes = CFRunLoopCopyAllModes(runLoop);
     
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"程序出现问题啦" message:@"崩溃信息" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-    [alertView show];
-    alertView = nil;
+    
+    
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"程序出现问题啦" message:@"崩溃信息" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+//    [alertView show];
+//    alertView = nil;
     
     //当接收到异常处理消息时，让程序开始runloop，防止程序死亡
     while (!dismissed) {
@@ -130,11 +132,11 @@ static  UncaughtExceptionHandler *handler = nil;
     }
 }
 
-- (void)alertView:(UIAlertView *)anAlertView clickedButtonAtIndex:(NSInteger)anIndex
-{
-    //因为这个弹出视图只有一个Cancel按钮，所以直接进行修改isDimsmissed这个变量了
-    dismissed = YES;
-}
+//- (void)alertView:(UIAlertView *)anAlertView clickedButtonAtIndex:(NSInteger)anIndex
+//{
+//    //因为这个弹出视图只有一个Cancel按钮，所以直接进行修改isDimsmissed这个变量了
+//    dismissed = YES;
+//}
 
 //获取应用信息
 NSString* getAppInfo()
