@@ -18,6 +18,9 @@ enum PlayerStatus:Int{
 
 enum ShadowUIConfig {
     case HideFullScreenButton
+    case SliderBackgroundColor
+    case SliderForgroundColor
+    case SilderProgressImage
 }
 
 protocol ShadowPlayDelegate:class {
