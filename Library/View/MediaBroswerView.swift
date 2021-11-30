@@ -178,7 +178,9 @@ class ImageBroswerCell:UICollectionViewCell,UIScrollViewDelegate{
             img.image = UIImage(data: model.imgData!)
         } else {
             img.setImg(url: model.url, completed: { [weak self] img in
+                let center = self?.img.center ?? CGPoint.zero
                 self?.img.size = CGSize(width: ScreenWidth - 10, height: (ScreenWidth - 10) / (img.size.width / img.size.height))
+                self?.img.center = center
             }, placeHolder: nil)
         }
     }

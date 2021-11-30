@@ -23,7 +23,16 @@ class MediaBroswerViewController: UIViewController {
             m.type = .Image
             m.url = "https://pic.netbian.com/uploads/allimg/211125/002326-163777100602af.jpg"
             arrMedia.append(m)
+            m = MediaModel()
+            m.type = .Image
+            m.url = "https://www.gamersky.com/showimage/id_gamersky.shtml?https://img1.gamersky.com/upimg/users/2021/11/07/origin_202111072025026496.jpg"
+           arrMedia.append(m)
+            m = MediaModel()
+            m.type = .Image
+            m.url = "https://www.gamersky.com/showimage/id_gamersky.shtml?https://img1.gamersky.com/upimg/users/2021/10/29/origin_202110292303238297.jpg"
+           arrMedia.append(m)
             return arrMedia
+            
         }
     }
     
