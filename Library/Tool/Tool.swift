@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Photos
+import PromiseKit
 class Tool{
 
     static func ChineseToPinyin(chinese:String)->String{
@@ -19,7 +20,6 @@ class Tool{
     }
     
     static func thumbnailImageForVideo(url:URL,time:Double,loaded:@escaping((_ img:UIImage?)->Void)){
-        
         DispatchQueue.global().async {
             let asset = AVAsset(url: url)
             let assetImageGenerator = AVAssetImageGenerator(asset: asset)
@@ -40,8 +40,6 @@ class Tool{
             }
 
         }
-        
-        
     }
     
 }

@@ -21,7 +21,7 @@ target 'iOSWork' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'LookinServer', :configurations => ['Debug']
-
+  pod "PromiseKit"
   # Pods for iOSWork
 
 end
@@ -54,7 +54,7 @@ target 'SwiftUIWork' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'LookinServer', :configurations => ['Debug']
-
+  pod "PromiseKit"
   # Pods for SwiftUIWork
 
 end
