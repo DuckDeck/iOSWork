@@ -175,9 +175,9 @@ class VideoImageCell: UICollectionViewCell {
             guard let m = model else {
                 return
             }
-            Tool.thumbnailImageForVideo(url: m.url, time: 0) { image in
-                self.img.image = image
-                
+  
+            _ = Tool.thumbnailImageForVideo(url: m.url, time: 0).done { img in
+                self.img.image = img
             }
             
             lblTitle.text = m.fileName
