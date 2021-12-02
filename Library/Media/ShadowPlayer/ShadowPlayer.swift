@@ -95,9 +95,7 @@ class ShadowPlayer:NSObject {
         }
         set{
             let tmp = playStatus
-            if playStatus == .Playing{
-                pause()
-            }
+            
             if isSeeking {
                 return
             }

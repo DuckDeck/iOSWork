@@ -541,11 +541,13 @@ extension ShadowVideoPlayerView: ShadowPlayDelegate {
 
         case .ReadyToPlay:
             vActivity.stopAnimating()
-           if !player.isAutoPlay{
-               vPlay.isHidden = false
-
+           if player.isAutoPlay{
+               if player.playStatus == .Playing{
+                   vPlay.setState(state: true)
+               }
            } else {
-               vPlay.setState(state: true)
+               vPlay.isHidden = false
+               
            }
         case .Buffering:
             if !vActivity.isHidden {
