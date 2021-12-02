@@ -148,21 +148,7 @@ extension VideoListViewController:UICollectionViewDelegate,UICollectionViewDataS
         vc.deleteBlock = {(url:URL) in
             self.initData()
         }
-        //搞一个错误的视频
-//        let str = url!.absoluteString.replacingOccurrencesOfString(".", withString: "_")
-//        let newUrl = URL(string: str)
-//        vc.url = newUrl!
         present(vc, animated: true, completion: nil)
-//        let avPlayer = AVPlayer(url: url!)
-//        let vc = AVPlayerViewController()
-//        vc.player = avPlayer
-//        vc.videoGravity = AVLayerVideoGravity.resizeAspect.rawValue
-//        vc.showsPlaybackControls = true
-//        vc.view.frame = view.bounds
-//        addChildViewController(vc)
-//        view.addSubview(vc.view)
-//        vc.player?.play()
-        
     }
     
 }

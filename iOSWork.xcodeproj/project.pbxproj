@@ -2001,11 +2001,10 @@
 		AE62CAB5272542DC007D51CD /* ShadowPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				AE654C362757C015007833BA /* Back */,
 				AE62CAB6272542DC007D51CD /* ShadowAudioPlayerView.swift */,
 				AE62CAB7272542DC007D51CD /* ShadowDataManager.swift */,
-				AE62CAB8272542DC007D51CD /* ShadowAudioPlayerBack.swift */,
 				AE62CAB9272542DC007D51CD /* ShadowVideoPlayerViewController.swift */,
-				AE62CABA272542DC007D51CD /* ShadowPlayBack.swift */,
 				AE62CABB272542DC007D51CD /* ShadowRangeManager.swift */,
 				AE62CABC272542DC007D51CD /* ShadowPlayer.swift */,
 				AE62CABD272542DC007D51CD /* ShadowVideoPlayControlView.swift */,
@@ -2208,6 +2207,15 @@
 				AE63390E272AF37B00FBAAA3 /* NotifcationViewController.swift */,
 			);
 			path = Notifcation;
+			sourceTree = "<group>";
+		};
+		AE654C362757C015007833BA /* Back */ = {
+			isa = PBXGroup;
+			children = (
+				AE62CABA272542DC007D51CD /* ShadowPlayBack.swift */,
+				AE62CAB8272542DC007D51CD /* ShadowAudioPlayerBack.swift */,
+			);
+			path = Back;
 			sourceTree = "<group>";
 		};
 		AE66E02927536944006432FE /* fat-x264 */ = {

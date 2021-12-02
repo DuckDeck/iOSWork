@@ -187,37 +187,44 @@ class ShadowAudioPlayerView: UIView {
 }
 
 extension ShadowAudioPlayerView:ShadowPlayDelegate{
-    func bufferProcess(current: Float,duration:Float) {
-        print("缓冲进度\(current)")
-        sliderBuffer.value = current
+    func playStateChange(status: PlayStatus) {
+        switch(status){
+        case .Finished:
+            btnPlay.isSelected = false
+            slider.value = 0
+            lblPlayTime.text = "00:00"
+            print("播放完成")
+        default:
+            break
+        }
     }
     
-    func playStateChange(status: PlayerStatus, info: MediaInfo?) {
+    func resouceStateChange(status: ResourceStatus) {
         switch status {
-            
+        case .Unknow:
+            break
+        case .Failed:
+             vLoading.stopAnimating()
+            btnPlay.isHidden = false
+            btnPlay.isEnabled = false
         case .GetInfo:
-            if info !=  nil{
-                lblTotalTime.text = convertTime(second: info!.duration)
-                slider.maximumValue = Float(info!.duration)
-            }
+            let info = player.mediaInfo!
+            lblTotalTime.text = convertTime(second: info.duration)
+            slider.maximumValue = Float(info.duration)
         case .ReadyToPlay:
             btnPlay.isHidden = false
             vLoading.stopAnimating()
             if autoPlay{
                 playAudio()
             }
-        case .Finished:
-            btnPlay.isSelected = false
-            slider.value = 0
-            lblPlayTime.text = "00:00"
-            print("播放完成")
-        case .Failed:
-             vLoading.stopAnimating()
-            btnPlay.isHidden = false
-            btnPlay.isEnabled = false
-        default:
+        case .Buffering:
             break
         }
+    }
+    
+    func bufferProcess(current: Float,duration:Float) {
+        print("缓冲进度\(current)")
+        sliderBuffer.value = current
     }
     
     func playProcess(current: Float,duration:Float) {
