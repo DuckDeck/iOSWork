@@ -12,16 +12,15 @@ class AudioListViewController: UIViewController {
 
     let tb = UITableView()
     var arrFiles:[URL]?
-    var player: AVAudioPlayer!
-    var timer:GrandTimer!
+    var player: ShadowPlayer!
     var btnPlay = ProgressButton(frame: CGRect())
     var currentSelectIndex:IndexPath?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        let btnDelete = UIBarButtonItem(title: "删除所有录音", style: .plain, target: self, action: #selector(deleteAllRecord))
-        navigationItem.rightBarButtonItem = btnDelete
-        timer = GrandTimer.scheduleTimerWithTimeSpan(TimeSpan.fromTicks(500), target: self, sel: #selector(tick), userInfo: nil, repeats: true, dispatchQueue: DispatchQueue.main)
+        navigationItem.title = "音频列表"
+        let btnRecord = UIBarButtonItem(title: "去录音", style: .plain, target: self, action: #selector(gotoRecord))
+        navigationItem.rightBarButtonItem = btnRecord
         tb.dataSource = self
         tb.delegate = self
         tb.tableFooterView = UIView()
@@ -40,29 +39,9 @@ class AudioListViewController: UIViewController {
         
         try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
         try? AVAudioSession.sharedInstance().setActive(true)
-        
-        
-        btnPlay.setImage(#imageLiteral(resourceName: "btn_play_small_disable"), for: .normal)
-        btnPlay.setImage(#imageLiteral(resourceName: "btn_pause_small"), for: .selected)
-        btnPlay.addTo(view: view).snp.makeConstraints { (m) in
-            m.bottom.equalTo(-20)
-            m.centerX.equalTo(ScreenWidth * 0.5)
-            
-        }
-//        btnPlay.layer.cornerRadius = 15
-        btnPlay.isEnabled = false
-        btnPlay.backgroundColor = UIColor.clear
-        btnPlay.addTarget(self, action: #selector(playRecord), for: .touchUpInside)
-        
     }
     
-    @objc func playRecord() {
-        let indexPath = IndexPath(row: 0, section: 0)
-        let url = arrFiles![indexPath.row]
-        currentSelectIndex = indexPath
-        timer.fire()
-        play(url)
-    }
+ 
     
     @objc func tick()  {
        let cell = tb.cellForRow(at: currentSelectIndex!) as! AudioFileCell
@@ -70,7 +49,6 @@ class AudioListViewController: UIViewController {
         cell.progressBar.value = Float(ratio)
         btnPlay.value = ratio
     }
-    
 
     func listRecordings() {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -81,8 +59,9 @@ class AudioListViewController: UIViewController {
                                                             options: .skipsHiddenFiles)
             arrFiles = files.filter({ (name: URL) -> Bool in
                 return name.pathExtension == "m4a" || name.pathExtension == "mp3" || name.pathExtension == "caf"
-                
             })
+            let netMusic = URL(string: "http://lovelive.ink:9001/music/Unforgivable%20Sinner.mp3")!
+            arrFiles?.append(netMusic)
             tb.emptyReload()
             if arrFiles?.count ?? 0 > 0{
                 btnPlay.isEnabled = true
@@ -93,75 +72,30 @@ class AudioListViewController: UIViewController {
         }
     }
     
-    
-    func deleteAllAudio() {
-        if let files = arrFiles{
-            let fileManager = FileManager.default
-            for i in 0 ..< files.count {
-                //                    let path = documentsDirectory.appendPathComponent(recordings[i], inDirectory: true)
-                //                    let path = docsDir + "/" + recordings[i]
-                
-                //                    print("removing \(path)")
-                print("removing \(files[i])")
-                do {
-                    try fileManager.removeItem(at: files[i])
-                } catch {
-                    print("could not remove \(files[i])")
-                    print(error.localizedDescription)
-                }
-            }
-            arrFiles?.removeAll()
-            tb.emptyReload()
-            GrandCue.toast("已经全部删除")
-            btnPlay.isEnabled = false
-        }
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if player != nil && player.isPlaying{
             player.stop()
-            timer.invalidate()
         }
+    }
+    
+    @objc func gotoRecord(){
+        let vc = AudioRecordViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func play(_ url: URL) {
         print("playing \(url)")
-        
-        do {
-
-            player = try AVAudioPlayer(contentsOf: url)
-            
-//            let d = try! Data(contentsOf: url)
-//            self.player = try AVAudioPlayer(data: d, fileTypeHint: AVFileType.mp4.rawValue)
-            player.prepareToPlay()
-            player.volume = 1.0
-            player.play()
-            player.delegate = self
-            GrandCue.toast("正在播放\(url.lastPathComponent)")
-        } catch {
-            self.player = nil
-            print(error.localizedDescription)
-            print("AVAudioPlayer init failed")
-        }
-        
+        player = ShadowPlayer(url: url, autoCache: true)
+        player.delegate = self
+        GrandCue.toast("正在播放\(url.lastPathComponent)")
     }
-    
-    @objc func deleteAllRecord() {
-        UIAlertController.title(title: "删除所有声音文件", message: nil).action(title: "确定", handle: {[weak self](action:UIAlertAction) in
-            self?.deleteAllAudio()
-        }).action(title: "取消", handle: nil).show()
-    }
-    
     
     
     func deleteAudio(url:URL)   {
-        
         UIAlertController.title(title: "删除该\(url.lastPathComponent)声音文件", message: nil).action(title: "确定", handle: {[weak self](action:UIAlertAction) in
             self?.deleteRecording(url)
         }).action(title: "取消", handle: nil).show()
-        
-        
     }
     
     func rename(url:URL) {
@@ -227,7 +161,6 @@ class AudioListViewController: UIViewController {
 
 extension AudioListViewController:FileManagerDelegate{
     func fileManager(_ fileManager: FileManager, shouldMoveItemAt srcURL: URL, to dstURL: URL) -> Bool {
-        
         print("should move \(srcURL) to \(dstURL)")
         return true
     }
@@ -250,9 +183,7 @@ extension AudioListViewController:UITableViewDataSource,UITableViewDelegate{
             }
             else{
                let _ =  TransformMP3.transformCAF(toMP3: url.path)
-
             }
-            
         }
         return cell
     }
@@ -260,18 +191,59 @@ extension AudioListViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let url = arrFiles![indexPath.row]
         currentSelectIndex = indexPath
-        timer.fire()
+        
         play(url)
     }
 }
 
-extension AudioListViewController:AVAudioPlayerDelegate{
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        timer.pause()
-        let cell = tb.cellForRow(at: currentSelectIndex!) as! AudioFileCell
-        cell.progressBar.value = 0
-        btnPlay.value = 0
+extension AudioListViewController:ShadowPlayDelegate{
+    func bufferProcess(current: Float, duration: Float) {
+        
     }
+    
+    func playStateChange(status: PlayStatus) {
+        switch  status {
+        case .Stopped:
+            print("Stopped")
+        case .Playing:
+            print("Playing")
+        case .Paused:
+            print("Paused")
+        case .Finished:
+            
+            let cell = tb.cellForRow(at: currentSelectIndex!) as! AudioFileCell
+            cell.progressBar.value = 0
+            btnPlay.value = 0
+        }
+    }
+    
+    func resouceStateChange(status: ResourceStatus) {
+        switch status {
+        case .Unknow:
+            break
+        case .Failed:
+            break
+        case .GetInfo:
+            let cell = tb.cellForRow(at: currentSelectIndex!) as! AudioFileCell
+            let info = player.mediaInfo!
+            cell.upTotalTime(time: info.duration)
+
+        case .ReadyToPlay:
+            print("ReadyToPlay")
+           break
+        case .Buffering:
+            print("Buffering")
+            break
+        }
+    }
+    
+    func playProcess(current: Float, duration: Float) {
+        let cell = tb.cellForRow(at: currentSelectIndex!) as! AudioFileCell
+        cell.progressBar.value = current / duration
+        cell.updatePlayTime(time: Double(current))
+    }
+
+   
 }
 
 class AudioFileCell: UITableViewCell {
@@ -311,6 +283,15 @@ class AudioFileCell: UITableViewCell {
             lblPlayTime.text = "00:00:00"
         }
     }
+    
+    func upTotalTime(time:Double){
+        lblAudioLength.text = TimeSpan.fromSeconds(time).format(format: "mm:ss")
+    }
+    
+    func updatePlayTime(time:Double){
+        lblPlayTime.text = TimeSpan.fromSeconds(time).format(format: "mm:ss")
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none

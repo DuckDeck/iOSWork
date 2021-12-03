@@ -35,15 +35,6 @@ class AudioRecordViewController: UIViewController {
     var recordTime = TimeSpan.fromSeconds(0){
         didSet{
             lblTimer.text = recordTime.format(format: "mm:ss")
-//            if recordTime == TimeSpan.fromSeconds(0){
-//                lblTimer.text = recordTime.format(format: "mm:ss")
-//
-//            }
-//            else{
-//                let rt = recordTime - TimeSpan.fromSeconds(1)
-//                lblTimer.text = rt.format(format: "mm:ss")
-//            }
-            
         }
     }
     override func viewDidLoad() {
@@ -62,10 +53,9 @@ class AudioRecordViewController: UIViewController {
     }
     
     func initView() {
-        let btnNetAudio = UIBarButtonItem(title: "网络音频", style: .plain, target: self, action: #selector(gotoNetAudio))
         
-        let btnNav = UIBarButtonItem(title: "已有录音", style: .plain, target: self, action: #selector(gotoRecordList))
-        navigationItem.rightBarButtonItems = [btnNetAudio,btnNav]
+        let btnNetAudio = UIBarButtonItem(title: "网络音频", style: .plain, target: self, action: #selector(gotoNetAudio))
+        navigationItem.rightBarButtonItem = btnNetAudio
         
         vWave = VolumeView(frame: CGRect(x: 0, y: 400, w: ScreenWidth, h: 100), type: .bar)
         vWave.barGap = 8
@@ -113,8 +103,6 @@ class AudioRecordViewController: UIViewController {
         }
         btnSave.addTarget(self, action: #selector(saveToAlbum), for: .touchUpInside)
         
-       
-        
         lblTimer.text(text: "00:00").color(color: UIColor.red).addTo(view: view).snp.makeConstraints { (m) in
             m.bottom.equalTo(btnRecord.snp.top).offset(-20)
             m.centerX.equalTo(view)
@@ -132,11 +120,7 @@ class AudioRecordViewController: UIViewController {
             self.removeNetAudio()
         }
     }
-   
-    @objc func gotoRecordList() {
-        navigationController?.pushViewController(AudioListViewController(), animated: true)
-    }
-    
+       
     @objc func gotoNetAudio(){
         let url = "https://lovelive.ink:19996/file/1593677674plants.mp3"
         let playAudio = ShadowAudioPlayerView(frame: CGRect(x: 10, y: 300, w: ScreenWidth - 20, h: 50), url: URL(string: url)!)
@@ -145,6 +129,7 @@ class AudioRecordViewController: UIViewController {
         audioPlayView?.backgroundColor = UIColor.white
         vPlayNetAudio.isHidden = false
     }
+    
     func removeNetAudio() {
         audioPlayView?.player.stop()
         audioPlayView?.removeFromSuperview()
