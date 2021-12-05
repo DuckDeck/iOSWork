@@ -14,7 +14,7 @@ class AudioListViewController: UIViewController {
     var arrFiles:[URL]?
     var player: ShadowPlayer!
     var btnPlay = ProgressButton(frame: CGRect())
-    var currentSelectIndex:IndexPath?
+    var `currentSelectIndex`:IndexPath?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -86,9 +86,13 @@ class AudioListViewController: UIViewController {
     
     func play(_ url: URL) {
         print("playing \(url)")
-        player = ShadowPlayer(url: url, autoCache: true)
-        player.delegate = self
-        GrandCue.toast("正在播放\(url.lastPathComponent)")
+        if player != nil{
+            player.stop()
+        } else {
+            player = ShadowPlayer(url: url, autoCache: true)
+            player.delegate = self
+            GrandCue.toast("正在播放\(url.absoluteString)")
+        }
     }
     
     
@@ -141,7 +145,6 @@ class AudioListViewController: UIViewController {
         }
     }
     func deleteRecording(_ url: URL) {
-        
         print("removing file at \(url.absoluteString)")
         let fileManager = FileManager.default
         
@@ -190,8 +193,10 @@ extension AudioListViewController:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let url = arrFiles![indexPath.row]
+        if currentSelectIndex != indexPath{
+            
+        }
         currentSelectIndex = indexPath
-        
         play(url)
     }
 }
@@ -210,7 +215,6 @@ extension AudioListViewController:ShadowPlayDelegate{
         case .Paused:
             print("Paused")
         case .Finished:
-            
             let cell = tb.cellForRow(at: currentSelectIndex!) as! AudioFileCell
             cell.progressBar.value = 0
             btnPlay.value = 0
@@ -227,7 +231,6 @@ extension AudioListViewController:ShadowPlayDelegate{
             let cell = tb.cellForRow(at: currentSelectIndex!) as! AudioFileCell
             let info = player.mediaInfo!
             cell.upTotalTime(time: info.duration)
-
         case .ReadyToPlay:
             print("ReadyToPlay")
            break

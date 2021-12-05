@@ -183,10 +183,6 @@ class AudioRecordViewController: UIViewController {
     }
     
     
-    
-    
-
-    
     private func addSoundMeter(item: Float) {
         print(item)
         if soundMeters.count < soundMeterCount {
