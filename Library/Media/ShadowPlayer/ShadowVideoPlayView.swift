@@ -297,14 +297,14 @@ class ShadowVideoPlayerView: UIView {
     func play() {
         if player != nil {
             player.play()
-            vPlay.btnImage.isSelected = true
+            vPlay.setState(state: true)
         }
     }
     
     func pause() {
         if player != nil {
             player.pause()
-            vPlay.btnImage.isSelected = false
+            vPlay.setState(state: false)
         }
     }
     
@@ -508,44 +508,59 @@ extension ShadowVideoPlayerView {
 }
 
 extension ShadowVideoPlayerView: ShadowPlayDelegate {
+    func playStateChange(status: PlayStatus) {
+        switch status {
+        case .Stopped:
+            break
+        case .Playing:
+            break
+        case .Paused:
+            setSubViewsIsHide(isHide: false)
+            vPlay.setState(state: false)
+
+        case .Finished:
+            setSubViewsIsHide(isHide: false)
+            ShadowVideoPlayerView.count = 0
+            pause()
+            vPlay.setState(state: false)
+        }
+    }
+    
+   
+    func resouceStateChange(status: ResourceStatus) {
+        switch status {
+        case .Unknow:
+            break
+        case .Failed:
+            break
+        case .GetInfo:
+            let info = player.mediaInfo!
+            vControl.maxValue = Float(info.duration)
+            vControl.minValue = 0
+            vControl.totalTime = convertTime(second: Float(info.duration))
+
+        case .ReadyToPlay:
+            vActivity.stopAnimating()
+           if player.isAutoPlay{
+               if player.playStatus == .Playing{
+                   vPlay.setState(state: true)
+               }
+           } else {
+               vPlay.isHidden = false
+               
+           }
+        case .Buffering:
+            if !vActivity.isHidden {
+               vActivity.startAnimating()
+           }
+        }
+    }
+    
     func bufferProcess(current: Float, duration: Float) {
         print(current)
         vControl.bufferValue = current / duration
     }
     
-    func playStateChange(status: PlayerStatus, info: MediaInfo?) {
-        switch status {
-        case .GetInfo:
-            if info != nil {
-//                vcon.text = convertTime(second: info!.duration)
-//                slider.maximumValue = Float(info!.duration)
-                vControl.maxValue = Float(info!.duration)
-                vControl.minValue = 0
-                vControl.totalTime = convertTime(second: Float(info!.duration))
-            }
-        case .Buffering:
-//            if !vActivity.isAnimating && vControl.bufferValue <= player.currentTime / player.totalTime.seconds + 5{
-//                vActivity.startAnimating()
-//            }
-            if !vActivity.isHidden {
-                vActivity.startAnimating()
-            }
-        case .ReadyToPlay:
-            vActivity.stopAnimating()
-            vPlay.isHidden = false
-        case .Finished:
-            setSubViewsIsHide(isHide: false)
-            ShadowVideoPlayerView.count = 0
-            pause()
-            vPlay.btnImage.isSelected = false
-        case .Paused:
-            // pause()
-            setSubViewsIsHide(isHide: false)
-            vPlay.btnImage.isSelected = false
-        default:
-            break
-        }
-    }
     
     func playProcess(current: Float, duration: Float) {
         print("播放到\(current)")

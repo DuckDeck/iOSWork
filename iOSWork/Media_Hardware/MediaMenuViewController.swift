@@ -54,13 +54,12 @@ extension MediaMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let vc = TakePhotoViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
-
         case 3:
             let vc = VideoListViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         case 4:
-            let vc = AudioRecordViewController()
+            let vc = AudioListViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         case 5:

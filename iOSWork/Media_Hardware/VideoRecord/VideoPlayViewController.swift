@@ -42,7 +42,6 @@ class VideoPlayViewController: BaseViewController {
             m.top.equalTo(20)
             m.height.equalTo(ScreenWidth * 0.7)
         }
-        shadowPlayer.play()
         
         
         btnDelete.title(title: "删除").color(color: UIColor.darkGray).addTo(view: view).snp.makeConstraints { (m) in

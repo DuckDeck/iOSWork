@@ -12,8 +12,12 @@ import AVKit
 enum VideoGravity {
     case ResizeAspect,ResizeAspectFill,Resize
 }
-enum PlayerStatus:Int{
-    case Failed = 0,GetInfo, ReadyToPlay,Unknown,Buffering,Playing,Paused, Stopped,Finished
+enum PlayStatus:Int{
+    case  Stopped = 0,Playing,Paused,Finished
+}
+
+enum ResourceStatus:Int{
+    case Unknow = 0, Failed ,GetInfo,ReadyToPlay,Buffering
 }
 
 enum ShadowUIConfig {
@@ -23,11 +27,15 @@ enum ShadowUIConfig {
     case SilderProgressImage
 }
 
+enum MediaError:Swift.Error{
+    case ResourceLoadError(code:Int,info:String)
+}
+
 protocol ShadowPlayDelegate:NSObjectProtocol {
     func bufferProcess(current:Float,duration:Float)
-    func playStateChange(status:PlayerStatus,info:MediaInfo?)
+    func playStateChange(status:PlayStatus)
+    func resouceStateChange(status:ResourceStatus)
     func playProcess(current:Float,duration:Float)
-    func loadMediaFail(error:NSError)
 }
 
 struct MediaInfo {
@@ -64,7 +72,8 @@ class ShadowPlayer:NSObject {
         }
     }
     var playerLayer:AVPlayerLayer!
-    var status = PlayerStatus.Unknown     //播放状态
+    var playStatus = PlayStatus.Stopped     //播放状态
+    var resourceSatus = ResourceStatus.Unknow
     fileprivate var url:URL!
     var isCached = false
     var cachePath:String?
@@ -74,19 +83,19 @@ class ShadowPlayer:NSObject {
     var isFileExist = false
     var isFileCacheComplete = false
     var isAutoCache = true
-
+    var isAutoPlay = true
     weak var delegate:ShadowPlayDelegate?
     var isSeeking = false
+    var mediaInfo:MediaInfo?
+    var errorInfo:MediaError?
     var currentTime:Double
     {
         get{
             return item.currentTime().seconds
         }
         set{
-            let tmp = status
-            if status == .Playing{
-                pause()
-            }
+            let tmp = playStatus
+            
             if isSeeking {
                 return
             }
@@ -189,9 +198,13 @@ class ShadowPlayer:NSObject {
 //        else{
 //            anAsset = AVURLAsset(url: url, options: dict)
 //        }
-       anAsset = AVURLAsset(url: url, options: dict)
-       loadAsset(asset: anAsset)
-       
+        
+        DispatchQueue.global().async {
+            self.anAsset = AVURLAsset(url: url, options: dict)
+            DispatchQueue.main.async {
+                self.loadAsset(asset: self.anAsset)
+            }
+        }
     }
     
     func loadAsset(asset:AVURLAsset) {
@@ -199,9 +212,6 @@ class ShadowPlayer:NSObject {
         weak var weakself = self
         //如果使用第三方下载这个就不能用了
         anAsset.loadValuesAsynchronously(forKeys: keys) {
-            
-            print(Thread.current)
-            
             var error:NSError? = nil
             guard let tracksStatus = weakself?.anAsset.statusOfValue(forKey: "duration", error: &error) else{
                 return
@@ -210,7 +220,8 @@ class ShadowPlayer:NSObject {
             case .loaded:
                 DispatchQueue.main.async {
                     guard let mediaInfo = weakself?.anAsset.tracks.first?.formatDescriptions.first else{
-                        weakself?.delegate?.playStateChange(status: .GetInfo, info: nil)//表示fail
+                        self.errorInfo = .ResourceLoadError(code: -1, info: "视频加载失败")
+                        weakself?.delegate?.resouceStateChange(status: .Failed)
                         return
                     }
                     let format = mediaInfo as! CMFormatDescription
@@ -222,9 +233,8 @@ class ShadowPlayer:NSObject {
                         let res = track.naturalSize
                         weakself?.totalTime = track.timeRange.duration
                         let info = MediaInfo(mediaType: AVMediaType.video, resolution: "\(res.width) * \(res.height)", duration: track.timeRange.duration.seconds, frameRate: track.nominalFrameRate, bitRate: track.estimatedDataRate)
-                        
-                        weakself?.delegate?.playStateChange(status: .GetInfo, info: info)
-                        
+                        self.mediaInfo = info
+                        weakself?.delegate?.resouceStateChange(status: .GetInfo)
                     }
                     else if type == kCMMediaType_Audio{
                         guard let track = weakself?.anAsset.tracks(withMediaType: .audio).first else{
@@ -232,14 +242,16 @@ class ShadowPlayer:NSObject {
                         }
                         weakself?.totalTime = track.timeRange.duration
                         let info = MediaInfo(mediaType: AVMediaType.audio, resolution: "", duration: track.timeRange.duration.seconds, frameRate: track.nominalFrameRate, bitRate: track.estimatedDataRate)
-                        weakself?.delegate?.playStateChange(status: .GetInfo, info: info)
+                        self.mediaInfo = info
+                        weakself?.delegate?.resouceStateChange(status: .GetInfo)
                     }
                     
                   
                 }
             case .failed:
                 if error != nil{
-                    weakself?.delegate?.loadMediaFail(error: error!)
+                    self.errorInfo = .ResourceLoadError(code: error!.code, info: error!.localizedDescription)
+                    weakself?.delegate?.resouceStateChange(status: .Failed)
                 }
                 print(error?.localizedDescription ?? "")
             case .unknown:
@@ -299,18 +311,21 @@ class ShadowPlayer:NSObject {
             }
             switch itemStatus{
             case .unknown:
-                status = .Unknown
+                resourceSatus = .Unknow
                 print("status出现unknow")
             case .readyToPlay:
-                status = .ReadyToPlay
+                resourceSatus = .ReadyToPlay
+                if isAutoPlay{
+                    play()
+                }
                 print("缓冲达到可播放")
             case .failed:
-                status = .Failed
-                let err = NSError(domain: "视频加载失败", code: -1, userInfo: nil)
-                delegate?.loadMediaFail(error: err)
+                resourceSatus = .Failed
+                self.errorInfo = .ResourceLoadError(code: -1, info: "视频加载失败")
             @unknown default:
                 break
             }
+            delegate?.resouceStateChange(status: self.resourceSatus)
         }
         else if key == "loadedTimeRanges"{ //监听播放器的下载进度
             let loadedTimeRanges = item.loadedTimeRanges
@@ -324,22 +339,24 @@ class ShadowPlayer:NSObject {
             delegate?.bufferProcess(current: Float(timeInterval), duration:  Float(totalDuration))
         }
         else if key == "playbackBufferEmpty"{
-            status = .Buffering
-            pause()
+            resourceSatus = .Buffering
+            delegate?.resouceStateChange(status: self.resourceSatus)
         }
         else if key == "playbackLikelyToKeepUp"{
             print("缓冲达到可播放")
-            status = .ReadyToPlay
+            resourceSatus = .ReadyToPlay
+            delegate?.resouceStateChange(status: self.resourceSatus)
         }
         else if key == "rate"{
             if change![NSKeyValueChangeKey.newKey] as! Int == 0{
-                status = .Playing
+                playStatus = .Playing
             }
             else{
-                status = .Stopped
+                playStatus = .Stopped
             }
+            delegate?.playStateChange(status: playStatus)
         }
-        delegate?.playStateChange(status: status, info: nil)
+        
     }
     
     func addNotificationCenter()  {
@@ -363,22 +380,22 @@ class ShadowPlayer:NSObject {
     func play()  {
         if self.player != nil{
             self.player.play()
-            status = .Playing
-            delegate?.playStateChange(status: status, info: nil)
+            playStatus = .Playing
+            delegate?.playStateChange(status: playStatus)
         }
         else{
             setupPlayerWithAsset(asset: anAsset)
             self.player.play()
-            status = .Playing
-            delegate?.playStateChange(status: status, info: nil)
+            playStatus = .Playing
+            delegate?.playStateChange(status: playStatus)
         }
     }
     
     func pause() {
         if self.player != nil{
             self.player.pause()
-            status = .Paused
-            delegate?.playStateChange(status: status, info: nil)
+            playStatus = .Paused
+            delegate?.playStateChange(status: playStatus)
         }
        
     }
@@ -402,8 +419,8 @@ class ShadowPlayer:NSObject {
             item = nil
             _player = nil
         }
-        status = .Stopped
-        delegate?.playStateChange(status: status, info: nil)
+        playStatus = .Stopped
+        delegate?.playStateChange(status: playStatus)
         dataManager = nil
         lastToEndDownloader?.cancel()
         lastToEndDownloader = nil
@@ -427,8 +444,8 @@ extension ShadowPlayer{
     @objc func ShadowPlayerItemDidPlayToEndTimeNotification(notif:Notification)  {
         item.seek(to: CMTime.zero, completionHandler: nil)
         self.player.pause()
-        status = .Finished
-        delegate?.playStateChange(status: status, info: nil)
+        playStatus = .Finished
+        delegate?.playStateChange(status: playStatus)
     }
    
 

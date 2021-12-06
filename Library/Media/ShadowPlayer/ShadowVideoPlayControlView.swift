@@ -21,6 +21,11 @@ class ShadowVideoPlayControlView: UIView {
         }
     }
     
+    func setState(state:Bool){
+        self.state = state
+        btnImage.isSelected = state
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
