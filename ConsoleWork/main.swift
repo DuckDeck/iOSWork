@@ -41,8 +41,12 @@ let tt = t as One
 tt.name()
 
 let s = "123123"
-
-
+let ipRegex = try! NSRegularExpression(pattern: "((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)", options: [.dotMatchesLineSeparators, .caseInsensitive])
+let ip = "http://11.11.11.11/2312313"
+let results = ipRegex.matches(in: ip, options: [], range: NSRange(location: 0, length: ip.count))
+for item in results{
+    print(item.range)
+}
 /*
 protocol DictionaryValue{
     var value:Any{ get }
