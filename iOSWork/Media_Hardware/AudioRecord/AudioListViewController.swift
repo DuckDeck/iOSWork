@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 import GrandKit
 class AudioListViewController: UIViewController {
-
+    
     let tb = UITableView()
     var arrFiles:[URL]?
     var player: ShadowPlayer!
@@ -41,15 +41,15 @@ class AudioListViewController: UIViewController {
         try? AVAudioSession.sharedInstance().setActive(true)
     }
     
- 
+    
     
     @objc func tick()  {
-       let cell = tb.cellForRow(at: currentSelectIndex!) as! AudioFileCell
+        let cell = tb.cellForRow(at: currentSelectIndex!) as! AudioFileCell
         let ratio = player.currentTime / Double(cell.totalTime)
         cell.progressBar.value = Float(ratio)
         btnPlay.value = ratio
     }
-
+    
     func listRecordings() {
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let fileManager = FileManager.default
@@ -86,7 +86,7 @@ class AudioListViewController: UIViewController {
     
     func play(_ url: URL) {
         print("playing \(url)")
-        if player != nil{
+        if player != nil && player.playStatus == .Playing{
             player.stop()
         } else {
             player = ShadowPlayer(url: url, autoCache: true)
@@ -105,7 +105,7 @@ class AudioListViewController: UIViewController {
     func rename(url:URL) {
         let alert = UIAlertController(title: "Rename",
                                       message: "Rename Recording \(url.lastPathComponent)?",
-            preferredStyle: .alert)
+                                      preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {
             [unowned alert] _ in
             print("yes was tapped \(url)")
@@ -185,7 +185,7 @@ extension AudioListViewController:UITableViewDataSource,UITableViewDelegate{
                 self?.deleteAudio(url: url)
             }
             else{
-               let _ =  TransformMP3.transformCAF(toMP3: url.path)
+                let _ =  TransformMP3.transformCAF(toMP3: url.path)
             }
         }
         return cell
@@ -233,7 +233,7 @@ extension AudioListViewController:ShadowPlayDelegate{
             cell.upTotalTime(time: info.duration)
         case .ReadyToPlay:
             print("ReadyToPlay")
-           break
+            break
         case .Buffering:
             print("Buffering")
             break
@@ -245,8 +245,8 @@ extension AudioListViewController:ShadowPlayDelegate{
         cell.progressBar.value = current / duration
         cell.updatePlayTime(time: Double(current))
     }
-
-   
+    
+    
 }
 
 class AudioFileCell: UITableViewCell {
@@ -326,7 +326,7 @@ class AudioFileCell: UITableViewCell {
         
         btnRename.title(title: "重命名").setFont(font: 13).color(color: UIColor.red).addTo(view: contentView).snp.makeConstraints { (m) in
             m.right.equalTo(btnDelete.snp.left).offset(-10)
-           m.top.equalTo(lblName)
+            m.top.equalTo(lblName)
             m.height.equalTo(30)
         }
         btnRename.addTarget(self, action: #selector(rename), for: .touchUpInside)
