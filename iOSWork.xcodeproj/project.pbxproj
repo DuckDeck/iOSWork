@@ -23,18 +23,12 @@
 		AE1C4F2B274341140097EAC1 /* WordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F22274341140097EAC1 /* WordsCell.swift */; };
 		AE1C4F2D2743416D0097EAC1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE1C4F2C2743416D0097EAC1 /* Kingfisher */; };
 		AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2427254946007D51CD /* Number+Extension.swift */; };
-		AE1C4F31274341D50097EAC1 /* Number+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2427254946007D51CD /* Number+Extension.swift */; };
-		AE1C4F32274341D70097EAC1 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2827254946007D51CD /* UIButton+Extension.swift */; };
-		AE1C4F33274341D70097EAC1 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2827254946007D51CD /* UIButton+Extension.swift */; };
-		AE1C4F35274341FA0097EAC1 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB63272549A3007D51CD /* String+Extension.swift */; };
 		AE1C4F36274341FC0097EAC1 /* Dict+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB5F27254977007D51CD /* Dict+Extension.swift */; };
 		AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB5F27254977007D51CD /* Dict+Extension.swift */; };
 		AE1C4F38274341FE0097EAC1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB5B2725495E007D51CD /* Array+Extension.swift */; };
 		AE1C4F39274341FE0097EAC1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB5B2725495E007D51CD /* Array+Extension.swift */; };
 		AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2727254946007D51CD /* WKWebView+Extension.swift */; };
 		AE1C4F3B274342010097EAC1 /* WKWebView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2727254946007D51CD /* WKWebView+Extension.swift */; };
-		AE1C4F3F274342050097EAC1 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2527254946007D51CD /* UIViewController+Extension.swift */; };
-		AE1C4F41274342070097EAC1 /* UIView+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB3027254946007D51CD /* UIView+Base.swift */; };
 		AE1C4F43274342510097EAC1 /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE1C4F42274342510097EAC1 /* GrandKit */; };
 		AE1C4F45274342560097EAC1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE1C4F44274342560097EAC1 /* SnapKit */; };
 		AE1C4F5D274346BD0097EAC1 /* randtable.c in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F49274346BD0097EAC1 /* randtable.c */; };
@@ -854,7 +848,6 @@
 		AEF8665B274B6F97002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
 		AEF8665C274B6F98002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
 		AEF8665D274B7023002E33E5 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2627254946007D51CD /* Foundation+Extension.swift */; };
-		AEF8665E274B7025002E33E5 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2627254946007D51CD /* Foundation+Extension.swift */; };
 		AEF86663274B9A38002E33E5 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB63272549A3007D51CD /* String+Extension.swift */; };
 		AEF86666274B9B52002E33E5 /* ClassifyingImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86665274B9B52002E33E5 /* ClassifyingImagesViewController.swift */; };
 		AEF86668274B9B5D002E33E5 /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86667274B9B5D002E33E5 /* ImagePredictor.swift */; };
@@ -4296,7 +4289,6 @@
 			files = (
 				AE1C4F26274341140097EAC1 /* KeyboardModel.swift in Sources */,
 				AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
-				AE1C4F32274341D70097EAC1 /* UIButton+Extension.swift in Sources */,
 				AE1C4F25274341140097EAC1 /* PinyinStore.swift in Sources */,
 				AE1C4F28274341140097EAC1 /* Calculator.swift in Sources */,
 				AE1C4F27274341140097EAC1 /* PinyinDictionary.swift in Sources */,
@@ -4321,17 +4313,11 @@
 				AEE01194274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇三：让Model实现自动映射--将字典转化成Model).swift in Sources */,
 				AEE01195274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇一：让Model自我描述).swift in Sources */,
 				AE1C4F3B274342010097EAC1 /* WKWebView+Extension.swift in Sources */,
-				AE1C4F3F274342050097EAC1 /* UIViewController+Extension.swift in Sources */,
-				AE1C4F33274341D70097EAC1 /* UIButton+Extension.swift in Sources */,
-				AE1C4F35274341FA0097EAC1 /* String+Extension.swift in Sources */,
 				AEE0119A2742780A00C155D8 /* Fundation.swift in Sources */,
 				AEE0118D274277A700C155D8 /* fishhook.c in Sources */,
 				AEE011982742780600C155D8 /* Regex.swift in Sources */,
-				AE1C4F31274341D50097EAC1 /* Number+Extension.swift in Sources */,
-				AE1C4F41274342070097EAC1 /* UIView+Base.swift in Sources */,
 				AEE01196274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇四：使用Swift反射).swift in Sources */,
 				AE7E7462272252E700F0C19C /* main.swift in Sources */,
-				AEF8665E274B7025002E33E5 /* Foundation+Extension.swift in Sources */,
 				AE1C4F39274341FE0097EAC1 /* Array+Extension.swift in Sources */,
 				AE1C4F36274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
 				AEE01193274277FF00C155D8 /* iOS开发技巧系列---打造强大的BaseModel(篇二：让Model实现自动归档.swift in Sources */,
