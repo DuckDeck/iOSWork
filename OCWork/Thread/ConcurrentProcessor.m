@@ -8,7 +8,7 @@
 
 #import "ConcurrentProcessor.h"
 @interface ConcurrentProcessor()
-    @property (readwrite) NSInteger computeResult;
+@property (readwrite) NSInteger computeResult;
 @end
 
 @implementation ConcurrentProcessor{

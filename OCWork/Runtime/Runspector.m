@@ -50,7 +50,7 @@ NSString *greeting(id self,SEL _cmd){
     if (flag) {
         NSLog(@"age 属性添加成功");
     }
-   
+    
     
     
     //注册这个类
@@ -61,7 +61,7 @@ NSString *greeting(id self,SEL _cmd){
     id result = objc_msgSend(dynaObj,NSSelectorFromString(@"greeting"));
     NSLog(@"the dynaClass test result is%@",result);
     
-     //拷贝DynaClass类中的成员变量列表，打印出来
+    //拷贝DynaClass类中的成员变量列表，打印出来
     unsigned int varCount;
     Ivar* varList = class_copyIvarList(dynaClass, &varCount);
     for (int i = 0; i<varCount; i++) {
@@ -80,7 +80,7 @@ NSString *greeting(id self,SEL _cmd){
     //添加实例变量相对简单，但是对于属性就麻烦一些
     //属性的特性字符串 以 T@encode(type) 开头, 以 V实例变量名称 结尾,中间以特性编码填充,通过property_getAttributes即可查看
     
-   //特性编码 具体含义
+    //特性编码 具体含义
     //R readonly
     //C copy
     //& retain
@@ -90,7 +90,7 @@ NSString *greeting(id self,SEL _cmd){
     //D @dynamic
     //W weak
     //P 用于垃圾回收机制
-
+    
     objc_property_attribute_t attribute1;
     attribute1.name = "T";
     attribute1.value = @encode(NSString *); //以tT开头
@@ -108,9 +108,9 @@ NSString *greeting(id self,SEL _cmd){
     }
     free(properties);
     
-//    Ivar proIVar = class_getInstanceVariable(dynaClass, "_pname");
-//    object_setIvar(dynaObj, proIVar, @"_ShadowEdge");
-//    NSLog(@"DynaClass这个类的_pname值%@",object_getIvar(dynaObj, proIVar));
+    //    Ivar proIVar = class_getInstanceVariable(dynaClass, "_pname");
+    //    object_setIvar(dynaObj, proIVar, @"_ShadowEdge");
+    //    NSLog(@"DynaClass这个类的_pname值%@",object_getIvar(dynaObj, proIVar));
     //这里没有调车ivar功能，可能能用_name来设置 打印出NULL，说明没有用
     //可能只能用KVC来设置
     //[dynaObj setValue:@"pNameShadowEdge" forKey:@"pame"];
