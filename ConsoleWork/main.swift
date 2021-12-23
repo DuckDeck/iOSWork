@@ -53,7 +53,24 @@ if s == "123123", ip == "http://11.11.11.11/2312313/933.123.42.01" {
     print(1234)
 }
 
+enum test:Int{
+    case a,
+         b
+    init?(rawValue: Int) {
+        switch rawValue {
+        case 0:
+            self = .a
+        case 1:
+            self = .a
 
+        default:
+            return nil
+        }
+    }
+}
+
+let sss = test(rawValue: 1)
+print(sss)
 
 /*
  protocol DictionaryValue{
