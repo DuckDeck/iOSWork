@@ -38,12 +38,18 @@ class MediaBroswerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
         initView()
     }
     
     func initView(){
         let viewBroswer = MediaBroswerView(frame: UIScreen.main.bounds)
         viewBroswer.mediaModel = arrMedia
+        viewBroswer.dismissBlock = {
+            self.dismiss(animated: true) {
+                
+            }
+        }
         view.addSubview(viewBroswer)
     }
 }

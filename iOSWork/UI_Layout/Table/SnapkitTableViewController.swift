@@ -7,19 +7,40 @@
 
 import UIKit
 import Kingfisher
+//使用这种方式要等图片下载完才有效果，可以考虑用ImageIO优化
 class SnapkitTableViewController: UIViewController {
 
     let tb = UITableView()
     var arr = [Model1]()
     let vHead = UIView()
-    
+    var selectedUrl:String?
+    var dismissBlock:((_ url:String)->Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.white
         title = "CELL 高度"
+        
+        if navigationController == nil{
+            let btnClose = UIButton()
+            btnClose.setTitle("关  闭", for: .normal)
+            btnClose.setTitleColor(UIColor.darkGray, for: .normal)
+            btnClose.addTarget(self, action: #selector(closeVC), for: .touchUpInside)
+            view.addSubview(btnClose)
+            btnClose.snp.makeConstraints { make in
+                make.left.equalTo(20)
+                make.top.equalTo(50)
+            }
+        }
+        
         createModel()
         view.addSubview(tb)
         tb.snp.makeConstraints { (m) in
-            m.edges.equalTo(view)
+            m.left.right.bottom.equalTo(0)
+            if navigationController == nil{
+                m.top.equalTo(80)
+            } else {
+                m.top.equalTo(0)
+            }
         }
         
         vHead.backgroundColor = UIColor.yellow
@@ -52,6 +73,9 @@ class SnapkitTableViewController: UIViewController {
 //    }
     
     
+    @objc func closeVC(){
+        dismiss(animated: true)
+    }
 
     func createModel() {
         var m = Model1()
@@ -116,6 +140,13 @@ extension SnapkitTableViewController:UITableViewDataSource,UITableViewDelegate{
         else{
             return UITableView.automaticDimension
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = arr[indexPath.row]
+        selectedUrl = model.img
+        dismiss(animated: true, completion: nil)
+        dismissBlock?(selectedUrl!)
     }
     
 }

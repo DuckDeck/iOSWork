@@ -16,7 +16,7 @@ class MediaBroswerView:UIView{
     }
     var currentIndex = 0
     
-    
+    var dismissBlock:(()->Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,6 +62,7 @@ class MediaBroswerView:UIView{
     
     @objc func backClick(){
         removeFromSuperview()
+        dismissBlock?()
     }
     
     
