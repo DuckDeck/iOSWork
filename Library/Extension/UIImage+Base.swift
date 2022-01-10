@@ -507,6 +507,17 @@ extension UIImage{
                 
     }
     
+    
+    //占用内存大小，单位中kb
+    var memorySize:Float{
+        if let cgimg = self.cgImage{
+            let row = cgimg.bytesPerRow
+            let height = cgimg.height
+            let size = height * row
+            return Float(size) / 1024.0
+        }
+        return 0
+    }
    
 }
 
