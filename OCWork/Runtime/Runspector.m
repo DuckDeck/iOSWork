@@ -58,8 +58,8 @@ NSString *greeting(id self,SEL _cmd){
     //使用该类创建一个实例并发送一条消息
     id dynaObj = [dynaClass new];
     
-    id result = objc_msgSend(dynaObj,NSSelectorFromString(@"greeting"));
-    NSLog(@"the dynaClass test result is%@",result);
+//    id result = objc_msgSend(dynaObj,NSSelectorFromString(@"greeting"));
+//    NSLog(@"the dynaClass test result is%@",result);
     
     //拷贝DynaClass类中的成员变量列表，打印出来
     unsigned int varCount;
@@ -116,7 +116,7 @@ NSString *greeting(id self,SEL _cmd){
     //[dynaObj setValue:@"pNameShadowEdge" forKey:@"pame"];
     //NSLog(@"使用KVC来设置后属性pname的值为%@",[dynaObj valueForKey:@"pname"]);
     //KVC也不行
-    objc_msgSend(dynaObj, NSSelectorFromString(@"greeting"));
+   // objc_msgSend(dynaObj, NSSelectorFromString(@"greeting"));
     //注意这里是用实例峭是用类
     objc_setAssociatedObject(dynaObj, "hoby", @"fart", OBJC_ASSOCIATION_COPY);
     id res = objc_getAssociatedObject(dynaObj, "hoby");

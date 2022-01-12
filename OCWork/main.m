@@ -157,7 +157,7 @@ int main(int argc, const char * argv[]) {
         
         
         
-        
+        /*
         
         //fishhook
         struct rebinding nslog;
@@ -167,7 +167,7 @@ int main(int argc, const char * argv[]) {
         struct rebinding rebs[1] = {nslog};
         rebind_symbols(rebs, 1);
         
-        NSLog(@"123123");
+         */
         
     }
     return 0;

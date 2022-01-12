@@ -59,6 +59,11 @@ class KeyboardViewController: UIInputViewController,UICollectionViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //获取是哪个app调用了这个键盘,获取到的是bundleid
+        let hostBundleID = self.parent!.value(forKey: "_hostBundleID") as? String
+        print(hostBundleID);
+
+        
         (keyboardView, bannerView, bottomView) = defaultKeyboard()
         addViewsToBanner()
         
