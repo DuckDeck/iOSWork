@@ -27,7 +27,7 @@ class WatermarkViewController: UIViewController,TZImagePickerControllerDelegate 
         }
         
 
-        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "设置图片", style: .plain, target: self, action: #selector(chooseImg))
      
         
         btnAddWatermark.title(title: "添加水印").color(color: UIColor.red).bgColor(color: UIColor.lightGray).addTo(view: view).snp.makeConstraints { (m) in
@@ -82,6 +82,10 @@ class WatermarkViewController: UIViewController,TZImagePickerControllerDelegate 
             let newImage = img.addWatermark(maskImage:#imageLiteral(resourceName: "img_watermark_b"),scale:1)
             imgWatermark.image = newImage
         }
+    }
+    
+    @objc func chooseImg(){
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

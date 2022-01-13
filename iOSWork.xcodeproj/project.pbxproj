@@ -583,6 +583,8 @@
 		AE6E5DCA273FC34600523EA8 /* StyleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DC9273FC34600523EA8 /* StyleTableViewController.swift */; };
 		AE6E5DCC273FC51C00523EA8 /* OptimizeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */; };
 		AE6E5DCF273FC5E500523EA8 /* FlowLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */; };
+		AE7234AD278E6B610088C791 /* PHAssert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */; };
+		AE7234AE278E6B640088C791 /* PHAssert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */; };
 		AE72F528273EB9A50060456A /* CitySearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F51F273EB9A40060456A /* CitySearchResultView.swift */; };
 		AE72F529273EB9A50060456A /* CityDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F520273EB9A40060456A /* CityDB.swift */; };
 		AE72F52B273EB9A50060456A /* CityChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F522273EB9A40060456A /* CityChooseViewController.swift */; };
@@ -1299,6 +1301,7 @@
 		AE6E5DC9273FC34600523EA8 /* StyleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTableViewController.swift; sourceTree = "<group>"; };
 		AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizeTableViewController.swift; sourceTree = "<group>"; };
 		AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutViewController.swift; sourceTree = "<group>"; };
+		AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAssert+Extension.swift"; sourceTree = "<group>"; };
 		AE72F51F273EB9A40060456A /* CitySearchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchResultView.swift; sourceTree = "<group>"; };
 		AE72F520273EB9A40060456A /* CityDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDB.swift; sourceTree = "<group>"; };
 		AE72F522273EB9A40060456A /* CityChooseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityChooseViewController.swift; sourceTree = "<group>"; };
@@ -2037,6 +2040,7 @@
 				AE62CB5B2725495E007D51CD /* Array+Extension.swift */,
 				AE62CB5F27254977007D51CD /* Dict+Extension.swift */,
 				AE62CB63272549A3007D51CD /* String+Extension.swift */,
+				AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -3941,6 +3945,7 @@
 				AE62CB3A27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE1C4F62274346BD0097EAC1 /* huffman.c in Sources */,
 				AE62CA5C2725429B007D51CD /* TZProgressView.m in Sources */,
+				AE7234AE278E6B640088C791 /* PHAssert+Extension.swift in Sources */,
 				AE66E18C27537CC9006432FE /* OpenCVMenuViewController.swift in Sources */,
 				AE61166027410F2F008466AB /* GrandSlider.swift in Sources */,
 				AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */,
@@ -4318,6 +4323,7 @@
 				AEE010E02742569200C155D8 /* MJRefreshNormalHeader.m in Sources */,
 				AE62CB7327254B12007D51CD /* Toast.swift in Sources */,
 				AE62CA502725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
+				AE7234AD278E6B610088C791 /* PHAssert+Extension.swift in Sources */,
 				AEE010C22742569200C155D8 /* NSBundle+MJRefresh.m in Sources */,
 				AEE010AF2742569200C155D8 /* MJRefreshConst.m in Sources */,
 				AE62CBAE27255C0E007D51CD /* LayoutButton.swift in Sources */,

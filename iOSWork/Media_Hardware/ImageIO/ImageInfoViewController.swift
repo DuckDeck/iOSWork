@@ -13,6 +13,8 @@ class ImageInfoViewController:BaseViewController{
     let tb = UITableView()
     let sc = UIScrollView()
     var arrImageInfo = [String]()
+    var imagePickerController:TZImagePickerController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "ImageIO"
@@ -21,7 +23,18 @@ class ImageInfoViewController:BaseViewController{
         let navBtn2 = UIBarButtonItem(title: "本地图片", style: .plain, target: self, action: #selector(chooseLocalImage))
         navigationItem.rightBarButtonItems = [navBtn1,navBtn2]
         
-        
+        imagePickerController = TZImagePickerController()
+        imagePickerController.maxImagesCount = 5
+        imagePickerController.didFinishPickingPhotosHandle = {[weak self](images,assert,isSelectOriginalPhoto) in
+            if let ass = assert?.first as? PHAsset{
+                ass.getUrl { url in
+                    if url != nil{
+                        self?.getImgInfo(url: url!.absoluteString)
+                    }
+                }
+            }
+        }
+
         view.addSubview(sc)
         sc.backgroundColor = UIColor.Hex(hexString: "fafafa")
         sc.snp.makeConstraints { make in
@@ -62,7 +75,7 @@ class ImageInfoViewController:BaseViewController{
     }
     
     @objc func chooseLocalImage(){
-        
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     func getImgInfo(url:String){
