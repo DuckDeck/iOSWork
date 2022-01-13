@@ -8,15 +8,6 @@ PODS:
   - KRProgressHUD (3.4.7):
     - KRActivityIndicatorView (= 3.0.7)
   - LookinServer (1.0.4)
-  - PromiseKit (6.15.3):
-    - PromiseKit/CorePromise (= 6.15.3)
-    - PromiseKit/Foundation (= 6.15.3)
-    - PromiseKit/UIKit (= 6.15.3)
-  - PromiseKit/CorePromise (6.15.3)
-  - PromiseKit/Foundation (6.15.3):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.15.3):
-    - PromiseKit/CorePromise
   - SkeletonView (1.26.0)
   - SnapKit (5.0.1)
   - SwiftSoup (2.3.4)
@@ -30,7 +21,6 @@ DEPENDENCIES:
   - Kingfisher
   - KRProgressHUD
   - LookinServer
-  - PromiseKit
   - SkeletonView
   - SnapKit
   - SwiftSoup
@@ -46,7 +36,6 @@ SPEC REPOS:
     - KRActivityIndicatorView
     - KRProgressHUD
     - LookinServer
-    - PromiseKit
     - SkeletonView
     - SnapKit
     - SwiftSoup
@@ -61,12 +50,11 @@ SPEC CHECKSUMS:
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
   LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
-  PromiseKit: 3b2b6995e51a954c46dbc550ce3da44fbfb563c5
   SkeletonView: 6b62a8ddbc64abb113ea3243e4a9979e5750f147
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftSoup: d5b9645498f8d09fdc5f96b9c70b5858099fd411
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 53dcaeabbb7b4ebfabce89fd95cbcc3696d0336a
+PODFILE CHECKSUM: 3d88f871d7ef1f81039755c8f40ffda6f43a38f6
 
 COCOAPODS: 1.11.2

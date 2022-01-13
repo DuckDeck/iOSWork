@@ -9,7 +9,6 @@
 import UIKit
 import IQKeyboardManagerSwift
 import Photos
-import PromiseKit
 class Tool{
 
     static func ChineseToPinyin(chinese:String)->String{
@@ -19,32 +18,21 @@ class Tool{
         return py as String
     }
     
-    static func thumbnailImageForVideo(url:URL,time:Double)->Promise<UIImage?>{
-        return Promise{  seal in
-            DispatchQueue.global().async {
-                let asset = AVAsset(url: url)
-                let assetImageGenerator = AVAssetImageGenerator(asset: asset)
-                assetImageGenerator.appliesPreferredTrackTransform = true
-                assetImageGenerator.apertureMode =  AVAssetImageGenerator.ApertureMode.encodedPixels
-                let t = CMTime(seconds: time, preferredTimescale: 60)
-                do{
-                    let thumbnailImageRef = try assetImageGenerator.copyCGImage(at: t, actualTime: nil)
-                    
-                    DispatchQueue.main.async {
-                        seal.resolve(Result.fulfilled(UIImage(cgImage: thumbnailImageRef)))
-//                        loaded(UIImage(cgImage: thumbnailImageRef))
-                    }
-                }
-                catch{
-                    print(error.localizedDescription)
-                    DispatchQueue.main.async {
-                        seal.resolve(Result.fulfilled(nil))
-                    }
-                }
-
-            }
-
+    static func thumbnailImageForVideo(url:URL,time:Double = 0)->UIImage?{
+        let asset = AVAsset(url: url)
+        let assetImageGenerator = AVAssetImageGenerator(asset: asset)
+        assetImageGenerator.appliesPreferredTrackTransform = true
+        assetImageGenerator.apertureMode =  AVAssetImageGenerator.ApertureMode.encodedPixels
+        let t = CMTime(seconds: time, preferredTimescale: 60)
+        do{
+            let thumbnailImageRef = try assetImageGenerator.copyCGImage(at: t, actualTime: nil)
+            return UIImage(cgImage: thumbnailImageRef)
         }
+        catch{
+            print(error.localizedDescription)
+            return nil
+        }
+        
     }
     
 }

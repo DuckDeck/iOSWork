@@ -162,10 +162,7 @@ class VideoImageCell: UICollectionViewCell {
                 return
             }
   
-            _ = Tool.thumbnailImageForVideo(url: m.url, time: 0).done { img in
-                self.img.image = img
-            }
-            
+            self.img.image = Tool.thumbnailImageForVideo(url: m.url)
             lblTitle.text = m.fileName
         }
     }

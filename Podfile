@@ -3,7 +3,6 @@
 
 def iOSWork_pod
 pod 'LookinServer', :configurations => ['Debug']
-pod "PromiseKit"
 pod "Alamofire"
 pod "Gifu"
 pod "Kanna"
