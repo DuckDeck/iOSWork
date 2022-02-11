@@ -42,7 +42,9 @@ class ImageInfoViewController:BaseViewController{
         }
         
         imgView = UIImageView()
-        imgView.contentMode = .scaleAspectFit
+        imgView.contentMode = .scaleToFill
+        imgView.layer.borderColor = UIColor.random.cgColor
+        imgView.layer.borderWidth = 1
         sc.addSubview(imgView)
         imgView.snp.makeConstraints { make in
             make.left.equalTo(0)
@@ -83,16 +85,20 @@ class ImageInfoViewController:BaseViewController{
             
             Toast.showToast(msg: "占用内存大小\(img.memorySize)kb")
             print("占用内存大小\(img.memorySize)kb")
-            self.imgView.image = img
+            self.imgView.image = img.withAlignmentRectInsets(UIEdgeInsets(top: -10, left: -10, bottom: -10, right: -10))
             let height = ScreenWidth / (img.size.width / img.size.height)
             self.imgView.snp.updateConstraints { make in
                 make.height.equalTo(height)
             }
         }
-        
-        if let info = imgInfo.imageInfo{
-            print(info.Width)
+       
+        delay(time: 1) {
+            if let info = imgInfo.imageInfo{
+                print(info.Width)
+            }
         }
+        
+       
             
 
     }

@@ -618,10 +618,13 @@
 		AE7F912A272AC23C00733BC8 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */; };
 		AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */; };
 		AE7F9133272AC3C900733BC8 /* OffSreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */; };
+		AE8306E127B4B16F00C657DC /* ScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8306E027B4B16F00C657DC /* ScaleViewController.swift */; };
 		AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; };
 		AE890D0A27240DEC00FAB7D7 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AE890D1127240DFE00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
+		AE8C8DB027900BA300C656DF /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */; };
+		AE8C8DB127900BA300C656DF /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */; };
 		AE94D3332742421A00ACEDDC /* AnimationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94D3322742421A00ACEDDC /* AnimationVIew.swift */; };
 		AE97D3322745FCAF00157DBE /* TriggerErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97D3312745FCAF00157DBE /* TriggerErrorViewController.swift */; };
 		AEA0A11827884A1B0044D012 /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AEA0A11727884A1B0044D012 /* GrandKit */; };
@@ -1332,8 +1335,10 @@
 		AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 		AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeak.swift; sourceTree = "<group>"; };
 		AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffSreenRenderViewController.swift; sourceTree = "<group>"; };
+		AE8306E027B4B16F00C657DC /* ScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleViewController.swift; sourceTree = "<group>"; };
 		AE890D0327240DEC00FAB7D7 /* Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE890D0F27240DFC00FAB7D7 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
 		AE94D3322742421A00ACEDDC /* AnimationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVIew.swift; sourceTree = "<group>"; };
 		AE97D3312745FCAF00157DBE /* TriggerErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerErrorViewController.swift; sourceTree = "<group>"; };
 		AEA0A1162788494E0044D012 /* GrandKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GrandKit; path = ../GrandKit; sourceTree = "<group>"; };
@@ -2041,6 +2046,7 @@
 				AE62CB5F27254977007D51CD /* Dict+Extension.swift */,
 				AE62CB63272549A3007D51CD /* String+Extension.swift */,
 				AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */,
+				AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -2726,6 +2732,7 @@
 				AE61165A27410CF8008466AB /* TwoSideView.swift */,
 				AE6116622741280B008466AB /* GradientLabel.swift */,
 				AE94D3322742421A00ACEDDC /* AnimationVIew.swift */,
+				AE8306E027B4B16F00C657DC /* ScaleViewController.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -4008,6 +4015,7 @@
 				AE62CAF8272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AEE0113527425D8800C155D8 /* LinkPoint.swift in Sources */,
 				AEE011012742581500C155D8 /* PointLockViewController.swift in Sources */,
+				AE8C8DB027900BA300C656DF /* Codable+Extension.swift in Sources */,
 				AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */,
 				AE62CB8427254DD7007D51CD /* FPSTool.swift in Sources */,
 				AE62CB7127254B12007D51CD /* Toast.swift in Sources */,
@@ -4030,6 +4038,7 @@
 				AE6E5DC1273FB6FF00523EA8 /* Trace.swift in Sources */,
 				AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */,
 				AE62CA712725429B007D51CD /* TZImagePickerController.m in Sources */,
+				AE8306E127B4B16F00C657DC /* ScaleViewController.swift in Sources */,
 				AE62CA532725429A007D51CD /* UIView+Layout.m in Sources */,
 				AEE010CC2742569200C155D8 /* MJRefreshBackStateFooter.m in Sources */,
 				AE62CAAD272542D1007D51CD /* PriorityBoxArray.m in Sources */,
@@ -4301,6 +4310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8C8DB127900BA300C656DF /* Codable+Extension.swift in Sources */,
 				AE62CB5727254947007D51CD /* UIImage+Base.swift in Sources */,
 				AE62CAE2272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CA1E2725425A007D51CD /* FMResultSet.m in Sources */,
