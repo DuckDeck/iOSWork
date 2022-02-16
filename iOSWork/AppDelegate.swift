@@ -8,6 +8,7 @@
 import UIKit
 import WebKit
 import Library
+import Bugly
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -15,19 +16,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //这里的代码目前用不了，不知为何
-        UncaughtExceptionHandler.installUncaughtExceptionHandler()
+       // UncaughtExceptionHandler.installUncaughtExceptionHandler()
         //
-        //        NSSetUncaughtExceptionHandler { exp in
-        //            print(exp.name)
-        //            print(exp.callStackReturnAddresses)
-        //            var errors = Store.AppErrors.Value
-        //            let err = AppError(name: exp.name.rawValue)
-        //            errors.append(err)
-        //            Store.AppErrors.Value = errors
-        //        }
+        
+//        let errs = Store.AppErrors.Value
+//        for item in errs{
+//            print(item.name)
+//        }
+
+//        Bugly.start(withAppId: "", config: BuglyConfig())
+        
+        let config = BuglyConfig()
+        config.debugMode = true
+        config.applicationGroupIdentifier = "group.ShadowEdge.iOSProject"
+        
+        Bugly.start(withAppId: "ddac261ac5", config: config)
+        
+        
+        NSSetUncaughtExceptionHandler { exp in
+            print(exp.name)
+            print(exp.callStackReturnAddresses)
+            var errors = Store.AppErrors.Value
+            let err = AppError(name: exp.name.rawValue)
+            errors.append(err)
+            Store.AppErrors.Value = errors
+        }
         
         // Override point for customization after application launch.
+
         
+//        let exception = NSException(name: NSExceptionName(rawValue:"arbitrary"), reason:"arbitrary reason", userInfo: nil)
+//            exception.raise()
+       
+//        var arr = [1,3,4,5]
+//        arr.insert(9, at: 10)
         return true
     }
     

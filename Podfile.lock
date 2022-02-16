@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.5.0)
+  - Bugly (2.5.91)
   - Gifu (3.3.1)
   - IQKeyboardManagerSwift (6.5.9)
   - Kanna (5.2.7)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Bugly
   - Gifu
   - IQKeyboardManagerSwift
   - Kanna
@@ -29,6 +31,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Bugly
     - Gifu
     - IQKeyboardManagerSwift
     - Kanna
@@ -43,6 +46,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Bugly: afe841bba2ea6de6d432a3c125240a5e75949c55
   Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   Kanna: 01cfbddc127f5ff0963692f285fcbc8a9d62d234
@@ -55,6 +59,6 @@ SPEC CHECKSUMS:
   SwiftSoup: d5b9645498f8d09fdc5f96b9c70b5858099fd411
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 3d88f871d7ef1f81039755c8f40ffda6f43a38f6
+PODFILE CHECKSUM: c55d9f5e06af3bc62ff1bb7e779bc430ae0d7e64
 
 COCOAPODS: 1.11.2

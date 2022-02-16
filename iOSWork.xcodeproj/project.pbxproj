@@ -50,6 +50,7 @@
 		AE1C4F702743476E0097EAC1 /* PatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F6F2743476E0097EAC1 /* PatchViewController.m */; };
 		AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F7227434E300097EAC1 /* ADViewController.swift */; };
 		AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */; };
+		AE38468D27BB4A59004F6765 /* BuglyExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE38468C27BB4A59004F6765 /* BuglyExtension.framework */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08ED273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -974,6 +975,10 @@
 		AE1C4F7227434E300097EAC1 /* ADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		AE1C4F75274380910097EAC1 /* RerangeBinaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RerangeBinaryViewController.h; sourceTree = "<group>"; };
 		AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RerangeBinaryViewController.m; sourceTree = "<group>"; };
+		AE38468627BB43F9004F6765 /* iOSWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSWork.entitlements; sourceTree = "<group>"; };
+		AE38468727BB440A004F6765 /* KeyboardWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardWork.entitlements; sourceTree = "<group>"; };
+		AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardWork-Bridging-Header.h"; sourceTree = "<group>"; };
+		AE38468C27BB4A59004F6765 /* BuglyExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuglyExtension.framework; sourceTree = "<group>"; };
 		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
 		AE4D08EB273025DB00899D2C /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomURLSchemeHandler.swift; sourceTree = "<group>"; };
@@ -1569,6 +1574,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE38468D27BB4A59004F6765 /* BuglyExtension.framework in Frameworks */,
 				AEA0A11C27884A5C0044D012 /* GrandKit in Frameworks */,
 				72041D621849001868817C60 /* Pods_KeyboardWork.framework in Frameworks */,
 			);
@@ -2584,6 +2590,7 @@
 		AE7E7424272251E300F0C19C /* iOSWork */ = {
 			isa = PBXGroup;
 			children = (
+				AE38468627BB43F9004F6765 /* iOSWork.entitlements */,
 				AE62CBE527256630007D51CD /* Base_Web */,
 				AE62CBE42725661A007D51CD /* Media_Hardware */,
 				AE62CBE32725660A007D51CD /* Project */,
@@ -2625,11 +2632,14 @@
 		AE7E7450272252AC00F0C19C /* KeyboardWork */ = {
 			isa = PBXGroup;
 			children = (
+				AE38468C27BB4A59004F6765 /* BuglyExtension.framework */,
+				AE38468727BB440A004F6765 /* KeyboardWork.entitlements */,
 				AE1C4F1E274341140097EAC1 /* View */,
 				AE1C4F18274341140097EAC1 /* Model */,
 				AE1C4F1D274341140097EAC1 /* PinyinDictionary.swift */,
 				AE7E7451272252AC00F0C19C /* KeyboardViewController.swift */,
 				AE7E7453272252AC00F0C19C /* Info.plist */,
+				AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */,
 			);
 			path = KeyboardWork;
 			sourceTree = "<group>";
@@ -3525,6 +3535,7 @@
 					};
 					AE7E744E272252AC00F0C19C = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1320;
 					};
 					AE7E745E272252E700F0C19C = {
 						CreatedOnToolsVersion = 13.0;
@@ -4600,6 +4611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = iOSWork/iOSWork.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
@@ -4654,6 +4666,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = iOSWork/iOSWork.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
@@ -4690,6 +4703,57 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/lib",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"Bugly\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"Gifu\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"KRActivityIndicatorView\"",
+					"-framework",
+					"\"KRProgressHUD\"",
+					"-framework",
+					"\"Kanna\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SkeletonView\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"Combine\"",
+					"-weak_framework",
+					"\"SwiftUI\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -4787,9 +4851,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4B0B9CE8CFBB1FCD8DEA0E68 /* Pods-KeyboardWork.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = KeyboardWork/KeyboardWork.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KeyboardWork",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KeyboardWork;
@@ -4805,6 +4875,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardWork/KeyboardWork-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -4814,9 +4886,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03D9AD4D8B41C508210EEC7F /* Pods-KeyboardWork.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = KeyboardWork/KeyboardWork.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KeyboardWork",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = KeyboardWork;
@@ -4832,6 +4910,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "KeyboardWork/KeyboardWork-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

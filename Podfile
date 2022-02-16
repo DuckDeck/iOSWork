@@ -13,6 +13,7 @@ pod "SnapKit"
 pod "SkeletonView"
 pod "SwiftyJSON"
 pod "SwiftSoup"
+pod 'Bugly'
 end
 
 target 'CLangWork' do

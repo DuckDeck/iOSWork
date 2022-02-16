@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 import SnapKit
+
 let bannerHeight = 55 as CGFloat
 let lineColor = UIColor.lightGray
 let lineThickness = 0.5
@@ -54,7 +55,16 @@ class KeyboardViewController: UIInputViewController,UICollectionViewDelegate, UI
         
         // Add custom view sizing constraints here
     }
-
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+//        CrashReporterLite.start(withApplicationGroupIdentifier: "group.com.wego.com.wego.WeAblum.WGKeyBoard.ShareExtension")
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+//        CrashReporterLite.start(withApplicationGroupIdentifier: "group.ShadowEdge.iOSProject")
+      super.init(coder: aDecoder)
+   }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +73,11 @@ class KeyboardViewController: UIInputViewController,UICollectionViewDelegate, UI
         let hostBundleID = self.parent!.value(forKey: "_hostBundleID") as? String
         print(hostBundleID);
 
+        NSSetUncaughtExceptionHandler { exp in
+            print(exp.name)
+            print(exp.callStackReturnAddresses)
+            
+        }
         
         (keyboardView, bannerView, bottomView) = defaultKeyboard()
         addViewsToBanner()
@@ -270,6 +285,10 @@ class KeyboardViewController: UIInputViewController,UICollectionViewDelegate, UI
                 pinyinStore.clearData()
                 updateTypingViews()
             }
+            
+            let alert = UIAlertController(title: "123", message: "123", preferredStyle: .alert)
+            present(alert, animated: true, completion: nil)
+            
         case .changeToNumber:
             numberView.isHidden = false
         case .changeToNormal:
