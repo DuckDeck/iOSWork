@@ -18,6 +18,7 @@ class HttpClient {
     fileprivate var method: HTTPMethod!
     fileprivate var params: [String: Any]?
     fileprivate var urlPara: [String: Any]?
+    fileprivate var cacheTime:Int?
     fileprivate var requestOptions: [String: AnyObject]?
     fileprivate var headers: HTTPHeaders?
     fileprivate var multipartFormData: MultipartFormData?
@@ -63,6 +64,13 @@ class HttpClient {
     
     static func registerHttpHeaderHander(handler: @escaping (_ header: HTTPHeaders)->HTTPHeaders) {
         httpHeaderHandler = handler
+    }
+    
+    func cache(time:Int)->HttpClient{
+        if time > 0{
+            self.cacheTime = time
+        }
+        return self
     }
     
     func useHandle(usehandle: Bool)->HttpClient {
@@ -163,6 +171,30 @@ class HttpClient {
                     }
                 }
             }
+            //使用了这玩意直接报网络错误了，以后再看
+//            let session : Session = {
+//                let configuration = URLSessionConfiguration.af.default
+//
+//                if cacheTime ?? 0 > 0{
+//                    configuration.requestCachePolicy = .returnCacheDataElseLoad
+//                    let responseCacher = ResponseCacher(behavior: .modify { _, response in
+//                        let userInfo = ["date": Date(timeInterval: 100, since: Date())]
+//                      return CachedURLResponse(
+//                        response: response.response,
+//                        data: response.data,
+//                        userInfo: userInfo,
+//                        storagePolicy: .allowed)
+//                    })
+//                    let capacity = 100_000_000
+//                    let directory = (NSTemporaryDirectory() as NSString).appendingPathComponent(UUID().uuidString)
+//                    let cache = URLCache(memoryCapacity: capacity, diskCapacity: capacity, diskPath: directory)
+//                    configuration.urlCache = cache
+//                    return Session(configuration:configuration,cachedResponseHandler: responseCacher)
+//                } else {
+//
+//                    return Session(configuration: configuration)
+//                }
+//            }()
             
             AF.request(paras.isEmpty ? url : url + paras, method: method, parameters: params,encoding: encodeType, headers: headers).responseData { data in
                 if let d = data.data {
@@ -177,7 +209,28 @@ class HttpClient {
     }
     
     func completion<T: Codable>(completed: @escaping (_ res: Rest<T>)->Void) {
-        AF.request(url, method: method, parameters: params, headers: headers).responseData { data in
+        
+        let session : Session = {
+            let configuration = URLSessionConfiguration.af.default
+            
+            if cacheTime ?? 0 > 0{
+                configuration.requestCachePolicy = .returnCacheDataElseLoad
+                let responseCacher = ResponseCacher(behavior: .modify { _, response in
+                    let userInfo = ["date": Date(timeInterval: 100, since: Date())]
+                  return CachedURLResponse(
+                    response: response.response,
+                    data: response.data,
+                    userInfo: userInfo,
+                    storagePolicy: .allowed)
+                })
+                return Session(configuration:configuration,cachedResponseHandler: responseCacher)
+            } else {
+                configuration.timeoutIntervalForRequest = 30
+                return Session(configuration: configuration)
+            }
+        }()
+        
+        session.request(url, method: method, parameters: params, headers: headers).responseData { data in
             var result = Rest<T>()
             if data.data == nil || data.error != nil {
                 result.code = -100
