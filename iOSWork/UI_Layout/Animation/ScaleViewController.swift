@@ -10,6 +10,7 @@ import SnapKit
 
 class ScaleViewController: UIViewController {
 
+    let lblScale = UILabel()
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +35,19 @@ class ScaleViewController: UIViewController {
             make.top.equalTo(100)
         }
         
+        lblScale.setFont(font: 20).color(color: UIColor.cyan).addTo(view: view).snp.makeConstraints { make in
+            make.top.equalTo(btnStep.snp.bottom)
+            make.centerX.equalTo(btnStep)
+        }
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     
     @objc func stepChange(sender:UIStepper){
         print(sender.value)
-        
+        lblScale.text = "\(sender.value)倍"
         imgScale.transform = CGAffineTransform(scaleX: sender.value, y: sender.value)
         
     }
@@ -59,6 +67,7 @@ class ScaleViewController: UIViewController {
     lazy var btnStep: UIStepper = {
         let v = UIStepper()
         v.stepValue = 0.1
+        v.value = 1
         v.maximumValue = 2
         v.minimumValue = 0
         v.addTarget(self, action: #selector(stepChange(sender:)), for: .valueChanged)
