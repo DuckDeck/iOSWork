@@ -69,7 +69,7 @@ class ScaleViewController: UIViewController {
         v.stepValue = 0.1
         v.value = 1
         v.maximumValue = 2
-        v.minimumValue = 0
+        v.minimumValue = 0.1
         v.addTarget(self, action: #selector(stepChange(sender:)), for: .valueChanged)
         v.backgroundColor = UIColor.white
         return v
