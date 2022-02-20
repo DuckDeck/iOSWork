@@ -34,8 +34,6 @@ class ScaleViewController: UIViewController {
             make.top.equalTo(100)
         }
         
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -47,12 +45,12 @@ class ScaleViewController: UIViewController {
     }
     
     @objc func createImg(){
-        if let createdImg = UIImage.imageWithView(imgScale){
-            print(createdImg.size)
-            createdImg.saveToAlbum()
-        }
-        
-    
+
+        let img = imgScale.asImage()
+        print(img.size)
+//        img.saveToAlbum()
+        print(img.memorySize)
+        UIPasteboard.general.image = img
         
         
     }
@@ -74,14 +72,4 @@ class ScaleViewController: UIViewController {
         return v
     }()
  
-}
-extension UIImage {
-
-    class func imageWithView(_ view: UIView) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0)
-        defer { UIGraphicsEndImageContext() }
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        return UIGraphicsGetImageFromCurrentImageContext()
-    }
-    
 }

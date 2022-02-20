@@ -207,6 +207,20 @@ extension UIView{
         }
         return vc
     }
+    
+    func asImage() -> UIImage {
+        if #available(iOS 10.0, *) {
+            let renderer = UIGraphicsImageRenderer(bounds: bounds)
+            return renderer.image { rendererContext in
+                layer.render(in: rendererContext.cgContext)
+            }
+        } else {
+            UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0)
+            defer { UIGraphicsEndImageContext() }
+            self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+            return UIGraphicsGetImageFromCurrentImageContext()!
+        }
+    }
 }
 
 

@@ -24,6 +24,11 @@ class BaseMenuViewController:BaseViewController{
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "WebView", style: .plain, target: self, action: #selector(toWebView))
+        
+        let lblFps = FPSLable(frame: CGRect(x: ScreenWidth / 2.0 - 75 , y: 35, width: 150, height: 20))
+        UIApplication.shared.keyWindow?.addSubview(lblFps)
+        
+        
     }
     
     @objc func toWebView(){

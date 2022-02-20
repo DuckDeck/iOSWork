@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 import Library
-import Bugly
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        Bugly.start(withAppId: "", config: BuglyConfig())
         
-        let config = BuglyConfig()
-        config.debugMode = true
-        config.applicationGroupIdentifier = "group.ShadowEdge.iOSProject"
-        
-        Bugly.start(withAppId: "ddac261ac5", config: config)
+//        let config = BuglyConfig()
+//        config.debugMode = true
+//        config.applicationGroupIdentifier = "group.ShadowEdge.iOSProject"
+//        
+//        Bugly.start(withAppId: "ddac261ac5", config: config)
         
         
         NSSetUncaughtExceptionHandler { exp in
