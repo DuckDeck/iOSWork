@@ -7,13 +7,13 @@
 
 import Foundation
 class DataMenuViewController:BaseViewController{
-    var arrData = ["照片识别分类"]
+    var arrData = ["照片识别分类","文件下载"]
     var tbMenu = UITableView()
     var isHooked = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "数据&网编"
+        navigationItem.title = "数据&网络"
 
         view.backgroundColor = UIColor.white
         tbMenu.dataSource = self
@@ -45,7 +45,10 @@ extension DataMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let vc = ClassifyingImagesViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
-
+        case 1:
+            let vc = DownloadViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }

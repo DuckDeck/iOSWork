@@ -51,6 +51,8 @@
 		AE1C4F702743476E0097EAC1 /* PatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F6F2743476E0097EAC1 /* PatchViewController.m */; };
 		AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F7227434E300097EAC1 /* ADViewController.swift */; };
 		AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */; };
+		AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */; };
+		AE28B86227C4912700D399F3 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B86127C4912700D399F3 /* DownloadViewController.swift */; };
 		AE38468D27BB4A59004F6765 /* BuglyExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE38468C27BB4A59004F6765 /* BuglyExtension.framework */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -977,6 +979,8 @@
 		AE1C4F7227434E300097EAC1 /* ADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		AE1C4F75274380910097EAC1 /* RerangeBinaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RerangeBinaryViewController.h; sourceTree = "<group>"; };
 		AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RerangeBinaryViewController.m; sourceTree = "<group>"; };
+		AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKeyboardViewController.swift; sourceTree = "<group>"; };
+		AE28B86127C4912700D399F3 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		AE38468627BB43F9004F6765 /* iOSWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSWork.entitlements; sourceTree = "<group>"; };
 		AE38468727BB440A004F6765 /* KeyboardWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardWork.entitlements; sourceTree = "<group>"; };
 		AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardWork-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1719,6 +1723,14 @@
 			path = RunLoop;
 			sourceTree = "<group>";
 		};
+		AE28B86027C4911800D399F3 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				AE28B86127C4912700D399F3 /* DownloadViewController.swift */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
 		AE4D08E52730259200899D2C /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2121,6 +2133,7 @@
 		AE62CBE227256603007D51CD /* Data_Network */ = {
 			isa = PBXGroup;
 			children = (
+				AE28B86027C4911800D399F3 /* Download */,
 				AEF86664274B9B38002E33E5 /* ClassifyingImages */,
 				AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */,
 			);
@@ -2538,6 +2551,7 @@
 				AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */,
 				AEB649BD273FCCB100BCBF4E /* GridViewController.swift */,
 				AE6B2DDA2755155F0066017F /* MediaBroswerViewController.swift */,
+				AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -3989,7 +4003,9 @@
 				AE4D08FE273032E700899D2C /* MemeryCache.swift in Sources */,
 				AE66E15C27537992006432FE /* OpenCV.mm in Sources */,
 				AE62CBE727256690007D51CD /* UIMenuViewController.swift in Sources */,
+				AE28B86227C4912700D399F3 /* DownloadViewController.swift in Sources */,
 				AE62CB5227254947007D51CD /* UIScrollView+Extension.swift in Sources */,
+				AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */,
 				AE1C4F63274346BD0097EAC1 /* spewG.c in Sources */,
 				AEE010C32742569200C155D8 /* UIView+MJExtension.m in Sources */,
 				AEE0113227425D8800C155D8 /* PieceImage.swift in Sources */,
