@@ -9,60 +9,99 @@ import UIKit
 import Kingfisher
 import SnapKit
 
-let bannerHeight = 55 as CGFloat
-let lineColor = UIColor.lightGray
-let lineThickness = 0.5
-let historyPath: String = { () -> String in
-    let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
-    let documentsDirectory = paths.object(at: 0) as! NSString
-    let path = documentsDirectory.appendingPathComponent("TypingHistory.plist")
-    return path
-}()
+import AudioToolbox
 
-let historyDictionary: NSMutableDictionary? = { () -> NSMutableDictionary? in
-    let dict = NSMutableDictionary(contentsOfFile: historyPath)
-    return dict
-}()
+let metrics: [String:Double] = [
+    "topBanner": 30
+]
+func metric(_ name: String) -> CGFloat { return CGFloat(metrics[name]!) }
 
-class KeyboardViewController: UIInputViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// TODO: move this somewhere else and localize
+let kAutoCapitalization = "kAutoCapitalization"
+let kPeriodShortcut = "kPeriodShortcut"
+let kKeyboardClicks = "kKeyboardClicks"
+let kSmallLowercase = "kSmallLowercase"
 
-    var symbolStore = SymbolKeyStore()
-    var keysDictionary = [String: KeyView]()
-    var bannerView: UIView? = nil
-    var bottomView: UIView? = nil
-    var keyboardView: UIView? = nil
-    var pinyinLabel: UILabel? = nil
+
+class KeyboardViewController: UIInputViewController{
+
+
     
+    let backspaceDelay: TimeInterval = 0.5
+    let backspaceRepeat: TimeInterval = 0.07
     
-    var wordsQuickCollection: UICollectionView? = nil
-    var symbolCollection: UICollectionView? = nil
-    var wordsCollection: UICollectionView? = nil
-//    var allSymbolCollection: UICollectionView? = nil
-    var numberView = UIView()
+    var keyboard: Keyboard!
+    var forwardingView: ForwardingView!
+    var layout: KeyboardLayout?
+    var heightConstraint: NSLayoutConstraint?
     
-    var selectedIndex = 0               //选拼音index
-    var saveIndex = true                //true为没有选中拼音，false为已经选中拼音
-    var isTyping = false                //打字模式
-    var isClickSpaceOrWord = false      //是否点击了空格或者选择了字
+    var bannerView: ExtraView?
+    var settingsView: ExtraView?
     
-    var idString: String = ""
-    
-    
-    var pinyinStore = PinyinStore()
-    
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
-        
-        // Add custom view sizing constraints here
+    var currentMode: Int! {
+        didSet {
+            if oldValue != currentMode {
+                setMode(currentMode)
+            }
+        }
     }
     
+    var backspaceActive: Bool {
+        get {
+            return (backspaceDelayTimer != nil) || (backspaceRepeatTimer != nil)
+        }
+    }
+    var backspaceDelayTimer: Timer?
+    var backspaceRepeatTimer: Timer?
+    
+    enum AutoPeriodState {
+        case noSpace
+        case firstSpace
+    }
+    
+    var autoPeriodState: AutoPeriodState = .noSpace
+    var lastCharCountInBeforeContext: Int = 0
+    
+    var shiftState: ShiftState = .disabled {
+        didSet {
+            switch shiftState {
+            case .disabled:
+                self.updateKeyCaps(false)
+            case .enabled:
+                self.updateKeyCaps(true)
+            case .locked:
+                self.updateKeyCaps(true)
+            }
+        }
+    }
+    
+    // state tracking during shift tap
+    var shiftWasMultitapped: Bool = false
+    var shiftStartingState: ShiftState?
+    
+    var keyboardHeight: CGFloat {
+        get {
+            if let constraint = self.heightConstraint {
+                return constraint.constant
+            }
+            else {
+                return 0
+            }
+        }
+        set {
+            self.setHeight(newValue)
+        }
+    }
+ 
+    
+    
+
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-//        CrashReporterLite.start(withApplicationGroupIdentifier: "group.com.wego.com.wego.WeAblum.WGKeyBoard.ShareExtension")
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-//        CrashReporterLite.start(withApplicationGroupIdentifier: "group.ShadowEdge.iOSProject")
       super.init(coder: aDecoder)
    }
     
@@ -73,22 +112,708 @@ class KeyboardViewController: UIInputViewController,UICollectionViewDelegate, UI
         let hostBundleID = self.parent!.value(forKey: "_hostBundleID") as? String
         print(hostBundleID);
 
-        NSSetUncaughtExceptionHandler { exp in
-            print(exp.name)
-            print(exp.callStackReturnAddresses)
+      
+        UserDefaults.standard.register(defaults: [
+            kAutoCapitalization: true,
+            kPeriodShortcut: true,
+            kKeyboardClicks: false,
+            kSmallLowercase: false
+        ])
+        
+        self.keyboard = defaultKeyboard()
+        
+       
+        
+        
+        self.forwardingView = ForwardingView(frame: CGRect.zero)
+        self.view.addSubview(self.forwardingView)
+        
+        self.shiftState = .disabled
+        self.currentMode = 0
+        NotificationCenter.default.addObserver(self, selector: #selector(KeyboardViewController.defaultsChanged(_:)), name: UserDefaults.didChangeNotification, object: nil)
+
+
+      
+    }
+    
+    
+    @objc func defaultsChanged(_ notification: Notification) {
+        //let defaults = notification.object as? NSUserDefaults
+        self.updateKeyCaps(self.shiftState.uppercase())
+    }
+    
+    var kludge: UIView?
+    func setupKludge() {
+        if self.kludge == nil {
+            let kludge = UIView()
+            self.view.addSubview(kludge)
+            kludge.translatesAutoresizingMaskIntoConstraints = false
+            kludge.isHidden = true
             
+            let a = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
+            let b = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0)
+            let c = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
+            let d = NSLayoutConstraint(item: kludge, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self.view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0)
+            self.view.addConstraints([a, b, c, d])
+            
+            self.kludge = kludge
+        }
+    }
+    
+    
+    var constraintsAdded: Bool = false
+    func setupLayout() {
+        if !constraintsAdded {
+            self.layout = type(of: self).layoutClass.init(model: self.keyboard, superview: self.forwardingView, layoutConstants: type(of: self).layoutConstants, globalColors: type(of: self).globalColors, darkMode: self.darkMode(), solidColorMode: self.solidColorMode())
+            
+            self.layout?.initialize()
+            self.setMode(0)
+            
+            self.setupKludge()
+            
+            self.updateKeyCaps(self.shiftState.uppercase())
+            self.updateCapsIfNeeded()
+            
+            self.updateAppearances(self.darkMode())
+            self.addInputTraitsObservers()
+            
+            self.constraintsAdded = true
+        }
+    }
+    
+    // only available after frame becomes non-zero
+    func darkMode() -> Bool {
+        let darkMode = { () -> Bool in
+            let proxy = self.textDocumentProxy
+            return proxy.keyboardAppearance == UIKeyboardAppearance.dark
+        }()
+        
+        return darkMode
+    }
+    
+    func solidColorMode() -> Bool {
+        return UIAccessibility.isReduceTransparencyEnabled
+    }
+    
+    var lastLayoutBounds: CGRect?
+    override func viewDidLayoutSubviews() {
+        if view.bounds == CGRect.zero {
+            return
         }
         
-        (keyboardView, bannerView, bottomView) = defaultKeyboard()
-        addViewsToBanner()
+        self.setupLayout()
         
-        // Perform custom UI setup here
+        let orientationSavvyBounds = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.height(forOrientation: self.interfaceOrientation, withTopBanner: false))
+        
+        if (lastLayoutBounds != nil && lastLayoutBounds == orientationSavvyBounds) {
+            // do nothing
+        }
+        else {
+            let uppercase = self.shiftState.uppercase()
+            let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
+            
+            self.forwardingView.frame = orientationSavvyBounds
+            self.layout?.layoutKeys(self.currentMode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
+            self.lastLayoutBounds = orientationSavvyBounds
+            self.setupKeys()
+        }
+        
+        self.bannerView?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: metric("topBanner"))
+        
+        let newOrigin = CGPoint(x: 0, y: self.view.bounds.height - self.forwardingView.bounds.height)
+        self.forwardingView.frame.origin = newOrigin
+    }
+    
+    override func loadView() {
+        super.loadView()
+        
+        if let aBanner = self.createBanner() {
+            aBanner.isHidden = true
+            self.view.insertSubview(aBanner, belowSubview: self.forwardingView)
+            self.bannerView = aBanner
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.bannerView?.isHidden = false
+        self.keyboardHeight = self.height(forOrientation: self.interfaceOrientation, withTopBanner: true)
+    }
+    
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
+        self.forwardingView.resetTrackedViews()
+        self.shiftStartingState = nil
+        self.shiftWasMultitapped = false
+        
+        // optimization: ensures smooth animation
+        if let keyPool = self.layout?.keyPool {
+            for view in keyPool {
+                view.shouldRasterize = true
+            }
+        }
+        
+        self.keyboardHeight = self.height(forOrientation: toInterfaceOrientation, withTopBanner: true)
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        // optimization: ensures quick mode and shift transitions
+        if let keyPool = self.layout?.keyPool {
+            for view in keyPool {
+                view.shouldRasterize = false
+            }
+        }
+    }
+    
+    func height(forOrientation orientation: UIInterfaceOrientation, withTopBanner: Bool) -> CGFloat {
+        let isPad = UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad
+        
+        // AB: consider re-enabling this when interfaceOrientation actually breaks
+        //// HACK: Detecting orientation manually
+        //let screenSize: CGSize = UIScreen.main.bounds.size
+        //let orientation: UIInterfaceOrientation = screenSize.width < screenSize.height ? .portrait : .landscapeLeft
+        
+        //TODO: hardcoded stuff
+        let actualScreenWidth = (UIScreen.main.nativeBounds.size.width / UIScreen.main.nativeScale)
+        let canonicalPortraitHeight: CGFloat
+        let canonicalLandscapeHeight: CGFloat
+        if isPad {
+            canonicalPortraitHeight = 264
+            canonicalLandscapeHeight = 352
+        }
+        else {
+            canonicalPortraitHeight = orientation.isPortrait && actualScreenWidth >= 400 ? 226 : 216
+            canonicalLandscapeHeight = 162
+        }
+        
+        let topBannerHeight = (withTopBanner ? metric("topBanner") : 0)
+        
+        return CGFloat(orientation.isPortrait ? canonicalPortraitHeight + topBannerHeight : canonicalLandscapeHeight + topBannerHeight)
+    }
+    
+    func setupKeys() {
+        if self.layout == nil {
+            return
+        }
+        
+        for page in keyboard.pages {
+            for rowKeys in page.rows { // TODO: quick hack
+                for key in rowKeys {
+                    if let keyView = self.layout?.viewForKey(key) {
+                        keyView.removeTarget(nil, action: nil, for: UIControl.Event.allEvents)
+                        
+                        switch key.type {
+                        case Key.KeyType.keyboardChange:
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.advanceTapped(_:)),
+                                              for: .touchUpInside)
+                        case Key.KeyType.backspace:
+                            let cancelEvents: UIControl.Event = [.touchUpInside, .touchUpInside, .touchDragExit, .touchUpOutside, .touchCancel, .touchDragOutside]
+                            
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.backspaceDown(_:)),
+                                              for: .touchDown)
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.backspaceUp(_:)),
+                                              for: cancelEvents)
+                        case Key.KeyType.shift:
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.shiftDown(_:)),
+                                              for: .touchDown)
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.shiftUp(_:)),
+                                              for: .touchUpInside)
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.shiftDoubleTapped(_:)),
+                                              for: .touchDownRepeat)
+                        case Key.KeyType.modeChange:
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.modeChangeTapped(_:)),
+                                              for: .touchDown)
+                        case Key.KeyType.settings:
+//                            keyView.addTarget(self,
+//                                              action: #selector(KeyboardViewController.toggleSettings),
+//                                              for: .touchUpInside)
+                            break
+                        default:
+                            break
+                        }
+                        
+                        if key.isCharacter {
+                            if UIDevice.current.userInterfaceIdiom != UIUserInterfaceIdiom.pad {
+                                keyView.addTarget(self,
+                                                  action: #selector(KeyboardViewController.showPopup(_:)),
+                                                  for: [.touchDown, .touchDragInside, .touchDragEnter])
+                                keyView.addTarget(keyView,
+                                                  action: #selector(KeyboardKey.hidePopup),
+                                                  for: [.touchDragExit, .touchCancel])
+                                keyView.addTarget(self,
+                                                  action: #selector(KeyboardViewController.hidePopupDelay(_:)),
+                                                  for: [.touchUpInside, .touchUpOutside, .touchDragOutside])
+                            }
+                        }
+                        
+                        if key.hasOutput {
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.keyPressedHelper(_:)),
+                                              for: .touchUpInside)
+                        }
+                        
+                        if key.type != Key.KeyType.shift && key.type != Key.KeyType.modeChange {
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.highlightKey(_:)),
+                                              for: [.touchDown, .touchDragInside, .touchDragEnter])
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.unHighlightKey(_:)),
+                                              for: [.touchUpInside, .touchUpOutside, .touchDragOutside, .touchDragExit, .touchCancel])
+                        }
+                        
+                        keyView.addTarget(self,
+                                          action: #selector(KeyboardViewController.playKeySound),
+                                          for: .touchDown)
+                    }
+                }
+            }
+        }
+    }
+    
+    var keyWithDelayedPopup: KeyboardKey?
+    var popupDelayTimer: Timer?
+    
+    @objc func showPopup(_ sender: KeyboardKey) {
+        if sender == self.keyWithDelayedPopup {
+            self.popupDelayTimer?.invalidate()
+        }
+        sender.showPopup()
+    }
+    
+    @objc func hidePopupDelay(_ sender: KeyboardKey) {
+        self.popupDelayTimer?.invalidate()
+        
+        if sender != self.keyWithDelayedPopup {
+            self.keyWithDelayedPopup?.hidePopup()
+            self.keyWithDelayedPopup = sender
+        }
+        
+        if sender.popup != nil {
+            self.popupDelayTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(KeyboardViewController.hidePopupCallback), userInfo: nil, repeats: false)
+        }
+    }
+    
+    @objc func hidePopupCallback() {
+        self.keyWithDelayedPopup?.hidePopup()
+        self.keyWithDelayedPopup = nil
+        self.popupDelayTimer = nil
+    }
+    
+    /////////////////////
+    // POPUP DELAY END //
+    /////////////////////
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated
+    }
 
-        self.inputView?.addSubview(keyboardView!)
-        keyboardView!.snp.makeConstraints({ (make) -> Void in
-            make.left.right.bottom.top.equalToSuperview()
-            make.height.greaterThanOrEqualTo(216+bannerHeight)
+    // TODO: this is currently not working as intended; only called when selection changed -- iOS bug
+    override func textDidChange(_ textInput: UITextInput?) {
+        self.contextChanged()
+    }
+    
+    func contextChanged() {
+        self.updateCapsIfNeeded()
+        self.autoPeriodState = .noSpace
+    }
+    
+    func setHeight(_ height: CGFloat) {
+        if self.heightConstraint == nil {
+            self.heightConstraint = NSLayoutConstraint(
+                item:self.view,
+                attribute:NSLayoutConstraint.Attribute.height,
+                relatedBy:NSLayoutConstraint.Relation.equal,
+                toItem:nil,
+                attribute:NSLayoutConstraint.Attribute.notAnAttribute,
+                multiplier:0,
+                constant:height)
+            self.heightConstraint!.priority = .defaultHigh
+            
+            self.view.addConstraint(self.heightConstraint!) // TODO: what if view already has constraint added?
+        }
+        else {
+            self.heightConstraint?.constant = height
+        }
+    }
+    
+    func updateAppearances(_ appearanceIsDark: Bool) {
+        self.layout?.solidColorMode = self.solidColorMode()
+        self.layout?.darkMode = appearanceIsDark
+        self.layout?.updateKeyAppearance()
+        
+        self.bannerView?.darkMode = appearanceIsDark
+        self.settingsView?.darkMode = appearanceIsDark
+    }
+    
+    @objc func highlightKey(_ sender: KeyboardKey) {
+        sender.isHighlighted = true
+    }
+    
+    @objc func unHighlightKey(_ sender: KeyboardKey) {
+        sender.isHighlighted = false
+    }
+    
+    @objc func keyPressedHelper(_ sender: KeyboardKey) {
+        if let model = self.layout?.keyForView(sender) {
+            self.keyPressed(model)
+
+            // auto exit from special char subkeyboard
+            if model.type == Key.KeyType.space || model.type == Key.KeyType.return {
+                self.currentMode = 0
+            }
+            else if model.lowercaseOutput == "'" {
+                self.currentMode = 0
+            }
+            else if model.type == Key.KeyType.character {
+                self.currentMode = 0
+            }
+            
+            // auto period on double space
+            // TODO: timeout
+            
+            self.handleAutoPeriod(model)
+            // TODO: reset context
+        }
+        
+        self.updateCapsIfNeeded()
+    }
+    
+    func handleAutoPeriod(_ key: Key) {
+        if !UserDefaults.standard.bool(forKey: kPeriodShortcut) {
+            return
+        }
+        
+        if self.autoPeriodState == .firstSpace {
+            if key.type != Key.KeyType.space {
+                self.autoPeriodState = .noSpace
+                return
+            }
+            
+            let charactersAreInCorrectState = { () -> Bool in
+                let previousContext = self.textDocumentProxy.documentContextBeforeInput
+                
+                if previousContext == nil || (previousContext!).count < 3 {
+                    return false
+                }
+                
+                var index = previousContext!.endIndex
+                
+                index = previousContext!.index(before: index)
+                if previousContext![index] != " " {
+                    return false
+                }
+                
+                index = previousContext!.index(before: index)
+                if previousContext![index] != " " {
+                    return false
+                }
+                
+                index = previousContext!.index(before: index)
+                let char = previousContext![index]
+                if self.characterIsWhitespace(char) || self.characterIsPunctuation(char) || char == "," {
+                    return false
+                }
+                
+                return true
+            }()
+            
+            if charactersAreInCorrectState {
+                self.textDocumentProxy.deleteBackward()
+                self.textDocumentProxy.deleteBackward()
+                self.textDocumentProxy.insertText(".")
+                self.textDocumentProxy.insertText(" ")
+            }
+            
+            self.autoPeriodState = .noSpace
+        }
+        else {
+            if key.type == Key.KeyType.space {
+                self.autoPeriodState = .firstSpace
+            }
+        }
+    }
+    
+    func cancelBackspaceTimers() {
+        self.backspaceDelayTimer?.invalidate()
+        self.backspaceRepeatTimer?.invalidate()
+        self.backspaceDelayTimer = nil
+        self.backspaceRepeatTimer = nil
+    }
+    
+    @objc func backspaceDown(_ sender: KeyboardKey) {
+        self.cancelBackspaceTimers()
+        
+        self.textDocumentProxy.deleteBackward()
+        self.updateCapsIfNeeded()
+        
+        // trigger for subsequent deletes
+        self.backspaceDelayTimer = Timer.scheduledTimer(timeInterval: backspaceDelay - backspaceRepeat, target: self, selector: #selector(KeyboardViewController.backspaceDelayCallback), userInfo: nil, repeats: false)
+    }
+    
+    @objc func backspaceUp(_ sender: KeyboardKey) {
+        self.cancelBackspaceTimers()
+    }
+    
+    @objc func backspaceDelayCallback() {
+        self.backspaceDelayTimer = nil
+        self.backspaceRepeatTimer = Timer.scheduledTimer(timeInterval: backspaceRepeat, target: self, selector: #selector(KeyboardViewController.backspaceRepeatCallback), userInfo: nil, repeats: true)
+    }
+    
+    @objc func backspaceRepeatCallback() {
+        self.playKeySound()
+        
+        self.textDocumentProxy.deleteBackward()
+        self.updateCapsIfNeeded()
+    }
+    
+   @objc func shiftDown(_ sender: KeyboardKey) {
+        self.shiftStartingState = self.shiftState
+        
+        if let shiftStartingState = self.shiftStartingState {
+            if shiftStartingState.uppercase() {
+                // handled by shiftUp
+                return
+            }
+            else {
+                switch self.shiftState {
+                case .disabled:
+                    self.shiftState = .enabled
+                case .enabled:
+                    self.shiftState = .disabled
+                case .locked:
+                    self.shiftState = .disabled
+                }
+                
+                (sender.shape as? ShiftShape)?.withLock = false
+            }
+        }
+    }
+    
+    @objc  func shiftUp(_ sender: KeyboardKey) {
+        if self.shiftWasMultitapped {
+            // do nothing
+        }
+        else {
+            if let shiftStartingState = self.shiftStartingState {
+                if !shiftStartingState.uppercase() {
+                    // handled by shiftDown
+                }
+                else {
+                    switch self.shiftState {
+                    case .disabled:
+                        self.shiftState = .enabled
+                    case .enabled:
+                        self.shiftState = .disabled
+                    case .locked:
+                        self.shiftState = .disabled
+                    }
+                    
+                    (sender.shape as? ShiftShape)?.withLock = false
+                }
+            }
+        }
+
+        self.shiftStartingState = nil
+        self.shiftWasMultitapped = false
+    }
+    
+    @objc func shiftDoubleTapped(_ sender: KeyboardKey) {
+        self.shiftWasMultitapped = true
+        
+        switch self.shiftState {
+        case .disabled:
+            self.shiftState = .locked
+        case .enabled:
+            self.shiftState = .locked
+        case .locked:
+            self.shiftState = .disabled
+        }
+    }
+    
+    @objc func updateKeyCaps(_ uppercase: Bool) {
+        let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
+        self.layout?.updateKeyCaps(false, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
+    }
+    
+    @objc func modeChangeTapped(_ sender: KeyboardKey) {
+        if let toMode = self.layout?.viewToModel[sender]?.toMode {
+            self.currentMode = toMode
+        }
+    }
+    
+    @objc func setMode(_ mode: Int) {
+        self.forwardingView.resetTrackedViews()
+        self.shiftStartingState = nil
+        self.shiftWasMultitapped = false
+        
+        let uppercase = self.shiftState.uppercase()
+        let characterUppercase = (UserDefaults.standard.bool(forKey: kSmallLowercase) ? uppercase : true)
+        self.layout?.layoutKeys(mode, uppercase: uppercase, characterUppercase: characterUppercase, shiftState: self.shiftState)
+        
+        self.setupKeys()
+    }
+    
+    @objc func advanceTapped(_ sender: KeyboardKey) {
+        self.forwardingView.resetTrackedViews()
+        self.shiftStartingState = nil
+        self.shiftWasMultitapped = false
+        
+        self.advanceToNextInputMode()
+    }
+    
+    
+    @objc func updateCapsIfNeeded() {
+        if self.shouldAutoCapitalize() {
+            switch self.shiftState {
+            case .disabled:
+                self.shiftState = .enabled
+            case .enabled:
+                self.shiftState = .enabled
+            case .locked:
+                self.shiftState = .locked
+            }
+        }
+        else {
+            switch self.shiftState {
+            case .disabled:
+                self.shiftState = .disabled
+            case .enabled:
+                self.shiftState = .disabled
+            case .locked:
+                self.shiftState = .locked
+            }
+        }
+    }
+    
+    func characterIsPunctuation(_ character: Character) -> Bool {
+        return (character == ".") || (character == "!") || (character == "?")
+    }
+    
+    func characterIsNewline(_ character: Character) -> Bool {
+        return (character == "\n") || (character == "\r")
+    }
+    
+    func characterIsWhitespace(_ character: Character) -> Bool {
+        // there are others, but who cares
+        return (character == " ") || (character == "\n") || (character == "\r") || (character == "\t")
+    }
+    
+    func stringIsWhitespace(_ string: String?) -> Bool {
+        if string != nil {
+            for char in string! {
+                if !characterIsWhitespace(char) {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    
+    func shouldAutoCapitalize() -> Bool {
+        if !UserDefaults.standard.bool(forKey: kAutoCapitalization) {
+            return false
+        }
+        
+        let traits = self.textDocumentProxy
+        if let autocapitalization = traits.autocapitalizationType {
+            let documentProxy = self.textDocumentProxy
+            //var beforeContext = documentProxy.documentContextBeforeInput
+            
+            switch autocapitalization {
+            case .none:
+                return false
+            case .words:
+                if let beforeContext = documentProxy.documentContextBeforeInput {
+                    let previousCharacter = beforeContext[beforeContext.index(before: beforeContext.endIndex)]
+                    return self.characterIsWhitespace(previousCharacter)
+                }
+                else {
+                    return true
+                }
+            
+            case .sentences:
+                if let beforeContext = documentProxy.documentContextBeforeInput {
+                    let offset = min(3, beforeContext.count)
+                    var index = beforeContext.endIndex
+                    
+                    for i in 0 ..< offset {
+                        index = beforeContext.index(before: index)
+                        let char = beforeContext[index]
+                        
+                        if characterIsPunctuation(char) {
+                            if i == 0 {
+                                return false //not enough spaces after punctuation
+                            }
+                            else {
+                                return true //punctuation with at least one space after it
+                            }
+                        }
+                        else {
+                            if !characterIsWhitespace(char) {
+                                return false //hit a foreign character before getting to 3 spaces
+                            }
+                            else if characterIsNewline(char) {
+                                return true //hit start of line
+                            }
+                        }
+                    }
+                    
+                    return true //either got 3 spaces or hit start of line
+                }
+                else {
+                    return true
+                }
+            case .allCharacters:
+                return true
+            }
+        }
+        else {
+            return false
+        }
+    }
+    
+    // this only works if full access is enabled
+    @objc func playKeySound() {
+        if !UserDefaults.standard.bool(forKey: kKeyboardClicks) {
+            return
+        }
+        
+        DispatchQueue.global(qos: .default).async(execute: {
+            AudioServicesPlaySystemSound(1104)
         })
+    }
+    
+    //////////////////////////////////////
+    // MOST COMMONLY EXTENDABLE METHODS //
+    //////////////////////////////////////
+    
+    class var layoutClass: KeyboardLayout.Type { get { return KeyboardLayout.self }}
+    class var layoutConstants: LayoutConstants.Type { get { return LayoutConstants.self }}
+    class var globalColors: GlobalColors.Type { get { return GlobalColors.self }}
+    
+    func keyPressed(_ key: Key) {
+        self.textDocumentProxy.insertText(key.outputForCase(self.shiftState.uppercase()))
+    }
+    
+    // a banner that sits in the empty space on top of the keyboard
+    func createBanner() -> ExtraView? {
+        // note that dark mode is not yet valid here, so we just put false for clarity
+        //return ExtraView(globalColors: self.dynamicType.globalColors, darkMode: false, solidColorMode: self.solidColorMode())
+        return nil
+    }
+    
+    // a settings view that replaces the keyboard when the settings button is pressed
+    func createSettings() -> ExtraView? {
+        // note that dark mode is not yet valid here, so we just put false for clarity
+//        let settingsView = DefaultSettings(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
+//        settingsView.backButton?.addTarget(self, action: #selector(KeyboardViewController.toggleSettings), for: UIControlEvents.touchUpInside)
+        return ExtraView(globalColors: .none, darkMode: false, solidColorMode: false)
     }
     
     func memoryFootprint() -> Float? {
@@ -120,772 +845,19 @@ class KeyboardViewController: UIInputViewController,UICollectionViewDelegate, UI
         return usedMBAsString
     }
     
-    func addTargetToKeys(_ dict: [String: KeyView]) {
-        
-        for (key, value) in dict {
-            switch key {
-            case "2","3","4","5","6","7","8","9":
-                value.addTarget(self, action: #selector(KeyboardViewController.tapNormalKey(_:)), for: .touchDown)
-                
-            default:
-                value.addTarget(self, action: #selector(KeyboardViewController.tapOtherKey(_:)), for: .touchDown)
-            }
-        }
-    }
     
-    func updateTypingViews() {
-        if isClickSpaceOrWord {
-            pinyinStore.currentIndex = 0
-            pinyinStore.pinyinSelected = ""
-        }
-        isClickSpaceOrWord = false
-
-        if !pinyinStore.isInHistory || pinyinStore.needSearchHistory {      //如果不在历史中或者需要继续查询历史
-            pinyinStore.id = idString                                       //在历史中且不要查询历史就不会进if
-        }
-        if idString == "" {
-            isTyping = false
-            saveIndex = true
-            pinyinStore.clearData()
-        }
-        if isTyping {
-            if pinyinStore.pinyins.count == 0 {
-                let proxy = textDocumentProxy as UITextDocumentProxy
-                var text = ""
-                for str in pinyinStore.wordSelected {
-                    text += str
-                }
-                proxy.insertText(text)
-                let pinyin = PinyinStore.splitPinyinStrings(pinyinStore.allPinyins)
-                saveToHistory(withId: pinyinStore.id, pinyin: pinyin, word: text)
-                isTyping = false
-                saveIndex = true
-                pinyinStore.clearData()
-                idString = ""
-            }
-        }
-        
-        
-        if isTyping {
-            self.pinyinLabel?.text = pinyinStore.splitedPinyinString
-        } else {
-            self.pinyinLabel?.text = ""
-            saveIndex = true
-        }
-        
-
-        
-        UIView.performWithoutAnimation {
-            self.symbolCollection?.reloadData()
-            self.wordsQuickCollection?.reloadSections(NSIndexSet(index: 0) as IndexSet)
-            //            self.wordsQuickCollection?.layoutIfNeeded()
-            //            self.wordsQuickCollection?.reloadData()
-        }
-        
-    }
+   
     
-    @objc func tapNormalKey(_ sender: KeyView) {
-        isTyping = true
-        idString += sender.key.typeId!
-        
-        isClickSpaceOrWord = false
-
-        if saveIndex == false {
-            pinyinStore.currentIndex = 0
-            pinyinStore.pinyinSelected = ""
-            pinyinStore.indexStore.removeLast()
-            pinyinStore.allPinyins.removeLast()
-
-            saveIndex = true
-        }
-        
-        self.wordsQuickCollection?.setContentOffset(CGPoint.zero, animated: false)
-        updateTypingViews()
-    }
-    
-    @objc  func tapOtherKey(_ sender: KeyView) {
-        let proxy = textDocumentProxy as UITextDocumentProxy
-
-        isClickSpaceOrWord = false
-
-        let type = sender.key.type
-        switch type {
-        case .pinyin:
-            pinyinStore.currentIndex = sender.key.index!
-            pinyinStore.isInHistory = false
-            pinyinStore.needSearchHistory = false
-            selectedIndex = sender.key.index!
-            let length = pinyinStore.pinyinSelected.count
-            
-            if !saveIndex {
-                pinyinStore.indexStore.removeLast()
-                pinyinStore.allPinyins.removeLast()
-            }
-            pinyinStore.allPinyins.append(pinyinStore.pinyinSelected)
-            var index = pinyinStore.indexStore.last!
-            index += length
-            pinyinStore.indexStore.append(index)
-            saveIndex = false
-            
-            UIView.performWithoutAnimation {
-                self.wordsQuickCollection?.reloadSections(NSIndexSet(index: 0) as IndexSet)
-            }
-            self.pinyinLabel?.text = pinyinStore.splitedPinyinString
-
-        case .symbol, .number:
-            proxy.insertText(sender.key.outputText!)
-            
-        case .space:
-            isClickSpaceOrWord = true
-            if isTyping {
-                let word = pinyinStore.words[0]
-                pinyinStore.wordSelected.append(word)
-                
-                if pinyinStore.isInHistory {
-                    pinyinStore.allPinyins.append(pinyinStore.splitedPinyinString)
-                    pinyinStore.pinyins.removeAll()         //就是清除数据
-                    pinyinStore.needSearchHistory = false
-                } else {
-                    pinyinStore.currentIndex = selectedIndex
-                    let length = pinyinStore.pinyinSelected.count
-                    var index = pinyinStore.indexStore.last!
-                    if saveIndex {
-                        index += length
-                        pinyinStore.indexStore.append(index)
-                        pinyinStore.allPinyins.append(pinyinStore.pinyinSelected)
-                    }
-                }
-                
-                pinyinStore.pinyinSelected = ""
-                saveIndex = true
-                updateTypingViews()
-                selectedIndex = 0
-
-            } else {
-                proxy.insertText(" ")
-            }
-
-        case .backspace:
-            
-            
-            let img = UIImage.fromColor(color: UIColor.red, size: CGSize(width: 200, height: 200))
-            let data = img.pngData()
-            let pb = UIPasteboard.general
-            pb.setData(data!, forPasteboardType: "public.png")
-            
-            if isTyping {
-                if pinyinStore.indexStore.count > 1 {       //有选中的拼音或者字
-                    pinyinStore.indexStore.removeLast()
-                    pinyinStore.allPinyins.removeLast()
-                    pinyinStore.currentIndex = 0
-                    pinyinStore.pinyinSelected = ""
-
-                    if saveIndex && pinyinStore.wordSelected.count > 0 {    //若没有选中拼音且有选中字
-                        pinyinStore.wordSelected.removeLast()
-                    }
-
-                    saveIndex = true
-                    updateTypingViews()
-
-                } else {
-                    idString.removeLast()
-//                    idString.remove(at: idString.index(before: idString.endIndex))
-                    pinyinStore.isInHistory = false
-                    updateTypingViews()
-
-                }
-            } else {
-                proxy.deleteBackward()
-            }
-
-        case .return:
-            if isTyping {
-                proxy.insertText((self.pinyinLabel?.text)!)
-                idString = ""
-                updateTypingViews()
-            } else {
-                proxy.insertText("\n")
-            }
-            
-        case .reType:
-            if isTyping {
-                idString = ""
-                saveIndex = true
-                pinyinStore.clearData()
-                updateTypingViews()
-            }
-            
-            let alert = UIAlertController(title: "123", message: "123", preferredStyle: .alert)
-            present(alert, animated: true, completion: nil)
-            
-        case .changeToNumber:
-            numberView.isHidden = false
-        case .changeToNormal:
-            numberView.isHidden = true
-//            allSymbolCollection?.isHidden = true
-//        case .changeToSymbol:
-//            allSymbolCollection?.isHidden = false
-        default:
-            break
-        }
-    }
-
-    func addConstraintsToMid(_ centerView: UIView, _ arr: [KeyView]) {
-        var top = centerView.snp.top
-        var left = centerView.snp.left
-        for (index, view) in arr.enumerated() {
-            if index == 10 {
-                view.snp.makeConstraints({ (make) -> Void in
-                    make.height.equalToSuperview().dividedBy(4)
-                    make.right.equalToSuperview()
-                    make.left.equalTo(left)
-                    make.top.equalTo(top)
-                })
-                break
-            }
-            if index % 3 == 2 {
-                view.snp.makeConstraints({ (make) -> Void in
-                    make.height.equalToSuperview().dividedBy(4)
-                    make.width.equalToSuperview().dividedBy(3)
-                    make.left.equalTo(left)
-                    make.top.equalTo(top)
-                })
-                top = view.snp.bottom
-                left = centerView.snp.left
-
-            } else {
-                view.snp.makeConstraints({ (make) -> Void in
-                    make.height.equalToSuperview().dividedBy(4)
-                    make.width.equalToSuperview().dividedBy(3)
-                    make.left.equalTo(left)
-                    make.top.equalTo(top)
-                })
-                left = view.snp.right
-            }
-        }
-    }
-    
-    func addViewsToBanner() {
-        
-        pinyinLabel = UILabel()
-        
-        bannerView?.addSubview(pinyinLabel!)
-        pinyinLabel!.snp.makeConstraints({ (make) -> Void in
-            make.left.equalTo(10)
-            make.right.equalToSuperview()
-            make.top.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.4)
-        })
-
-        let layout = UICollectionViewFlowLayout.init()
-        layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
-        layout.estimatedItemSize = CGSize(width: 46.875, height: bannerHeight*2/5)
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.clear
-        collectionView.delaysContentTouches = false
-        collectionView.canCancelContentTouches = true
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(WordsCell.self, forCellWithReuseIdentifier: "WordsCell")
-        
-        bannerView?.addSubview(collectionView)
-        collectionView.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(pinyinLabel!.snp.bottom)
-            make.left.right.equalTo(pinyinLabel!)
-            make.bottom.equalToSuperview()
-        })
-        wordsQuickCollection = collectionView
-
-    }
-    
-    func createNumberKeyboard() {
-        
-    }
-    
-    // MARK: 默认键盘
-    func defaultKeyboard() -> (UIView?, UIView?, UIView?) {
-        
-        let keyboard = UIView(frame: CGRect.zero)
-        
-        //上
-        let bannerView = UIView()
-        keyboard.addSubview(bannerView)
-        bannerView.backgroundColor = UIColor.white
-        bannerView.snp.makeConstraints({ (make) -> Void in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(bannerHeight)
-        })
-        
-        //下
-        let bottomView = UIView()
-        keyboard.addSubview(bottomView)
-        bottomView.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(bannerView.snp.bottom)
-            make.left.right.bottom.equalToSuperview()
-        })
-        
-        // MARK: 左 Collection View
-        let layout = UICollectionViewFlowLayout.init()
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumLineSpacing = 0
-        layout.itemSize = CGSize(width: 75, height: 40.5)
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.delaysContentTouches = false
-        collectionView.canCancelContentTouches = true
-        collectionView.backgroundColor = grayColor
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(SymbolCell.self, forCellWithReuseIdentifier: "SymbolCell")
-        
-        bottomView.addSubview(collectionView)
-        collectionView.snp.makeConstraints({ (make) -> Void in
-            make.top.left.equalToSuperview()
-            make.width.equalToSuperview().dividedBy(5)
-            make.height.equalToSuperview().multipliedBy(0.75)
-        })
-        self.symbolCollection = collectionView
-        
-        // MARK: 左下
-        let leftBottonView = UIView()
-        //        leftBottonView.backgroundColor = UIColor.yellow
-        bottomView.addSubview(leftBottonView)
-        leftBottonView.snp.makeConstraints({ (make) -> Void in
-            make.left.bottom.equalToSuperview()
-            make.top.equalTo(collectionView.snp.bottom)
-            make.width.equalTo(collectionView)
-        })
-        let viewLB = KeyView(withKey: Key(withTitle: "变", andType: .nextKeyboard))
-        viewLB.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allTouchEvents)
-        leftBottonView.addSubview(viewLB)
-        viewLB.snp.makeConstraints({ (make) -> Void in
-            make.edges.equalToSuperview()
-        })
-        
-        // MARK: 右
-        let rightView = UIView()
-        bottomView.addSubview(rightView)
-        rightView.snp.makeConstraints({ (make) -> Void in
-            make.width.equalTo(collectionView)
-            make.top.right.bottom.equalToSuperview()
-        })
-        
-        let viewR1 = KeyView(withKey: Key(withTitle: "⬅︎", andType: .backspace))
-        let viewR2 = KeyView(withKey: Key(withTitle: "重输", andType: .reType))
-        let viewR3 = KeyView(withKey: Key(withTitle: "发送", andType: .return))
-        rightView.addSubview(viewR1)
-        rightView.addSubview(viewR2)
-        rightView.addSubview(viewR3)
-        viewR1.snp.makeConstraints({ (make) -> Void in
-            make.top.left.right.equalToSuperview()
-            make.height.equalToSuperview().dividedBy(4)
-        })
-        viewR2.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(viewR1.snp.bottom)
-            make.left.right.equalToSuperview()
-            make.height.equalToSuperview().dividedBy(4)
-        })
-        viewR3.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(viewR2.snp.bottom)
-            make.left.right.bottom.equalToSuperview()
-        })
-        
-        
-        // MARK: 中
-        let centerView = UIView()
-        bottomView.addSubview(centerView)
-        centerView.snp.makeConstraints({ (make) -> Void in
-            make.top.bottom.equalToSuperview()
-            make.left.equalTo(collectionView.snp.right)
-            make.right.equalTo(rightView.snp.left)
-        })
-        
-        let view11 = KeyView(withKey: Key(withTitle: "符号", andType: .changeToSymbol, typeId: "1"))  //1
-        let view12 = KeyView(withKey: Key(withTitle: "ABC", andType: .normal, typeId: "2"))          //2
-        let view13 = KeyView(withKey: Key(withTitle: "DEF", andType: .normal, typeId: "3"))          //3
-        let view21 = KeyView(withKey: Key(withTitle: "GHI", andType: .normal, typeId: "4"))          //4
-        let view22 = KeyView(withKey: Key(withTitle: "JKL", andType: .normal, typeId: "5"))          //5
-        let view23 = KeyView(withKey: Key(withTitle: "MNO", andType: .normal, typeId: "6"))          //6
-        let view31 = KeyView(withKey: Key(withTitle: "PQRS", andType: .normal, typeId: "7"))         //7
-        let view32 = KeyView(withKey: Key(withTitle: "TUV", andType: .normal, typeId: "8"))          //8
-        let view33 = KeyView(withKey: Key(withTitle: "WXYZ", andType: .normal, typeId: "9"))         //9
-        let view41 = KeyView(withKey: Key(withTitle: "123", andType: .changeToNumber))
-        let view42 = KeyView(withKey: Key(withTitle: "空格-\(formattedMemoryFootprint())", andType: .space, typeId: "0"))           //0
-        let arrMid = [view11, view12, view13, view21, view22, view23, view31, view32, view33, view41, view42]
-        for view in arrMid {
-            centerView.addSubview(view)
-        }
-        
-        // MARK:
-        keysDictionary["删除"] = viewR1
-        keysDictionary["换行"] = viewR2
-        keysDictionary["发送"] = viewR3
-        keysDictionary["1"] = view11
-        keysDictionary["2"] = view12
-        keysDictionary["3"] = view13
-        keysDictionary["4"] = view21
-        keysDictionary["5"] = view22
-        keysDictionary["6"] = view23
-        keysDictionary["7"] = view31
-        keysDictionary["8"] = view32
-        keysDictionary["9"] = view33
-        keysDictionary["0"] = view42
-        keysDictionary["123"] = view41
-        
-        
-        addConstraintsToMid(centerView, arrMid)
-        
-        
-        centerView.addSubview(numberView)
-        numberView.snp.makeConstraints({ (make) -> Void in
-            make.edges.equalToSuperview()
-        })
-        let number1 = KeyView(withKey: Key(withTitle: "1", andType: .number, typeId: "1"))      //1
-        let number2 = KeyView(withKey: Key(withTitle: "2", andType: .number, typeId: "2"))      //2
-        let number3 = KeyView(withKey: Key(withTitle: "3", andType: .number, typeId: "3"))      //3
-        let number4 = KeyView(withKey: Key(withTitle: "4", andType: .number, typeId: "4"))      //4
-        let number5 = KeyView(withKey: Key(withTitle: "5", andType: .number, typeId: "5"))      //5
-        let number6 = KeyView(withKey: Key(withTitle: "6", andType: .number, typeId: "6"))      //6
-        let number7 = KeyView(withKey: Key(withTitle: "7", andType: .number, typeId: "7"))      //7
-        let number8 = KeyView(withKey: Key(withTitle: "8", andType: .number, typeId: "8"))      //8
-        let number9 = KeyView(withKey: Key(withTitle: "9", andType: .number, typeId: "9"))      //9
-        let number0 = KeyView(withKey: Key(withTitle: "0", andType: .number, typeId: "0"))      //0
-        let number00 = KeyView(withKey: Key(withTitle: "返回", andType: .changeToNormal))
-        
-        let arrNumber = [number1, number2, number3, number4, number5, number6, number7, number8, number9, number00, number0]
-        for view in arrNumber {
-            numberView.addSubview(view)
-        }
-        addConstraintsToMid(numberView, arrNumber)
-        numberView.isHidden = true
-        keysDictionary["11"] = number1
-        keysDictionary["22"] = number2
-        keysDictionary["33"] = number3
-        keysDictionary["44"] = number4
-        keysDictionary["55"] = number5
-        keysDictionary["66"] = number6
-        keysDictionary["77"] = number7
-        keysDictionary["88"] = number8
-        keysDictionary["99"] = number9
-        keysDictionary["00"] = number0
-        keysDictionary["back"] = number00
-
-        
-        //加线
-        let lineBanner0 = UIView(); lineBanner0.backgroundColor = lineColor
-        let lineBanner1 = UIView(); lineBanner1.backgroundColor = lineColor
-        bannerView.addSubview(lineBanner0)
-        bannerView.addSubview(lineBanner1)
-        lineBanner0.snp.makeConstraints({ (make) -> Void in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(lineThickness)
-        })
-        lineBanner1.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(bannerHeight*2/5)
-            make.left.right.equalToSuperview()
-            make.height.equalTo(lineThickness)
-        })
-        
-        
-        let lineMid0 = UIView(); lineMid0.backgroundColor = lineColor
-        let lineMid1 = UIView(); lineMid1.backgroundColor = lineColor
-        let lineMid2 = UIView(); lineMid2.backgroundColor = lineColor
-        let lineMid3 = UIView(); lineMid3.backgroundColor = lineColor
-        let lineMid4 = UIView(); lineMid4.backgroundColor = lineColor
-        let lineMid5 = UIView(); lineMid5.backgroundColor = lineColor
-        let lineMid6 = UIView(); lineMid6.backgroundColor = lineColor
-        let lineMid7 = UIView(); lineMid7.backgroundColor = lineColor
-        bottomView.addSubview(lineMid0)
-        bottomView.addSubview(lineMid1)
-        bottomView.addSubview(lineMid2)
-        bottomView.addSubview(lineMid3)
-        bottomView.addSubview(lineMid4)
-        bottomView.addSubview(lineMid5)
-        bottomView.addSubview(lineMid6)
-        bottomView.addSubview(lineMid7)
-        lineMid0.snp.makeConstraints({ (make) -> Void in
-            make.top.left.right.equalToSuperview()
-            make.height.equalTo(lineThickness)
-        })
-        lineMid1.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(view11.snp.bottom)
-            make.left.equalTo(centerView)
-            make.right.equalToSuperview()
-            make.height.equalTo(lineThickness)
-        })
-        lineMid2.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(view21.snp.bottom)
-            make.left.equalTo(centerView)
-            make.height.equalTo(lineThickness)
-            make.right.equalToSuperview()
-        })
-        lineMid3.snp.makeConstraints({ (make) -> Void in
-            make.top.equalTo(view31.snp.bottom)
-            make.left.equalToSuperview()
-            make.right.equalTo(centerView)
-            make.height.equalTo(lineThickness)
-        })
-        lineMid4.snp.makeConstraints({ (make) -> Void in
-            make.top.bottom.equalToSuperview()
-            make.left.equalTo(centerView)
-            make.width.equalTo(lineThickness)
-        })
-        lineMid5.snp.makeConstraints({ (make) -> Void in
-            make.top.bottom.equalToSuperview()
-            make.left.equalTo(view12)
-            make.width.equalTo(lineThickness)
-        })
-        lineMid6.snp.makeConstraints({ (make) -> Void in
-            make.top.equalToSuperview()
-            make.bottom.equalTo(view33)
-            make.left.equalTo(view13)
-            make.width.equalTo(lineThickness)
-        })
-        lineMid7.snp.makeConstraints({ (make) -> Void in
-            make.top.bottom.equalToSuperview()
-            make.left.equalTo(rightView)
-            make.width.equalTo(lineThickness)
-            
-        })
-        
-        /*
-        let layout1 = UICollectionViewFlowLayout.init()
-        layout1.scrollDirection = .vertical
-        layout1.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout1.minimumLineSpacing = 0
-        layout1.minimumInteritemSpacing = 0
-        layout1.itemSize = CGSize(width: 74.5, height: 40.5)
-        let collectionView1 = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout1)
-        collectionView1.delaysContentTouches = false
-        collectionView1.canCancelContentTouches = true
-        collectionView1.backgroundColor = grayColor
-        collectionView1.delegate = self
-        collectionView1.dataSource = self
-        collectionView1.register(SymbolCell.self, forCellWithReuseIdentifier: "SymbolCell")
-        allSymbolCollection = collectionView1
-        bottomView.addSubview(allSymbolCollection!)
-        allSymbolCollection?.backgroundColor = UIColor.white
-        allSymbolCollection?.isHidden = true
-        allSymbolCollection?.snp.makeConstraints({ (make) -> Void in
-            make.bottom.equalToSuperview()
-            make.right.equalTo(1)
-            make.top.equalTo(1)
-            make.left.equalTo(collectionView.snp.right).offset(1)
-        })
-         */
-        
-        addTargetToKeys(keysDictionary)
-        
-        return (keyboard, bannerView, bottomView)
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if collectionView === self.wordsQuickCollection {
-            if isTyping {
-                return pinyinStore.words.count
-            } else {
-                return 0
-            }
-        }
-        else {
-            if isTyping {
-                return pinyinStore.pinyins.count
-            } else {
-                return symbolStore.allSymbols.count
-            }
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if collectionView === self.wordsQuickCollection {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WordsCell", for: indexPath) as! WordsCell
-            if isTyping {
-                cell.wordslabel.text = pinyinStore.words[indexPath.row]
-            }
-            return cell
-
-        }
-        else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SymbolCell", for: indexPath) as! SymbolCell
-            
-            if isTyping {
-                cell.addPinyin(pinyinStore.pinyins[indexPath.row], index: indexPath.row)
-            } else {
-                cell.addKey(symbolStore.allSymbols[indexPath.row])
-            }
-            cell.keyView?.addTarget(self, action: #selector(tapOtherKey(_:)), for: .touchUpInside)
-
-            return cell
-        }
-        
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        if collectionView === self.wordsQuickCollection {
-            
-            isClickSpaceOrWord = true
-
-//            proxy.insertText(pinyinStore.words[indexPath.row])
-            let word = pinyinStore.words[indexPath.row]
-            pinyinStore.wordSelected.append(word)
-            if pinyinStore.isInHistory && indexPath.row < pinyinStore.historyCount {
-                pinyinStore.allPinyins.append(pinyinStore.splitedPinyinString)
-                pinyinStore.pinyins.removeAll()         //就是清除数据
-                pinyinStore.needSearchHistory = false
-            } else {
-                pinyinStore.isInHistory = false
-                pinyinStore.needSearchHistory = false
-                pinyinStore.currentIndex = selectedIndex
-                let length = pinyinStore.pinyinSelected.count
-                var index = pinyinStore.indexStore.last!
-                if saveIndex {
-                    index += length
-                    pinyinStore.indexStore.append(index)
-                    pinyinStore.allPinyins.append(pinyinStore.pinyinSelected)
-                }
-            }
-            
-            pinyinStore.pinyinSelected = ""
-            saveIndex = true
-            selectedIndex = 0
-            updateTypingViews()
-            
-        }
-    }
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        if collectionView === self.wordsQuickCollection {
-//            let cell = WordsCell(frame: CGRect.zero)
-//            cell.wordslabel.text = pinyinStore.words[indexPath.row]
-//            cell.layoutIfNeeded()
-//            let size = cell.frame.size
-//            return size
-//        } else {
-//            return CGSize(width: 75, height: 40.5)
-//        }
-//    }
-    
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//
-//        if collectionView === self.wordsQuickCollection {
-//
-//            return 10
-//        }
-//
-//        return 0
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//
-//        if collectionView === self.wordsQuickCollection {
-//            return 10
-//        }
-//
-//        return 0
-//    }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        if collectionView === self.wordsQuickCollection {
-//            let width = collectionView.bounds.width
-//            let height = collectionView.bounds.height
-//            let size = CGSize(width: width, height: height/4)
-//            return size
-//        }
-//    }
+  
+   
     
     
     deinit {
         print("Keyboard Deinit")
+        backspaceDelayTimer?.invalidate()
+        backspaceRepeatTimer?.invalidate()
+        
+        NotificationCenter.default.removeObserver(self)
     }
    
 }
-func saveToHistory(withId key: String, pinyin: String, word: String) {
-    
-    if let dict = historyDictionary {
-        let value = dict.value(forKey: key) as? Array<[String]>
-        if value != nil {
-            var pinyins = value![0]
-            var words = value![1]
-            var frequence = value![2]
-            var oldIndex: Int = 0
-            var index = 0
-            var fre = 0
-            var flag = false
-            for (i, str) in words.enumerated() {
-                if str == word {
-                    oldIndex = i
-                    fre = Int(frequence[i])!
-                    fre += 1
-                    flag = true
-                    break
-                }
-            }
-            for (i, str) in frequence.enumerated() {
-                let num = Int(str)!
-                if num < fre {
-                    index = i
-                    break
-                }
-            }
-            
-            if flag {       //有这个值
-                words.remove(at: oldIndex)
-                pinyins.remove(at: oldIndex)
-                frequence.remove(at: oldIndex)
-                
-                words.insert(word, at: index)
-                pinyins.insert(pinyin, at: index)
-                frequence.insert("\(fre)", at: index)
-            } else {
-                words.append(word)
-                pinyins.append(pinyin)
-                frequence.append("1")
-            }
-            dict.setObject([pinyins, words, frequence], forKey: key as NSCopying)
-            dict.write(toFile: historyPath, atomically: true)
-            
-        } else {
-            dict.setObject([[pinyin], [word], ["1"]], forKey: key as NSCopying)
-            dict.write(toFile: historyPath, atomically: true)
-        }
-    } else {
-        let dict = NSMutableDictionary()
-        dict.setObject([[pinyin], [word], ["1"]], forKey: key as NSCopying)
-        dict.write(toFile: historyPath, atomically: true)
-    }
-}
-
-//扩展UICollectionView 使得滑动scrollView可以取消UIControl的点击事件
-extension UICollectionView {
-    override open func touchesShouldCancel(in view: UIView) -> Bool {
-        return true
-    }
-}
-
-
-extension UIImage{
-    static func fromColor(color:UIColor,size:CGSize) -> UIImage {
-        UIGraphicsBeginImageContext(size)
-        let  con = UIGraphicsGetCurrentContext()
-        con?.setFillColor(color.cgColor)
-        con?.fill(CGRect(origin: CGPoint.zero, size: size))
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return img!
-    }
-}
-
