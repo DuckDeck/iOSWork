@@ -114,7 +114,7 @@ class KeyboardViewController: UIInputViewController{
 
       
         UserDefaults.standard.register(defaults: [
-            kAutoCapitalization: true,
+            kAutoCapitalization: false,
             kPeriodShortcut: true,
             kKeyboardClicks: false,
             kSmallLowercase: false
