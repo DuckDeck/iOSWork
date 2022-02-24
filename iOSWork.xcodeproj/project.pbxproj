@@ -12,6 +12,9 @@
 		A2FBDD25B3319BA5096F29BC /* Pods_CLangWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */; };
 		AE043D7527896BFB00626B82 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0A121278940680044D012 /* ImageInfo.swift */; };
 		AE043D7827897BA600626B82 /* ImageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE043D7727897BA600626B82 /* ImageInfoViewController.swift */; };
+		AE08AA8C27C681D500EE0813 /* MediaTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8B27C681D500EE0813 /* MediaTool.swift */; };
+		AE08AA8E27C684CB00EE0813 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */; };
+		AE08AA9027C684D400EE0813 /* MediaTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8B27C681D500EE0813 /* MediaTool.swift */; };
 		AE1A51A027C284B500162D66 /* ImageMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */; };
 		AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */; };
 		AE1A875D27512195004FA0DA /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875C27512195004FA0DA /* Spirograph.swift */; };
@@ -942,6 +945,8 @@
 		A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLangWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06737A9167AB79DD4D5235F /* Pods-CLangWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLangWork.release.xcconfig"; path = "Target Support Files/Pods-CLangWork/Pods-CLangWork.release.xcconfig"; sourceTree = "<group>"; };
 		AE043D7727897BA600626B82 /* ImageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoViewController.swift; sourceTree = "<group>"; };
+		AE08AA8B27C681D500EE0813 /* MediaTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTool.swift; sourceTree = "<group>"; };
+		AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryViewController.swift; sourceTree = "<group>"; };
 		AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebViewController.swift; sourceTree = "<group>"; };
 		AE1A875C27512195004FA0DA /* Spirograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirograph.swift; sourceTree = "<group>"; };
@@ -1639,6 +1644,14 @@
 			path = ImageIO;
 			sourceTree = "<group>";
 		};
+		AE08AA8A27C6817D00EE0813 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
 		AE1C4F18274341140097EAC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2084,6 +2097,7 @@
 				AE62CB7C27254DD6007D51CD /* Singleton.h */,
 				AE62CB7627254DD5007D51CD /* Tool.swift */,
 				AEF86659274B6F5B002E33E5 /* Store.swift */,
+				AE08AA8B27C681D500EE0813 /* MediaTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2123,6 +2137,7 @@
 		AE62CBE227256603007D51CD /* Data_Network */ = {
 			isa = PBXGroup;
 			children = (
+				AE08AA8A27C6817D00EE0813 /* Download */,
 				AEF86664274B9B38002E33E5 /* ClassifyingImages */,
 				AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */,
 			);
@@ -3909,6 +3924,7 @@
 				AEE011022742581500C155D8 /* LockView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */,
+				AE08AA9027C684D400EE0813 /* MediaTool.swift in Sources */,
 				AE62CAFB272542DC007D51CD /* ShadowEncoder.swift in Sources */,
 				AE62CB8727254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CB6B27254B12007D51CD /* GandAlert.swift in Sources */,
@@ -3994,6 +4010,7 @@
 				AE4D08FE273032E700899D2C /* MemeryCache.swift in Sources */,
 				AE66E15C27537992006432FE /* OpenCV.mm in Sources */,
 				AE62CBE727256690007D51CD /* UIMenuViewController.swift in Sources */,
+				AE08AA8E27C684CB00EE0813 /* DownloadViewController.swift in Sources */,
 				AE62CB5227254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */,
 				AE1C4F63274346BD0097EAC1 /* spewG.c in Sources */,
@@ -4450,6 +4467,7 @@
 				AE62CADF272542DC007D51CD /* ShadowPlayer.swift in Sources */,
 				AE62CB3327254946007D51CD /* UIWindow+Base.swift in Sources */,
 				AE62CBD627255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
+				AE08AA8C27C681D500EE0813 /* MediaTool.swift in Sources */,
 				AE62CBC427255C20007D51CD /* LimitTextView.swift in Sources */,
 				AEE010E92742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
 				AE62CB1727254873007D51CD /* BaseViewController.swift in Sources */,
