@@ -46,9 +46,9 @@ extension DataMenuViewController:UITableViewDelegate,UITableViewDataSource{
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         case 1:
-//            let vc = DownloadViewController()
-//            vc.hidesBottomBarWhenPushed = true
-//            navigationController?.pushViewController(vc, animated: true)
+            let vc = DownloadViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
             break
         default:
             break

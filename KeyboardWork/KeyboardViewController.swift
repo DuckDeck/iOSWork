@@ -329,9 +329,9 @@ class KeyboardViewController: UIInputViewController{
                                               action: #selector(KeyboardViewController.modeChangeTapped(_:)),
                                               for: .touchDown)
                         case Key.KeyType.settings:
-//                            keyView.addTarget(self,
-//                                              action: #selector(KeyboardViewController.toggleSettings),
-//                                              for: .touchUpInside)
+                            keyView.addTarget(self,
+                                              action: #selector(KeyboardViewController.gotoSetting(_:)),
+                                              for: .touchUpInside)
                             break
                         default:
                             break
@@ -647,6 +647,11 @@ class KeyboardViewController: UIInputViewController{
         }
     }
     
+    @objc func gotoSetting(_ sender: KeyboardKey){
+       let v = ExtraView(globalColors: .none, darkMode: false, solidColorMode: false)
+        view.addSubview(v)
+    }
+    
     @objc func setMode(_ mode: Int) {
         self.forwardingView.resetTrackedViews()
         self.shiftStartingState = nil
@@ -809,12 +814,7 @@ class KeyboardViewController: UIInputViewController{
     }
     
     // a settings view that replaces the keyboard when the settings button is pressed
-    func createSettings() -> ExtraView? {
-        // note that dark mode is not yet valid here, so we just put false for clarity
-//        let settingsView = DefaultSettings(globalColors: type(of: self).globalColors, darkMode: false, solidColorMode: self.solidColorMode())
-//        settingsView.backButton?.addTarget(self, action: #selector(KeyboardViewController.toggleSettings), for: UIControlEvents.touchUpInside)
-        return ExtraView(globalColors: .none, darkMode: false, solidColorMode: false)
-    }
+
     
     func memoryFootprint() -> Float? {
         // The `TASK_VM_INFO_COUNT` and `TASK_VM_INFO_REV1_COUNT` macros are too
