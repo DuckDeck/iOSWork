@@ -29,14 +29,14 @@ class ImageMemoryViewController: UIViewController {
             make.height.equalTo(50)
         }
         panelView.addArrangedSubview(btnOpenImage)
-        btnOpenImage.title(title: "打开8k图片").color(color: UIColor.random).snp.makeConstraints { make in
+        btnOpenImage.title(title: "打开图片").color(color: UIColor.random).snp.makeConstraints { make in
             make.height.equalTo(50)
             
         }
         
         btnOpenImage.addTarget(self, action: #selector(openImage), for: .touchUpInside)
         panelView.addArrangedSubview(btnShowImage)
-        btnShowImage.title(title: "显示8k图片").color(color: UIColor.random).snp.makeConstraints { make in
+        btnShowImage.title(title: "显示图片").color(color: UIColor.random).snp.makeConstraints { make in
             make.height.equalTo(50)
             
         }
@@ -67,9 +67,10 @@ class ImageMemoryViewController: UIViewController {
     }
     
     @objc func openImage(){
-        let img = UIImage(named: "8k")
+        let path = Bundle.main.path(forResource: "5k", ofType: "jpg")
+        let img = UIImage(contentsOfFile: path!)
         self.img = img
-        Toast.showToast(msg: "打开图片。img占用内存为\(img!.memorySize)")
+        Toast.showToast(msg: "加载图片。图片占用内存为\(img!.memorySize)")
     }
 
     @objc func showImage(){
@@ -77,6 +78,9 @@ class ImageMemoryViewController: UIViewController {
     }
     
     @objc func copyImage(){
+//        autoreleasepool {
+//            UIPasteboard.general.image = img
+//        }
         UIPasteboard.general.image = img
     }
     

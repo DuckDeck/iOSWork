@@ -57,6 +57,13 @@
 		AE28B87427C5033F00D399F3 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B87327C5033F00D399F3 /* ForwardingView.swift */; };
 		AE28B87627C5035700D399F3 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B87527C5035700D399F3 /* KeyboardLayout.swift */; };
 		AE28B87827C5037000D399F3 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B87727C5037000D399F3 /* KeyboardInputTraits.swift */; };
+		AE35149727CB8EBF000326F1 /* Matrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE35149627CB8EBF000326F1 /* Matrix.framework */; };
+		AE35149827CB8EBF000326F1 /* Matrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE35149627CB8EBF000326F1 /* Matrix.framework */; };
+		AE35149927CB8EBF000326F1 /* Matrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE35149627CB8EBF000326F1 /* Matrix.framework */; };
+		AE35149B27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
+		AE35149C27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
+		AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
+		AE35149F27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
 		AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48CECD27C7D10B009A0673 /* asset.xcassets */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -988,6 +995,9 @@
 		AE28B87327C5033F00D399F3 /* ForwardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
 		AE28B87527C5035700D399F3 /* KeyboardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		AE28B87727C5037000D399F3 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
+		AE35149627CB8EBF000326F1 /* Matrix.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Matrix.framework; sourceTree = "<group>"; };
+		AE35149A27CBB549000326F1 /* 5k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5k.jpg; sourceTree = "<group>"; };
+		AE35149D27CBB54D000326F1 /* 8k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k.jpg; sourceTree = "<group>"; };
 		AE38468627BB43F9004F6765 /* iOSWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSWork.entitlements; sourceTree = "<group>"; };
 		AE38468727BB440A004F6765 /* KeyboardWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardWork.entitlements; sourceTree = "<group>"; };
 		AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardWork-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1547,6 +1557,7 @@
 				AE62CB0A272542F8007D51CD /* libmp3lame.a in Frameworks */,
 				AE66E131275369D4006432FE /* libswscale.a in Frameworks */,
 				AE66E03127536944006432FE /* libx264.a in Frameworks */,
+				AE35149727CB8EBF000326F1 /* Matrix.framework in Frameworks */,
 				AE66E128275369D4006432FE /* libavformat.a in Frameworks */,
 				AEA0A11A27884A350044D012 /* GrandKit in Frameworks */,
 				AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */,
@@ -1589,6 +1600,7 @@
 			files = (
 				AEA0A11C27884A5C0044D012 /* GrandKit in Frameworks */,
 				72041D621849001868817C60 /* Pods_KeyboardWork.framework in Frameworks */,
+				AE35149827CB8EBF000326F1 /* Matrix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1618,6 +1630,7 @@
 				AE62CB0C272542F8007D51CD /* libmp3lame.a in Frameworks */,
 				AEA0A11827884A1B0044D012 /* GrandKit in Frameworks */,
 				AE66E121275369D4006432FE /* libavutil.a in Frameworks */,
+				AE35149927CB8EBF000326F1 /* Matrix.framework in Frameworks */,
 				AE66E130275369D4006432FE /* libswresample.a in Frameworks */,
 				AE66E12A275369D4006432FE /* libavformat.a in Frameworks */,
 				AE66E12D275369D4006432FE /* libavdevice.a in Frameworks */,
@@ -1840,6 +1853,8 @@
 		AE62C9E4272541C8007D51CD /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				AE35149D27CBB54D000326F1 /* 8k.jpg */,
+				AE35149A27CBB549000326F1 /* 5k.jpg */,
 				AE62C9E5272541D0007D51CD /* gif0.gif */,
 			);
 			path = Image;
@@ -2447,6 +2462,7 @@
 		AE66E14D2753790E006432FE /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				AE35149627CB8EBF000326F1 /* Matrix.framework */,
 				AE66E1DC2753AFC1006432FE /* IJKMediaFramework.framework */,
 				AE66E14E2753791D006432FE /* opencv2.framework */,
 			);
@@ -3610,6 +3626,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */,
 				AEE0114D27425D8800C155D8 /* p_1.png in Resources */,
 				AE4D08EC273025DB00899D2C /* demo.html in Resources */,
 				AE66E19927538149006432FE /* haarcascade_eye_tree_eyeglasses.xml in Resources */,
@@ -3619,6 +3636,7 @@
 				AEE0114627425D8800C155D8 /* p_14.png in Resources */,
 				AE1C4F6B274346BD0097EAC1 /* new.zip in Resources */,
 				AE7E7432272251E500F0C19C /* LaunchScreen.storyboard in Resources */,
+				AE35149B27CBB549000326F1 /* 5k.jpg in Resources */,
 				AE62C9E6272541D0007D51CD /* gif0.gif in Resources */,
 				AEE0113B27425D8800C155D8 /* room.jpg in Resources */,
 				AEF8666E274B9BCD002E33E5 /* NOTICE.txt in Resources */,
@@ -3660,6 +3678,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE35149F27CBB54D000326F1 /* 8k.jpg in Resources */,
 				AE4D08ED273025DB00899D2C /* demo.html in Resources */,
 				AE62C9E3272541C3007D51CD /* cxk.mp4 in Resources */,
 				AE7E74472722528400F0C19C /* Preview Assets.xcassets in Resources */,
@@ -3669,6 +3688,7 @@
 				AE4D091C273032FC00899D2C /* upload.html in Resources */,
 				AE62C9EB272541E2007D51CD /* question.html in Resources */,
 				AEE010B72742569200C155D8 /* MJRefresh.bundle in Resources */,
+				AE35149C27CBB549000326F1 /* 5k.jpg in Resources */,
 				AE7E74442722528400F0C19C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4897,6 +4917,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KeyboardWork",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
@@ -4932,6 +4953,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KeyboardWork",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
