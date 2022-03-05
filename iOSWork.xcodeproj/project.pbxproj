@@ -12,6 +12,7 @@
 		A2FBDD25B3319BA5096F29BC /* Pods_CLangWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */; };
 		AE043D7527896BFB00626B82 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0A121278940680044D012 /* ImageInfo.swift */; };
 		AE043D7827897BA600626B82 /* ImageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE043D7727897BA600626B82 /* ImageInfoViewController.swift */; };
+		AE080CD227D3A065007F42E1 /* WebviewMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE080CD127D3A065007F42E1 /* WebviewMemoryViewController.swift */; };
 		AE08AA8C27C681D500EE0813 /* MediaTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8B27C681D500EE0813 /* MediaTool.swift */; };
 		AE08AA8E27C684CB00EE0813 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */; };
 		AE08AA9027C684D400EE0813 /* MediaTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8B27C681D500EE0813 /* MediaTool.swift */; };
@@ -950,6 +951,7 @@
 		A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLangWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06737A9167AB79DD4D5235F /* Pods-CLangWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLangWork.release.xcconfig"; path = "Target Support Files/Pods-CLangWork/Pods-CLangWork.release.xcconfig"; sourceTree = "<group>"; };
 		AE043D7727897BA600626B82 /* ImageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoViewController.swift; sourceTree = "<group>"; };
+		AE080CD127D3A065007F42E1 /* WebviewMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewMemoryViewController.swift; sourceTree = "<group>"; };
 		AE08AA8B27C681D500EE0813 /* MediaTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTool.swift; sourceTree = "<group>"; };
 		AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryViewController.swift; sourceTree = "<group>"; };
@@ -2709,6 +2711,7 @@
 				AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */,
 				AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */,
 				AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */,
+				AE080CD127D3A065007F42E1 /* WebviewMemoryViewController.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -4062,6 +4065,7 @@
 				AE7F9133272AC3C900733BC8 /* OffSreenRenderViewController.swift in Sources */,
 				AEE010AD2742569200C155D8 /* MJRefreshConst.m in Sources */,
 				AEE0115427425D8800C155D8 /* BaseBoard.swift in Sources */,
+				AE080CD227D3A065007F42E1 /* WebviewMemoryViewController.swift in Sources */,
 				AEE010E42742569200C155D8 /* MJRefreshStateHeader.m in Sources */,
 				AE1C4F6C274346BD0097EAC1 /* bspatch.c in Sources */,
 				AE62CB4027254947007D51CD /* UIButton+Extension.swift in Sources */,
@@ -4762,8 +4766,6 @@
 					"\"Accelerate\"",
 					"-framework",
 					"\"Alamofire\"",
-					"-framework",
-					"\"Bugly\"",
 					"-framework",
 					"\"CFNetwork\"",
 					"-framework",

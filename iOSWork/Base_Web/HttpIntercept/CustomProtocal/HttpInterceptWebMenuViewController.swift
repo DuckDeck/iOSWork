@@ -4,7 +4,7 @@ import WebKit
 import SwiftUI
 import SnapKit
 class HttpInterceptWebMenuViewController: UIViewController {
-    var arrData = [("网易","https://www.163.com"),("sohu","https://www.sohu.com/"),("the verge","https://www.theverge.com/"),("鱼塘","https://mo.fish/?class_id=%E5%85%A8%E9%83%A8&hot_id=2")]
+    var arrData = [("B站","https://www.bilibili.com/"),("网易","https://www.163.com"),("sohu","https://www.sohu.com/"),("the verge","https://www.theverge.com/"),("鱼塘","https://mo.fish/?class_id=%E5%85%A8%E9%83%A8&hot_id=2")]
     var tbMenu = UITableView()
     
     override func viewDidLoad() {

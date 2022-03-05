@@ -7,7 +7,7 @@
 
 import Foundation
 class MemoryViewController: UIViewController {
-    var arrData = ["内存泄漏","图片内存"]
+    var arrData = ["内存泄漏","图片内存","WebView内存"]
     var tbMenu = UITableView()
       
     override func viewDidLoad() {
@@ -44,6 +44,8 @@ extension MemoryViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(MemeryLeakTestViewController(), animated: true)
         case 1:
             navigationController?.pushViewController(ImageMemoryViewController(), animated: true)
+        case 2:
+            navigationController?.pushViewController(WebviewMemoryViewController(), animated: true)
         default:
             break
         }
