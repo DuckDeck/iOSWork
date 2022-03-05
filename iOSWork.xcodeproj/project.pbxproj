@@ -57,9 +57,6 @@
 		AE28B87427C5033F00D399F3 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B87327C5033F00D399F3 /* ForwardingView.swift */; };
 		AE28B87627C5035700D399F3 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B87527C5035700D399F3 /* KeyboardLayout.swift */; };
 		AE28B87827C5037000D399F3 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B87727C5037000D399F3 /* KeyboardInputTraits.swift */; };
-		AE35149727CB8EBF000326F1 /* Matrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE35149627CB8EBF000326F1 /* Matrix.framework */; };
-		AE35149827CB8EBF000326F1 /* Matrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE35149627CB8EBF000326F1 /* Matrix.framework */; };
-		AE35149927CB8EBF000326F1 /* Matrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE35149627CB8EBF000326F1 /* Matrix.framework */; };
 		AE35149B27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149C27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
@@ -995,7 +992,6 @@
 		AE28B87327C5033F00D399F3 /* ForwardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
 		AE28B87527C5035700D399F3 /* KeyboardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		AE28B87727C5037000D399F3 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
-		AE35149627CB8EBF000326F1 /* Matrix.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Matrix.framework; sourceTree = "<group>"; };
 		AE35149A27CBB549000326F1 /* 5k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5k.jpg; sourceTree = "<group>"; };
 		AE35149D27CBB54D000326F1 /* 8k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k.jpg; sourceTree = "<group>"; };
 		AE38468627BB43F9004F6765 /* iOSWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSWork.entitlements; sourceTree = "<group>"; };
@@ -1557,7 +1553,6 @@
 				AE62CB0A272542F8007D51CD /* libmp3lame.a in Frameworks */,
 				AE66E131275369D4006432FE /* libswscale.a in Frameworks */,
 				AE66E03127536944006432FE /* libx264.a in Frameworks */,
-				AE35149727CB8EBF000326F1 /* Matrix.framework in Frameworks */,
 				AE66E128275369D4006432FE /* libavformat.a in Frameworks */,
 				AEA0A11A27884A350044D012 /* GrandKit in Frameworks */,
 				AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */,
@@ -1600,7 +1595,6 @@
 			files = (
 				AEA0A11C27884A5C0044D012 /* GrandKit in Frameworks */,
 				72041D621849001868817C60 /* Pods_KeyboardWork.framework in Frameworks */,
-				AE35149827CB8EBF000326F1 /* Matrix.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1630,7 +1624,6 @@
 				AE62CB0C272542F8007D51CD /* libmp3lame.a in Frameworks */,
 				AEA0A11827884A1B0044D012 /* GrandKit in Frameworks */,
 				AE66E121275369D4006432FE /* libavutil.a in Frameworks */,
-				AE35149927CB8EBF000326F1 /* Matrix.framework in Frameworks */,
 				AE66E130275369D4006432FE /* libswresample.a in Frameworks */,
 				AE66E12A275369D4006432FE /* libavformat.a in Frameworks */,
 				AE66E12D275369D4006432FE /* libavdevice.a in Frameworks */,
@@ -2462,7 +2455,6 @@
 		AE66E14D2753790E006432FE /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
-				AE35149627CB8EBF000326F1 /* Matrix.framework */,
 				AE66E1DC2753AFC1006432FE /* IJKMediaFramework.framework */,
 				AE66E14E2753791D006432FE /* opencv2.framework */,
 			);

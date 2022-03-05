@@ -10,11 +10,7 @@ import WebKit
 import Library
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, MatrixPluginListenerDelegate {
-    func onReport(_ issue: MatrixIssue!) {
-        
-    }
-    
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
@@ -46,15 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MatrixPluginListenerDeleg
         }
         
         
-        
-        let matrix = Matrix.sharedInstance() as! Matrix
-        let build = MatrixBuilder()
-        build.pluginListener = self
-        
-        let memoryStatPlugin = WCMemoryStatPlugin()
-        build.add(memoryStatPlugin)
-        matrix.add(build)
-        memoryStatPlugin.start()
+
         // Override point for customization after application launch.
 
         
