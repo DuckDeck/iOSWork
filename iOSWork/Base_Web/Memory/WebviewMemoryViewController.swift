@@ -130,12 +130,12 @@ class webVC:UIViewController{
         return v
     }()
     
-    lazy var webView : WKWebView = {
+    lazy var webView : MMWwb = {
         let config = WKWebViewConfiguration()
         config.preferences = WKPreferences()
         config.preferences.minimumFontSize = 10
         config.websiteDataStore = WKWebsiteDataStore.nonPersistent()
-        let v = WKWebView.init(frame: CGRect.zero, configuration: config)
+        let v = MMWwb.init(frame: CGRect.zero, configuration: config)
         v.isMultipleTouchEnabled = true
         v.navigationDelegate = self
         v.uiDelegate = self
@@ -154,4 +154,10 @@ class webVC:UIViewController{
 
 extension webVC:WKUIDelegate,WKNavigationDelegate{
     
+}
+
+class MMWwb:WKWebView{
+    deinit {
+        print("=========WKWebView deinit =========")
+    }
 }
