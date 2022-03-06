@@ -615,6 +615,8 @@
 		AE72F53C273EBDD40060456A /* CitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F523273EB9A50060456A /* CitySearchView.swift */; };
 		AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F51F273EB9A40060456A /* CitySearchResultView.swift */; };
 		AE72F541273EBDE20060456A /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = AE72F526273EB9A50060456A /* city.json */; };
+		AE74AAC727D4A14C00296960 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74AAC627D4A14C00296960 /* CalculatorViewController.swift */; };
+		AE74AAC927D4A36A00296960 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74AAC827D4A36A00296960 /* Calculator.swift */; };
 		AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7425272251E300F0C19C /* AppDelegate.swift */; };
 		AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7427272251E300F0C19C /* SceneDelegate.swift */; };
 		AE7E742A272251E300F0C19C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7429272251E300F0C19C /* ViewController.swift */; };
@@ -1339,6 +1341,8 @@
 		AE72F525273EB9A50060456A /* CityChooseViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CityChooseViewController+Delegate.swift"; sourceTree = "<group>"; };
 		AE72F526273EB9A50060456A /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		AE72F527273EB9A50060456A /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		AE74AAC627D4A14C00296960 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		AE74AAC827D4A36A00296960 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		AE7E7422272251E300F0C19C /* iOSWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7E7425272251E300F0C19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7E7427272251E300F0C19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -2159,6 +2163,7 @@
 		AE62CBE32725660A007D51CD /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				AE74AAC527D4A13B00296960 /* Calculator */,
 				AEE0110327425D6B00C155D8 /* LinkGame */,
 				AEE010FE274257F900C155D8 /* PointLock */,
 				AEE0105D274255E800C155D8 /* Mito */,
@@ -2585,6 +2590,15 @@
 				AE72F527273EB9A50060456A /* CityTableViewCell.swift */,
 			);
 			path = CityChoose;
+			sourceTree = "<group>";
+		};
+		AE74AAC527D4A13B00296960 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				AE74AAC627D4A14C00296960 /* CalculatorViewController.swift */,
+				AE74AAC827D4A36A00296960 /* Calculator.swift */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 		AE7E7419272251E300F0C19C = {
@@ -3942,6 +3956,7 @@
 				AE66E19227537F98006432FE /* ImageRecognitionViewController.swift in Sources */,
 				AEE011022742581500C155D8 /* LockView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
+				AE74AAC727D4A14C00296960 /* CalculatorViewController.swift in Sources */,
 				AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE08AA9027C684D400EE0813 /* MediaTool.swift in Sources */,
 				AE62CAFB272542DC007D51CD /* ShadowEncoder.swift in Sources */,
@@ -4018,6 +4033,7 @@
 				AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */,
 				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AEE010732742560200C155D8 /* ImageSetListViewController.swift in Sources */,
+				AE74AAC927D4A36A00296960 /* Calculator.swift in Sources */,
 				AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */,
 				AE66E1B427538679006432FE /* PreviewView.mm in Sources */,
 				AEE010C92742569200C155D8 /* MJRefreshBackGifFooter.m in Sources */,
