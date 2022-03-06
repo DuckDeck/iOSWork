@@ -7,7 +7,7 @@
 
 import Foundation
 class ProjectMenuViewController:BaseViewController{
-    var arrData = ["五笔查询","美图","9点解锁","连连看"]
+    var arrData = ["五笔查询","美图","9点解锁","连连看","计算器"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -59,10 +59,10 @@ extension ProjectMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let vc = LinkGameViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
-//        case 4:
-//            let vc = GridViewController()
-//            vc.hidesBottomBarWhenPushed = true
-//            navigationController?.pushViewController(vc, animated: true)
+        case 4:
+            let vc = CalculatorViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
 //        case 5:
 //            let vc = SnapkitTableViewController()
 //            vc.hidesBottomBarWhenPushed = true
