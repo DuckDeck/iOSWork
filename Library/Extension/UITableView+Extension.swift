@@ -111,23 +111,3 @@ extension UITableView{
     
 }
 
-extension UITableViewCell{
-    open override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        var su = superview as? UITableView
-        if su == nil {
-            su = superview?.superview as? UITableView
-        }
-        if su != nil{
-            let path = su!.indexPath(for: self)
-            let rows = su!.numberOfRows(inSection: path!.section)
-            self.separatorInset = UIEdgeInsets(top: 0,left: 15,bottom: 0,right: 0)
-            if path?.row == rows - 1{
-                self.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: UIScreen.main.bounds.size.width)
-            } else {
-                self.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
-            }
-        }
-    }
-}
-

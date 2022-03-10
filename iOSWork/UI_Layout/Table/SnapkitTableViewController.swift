@@ -77,6 +77,10 @@ class SnapkitTableViewController: UIViewController {
         dismiss(animated: true)
     }
 
+    deinit {
+        print("==============\(self.self)============")
+    }
+    
     func createModel() {
         var m = Model1()
         m.content = "小哥我在办公室有台式机2台，家里台式长期吃灰，更不用移动PC好多年。05年买的三星X05，用了12年，17年早些时候，180元在咸鱼也被我卖"

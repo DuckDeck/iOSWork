@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        config.applicationGroupIdentifier = "group.ShadowEdge.iOSProject"
 //        
 //        Bugly.start(withAppId: "ddac261ac5", config: config)
-
+        
         NSSetUncaughtExceptionHandler { exp in
             print(exp.name)
             print(exp.callStackReturnAddresses)

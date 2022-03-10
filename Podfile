@@ -13,6 +13,7 @@ pod "SnapKit"
 pod "SkeletonView"
 pod "SwiftyJSON"
 pod "SwiftSoup"
+pod 'OOMDetector', '1.3'
 end
 
 target 'CLangWork' do
