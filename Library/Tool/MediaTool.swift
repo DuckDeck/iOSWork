@@ -7,24 +7,25 @@
 
 import Foundation
 import Alamofire
-
-
-enum MediaSource{
-    case url(String),
-         image(UIImage),
-         data(Data)
-}
-
-
 class MediaTool{
-    static func downloadToFile(resources: [MediaSource], completed: @escaping ((_ failCount:Int, _ paths: [String])->Void)){
-        let group = DispatchGroup()
-        let queue = DispatchQueue(label: "MediaDownload")
+    static func downloadToFile(resources: [String], completed: @escaping ((_ failCount:Int, _ paths: [String])->Void)){
+        var failCount = 0
+        var paths = [String]()
         let oq = OperationQueue()
-        for item in resources{
-            
-        }
         
+        for item in resources{
+            let q = DownQueue(url: item) { path, err in
+                if err != nil{
+                    failCount += 1
+                } else{
+                    paths.append(path)
+                }
+                if failCount + paths.count == resources.count{
+                    completed(failCount,paths)
+                }
+            }
+            oq.addOperation(q)
+        }
     }
 }
 
@@ -48,7 +49,7 @@ class DownQueue: Operation {
     }
     
     override func start() {
-        let download = AF.download(self.url!) { _, res in
+        let download = AF.download(self.url!, to:  { _, res in
             let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first!
             let fileName = res.suggestedFilename ?? ""
             if fileName.hasSuffix(".jpg") || fileName.hasSuffix(".jpeg"){
@@ -61,7 +62,7 @@ class DownQueue: Operation {
                 
             }
             return (documentsUrl.appendingPathComponent(res.suggestedFilename!), [.removePreviousFile, .createIntermediateDirectories])
-        }
+        })
         
         
         download.response(queue: DispatchQueue.main) { resData in

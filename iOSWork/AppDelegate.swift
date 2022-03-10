@@ -41,6 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Store.AppErrors.Value = errors
         }
         
+        
+
         // Override point for customization after application launch.
 
         

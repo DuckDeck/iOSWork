@@ -18,6 +18,14 @@ class ExtraView: UIView {
         self.solidColorMode = solidColorMode
         
         super.init(frame: CGRect.zero)
+        
+        self.backgroundColor = UIColor.white
+        
+        addSubview(btnBack)
+        btnBack.snp.makeConstraints { make in
+            make.right.equalTo(-10)
+            make.top.equalTo(10)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,4 +35,22 @@ class ExtraView: UIView {
         
         super.init(coder: aDecoder)
     }
+    
+    @objc func back(){
+        removeFromSuperview()
+    }
+    
+    lazy var btnBack: UIButton = {
+        let v = UIButton()
+        v.setTitle("返回", for: .normal)
+        v.setTitleColor(UIColor.red, for: .normal)
+        v.addTarget(self, action: #selector(back), for: .touchUpInside)
+        return v
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let v = UIStackView()
+        return v
+    }()
+    
 }

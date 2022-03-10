@@ -12,6 +12,7 @@
 		A2FBDD25B3319BA5096F29BC /* Pods_CLangWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */; };
 		AE043D7527896BFB00626B82 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0A121278940680044D012 /* ImageInfo.swift */; };
 		AE043D7827897BA600626B82 /* ImageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE043D7727897BA600626B82 /* ImageInfoViewController.swift */; };
+		AE080CD227D3A065007F42E1 /* WebviewMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE080CD127D3A065007F42E1 /* WebviewMemoryViewController.swift */; };
 		AE08AA8C27C681D500EE0813 /* MediaTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8B27C681D500EE0813 /* MediaTool.swift */; };
 		AE08AA8E27C684CB00EE0813 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */; };
 		AE08AA9027C684D400EE0813 /* MediaTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8B27C681D500EE0813 /* MediaTool.swift */; };
@@ -57,6 +58,11 @@
 		AE28B87427C5033F00D399F3 /* ForwardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B87327C5033F00D399F3 /* ForwardingView.swift */; };
 		AE28B87627C5035700D399F3 /* KeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B87527C5035700D399F3 /* KeyboardLayout.swift */; };
 		AE28B87827C5037000D399F3 /* KeyboardInputTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B87727C5037000D399F3 /* KeyboardInputTraits.swift */; };
+		AE35149B27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
+		AE35149C27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
+		AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
+		AE35149F27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
+		AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48CECD27C7D10B009A0673 /* asset.xcassets */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08ED273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -609,6 +615,8 @@
 		AE72F53C273EBDD40060456A /* CitySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F523273EB9A50060456A /* CitySearchView.swift */; };
 		AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F51F273EB9A40060456A /* CitySearchResultView.swift */; };
 		AE72F541273EBDE20060456A /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = AE72F526273EB9A50060456A /* city.json */; };
+		AE74AAC727D4A14C00296960 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74AAC627D4A14C00296960 /* CalculatorViewController.swift */; };
+		AE74AAC927D4A36A00296960 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74AAC827D4A36A00296960 /* Calculator.swift */; };
 		AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7425272251E300F0C19C /* AppDelegate.swift */; };
 		AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7427272251E300F0C19C /* SceneDelegate.swift */; };
 		AE7E742A272251E300F0C19C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7429272251E300F0C19C /* ViewController.swift */; };
@@ -945,6 +953,7 @@
 		A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLangWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06737A9167AB79DD4D5235F /* Pods-CLangWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLangWork.release.xcconfig"; path = "Target Support Files/Pods-CLangWork/Pods-CLangWork.release.xcconfig"; sourceTree = "<group>"; };
 		AE043D7727897BA600626B82 /* ImageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoViewController.swift; sourceTree = "<group>"; };
+		AE080CD127D3A065007F42E1 /* WebviewMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewMemoryViewController.swift; sourceTree = "<group>"; };
 		AE08AA8B27C681D500EE0813 /* MediaTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTool.swift; sourceTree = "<group>"; };
 		AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryViewController.swift; sourceTree = "<group>"; };
@@ -987,9 +996,12 @@
 		AE28B87327C5033F00D399F3 /* ForwardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardingView.swift; sourceTree = "<group>"; };
 		AE28B87527C5035700D399F3 /* KeyboardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayout.swift; sourceTree = "<group>"; };
 		AE28B87727C5037000D399F3 /* KeyboardInputTraits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardInputTraits.swift; sourceTree = "<group>"; };
+		AE35149A27CBB549000326F1 /* 5k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5k.jpg; sourceTree = "<group>"; };
+		AE35149D27CBB54D000326F1 /* 8k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k.jpg; sourceTree = "<group>"; };
 		AE38468627BB43F9004F6765 /* iOSWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSWork.entitlements; sourceTree = "<group>"; };
 		AE38468727BB440A004F6765 /* KeyboardWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardWork.entitlements; sourceTree = "<group>"; };
 		AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardWork-Bridging-Header.h"; sourceTree = "<group>"; };
+		AE48CECD27C7D10B009A0673 /* asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = asset.xcassets; sourceTree = "<group>"; };
 		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
 		AE4D08EB273025DB00899D2C /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomURLSchemeHandler.swift; sourceTree = "<group>"; };
@@ -1329,6 +1341,8 @@
 		AE72F525273EB9A50060456A /* CityChooseViewController+Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CityChooseViewController+Delegate.swift"; sourceTree = "<group>"; };
 		AE72F526273EB9A50060456A /* city.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.json; sourceTree = "<group>"; };
 		AE72F527273EB9A50060456A /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		AE74AAC627D4A14C00296960 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		AE74AAC827D4A36A00296960 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		AE7E7422272251E300F0C19C /* iOSWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7E7425272251E300F0C19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7E7427272251E300F0C19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -1838,6 +1852,8 @@
 		AE62C9E4272541C8007D51CD /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				AE35149D27CBB54D000326F1 /* 8k.jpg */,
+				AE35149A27CBB549000326F1 /* 5k.jpg */,
 				AE62C9E5272541D0007D51CD /* gif0.gif */,
 			);
 			path = Image;
@@ -2147,6 +2163,7 @@
 		AE62CBE32725660A007D51CD /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				AE74AAC527D4A13B00296960 /* Calculator */,
 				AEE0110327425D6B00C155D8 /* LinkGame */,
 				AEE010FE274257F900C155D8 /* PointLock */,
 				AEE0105D274255E800C155D8 /* Mito */,
@@ -2575,6 +2592,15 @@
 			path = CityChoose;
 			sourceTree = "<group>";
 		};
+		AE74AAC527D4A13B00296960 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				AE74AAC627D4A14C00296960 /* CalculatorViewController.swift */,
+				AE74AAC827D4A36A00296960 /* Calculator.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
 		AE7E7419272251E300F0C19C = {
 			isa = PBXGroup;
 			children = (
@@ -2662,6 +2688,7 @@
 				AE7E7453272252AC00F0C19C /* Info.plist */,
 				AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */,
 				AE28B86527C501C000D399F3 /* Global.swift */,
+				AE48CECD27C7D10B009A0673 /* asset.xcassets */,
 			);
 			path = KeyboardWork;
 			sourceTree = "<group>";
@@ -2698,6 +2725,7 @@
 				AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */,
 				AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */,
 				AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */,
+				AE080CD127D3A065007F42E1 /* WebviewMemoryViewController.swift */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -3607,6 +3635,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */,
 				AEE0114D27425D8800C155D8 /* p_1.png in Resources */,
 				AE4D08EC273025DB00899D2C /* demo.html in Resources */,
 				AE66E19927538149006432FE /* haarcascade_eye_tree_eyeglasses.xml in Resources */,
@@ -3616,6 +3645,7 @@
 				AEE0114627425D8800C155D8 /* p_14.png in Resources */,
 				AE1C4F6B274346BD0097EAC1 /* new.zip in Resources */,
 				AE7E7432272251E500F0C19C /* LaunchScreen.storyboard in Resources */,
+				AE35149B27CBB549000326F1 /* 5k.jpg in Resources */,
 				AE62C9E6272541D0007D51CD /* gif0.gif in Resources */,
 				AEE0113B27425D8800C155D8 /* room.jpg in Resources */,
 				AEF8666E274B9BCD002E33E5 /* NOTICE.txt in Resources */,
@@ -3657,6 +3687,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE35149F27CBB54D000326F1 /* 8k.jpg in Resources */,
 				AE4D08ED273025DB00899D2C /* demo.html in Resources */,
 				AE62C9E3272541C3007D51CD /* cxk.mp4 in Resources */,
 				AE7E74472722528400F0C19C /* Preview Assets.xcassets in Resources */,
@@ -3666,6 +3697,7 @@
 				AE4D091C273032FC00899D2C /* upload.html in Resources */,
 				AE62C9EB272541E2007D51CD /* question.html in Resources */,
 				AEE010B72742569200C155D8 /* MJRefresh.bundle in Resources */,
+				AE35149C27CBB549000326F1 /* 5k.jpg in Resources */,
 				AE7E74442722528400F0C19C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3674,6 +3706,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3923,6 +3956,7 @@
 				AE66E19227537F98006432FE /* ImageRecognitionViewController.swift in Sources */,
 				AEE011022742581500C155D8 /* LockView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
+				AE74AAC727D4A14C00296960 /* CalculatorViewController.swift in Sources */,
 				AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE08AA9027C684D400EE0813 /* MediaTool.swift in Sources */,
 				AE62CAFB272542DC007D51CD /* ShadowEncoder.swift in Sources */,
@@ -3999,6 +4033,7 @@
 				AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */,
 				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AEE010732742560200C155D8 /* ImageSetListViewController.swift in Sources */,
+				AE74AAC927D4A36A00296960 /* Calculator.swift in Sources */,
 				AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */,
 				AE66E1B427538679006432FE /* PreviewView.mm in Sources */,
 				AEE010C92742569200C155D8 /* MJRefreshBackGifFooter.m in Sources */,
@@ -4046,6 +4081,7 @@
 				AE7F9133272AC3C900733BC8 /* OffSreenRenderViewController.swift in Sources */,
 				AEE010AD2742569200C155D8 /* MJRefreshConst.m in Sources */,
 				AEE0115427425D8800C155D8 /* BaseBoard.swift in Sources */,
+				AE080CD227D3A065007F42E1 /* WebviewMemoryViewController.swift in Sources */,
 				AEE010E42742569200C155D8 /* MJRefreshStateHeader.m in Sources */,
 				AE1C4F6C274346BD0097EAC1 /* bspatch.c in Sources */,
 				AE62CB4027254947007D51CD /* UIButton+Extension.swift in Sources */,
@@ -4642,6 +4678,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = iOSWork/iOSWork.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
@@ -4681,6 +4718,7 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/iOSWork/bridge.h";
 				SWIFT_VERSION = 5.0;
@@ -4697,6 +4735,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = iOSWork/iOSWork.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3YCGH6CCXA;
@@ -4744,8 +4783,6 @@
 					"-framework",
 					"\"Alamofire\"",
 					"-framework",
-					"\"Bugly\"",
-					"-framework",
 					"\"CFNetwork\"",
 					"-framework",
 					"\"CoreGraphics\"",
@@ -4786,6 +4823,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/iOSWork/bridge.h";
 				SWIFT_VERSION = 5.0;
@@ -4889,6 +4927,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KeyboardWork",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
@@ -4924,6 +4963,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/KeyboardWork",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
