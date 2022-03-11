@@ -8,6 +8,7 @@
 import Foundation
 import ImageIO
 import GrandKit
+import UIKit
 
 struct ImageExif:Codable{
     var ExifVersion = ""
@@ -116,10 +117,21 @@ struct ImageSource{
                 print("加载\(url)的图片获取UIImage用时\(span!.milliseconds)毫秒")
                 loadImg?(img)
             }
-
-
             
         }
-    }    
+    }
+    
+    func resizeImage(size:CGFloat)->UIImage?{
+      
+        let downsampleOptions = [
+            kCGImageSourceCreateThumbnailFromImageAlways: true,
+            kCGImageSourceShouldCacheImmediately: true,
+            kCGImageSourceCreateThumbnailWithTransform: true,
+            kCGImageSourceThumbnailMaxPixelSize: size] as CFDictionary
+        guard let downsampledImage = CGImageSourceCreateThumbnailAtIndex(imgSource!, 0, downsampleOptions) else {
+            return nil
+        }
+        return UIImage(cgImage: downsampledImage)
+    }
 }
 
