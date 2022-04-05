@@ -15,6 +15,8 @@ let kColora6a6a6 = UIColor(hexString: "a6a6a6")!
 let kColor898a8d = UIColor(hexString: "898a8d")!
 let kColord1d5db = UIColor(hexString: "d1d5db")!
 let kColor888888 = UIColor(hexString: "888888")!
+let kColorbbbbbb = UIColor(hexString: "bbbbbb")!
+let kCOlora9abb0 = UIColor(hexString: "a9abb0")!
 
 
 let kSCREEN_WIDTH = UIScreen.main.bounds.size.width

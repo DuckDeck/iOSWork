@@ -160,6 +160,11 @@ extension UIView{
         return self
     }
     
+    func addBorder() {
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.random.cgColor
+    }
+    
     func bgColor(color:UIColor) -> Self {
         self.backgroundColor = color
         return self

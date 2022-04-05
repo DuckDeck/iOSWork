@@ -119,14 +119,13 @@ class KeyboardView: UIView ,keyPressDeleaget{
     func switchKeyboard(keyboardType:KeyboardType){
         var newKeyboard : Keyboard?
         switch keyboardType {
-      
+        case .chinese9:
+            newKeyboard = NineKeyboardView()
         case .number:
-//            newKeyboard = NumberKeyboardView(isShowNum: globalKeyboardScene == .normal)
-            break
+            newKeyboard = NumKeyboardView()
         case .emoji:
             return
         default:
-         
             newKeyboard = FullKeyboardView(keyboardType: keyboardType)
         }
         

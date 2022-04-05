@@ -857,6 +857,22 @@
 		AEE3DB5327FC0FD8007B2B58 /* icon_switch_chinese.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB4027FC0FD8007B2B58 /* icon_switch_chinese.pdf */; };
 		AEE3DB5427FC0FD8007B2B58 /* icon_arrow_back.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB4127FC0FD8007B2B58 /* icon_arrow_back.pdf */; };
 		AEE3DB5627FC1081007B2B58 /* icon_switch_english.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB5527FC1081007B2B58 /* icon_switch_english.pdf */; };
+		AEE3DB5927FC2FFA007B2B58 /* NineKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB5827FC2FFA007B2B58 /* NineKeyboardView.swift */; };
+		AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB5A27FC307B007B2B58 /* NumKeysView.swift */; };
+		AEE3DB5E27FC31C4007B2B58 /* NumKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB5D27FC31C4007B2B58 /* NumKeyboardView.swift */; };
+		AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */; };
+		AEE3DB6427FC3DAC007B2B58 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB6327FC3DAC007B2B58 /* HeaderView.swift */; };
+		AEE3DB7227FC414F007B2B58 /* icon_setting_keyboard_26enus_select.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6627FC414E007B2B58 /* icon_setting_keyboard_26enus_select.pdf */; };
+		AEE3DB7327FC414F007B2B58 /* icon_setting_keyboard_26zhs_select.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6727FC414E007B2B58 /* icon_setting_keyboard_26zhs_select.pdf */; };
+		AEE3DB7427FC414F007B2B58 /* icon_setting_keyboard_typeinchange_normal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6827FC414E007B2B58 /* icon_setting_keyboard_typeinchange_normal.pdf */; };
+		AEE3DB7527FC414F007B2B58 /* icon_setting_keyboard_9zhs_select.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6927FC414E007B2B58 /* icon_setting_keyboard_9zhs_select.pdf */; };
+		AEE3DB7727FC414F007B2B58 /* icon_setting_keyboard_26zhs_normal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6B27FC414E007B2B58 /* icon_setting_keyboard_26zhs_normal.pdf */; };
+		AEE3DB7827FC414F007B2B58 /* icon_setting_keyboard_typeinchange_select.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6C27FC414E007B2B58 /* icon_setting_keyboard_typeinchange_select.pdf */; };
+		AEE3DB7927FC414F007B2B58 /* icon_setting_set_function.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6D27FC414E007B2B58 /* icon_setting_set_function.pdf */; };
+		AEE3DB7A27FC414F007B2B58 /* icon_setting_keyboard_9zhs_normal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6E27FC414E007B2B58 /* icon_setting_keyboard_9zhs_normal.pdf */; };
+		AEE3DB7B27FC414F007B2B58 /* icon_setting_set.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6F27FC414E007B2B58 /* icon_setting_set.pdf */; };
+		AEE3DB7C27FC414F007B2B58 /* icon_setting_keyboard_26enus_normal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB7027FC414E007B2B58 /* icon_setting_keyboard_26enus_normal.pdf */; };
+		AEE3DB7D27FC414F007B2B58 /* icon_setting_miniapppic.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB7127FC414E007B2B58 /* icon_setting_miniapppic.pdf */; };
 		AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE3272946FF00DCA7B8 /* Group.swift */; };
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
@@ -1569,6 +1585,22 @@
 		AEE3DB4027FC0FD8007B2B58 /* icon_switch_chinese.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_switch_chinese.pdf; sourceTree = "<group>"; };
 		AEE3DB4127FC0FD8007B2B58 /* icon_arrow_back.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_arrow_back.pdf; sourceTree = "<group>"; };
 		AEE3DB5527FC1081007B2B58 /* icon_switch_english.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_switch_english.pdf; sourceTree = "<group>"; };
+		AEE3DB5827FC2FFA007B2B58 /* NineKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineKeyboardView.swift; sourceTree = "<group>"; };
+		AEE3DB5A27FC307B007B2B58 /* NumKeysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumKeysView.swift; sourceTree = "<group>"; };
+		AEE3DB5D27FC31C4007B2B58 /* NumKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumKeyboardView.swift; sourceTree = "<group>"; };
+		AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		AEE3DB6327FC3DAC007B2B58 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		AEE3DB6627FC414E007B2B58 /* icon_setting_keyboard_26enus_select.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_keyboard_26enus_select.pdf; sourceTree = "<group>"; };
+		AEE3DB6727FC414E007B2B58 /* icon_setting_keyboard_26zhs_select.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_keyboard_26zhs_select.pdf; sourceTree = "<group>"; };
+		AEE3DB6827FC414E007B2B58 /* icon_setting_keyboard_typeinchange_normal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_keyboard_typeinchange_normal.pdf; sourceTree = "<group>"; };
+		AEE3DB6927FC414E007B2B58 /* icon_setting_keyboard_9zhs_select.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_keyboard_9zhs_select.pdf; sourceTree = "<group>"; };
+		AEE3DB6B27FC414E007B2B58 /* icon_setting_keyboard_26zhs_normal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_keyboard_26zhs_normal.pdf; sourceTree = "<group>"; };
+		AEE3DB6C27FC414E007B2B58 /* icon_setting_keyboard_typeinchange_select.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_keyboard_typeinchange_select.pdf; sourceTree = "<group>"; };
+		AEE3DB6D27FC414E007B2B58 /* icon_setting_set_function.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_set_function.pdf; sourceTree = "<group>"; };
+		AEE3DB6E27FC414E007B2B58 /* icon_setting_keyboard_9zhs_normal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_keyboard_9zhs_normal.pdf; sourceTree = "<group>"; };
+		AEE3DB6F27FC414E007B2B58 /* icon_setting_set.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_set.pdf; sourceTree = "<group>"; };
+		AEE3DB7027FC414E007B2B58 /* icon_setting_keyboard_26enus_normal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_keyboard_26enus_normal.pdf; sourceTree = "<group>"; };
+		AEE3DB7127FC414E007B2B58 /* icon_setting_miniapppic.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_miniapppic.pdf; sourceTree = "<group>"; };
 		AEF0EBE3272946FF00DCA7B8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AEF0EBE42729470000DCA7B8 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
@@ -1715,6 +1747,9 @@
 		AE1C4F1E274341140097EAC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AEE3DB6227FC3D9E007B2B58 /* Header */,
+				AEE3DB5C27FC31B1007B2B58 /* NumKey */,
+				AEE3DB5727FC2FD6007B2B58 /* 9Key */,
 				AEE3DB2427FC0C2E007B2B58 /* 26Key */,
 				AEE3DB1F27FC0BD0007B2B58 /* PopView */,
 				AEE3DB0C27FC0957007B2B58 /* KeyboardView.swift */,
@@ -3240,11 +3275,64 @@
 			isa = PBXGroup;
 			children = (
 				AEE3DB2C27FC0D2A007B2B58 /* Store.swift */,
+				AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
 		};
 		AEE3DB2E27FC0FBF007B2B58 /* pdf */ = {
+			isa = PBXGroup;
+			children = (
+				AEE3DB7E27FC4155007B2B58 /* keyboard */,
+				AEE3DB6527FC4140007B2B58 /* setting */,
+			);
+			path = pdf;
+			sourceTree = "<group>";
+		};
+		AEE3DB5727FC2FD6007B2B58 /* 9Key */ = {
+			isa = PBXGroup;
+			children = (
+				AEE3DB5827FC2FFA007B2B58 /* NineKeyboardView.swift */,
+				AEE3DB5A27FC307B007B2B58 /* NumKeysView.swift */,
+			);
+			path = 9Key;
+			sourceTree = "<group>";
+		};
+		AEE3DB5C27FC31B1007B2B58 /* NumKey */ = {
+			isa = PBXGroup;
+			children = (
+				AEE3DB5D27FC31C4007B2B58 /* NumKeyboardView.swift */,
+			);
+			path = NumKey;
+			sourceTree = "<group>";
+		};
+		AEE3DB6227FC3D9E007B2B58 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				AEE3DB6327FC3DAC007B2B58 /* HeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		AEE3DB6527FC4140007B2B58 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				AEE3DB6E27FC414E007B2B58 /* icon_setting_keyboard_9zhs_normal.pdf */,
+				AEE3DB6927FC414E007B2B58 /* icon_setting_keyboard_9zhs_select.pdf */,
+				AEE3DB7027FC414E007B2B58 /* icon_setting_keyboard_26enus_normal.pdf */,
+				AEE3DB6627FC414E007B2B58 /* icon_setting_keyboard_26enus_select.pdf */,
+				AEE3DB6B27FC414E007B2B58 /* icon_setting_keyboard_26zhs_normal.pdf */,
+				AEE3DB6727FC414E007B2B58 /* icon_setting_keyboard_26zhs_select.pdf */,
+				AEE3DB6827FC414E007B2B58 /* icon_setting_keyboard_typeinchange_normal.pdf */,
+				AEE3DB6C27FC414E007B2B58 /* icon_setting_keyboard_typeinchange_select.pdf */,
+				AEE3DB7127FC414E007B2B58 /* icon_setting_miniapppic.pdf */,
+				AEE3DB6D27FC414E007B2B58 /* icon_setting_set_function.pdf */,
+				AEE3DB6F27FC414E007B2B58 /* icon_setting_set.pdf */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		AEE3DB7E27FC4155007B2B58 /* keyboard */ = {
 			isa = PBXGroup;
 			children = (
 				AEE3DB5527FC1081007B2B58 /* icon_switch_english.pdf */,
@@ -3267,7 +3355,7 @@
 				AEE3DB3027FC0FD7007B2B58 /* icon_space_black.pdf */,
 				AEE3DB4027FC0FD8007B2B58 /* icon_switch_chinese.pdf */,
 			);
-			path = pdf;
+			path = keyboard;
 			sourceTree = "<group>";
 		};
 		AEF0EBE2272946E400DCA7B8 /* Thread */ = {
@@ -3795,24 +3883,35 @@
 			files = (
 				AEE3DB4227FC0FD8007B2B58 /* icon_delete_white.pdf in Resources */,
 				AEE3DB4527FC0FD8007B2B58 /* icon_keyboard_pop_center_big.pdf in Resources */,
+				AEE3DB7827FC414F007B2B58 /* icon_setting_keyboard_typeinchange_select.pdf in Resources */,
+				AEE3DB7727FC414F007B2B58 /* icon_setting_keyboard_26zhs_normal.pdf in Resources */,
 				AEE3DB5427FC0FD8007B2B58 /* icon_arrow_back.pdf in Resources */,
 				AEE3DB4927FC0FD8007B2B58 /* icon_enter_black.pdf in Resources */,
 				AEE3DB4C27FC0FD8007B2B58 /* icon_keyboard_pop_center.pdf in Resources */,
 				AEE3DB5127FC0FD8007B2B58 /* icon_clear_balck.pdf in Resources */,
 				AEE3DB4B27FC0FD8007B2B58 /* icon_arrow_up_black.pdf in Resources */,
 				AEE3DB4827FC0FD8007B2B58 /* icon_keyboard_shift_lock.pdf in Resources */,
+				AEE3DB7A27FC414F007B2B58 /* icon_setting_keyboard_9zhs_normal.pdf in Resources */,
 				AEE3DB5627FC1081007B2B58 /* icon_switch_english.pdf in Resources */,
 				AEE3DB4727FC0FD8007B2B58 /* icon_keyboard_pop_right.pdf in Resources */,
 				AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */,
+				AEE3DB7327FC414F007B2B58 /* icon_setting_keyboard_26zhs_select.pdf in Resources */,
+				AEE3DB7227FC414F007B2B58 /* icon_setting_keyboard_26enus_select.pdf in Resources */,
 				AEE3DB4F27FC0FD8007B2B58 /* icon_keyboard_enter_black.pdf in Resources */,
 				AEE3DB5327FC0FD8007B2B58 /* icon_switch_chinese.pdf in Resources */,
+				AEE3DB7D27FC414F007B2B58 /* icon_setting_miniapppic.pdf in Resources */,
 				AEE3DB4A27FC0FD8007B2B58 /* icon_keyboard_shift_on.pdf in Resources */,
 				AEE3DB5227FC0FD8007B2B58 /* icon_keyboard_pop_left.pdf in Resources */,
+				AEE3DB7927FC414F007B2B58 /* icon_setting_set_function.pdf in Resources */,
 				AEE3DB4627FC0FD8007B2B58 /* icon_keyboard_pop_center_bigger.pdf in Resources */,
+				AEE3DB7427FC414F007B2B58 /* icon_setting_keyboard_typeinchange_normal.pdf in Resources */,
 				AEE3DB5027FC0FD8007B2B58 /* icon_keyboard_enter_gray.pdf in Resources */,
 				AEE3DB4327FC0FD8007B2B58 /* icon_space_black.pdf in Resources */,
 				AEE3DB4427FC0FD8007B2B58 /* icon_keyboard_shift_off.pdf in Resources */,
 				AEE3DB4D27FC0FD8007B2B58 /* icon_delete_black.pdf in Resources */,
+				AEE3DB7C27FC414F007B2B58 /* icon_setting_keyboard_26enus_normal.pdf in Resources */,
+				AEE3DB7527FC414F007B2B58 /* icon_setting_keyboard_9zhs_select.pdf in Resources */,
+				AEE3DB7B27FC414F007B2B58 /* icon_setting_set.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4425,8 +4524,10 @@
 			files = (
 				AEE3DB2927FC0C45007B2B58 /* FullKeyboardView.swift in Sources */,
 				AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
+				AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */,
 				AE1C4F38274341FE0097EAC1 /* Array+Extension.swift in Sources */,
 				AEE3DB2D27FC0D2A007B2B58 /* Store.swift in Sources */,
+				AEE3DB5E27FC31C4007B2B58 /* NumKeyboardView.swift in Sources */,
 				AEF86663274B9A38002E33E5 /* String+Extension.swift in Sources */,
 				AEE3DB1927FC09C1007B2B58 /* UIColor+Extension.swift in Sources */,
 				AEE3DB1127FC0958007B2B58 /* KeyboardView.swift in Sources */,
@@ -4434,12 +4535,15 @@
 				AEE3DB1727FC0960007B2B58 /* KeyboardInfo.swift in Sources */,
 				AEE3DB2827FC0C45007B2B58 /* FullRowKeysView.swift in Sources */,
 				AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */,
+				AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */,
 				AEE3DB1827FC0960007B2B58 /* KeyInfo.swift in Sources */,
 				AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */,
 				AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */,
 				AEF8665D274B7023002E33E5 /* Foundation+Extension.swift in Sources */,
 				AEE3DB2A27FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift in Sources */,
 				AE7E7452272252AC00F0C19C /* KeyboardViewController.swift in Sources */,
+				AEE3DB5927FC2FFA007B2B58 /* NineKeyboardView.swift in Sources */,
+				AEE3DB6427FC3DAC007B2B58 /* HeaderView.swift in Sources */,
 				AE28B86627C501C000D399F3 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
