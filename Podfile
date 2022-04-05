@@ -13,7 +13,6 @@ pod "SnapKit"
 pod "SkeletonView"
 pod "SwiftyJSON"
 pod "SwiftSoup"
-pod 'OOMDetector', '1.3'
 end
 
 target 'CLangWork' do
@@ -45,6 +44,8 @@ target 'KeyboardWork' do
   use_frameworks!
   pod "Kingfisher"
   pod "SnapKit"
+  pod 'YHPDFImageLoader'
+  pod 'SwiftyJSON'
   # Pods for KeyboardWork
 
 end

@@ -12,6 +12,7 @@ PODS:
   - SnapKit (5.0.1)
   - SwiftSoup (2.3.4)
   - SwiftyJSON (5.0.1)
+  - YHPDFImageLoader (1.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - SnapKit
   - SwiftSoup
   - SwiftyJSON
+  - YHPDFImageLoader
 
 SPEC REPOS:
   trunk:
@@ -40,6 +42,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftSoup
     - SwiftyJSON
+    - YHPDFImageLoader
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
@@ -54,7 +57,8 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftSoup: d5b9645498f8d09fdc5f96b9c70b5858099fd411
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  YHPDFImageLoader: cd9628397fff7fd72368cd26dbc5290f05311276
 
-PODFILE CHECKSUM: 3d88f871d7ef1f81039755c8f40ffda6f43a38f6
+PODFILE CHECKSUM: e4c043d9069861170c24584c115472974ed3f3a7
 
 COCOAPODS: 1.11.2
