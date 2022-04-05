@@ -873,6 +873,7 @@
 		AEE3DB7B27FC414F007B2B58 /* icon_setting_set.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB6F27FC414E007B2B58 /* icon_setting_set.pdf */; };
 		AEE3DB7C27FC414F007B2B58 /* icon_setting_keyboard_26enus_normal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB7027FC414E007B2B58 /* icon_setting_keyboard_26enus_normal.pdf */; };
 		AEE3DB7D27FC414F007B2B58 /* icon_setting_miniapppic.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB7127FC414E007B2B58 /* icon_setting_miniapppic.pdf */; };
+		AEE3DB8127FC4209007B2B58 /* icon_menu_close_keyboard.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB8027FC4209007B2B58 /* icon_menu_close_keyboard.pdf */; };
 		AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE3272946FF00DCA7B8 /* Group.swift */; };
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
@@ -1601,6 +1602,7 @@
 		AEE3DB6F27FC414E007B2B58 /* icon_setting_set.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_set.pdf; sourceTree = "<group>"; };
 		AEE3DB7027FC414E007B2B58 /* icon_setting_keyboard_26enus_normal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_keyboard_26enus_normal.pdf; sourceTree = "<group>"; };
 		AEE3DB7127FC414E007B2B58 /* icon_setting_miniapppic.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_miniapppic.pdf; sourceTree = "<group>"; };
+		AEE3DB8027FC4209007B2B58 /* icon_menu_close_keyboard.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_menu_close_keyboard.pdf; sourceTree = "<group>"; };
 		AEF0EBE3272946FF00DCA7B8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		AEF0EBE42729470000DCA7B8 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
@@ -3283,6 +3285,7 @@
 		AEE3DB2E27FC0FBF007B2B58 /* pdf */ = {
 			isa = PBXGroup;
 			children = (
+				AEE3DB7F27FC41AE007B2B58 /* menu */,
 				AEE3DB7E27FC4155007B2B58 /* keyboard */,
 				AEE3DB6527FC4140007B2B58 /* setting */,
 			);
@@ -3356,6 +3359,14 @@
 				AEE3DB4027FC0FD8007B2B58 /* icon_switch_chinese.pdf */,
 			);
 			path = keyboard;
+			sourceTree = "<group>";
+		};
+		AEE3DB7F27FC41AE007B2B58 /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				AEE3DB8027FC4209007B2B58 /* icon_menu_close_keyboard.pdf */,
+			);
+			path = menu;
 			sourceTree = "<group>";
 		};
 		AEF0EBE2272946E400DCA7B8 /* Thread */ = {
@@ -3887,6 +3898,7 @@
 				AEE3DB7727FC414F007B2B58 /* icon_setting_keyboard_26zhs_normal.pdf in Resources */,
 				AEE3DB5427FC0FD8007B2B58 /* icon_arrow_back.pdf in Resources */,
 				AEE3DB4927FC0FD8007B2B58 /* icon_enter_black.pdf in Resources */,
+				AEE3DB8127FC4209007B2B58 /* icon_menu_close_keyboard.pdf in Resources */,
 				AEE3DB4C27FC0FD8007B2B58 /* icon_keyboard_pop_center.pdf in Resources */,
 				AEE3DB5127FC0FD8007B2B58 /* icon_clear_balck.pdf in Resources */,
 				AEE3DB4B27FC0FD8007B2B58 /* icon_arrow_up_black.pdf in Resources */,

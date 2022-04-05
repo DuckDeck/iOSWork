@@ -45,6 +45,14 @@ class KeyboardViewController: UIInputViewController{
     }
     
     func addKeyboard(){
+        
+        globalHeader = HeaderView()
+        view.addSubview(globalHeader!)
+        globalHeader?.snp.makeConstraints({ make in
+            make.left.right.top.equalTo(0)
+            make.height.equalTo(48)
+        })
+        
         globalKeyboard = KeyboardView()
         view.addSubview(globalKeyboard!)
         globalKeyboard?.snp.makeConstraints({ make in

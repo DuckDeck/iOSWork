@@ -23,6 +23,7 @@ let kSCREEN_WIDTH = UIScreen.main.bounds.size.width
 
 
 var keyboardVC : KeyboardViewController?
+var globalHeader: HeaderView?
 var globalKeyboard : KeyboardView?
 
 
