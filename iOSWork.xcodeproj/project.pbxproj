@@ -623,6 +623,9 @@
 		AE7F912A272AC23C00733BC8 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */; };
 		AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */; };
 		AE7F9133272AC3C900733BC8 /* OffSreenRenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */; };
+		AE80EE0727FF017E004566D5 /* PopHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE80EE0627FF017E004566D5 /* PopHintView.swift */; };
+		AE80EE0927FF0795004566D5 /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE80EE0827FF0795004566D5 /* PopViewController.swift */; };
+		AE80EE0A27FF07D2004566D5 /* PopHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE80EE0627FF017E004566D5 /* PopHintView.swift */; };
 		AE8306E127B4B16F00C657DC /* ScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8306E027B4B16F00C657DC /* ScaleViewController.swift */; };
 		AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; };
 		AE890D0A27240DEC00FAB7D7 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -1391,6 +1394,8 @@
 		AE7F9129272AC23C00733BC8 /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 		AE7F912B272AC27E00733BC8 /* MemoryLeak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeak.swift; sourceTree = "<group>"; };
 		AE7F9132272AC3C900733BC8 /* OffSreenRenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffSreenRenderViewController.swift; sourceTree = "<group>"; };
+		AE80EE0627FF017E004566D5 /* PopHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopHintView.swift; sourceTree = "<group>"; };
+		AE80EE0827FF0795004566D5 /* PopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		AE8306E027B4B16F00C657DC /* ScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleViewController.swift; sourceTree = "<group>"; };
 		AE890D0327240DEC00FAB7D7 /* Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE890D0F27240DFC00FAB7D7 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -2207,6 +2212,7 @@
 				AE62CBAB27255C0E007D51CD /* LayoutButton.swift */,
 				AE61165E27410F2C008466AB /* GrandSlider.swift */,
 				AE6B2DD727550E180066017F /* MediaBroswerView.swift */,
+				AE80EE0627FF017E004566D5 /* PopHintView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2645,6 +2651,7 @@
 				AEB649BD273FCCB100BCBF4E /* GridViewController.swift */,
 				AE6B2DDA2755155F0066017F /* MediaBroswerViewController.swift */,
 				AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */,
+				AE80EE0827FF0795004566D5 /* PopViewController.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -4203,6 +4210,7 @@
 				AEE010722742560200C155D8 /* DynamicMitoViewController.swift in Sources */,
 				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
 				AEE0104F2742526700C155D8 /* PaletteViewController.swift in Sources */,
+				AE80EE0927FF0795004566D5 /* PopViewController.swift in Sources */,
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
 				AEE010492742500100C155D8 /* GifViewController.swift in Sources */,
 				AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */,
@@ -4401,6 +4409,7 @@
 				AE66E1D827538EE0006432FE /* HeartView.swift in Sources */,
 				AEE010AA2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
 				AE1C4F5F274346BD0097EAC1 /* compress.c in Sources */,
+				AE80EE0A27FF07D2004566D5 /* PopHintView.swift in Sources */,
 				AE62CB4627254947007D51CD /* UITableView+Extension.swift in Sources */,
 				AE6E5DBF273FB6FF00523EA8 /* Settings.swift in Sources */,
 				AE1C4F66274346BD0097EAC1 /* crctable.c in Sources */,
@@ -4681,6 +4690,7 @@
 				AE62CA792725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
 				AE62CA472725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE62CAEB272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
+				AE80EE0727FF017E004566D5 /* PopHintView.swift in Sources */,
 				AE62CB3927254947007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE6B2DD927550E180066017F /* MediaBroswerView.swift in Sources */,
 				AEE010F72742569200C155D8 /* MJRefreshAutoFooter.m in Sources */,

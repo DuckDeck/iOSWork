@@ -7,7 +7,7 @@
 
 import UIKit
 class UIMenuViewController:BaseViewController{
-    var arrData = ["无限滚动的横向Table","样式Table","优化的Table","流式布局","GRID 布局","自己适应高度 Table","动画效果","图片浏览器","View缩放显示","键盘测试"]
+    var arrData = ["无限滚动的横向Table","样式Table","优化的Table","流式布局","GRID 布局","自己适应高度 Table","动画效果","图片浏览器","View缩放显示","键盘测试","气泡测试"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -80,6 +80,10 @@ extension UIMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 9:
             let vc = TestKeyboardViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 10:
+            let vc = PopViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         default:
