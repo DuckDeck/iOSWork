@@ -9,7 +9,7 @@ import UIKit
 
 class FullKeyboardView: Keyboard {
     var popChooseView:PopKeyChooseView?
-    
+    var isGestured = false
     var firstKeys:[KeyInfo]!
     var secondKeys:[KeyInfo]!
     var thirdKeys:[KeyInfo]!
@@ -76,9 +76,7 @@ class FullKeyboardView: Keyboard {
              make.height.equalTo(54)
          }
       
-         for item in popKeyViews{
-             addSubview(item)
-         }
+         addSubview(popKeyView)
      }
     
      func updateShift(shift:KeyShiftType){
@@ -107,15 +105,6 @@ class FullKeyboardView: Keyboard {
          delegate?.keyLongPress(key: key, state: state)
      }
      
-     var idolPopKeyView:PopKeyView{
-         if let v = popKeyViews.filter({$0.isHidden && !$0.isBig}).randomElement(){
-             return v
-         } else {
-             popKeyViews.forEach{$0.isHidden = true}
-             return popKeyViews.randomElement()!
-         }
-     }
-     
      
      lazy var firstView: FullRowKeysView = {
          let v = FullRowKeysView(frame: .zero)
@@ -137,14 +126,10 @@ class FullKeyboardView: Keyboard {
          return v
      }()
      
-     lazy var popKeyViews: Set<PopKeyView> = {
-         let xScale = (kSCREEN_WIDTH - 55.0) / 320.0
-         var views = Set<PopKeyView>()
-         for item in 0..<5{
-             let v = PopKeyView(frame: CGRect(x: 0, y: 0, width: 78 * xScale, height: 104))
-             v.isHidden = true
-             views.insert(v)
-         }
-         return views
-     }()
+    lazy var popKeyView: PopKeyView = {
+        let xScale = (kSCREEN_WIDTH - 55.0) / 320.0
+        let v = PopKeyView(frame: CGRect(x: 0, y: 0, width: 78 * xScale, height: 104))
+        v.isHidden = true
+        return v
+    }()
 }
