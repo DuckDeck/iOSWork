@@ -166,9 +166,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
                         var key = pressKey
                         key.clickType = .tip
                         key.keyType = .normal(.character)
-//                        if KeyboardInfo.Shock{
-//                            AudioServicesPlaySystemSound(1519)
-//                        }
+                        Shake.shake()
                         keyboard.keyPress(key: key)
                     }
                 }
@@ -201,9 +199,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             }
             if  !pressedKey.isEmpty && !keys[pressedKey.first!].keyType.isNormal{
                 if keys[pressedKey.first!].keyType == .del{
-//                    if KeyboardInfo.Shock{
-//                        AudioServicesPlaySystemSound(1519)
-//                    }
+                    Shake.shake()
                     (superview as! FullKeyboardView).keyLongPress(key: keys[pressedKey.first!], state: ges.state)
                 }
                 return
@@ -214,9 +210,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             if !keys[pressedKey.first!].text.first!.isLetter{
                 if !keys[pressedKey.first!].tip.isEmpty{
                     let key = keys[pressedKey.first!]
-//                    if KeyboardInfo.Shock{
-//                        AudioServicesPlaySystemSound(1519)
-//                    }
+                   Shake.shake()
                     fullKeyboardView.popKeyView.lblKey.text = key.tip
                 }
                 return
@@ -242,9 +236,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
                     }
                     previousPoint = point
                     addPressEffect(key: key)
-//                    if KeyboardInfo.Shock{
-//                        AudioServicesPlaySystemSound(1519)
-//                    }
+                    Shake.shake()
                 }
             }
             
@@ -303,8 +295,8 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
     }
     
     
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-//        print("gestureRecognizer，开始接收到触摸事件")
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        print("gestureRecognizer，开始接收到触摸事件")
 //        if touch.phase == .began{
 //            if (superview as! FullKeyboardView).isGestured{
 //                return true
@@ -321,8 +313,8 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
 //            }
 //
 //        }
-//        return true
-//    }
+        return true
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touchesBegan")
@@ -357,6 +349,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
                         if keys[item.element].position.large().contains(point){
                             fullKeyboardView.popKeyView.isHidden = true
                             keyboard.keyPress(key: keys[item.element])
+                            Shake.shake()
 //                            if KeyboardInfo.Shock{
 //                                AudioServicesPlaySystemSound(1519)
 //                            }

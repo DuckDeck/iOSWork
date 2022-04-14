@@ -254,6 +254,7 @@ class NineKeyLeftView:UIView, UITableViewDataSource,UITableViewDelegate{
             key.text = keys[indexPath.row]
             key.index = indexPath.row
             keyboard.keyPress(key: key)
+            Shake.shake()
         }
     }
     
@@ -399,6 +400,7 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
                         key.clickType = .tip
                         key.keyType = .normal(.character)
                         keyboard.keyPress(key: key)
+                        Shake.shake()
                     }
                 }
             }
@@ -442,6 +444,7 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
                         v.popChooseView = chooseView
                         v.addSubview(chooseView)
                     }
+                    Shake.shake()
                     previousPoint = point
                 }
             }
@@ -513,6 +516,7 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
         if pressedKey != nil{
             if let keyboard = superview as? NineKeyboardView{
                 keyboard.keyPress(key: pressedKey!)
+                Shake.shake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
@@ -617,6 +621,7 @@ class NineKeyRightView:UIView,UIGestureRecognizerDelegate{
             if  pressedKey != nil {
                 if pressedKey!.keyType == .del{
                     (superview as! Keyboard).keyLongPress(key: pressedKey!, state: ges.state)
+                    Shake.shake()
                 }
                 return
             }
@@ -676,6 +681,7 @@ class NineKeyRightView:UIView,UIGestureRecognizerDelegate{
             }
             if let keyboard = superview as? NineKeyboardView{
                 keyboard.keyPress(key: pressedKey!)
+                Shake.shake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
@@ -853,6 +859,7 @@ class NineKeyBottomView:UIView{
                     return
                 }
                 keyboard.keyPress(key: pressedKey!)
+                Shake.shake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil

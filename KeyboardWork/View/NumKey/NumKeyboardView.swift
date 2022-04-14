@@ -235,6 +235,7 @@ class NumberKeyLeftView:UIView, UITableViewDataSource,UITableViewDelegate{
             key.keyType = .normal(.character)
             key.text = keys[indexPath.row]
             keyboard.keyPress(key: key)
+            Shake.shake()
         }
     }
     
@@ -389,6 +390,7 @@ class NumberKeyCenterView:UIView,UIGestureRecognizerDelegate{
         if pressedKey != nil{
             if let keyboard = superview as? NumKeyboardView{
                 keyboard.keyPress(key: pressedKey!)
+                Shake.shake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
@@ -493,6 +495,7 @@ class NumberKeyRightView:UIView,UIGestureRecognizerDelegate{
             if  pressedKey != nil {
                 if pressedKey!.keyType == .del{
                     (superview as! Keyboard).keyLongPress(key: pressedKey!, state: ges.state)
+                    Shake.shake()
                 }
                 return
             }
@@ -551,6 +554,7 @@ class NumberKeyRightView:UIView,UIGestureRecognizerDelegate{
             }
             if let keyboard = superview as? NumKeyboardView{
                 keyboard.keyPress(key: pressedKey!)
+                Shake.shake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
@@ -729,6 +733,7 @@ class NumberKeyBottomView:UIView{
                     return
                 }
                 keyboard.keyPress(key: pressedKey!)
+                Shake.shake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil

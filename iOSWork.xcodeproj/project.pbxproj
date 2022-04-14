@@ -638,6 +638,8 @@
 		AE8C8DB127900BA300C656DF /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */; };
 		AE94D3332742421A00ACEDDC /* AnimationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94D3322742421A00ACEDDC /* AnimationVIew.swift */; };
 		AE97D3322745FCAF00157DBE /* TriggerErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97D3312745FCAF00157DBE /* TriggerErrorViewController.swift */; };
+		AE9EE9F628083E2000EBE70A /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9EE9F528083E2000EBE70A /* Shake.swift */; };
+		AE9EE9F8280843B500EBE70A /* PanCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9EE9F7280843B500EBE70A /* PanCollectionViewController.swift */; };
 		AEA0A11827884A1B0044D012 /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AEA0A11727884A1B0044D012 /* GrandKit */; };
 		AEA0A11A27884A350044D012 /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AEA0A11927884A350044D012 /* GrandKit */; };
 		AEA0A11C27884A5C0044D012 /* GrandKit in Frameworks */ = {isa = PBXBuildFile; productRef = AEA0A11B27884A5C0044D012 /* GrandKit */; };
@@ -1406,6 +1408,8 @@
 		AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
 		AE94D3322742421A00ACEDDC /* AnimationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVIew.swift; sourceTree = "<group>"; };
 		AE97D3312745FCAF00157DBE /* TriggerErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerErrorViewController.swift; sourceTree = "<group>"; };
+		AE9EE9F528083E2000EBE70A /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		AE9EE9F7280843B500EBE70A /* PanCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanCollectionViewController.swift; sourceTree = "<group>"; };
 		AEA0A1162788494E0044D012 /* GrandKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = GrandKit; path = ../GrandKit; sourceTree = "<group>"; };
 		AEA0A121278940680044D012 /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
 		AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
@@ -2657,6 +2661,7 @@
 				AE6B2DDA2755155F0066017F /* MediaBroswerViewController.swift */,
 				AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */,
 				AE80EE0827FF0795004566D5 /* PopViewController.swift */,
+				AE9EE9F7280843B500EBE70A /* PanCollectionViewController.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -3290,6 +3295,7 @@
 			children = (
 				AEE3DB2C27FC0D2A007B2B58 /* Store.swift */,
 				AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */,
+				AE9EE9F528083E2000EBE70A /* Shake.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -4355,6 +4361,7 @@
 				AEE010D52742569200C155D8 /* MJRefreshAutoStateFooter.m in Sources */,
 				AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */,
 				AE66E1BD27538679006432FE /* VideoDecoder.mm in Sources */,
+				AE9EE9F8280843B500EBE70A /* PanCollectionViewController.swift in Sources */,
 				AE72F52C273EB9A50060456A /* CitySearchView.swift in Sources */,
 				AE66E1B027538679006432FE /* AudioFileHandler.m in Sources */,
 				AEE0106F2742560200C155D8 /* MitoListViewController.swift in Sources */,
@@ -4550,6 +4557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE3DB2927FC0C45007B2B58 /* FullKeyboardView.swift in Sources */,
+				AE9EE9F628083E2000EBE70A /* Shake.swift in Sources */,
 				AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
 				AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */,
 				AE1C4F38274341FE0097EAC1 /* Array+Extension.swift in Sources */,
