@@ -12,7 +12,7 @@ class FlowLayoutViewController: UIViewController {
     var heights = [Double]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        for _ in 0..<80{
+        for _ in 0..<200{
             var i = Double(arc4random() % 100 )
             if i < 20{
                 i = i + 20
@@ -37,7 +37,7 @@ class FlowLayoutViewController: UIViewController {
 
 extension FlowLayoutViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 80
+        return 200
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

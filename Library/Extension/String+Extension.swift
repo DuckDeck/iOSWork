@@ -317,6 +317,14 @@ extension String{
         return self.replacingOccurrences(of: ":", with: "_").replacingOccurrences(of: "/", with: "-").replacingOccurrences(of: "#", with: "_").replacingOccurrences(of: "&", with: "_").replacingOccurrences(of: "?", with: "_")
     }
     
+   
+    func range(subStr:String)->NSRange?{
+        if let ran = range(of: subStr){
+            let low = distance(from: self.startIndex, to: ran.lowerBound)
+            return NSMakeRange(low, subStr.count)
+        }
+        return nil
+    }
     
     func getNumbers() -> [NSNumber] {
         let formatter = NumberFormatter()
@@ -430,4 +438,50 @@ extension NSMutableAttributedString{
     func addFont(font:UIFont,range:NSRange) {
         self.addAttribute(NSAttributedString.Key.font, value: font, range: range)
     }
+}
+
+class AttributeString {
+    
+    var attributeStr : NSMutableAttributedString =  NSMutableAttributedString()
+    
+    init(attributeStr:NSMutableAttributedString){
+        self.attributeStr = attributeStr
+    }
+  
+    init(attributeStr:NSAttributedString){
+        self.attributeStr = NSMutableAttributedString(attributedString: attributeStr)
+    }
+    
+    func setString( color: UIColor, font: UIFont) -> Self {
+        attributeStr.addAttributes([NSAttributedString.Key.font:font,NSAttributedString.Key.foregroundColor:color], range: NSMakeRange(0, attributeStr.length))
+        
+        return self
+    }
+}
+
+//设置属性字符串中的 特殊显示的字符
+extension AttributeString {
+    
+    func height(string: String, color: UIColor) -> Self {
+        let nsString = NSString(string: attributeStr.string)
+        
+        attributeStr.setAttributes([NSAttributedString.Key.foregroundColor:color], range: nsString.range(of: string))
+        
+        return self
+    }
+    
+    func height(string: String, color: UIColor, fontSize: CGFloat) -> Self {
+        
+        return height(string: string, color: color, font: UIFont.systemFont(ofSize: fontSize))
+    }
+    
+    func height(string: String, color: UIColor, font: UIFont) -> Self {
+        
+        let nsString = NSString(string: attributeStr.string)
+        
+        attributeStr.setAttributes([NSAttributedString.Key.font:font, NSAttributedString.Key.foregroundColor:color], range: nsString.range(of: string))
+        
+        return self
+    }
+    
 }

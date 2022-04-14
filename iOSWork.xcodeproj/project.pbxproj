@@ -5307,6 +5307,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CC4235916153D9706D5FA863 /* Pods-Library.debug.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -5321,7 +5322,10 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/PartWork",
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -5354,6 +5358,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 963C38904F5C8E4AFC87987C /* Pods-Library.release.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -5368,7 +5373,10 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/FrameWork",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/PartWork",
+				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
