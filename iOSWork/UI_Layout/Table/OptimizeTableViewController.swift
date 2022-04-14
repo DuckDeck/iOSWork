@@ -37,26 +37,7 @@ class OptimizeTableViewController:BaseViewController{
             m.width.height.equalTo(25)
         }
         vm.fetchImages()
-        
-        let contentView = UIView()
-        let lbl = UILabel()
-        lbl.text = "我要测试一下这个气泡"
-        lbl.textColor = UIColor.white
-        lbl.font = UIFont.boldSystemFont(ofSize: 15)
-        contentView.addSubview(lbl)
-        lbl.snp.makeConstraints { make in
-            make.left.equalTo(12)
-            make.right.equalTo(-22)
-            make.top.bottom.equalTo(0)
-            make.height.equalTo(30)
-        }
-        
-        let popView = PopHintView(tranOffset: 0.5, direction: .top, contentView: contentView)
-        view.addSubview(popView)
-        popView.snp.makeConstraints { make in
-            make.left.equalTo(50)
-            make.top.equalTo(120)
-        }
+
         
     }
     

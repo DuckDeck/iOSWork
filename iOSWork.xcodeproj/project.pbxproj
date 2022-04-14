@@ -12,6 +12,9 @@
 		A2FBDD25B3319BA5096F29BC /* Pods_CLangWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */; };
 		AE043D7527896BFB00626B82 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0A121278940680044D012 /* ImageInfo.swift */; };
 		AE043D7827897BA600626B82 /* ImageInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE043D7727897BA600626B82 /* ImageInfoViewController.swift */; };
+		AE0442832803D465003DB6A1 /* InputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0442822803D465003DB6A1 /* InputText.swift */; };
+		AE0442842803D6B9003DB6A1 /* InputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0442822803D465003DB6A1 /* InputText.swift */; };
+		AE0442852803D6BA003DB6A1 /* InputText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0442822803D465003DB6A1 /* InputText.swift */; };
 		AE080CD227D3A065007F42E1 /* WebviewMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE080CD127D3A065007F42E1 /* WebviewMemoryViewController.swift */; };
 		AE08AA8C27C681D500EE0813 /* MediaTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8B27C681D500EE0813 /* MediaTool.swift */; };
 		AE08AA8E27C684CB00EE0813 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */; };
@@ -47,7 +50,7 @@
 		AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F7227434E300097EAC1 /* ADViewController.swift */; };
 		AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */; };
 		AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */; };
-		AE28B86627C501C000D399F3 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B86527C501C000D399F3 /* Global.swift */; };
+		AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */; };
 		AE35149B27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149C27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
@@ -992,6 +995,7 @@
 		A01907E2AAC4BC4A9EB2A915 /* Pods_CLangWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CLangWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A06737A9167AB79DD4D5235F /* Pods-CLangWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CLangWork.release.xcconfig"; path = "Target Support Files/Pods-CLangWork/Pods-CLangWork.release.xcconfig"; sourceTree = "<group>"; };
 		AE043D7727897BA600626B82 /* ImageInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfoViewController.swift; sourceTree = "<group>"; };
+		AE0442822803D465003DB6A1 /* InputText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputText.swift; sourceTree = "<group>"; };
 		AE080CD127D3A065007F42E1 /* WebviewMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebviewMemoryViewController.swift; sourceTree = "<group>"; };
 		AE08AA8B27C681D500EE0813 /* MediaTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTool.swift; sourceTree = "<group>"; };
 		AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
@@ -1024,7 +1028,7 @@
 		AE1C4F75274380910097EAC1 /* RerangeBinaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RerangeBinaryViewController.h; sourceTree = "<group>"; };
 		AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RerangeBinaryViewController.m; sourceTree = "<group>"; };
 		AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKeyboardViewController.swift; sourceTree = "<group>"; };
-		AE28B86527C501C000D399F3 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGlobal.swift; sourceTree = "<group>"; };
 		AE35149A27CBB549000326F1 /* 5k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5k.jpg; sourceTree = "<group>"; };
 		AE35149D27CBB54D000326F1 /* 8k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k.jpg; sourceTree = "<group>"; };
 		AE38468627BB43F9004F6765 /* iOSWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSWork.entitlements; sourceTree = "<group>"; };
@@ -2213,6 +2217,7 @@
 				AE61165E27410F2C008466AB /* GrandSlider.swift */,
 				AE6B2DD727550E180066017F /* MediaBroswerView.swift */,
 				AE80EE0627FF017E004566D5 /* PopHintView.swift */,
+				AE0442822803D465003DB6A1 /* InputText.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2765,7 +2770,7 @@
 				AE7E7451272252AC00F0C19C /* KeyboardViewController.swift */,
 				AE7E7453272252AC00F0C19C /* Info.plist */,
 				AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */,
-				AE28B86527C501C000D399F3 /* Global.swift */,
+				AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */,
 				AE48CECD27C7D10B009A0673 /* asset.xcassets */,
 			);
 			path = KeyboardWork;
@@ -4158,6 +4163,7 @@
 				AE62CB9027254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CB4C27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE62CB3427254946007D51CD /* Number+Extension.swift in Sources */,
+				AE0442842803D6B9003DB6A1 /* InputText.swift in Sources */,
 				AEE0106D2742560200C155D8 /* ImageSet.swift in Sources */,
 				AE66E1B227538679006432FE /* AudioDecoder.mm in Sources */,
 				AE6E5DC0273FB6FF00523EA8 /* Line.swift in Sources */,
@@ -4565,7 +4571,8 @@
 				AE7E7452272252AC00F0C19C /* KeyboardViewController.swift in Sources */,
 				AEE3DB5927FC2FFA007B2B58 /* NineKeyboardView.swift in Sources */,
 				AEE3DB6427FC3DAC007B2B58 /* HeaderView.swift in Sources */,
-				AE28B86627C501C000D399F3 /* Global.swift in Sources */,
+				AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */,
+				AE0442852803D6BA003DB6A1 /* InputText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4742,6 +4749,7 @@
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
+				AE0442832803D465003DB6A1 /* InputText.swift in Sources */,
 				AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */,
 				AE62CB10272542F8007D51CD /* TransformMP3.m in Sources */,
 				AE62CB8627254DD7007D51CD /* FPSTool.swift in Sources */,

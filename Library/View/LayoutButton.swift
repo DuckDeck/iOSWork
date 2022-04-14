@@ -10,7 +10,7 @@ import UIKit
 public enum LayoutButtonStyle{
    case  LeftImageRightTitle,LeftTitleRightImage,TopImageBottomTitle,TopTitleBottomImage
 }
-
+//LayoutButton 这个的问题是 如果不设定长度，那么该button的长度是图片根图片真实的大小有关，而不是设定的imageSize有关
 public class LayoutButton: UIButton {
     var layoutStyle = LayoutButtonStyle.LeftImageRightTitle
     var midSpacing:CGFloat = 5{
@@ -24,7 +24,7 @@ public class LayoutButton: UIButton {
         }
     }
     var textLine = 0
-    
+    var totalSize : CGFloat = 0
     public override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -79,7 +79,10 @@ public class LayoutButton: UIButton {
         rightViewFrame.origin.x = leftViewFrame.maxX + midSpacing
         rightViewFrame.origin.y = (frame.height - rightViewFrame.height) / 2.0
         rightView.frame = rightViewFrame
+        totalSize = totalWidth
     }
+    
+
     
     func layoutVertical(upView:UIView,downView:UIView)  {
         var upViewFrame = upView.frame
@@ -91,6 +94,19 @@ public class LayoutButton: UIButton {
         downViewFrame.origin.y = upViewFrame.maxY + midSpacing
         downViewFrame.origin.x = (frame.width - downViewFrame.width) / 2.0
         downView.frame = downViewFrame
+        totalSize = totalHeight
+    }
+    
+    func sizeFit(){
+        switch layoutStyle {
+        case .LeftImageRightTitle,.LeftTitleRightImage:
+                    frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: totalSize, height: frame.size.height)
+
+        
+        case .TopImageBottomTitle,.TopTitleBottomImage:
+            frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: totalSize)
+       
+        }
     }
     
     public override func setImage(_ image: UIImage?, for state: UIControl.State) {
