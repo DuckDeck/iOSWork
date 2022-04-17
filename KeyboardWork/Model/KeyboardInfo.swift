@@ -8,7 +8,7 @@
 import UIKit
 
 struct KeyboardInfo:Codable{
-    var keyboardType:KeyboardType = .chinese9
+    var keyboardType:KeyboardType = .chinese26
     /// 模糊音
     var fuzzyInput = false
     /// 纠错

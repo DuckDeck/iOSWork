@@ -13,7 +13,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
     var panPoint:CGPoint?
     var previousPoint:CGPoint?
     var pressLayer:CAShapeLayer?
-    
+    var tmpOffset : CGFloat = 0
     var fullKeyboardView:FullKeyboardView{
         return superview as! FullKeyboardView
     }
@@ -25,13 +25,16 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panGes(ges:)))
         pan.maximumNumberOfTouches = 2
         pan.minimumNumberOfTouches = 1
-        
+        pan.delaysTouchesBegan = false
         pan.delegate = self
         
         addGestureRecognizer(pan)
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGes(ges:)))
         longPress.minimumPressDuration = 0.4
+//        longPress.delaysTouchesBegan = false
+//        longPress.delaysTouchesEnded = false
+//        longPress.cancelsTouchesInView = false
         addGestureRecognizer(longPress)
     }
     
@@ -166,7 +169,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
                         var key = pressKey
                         key.clickType = .tip
                         key.keyType = .normal(.character)
-                        Shake.shake()
+                        Shake.keyShake()
                         keyboard.keyPress(key: key)
                     }
                 }
@@ -199,7 +202,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             }
             if  !pressedKey.isEmpty && !keys[pressedKey.first!].keyType.isNormal{
                 if keys[pressedKey.first!].keyType == .del{
-                    Shake.shake()
+                    Shake.keyShake()
                     (superview as! FullKeyboardView).keyLongPress(key: keys[pressedKey.first!], state: ges.state)
                 }
                 return
@@ -210,7 +213,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             if !keys[pressedKey.first!].text.first!.isLetter{
                 if !keys[pressedKey.first!].tip.isEmpty{
                     let key = keys[pressedKey.first!]
-                   Shake.shake()
+                    Shake.keyShake()
                     fullKeyboardView.popKeyView.lblKey.text = key.tip
                 }
                 return
@@ -236,7 +239,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
                     }
                     previousPoint = point
                     addPressEffect(key: key)
-                    Shake.shake()
+                    Shake.keyShake()
                 }
             }
             
@@ -296,34 +299,42 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
     
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        print("gestureRecognizer，开始接收到触摸事件")
-//        if touch.phase == .began{
-//            if (superview as! FullKeyboardView).isGestured{
-//                return true
-//            }
-//            let point = touch.location(in: self)
-//            for item in positions.enumerated(){
-//                if item.element.large().contains(point){
-//                    pressedKey.append(item.offset)
-//                    print("识别到\(keys[item.offset].text)")
-//                    addPopKeyView(pressKey: &keys[item.offset])
-//                    addPressEffect()
-//                    break
-//                }
-//            }
-//
-//        }
+        print("gestureRecognizer，开始接收到触摸事件,touch phase 是\(touch.phase)")
+        if touch.phase == .began{
+            let point = touch.location(in: self)
+            if point.x > tmpOffset && point.x < kSCREEN_WIDTH - tmpOffset{
+                return true
+            }
+            if (superview as! FullKeyboardView).isGestured{
+                print("gestureRecognizer，有其他手势需要返回")
+                return true
+            }
+            for item in positions.enumerated(){
+                if item.element.large().contains(point){
+                    pressedKey.append(item.offset)
+                    print("识别到\(keys[item.offset].text)")
+                    addPopKeyView(pressKey: &keys[item.offset])
+                    addPressEffect()
+                    break
+                }
+            }
+
+        }
         return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesBegan")
+        print("touchesBegan,开始接收到触摸事件")
         guard let t = touches.first else {return}
         if t.phase == .began{
+            let point = t.location(in: self)
+            if point.x <= tmpOffset || point.x >= kSCREEN_WIDTH - tmpOffset{
+                return
+            }
             if (superview as! FullKeyboardView).isGestured{
                 return
             }
-            let point = t.location(in: self)
+            
             for item in positions.enumerated(){
                 if item.element.large().contains(point){
                     pressedKey.append(item.offset)
@@ -347,12 +358,9 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
                 if let keyboard = superview as? FullKeyboardView{
                     for item in pressedKey.enumerated(){
                         if keys[item.element].position.large().contains(point){
-                            fullKeyboardView.popKeyView.isHidden = true
+                            self.fullKeyboardView.popKeyView.isHidden = true
                             keyboard.keyPress(key: keys[item.element])
-                            Shake.shake()
-//                            if KeyboardInfo.Shock{
-//                                AudioServicesPlaySystemSound(1519)
-//                            }
+                            Shake.keyShake()
                             index = item.offset
                             break
                         }

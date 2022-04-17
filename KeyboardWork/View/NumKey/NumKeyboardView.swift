@@ -235,7 +235,7 @@ class NumberKeyLeftView:UIView, UITableViewDataSource,UITableViewDelegate{
             key.keyType = .normal(.character)
             key.text = keys[indexPath.row]
             keyboard.keyPress(key: key)
-            Shake.shake()
+            Shake.keyShake()
         }
     }
     
@@ -287,9 +287,8 @@ class NumberKeyLeftView:UIView, UITableViewDataSource,UITableViewDelegate{
 
 
 class NumberKeyCenterView:UIView,UIGestureRecognizerDelegate{
-    
     var keys:[KeyInfo]!
-    var pressedKey:KeyInfo?
+    var pressedKey = [Int]()
     var panPoint:CGPoint?
     var pressLayer:CAShapeLayer?
     fileprivate override init(frame: CGRect) {
@@ -299,6 +298,7 @@ class NumberKeyCenterView:UIView,UIGestureRecognizerDelegate{
     convenience init(keys:[KeyInfo]) {
         self.init(frame: .zero)
         self.keys = keys
+        isMultipleTouchEnabled = true
         updateKeys()
     }
     
@@ -332,7 +332,7 @@ class NumberKeyCenterView:UIView,UIGestureRecognizerDelegate{
                 lbl.font = UIFont(name: "PingFangSC-Regular", size: 22)
                 let txtSize = lbl.sizeThatFits(CGSize(width: 100, height: 26))
                 let txtLayer = CATextLayer()
-                txtLayer.frame = item.element.position.centerRect(w: txtSize.width, h: txtSize.height).offsetBy(dx: 0, dy: 3)
+                txtLayer.frame = item.element.position.centerRect(w: txtSize.width, h: txtSize.height)
                 txtLayer.foregroundColor = item.element.textColor.cgColor
                 txtLayer.string = item.element.text
                 txtLayer.contentsScale = UIScreen.main.scale
@@ -364,18 +364,18 @@ class NumberKeyCenterView:UIView,UIGestureRecognizerDelegate{
         }
         if let point = touches.first?.location(in: self){
             for item in positions.enumerated(){
-                if item.element.contains(point){
-                    pressedKey = keys[item.offset]
+                if item.element.large(w: 3, h: 3).contains(point){
+                    pressedKey.append(item.offset)
+                    let pressKey = keys[item.offset]
                     if pressLayer == nil{
                         pressLayer = CAShapeLayer()
                     } else {
                         pressLayer?.removeFromSuperlayer()
                     }
-                    pressLayer?.fillColor = kCOlora9abb0.cgColor
-                    let path = UIBezierPath(roundedRect: pressedKey!.position, cornerRadius: 5)
+                    pressLayer?.fillColor = kColora9abb0.cgColor
+                    let path = UIBezierPath(roundedRect: pressKey.position, cornerRadius: 5)
                     pressLayer?.path = path.cgPath
-                    layer.insertSublayer(pressLayer!, above: pressedKey!.keyLayer)
-                    
+                    layer.insertSublayer(pressLayer!, above: pressKey.keyLayer)
                     break
                 }
             }
@@ -387,14 +387,25 @@ class NumberKeyCenterView:UIView,UIGestureRecognizerDelegate{
         if panPoint != nil{
             return
         }
-        if pressedKey != nil{
+        if !pressedKey.isEmpty{
+            var index = -1
+            let point = touches.first!.location(in: self)
             if let keyboard = superview as? NumKeyboardView{
-                keyboard.keyPress(key: pressedKey!)
-                Shake.shake()
+                
+                for item in pressedKey.enumerated(){
+                    if keys[item.element].position.large(w: 3, h: 3).contains(point){
+                        keyboard.keyPress(key: keys[item.element])
+                        Shake.keyShake()
+                        index = item.offset
+                        break
+                    }
+                }
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
-            pressedKey = nil
+            if index >= 0{
+                pressedKey.remove(at: index)
+            }
         }
     }
     
@@ -402,10 +413,20 @@ class NumberKeyCenterView:UIView,UIGestureRecognizerDelegate{
         if panPoint != nil{
             return
         }
-        if pressedKey != nil{
+        if !pressedKey.isEmpty{
+            var index = -1
+            let point = touches.first!.location(in: self)
+            for item in pressedKey.enumerated(){
+                if keys[item.element].position.large(w: 3, h: 3).contains(point){
+                    index = item.offset
+                    break
+                }
+            }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
-            pressedKey = nil
+            if index >= 0{
+                pressedKey.remove(at: index)
+            }
         }
     }
     
@@ -495,7 +516,7 @@ class NumberKeyRightView:UIView,UIGestureRecognizerDelegate{
             if  pressedKey != nil {
                 if pressedKey!.keyType == .del{
                     (superview as! Keyboard).keyLongPress(key: pressedKey!, state: ges.state)
-                    Shake.shake()
+                    Shake.keyShake()
                 }
                 return
             }
@@ -532,7 +553,7 @@ class NumberKeyRightView:UIView,UIGestureRecognizerDelegate{
                     } else {
                         pressLayer?.removeFromSuperlayer()
                     }
-                    pressLayer?.fillColor = kCOlora9abb0.cgColor
+                    pressLayer?.fillColor = kColora9abb0.cgColor
                     let path = UIBezierPath(roundedRect: pressedKey!.position, cornerRadius: 5)
                     pressLayer?.path = path.cgPath
                     layer.insertSublayer(pressLayer!, above: pressedKey!.keyLayer)
@@ -554,7 +575,7 @@ class NumberKeyRightView:UIView,UIGestureRecognizerDelegate{
             }
             if let keyboard = superview as? NumKeyboardView{
                 keyboard.keyPress(key: pressedKey!)
-                Shake.shake()
+                Shake.keyShake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
@@ -733,7 +754,7 @@ class NumberKeyBottomView:UIView{
                     return
                 }
                 keyboard.keyPress(key: pressedKey!)
-                Shake.shake()
+                Shake.keyShake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil

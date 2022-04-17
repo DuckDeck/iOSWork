@@ -9,7 +9,7 @@ import UIKit
 import AudioToolbox
 
 struct Shake{
-    static func shake(){
+    static func keyShake(){
         AudioServicesPlaySystemSound(1519)
     }
 }

@@ -119,12 +119,14 @@ class KeyboardView: UIView ,keyPressDeleaget{
     func switchKeyboard(keyboardType:KeyboardType){
         var newKeyboard : Keyboard?
         switch keyboardType {
+        case .chinese26:
+            newKeyboard = FullKeyboardView()
         case .chinese9:
             newKeyboard = NineKeyboardView()
         case .number:
             newKeyboard = NumKeyboardView()
         case .emoji:
-            return
+            newKeyboard = EmojiKeyboard()
         default:
             newKeyboard = FullKeyboardView(keyboardType: keyboardType)
         }

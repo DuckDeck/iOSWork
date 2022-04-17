@@ -254,7 +254,7 @@ class NineKeyLeftView:UIView, UITableViewDataSource,UITableViewDelegate{
             key.text = keys[indexPath.row]
             key.index = indexPath.row
             keyboard.keyPress(key: key)
-            Shake.shake()
+            Shake.keyShake()
         }
     }
     
@@ -307,7 +307,7 @@ class NineKeyLeftView:UIView, UITableViewDataSource,UITableViewDelegate{
 class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
     
     var keys:[KeyInfo]!
-    var pressedKey:KeyInfo?
+    var pressedKey = [Int]()
     var panPoint:CGPoint?
     var previousPoint:CGPoint?
     var pressLayer:CAShapeLayer?
@@ -319,10 +319,11 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
     convenience init(keys:[KeyInfo]) {
         self.init(frame: .zero)
         self.keys = keys
-        
+        isUserInteractionEnabled = true
+        isMultipleTouchEnabled = true
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panGes(ges:)))
         //        pan.delaysTouchesBegan = true
-        isUserInteractionEnabled = true
+        
         pan.delegate = self
         addGestureRecognizer(pan)
         
@@ -391,22 +392,22 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
             panPoint = point
             isGesture = true
         case .ended:
-            //方向还没有处理
-            if pressedKey != nil && panPoint != nil{
+            if !pressedKey.isEmpty && panPoint != nil{
                 let distance = panPoint!.y - point.y
-                if distance > 30 && point.x > pressedKey!.position.minX - 30 && point.x < pressedKey!.position.maxX + 30{
+                let pressKey = keys[pressedKey.first!]
+                if distance > 30 && point.x > pressKey.position.minX - distance * 0.6 && point.x < pressKey.position.maxX + distance * 0.6{
                     if let keyboard = superview as? Keyboard{
-                        var key = pressedKey!
+                        var key = pressKey
                         key.clickType = .tip
                         key.keyType = .normal(.character)
                         keyboard.keyPress(key: key)
-                        Shake.shake()
+                        Shake.keyShake()
                     }
                 }
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
-            pressedKey = nil
+            pressedKey.removeAll()
             panPoint = nil
             isGesture = false
         case .cancelled,.failed:
@@ -414,7 +415,7 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
             panPoint = nil
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
-            pressedKey = nil
+            pressedKey.removeAll()
         default:
             break
         }
@@ -427,7 +428,7 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
         case .began:
             isGesture = true
             for item in positions.enumerated(){
-                if item.element.contains(point){
+                if item.element.large(w: 3, h: 3).contains(point){
                     let key = keys[item.offset]
                     let txt = key.tip == "1" ?  "1" : "\(key.text)\(key.tip)\(key.text.lowercased())"
                     let width : CGFloat = CGFloat(txt.count * 30 + 8)
@@ -444,8 +445,8 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
                         v.popChooseView = chooseView
                         v.addSubview(chooseView)
                     }
-                    Shake.shake()
                     previousPoint = point
+                    Shake.keyShake()
                 }
             }
             
@@ -472,8 +473,8 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
                 (superview as! NineKeyboardView).popChooseView?.removeFromSuperview()
                 (superview as! NineKeyboardView).popChooseView = nil
             }
-            if pressedKey != nil && previousPoint == nil{
-                pressedKey = nil
+            if !pressedKey.isEmpty && previousPoint == nil{
+                pressedKey.removeAll()
                 pressLayer?.removeFromSuperlayer()
                 pressLayer = nil
             }
@@ -490,18 +491,18 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
         }
         if let point = touches.first?.location(in: self){
             for item in positions.enumerated(){
-                if item.element.contains(point){
-                    pressedKey = keys[item.offset]
+                if item.element.large(w: 3, h: 3).contains(point){
+                    pressedKey.append(item.offset)
+                    let pressKey = keys[item.offset]
                     if pressLayer == nil{
                         pressLayer = CAShapeLayer()
                     } else {
                         pressLayer?.removeFromSuperlayer()
                     }
-                    pressLayer?.fillColor = kCOlora9abb0.cgColor
-                    let path = UIBezierPath(roundedRect: pressedKey!.position, cornerRadius: 5)
+                    pressLayer?.fillColor = kColora9abb0.cgColor
+                    let path = UIBezierPath(roundedRect: pressKey.position, cornerRadius: 5)
                     pressLayer?.path = path.cgPath
-                    layer.insertSublayer(pressLayer!, above: pressedKey!.keyLayer)
-                    
+                    layer.insertSublayer(pressLayer!, above: pressKey.keyLayer)
                     break
                 }
             }
@@ -513,14 +514,25 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
         if isGesture{
             return
         }
-        if pressedKey != nil{
+        if !pressedKey.isEmpty{
+            var index = -1
+            let point = touches.first!.location(in: self)
             if let keyboard = superview as? NineKeyboardView{
-                keyboard.keyPress(key: pressedKey!)
-                Shake.shake()
+                
+                for item in pressedKey.enumerated(){
+                    if keys[item.element].position.large(w: 3, h: 3).contains(point){
+                        keyboard.keyPress(key: keys[item.element])
+                        Shake.keyShake()
+                        index = item.offset
+                        break
+                    }
+                }
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
-            pressedKey = nil
+            if index >= 0{
+                pressedKey.remove(at: index)
+            }
         }
     }
     
@@ -528,10 +540,22 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
         if isGesture{
             return
         }
-        if pressedKey != nil && previousPoint == nil{
+        if !pressedKey.isEmpty{
+            var index = -1
+            let point = touches.first!.location(in: self)
+                
+            for item in pressedKey.enumerated(){
+                if keys[item.element].position.large(w: 3, h: 3).contains(point){
+                    index = item.offset
+                    break
+                }
+            }
+            
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
-            pressedKey = nil
+            if index >= 0{
+                pressedKey.remove(at: index)
+            }
         }
     }
     
@@ -621,7 +645,7 @@ class NineKeyRightView:UIView,UIGestureRecognizerDelegate{
             if  pressedKey != nil {
                 if pressedKey!.keyType == .del{
                     (superview as! Keyboard).keyLongPress(key: pressedKey!, state: ges.state)
-                    Shake.shake()
+                    Shake.keyShake()
                 }
                 return
             }
@@ -659,7 +683,7 @@ class NineKeyRightView:UIView,UIGestureRecognizerDelegate{
                     } else {
                         pressLayer?.removeFromSuperlayer()
                     }
-                    pressLayer?.fillColor = kCOlora9abb0.cgColor
+                    pressLayer?.fillColor = kColora9abb0.cgColor
                     let path = UIBezierPath(roundedRect: pressedKey!.position, cornerRadius: 5)
                     pressLayer?.path = path.cgPath
                     layer.insertSublayer(pressLayer!, above: pressedKey!.keyLayer)
@@ -681,7 +705,7 @@ class NineKeyRightView:UIView,UIGestureRecognizerDelegate{
             }
             if let keyboard = superview as? NineKeyboardView{
                 keyboard.keyPress(key: pressedKey!)
-                Shake.shake()
+                Shake.keyShake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil
@@ -859,7 +883,7 @@ class NineKeyBottomView:UIView{
                     return
                 }
                 keyboard.keyPress(key: pressedKey!)
-                Shake.shake()
+                Shake.keyShake()
             }
             pressLayer?.removeFromSuperlayer()
             pressLayer = nil

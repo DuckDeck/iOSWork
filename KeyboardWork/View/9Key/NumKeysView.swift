@@ -92,7 +92,7 @@ class NumKeysView:UIView,UIGestureRecognizerDelegate{
                     } else {
                         pressLayer?.removeFromSuperlayer()
                     }
-                    pressLayer?.fillColor = kCOlora9abb0.cgColor
+                    pressLayer?.fillColor = kColora9abb0.cgColor
                     let path = UIBezierPath(roundedRect: pressedKey!.position, cornerRadius: 5)
                     pressLayer?.path = path.cgPath
                     layer.insertSublayer(pressLayer!, above: pressedKey!.keyLayer)

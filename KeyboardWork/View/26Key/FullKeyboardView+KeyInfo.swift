@@ -10,6 +10,8 @@ import UIKit
 extension FullKeyboardView{
     
     
+  
+    
     func setChinese26Data(){
         let f = [("Q","1"),("W","2"),("E","3"),("R","4"),("T","5"),("Y","6"),("U","7"),("I","8"),("O","9"),("P","0")]
         let xScale = (kSCREEN_WIDTH - 55.0) / 320.0
@@ -82,19 +84,21 @@ extension FullKeyboardView{
             forthKeys = [KeyInfo]()
         }
         forthKeys.removeAll()
-//        var emojiKey = KeyInfo()
-//        emojiKey.image = "icon_keyboard_emoji"
-//        emojiKey.fillColor = kColorb3b7bC
-//        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
-//        emojiKey.keyType = .switchKeyboard(.emoji)
-//        forthKeys.append(emojiKey)
+        
+        var emojiKey = KeyInfo()
+        emojiKey.image = "icon_keyboard_emoji"
+        emojiKey.fillColor = kColorb3b7bC
+        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        emojiKey.keyType = .switchKeyboard(.emoji)
+        forthKeys.append(emojiKey)
+        
         var symKey = KeyInfo()
         symKey.text = "符"
         symKey.textSize = 18
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .switchKeyboard(.symbleChiese)
-        symKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        symKey.position = CGRect(x: emojiKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -103,7 +107,7 @@ extension FullKeyboardView{
         numKey.fillColor = kColorb3b7bC
         numKey.textColor = kColor0a0a0a
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 6, y: 5, width: 40 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
         forthKeys.append(numKey)
         
         var commaKey = KeyInfo()
@@ -112,29 +116,28 @@ extension FullKeyboardView{
         commaKey.fillColor = UIColor.white
         commaKey.textColor = kColor222222
         commaKey.keyType = .normal(.character)
-        commaKey.position = CGRect(x: numKey.position.maxX + 6, y: 5, width: 32 * xScale, height: 44)
+        commaKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 32 * xScale, height: 44)
         forthKeys.append(commaKey)
         
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: commaKey.position.maxX + 6, y: 5, width: 112 * xScale, height: 44)
+        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 79 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_chinese"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 6, y: 5, width: 42 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.english)
         forthKeys.append(switchKey)
         
         var enterKey = returnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + 6, y: 5, width: 72 * xScale, height: 44)
+        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
-    
-    
+
     func setEnglish26Data(shiftType:KeyShiftType = .normal){
         let f = [("q","1"),("w","2"),("e","3"),("r","4"),("t","5"),("y","6"),("u","7"),("i","8"),("o","9"),("p","0")]
         let xScale = (kSCREEN_WIDTH - 55.0) / 320.0
@@ -216,19 +219,21 @@ extension FullKeyboardView{
             forthKeys = [KeyInfo]()
         }
         forthKeys.removeAll()
-//        var emojiKey = KeyInfo()
-//        emojiKey.image = "icon_keyboard_emoji"
-//        emojiKey.fillColor = kColorb3b7bC
-//        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
-//        emojiKey.keyType = .switchKeyboard(.emoji)
-//        forthKeys.append(emojiKey)
+        
+        var emojiKey = KeyInfo()
+        emojiKey.image = "icon_keyboard_emoji"
+        emojiKey.fillColor = kColorb3b7bC
+        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        emojiKey.keyType = .switchKeyboard(.emoji)
+        forthKeys.append(emojiKey)
+        
         var symKey = KeyInfo()
         symKey.text = "符"
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.textSize = 18
         symKey.keyType = .switchKeyboard(.symbleEnglish)
-        symKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        symKey.position = CGRect(x: emojiKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -237,7 +242,7 @@ extension FullKeyboardView{
         numKey.textColor = kColor0a0a0a
         numKey.textSize = 18
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 6, y: 5, width: 40 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
         forthKeys.append(numKey)
         
         var commaKey = KeyInfo()
@@ -246,25 +251,25 @@ extension FullKeyboardView{
         commaKey.fillColor = UIColor.white
         commaKey.textColor = kColor222222
         commaKey.keyType = .normal(.character)
-        commaKey.position = CGRect(x: numKey.position.maxX + 6, y: 5, width: 32 * xScale, height: 44)
+        commaKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 32 * xScale, height: 44)
         forthKeys.append(commaKey)
         
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: commaKey.position.maxX + 6, y: 5, width: 112 * xScale, height: 44)
+        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 79 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_english"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 6, y: 5, width: 42 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.chinese)
         forthKeys.append(switchKey)
         
         var enterKey = returnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + 6, y: 5, width: 72 * xScale, height: 44)
+        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
     
@@ -341,20 +346,22 @@ extension FullKeyboardView{
         if forthKeys == nil{
             forthKeys = [KeyInfo]()
         }
+        
         forthKeys.removeAll()
-//        var emojiKey = KeyInfo()
-//        emojiKey.image = "icon_keyboard_emoji"
-//        emojiKey.fillColor = kColorb3b7bC
-//        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
-//        emojiKey.keyType = .switchKeyboard(.emoji)
-//        forthKeys.append(emojiKey)
+        var emojiKey = KeyInfo()
+        emojiKey.image = "icon_keyboard_emoji"
+        emojiKey.fillColor = kColorb3b7bC
+        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        emojiKey.keyType = .switchKeyboard(.emoji)
+        forthKeys.append(emojiKey)
+        
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.textSize = 18
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        symKey.position = CGRect(x: emojiKey.position.maxX + 5, y: 5, width: 52 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -363,7 +370,7 @@ extension FullKeyboardView{
         numKey.fillColor = kColorb3b7bC
         numKey.textColor = kColor0a0a0a
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 6, y: 5, width: 40 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
         forthKeys.append(numKey)
         
      
@@ -371,19 +378,19 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: numKey.position.maxX + 6, y: 5, width: 150 * xScale, height: 44)
+        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 102 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_chinese"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 6, y: 5, width: 42 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.symbleEnglish)
         forthKeys.append(switchKey)
         
         var enterKey = returnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + 6, y: 5, width: 72 * xScale, height: 44)
+        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
 
@@ -461,19 +468,19 @@ extension FullKeyboardView{
             forthKeys = [KeyInfo]()
         }
         forthKeys.removeAll()
-//        var emojiKey = KeyInfo()
-//        emojiKey.image = "icon_keyboard_emoji"
-//        emojiKey.fillColor = kColorb3b7bC
-//        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
-//        emojiKey.keyType = .switchKeyboard(.emoji)
-//        forthKeys.append(emojiKey)
+        var emojiKey = KeyInfo()
+        emojiKey.image = "icon_keyboard_emoji"
+        emojiKey.fillColor = kColorb3b7bC
+        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        emojiKey.keyType = .switchKeyboard(.emoji)
+        forthKeys.append(emojiKey)
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.textSize = 18
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        symKey.position = CGRect(x: emojiKey.position.maxX + 5, y: 5, width: 52 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -482,7 +489,7 @@ extension FullKeyboardView{
         numKey.textColor = kColor0a0a0a
         numKey.textSize = 18
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 6, y: 5, width: 40 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
         forthKeys.append(numKey)
         
      
@@ -490,19 +497,19 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: numKey.position.maxX + 6, y: 5, width: 150 * xScale, height: 44)
+        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 102 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_english"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 6, y: 5, width: 42 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.symbleChiese)
         forthKeys.append(switchKey)
         
         var enterKey = returnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + 6, y: 5, width: 72 * xScale, height: 44)
+        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
 
@@ -580,20 +587,22 @@ extension FullKeyboardView{
         if forthKeys == nil{
             forthKeys = [KeyInfo]()
         }
+        
         forthKeys.removeAll()
-//        var emojiKey = KeyInfo()
-//        emojiKey.image = "icon_keyboard_emoji"
-//        emojiKey.fillColor = kColorb3b7bC
-//        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
-//        emojiKey.keyType = .switchKeyboard(.emoji)
-//        forthKeys.append(emojiKey)
+        var emojiKey = KeyInfo()
+        emojiKey.image = "icon_keyboard_emoji"
+        emojiKey.fillColor = kColorb3b7bC
+        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        emojiKey.keyType = .switchKeyboard(.emoji)
+        forthKeys.append(emojiKey)
+        
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.textSize = 18
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        symKey.position = CGRect(x: emojiKey.position.maxX + 5, y: 5, width: 52 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -602,25 +611,25 @@ extension FullKeyboardView{
         numKey.textColor = kColor0a0a0a
         numKey.textSize = 18
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 6, y: 5, width: 40 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
         forthKeys.append(numKey)
         
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: numKey.position.maxX + 6, y: 5, width: 150 * xScale, height: 44)
+        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 102 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_chinese"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 6, y: 5, width: 42 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.symbleEnglishMore)
         forthKeys.append(switchKey)
         
         var enterKey = returnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + 6, y: 5, width: 72 * xScale, height: 44)
+        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
 
@@ -694,19 +703,20 @@ extension FullKeyboardView{
             forthKeys = [KeyInfo]()
         }
         forthKeys.removeAll()
-//        var emojiKey = KeyInfo()
-//        emojiKey.image = "icon_keyboard_emoji"
-//        emojiKey.fillColor = kColorb3b7bC
-//        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
-//        emojiKey.keyType = .switchKeyboard(.emoji)
-//        forthKeys.append(emojiKey)
+        var emojiKey = KeyInfo()
+        emojiKey.image = "icon_keyboard_emoji"
+        emojiKey.fillColor = kColorb3b7bC
+        emojiKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        emojiKey.keyType = .switchKeyboard(.emoji)
+        forthKeys.append(emojiKey)
+        
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.textSize = 18
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: 5, y: 5, width: 38 * xScale, height: 44)
+        symKey.position = CGRect(x: emojiKey.position.maxX + 5, y: 5, width: 52 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -715,7 +725,7 @@ extension FullKeyboardView{
         numKey.fillColor = kColorb3b7bC
         numKey.textColor = kColor0a0a0a
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 6, y: 5, width: 40 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
         forthKeys.append(numKey)
         
      
@@ -723,19 +733,19 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: numKey.position.maxX + 6, y: 5, width: 150 * xScale, height: 44)
+        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 102 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_english"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 6, y: 5, width: 42 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.symbleChieseMore)
         forthKeys.append(switchKey)
         
         var enterKey = returnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + 6, y: 5, width: 72 * xScale, height: 44)
+        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
 }
