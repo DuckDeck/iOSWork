@@ -34,12 +34,14 @@ class CalculatorViewController: UIViewController {
 
     @objc func changeText(){
         print(textInput.text!)
-        if textInput.text!.isEmpty{
-            return
+        let res = calculate(textInput.text!)
+        switch res{
+        case .value(let num):
+            lblResult.text = "\(num)"
+        case .error(let err):
+            lblResult.text = err.message
         }
-        let cal = OCInterpreter.init(textInput.text!)
-        let result = cal.expr()
-        lblResult.text = "\(result)"
+        
     }
     
     lazy var lblResult: UILabel = {

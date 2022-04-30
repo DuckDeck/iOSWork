@@ -25,6 +25,62 @@
 		AE128847280C51820049A5E4 /* EmojiKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128846280C51820049A5E4 /* EmojiKeyboard.swift */; };
 		AE128849280C51E00049A5E4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128848280C51E00049A5E4 /* Extension.swift */; };
 		AE12884B280C53100049A5E4 /* icon_keyboard_emoji.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AE12884A280C53100049A5E4 /* icon_keyboard_emoji.pdf */; };
+		AE128860281CED0A0049A5E4 /* glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884E281CED0A0049A5E4 /* glyph.swift */; };
+		AE128861281CED0A0049A5E4 /* glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884E281CED0A0049A5E4 /* glyph.swift */; };
+		AE128862281CED0A0049A5E4 /* glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884E281CED0A0049A5E4 /* glyph.swift */; };
+		AE128863281CED0A0049A5E4 /* glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884E281CED0A0049A5E4 /* glyph.swift */; };
+		AE128864281CED0A0049A5E4 /* input-parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884F281CED0A0049A5E4 /* input-parser.swift */; };
+		AE128865281CED0A0049A5E4 /* input-parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884F281CED0A0049A5E4 /* input-parser.swift */; };
+		AE128866281CED0A0049A5E4 /* input-parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884F281CED0A0049A5E4 /* input-parser.swift */; };
+		AE128867281CED0A0049A5E4 /* input-parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884F281CED0A0049A5E4 /* input-parser.swift */; };
+		AE128868281CED0A0049A5E4 /* expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128851281CED0A0049A5E4 /* expression.swift */; };
+		AE128869281CED0A0049A5E4 /* expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128851281CED0A0049A5E4 /* expression.swift */; };
+		AE12886A281CED0A0049A5E4 /* expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128851281CED0A0049A5E4 /* expression.swift */; };
+		AE12886B281CED0A0049A5E4 /* expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128851281CED0A0049A5E4 /* expression.swift */; };
+		AE12886C281CED0A0049A5E4 /* expression-combining.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128852281CED0A0049A5E4 /* expression-combining.swift */; };
+		AE12886D281CED0A0049A5E4 /* expression-combining.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128852281CED0A0049A5E4 /* expression-combining.swift */; };
+		AE12886E281CED0A0049A5E4 /* expression-combining.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128852281CED0A0049A5E4 /* expression-combining.swift */; };
+		AE12886F281CED0A0049A5E4 /* expression-combining.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128852281CED0A0049A5E4 /* expression-combining.swift */; };
+		AE128870281CED0A0049A5E4 /* expressionizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128853281CED0A0049A5E4 /* expressionizer.swift */; };
+		AE128871281CED0A0049A5E4 /* expressionizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128853281CED0A0049A5E4 /* expressionizer.swift */; };
+		AE128872281CED0A0049A5E4 /* expressionizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128853281CED0A0049A5E4 /* expressionizer.swift */; };
+		AE128873281CED0A0049A5E4 /* expressionizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128853281CED0A0049A5E4 /* expressionizer.swift */; };
+		AE128874281CED0A0049A5E4 /* calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128855281CED0A0049A5E4 /* calculator.swift */; };
+		AE128875281CED0A0049A5E4 /* calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128855281CED0A0049A5E4 /* calculator.swift */; };
+		AE128876281CED0A0049A5E4 /* calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128855281CED0A0049A5E4 /* calculator.swift */; };
+		AE128877281CED0A0049A5E4 /* calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128855281CED0A0049A5E4 /* calculator.swift */; };
+		AE128878281CED0A0049A5E4 /* calc-error.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128856281CED0A0049A5E4 /* calc-error.swift */; };
+		AE128879281CED0A0049A5E4 /* calc-error.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128856281CED0A0049A5E4 /* calc-error.swift */; };
+		AE12887A281CED0A0049A5E4 /* calc-error.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128856281CED0A0049A5E4 /* calc-error.swift */; };
+		AE12887B281CED0A0049A5E4 /* calc-error.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128856281CED0A0049A5E4 /* calc-error.swift */; };
+		AE12887C281CED0A0049A5E4 /* calc-result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128857281CED0A0049A5E4 /* calc-result.swift */; };
+		AE12887D281CED0A0049A5E4 /* calc-result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128857281CED0A0049A5E4 /* calc-result.swift */; };
+		AE12887E281CED0A0049A5E4 /* calc-result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128857281CED0A0049A5E4 /* calc-result.swift */; };
+		AE12887F281CED0A0049A5E4 /* calc-result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128857281CED0A0049A5E4 /* calc-result.swift */; };
+		AE128880281CED0A0049A5E4 /* operationizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128859281CED0A0049A5E4 /* operationizer.swift */; };
+		AE128881281CED0A0049A5E4 /* operationizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128859281CED0A0049A5E4 /* operationizer.swift */; };
+		AE128882281CED0A0049A5E4 /* operationizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128859281CED0A0049A5E4 /* operationizer.swift */; };
+		AE128883281CED0A0049A5E4 /* operationizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128859281CED0A0049A5E4 /* operationizer.swift */; };
+		AE128884281CED0A0049A5E4 /* operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885A281CED0A0049A5E4 /* operation.swift */; };
+		AE128885281CED0A0049A5E4 /* operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885A281CED0A0049A5E4 /* operation.swift */; };
+		AE128886281CED0A0049A5E4 /* operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885A281CED0A0049A5E4 /* operation.swift */; };
+		AE128887281CED0A0049A5E4 /* operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885A281CED0A0049A5E4 /* operation.swift */; };
+		AE128888281CED0A0049A5E4 /* number.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885B281CED0A0049A5E4 /* number.swift */; };
+		AE128889281CED0A0049A5E4 /* number.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885B281CED0A0049A5E4 /* number.swift */; };
+		AE12888A281CED0A0049A5E4 /* number.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885B281CED0A0049A5E4 /* number.swift */; };
+		AE12888B281CED0A0049A5E4 /* number.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885B281CED0A0049A5E4 /* number.swift */; };
+		AE12888C281CED0A0049A5E4 /* token-array-validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885D281CED0A0049A5E4 /* token-array-validation.swift */; };
+		AE12888D281CED0A0049A5E4 /* token-array-validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885D281CED0A0049A5E4 /* token-array-validation.swift */; };
+		AE12888E281CED0A0049A5E4 /* token-array-validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885D281CED0A0049A5E4 /* token-array-validation.swift */; };
+		AE12888F281CED0A0049A5E4 /* token-array-validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885D281CED0A0049A5E4 /* token-array-validation.swift */; };
+		AE128890281CED0A0049A5E4 /* tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885E281CED0A0049A5E4 /* tokenizer.swift */; };
+		AE128891281CED0A0049A5E4 /* tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885E281CED0A0049A5E4 /* tokenizer.swift */; };
+		AE128892281CED0A0049A5E4 /* tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885E281CED0A0049A5E4 /* tokenizer.swift */; };
+		AE128893281CED0A0049A5E4 /* tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885E281CED0A0049A5E4 /* tokenizer.swift */; };
+		AE128894281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
+		AE128895281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
+		AE128896281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
+		AE128897281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
 		AE1A51A027C284B500162D66 /* ImageMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */; };
 		AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */; };
 		AE1A875D27512195004FA0DA /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875C27512195004FA0DA /* Spirograph.swift */; };
@@ -1013,6 +1069,20 @@
 		AE128846280C51820049A5E4 /* EmojiKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiKeyboard.swift; sourceTree = "<group>"; };
 		AE128848280C51E00049A5E4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AE12884A280C53100049A5E4 /* icon_keyboard_emoji.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_keyboard_emoji.pdf; sourceTree = "<group>"; };
+		AE12884E281CED0A0049A5E4 /* glyph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = glyph.swift; sourceTree = "<group>"; };
+		AE12884F281CED0A0049A5E4 /* input-parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "input-parser.swift"; sourceTree = "<group>"; };
+		AE128851281CED0A0049A5E4 /* expression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expression.swift; sourceTree = "<group>"; };
+		AE128852281CED0A0049A5E4 /* expression-combining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "expression-combining.swift"; sourceTree = "<group>"; };
+		AE128853281CED0A0049A5E4 /* expressionizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = expressionizer.swift; sourceTree = "<group>"; };
+		AE128855281CED0A0049A5E4 /* calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calculator.swift; sourceTree = "<group>"; };
+		AE128856281CED0A0049A5E4 /* calc-error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "calc-error.swift"; sourceTree = "<group>"; };
+		AE128857281CED0A0049A5E4 /* calc-result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "calc-result.swift"; sourceTree = "<group>"; };
+		AE128859281CED0A0049A5E4 /* operationizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = operationizer.swift; sourceTree = "<group>"; };
+		AE12885A281CED0A0049A5E4 /* operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = operation.swift; sourceTree = "<group>"; };
+		AE12885B281CED0A0049A5E4 /* number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = number.swift; sourceTree = "<group>"; };
+		AE12885D281CED0A0049A5E4 /* token-array-validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "token-array-validation.swift"; sourceTree = "<group>"; };
+		AE12885E281CED0A0049A5E4 /* tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tokenizer.swift; sourceTree = "<group>"; };
+		AE12885F281CED0A0049A5E4 /* token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = token.swift; sourceTree = "<group>"; };
 		AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryViewController.swift; sourceTree = "<group>"; };
 		AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebViewController.swift; sourceTree = "<group>"; };
 		AE1A875C27512195004FA0DA /* Spirograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirograph.swift; sourceTree = "<group>"; };
@@ -1780,6 +1850,67 @@
 			path = emoji;
 			sourceTree = "<group>";
 		};
+		AE12884C281CEC9D0049A5E4 /* calculator */ = {
+			isa = PBXGroup;
+			children = (
+				AE12885B281CED0A0049A5E4 /* number.swift */,
+				AE128856281CED0A0049A5E4 /* calc-error.swift */,
+				AE128857281CED0A0049A5E4 /* calc-result.swift */,
+				AE128854281CED0A0049A5E4 /* expression -> calculation */,
+				AE12885C281CED0A0049A5E4 /* glyphs -> tokens */,
+				AE128850281CED0A0049A5E4 /* operations -> expression */,
+				AE12884D281CED0A0049A5E4 /* text -> glyphs */,
+				AE128858281CED0A0049A5E4 /* tokens -> operations */,
+			);
+			path = calculator;
+			sourceTree = "<group>";
+		};
+		AE12884D281CED0A0049A5E4 /* text -> glyphs */ = {
+			isa = PBXGroup;
+			children = (
+				AE12884E281CED0A0049A5E4 /* glyph.swift */,
+				AE12884F281CED0A0049A5E4 /* input-parser.swift */,
+			);
+			path = "text -> glyphs";
+			sourceTree = "<group>";
+		};
+		AE128850281CED0A0049A5E4 /* operations -> expression */ = {
+			isa = PBXGroup;
+			children = (
+				AE128851281CED0A0049A5E4 /* expression.swift */,
+				AE128852281CED0A0049A5E4 /* expression-combining.swift */,
+				AE128853281CED0A0049A5E4 /* expressionizer.swift */,
+			);
+			path = "operations -> expression";
+			sourceTree = "<group>";
+		};
+		AE128854281CED0A0049A5E4 /* expression -> calculation */ = {
+			isa = PBXGroup;
+			children = (
+				AE128855281CED0A0049A5E4 /* calculator.swift */,
+			);
+			path = "expression -> calculation";
+			sourceTree = "<group>";
+		};
+		AE128858281CED0A0049A5E4 /* tokens -> operations */ = {
+			isa = PBXGroup;
+			children = (
+				AE128859281CED0A0049A5E4 /* operationizer.swift */,
+				AE12885A281CED0A0049A5E4 /* operation.swift */,
+			);
+			path = "tokens -> operations";
+			sourceTree = "<group>";
+		};
+		AE12885C281CED0A0049A5E4 /* glyphs -> tokens */ = {
+			isa = PBXGroup;
+			children = (
+				AE12885D281CED0A0049A5E4 /* token-array-validation.swift */,
+				AE12885E281CED0A0049A5E4 /* tokenizer.swift */,
+				AE12885F281CED0A0049A5E4 /* token.swift */,
+			);
+			path = "glyphs -> tokens";
+			sourceTree = "<group>";
+		};
 		AE1C4F18274341140097EAC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2219,6 +2350,7 @@
 		AE62CB7427254DC9007D51CD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				AE12884C281CEC9D0049A5E4 /* calculator */,
 				AE62CB7B27254DD6007D51CD /* Auth.swift */,
 				AE62CB7927254DD6007D51CD /* CatoMonitor.swift */,
 				AE62CB7A27254DD6007D51CD /* DBTool.swift */,
@@ -4206,6 +4338,8 @@
 				AE62CA0B2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AE62CB9027254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CB4C27254947007D51CD /* UIColor+Extension.swift in Sources */,
+				AE128874281CED0A0049A5E4 /* calculator.swift in Sources */,
+				AE12888C281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
 				AE62CB3427254946007D51CD /* Number+Extension.swift in Sources */,
 				AE0442842803D6B9003DB6A1 /* InputText.swift in Sources */,
 				AEE0106D2742560200C155D8 /* ImageSet.swift in Sources */,
@@ -4286,10 +4420,12 @@
 				AEF86668274B9B5D002E33E5 /* ImagePredictor.swift in Sources */,
 				AECDC15B2745E3090038BE68 /* UncaughtExceptionHandler.m in Sources */,
 				AEE010EA2742569200C155D8 /* MJRefreshFooter.m in Sources */,
+				AE128870281CED0A0049A5E4 /* expressionizer.swift in Sources */,
 				AE4D0908273032EF00899D2C /* H5SecondOpenUtil.swift in Sources */,
 				AE72F533273EBDA80060456A /* AddressInfo.swift in Sources */,
 				AE62CBF7272566C2007D51CD /* BaseMenuViewController.swift in Sources */,
 				AE1C4F702743476E0097EAC1 /* PatchViewController.m in Sources */,
+				AE128890281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AE66E19027537E47006432FE /* ProcessVideoViewController.swift in Sources */,
 				AE62CB1527254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
@@ -4301,6 +4437,7 @@
 				AE61166027410F2F008466AB /* GrandSlider.swift in Sources */,
 				AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */,
 				AEE010DB2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
+				AE12886C281CED0A0049A5E4 /* expression-combining.swift in Sources */,
 				AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */,
 				AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AEE0113027425D8800C155D8 /* LinkGameViewController.swift in Sources */,
@@ -4323,6 +4460,7 @@
 				AE08AA8E27C684CB00EE0813 /* DownloadViewController.swift in Sources */,
 				AE62CB5227254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */,
+				AE128894281CED0A0049A5E4 /* token.swift in Sources */,
 				AE1C4F63274346BD0097EAC1 /* spewG.c in Sources */,
 				AEE010C32742569200C155D8 /* UIView+MJExtension.m in Sources */,
 				AEE0113227425D8800C155D8 /* PieceImage.swift in Sources */,
@@ -4348,11 +4486,13 @@
 				AE62CB6E27254B12007D51CD /* GrandCue.swift in Sources */,
 				AE72F52B273EB9A50060456A /* CityChooseViewController.swift in Sources */,
 				AE62CADA272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
+				AE128864281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				AEE010DE2742569200C155D8 /* MJRefreshNormalHeader.m in Sources */,
 				AE62CB6027254977007D51CD /* Dict+Extension.swift in Sources */,
 				AE6E5DCC273FC51C00523EA8 /* OptimizeTableViewController.swift in Sources */,
 				AE62CAAA272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AEE0105A2742551F00C155D8 /* FiveStrokeViewController.swift in Sources */,
+				AE128878281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				AE7F9133272AC3C900733BC8 /* OffSreenRenderViewController.swift in Sources */,
 				AEE010AD2742569200C155D8 /* MJRefreshConst.m in Sources */,
 				AEE0115427425D8800C155D8 /* BaseBoard.swift in Sources */,
@@ -4387,6 +4527,7 @@
 				AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */,
 				AE62CA712725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE8306E127B4B16F00C657DC /* ScaleViewController.swift in Sources */,
+				AE128884281CED0A0049A5E4 /* operation.swift in Sources */,
 				AE62CA532725429A007D51CD /* UIView+Layout.m in Sources */,
 				AEE010CC2742569200C155D8 /* MJRefreshBackStateFooter.m in Sources */,
 				AE62CAAD272542D1007D51CD /* PriorityBoxArray.m in Sources */,
@@ -4420,6 +4561,7 @@
 				AE62CAFE272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CA412725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAF5272542DC007D51CD /* FocusFrameView.swift in Sources */,
+				AE128860281CED0A0049A5E4 /* glyph.swift in Sources */,
 				AEE010782742560200C155D8 /* CollectedViewController.swift in Sources */,
 				AE1C4F60274346BD0097EAC1 /* decompress.c in Sources */,
 				AE62CBD727255C20007D51CD /* FlowView.swift in Sources */,
@@ -4436,8 +4578,10 @@
 				AE62CB01272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AE97D3322745FCAF00157DBE /* TriggerErrorViewController.swift in Sources */,
 				AEE0115327425D8800C155D8 /* FullBoard.swift in Sources */,
+				AE12887C281CED0A0049A5E4 /* calc-result.swift in Sources */,
 				AE72F528273EB9A50060456A /* CitySearchResultView.swift in Sources */,
 				AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */,
+				AE128880281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE1C4F6D274346BD0097EAC1 /* bsdiff.c in Sources */,
 				AE66E1CF27538B81006432FE /* VideoBoxViewController.swift in Sources */,
 				AE62CAF2272542DC007D51CD /* CameraModel.swift in Sources */,
@@ -4458,7 +4602,9 @@
 				AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */,
 				AE66E1D827538EE0006432FE /* HeartView.swift in Sources */,
+				AE128868281CED0A0049A5E4 /* expression.swift in Sources */,
 				AEE010AA2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
+				AE128888281CED0A0049A5E4 /* number.swift in Sources */,
 				AE1C4F5F274346BD0097EAC1 /* compress.c in Sources */,
 				AE80EE0A27FF07D2004566D5 /* PopHintView.swift in Sources */,
 				AE62CB4627254947007D51CD /* UITableView+Extension.swift in Sources */,
@@ -4496,6 +4642,7 @@
 				AE62CBC627255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE62CA752725429B007D51CD /* TZLocationManager.m in Sources */,
 				AEE010D62742569200C155D8 /* MJRefreshAutoStateFooter.m in Sources */,
+				AE12886D281CED0A0049A5E4 /* expression-combining.swift in Sources */,
 				AEF8665C274B6F98002E33E5 /* Store.swift in Sources */,
 				AE62CB5D2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE62CAD5272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
@@ -4509,13 +4656,18 @@
 				AE62CB5327254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AEE010DC2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
 				AE62CA9F272542D1007D51CD /* PaletteSwatch.m in Sources */,
+				AE128869281CED0A0049A5E4 /* expression.swift in Sources */,
+				AE128891281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AE62CB7227254B12007D51CD /* Toast.swift in Sources */,
+				AE128895281CED0A0049A5E4 /* token.swift in Sources */,
 				AE7E74402722528200F0C19C /* SwiftUIWorkApp.swift in Sources */,
 				AEE010EB2742569200C155D8 /* MJRefreshFooter.m in Sources */,
 				AE62CADE272542DC007D51CD /* ShadowPlayer.swift in Sources */,
 				AE62CAB1272542D1007D51CD /* PaletteTarget.m in Sources */,
 				AEE010F62742569200C155D8 /* MJRefreshAutoFooter.m in Sources */,
+				AE128871281CED0A0049A5E4 /* expressionizer.swift in Sources */,
 				AE62CB1C27254873007D51CD /* BaseModel.swift in Sources */,
+				AE12888D281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
 				AE62CAF3272542DC007D51CD /* CameraModel.swift in Sources */,
 				AE62CBC327255C20007D51CD /* LimitTextView.swift in Sources */,
 				AE62CA632725429B007D51CD /* TZImageManager.m in Sources */,
@@ -4524,15 +4676,18 @@
 				AE62CA542725429B007D51CD /* UIView+Layout.m in Sources */,
 				AEE010E82742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
 				AE62CA142725425A007D51CD /* FMDatabase.m in Sources */,
+				AE128879281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				AE62CB202725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CA1A2725425A007D51CD /* FMDatabasePool.m in Sources */,
 				AE62CB1927254873007D51CD /* ResultInfo.swift in Sources */,
 				AE62CACF272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE62CAAB272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AE62CAF9272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
+				AE128889281CED0A0049A5E4 /* number.swift in Sources */,
 				AE62CBBD27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CBD827255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CBD527255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
+				AE128875281CED0A0049A5E4 /* calculator.swift in Sources */,
 				AEE010D92742569200C155D8 /* MJRefreshAutoGifFooter.m in Sources */,
 				AE62CAA3272542D1007D51CD /* UIImage+Palette.m in Sources */,
 				AEE010AE2742569200C155D8 /* MJRefreshConst.m in Sources */,
@@ -4548,6 +4703,7 @@
 				AE62CA462725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE62CB6F27254B12007D51CD /* GrandCue.swift in Sources */,
 				AE62CAED272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
+				AE128881281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE62CB0F272542F8007D51CD /* TransformMP3.m in Sources */,
 				AE62CA672725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE62CBC027255C20007D51CD /* TimerButton.swift in Sources */,
@@ -4568,7 +4724,9 @@
 				AE62CADB272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				AE62CB02272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AE62CA492725429A007D51CD /* TZVideoPlayerController.m in Sources */,
+				AE128861281CED0A0049A5E4 /* glyph.swift in Sources */,
 				AE62CA1D2725425A007D51CD /* FMResultSet.m in Sources */,
+				AE128885281CED0A0049A5E4 /* operation.swift in Sources */,
 				AEE010C12742569200C155D8 /* NSBundle+MJRefresh.m in Sources */,
 				AEE010CA2742569200C155D8 /* MJRefreshBackGifFooter.m in Sources */,
 				AE62CA572725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
@@ -4582,8 +4740,10 @@
 				AEE010F32742569200C155D8 /* MJRefreshBackFooter.m in Sources */,
 				AE62CBDB27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE62CBDE27255C20007D51CD /* GrandTextView.swift in Sources */,
+				AE128865281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				AEE010EF2742569200C155D8 /* MJRefreshHeader.m in Sources */,
 				AE62CB3527254946007D51CD /* Number+Extension.swift in Sources */,
+				AE12887D281CED0A0049A5E4 /* calc-result.swift in Sources */,
 				AE62CAEA272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CBCF27255C20007D51CD /* GridView.swift in Sources */,
 				AE62CA722725429B007D51CD /* TZImagePickerController.m in Sources */,
@@ -4595,6 +4755,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEE3DB2927FC0C45007B2B58 /* FullKeyboardView.swift in Sources */,
+				AE12888E281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
 				AE9EE9F628083E2000EBE70A /* Shake.swift in Sources */,
 				AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
 				AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */,
@@ -4603,6 +4764,9 @@
 				AEE3DB5E27FC31C4007B2B58 /* NumKeyboardView.swift in Sources */,
 				AEF86663274B9A38002E33E5 /* String+Extension.swift in Sources */,
 				AEE3DB1927FC09C1007B2B58 /* UIColor+Extension.swift in Sources */,
+				AE12886A281CED0A0049A5E4 /* expression.swift in Sources */,
+				AE12888A281CED0A0049A5E4 /* number.swift in Sources */,
+				AE128886281CED0A0049A5E4 /* operation.swift in Sources */,
 				AEE3DB1127FC0958007B2B58 /* KeyboardView.swift in Sources */,
 				AEE3DB2227FC0BF2007B2B58 /* PopKeyView.swift in Sources */,
 				AE128847280C51820049A5E4 /* EmojiKeyboard.swift in Sources */,
@@ -4610,16 +4774,26 @@
 				AEE3DB2827FC0C45007B2B58 /* FullRowKeysView.swift in Sources */,
 				AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */,
 				AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */,
+				AE128882281CED0A0049A5E4 /* operationizer.swift in Sources */,
+				AE128866281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				AEE3DB1827FC0960007B2B58 /* KeyInfo.swift in Sources */,
+				AE12887A281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */,
 				AE128849280C51E00049A5E4 /* Extension.swift in Sources */,
 				AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */,
 				AEF8665D274B7023002E33E5 /* Foundation+Extension.swift in Sources */,
+				AE12886E281CED0A0049A5E4 /* expression-combining.swift in Sources */,
+				AE128892281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AEE3DB2A27FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift in Sources */,
+				AE12887E281CED0A0049A5E4 /* calc-result.swift in Sources */,
+				AE128872281CED0A0049A5E4 /* expressionizer.swift in Sources */,
+				AE128896281CED0A0049A5E4 /* token.swift in Sources */,
 				AE7E7452272252AC00F0C19C /* KeyboardViewController.swift in Sources */,
 				AEE3DB5927FC2FFA007B2B58 /* NineKeyboardView.swift in Sources */,
 				AEE3DB6427FC3DAC007B2B58 /* HeaderView.swift in Sources */,
 				AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */,
+				AE128876281CED0A0049A5E4 /* calculator.swift in Sources */,
+				AE128862281CED0A0049A5E4 /* glyph.swift in Sources */,
 				AE0442852803D6BA003DB6A1 /* InputText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4688,8 +4862,10 @@
 				AEE010BC2742569200C155D8 /* UIScrollView+MJExtension.m in Sources */,
 				AEE010C52742569200C155D8 /* UIView+MJExtension.m in Sources */,
 				AE62CA4D2725429A007D51CD /* TZAssetModel.m in Sources */,
+				AE12888B281CED0A0049A5E4 /* number.swift in Sources */,
 				AE62CA9D272542D1007D51CD /* Palette.m in Sources */,
 				AE72F538273EBDB10060456A /* CityChooseViewController+Delegate.swift in Sources */,
+				AE128877281CED0A0049A5E4 /* calculator.swift in Sources */,
 				AE62CB66272549A3007D51CD /* String+Extension.swift in Sources */,
 				AE62CB8F27254DD7007D51CD /* DBTool.swift in Sources */,
 				AEE010E02742569200C155D8 /* MJRefreshNormalHeader.m in Sources */,
@@ -4700,8 +4876,10 @@
 				AEE010AF2742569200C155D8 /* MJRefreshConst.m in Sources */,
 				AE62CBAE27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA83272542AF007D51CD /* fishhook.c in Sources */,
+				AE128883281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE62CACD272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
 				AE62CADC272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
+				AE128887281CED0A0049A5E4 /* operation.swift in Sources */,
 				AE62CA0D2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AEE010D12742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				AE62CAA4272542D1007D51CD /* UIImage+Palette.m in Sources */,
@@ -4709,19 +4887,24 @@
 				AE62CAF7272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE62CB8927254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CAEE272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
+				AE128873281CED0A0049A5E4 /* expressionizer.swift in Sources */,
 				AE62CA122725425A007D51CD /* FMDatabaseAdditions.m in Sources */,
 				AE62CA732725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE62CAD3272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
 				AE72F532273EBDA60060456A /* AddressInfo.swift in Sources */,
+				AE12888F281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
 				AE62CB3F27254947007D51CD /* WKWebView+Extension.swift in Sources */,
 				AEE010FB2742569200C155D8 /* MJRefreshComponent.m in Sources */,
 				AE62CB1A27254873007D51CD /* ResultInfo.swift in Sources */,
 				AEE010E62742569200C155D8 /* MJRefreshStateHeader.m in Sources */,
 				AE62CBD327255C20007D51CD /* SlideMenuView.swift in Sources */,
+				AE12887F281CED0A0049A5E4 /* calc-result.swift in Sources */,
 				AE62CB4E27254947007D51CD /* UIColor+Extension.swift in Sources */,
+				AE128867281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				AE62CAFA272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE62CB3627254946007D51CD /* Number+Extension.swift in Sources */,
 				AE72F539273EBDB30060456A /* CityDB.swift in Sources */,
+				AE12887B281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				AE62CB7027254B12007D51CD /* GrandCue.swift in Sources */,
 				AE62CB00272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CA9A272542D1007D51CD /* PaletteColorUtils.m in Sources */,
@@ -4754,9 +4937,11 @@
 				AE62CB03272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AEE010CB2742569200C155D8 /* MJRefreshBackGifFooter.m in Sources */,
 				AE62CB8327254DD7007D51CD /* Tool.swift in Sources */,
+				AE128863281CED0A0049A5E4 /* glyph.swift in Sources */,
 				AEE010DA2742569200C155D8 /* MJRefreshAutoGifFooter.m in Sources */,
 				AE62CA152725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB5E2725495E007D51CD /* Array+Extension.swift in Sources */,
+				AE12886B281CED0A0049A5E4 /* expression.swift in Sources */,
 				AE62CBD027255C20007D51CD /* GridView.swift in Sources */,
 				AE62CAAC272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AE62CA7C2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
@@ -4768,11 +4953,13 @@
 				AE61165F27410F2C008466AB /* GrandSlider.swift in Sources */,
 				AEE010EC2742569200C155D8 /* MJRefreshFooter.m in Sources */,
 				AE62CB5A27254947007D51CD /* UIView+Base.swift in Sources */,
+				AE128893281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AE62CA642725429B007D51CD /* TZImageManager.m in Sources */,
 				AEE010F02742569200C155D8 /* MJRefreshHeader.m in Sources */,
 				AE62CAD9272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CB8C27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAAF272542D1007D51CD /* PriorityBoxArray.m in Sources */,
+				AE12886F281CED0A0049A5E4 /* expression-combining.swift in Sources */,
 				AE62CAF1272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE72F537273EBDAE0060456A /* CityChooseViewController.swift in Sources */,
 				AEA0A122278940680044D012 /* ImageInfo.swift in Sources */,
@@ -4798,6 +4985,7 @@
 				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE0442832803D465003DB6A1 /* InputText.swift in Sources */,
+				AE128897281CED0A0049A5E4 /* token.swift in Sources */,
 				AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */,
 				AE62CB10272542F8007D51CD /* TransformMP3.m in Sources */,
 				AE62CB8627254DD7007D51CD /* FPSTool.swift in Sources */,
