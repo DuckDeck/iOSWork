@@ -53,6 +53,7 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Shake.keyShake()
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:

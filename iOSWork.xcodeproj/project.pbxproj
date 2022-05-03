@@ -82,6 +82,7 @@
 		AE128896281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
 		AE128897281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
 		AE12889928210F590049A5E4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
+		AE12889E2821524A0049A5E4 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9EE9F528083E2000EBE70A /* Shake.swift */; };
 		AE1A51A027C284B500162D66 /* ImageMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */; };
 		AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */; };
 		AE1A875D27512195004FA0DA /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875C27512195004FA0DA /* Spirograph.swift */; };
@@ -1084,6 +1085,7 @@
 		AE12885D281CED0A0049A5E4 /* token-array-validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "token-array-validation.swift"; sourceTree = "<group>"; };
 		AE12885E281CED0A0049A5E4 /* tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tokenizer.swift; sourceTree = "<group>"; };
 		AE12885F281CED0A0049A5E4 /* token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = token.swift; sourceTree = "<group>"; };
+		AE1288A2282154B00049A5E4 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryViewController.swift; sourceTree = "<group>"; };
 		AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebViewController.swift; sourceTree = "<group>"; };
 		AE1A875C27512195004FA0DA /* Spirograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirograph.swift; sourceTree = "<group>"; };
@@ -2059,6 +2061,7 @@
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE1288A2282154B00049A5E4 /* CoreAudio.framework */,
 				AE66E1D127538C50006432FE /* AVFoundation.framework */,
 				AE66E1CA275388B2006432FE /* CoreMedia.framework */,
 				AE66E1582753797E006432FE /* libiconv.2.4.0.tbd */,
@@ -4353,6 +4356,7 @@
 				AEE0103627424A0100C155D8 /* VideoListViewController.swift in Sources */,
 				AEE0106C2742560200C155D8 /* DownloadProgressView.swift in Sources */,
 				AE66E1B627538679006432FE /* AudioQueueCaptureManager.m in Sources */,
+				AE12889E2821524A0049A5E4 /* Shake.swift in Sources */,
 				AE61165B27410CF8008466AB /* TwoSideView.swift in Sources */,
 				AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE1C4F5D274346BD0097EAC1 /* randtable.c in Sources */,
