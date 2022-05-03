@@ -33,15 +33,18 @@ class CalculatorViewController: UIViewController {
     }
 
     @objc func changeText(){
-        print(textInput.text!)
-        let res = calculate(textInput.text!)
-        switch res{
-        case .value(let num):
-            lblResult.text = "\(num)"
-        case .error(let err):
-            lblResult.text = err.message
+        if let index = getCalIndex(textInput.text!){
+            let input = textInput.text!.substring(from: index)
+            if !input.isEmpty{
+                let res = calculate(input)
+                switch res{
+                case .value(let num):
+                    lblResult.text = "\(num)"
+                case .error(let err):
+                    lblResult.text = err.message
+                }
+            }
         }
-        
     }
     
     lazy var lblResult: UILabel = {

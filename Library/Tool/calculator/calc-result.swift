@@ -32,6 +32,11 @@ func calculate(_ input: String) -> CalcResult<Number> {
 }
 
 
-//func getCalIndex(_ input: String) -> Int{
-//    
-//}
+func getCalIndex(_ input: String) -> Int?{
+    let rev = String(input.reversed())
+    if let i = InputParser.getCalIndex(from: rev){
+       return rev.unicodeScalars.count - i
+    } else {
+        return nil
+    }
+}

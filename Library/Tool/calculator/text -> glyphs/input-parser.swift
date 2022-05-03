@@ -18,12 +18,24 @@ enum InputParser  {
                 glyphs.append(glyph)
             }
             else {
-                return .error(.unexpectedCharacter(at: scalarIndex.encodedOffset))
+                return .error(.unexpectedCharacter(at: scalarIndex.utf16Offset(in: string)))
             }
         }
         return .value(glyphs)
     }
 
+    static func getCalIndex(from string: String) -> Int? {
+        for scalarIndex in string.unicodeScalars.indices {
+            if let _ = parseGlyph(at: scalarIndex, in: string) {
+                
+            }
+            else {
+                return  scalarIndex.utf16Offset(in: string)
+            }
+        }
+        return nil
+    }
+    
     private static func parseGlyph(at index: String.UnicodeScalarIndex, in string: String) -> Glyph? {
         enum CharacterSets {
             static let add              = CharacterSet(charactersIn: "+")

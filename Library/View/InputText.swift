@@ -10,7 +10,7 @@ import UIKit
 class InputText:UIView{
     
     var txtChangeBlock:((_ txt:String)->Void)?
-    
+    var txtTapBlock:(()->Void)?
     var leftOffset : CGFloat = 5{
         didSet{
             lbl.snp.updateConstraints { make in
@@ -46,16 +46,15 @@ class InputText:UIView{
         didSet{
             if isEmpty{
                 lbl.text = placeHolder
-                lbl.textColor = UIColor.gray
+                lbl.textColor = kColorbbbbbb
             }
         }
     }
-    
+    var arrLocations = [CGRect]()
     var timer:Timer?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
@@ -99,10 +98,19 @@ class InputText:UIView{
         isEmpty = false
         updateCursor()
         txtChangeBlock?(text)
+        
+        layoutIfNeeded()
+        
+        arrLocations.removeAll()
+        for i in 0..<lbl.text!.count{
+            arrLocations.append(lbl.boundingRect(forCharacterRange: NSRange(location: i, length: 1))!)
+        }
+        
     }
     
     
     func deleteText() -> String?{
+        txtTapBlock?()
         if isEmpty{
             return nil
         }
@@ -111,12 +119,19 @@ class InputText:UIView{
         if lbl.text!.isEmpty{
             isEmpty = true
             lbl.text = placeHolder
-            lbl.textColor = UIColor.gray
+            lbl.textColor = kColorbbbbbb
         } else {
             isEmpty = false
         }
         updateCursor()
         txtChangeBlock?(text)
+        
+        layoutIfNeeded()
+        arrLocations.removeAll()
+        for i in 0..<lbl.text!.count{
+            arrLocations.append(lbl.boundingRect(forCharacterRange: NSRange(location: i, length: 1))!)
+        }
+        
         return String(str)
     }
     
@@ -125,8 +140,9 @@ class InputText:UIView{
         leftText = ""
         rightText = ""
         lbl.text = placeHolder
-        lbl.textColor = UIColor.gray
+        lbl.textColor = kColorbbbbbb
         updateCursor()
+        arrLocations.removeAll()
         txtChangeBlock?(text)
     }
     
@@ -141,8 +157,26 @@ class InputText:UIView{
                 make.left.equalTo(width.width + leftOffset)
             }
         }
-        
-        
+    }
+    
+    func touchPoint(point:CGPoint)  {
+        if isEmpty{
+            return
+        }
+        if point.x > lbl.frame.maxX{
+            leftText = lbl.text!
+            rightText = ""
+        }
+        for item in arrLocations.enumerated(){
+            if point.x > item.element.midX && point.x <= item.element.maxX{
+                leftText = lbl.text!.substring(to: item.offset)
+                rightText = lbl.text!.substring(from: item.offset)
+            } else if  point.x > item.element.minX && point.x <= item.element.midX{
+                leftText = lbl.text!.substring(to: item.offset - 1)
+                rightText = lbl.text!.substring(from: item.offset - 1)
+            }
+        }
+        updateCursor()
     }
     
     @objc func timeFire(){
@@ -156,14 +190,15 @@ class InputText:UIView{
         }
     }
     
+    
     lazy var cursor: UIView = {
         let v = UIView()
         v.backgroundColor = UIColor.green
         return v
     }()
     
-    lazy var scrollView: UIScrollView = {
-        let v = UIScrollView()
+    lazy var scrollView: InputSrollView = {
+        let v = InputSrollView()
         v.showsHorizontalScrollIndicator = false
         return v
     }()
@@ -183,6 +218,36 @@ class InputText:UIView{
 }
 
 //先不考虑光标移动问题
-class InputLabel:UILabel{
-    
+class InputSrollView:UIScrollView{
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let p = touches.randomElement()?.location(in: self){
+            if let inputText = superview as? InputText{
+                inputText.touchPoint(point: p)
+            }
+        }
+    }
+}
+
+extension UILabel {
+    func boundingRect(forCharacterRange range: NSRange) -> CGRect? {
+
+        guard let attributedText = attributedText else { return nil }
+
+        let textStorage = NSTextStorage(attributedString: attributedText)
+        let layoutManager = NSLayoutManager()
+
+        textStorage.addLayoutManager(layoutManager)
+
+        let textContainer = NSTextContainer(size: bounds.size)
+        textContainer.lineFragmentPadding = 0.0
+
+        layoutManager.addTextContainer(textContainer)
+
+        var glyphRange = NSRange()
+
+        // Convert the range for glyphs.
+        layoutManager.characterRange(forGlyphRange: range, actualGlyphRange: &glyphRange)
+
+        return layoutManager.boundingRect(forGlyphRange: glyphRange, in: textContainer)
+    }
 }

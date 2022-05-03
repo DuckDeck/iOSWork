@@ -81,6 +81,7 @@
 		AE128895281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
 		AE128896281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
 		AE128897281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
+		AE12889928210F590049A5E4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AE1A51A027C284B500162D66 /* ImageMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */; };
 		AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */; };
 		AE1A875D27512195004FA0DA /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875C27512195004FA0DA /* Spirograph.swift */; };
@@ -4774,6 +4775,7 @@
 				AEE3DB2827FC0C45007B2B58 /* FullRowKeysView.swift in Sources */,
 				AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */,
 				AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */,
+				AE12889928210F590049A5E4 /* Global.swift in Sources */,
 				AE128882281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE128866281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				AEE3DB1827FC0960007B2B58 /* KeyInfo.swift in Sources */,
