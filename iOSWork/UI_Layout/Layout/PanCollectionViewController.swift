@@ -8,6 +8,7 @@
 import UIKit
 
 class PanCollectionViewController: UIViewController {
+    var selectMode = false
     var arrText = [String]()
     var lastSelectedCell = IndexPath()
 
@@ -16,7 +17,7 @@ class PanCollectionViewController: UIViewController {
         view.backgroundColor = UIColor.white
         title = "手势Collection"
         arrText.append("确实，")
-        arrText.append("HTPC一下子把配置的要求拉上来了")
+        arrText.append("HTP了")
         arrText.append("。。")
         arrText.append("功耗也上来了")
         arrText.append("我也是折腾过来的")
@@ -25,8 +26,24 @@ class PanCollectionViewController: UIViewController {
         arrText.append("，反复开关，或待机休眠")
         arrText.append("启动太慢，体验不好")
         arrText.append("后来")
-        arrText.append("换了一个S905X3做播放器")
-        arrText.append("不知是用的MXplayer不对还是怎么")
+        arrText.append("换了一放器")
+        arrText.append("不playe么")
+        arrText.append("HDR")
+        arrText.append("效果很差，")
+        arrText.append("屏幕一层纱")
+        arrText.append("我对画面")
+        arrText.append("要求并不高")
+        arrText.append("可能是看惯了")
+        arrText.append("3400G")
+        arrText.append("反而很不适")
+        arrText.append("这机的HTPC")
+        arrText.append("这样")
+        arrText.append("顺理成章")
+        arrText.append("把软路由集成进了")
+        arrText.append("其实。")
+        arrText.append("后来")
+        arrText.append("换了一个器")
+        arrText.append("不怎么")
         arrText.append("HDR")
         arrText.append("效果很差，")
         arrText.append("屏幕像罩了一层纱")
@@ -35,12 +52,37 @@ class PanCollectionViewController: UIViewController {
         arrText.append("可能是看惯了")
         arrText.append("3400G")
         arrText.append("反而很不适")
-        arrText.append("这才换成NUC11做永不关机的HTPC")
+        arrText.append("这才换成不C")
         arrText.append("这样")
-        arrText.append("顺理成章")
-        arrText.append("把软路由集成进去了")
-        arrText.append("其实痛点还是HTPC。。")
-        
+        arrText.append("顺理成")
+        arrText.append("成进去了")
+        arrText.append("其实痛C。。")
+        arrText.append("换了一放器")
+        arrText.append("不playe么")
+        arrText.append("HDR")
+        arrText.append("效差，")
+        arrText.append("屏幕一层纱")
+        arrText.append("我对画面")
+        arrText.append("要求并高")
+        arrText.append("可能是看惯了")
+        arrText.append("3400G")
+        arrText.append("反")
+        arrText.append("这机的HTPC")
+        arrText.append("这样")
+        arrText.append("顺理成")
+        arrText.append("成进去了")
+        arrText.append("其实痛C。。")
+        arrText.append("换了一放器")
+        arrText.append("不playe么")
+        arrText.append("HDR")
+        arrText.append("效差，")
+        arrText.append("屏幕一层纱")
+        arrText.append("我对画面")
+        arrText.append("要求并高")
+        arrText.append("可能是看惯了")
+        arrText.append("3400G")
+        arrText.append("反")
+        arrText.append("这机的HTPC")
         
         
         view.addSubview(collectionView)
@@ -52,24 +94,20 @@ class PanCollectionViewController: UIViewController {
         }
     }
     
-    lazy var collectionView: UICollectionView = {
+    lazy var collectionView: PanCollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         layout.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collection = PanCollectionView(frame: .zero, collectionViewLayout: layout)
         collection.register(PopCell.self, forCellWithReuseIdentifier: "PopCell")
         collection.collectionViewLayout.perform(Selector.init(("_setRowAlignmentsOptions:")),with:NSDictionary.init(dictionary:["UIFlowLayoutCommonRowHorizontalAlignmentKey": NSNumber.init(value:NSTextAlignment.left.rawValue), "UIFlowLayoutLastRowHorizontalAlignmentKey": NSNumber.init(value:NSTextAlignment.left.rawValue), "UIFlowLayoutRowVerticalAlignmentKey": NSNumber.init(value:NSTextAlignment.center.rawValue)]));
         collection.delegate = self
         collection.dataSource = self
         collection.backgroundColor = UIColor.white
-        //collection.isUserInteractionEnabled = true
         collection.canCancelContentTouches = false
         collection.allowsMultipleSelection = true
 
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPan(panGesture:)))
-        panGesture.delegate = self
-        collection.addGestureRecognizer(panGesture)
         
         return collection
     }()
@@ -87,27 +125,7 @@ class PanCollectionViewController: UIViewController {
             }
         }
     }
-    
-    @objc func didPan(panGesture: UIPanGestureRecognizer) {
-   
-        if panGesture.state == .began {
-            collectionView.isUserInteractionEnabled = false
-            collectionView.isScrollEnabled = false
-        }
-        else if panGesture.state == .changed {
-            let location: CGPoint = panGesture.location(in: collectionView)
-            if let indexPath: IndexPath = collectionView.indexPathForItem(at: location) {
-                if indexPath != lastSelectedCell {
-                    self.selectCell(indexPath, selected: true)
-                    lastSelectedCell = indexPath
-                }
-            }
-        } else if panGesture.state == .ended {
-            collectionView.isScrollEnabled = true
-            collectionView.isUserInteractionEnabled = true
-        }
-        
-    }
+ 
 }
 
 extension PanCollectionViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIGestureRecognizerDelegate{
@@ -213,3 +231,94 @@ class PopCell: UICollectionViewCell {
 
 
 
+class PanCollectionView:UICollectionView{
+    
+    var selectMode = false
+    var lastSelectedCell : IndexPath?
+    var chooseMode = true //根据第一个选择的来决定是选择还是取消选择,true 是选择，false是取消选择
+    var arrSelectedIndex = [IndexPath]()
+    var firstSelectIndex : IndexPath?
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touchesBegan")
+        lastSelectedCell = nil
+        firstSelectIndex = nil
+        arrSelectedIndex.removeAll()
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let point = touches.randomElement()?.location(in: self){
+            if let index = self.indexPathForItem(at: point){
+                if lastSelectedCell == nil{
+                    if cellForItem(at: index)?.isSelected ?? false{
+                        chooseMode = false
+                    } else {
+                        chooseMode = true
+                    }
+                }
+                if lastSelectedCell == nil || index != lastSelectedCell!{
+                    //获取甩的cell
+                    if lastSelectedCell != nil{
+                        let small = min(index.row, lastSelectedCell!.row)
+                        let big = max(index.row, lastSelectedCell!.row)
+                        for i in small...big{
+                            let path =  IndexPath(row: i, section: 0)
+                            if !arrSelectedIndex.contains(path){
+                                arrSelectedIndex.append(path)
+                                cellForItem(at: path)?.isSelected = chooseMode
+                            }
+                        }
+                        
+                        let fSmall = min(index.row, firstSelectIndex!.row)
+                        let fBig = max(index.row, firstSelectIndex!.row)
+
+                        var ids = [Int]()
+                        for i in arrSelectedIndex{
+                            if fSmall > i.row || fBig < i.row{
+                                ids.append(i.row)
+                            }
+                        }
+                        
+                        arrSelectedIndex.removeWith { e in
+                            ids.contains(e.row)
+                        }
+                        for i in ids{
+                            cellForItem(at: IndexPath(row: i, section: 0))?.isSelected = !chooseMode
+                        }
+                        
+                        if index.row > lastSelectedCell!.row{
+                            if let lastIndex = indexPath(for: visibleCells.last!){
+                                if lastIndex.row - index.row < 10{
+                                    if numberOfItems(inSection: 0) - lastIndex.row > 10{
+                                        scrollToItem(at: IndexPath(row: lastIndex.row + 10, section: 0), at: .bottom, animated: true)
+                                    } else {
+                                        scrollToItem(at: IndexPath(row: numberOfItems(inSection: 0) - 1, section: 0), at: .bottom, animated: true)
+                                    }
+                                }
+                            }
+                        }
+                        if index.row < lastSelectedCell!.row{
+                            if let firstIndex = indexPath(for: visibleCells.first!){
+                                if index.row - firstIndex.row < 10{
+                                    if index.row > 10{
+                                        scrollToItem(at: IndexPath(row: index.row - 10, section: 0), at: .bottom, animated: true)
+                                    } else {
+                                        scrollToItem(at: IndexPath(row:  0, section: 0), at: .bottom, animated: true)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    lastSelectedCell = index
+                    if firstSelectIndex == nil{
+                        firstSelectIndex = index
+                    }
+                }
+                
+            }
+        }
+
+    }
+
+    
+   
+}
