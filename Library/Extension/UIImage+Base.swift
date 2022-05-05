@@ -130,6 +130,23 @@ extension UIImage{
     }
     
     
+   @objc func scaleImage(size:CGSize)->UIImage?{
+        let options = [
+                    kCGImageSourceShouldCache:false,
+                    kCGImageSourceCreateThumbnailFromImageAlways: true,
+                    kCGImageSourceCreateThumbnailWithTransform: true,
+                    kCGImageSourceShouldCacheImmediately: true,
+                    kCGImageSourceThumbnailMaxPixelSize: max(size.width, size.height)
+                ] as CFDictionary
+        let imgData = self.jpegData(compressionQuality: 1)!
+       
+        guard let imgSource = CGImageSourceCreateWithData(imgData as CFData, nil) else {return nil}
+        guard let imgRef = CGImageSourceCreateThumbnailAtIndex(imgSource, 0, options) else {return nil}
+        return UIImage(cgImage: imgRef)
+    }
+    
+
+    
     class func creatQRCodeImage(text:String) -> UIImage{
         let filter = CIFilter(name: "CIQRCodeGenerator")
         filter?.setDefaults()
