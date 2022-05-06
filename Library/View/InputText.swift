@@ -77,15 +77,25 @@ class InputText:UIView{
             make.height.equalTo(lbl).multipliedBy(1.1)
             make.width.equalTo(2)
         }
-        
-        timer =  Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timeFire), userInfo: nil, repeats: true)
-        timer?.fire()
     }
     
     
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    func focus(){
+        timer =  Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timeFire), userInfo: nil, repeats: true)
+        timer?.fire()
+        cursor.isHidden = false
+    }
+    
+    func unFocus(){
+        timer?.invalidate()
+        timer = nil
+        cursor.isHidden = true
     }
     
     func insertText(text:String){
@@ -170,10 +180,10 @@ class InputText:UIView{
         for item in arrLocations.enumerated(){
             if point.x > item.element.midX && point.x <= item.element.maxX{
                 leftText = lbl.text!.substring(to: item.offset)
-                rightText = lbl.text!.substring(from: item.offset)
+                rightText = lbl.text!.substring(from: item.offset + 1)
             } else if  point.x > item.element.minX && point.x <= item.element.midX{
                 leftText = lbl.text!.substring(to: item.offset - 1)
-                rightText = lbl.text!.substring(from: item.offset - 1)
+                rightText = lbl.text!.substring(from: item.offset)
             }
         }
         updateCursor()
@@ -194,6 +204,7 @@ class InputText:UIView{
     lazy var cursor: UIView = {
         let v = UIView()
         v.backgroundColor = UIColor.green
+        v.isHidden = true
         return v
     }()
     
