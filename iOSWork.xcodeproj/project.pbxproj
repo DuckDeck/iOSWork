@@ -115,6 +115,7 @@
 		AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */; };
 		AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */; };
 		AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */; };
+		AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE313F25282E46DD00245791 /* KeyboardSettingView.swift */; };
 		AE35149B27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149C27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
@@ -1115,6 +1116,7 @@
 		AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RerangeBinaryViewController.m; sourceTree = "<group>"; };
 		AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKeyboardViewController.swift; sourceTree = "<group>"; };
 		AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGlobal.swift; sourceTree = "<group>"; };
+		AE313F25282E46DD00245791 /* KeyboardSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSettingView.swift; sourceTree = "<group>"; };
 		AE35149A27CBB549000326F1 /* 5k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5k.jpg; sourceTree = "<group>"; };
 		AE35149D27CBB54D000326F1 /* 8k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k.jpg; sourceTree = "<group>"; };
 		AE38468627BB43F9004F6765 /* iOSWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSWork.entitlements; sourceTree = "<group>"; };
@@ -3043,6 +3045,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB517E2282677F700F2FA1D /* SwitchKeyboardView.swift */,
+				AE313F25282E46DD00245791 /* KeyboardSettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4786,6 +4789,7 @@
 				AE128866281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				AEE3DB1827FC0960007B2B58 /* KeyInfo.swift in Sources */,
 				AE12887A281CED0A0049A5E4 /* calc-error.swift in Sources */,
+				AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */,
 				AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */,
 				AE128849280C51E00049A5E4 /* Extension.swift in Sources */,
 				AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */,

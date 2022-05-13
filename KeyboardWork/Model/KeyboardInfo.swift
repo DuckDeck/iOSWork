@@ -13,8 +13,9 @@ struct KeyboardInfo:Codable{
     var fuzzyInput = false
     /// 纠错
     var correctInput = true
-    /// 自动发送
-    var manualSend = true
+    
+    var shake = false
+    
     static let keyboardInfo = Store(name: "keyboardInfo", defaultValue: KeyboardInfo(),isUseKeyboardStore: true)
     
     static var KeyboardType : KeyboardType{
@@ -29,8 +30,5 @@ struct KeyboardInfo:Codable{
         get{return KeyboardInfo.keyboardInfo.Value.correctInput}
         set{var tmp = KeyboardInfo.keyboardInfo.Value;tmp.correctInput = newValue;KeyboardInfo.keyboardInfo.Value = tmp}
     }
-    static var ManualSend : Bool{
-        get{return KeyboardInfo.keyboardInfo.Value.manualSend}
-        set{var tmp = KeyboardInfo.keyboardInfo.Value;tmp.manualSend = newValue;KeyboardInfo.keyboardInfo.Value = tmp}
-    }
+   
 }

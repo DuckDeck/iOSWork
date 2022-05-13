@@ -63,6 +63,14 @@ class TestKeyboardViewController: UIViewController {
             make.height.equalTo(30)
         }
         
+        let input6 = UITextField()
+        input6.isSecureTextEntry = true
+
+        panelView.addArrangedSubview(input6)
+        input6.snp.makeConstraints { make in
+            make.height.equalTo(30)
+        }
+        
         for v in panelView.arrangedSubviews{
             v.layer.borderColor = UIColor.random.cgColor
             v.layer.borderWidth = 1

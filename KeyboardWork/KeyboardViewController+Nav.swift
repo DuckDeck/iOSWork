@@ -8,7 +8,7 @@
 import Foundation
 extension  KeyboardViewController{
     
-    func push(view:UIView){
+    func push(v:UIView){
         if containerView == nil{
             containerView = UIView()
             view.addSubview(containerView!)
@@ -16,12 +16,10 @@ extension  KeyboardViewController{
                 make.edges.equalTo(0)
             })
         }
-        
-        containerView?.addSubview(view)
-        view.snp.makeConstraints { make in
+        containerView?.addSubview(v)
+        v.snp.makeConstraints { make in
             make.edges.equalTo(0)
         }
-        
         removeKeyboardView()
         
     }
@@ -44,8 +42,12 @@ extension  KeyboardViewController{
         addKeyboard()
     }
     
-    func gotoSwitchKeyboard(keyboardType:KeyboardType){
-        let view = SwitchKeyboardView()
-        push(view: view)
+    
+    func addSwitchKeyboardView(){
+        let v = SwitchKeyboardView()
+        push(v: v)
     }
+    
 }
+
+

@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UIKit
 class SwitchKeyboardView:UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        backgroundColor = UIColor.white
        addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.centerX.equalTo(self)
@@ -24,7 +25,18 @@ class SwitchKeyboardView:UIView{
     
     
     @objc func switchKeyboard(sender:UIButton){
+        switch sender.tag{
+        case 1:
+            KeyboardInfo.KeyboardType = .chinese9
+        case 2:
+            KeyboardInfo.KeyboardType = .chinese26
+        case 3:
+            KeyboardInfo.KeyboardType = .english
+        default:
+            break
+        }
         
+        keyboardVC?.popToKeyboard()
     }
     
     required init?(coder: NSCoder) {
