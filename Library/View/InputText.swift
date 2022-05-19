@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+//这个不存在失去焦点的情况
+//暂时不考虑文字过长的问题
 class InputText:UIView{
     
     var txtChangeBlock:((_ txt:String)->Void)?
@@ -55,6 +57,7 @@ class InputText:UIView{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.centerY.equalTo(self)
@@ -79,12 +82,9 @@ class InputText:UIView{
         }
     }
     
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     func focus(){
         timer =  Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timeFire), userInfo: nil, repeats: true)
@@ -108,20 +108,19 @@ class InputText:UIView{
         isEmpty = false
         updateCursor()
         txtChangeBlock?(text)
-        
         layoutIfNeeded()
-        
         arrLocations.removeAll()
-        for i in 0..<lbl.text!.count{
-            arrLocations.append(lbl.boundingRect(forCharacterRange: NSRange(location: i, length: 1))!)
+        var left : CGFloat = 0
+        for i in lbl.text!.enumerated(){
+            let size = String(i.element).boundingRect(with: CGSize(width: 30, height: 20), font: font)
+            arrLocations.append(CGRect(x: left, y: 0, width: size.width, height: size.height))
+            left += size.width
         }
-        
     }
     
-    
+    @discardableResult
     func deleteText() -> String?{
-        txtTapBlock?()
-        if isEmpty{
+        if isEmpty || leftText.isEmpty{
             return nil
         }
         let str = leftText.removeLast()
@@ -135,11 +134,13 @@ class InputText:UIView{
         }
         updateCursor()
         txtChangeBlock?(text)
-        
         layoutIfNeeded()
         arrLocations.removeAll()
-        for i in 0..<lbl.text!.count{
-            arrLocations.append(lbl.boundingRect(forCharacterRange: NSRange(location: i, length: 1))!)
+        var left : CGFloat = 0
+        for i in lbl.text!.enumerated(){
+            let size = String(i.element).boundingRect(with: CGSize(width: 30, height: 20), font: font)
+            arrLocations.append(CGRect(x: left, y: 0, width: size.width, height: size.height))
+            left += size.width
         }
         
         return String(str)
@@ -170,6 +171,7 @@ class InputText:UIView{
     }
     
     func touchPoint(point:CGPoint)  {
+        txtTapBlock?()
         if isEmpty{
             return
         }
@@ -187,6 +189,7 @@ class InputText:UIView{
             }
         }
         updateCursor()
+        
     }
     
     @objc func timeFire(){
@@ -200,10 +203,9 @@ class InputText:UIView{
         }
     }
     
-    
     lazy var cursor: UIView = {
         let v = UIView()
-        v.backgroundColor = UIColor.green
+        v.backgroundColor = kColor49c167
         v.isHidden = true
         return v
     }()
@@ -236,29 +238,5 @@ class InputSrollView:UIScrollView{
                 inputText.touchPoint(point: p)
             }
         }
-    }
-}
-
-extension UILabel {
-    func boundingRect(forCharacterRange range: NSRange) -> CGRect? {
-
-        guard let attributedText = attributedText else { return nil }
-
-        let textStorage = NSTextStorage(attributedString: attributedText)
-        let layoutManager = NSLayoutManager()
-
-        textStorage.addLayoutManager(layoutManager)
-
-        let textContainer = NSTextContainer(size: bounds.size)
-        textContainer.lineFragmentPadding = 0.0
-
-        layoutManager.addTextContainer(textContainer)
-
-        var glyphRange = NSRange()
-
-        // Convert the range for glyphs.
-        layoutManager.characterRange(forGlyphRange: range, actualGlyphRange: &glyphRange)
-
-        return layoutManager.boundingRect(forGlyphRange: glyphRange, in: textContainer)
     }
 }
