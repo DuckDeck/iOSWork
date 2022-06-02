@@ -120,6 +120,7 @@
 		AE35149C27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
 		AE35149F27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
+		AE365B0C28488CC100B6A707 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128848280C51E00049A5E4 /* Extension.swift */; };
 		AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48CECD27C7D10B009A0673 /* asset.xcassets */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -4416,6 +4417,7 @@
 				AE4D09272730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */,
 				AEE0113327425D8800C155D8 /* Piece.swift in Sources */,
 				AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */,
+				AE365B0C28488CC100B6A707 /* Extension.swift in Sources */,
 				AE62CB5827254947007D51CD /* UIView+Base.swift in Sources */,
 				AE62CBD427255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
 				AE6E5DC3273FB6FF00523EA8 /* TouchTestViewController.swift in Sources */,

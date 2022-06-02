@@ -14,4 +14,13 @@ extension UIFont{
     static func pingfangMedium(size:CGFloat)->UIFont{
         return UIFont(name: "PingFangSC-Medium", size: size)!
     }
+    
+    
+    static func pingfangBold(size:CGFloat)->UIFont{
+        return UIFont(name: "PingFangSC-Semibold", size: size)!
+    }
+    
+    static func pingfangLight(size:CGFloat)->UIFont{
+        return UIFont(name: "PingFangSC-Light", size: size)!
+    }
 }

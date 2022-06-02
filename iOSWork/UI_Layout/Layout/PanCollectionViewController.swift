@@ -10,8 +10,8 @@ import UIKit
 class PanCollectionViewController: UIViewController {
     var selectMode = false
     var arrText = [String]()
-    var lastSelectedCell = IndexPath()
 
+    var selectIndex = Set<Int>()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -89,9 +89,20 @@ class PanCollectionViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.left.equalTo(8)
             make.right.equalTo(-8)
-            make.top.equalTo(300)
-            make.height.equalTo(400)
+            make.top.equalTo(200)
+            make.height.equalTo(300)
         }
+    }
+    
+    
+    func selectWord(index:Int,isSelect:Bool)  {
+        if isSelect {
+            selectIndex.insert(index)
+        }
+        else{
+            selectIndex.remove(index)
+        }
+      
     }
     
     lazy var collectionView: PanCollectionView = {
@@ -100,31 +111,17 @@ class PanCollectionViewController: UIViewController {
         layout.minimumInteritemSpacing = 5
         layout.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         let collection = PanCollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.register(PopCell.self, forCellWithReuseIdentifier: "PopCell")
+        collection.register(SelectWordCell.self, forCellWithReuseIdentifier: "SelectWordCell")
         collection.collectionViewLayout.perform(Selector.init(("_setRowAlignmentsOptions:")),with:NSDictionary.init(dictionary:["UIFlowLayoutCommonRowHorizontalAlignmentKey": NSNumber.init(value:NSTextAlignment.left.rawValue), "UIFlowLayoutLastRowHorizontalAlignmentKey": NSNumber.init(value:NSTextAlignment.left.rawValue), "UIFlowLayoutRowVerticalAlignmentKey": NSNumber.init(value:NSTextAlignment.center.rawValue)]));
         collection.delegate = self
         collection.dataSource = self
         collection.backgroundColor = UIColor.white
         collection.canCancelContentTouches = false
         collection.allowsMultipleSelection = true
-
-        
         return collection
     }()
     
-    func selectCell(_ indexPath: IndexPath, selected: Bool) {
-        if let cell = collectionView.cellForItem(at: indexPath) {
-            if cell.isSelected {
-                collectionView.deselectItem(at: indexPath, animated: true)
-                collectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
-            } else {
-                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredVertically)
-            }
-            if let numberOfSelections = collectionView.indexPathsForSelectedItems?.count {
-                print("选择了\(numberOfSelections)个元素")
-            }
-        }
-    }
+ 
  
 }
 
@@ -158,8 +155,13 @@ extension PanCollectionViewController:UICollectionViewDelegate,UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopCell", for: indexPath) as! PopCell
-        cell.titleLabel?.text = arrText[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectWordCell", for: indexPath) as! SelectWordCell
+        cell.index = indexPath.row
+        cell.lblWord.text = arrText[indexPath.row]
+        cell.update(select: selectIndex.contains(indexPath.row))
+        cell.clickBlock = {(index,isSelect) in
+            self.selectWord(index: index, isSelect: isSelect)
+        }
         return cell
         
     }
@@ -170,64 +172,63 @@ extension PanCollectionViewController:UICollectionViewDelegate,UICollectionViewD
     }
     
 }
-class PopCell: UICollectionViewCell {
-    var setView: UIView?
-    var titleLabel: UILabel?
-    var index = 0
-    var tapBlock:((_ index:Int)->Void)?
-    var pressBlock:((_ index:Int,_ pos:CGRect)->Void)?
 
-    override var isSelected: Bool{
+
+class SelectWordCell:PanCollectionCell{
+    var index = 0
+    var clickBlock:((_ index:Int,_ isSelect:Bool)->Void)?
+
+    override var isSelect: Bool{
         didSet{
-            if isSelected{
-                titleLabel?.textColor = UIColor.red
-            } else {
-                titleLabel!.textColor = UIColor.init(hexString: "888888")
-            }
+            clickBlock?(index,isSelect)
+            update(select: isSelect)
+        }
+    }
+    
+    func update(select:Bool){
+        if select{
+            lblWord.layer.borderWidth = 0
+            lblWord.backgroundColor = kColor49c167
+            lblWord.textColor = UIColor.white
+        } else {
+            lblWord.layer.borderWidth = 0.5
+            lblWord.backgroundColor = UIColor.white
+            lblWord.textColor = kColor626266
         }
     }
  
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        contentView.addSubview(lblWord)
+        lblWord.snp.makeConstraints({ (make) in
+            make.center.equalTo(contentView)
+            make.width.equalTo(self).offset(-8)
+            make.height.equalTo(28)
+        })
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
-  
-        setView = UIView()
-        
-        setView?.isUserInteractionEnabled = true
-        setView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGes(ges:))))
-        
-        contentView.addSubview(setView!)
-        titleLabel = UILabel()
-        titleLabel!.layer.cornerRadius = 14
-        titleLabel!.layer.masksToBounds = true
-        titleLabel?.layer.borderWidth = 0.5
-        titleLabel!.backgroundColor = UIColor.lightText
-        titleLabel!.font = UIFont.systemFont(ofSize: 14)
-        titleLabel!.textAlignment = .center
-        titleLabel!.textColor = UIColor.init(hexString: "888888")
-        setView!.addSubview(titleLabel!)
-        
-        setView?.snp.makeConstraints({ (make) in
-            make.left.right.top.bottom.equalTo(self)
-        })
-        titleLabel?.snp.makeConstraints({ (make) in
-            make.center.equalTo(setView!)
-            make.width.equalTo(self).offset(-8)
-            make.height.equalTo(28)
-        })
+    @objc func tapGes(ges:UIGestureRecognizer){
+        isSelect = !isSelect
     }
     
-    @objc func tapGes(ges:UIGestureRecognizer){
-        tapBlock?(index)
-    }
+    lazy var lblWord: UILabel = {
+        let v = UILabel()
+        v.layer.cornerRadius = 3
+        v.layer.borderWidth = 0.5
+        v.layer.borderColor = UIColor.gray.cgColor
+        v.isUserInteractionEnabled = true
+        v.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGes(ges:))))
+        v.textColor = kColor626266
+        v.textAlignment = .center
+        v.font = UIFont.pingfangRegular(size: 14)
+        return v
+    }()
 }
+
 
 
 
@@ -249,7 +250,7 @@ class PanCollectionView:UICollectionView{
         if let point = touches.randomElement()?.location(in: self){
             if let index = self.indexPathForItem(at: point){
                 if lastSelectedCell == nil{
-                    if cellForItem(at: index)?.isSelected ?? false{
+                    if (cellForItem(at: index) as? PanCollectionCell)?.isSelect ?? false{
                         chooseMode = false
                     } else {
                         chooseMode = true
@@ -264,7 +265,7 @@ class PanCollectionView:UICollectionView{
                             let path =  IndexPath(row: i, section: 0)
                             if !arrSelectedIndex.contains(path){
                                 arrSelectedIndex.append(path)
-                                cellForItem(at: path)?.isSelected = chooseMode
+                                (cellForItem(at: path) as? PanCollectionCell)?.isSelect = chooseMode
                             }
                         }
                         
@@ -282,28 +283,24 @@ class PanCollectionView:UICollectionView{
                             ids.contains(e.row)
                         }
                         for i in ids{
-                            cellForItem(at: IndexPath(row: i, section: 0))?.isSelected = !chooseMode
+                            (cellForItem(at: IndexPath(row: i, section: 0)) as? PanCollectionCell)?.isSelect = !chooseMode
                         }
                         
                         if index.row > lastSelectedCell!.row{
-                            if let lastIndex = indexPath(for: visibleCells.last!){
-                                if lastIndex.row - index.row < 10{
-                                    if numberOfItems(inSection: 0) - lastIndex.row > 10{
-                                        scrollToItem(at: IndexPath(row: lastIndex.row + 10, section: 0), at: .bottom, animated: true)
-                                    } else {
-                                        scrollToItem(at: IndexPath(row: numberOfItems(inSection: 0) - 1, section: 0), at: .bottom, animated: true)
-                                    }
+                            if point.y - contentOffset.y > frame.size.height - 50{
+                                if numberOfItems(inSection: 0) - index.row > 10{
+                                    scrollToItem(at: IndexPath(row: index.row + 10, section: 0), at: .bottom, animated: true)
+                                } else {
+                                    scrollToItem(at: IndexPath(row: numberOfItems(inSection: 0) - 1, section: 0), at: .bottom, animated: true)
                                 }
                             }
                         }
                         if index.row < lastSelectedCell!.row{
-                            if let firstIndex = indexPath(for: visibleCells.first!){
-                                if index.row - firstIndex.row < 10{
-                                    if index.row > 10{
-                                        scrollToItem(at: IndexPath(row: index.row - 10, section: 0), at: .bottom, animated: true)
-                                    } else {
-                                        scrollToItem(at: IndexPath(row:  0, section: 0), at: .bottom, animated: true)
-                                    }
+                            if point.y - contentOffset.y < 50{
+                                if index.row > 10{
+                                    scrollToItem(at: IndexPath(row: index.row - 10, section: 0), at: .bottom, animated: true)
+                                } else {
+                                    scrollToItem(at: IndexPath(row:  0, section: 0), at: .bottom, animated: true)
                                 }
                             }
                         }
@@ -318,7 +315,15 @@ class PanCollectionView:UICollectionView{
         }
 
     }
+}
 
-    
-   
+class PanCollectionCell:UICollectionViewCell{
+    var isSelect:Bool = false
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+//    override var isSelected: Bool  为什么要自定义一个，因为在滑动Cell时会自己调用isSelected，导致异常，所以要自己定义一个isSelect
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
