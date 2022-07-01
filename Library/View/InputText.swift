@@ -15,7 +15,7 @@ class InputText:UIView{
     var txtTapBlock:(()->Void)?
     var leftOffset : CGFloat = 5{
         didSet{
-            lbl.snp.updateConstraints { make in
+            scrollView.snp.updateConstraints { make in
                 make.left.equalTo(leftOffset)
             }
             updateCursor()

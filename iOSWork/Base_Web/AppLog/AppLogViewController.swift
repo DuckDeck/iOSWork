@@ -27,8 +27,8 @@ class AppLogViewController:BaseViewController{
     
     @objc func shareLog(){
         let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ShadowEdge.iOSProject")!.appendingPathComponent("inputdata").appendingPathComponent("applog.log")
-        guard let data = try? Data.init(contentsOf:  path) else{return}
-        let items = [data, path] as [Any]
+//        guard let data = try? Data.init(contentsOf:  path) else{return}
+        let items = [path] as [Any]
         var activityVC : UIActivityViewController! = UIActivityViewController.init(activityItems: items, applicationActivities: nil)
         activityVC.excludedActivityTypes = [.print,.copyToPasteboard,.assignToContact,.saveToCameraRoll]
         present(activityVC, animated: true)
