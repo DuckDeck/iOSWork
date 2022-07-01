@@ -722,6 +722,7 @@
 		AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */; };
 		AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */; };
 		AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */; };
+		AEC8FF0A2869AD3100A70F50 /* AppLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC8FF092869AD3100A70F50 /* AppLogViewController.swift */; };
 		AECDC15B2745E3090038BE68 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */; };
 		AED0C2BA274E83F3007A3547 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; };
 		AED0C2BB274E83F3007A3547 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -1510,6 +1511,7 @@
 		AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapkitTableViewController.swift; sourceTree = "<group>"; };
 		AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleAnimtaionView.swift; sourceTree = "<group>"; };
+		AEC8FF092869AD3100A70F50 /* AppLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogViewController.swift; sourceTree = "<group>"; };
 		AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		AEE0103527424A0100C155D8 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
@@ -2451,6 +2453,7 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
+				AEC8FF082869AD1D00A70F50 /* AppLog */,
 				AECDC1562745E2AB0038BE68 /* Exception */,
 				AE1C4F74274380790097EAC1 /* RunLoop */,
 				AE1C4F462743468F0097EAC1 /* Patch */,
@@ -3062,6 +3065,14 @@
 				AE8306E027B4B16F00C657DC /* ScaleViewController.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		AEC8FF082869AD1D00A70F50 /* AppLog */ = {
+			isa = PBXGroup;
+			children = (
+				AEC8FF092869AD3100A70F50 /* AppLogViewController.swift */,
+			);
+			path = AppLog;
 			sourceTree = "<group>";
 		};
 		AECDC1562745E2AB0038BE68 /* Exception */ = {
@@ -4525,6 +4536,7 @@
 				AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AEE010772742560200C155D8 /* MitoConfig.swift in Sources */,
 				AEE0104C2742509300C155D8 /* WatermarkViewController.swift in Sources */,
+				AEC8FF0A2869AD3100A70F50 /* AppLogViewController.swift in Sources */,
 				AE66E18E27537D37006432FE /* GrayVideoViewController.swift in Sources */,
 				AE66E1C82753872C006432FE /* AudioDecoderViewController.swift in Sources */,
 				AEE010CF2742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,

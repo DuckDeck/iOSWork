@@ -25,8 +25,8 @@ class DownloadViewController:UIViewController{
     }
     
     @objc func startDownload(){
-        let urls = ["http://lovelive.ink:9001/video/RockNRoll.mkv","http://lovelive.ink:9001/img/16295348101.jpg","http://lovelive.ink:9001/img/16295368926.jpg","http://lovelive.ink:9001/img/1630211243z2.jpg"]
-        
+//        let urls = ["http://lovelive.ink:9001/video/RockNRoll.mkv","http://lovelive.ink:9001/img/16295348101.jpg","http://lovelive.ink:9001/img/16295368926.jpg","http://lovelive.ink:9001/img/1630211243z2.jpg"]
+        let urls = ["https://xcimg.szwego.com/20210116/a1610803638361_1135.jpg"]
         Toast.showLoading()
         
         MediaTool.downloadToFile(resources: urls) { failCount, paths in

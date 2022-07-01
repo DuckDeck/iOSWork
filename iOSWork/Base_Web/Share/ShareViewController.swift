@@ -17,7 +17,9 @@ class ShareViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        btnOrigin.title(title: "原生的ActivityViewController").color(color: UIColor.red).addTo(view: view).snp.makeConstraints { (m) in
+        btnOrigin.setBackgroundColor(color: UIColor.red, forState: .normal)
+        btnOrigin.setBackgroundColor(color: UIColor.green, forState: .highlighted)
+        btnOrigin.title(title: "原生的ActivityViewController").addTo(view: view).snp.makeConstraints { (m) in
             m.centerX.equalTo(view)
             m.top.equalTo(NavigationBarHeight + 20)
         }

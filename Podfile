@@ -13,6 +13,8 @@ pod "SnapKit"
 pod "SkeletonView"
 pod "SwiftyJSON"
 pod "SwiftSoup"
+#pod 'AMKLaunchTimeProfiler'
+pod 'SwiftyBeaver'
 end
 
 target 'CLangWork' do

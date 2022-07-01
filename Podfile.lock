@@ -11,6 +11,7 @@ PODS:
   - SkeletonView (1.26.0)
   - SnapKit (5.0.1)
   - SwiftSoup (2.3.4)
+  - SwiftyBeaver (1.9.6)
   - SwiftyJSON (5.0.1)
   - YHPDFImageLoader (1.0.0)
 
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - SkeletonView
   - SnapKit
   - SwiftSoup
+  - SwiftyBeaver
   - SwiftyJSON
   - YHPDFImageLoader
 
@@ -41,6 +43,7 @@ SPEC REPOS:
     - SkeletonView
     - SnapKit
     - SwiftSoup
+    - SwiftyBeaver
     - SwiftyJSON
     - YHPDFImageLoader
 
@@ -56,9 +59,10 @@ SPEC CHECKSUMS:
   SkeletonView: 6b62a8ddbc64abb113ea3243e4a9979e5750f147
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftSoup: d5b9645498f8d09fdc5f96b9c70b5858099fd411
+  SwiftyBeaver: c8241b4745aa269a78ca5a022532c6915e948536
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   YHPDFImageLoader: cd9628397fff7fd72368cd26dbc5290f05311276
 
-PODFILE CHECKSUM: e4c043d9069861170c24584c115472974ed3f3a7
+PODFILE CHECKSUM: 44ebc53c93fc8d2fbf71e3407d83ce3ba0f72274
 
 COCOAPODS: 1.11.2

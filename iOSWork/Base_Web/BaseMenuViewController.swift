@@ -7,7 +7,7 @@
 
 import Foundation
 class BaseMenuViewController:BaseViewController{
-    var arrData = ["多线程","内存","渲染","通知","扫码","分享","城市选择","二进制合并","二进制插桩","异常处理"]
+    var arrData = ["多线程","内存","渲染","通知","扫码","分享","城市选择","二进制合并","二进制插桩","异常处理","日志处理"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -94,6 +94,10 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 9:
             let vc = TriggerErrorViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 10:
+            let vc = AppLogViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
 
