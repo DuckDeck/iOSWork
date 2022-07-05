@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-class SwitchKeyboardView:UIView{
+class SwitchKeyboardView:KeyboardNav{
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.white

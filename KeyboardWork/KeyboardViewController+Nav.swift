@@ -48,6 +48,11 @@ extension  KeyboardViewController{
         push(v: v)
     }
     
+    func addSettingView(){
+        let v = KeyboardSettingView()
+        push(v: v)
+    }
+    
 }
 
 

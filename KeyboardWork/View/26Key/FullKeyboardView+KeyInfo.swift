@@ -116,7 +116,7 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 86 * xScale, height: 44)
+        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 88 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
@@ -206,7 +206,7 @@ extension FullKeyboardView{
         del.image = "icon_delete_white"
         del.keyType = .del
         del.fillColor = kColorb3b7bC
-        del.position = CGRect(x: thirdKeys.last!.position.maxX + 11, y: 5, width: xScale * 44, height: 44)
+        del.position = CGRect(x: thirdKeys.last!.position.maxX + 13, y: 5, width: xScale * 44, height: 44)
         thirdKeys.append(del)
         
         if forthKeys == nil{
@@ -246,7 +246,7 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 86 * xScale, height: 44)
+        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 88 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
@@ -343,7 +343,7 @@ extension FullKeyboardView{
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: 5, y: 5, width: 58 * xScale, height: 44)
+        symKey.position = CGRect(x: 5, y: 5, width: 59 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -352,7 +352,7 @@ extension FullKeyboardView{
         numKey.fillColor = kColorb3b7bC
         numKey.textColor = kColor0a0a0a
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 44 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 45 * xScale, height: 44)
         forthKeys.append(numKey)
         
      
@@ -360,14 +360,14 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 109 * xScale, height: 44)
+        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 114 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_chinese"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 48 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 49 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.symbleEnglish)
         forthKeys.append(switchKey)
         
@@ -457,7 +457,7 @@ extension FullKeyboardView{
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: 5, y: 5, width: 58 * xScale, height: 44)
+        symKey.position = CGRect(x: 5, y: 5, width: 59 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -466,7 +466,7 @@ extension FullKeyboardView{
         numKey.textColor = kColor0a0a0a
         numKey.textSize = 18
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 44 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 45 * xScale, height: 44)
         forthKeys.append(numKey)
         
      
@@ -474,14 +474,14 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 109 * xScale, height: 44)
+        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 114 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_english"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 48 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 49 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.symbleChiese)
         forthKeys.append(switchKey)
         
@@ -573,7 +573,7 @@ extension FullKeyboardView{
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: 5, y: 5, width: 58 * xScale, height: 44)
+        symKey.position = CGRect(x: 5, y: 5, width: 59 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -582,20 +582,20 @@ extension FullKeyboardView{
         numKey.textColor = kColor0a0a0a
         numKey.textSize = 18
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 44 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 45 * xScale, height: 44)
         forthKeys.append(numKey)
         
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 109 * xScale, height: 44)
+        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 114 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_chinese"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 48 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 49 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.symbleEnglishMore)
         forthKeys.append(switchKey)
         
@@ -681,7 +681,7 @@ extension FullKeyboardView{
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: 5, y: 5, width: 58 * xScale, height: 44)
+        symKey.position = CGRect(x: 5, y: 5, width: 59 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -690,7 +690,7 @@ extension FullKeyboardView{
         numKey.fillColor = kColorb3b7bC
         numKey.textColor = kColor0a0a0a
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 44 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 45 * xScale, height: 44)
         forthKeys.append(numKey)
         
      
@@ -698,14 +698,14 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 109 * xScale, height: 44)
+        spaceKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 114 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_english"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 48 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 49 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.symbleChieseMore)
         forthKeys.append(switchKey)
         

@@ -30,5 +30,8 @@ struct KeyboardInfo:Codable{
         get{return KeyboardInfo.keyboardInfo.Value.correctInput}
         set{var tmp = KeyboardInfo.keyboardInfo.Value;tmp.correctInput = newValue;KeyboardInfo.keyboardInfo.Value = tmp}
     }
-   
+    static var Shake : Bool{
+        get{return KeyboardInfo.keyboardInfo.Value.shake}
+        set{var tmp = KeyboardInfo.keyboardInfo.Value;tmp.shake = newValue;KeyboardInfo.keyboardInfo.Value = tmp}
+    }
 }

@@ -12,14 +12,27 @@ struct SettingInfo{
     var title = ""
     var tip = ""
     var isOn = false
-
+    var type:SettingEnum
 }
 
+enum SettingEnum : Int{
+    case shake = 1
+}
 
-class KeyboardSettingView:UIView{
+class KeyboardSettingView:KeyboardNav{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = UIColor.white
+        
+        addSubview(stackView)
+        stackView.snp.makeConstraints { make in
+            make.left.right.bottom.equalTo(0)
+            make.top.equalTo(40)
+        }
+        
+        let v = createCell(setting: SettingInfo(title: "键盘震动", tip: "开启键盘震动，打字体验更爽", isOn: KeyboardInfo.Shake, type: .shake))
+        stackView.addArrangedSubview(v)
     }
     
     required init?(coder: NSCoder) {
@@ -28,7 +41,22 @@ class KeyboardSettingView:UIView{
     
     
     @objc func switchClick(sender:UISwitch){
-        
+        if  let type = SettingEnum(rawValue: sender.tag){
+            switch type {
+            case .shake:
+                if sender.isOn{
+                    if keyboardVC?.hasFullAccess ?? false{
+                        KeyboardInfo.Shake = true
+                    } else {
+                        Toast.showText("请开启完全访问再启用")
+                        sender.isOn = false
+                    }
+                } else {
+                    KeyboardInfo.Shake = false
+                }
+                
+            }
+        }
     }
     
     func createCell(setting:SettingInfo)->UIView{
@@ -58,6 +86,7 @@ class KeyboardSettingView:UIView{
         
         let swi = UISwitch()
         swi.isOn = setting.isOn
+        swi.tag = setting.type.rawValue
         v.addSubview(swi)
         swi.addTarget(self, action: #selector(switchClick(sender:)), for: .valueChanged)
         swi.snp.makeConstraints { make in
@@ -68,4 +97,10 @@ class KeyboardSettingView:UIView{
         
         return v
     }
+    
+    lazy var stackView: UIStackView = {
+        let v = UIStackView()
+        v.axis = .vertical
+        return v
+    }()
 }

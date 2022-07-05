@@ -148,3 +148,6 @@ extension CGRect {
         return CGRect(x: origin.x - 2, y: origin.y - 5, width: size.width + 4, height: size.height + 10)
     }
 }
+
+
+let Toast = Hud(frame: CGRect.zero)

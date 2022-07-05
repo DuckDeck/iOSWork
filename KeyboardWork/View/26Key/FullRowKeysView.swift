@@ -200,7 +200,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             if (superview as? FullKeyboardView)?.popChooseView != nil &&  !(superview as! FullKeyboardView).popChooseView!.isHidden{
                 return
             }
-            if  pressedKey != nil && pressedKey!.keyType.isNormal{
+            if  pressedKey != nil && !pressedKey!.keyType.isNormal{
                 if pressedKey!.keyType == .del{
                     Shake.keyShake()
                     (superview as! FullKeyboardView).keyLongPress(key: pressedKey!, state: ges.state)

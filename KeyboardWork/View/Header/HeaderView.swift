@@ -20,34 +20,35 @@ class HeaderView: Header {
         addSubview(line)
         line.snp.makeConstraints { make in
             make.left.right.equalTo(0)
-            make.top.equalTo(9.0)
+            make.top.equalTo(14.5)
             make.height.equalTo(0.5)
         }
         
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.left.right.equalTo(0)
-            make.top.equalTo(10)
-            make.height.equalTo(20)
+            make.top.equalTo(15)
+            make.height.equalTo(35)
         }
         
         let btnSetting = UIButton()
-        
-        btnSetting.setImage(UIImage.init(systemName: "gear.circle"), for: .normal)
+        btnSetting.setImage(UIImage(systemName: "gear"), for: .normal)
         btnSetting.addTarget(self, action: #selector(menuClick(sender: )), for: .touchUpInside)
         btnSetting.tag = 1
         stackView.addArrangedSubview(btnSetting)
         btnSetting.snp.makeConstraints { make in
             make.width.equalTo(60)
+            make.height.equalTo(30)
         }
         
         let btnEmoji = UIButton()
-        btnEmoji.setImage(UIImage.init(systemName: "face.smiling"), for: .normal)
+        btnEmoji.setImage(UIImage(systemName: "face.smiling"), for: .normal)
         btnEmoji.addTarget(self, action: #selector(menuClick(sender: )), for: .touchUpInside)
         btnEmoji.tag = 2
         stackView.addArrangedSubview(btnEmoji)
         btnEmoji.snp.makeConstraints { make in
             make.width.equalTo(60)
+            make.height.equalTo(30)
         }
         
         let btnSwitchKeyboard = UIButton()
@@ -57,6 +58,7 @@ class HeaderView: Header {
         stackView.addArrangedSubview(btnSwitchKeyboard)
         btnSwitchKeyboard.snp.makeConstraints { make in
             make.width.equalTo(60)
+            make.height.equalTo(30)
         }
         
         stackView.addArrangedSubview(UIView())
@@ -67,6 +69,7 @@ class HeaderView: Header {
         stackView.addArrangedSubview(btnCloseKeyboard)
         btnCloseKeyboard.snp.makeConstraints { make in
             make.width.equalTo(60)
+            make.height.equalTo(30)
         }
         
         
@@ -75,7 +78,11 @@ class HeaderView: Header {
     
     @objc func menuClick(sender:UIButton){
         switch sender.tag{
+        case 1:
+            keyboardVC?.addSettingView()
         case 2:
+            globalKeyboard?.switchKeyboard(keyboardType: .emoji)
+        case 3:
             keyboardVC?.addSwitchKeyboardView()
         default:
             break
@@ -94,6 +101,7 @@ class HeaderView: Header {
     lazy var stackView: UIStackView = {
         let v = UIStackView()
         v.axis = .horizontal
+        v.alignment = .center
         return v
     }()
 }

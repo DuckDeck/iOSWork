@@ -722,6 +722,8 @@
 		AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */; };
 		AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */; };
 		AEC8FF0A2869AD3100A70F50 /* AppLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC8FF092869AD3100A70F50 /* AppLogViewController.swift */; };
+		AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9916828743E90002879A0 /* KeyboardNav.swift */; };
+		AEC9916B287442C4002879A0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9916A287442C4002879A0 /* HUD.swift */; };
 		AECDC15B2745E3090038BE68 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */; };
 		AED0C2BA274E83F3007A3547 /* Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; };
 		AED0C2BB274E83F3007A3547 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -1506,6 +1508,8 @@
 		AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleAnimtaionView.swift; sourceTree = "<group>"; };
 		AEC8FF092869AD3100A70F50 /* AppLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogViewController.swift; sourceTree = "<group>"; };
+		AEC9916828743E90002879A0 /* KeyboardNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNav.swift; sourceTree = "<group>"; };
+		AEC9916A287442C4002879A0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		AEE0103527424A0100C155D8 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
@@ -3040,6 +3044,8 @@
 			children = (
 				AEB517E2282677F700F2FA1D /* SwitchKeyboardView.swift */,
 				AE313F25282E46DD00245791 /* KeyboardSettingView.swift */,
+				AEC9916828743E90002879A0 /* KeyboardNav.swift */,
+				AEC9916A287442C4002879A0 /* HUD.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4764,9 +4770,11 @@
 				AE128886281CED0A0049A5E4 /* operation.swift in Sources */,
 				AEE3DB1127FC0958007B2B58 /* KeyboardView.swift in Sources */,
 				AEE3DB2227FC0BF2007B2B58 /* PopKeyView.swift in Sources */,
+				AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */,
 				AE128847280C51820049A5E4 /* EmojiKeyboard.swift in Sources */,
 				AEB517E3282677F700F2FA1D /* SwitchKeyboardView.swift in Sources */,
 				AEE3DB1727FC0960007B2B58 /* KeyboardInfo.swift in Sources */,
+				AEC9916B287442C4002879A0 /* HUD.swift in Sources */,
 				AEE3DB2827FC0C45007B2B58 /* FullRowKeysView.swift in Sources */,
 				AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */,
 				AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */,

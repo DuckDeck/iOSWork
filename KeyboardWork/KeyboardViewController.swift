@@ -26,7 +26,7 @@ class KeyboardViewController: UIInputViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.constraint = NSLayoutConstraint(item: view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 262)
+        self.constraint = NSLayoutConstraint(item: view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 272)
         self.constraint.priority = .defaultHigh
         view.addConstraint(self.constraint)
         
@@ -51,7 +51,7 @@ class KeyboardViewController: UIInputViewController{
         view.addSubview(globalHeader!)
         globalHeader?.snp.makeConstraints({ make in
             make.left.right.top.equalTo(0)
-            make.height.equalTo(30)
+            make.height.equalTo(50)
         })
         
         globalKeyboard = KeyboardView()
