@@ -15,15 +15,25 @@ class HeaderView: Header {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        let line = UIView()
+        line.backgroundColor = UIColor.lightGray
+        addSubview(line)
+        line.snp.makeConstraints { make in
+            make.left.right.equalTo(0)
+            make.top.equalTo(9.0)
+            make.height.equalTo(0.5)
+        }
+        
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.left.right.bottom.equalTo(0)
-            make.height.equalTo(30)
+            make.left.right.equalTo(0)
+            make.top.equalTo(10)
+            make.height.equalTo(20)
         }
         
         let btnSetting = UIButton()
         
-        btnSetting.setImage(UIImage.yh_imageNamed("icon_setting_set"), for: .normal)
+        btnSetting.setImage(UIImage.init(systemName: "gear.circle"), for: .normal)
         btnSetting.addTarget(self, action: #selector(menuClick(sender: )), for: .touchUpInside)
         btnSetting.tag = 1
         stackView.addArrangedSubview(btnSetting)
@@ -31,10 +41,19 @@ class HeaderView: Header {
             make.width.equalTo(60)
         }
         
+        let btnEmoji = UIButton()
+        btnEmoji.setImage(UIImage.init(systemName: "face.smiling"), for: .normal)
+        btnEmoji.addTarget(self, action: #selector(menuClick(sender: )), for: .touchUpInside)
+        btnEmoji.tag = 2
+        stackView.addArrangedSubview(btnEmoji)
+        btnEmoji.snp.makeConstraints { make in
+            make.width.equalTo(60)
+        }
+        
         let btnSwitchKeyboard = UIButton()
-        btnSwitchKeyboard.setImage(UIImage.yh_imageNamed("icon_setting_keyboard_typeinchange_normal"), for: .normal)
+        btnSwitchKeyboard.setImage(UIImage(systemName: "globe"), for: .normal)
         btnSwitchKeyboard.addTarget(self, action: #selector(menuClick(sender:)), for: .touchUpInside)
-        btnSwitchKeyboard.tag = 2
+        btnSwitchKeyboard.tag = 3
         stackView.addArrangedSubview(btnSwitchKeyboard)
         btnSwitchKeyboard.snp.makeConstraints { make in
             make.width.equalTo(60)
@@ -43,7 +62,7 @@ class HeaderView: Header {
         stackView.addArrangedSubview(UIView())
         
         let btnCloseKeyboard = UIButton()
-        btnCloseKeyboard.setImage(UIImage.yh_imageNamed("icon_menu_close_keyboard"), for: .normal)
+        btnCloseKeyboard.setImage(UIImage(systemName: "keyboard.chevron.compact.down"), for: .normal)
         btnCloseKeyboard.addTarget(self, action: #selector(closeClick), for: .touchUpInside)
         stackView.addArrangedSubview(btnCloseKeyboard)
         btnCloseKeyboard.snp.makeConstraints { make in
