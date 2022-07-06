@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.5.0)
+  - CocoaAsyncSocket (7.6.5)
   - Gifu (3.3.1)
   - IQKeyboardManagerSwift (6.5.9)
   - Kanna (5.2.7)
@@ -17,6 +18,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - CocoaAsyncSocket
   - Gifu
   - IQKeyboardManagerSwift
   - Kanna
@@ -33,6 +35,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CocoaAsyncSocket
     - Gifu
     - IQKeyboardManagerSwift
     - Kanna
@@ -49,6 +52,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   Kanna: 01cfbddc127f5ff0963692f285fcbc8a9d62d234
@@ -63,6 +67,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   YHPDFImageLoader: cd9628397fff7fd72368cd26dbc5290f05311276
 
-PODFILE CHECKSUM: 44ebc53c93fc8d2fbf71e3407d83ce3ba0f72274
+PODFILE CHECKSUM: 749c9a24ef9765dae1d4fdd1159442f18274bea1
 
 COCOAPODS: 1.11.2

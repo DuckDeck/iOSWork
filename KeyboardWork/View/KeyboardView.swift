@@ -148,6 +148,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
     
     func output(text:String){
         keyboardVC?.insert(text: text)
+        keyboardVC?.clientSockek?.write(text.data(using: .utf8), withTimeout: -1, tag: 0)
     }
     
     func deleteText(){

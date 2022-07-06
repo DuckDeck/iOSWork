@@ -112,6 +112,7 @@
 		AE1C4F702743476E0097EAC1 /* PatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F6F2743476E0097EAC1 /* PatchViewController.m */; };
 		AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F7227434E300097EAC1 /* ADViewController.swift */; };
 		AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */; };
+		AE2657CA2875218C002C88FB /* ProcessComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2657C92875218C002C88FB /* ProcessComViewController.swift */; };
 		AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */; };
 		AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */; };
 		AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE313F25282E46DD00245791 /* KeyboardSettingView.swift */; };
@@ -1112,6 +1113,7 @@
 		AE1C4F7227434E300097EAC1 /* ADViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADViewController.swift; sourceTree = "<group>"; };
 		AE1C4F75274380910097EAC1 /* RerangeBinaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RerangeBinaryViewController.h; sourceTree = "<group>"; };
 		AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RerangeBinaryViewController.m; sourceTree = "<group>"; };
+		AE2657C92875218C002C88FB /* ProcessComViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessComViewController.swift; sourceTree = "<group>"; };
 		AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKeyboardViewController.swift; sourceTree = "<group>"; };
 		AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGlobal.swift; sourceTree = "<group>"; };
 		AE313F25282E46DD00245791 /* KeyboardSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSettingView.swift; sourceTree = "<group>"; };
@@ -1995,6 +1997,14 @@
 			path = RunLoop;
 			sourceTree = "<group>";
 		};
+		AE2657C8287520DA002C88FB /* ProcessCommunication */ = {
+			isa = PBXGroup;
+			children = (
+				AE2657C92875218C002C88FB /* ProcessComViewController.swift */,
+			);
+			path = ProcessCommunication;
+			sourceTree = "<group>";
+		};
 		AE4D08E52730259200899D2C /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2447,6 +2457,7 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
+				AE2657C8287520DA002C88FB /* ProcessCommunication */,
 				AEC8FF082869AD1D00A70F50 /* AppLog */,
 				AECDC1562745E2AB0038BE68 /* Exception */,
 				AE1C4F74274380790097EAC1 /* RunLoop */,
@@ -4603,6 +4614,7 @@
 				AE66E1D827538EE0006432FE /* HeartView.swift in Sources */,
 				AE128868281CED0A0049A5E4 /* expression.swift in Sources */,
 				AEE010AA2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
+				AE2657CA2875218C002C88FB /* ProcessComViewController.swift in Sources */,
 				AE128888281CED0A0049A5E4 /* number.swift in Sources */,
 				AE1C4F5F274346BD0097EAC1 /* compress.c in Sources */,
 				AE80EE0A27FF07D2004566D5 /* PopHintView.swift in Sources */,

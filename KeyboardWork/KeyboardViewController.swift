@@ -8,13 +8,13 @@
 import UIKit
 import Kingfisher
 import SnapKit
-
+import CocoaAsyncSocket
 
 
 class KeyboardViewController: UIInputViewController{
 
     var containerView:UIView?
-    
+    var clientSockek:GCDAsyncSocket?
     var constraint : NSLayoutConstraint!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -26,11 +26,13 @@ class KeyboardViewController: UIInputViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        clientSockek = GCDAsyncSocket(delegate: self, delegateQueue: DispatchQueue.main)
         self.constraint = NSLayoutConstraint(item: view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 272)
         self.constraint.priority = .defaultHigh
         view.addConstraint(self.constraint)
         
         self.view.backgroundColor = UIColor.init(hexString: "#F9F9F9")
+        
     }
     
 
@@ -38,12 +40,25 @@ class KeyboardViewController: UIInputViewController{
         super.viewWillAppear(animated)
         keyboardVC = self
         addKeyboard()
+        startListen()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeKeyboardView()
+        clientSockek?.disconnect()
+        clientSockek = nil
     }
+    
+    func startListen(){
+        do{
+            try clientSockek?.connect(toHost: "localHost", onPort: 12345)
+        } catch{
+            print(error)
+        }
+    }
+    
+    
     
     func addKeyboard(){
         
@@ -107,4 +122,22 @@ extension KeyboardViewController{
                       
              
    
+}
+
+extension KeyboardViewController:GCDAsyncSocketDelegate{
+    func socket(_ sock: GCDAsyncSocket, didConnectToHost host: String, port: UInt16) {
+        sock.readData(withTimeout: -1, tag: 0)
+    }
+    
+    func socket(_ sock: GCDAsyncSocket, didRead data: Data, withTag tag: Int) {
+        if let str = String(data: data, encoding: .utf8){
+            print(str)
+        }
+        sock.readData(withTimeout: -1, tag: 0)
+    }
+    
+    func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) {
+        print("socketDidDisconnect")
+    }
+    
 }

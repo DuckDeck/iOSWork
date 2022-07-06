@@ -15,6 +15,7 @@ pod "SwiftyJSON"
 pod "SwiftSoup"
 #pod 'AMKLaunchTimeProfiler'
 pod 'SwiftyBeaver'
+pod 'CocoaAsyncSocket'
 end
 
 target 'CLangWork' do
@@ -48,6 +49,7 @@ target 'KeyboardWork' do
   pod "SnapKit"
   pod 'YHPDFImageLoader'
   pod 'SwiftyJSON'
+  pod 'CocoaAsyncSocket'
   # Pods for KeyboardWork
 
 end
