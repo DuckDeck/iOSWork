@@ -42,7 +42,7 @@ class ProcessComViewController: UIViewController {
 
     lazy var vInput: UITextField = {
         let v = UITextField()
-        v.placeholder = "点击弹出键盘"
+        v.placeholder = "点击弹出键盘并切换到keyword work"
         v.textColor = UIColor.label
         v.layer.borderColor = UIColor.red.cgColor
         v.layer.borderWidth = 1

@@ -82,6 +82,7 @@
 		AE128897281CED0A0049A5E4 /* token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12885F281CED0A0049A5E4 /* token.swift */; };
 		AE12889928210F590049A5E4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AE12889E2821524A0049A5E4 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9EE9F528083E2000EBE70A /* Shake.swift */; };
+		AE1A22EB2876D37100A5C18B /* PasteboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A22EA2876D37100A5C18B /* PasteboardView.swift */; };
 		AE1A51A027C284B500162D66 /* ImageMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */; };
 		AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */; };
 		AE1A875D27512195004FA0DA /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875C27512195004FA0DA /* Spirograph.swift */; };
@@ -1085,6 +1086,7 @@
 		AE12885E281CED0A0049A5E4 /* tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tokenizer.swift; sourceTree = "<group>"; };
 		AE12885F281CED0A0049A5E4 /* token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = token.swift; sourceTree = "<group>"; };
 		AE1288A2282154B00049A5E4 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		AE1A22EA2876D37100A5C18B /* PasteboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardView.swift; sourceTree = "<group>"; };
 		AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryViewController.swift; sourceTree = "<group>"; };
 		AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebViewController.swift; sourceTree = "<group>"; };
 		AE1A875C27512195004FA0DA /* Spirograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirograph.swift; sourceTree = "<group>"; };
@@ -3055,6 +3057,7 @@
 			children = (
 				AEB517E2282677F700F2FA1D /* SwitchKeyboardView.swift */,
 				AE313F25282E46DD00245791 /* KeyboardSettingView.swift */,
+				AE1A22EA2876D37100A5C18B /* PasteboardView.swift */,
 				AEC9916828743E90002879A0 /* KeyboardNav.swift */,
 				AEC9916A287442C4002879A0 /* HUD.swift */,
 			);
@@ -4788,6 +4791,7 @@
 				AEE3DB1727FC0960007B2B58 /* KeyboardInfo.swift in Sources */,
 				AEC9916B287442C4002879A0 /* HUD.swift in Sources */,
 				AEE3DB2827FC0C45007B2B58 /* FullRowKeysView.swift in Sources */,
+				AE1A22EB2876D37100A5C18B /* PasteboardView.swift in Sources */,
 				AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */,
 				AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */,
 				AE12889928210F590049A5E4 /* Global.swift in Sources */,

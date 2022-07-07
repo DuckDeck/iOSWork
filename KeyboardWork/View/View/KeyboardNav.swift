@@ -9,10 +9,16 @@ import UIKit
 
 class KeyboardNav: UIView {
 
+    var title:String?{
+        didSet{
+            lblTitle.text = title
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-       addSubview(navBar)
+        addSubview(navBar)
         navBar.snp.makeConstraints { make in
             make.top.left.right.equalTo(0)
             make.height.equalTo(40)
@@ -25,8 +31,18 @@ class KeyboardNav: UIView {
         
         navBar.addSubview(btnBack)
         btnBack.snp.makeConstraints { make in
-            make.left.equalTo(16)
+            make.left.equalTo(8)
             make.centerY.equalTo(navBar)
+            make.width.height.equalTo(40)
+        }
+        
+        let line = UIView()
+        line.backgroundColor = kColorebebeb
+        addSubview(line)
+        line.snp.makeConstraints { make in
+            make.top.equalTo(40)
+            make.left.right.equalTo(0)
+            make.height.equalTo(0.5)
         }
         
     }

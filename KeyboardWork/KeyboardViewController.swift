@@ -26,7 +26,12 @@ class KeyboardViewController: UIInputViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clientSockek = GCDAsyncSocket(delegate: self, delegateQueue: DispatchQueue.main)
+        
+        let hostBundleID = self.parent!.value(forKey: "_hostBundleID") as? String ?? ""
+        if hostBundleID == "ShadowEdge.iOSWork"{
+            clientSockek = GCDAsyncSocket(delegate: self, delegateQueue: DispatchQueue.main)
+            startListen()
+        }
         self.constraint = NSLayoutConstraint(item: view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 272)
         self.constraint.priority = .defaultHigh
         view.addConstraint(self.constraint)
@@ -40,7 +45,7 @@ class KeyboardViewController: UIInputViewController{
         super.viewWillAppear(animated)
         keyboardVC = self
         addKeyboard()
-        startListen()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

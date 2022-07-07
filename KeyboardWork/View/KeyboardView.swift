@@ -120,7 +120,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
         var newKeyboard : Keyboard?
         switch keyboardType {
         case .chinese26:
-            newKeyboard = FullKeyboardView()
+            newKeyboard = FullKeyboardView(keyboardType: .chinese26)
         case .chinese9:
             newKeyboard = NineKeyboardView()
         case .number:
@@ -143,6 +143,16 @@ class KeyboardView: UIView ,keyPressDeleaget{
         addSubview(keyboard!)
         keyboard!.snp.makeConstraints { make in
             make.margins.equalTo(0)
+        }
+        
+        if keyboardType == .emoji{
+            self.snp.updateConstraints { make in
+                make.height.equalTo(272)
+            }
+        } else {
+            self.snp.updateConstraints { make in
+                make.height.equalTo(222)
+            }
         }
     }
     

@@ -61,6 +61,16 @@ class HeaderView: Header {
             make.height.equalTo(30)
         }
         
+        let btnPasteboard = UIButton()
+        btnPasteboard.setImage(UIImage(systemName: "wallet.pass"), for: .normal)
+        btnPasteboard.addTarget(self, action: #selector(menuClick(sender:)), for: .touchUpInside)
+        btnPasteboard.tag = 4
+        stackView.addArrangedSubview(btnPasteboard)
+        btnPasteboard.snp.makeConstraints { make in
+            make.width.equalTo(60)
+            make.height.equalTo(30)
+        }
+        
         stackView.addArrangedSubview(UIView())
         
         let btnCloseKeyboard = UIButton()
