@@ -53,6 +53,10 @@ extension  KeyboardViewController{
         push(v: v)
     }
     
+    func addPasteboardView(){
+        let v = PasteboardView()
+        push(v: v)
+    }
 }
 
 

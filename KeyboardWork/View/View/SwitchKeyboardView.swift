@@ -10,6 +10,7 @@ import UIKit
 class SwitchKeyboardView:KeyboardNav{
     override init(frame: CGRect) {
         super.init(frame: frame)
+        title = "切换键盘"
         backgroundColor = UIColor.white
        addSubview(stackView)
         stackView.snp.makeConstraints { make in

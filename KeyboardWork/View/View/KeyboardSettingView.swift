@@ -24,7 +24,7 @@ class KeyboardSettingView:KeyboardNav{
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.white
-        
+        title = "键盘设置"
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(0)

@@ -21,7 +21,7 @@ class KeyboardNav: UIView {
         addSubview(navBar)
         navBar.snp.makeConstraints { make in
             make.top.left.right.equalTo(0)
-            make.height.equalTo(40)
+            make.height.equalTo(39.5)
         }
         
         navBar.addSubview(lblTitle)
@@ -40,7 +40,7 @@ class KeyboardNav: UIView {
         line.backgroundColor = kColorebebeb
         addSubview(line)
         line.snp.makeConstraints { make in
-            make.top.equalTo(40)
+            make.top.equalTo(39.5)
             make.left.right.equalTo(0)
             make.height.equalTo(0.5)
         }

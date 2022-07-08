@@ -15,6 +15,7 @@ class KeyboardViewController: UIInputViewController{
 
     var containerView:UIView?
     var clientSockek:GCDAsyncSocket?
+    var pastboardManage: PastboardManage? // 剪切板内容管理器
     var constraint : NSLayoutConstraint!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -45,12 +46,20 @@ class KeyboardViewController: UIInputViewController{
         super.viewWillAppear(animated)
         keyboardVC = self
         addKeyboard()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        pastboardManage = PastboardManage { str, words in
+            print(str)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeKeyboardView()
+        pastboardManage?.timer?.invalidate()
+        pastboardManage = nil
         clientSockek?.disconnect()
         clientSockek = nil
     }

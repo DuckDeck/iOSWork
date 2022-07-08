@@ -94,6 +94,8 @@ class HeaderView: Header {
             globalKeyboard?.switchKeyboard(keyboardType: .emoji)
         case 3:
             keyboardVC?.addSwitchKeyboardView()
+        case 4:
+            keyboardVC?.addPasteboardView()
         default:
             break
         }

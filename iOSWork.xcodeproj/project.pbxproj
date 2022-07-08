@@ -83,6 +83,7 @@
 		AE12889928210F590049A5E4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AE12889E2821524A0049A5E4 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9EE9F528083E2000EBE70A /* Shake.swift */; };
 		AE1A22EB2876D37100A5C18B /* PasteboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A22EA2876D37100A5C18B /* PasteboardView.swift */; };
+		AE1A22EE2876D72000A5C18B /* PasteboardManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A22ED2876D72000A5C18B /* PasteboardManage.swift */; };
 		AE1A51A027C284B500162D66 /* ImageMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */; };
 		AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */; };
 		AE1A875D27512195004FA0DA /* Spirograph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1A875C27512195004FA0DA /* Spirograph.swift */; };
@@ -1087,6 +1088,7 @@
 		AE12885F281CED0A0049A5E4 /* token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = token.swift; sourceTree = "<group>"; };
 		AE1288A2282154B00049A5E4 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		AE1A22EA2876D37100A5C18B /* PasteboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardView.swift; sourceTree = "<group>"; };
+		AE1A22ED2876D72000A5C18B /* PasteboardManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardManage.swift; sourceTree = "<group>"; };
 		AE1A519F27C284B500162D66 /* ImageMemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMemoryViewController.swift; sourceTree = "<group>"; };
 		AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWebViewController.swift; sourceTree = "<group>"; };
 		AE1A875C27512195004FA0DA /* Spirograph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirograph.swift; sourceTree = "<group>"; };
@@ -1914,6 +1916,15 @@
 			path = "glyphs -> tokens";
 			sourceTree = "<group>";
 		};
+		AE1A22EC2876D70600A5C18B /* Pasteboard */ = {
+			isa = PBXGroup;
+			children = (
+				AE1A22EA2876D37100A5C18B /* PasteboardView.swift */,
+				AE1A22ED2876D72000A5C18B /* PasteboardManage.swift */,
+			);
+			path = Pasteboard;
+			sourceTree = "<group>";
+		};
 		AE1C4F18274341140097EAC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1926,6 +1937,7 @@
 		AE1C4F1E274341140097EAC1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AE1A22EC2876D70600A5C18B /* Pasteboard */,
 				AEB517E1282677EA00F2FA1D /* View */,
 				AE12883C280C50910049A5E4 /* Emoji */,
 				AEE3DB6227FC3D9E007B2B58 /* Header */,
@@ -3057,7 +3069,6 @@
 			children = (
 				AEB517E2282677F700F2FA1D /* SwitchKeyboardView.swift */,
 				AE313F25282E46DD00245791 /* KeyboardSettingView.swift */,
-				AE1A22EA2876D37100A5C18B /* PasteboardView.swift */,
 				AEC9916828743E90002879A0 /* KeyboardNav.swift */,
 				AEC9916A287442C4002879A0 /* HUD.swift */,
 			);
@@ -4809,6 +4820,7 @@
 				AEE3DB2A27FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift in Sources */,
 				AE12887E281CED0A0049A5E4 /* calc-result.swift in Sources */,
 				AE128872281CED0A0049A5E4 /* expressionizer.swift in Sources */,
+				AE1A22EE2876D72000A5C18B /* PasteboardManage.swift in Sources */,
 				AE128896281CED0A0049A5E4 /* token.swift in Sources */,
 				AE7E7452272252AC00F0C19C /* KeyboardViewController.swift in Sources */,
 				AEE3DB5927FC2FFA007B2B58 /* NineKeyboardView.swift in Sources */,
