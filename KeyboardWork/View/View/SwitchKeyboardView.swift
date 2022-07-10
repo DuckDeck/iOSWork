@@ -15,7 +15,7 @@ class SwitchKeyboardView:KeyboardNav{
        addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.centerX.equalTo(self)
-            make.top.equalTo(60)
+            make.top.equalTo(100)
         }
         
         stackView.addArrangedSubview(btn9Key)

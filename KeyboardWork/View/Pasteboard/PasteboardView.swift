@@ -54,10 +54,21 @@ extension PasteboardView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+
     
-//    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        
-//    }
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action1 = UIContextualAction(style: .destructive, title: "删除") {  (contextualAction, view, boolValue) in
+            self.arrStr.remove(at: indexPath.row)
+            self.tb.reloadData()
+            PastInfo.Strings = self.arrStr
+            tableView.setEditing(false, animated: true)
+        }
+        let action2 = UIContextualAction(style: .normal, title: "发送")  {  (contextualAction, view, boolValue) in
+            keyboardVC?.insert(text: self.arrStr[indexPath.row])
+            tableView.setEditing(false, animated: true)
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [action1,action2])
+        return swipeActions
+    }
     
 }

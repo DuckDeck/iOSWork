@@ -952,6 +952,7 @@
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
 		AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */; };
+		AEF6CB3A287A6F4800352100 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6CB39287A6F4800352100 /* ThemeViewController.swift */; };
 		AEF8665A274B6F5B002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
 		AEF8665B274B6F97002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
 		AEF8665C274B6F98002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
@@ -1707,6 +1708,7 @@
 		AEF0EBE42729470000DCA7B8 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
+		AEF6CB39287A6F4800352100 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		AEF86659274B6F5B002E33E5 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		AEF86665274B9B52002E33E5 /* ClassifyingImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyingImagesViewController.swift; sourceTree = "<group>"; };
 		AEF86667274B9B5D002E33E5 /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
@@ -2417,6 +2419,7 @@
 		AE62CBE1272565EF007D51CD /* UI_Layout */ = {
 			isa = PBXGroup;
 			children = (
+				AEF6CB38287A6F3B00352100 /* Theme */,
 				AEB649C1273FE70700BCBF4E /* Animation */,
 				AE6E5DCD273FC5D300523EA8 /* Layout */,
 				AE6E5DC6273FBC1400523EA8 /* Table */,
@@ -3594,6 +3597,14 @@
 			path = Thread;
 			sourceTree = "<group>";
 		};
+		AEF6CB38287A6F3B00352100 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				AEF6CB39287A6F4800352100 /* ThemeViewController.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		AEF86664274B9B38002E33E5 /* ClassifyingImages */ = {
 			isa = PBXGroup;
 			children = (
@@ -4507,6 +4518,7 @@
 				AE6116632741280B008466AB /* GradientLabel.swift in Sources */,
 				AEE010742742560200C155D8 /* ResolutionFilterView.swift in Sources */,
 				AE62CB6E27254B12007D51CD /* GrandCue.swift in Sources */,
+				AEF6CB3A287A6F4800352100 /* ThemeViewController.swift in Sources */,
 				AE72F52B273EB9A50060456A /* CityChooseViewController.swift in Sources */,
 				AE62CADA272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				AE128864281CED0A0049A5E4 /* input-parser.swift in Sources */,
