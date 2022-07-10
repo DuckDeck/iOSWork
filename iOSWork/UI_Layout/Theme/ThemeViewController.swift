@@ -30,53 +30,52 @@ class ThemeViewController:BaseViewController{
         let seg = UISegmentedControl(frame: CGRect(x: 0, y: 100, width: ScreenWidth, height: 50),actions: [action1,action2,action3])
         view.addSubview(seg)
         
+        view.addSubview(btnRevertImage)
+        btnRevertImage.snp.makeConstraints { make in
+            make.left.equalTo(30)
+            make.top.equalTo(200)
+            make.width.equalTo(80)
+            make.height.equalTo(40)
+        }
         
+        view.addSubview(img)
+        img.image = UIImage(named: "2")
+        img.snp.makeConstraints { make in
+            make.left.right.equalTo(0)
+            make.top.equalTo(300)
+            make.height.lessThanOrEqualTo(400)
+        }
     }
 
     func updateStyle(style:UIUserInterfaceStyle){
         UIApplication.shared.override(style)
         UserDefaults.standard.overridedUserInterfaceStyle = style
+        if style == .dark{
+            img.image = UIImage(named: "2")?.revertColor()
+        } else {
+            img.image = UIImage(named: "2")
+        }
     }
+    
+    @objc func revertImage(){
+        img.image = img.image?.revertColor()
+    }
+    
+    lazy var img: UIImageView = {
+        let v = UIImageView()
+        v.contentMode = .scaleAspectFill
+        return v
+    }()
+    
+    lazy var btnRevertImage:UIButton = {
+        let v = UIButton()
+        v.setTitle("反转图片", for: .normal)
+        v.setTitleColor(UIColor.label, for: .normal)
+        v.addTarget(self, action: #selector(revertImage), for: .touchUpInside)
+        v.isHidden = true
+        return v
+    }()
 
 }
 
-extension UserDefaults{
-    var overridedUserInterfaceStyle: UIUserInterfaceStyle {
-        get {
-            UIUserInterfaceStyle(rawValue: integer(forKey: #function)) ?? .unspecified
-        }
-        set {
-            set(newValue.rawValue, forKey: #function)
-        }
-    }
-}
-public extension UIApplication {
-    func override(_ userInterfaceStyle: UIUserInterfaceStyle) {
-        // iPad支持多窗口，不支持iPad的话可以删除这段判断
-        if #available(iOS 13.0, *), supportsMultipleScenes {
-            for connectedScene in connectedScenes {
-                if let scene = connectedScene as? UIWindowScene {
-                    scene.windows.override(userInterfaceStyle)
-                }
-            }
-        }
-        else {
-            windows.override(userInterfaceStyle)
-        }
-    }
-}
-public extension UIWindow {
-    func override(_ userInterfaceStyle: UIUserInterfaceStyle) {
-        if #available(iOS 13.0, tvOS 13.0, *) {
-            overrideUserInterfaceStyle = userInterfaceStyle
-        }
-    }
-}
-public extension Array where Element: UIWindow {
-    func override(_ userInterfaceStyle: UIUserInterfaceStyle) {
-        for window in self {
-            window.override(userInterfaceStyle)
-        }
-    }
-}
-  
+

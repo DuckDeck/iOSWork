@@ -42,7 +42,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
     
     convenience init() {
         self.init(frame: .zero)
-        backgroundColor = kColord1d5db
+        backgroundColor = Theme.keyboardBgColor.color
        
         keyboard = FullKeyboardView(keyboardType: .english)
         keyboard?.delegate = self

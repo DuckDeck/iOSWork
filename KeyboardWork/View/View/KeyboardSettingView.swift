@@ -33,7 +33,28 @@ class KeyboardSettingView:KeyboardNav{
         
         let v = createCell(setting: SettingInfo(title: "键盘震动", tip: "开启键盘震动，打字体验更爽", isOn: KeyboardInfo.Shake, type: .shake))
         stackView.addArrangedSubview(v)
+        
+        let action1 = UIAction { a in
+            UserDefaults.standard.overridedUserInterfaceStyle = .unspecified
+            keyboardVC?.overrideUserInterfaceStyle = .unspecified
+        }
+        action1.title = "跟随系统"
+        let action2 = UIAction { a in
+            UserDefaults.standard.overridedUserInterfaceStyle = .dark
+            keyboardVC?.overrideUserInterfaceStyle = .dark
+        }
+        action2.title = "深色模式"
+        let action3 = UIAction { a in
+            UserDefaults.standard.overridedUserInterfaceStyle = .light
+            keyboardVC?.overrideUserInterfaceStyle = .light
+        }
+        action3.title = "浅色模式"
+        
+        let seg = UISegmentedControl(frame: CGRect(x: 0, y: 100, width: ScreenWidth, height: 50),actions: [action1,action2,action3])
+        stackView.addArrangedSubview(seg)
     }
+    
+   
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

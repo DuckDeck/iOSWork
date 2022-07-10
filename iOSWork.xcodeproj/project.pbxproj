@@ -953,6 +953,10 @@
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
 		AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */; };
 		AEF6CB3A287A6F4800352100 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6CB39287A6F4800352100 /* ThemeViewController.swift */; };
+		AEF6CB3D287A79D700352100 /* Style+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6CB3C287A79D700352100 /* Style+Extension.swift */; };
+		AEF6CB3E287A79E400352100 /* Style+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6CB3C287A79D700352100 /* Style+Extension.swift */; };
+		AEF6CB3F287A79E500352100 /* Style+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6CB3C287A79D700352100 /* Style+Extension.swift */; };
+		AEF6CB41287A7CB200352100 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6CB40287A7CB200352100 /* Theme.swift */; };
 		AEF8665A274B6F5B002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
 		AEF8665B274B6F97002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
 		AEF8665C274B6F98002E33E5 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF86659274B6F5B002E33E5 /* Store.swift */; };
@@ -1709,6 +1713,8 @@
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
 		AEF6CB39287A6F4800352100 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		AEF6CB3C287A79D700352100 /* Style+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Extension.swift"; sourceTree = "<group>"; };
+		AEF6CB40287A7CB200352100 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		AEF86659274B6F5B002E33E5 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		AEF86665274B9B52002E33E5 /* ClassifyingImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifyingImagesViewController.swift; sourceTree = "<group>"; };
 		AEF86667274B9B5D002E33E5 /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
@@ -2360,6 +2366,7 @@
 				AE62CB63272549A3007D51CD /* String+Extension.swift */,
 				AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */,
 				AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */,
+				AEF6CB3C287A79D700352100 /* Style+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -3510,6 +3517,7 @@
 				AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */,
 				AE9EE9F528083E2000EBE70A /* Shake.swift */,
 				AE128848280C51E00049A5E4 /* Extension.swift */,
+				AEF6CB40287A7CB200352100 /* Theme.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -4478,6 +4486,7 @@
 				AE62CACE272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */,
 				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
+				AEF6CB3F287A79E500352100 /* Style+Extension.swift in Sources */,
 				AEE010732742560200C155D8 /* ImageSetListViewController.swift in Sources */,
 				AE74AAC927D4A36A00296960 /* Calculator.swift in Sources */,
 				AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */,
@@ -4808,6 +4817,7 @@
 				AE128886281CED0A0049A5E4 /* operation.swift in Sources */,
 				AEE3DB1127FC0958007B2B58 /* KeyboardView.swift in Sources */,
 				AEE3DB2227FC0BF2007B2B58 /* PopKeyView.swift in Sources */,
+				AEF6CB41287A7CB200352100 /* Theme.swift in Sources */,
 				AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */,
 				AE128847280C51820049A5E4 /* EmojiKeyboard.swift in Sources */,
 				AEB517E3282677F700F2FA1D /* SwitchKeyboardView.swift in Sources */,
@@ -4825,6 +4835,7 @@
 				AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */,
 				AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */,
 				AE128849280C51E00049A5E4 /* Extension.swift in Sources */,
+				AEF6CB3E287A79E400352100 /* Style+Extension.swift in Sources */,
 				AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */,
 				AEF8665D274B7023002E33E5 /* Foundation+Extension.swift in Sources */,
 				AE12886E281CED0A0049A5E4 /* expression-combining.swift in Sources */,
@@ -4965,6 +4976,7 @@
 				AE62CA6B2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE62CA552725429B007D51CD /* UIView+Layout.m in Sources */,
 				AE62CB5127254947007D51CD /* UICollectView+Extension.swift in Sources */,
+				AEF6CB3D287A79D700352100 /* Style+Extension.swift in Sources */,
 				AE62CA5E2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE62CB3C27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CBC727255C20007D51CD /* ProgressButton.swift in Sources */,
