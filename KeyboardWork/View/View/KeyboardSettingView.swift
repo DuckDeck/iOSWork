@@ -27,8 +27,9 @@ class KeyboardSettingView:KeyboardNav{
         title = "键盘设置"
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.left.right.bottom.equalTo(0)
+            make.left.right.equalTo(0)
             make.top.equalTo(40)
+            make.height.lessThanOrEqualTo(232)
         }
         
         let v = createCell(setting: SettingInfo(title: "键盘震动", tip: "开启键盘震动，打字体验更爽", isOn: KeyboardInfo.Shake, type: .shake))
@@ -50,8 +51,17 @@ class KeyboardSettingView:KeyboardNav{
         }
         action3.title = "浅色模式"
         
-        let seg = UISegmentedControl(frame: CGRect(x: 0, y: 100, width: ScreenWidth, height: 50),actions: [action1,action2,action3])
+        let seg = UISegmentedControl(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 50),actions: [action1,action2,action3])
         stackView.addArrangedSubview(seg)
+        
+        let style = UserDefaults.standard.overridedUserInterfaceStyle
+        if style == .unspecified{
+            seg.selectedSegmentIndex = 0
+        } else if style == .light{
+            seg.selectedSegmentIndex =  2
+        } else {
+            seg.selectedSegmentIndex = 1
+        }
     }
     
    

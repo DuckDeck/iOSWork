@@ -2967,9 +2967,9 @@
 		AE7E7450272252AC00F0C19C /* KeyboardWork */ = {
 			isa = PBXGroup;
 			children = (
+				AE38468727BB440A004F6765 /* KeyboardWork.entitlements */,
 				AEE3DB2E27FC0FBF007B2B58 /* pdf */,
 				AEE3DB2B27FC0D1C007B2B58 /* Tool */,
-				AE38468727BB440A004F6765 /* KeyboardWork.entitlements */,
 				AE1C4F1E274341140097EAC1 /* View */,
 				AE1C4F18274341140097EAC1 /* Model */,
 				AE7E7451272252AC00F0C19C /* KeyboardViewController.swift */,

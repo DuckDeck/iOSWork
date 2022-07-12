@@ -36,7 +36,7 @@ class KeyboardViewController: UIInputViewController{
         self.constraint = NSLayoutConstraint(item: view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 272)
         self.constraint.priority = .defaultHigh
         view.addConstraint(self.constraint)
-        
+        overrideUserInterfaceStyle = UserDefaults.standard.overridedUserInterfaceStyle
         self.view.backgroundColor = UIColor.init(hexString: "#F9F9F9")
         
     }
