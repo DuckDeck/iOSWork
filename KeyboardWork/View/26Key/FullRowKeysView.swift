@@ -107,7 +107,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             //imageLayer
             
             if !item.element.image.isEmpty{
-                let img = UIImage.yh_imageNamed(item.element.image)!
+                let img = UIImage.yh_imageNamed(item.element.image)!.withTintColor(.pink, renderingMode: .automatic)
                 let imgLayer = CALayer()
                 imgLayer.frame = item.element.position.centerRect(w: img.size.width, h: img.size.height)
                 imgLayer.contents = img.cgImage

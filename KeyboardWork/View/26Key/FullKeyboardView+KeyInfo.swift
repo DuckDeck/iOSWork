@@ -14,8 +14,6 @@ extension FullKeyboardView{
     
     func setChinese26Data(){
         let f = [("Q","1"),("W","2"),("E","3"),("R","4"),("T","5"),("Y","6"),("U","7"),("I","8"),("O","9"),("P","0")]
-        let xScale = (kSCREEN_WIDTH - 55.0) / 320.0
-        let keyWidth = xScale * 32
         if firstKeys == nil{
             firstKeys = [KeyInfo]()
         }
@@ -27,7 +25,7 @@ extension FullKeyboardView{
             k.fillColor = UIColor.white
             k.textColor = kColor222222
             k.id = UInt8(item.offset)
-            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + 5, y: 5, width: keyWidth, height: 44)
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + 4, y: 5, width: keyWidth, height: 44)
             k.keyType = .normal(.chinese)
             firstKeys.append(k)
         }
@@ -44,12 +42,13 @@ extension FullKeyboardView{
             k.fillColor = UIColor.white
             k.textColor = kColor222222
             k.id = UInt8(item.offset + 10)
-            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + 23.5, y: 5, width: keyWidth, height: 44 )
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + rowTwoStartWidth, y: 5, width: keyWidth, height: 44 )
             k.keyType = .normal(.chinese)
             secondKeys.append(k)
         }
         
         let t = [("Z","（"),("X","）"),("C","-"),("V","_"),("B","："),("N","；"),("M","/")]
+        let letterStart = (kSCREEN_WIDTH - rowThreeKeyArea) / 2.0
         if thirdKeys == nil{
             thirdKeys = [KeyInfo]()
         }
@@ -60,7 +59,7 @@ extension FullKeyboardView{
         sep.fillColor = kColorb3b7bC
         sep.textColor = kColor0a0a0a
         sep.textSize = 18
-        sep.position = CGRect(x: 5, y: 5, width: xScale * 44, height: 44)
+        sep.position = CGRect(x: 4, y: 5, width: shiftKeyWidth, height: 44)
         thirdKeys.append(sep)
         for item in t.enumerated(){
             var k = KeyInfo()
@@ -69,7 +68,7 @@ extension FullKeyboardView{
             k.fillColor = UIColor.white
             k.textColor = kColor222222
             k.id = UInt8(item.offset + 20)
-            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + sep.position.maxX + 12, y: 5, width: keyWidth, height: 44 )
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + letterStart, y: 5, width: keyWidth, height: 44 )
             k.keyType = .normal(.chinese)
             thirdKeys.append(k)
         }
@@ -77,14 +76,14 @@ extension FullKeyboardView{
         del.image = "icon_delete_white"
         del.keyType = .del
         del.fillColor = kColorb3b7bC
-        del.position = CGRect(x: thirdKeys.last!.position.maxX + 11, y: 5, width: xScale * 44, height: 44)
+        del.position = CGRect(x: kSCREEN_WIDTH - shiftKeyWidth - 4, y: 5, width: shiftKeyWidth, height: 44)
         thirdKeys.append(del)
         
         if forthKeys == nil{
             forthKeys = [KeyInfo]()
         }
         forthKeys.removeAll()
-        
+        let xScale = (kSCREEN_WIDTH - 33) / 342
         
         var symKey = KeyInfo()
         symKey.text = "符"
@@ -92,7 +91,7 @@ extension FullKeyboardView{
         symKey.fillColor = kColorb3b7bC
         symKey.textColor = kColor0a0a0a
         symKey.keyType = .switchKeyboard(.symbleChiese)
-        symKey.position = CGRect(x: 5, y: 5, width: 44 * xScale, height: 44)
+        symKey.position = CGRect(x: 4, y: 5, width: 42 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -101,7 +100,7 @@ extension FullKeyboardView{
         numKey.fillColor = kColorb3b7bC
         numKey.textColor = kColor0a0a0a
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 44 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         forthKeys.append(numKey)
         
         var commaKey = KeyInfo()
@@ -110,32 +109,30 @@ extension FullKeyboardView{
         commaKey.fillColor = UIColor.white
         commaKey.textColor = kColor222222
         commaKey.keyType = .normal(.character)
-        commaKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
+        commaKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 32 * xScale, height: 44)
         forthKeys.append(commaKey)
         
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 88 * xScale, height: 44)
+        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 116 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_chinese"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 48 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.english)
         forthKeys.append(switchKey)
         
         var enterKey = returnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 75 * xScale, height: 44)
+        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
 
     func setEnglish26Data(shiftType:KeyShiftType = .normal){
         let f = [("q","1"),("w","2"),("e","3"),("r","4"),("t","5"),("y","6"),("u","7"),("i","8"),("o","9"),("p","0")]
-        let xScale = (kSCREEN_WIDTH - 55.0) / 320.0
-        let keyWidth = xScale * 32
         if firstKeys == nil{
             firstKeys = [KeyInfo]()
         }
@@ -147,7 +144,7 @@ extension FullKeyboardView{
             k.fillColor = UIColor.white
             k.textColor = kColor222222
             k.id = UInt8(item.offset)
-            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + 5, y: 5, width: keyWidth, height: 44)
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + 4, y: 5, width: keyWidth, height: 44)
             k.keyType = .normal(.character)
             firstKeys.append(k)
         }
@@ -164,12 +161,13 @@ extension FullKeyboardView{
             k.fillColor = UIColor.white
             k.textColor = kColor222222
             k.id = UInt8(item.offset + 10)
-            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + 23.5, y: 5, width: keyWidth, height: 44 )
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + rowTwoStartWidth, y: 5, width: keyWidth, height: 44 )
             k.keyType = .normal(.character)
             secondKeys.append(k)
         }
         
         let t = [("z","("),("x",")"),("c","-"),("v","_"),("b",":"),("n",";"),("m","/")]
+        let letterStart = (kSCREEN_WIDTH - rowThreeKeyArea) / 2.0
         if thirdKeys == nil{
             thirdKeys = [KeyInfo]()
         }
@@ -189,7 +187,7 @@ extension FullKeyboardView{
         
         shiftKey.fillColor = kColorb3b7bC
         shiftKey.textColor = kColor0a0a0a
-        shiftKey.position = CGRect(x: 5, y: 5, width: xScale * 42, height: 44)
+        shiftKey.position = CGRect(x: 4, y: 5, width: rowTwoStartWidth, height: 44)
         thirdKeys.append(shiftKey)
         for item in t.enumerated(){
             var k = KeyInfo()
@@ -198,7 +196,7 @@ extension FullKeyboardView{
             k.fillColor = UIColor.white
             k.textColor = kColor222222
             k.id = UInt8(item.offset + 20)
-            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + shiftKey.position.maxX + 13.5, y: 5, width: keyWidth, height: 44 )
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + letterStart, y: 5, width: keyWidth, height: 44 )
             k.keyType = .normal(.character)
             thirdKeys.append(k)
         }
@@ -206,7 +204,7 @@ extension FullKeyboardView{
         del.image = "icon_delete_white"
         del.keyType = .del
         del.fillColor = kColorb3b7bC
-        del.position = CGRect(x: thirdKeys.last!.position.maxX + 13, y: 5, width: xScale * 44, height: 44)
+        del.position = CGRect(x: kSCREEN_WIDTH - 4 - shiftKeyWidth, y: 5, width: shiftKeyWidth, height: 44)
         thirdKeys.append(del)
         
         if forthKeys == nil{
@@ -214,7 +212,7 @@ extension FullKeyboardView{
         }
         forthKeys.removeAll()
         
-     
+        let xScale = (kSCREEN_WIDTH - 33) / 342
         
         var symKey = KeyInfo()
         symKey.text = "符"
@@ -222,7 +220,7 @@ extension FullKeyboardView{
         symKey.textColor = kColor0a0a0a
         symKey.textSize = 18
         symKey.keyType = .switchKeyboard(.symbleEnglish)
-        symKey.position = CGRect(x: 5, y: 5, width: 44 * xScale, height: 44)
+        symKey.position = CGRect(x: 4, y: 5, width: 42 * xScale, height: 44)
         forthKeys.append(symKey)
         
         var numKey = KeyInfo()
@@ -231,7 +229,7 @@ extension FullKeyboardView{
         numKey.textColor = kColor0a0a0a
         numKey.textSize = 18
         numKey.keyType = .switchKeyboard(.number)
-        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 44 * xScale, height: 44)
+        numKey.position = CGRect(x: symKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         forthKeys.append(numKey)
         
         var commaKey = KeyInfo()
@@ -240,25 +238,25 @@ extension FullKeyboardView{
         commaKey.fillColor = UIColor.white
         commaKey.textColor = kColor222222
         commaKey.keyType = .normal(.character)
-        commaKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 38 * xScale, height: 44)
+        commaKey.position = CGRect(x: numKey.position.maxX + 5, y: 5, width: 32 * xScale, height: 44)
         forthKeys.append(commaKey)
         
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_space_black"
         spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 88 * xScale, height: 44)
+        spaceKey.position = CGRect(x: commaKey.position.maxX + 5, y: 5, width: 116 * xScale, height: 44)
         spaceKey.keyType = .space
         forthKeys.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_switch_english"
         switchKey.fillColor = kColorb3b7bC
-        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 48 * xScale, height: 44)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + 5, y: 5, width: 42 * xScale, height: 44)
         switchKey.keyType = .switchKeyboard(.chinese)
         forthKeys.append(switchKey)
         
         var enterKey = returnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 75 * xScale, height: 44)
+        enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
     

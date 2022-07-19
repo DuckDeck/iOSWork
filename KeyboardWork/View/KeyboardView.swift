@@ -30,10 +30,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
     @objc var isNumberType: Bool = false
     @objc var isChineseInput : Bool = true
     //cur str
-    
-   
-    
-   
+       
     var keyboard:Keyboard?
     
     fileprivate override init(frame: CGRect) {
@@ -42,7 +39,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
     
     convenience init() {
         self.init(frame: .zero)
-        backgroundColor = Theme.keyboardBgColor.color
+        backgroundColor = cKeyboardBgColor
        
         keyboard = FullKeyboardView(keyboardType: .english)
         keyboard?.delegate = self
