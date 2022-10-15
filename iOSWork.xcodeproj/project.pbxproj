@@ -2968,16 +2968,16 @@
 			isa = PBXGroup;
 			children = (
 				AE38468727BB440A004F6765 /* KeyboardWork.entitlements */,
+				AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */,
+				AE7E7453272252AC00F0C19C /* Info.plist */,
+				AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */,
+				AE7E7451272252AC00F0C19C /* KeyboardViewController.swift */,
+				AEB517EB28267A3600F2FA1D /* KeyboardViewController+Nav.swift */,
+				AE48CECD27C7D10B009A0673 /* asset.xcassets */,
+				AE1C4F18274341140097EAC1 /* Model */,
 				AEE3DB2E27FC0FBF007B2B58 /* pdf */,
 				AEE3DB2B27FC0D1C007B2B58 /* Tool */,
 				AE1C4F1E274341140097EAC1 /* View */,
-				AE1C4F18274341140097EAC1 /* Model */,
-				AE7E7451272252AC00F0C19C /* KeyboardViewController.swift */,
-				AEB517EB28267A3600F2FA1D /* KeyboardViewController+Nav.swift */,
-				AE7E7453272252AC00F0C19C /* Info.plist */,
-				AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */,
-				AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */,
-				AE48CECD27C7D10B009A0673 /* asset.xcassets */,
 			);
 			path = KeyboardWork;
 			sourceTree = "<group>";

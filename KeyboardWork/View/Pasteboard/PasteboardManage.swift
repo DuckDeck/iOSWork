@@ -68,18 +68,16 @@ class PastboardManage{
         if UIPasteboard.general.hasStrings && UIPasteboard.general.changeCount != changeCount {
             let (str, words) = readpasteBoard()
             if !str.isEmpty{
+                PastInfo.insert(str: str)
                 pastChangeBlock?(str,words)
             }
-               
-            
         }
-        
     }
     
     func readpasteBoard() ->(String, [RecognizeType]) {
         let p = UIPasteboard.general
         let pastStr = p.string ?? ""
-        if  !pastStr.isEmpty && !PastboardManage.pastStringFromKeyboard.contains(pastStr){ //微信SDK当使用小程序分享时，会粘贴一个小程序的链接，在这里过滤
+        if  !pastStr.isEmpty && !PastboardManage.pastStringFromKeyboard.contains(pastStr){
             let str = p.string!.trimmingCharacters(in: .whitespaces)
 //            let words = KBRecognizeServer.recognize(str)
             PastInfo.CurrentStr = p.string!

@@ -187,7 +187,7 @@ extension FullKeyboardView{
         
         shiftKey.fillColor = kColorb3b7bC
         shiftKey.textColor = kColor0a0a0a
-        shiftKey.position = CGRect(x: 4, y: 5, width: rowTwoStartWidth, height: 44)
+        shiftKey.position = CGRect(x: 4, y: 5, width: shiftKeyWidth, height: 44)
         thirdKeys.append(shiftKey)
         for item in t.enumerated(){
             var k = KeyInfo()
