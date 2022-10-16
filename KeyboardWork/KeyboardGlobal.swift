@@ -75,7 +75,7 @@ extension UITextDocumentProxy {
 }
 
 
-var returnKey:KeyInfo{
+var ReturnKey:KeyInfo{
         var k = KeyInfo()
         
         let type = keyboardVC?.textDocumentProxy.returnText ?? ""

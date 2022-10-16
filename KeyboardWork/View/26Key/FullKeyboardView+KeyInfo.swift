@@ -126,7 +126,7 @@ extension FullKeyboardView{
         switchKey.keyType = .switchKeyboard(.english)
         forthKeys.append(switchKey)
         
-        var enterKey = returnKey
+        var enterKey = ReturnKey
         enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
@@ -255,7 +255,7 @@ extension FullKeyboardView{
         switchKey.keyType = .switchKeyboard(.chinese)
         forthKeys.append(switchKey)
         
-        var enterKey = returnKey
+        var enterKey = ReturnKey
         enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 68 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
@@ -369,7 +369,7 @@ extension FullKeyboardView{
         switchKey.keyType = .switchKeyboard(.symbleEnglish)
         forthKeys.append(switchKey)
         
-        var enterKey = returnKey
+        var enterKey = ReturnKey
         enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 75 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
@@ -483,7 +483,7 @@ extension FullKeyboardView{
         switchKey.keyType = .switchKeyboard(.symbleChiese)
         forthKeys.append(switchKey)
         
-        var enterKey = returnKey
+        var enterKey = ReturnKey
         enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 75 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
@@ -597,7 +597,7 @@ extension FullKeyboardView{
         switchKey.keyType = .switchKeyboard(.symbleEnglishMore)
         forthKeys.append(switchKey)
         
-        var enterKey = returnKey
+        var enterKey = ReturnKey
         enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 75 * xScale, height: 44)
         forthKeys.append(enterKey)
     }
@@ -707,7 +707,7 @@ extension FullKeyboardView{
         switchKey.keyType = .switchKeyboard(.symbleChieseMore)
         forthKeys.append(switchKey)
         
-        var enterKey = returnKey
+        var enterKey = ReturnKey
         enterKey.position = CGRect(x: switchKey.position.maxX + 5, y: 5, width: 75 * xScale, height: 44)
         forthKeys.append(enterKey)
     }

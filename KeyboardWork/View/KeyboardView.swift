@@ -67,18 +67,18 @@ class KeyboardView: UIView ,keyPressDeleaget{
             inputText(inputType: type, key: key)
         case .del:
             deleteText()
-            keyboard?.updateReturnKey(key: returnKey)
+            keyboard?.updateReturnKey(key: ReturnKey)
             calculatorStr()
             
         case .space:
             output(text: " ")
-            keyboard?.updateReturnKey(key: returnKey)
+            keyboard?.updateReturnKey(key: ReturnKey)
         case .returnKey:
             if !key.isEnable{
                 return
             }
             output(text: "\n")
-            keyboard?.updateReturnKey(key: returnKey)
+            keyboard?.updateReturnKey(key: ReturnKey)
             
        
         default:
@@ -95,7 +95,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
         if (keyboard as? FullKeyboardView)?.shiftStatus == .shift && keyboard?.currentKeyBoardType == .english && (key.text.first?.isLetter ?? false){
             (keyboard as? FullKeyboardView)?.updateShift(shift: .normal)
         }
-        keyboard?.updateReturnKey(key: returnKey)
+        keyboard?.updateReturnKey(key: ReturnKey)
         calculatorStr()
     }
     
@@ -166,7 +166,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
     @objc func keepDelete(){
        
         deleteText()
-        keyboard?.updateReturnKey(key: returnKey)
+        keyboard?.updateReturnKey(key: ReturnKey)
         calculatorStr()
         
     }

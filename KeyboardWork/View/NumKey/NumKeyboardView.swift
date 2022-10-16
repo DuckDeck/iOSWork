@@ -182,7 +182,7 @@ class NumKeyboardView: Keyboard {
         spaceKey.keyType = .space
         
         
-        var enterKey = returnKey
+        var enterKey = ReturnKey
         enterKey.position = CGRect(x: spaceKey.position.maxX + 6, y: 3, width: 56 * xScale, height: 47)
         let v = NumberKeyBottomView(keys: [symbleKey,backKey,zeroKey,spaceKey,enterKey])
         return v

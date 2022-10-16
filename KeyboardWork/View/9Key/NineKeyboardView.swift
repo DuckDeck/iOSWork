@@ -191,7 +191,7 @@ class NineKeyboardView: Keyboard {
         switchKey.position = CGRect(x: spaceKey.position.maxX + 6, y: 4, width: 56 * xScale, height: 47)
         switchKey.keyType = .switchKeyboard(.english)
         
-        var enterKey = returnKey
+        var enterKey = ReturnKey
         enterKey.position = CGRect(x: switchKey.position.maxX + 6, y: 4, width: 72 * xScale, height: 47)
         let v = NineKeyBottomView(keys: [symbleKey,numKey,spaceKey,switchKey,enterKey])
         return v
