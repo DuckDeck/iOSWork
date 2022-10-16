@@ -3,3 +3,4 @@
 //
 
 #import <UIImage+YHPDFIcon.h>
+#import "WGInputAssociateWraper.h"

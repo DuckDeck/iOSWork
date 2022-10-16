@@ -59,10 +59,10 @@ class HeaderPasteboardView: UIView {
             let btn = UIButton()
             switch item {
             case .phone(_):
-                btn.setImage(UIImage.tintImage("icon_pastboard_choose_phone", color: UIColor(hexString: "bfc1c6").withAlphaComponent(0.6)), for: .normal)
+                btn.setImage(UIImage.tintImage("icon_pastboard_choose_phone", color: UIColor(hexString: "bfc1c6")!.withAlphaComponent(0.6)), for: .normal)
                 btn.addTarget(self, action: #selector(choosePhone), for: .touchUpInside)
             case .wechat(_):
-                btn.setImage(UIImage.tintImage("icon_pastboard_choose_wechat", color: UIColor(hexString: "bfc1c6").withAlphaComponent(0.6)), for: .normal)
+                btn.setImage(UIImage.tintImage("icon_pastboard_choose_wechat", color: UIColor(hexString: "bfc1c6")!.withAlphaComponent(0.6)), for: .normal)
                 btn.addTarget(self, action: #selector(chooseWechat), for: .touchUpInside)
             }
             stackView.addArrangedSubview(btn)
@@ -73,79 +73,15 @@ class HeaderPasteboardView: UIView {
         
         let btnChoose = UIButton()
         btnChoose.isHidden = text.isEmpty
-        btnChoose.setImage(UIImage.tintImage("icon_pastboard_splt_word", color: UIColor(hexString: "bfc1c6").withAlphaComponent(0.6)), for: .normal)
+        btnChoose.setImage(UIImage.tintImage("icon_pastboard_splt_word", color: UIColor(hexString: "bfc1c6")!.withAlphaComponent(0.6)), for: .normal)
         btnChoose.addTarget(self, action: #selector(chooseWord), for: .touchUpInside)
         stackView.addArrangedSubview(btnChoose)
         btnChoose.snp.makeConstraints { make in
             make.width.height.equalTo(36)
         }
         
-        let btnAddTalk = UIButton()
-        btnAddTalk.isHidden = text.isEmpty
-        btnAddTalk.setTitle("加话术", for: .normal)
-        btnAddTalk.setTitleColor(cKeyTipColor, for: .normal)
-        btnAddTalk.backgroundColor = UIColor(hexString: "17181a").withAlphaComponent(0.05) | UIColor(hexString: "3d3e42").withAlphaComponent(0.5)
-        btnAddTalk.titleLabel?.font = UIFont.pingfangBold(size: 14)
-        btnAddTalk.layer.cornerRadius = 12
-        btnAddTalk.addTarget(self, action: #selector(addTalk), for: .touchUpInside)
-        stackView.addArrangedSubview(btnAddTalk)
-        btnAddTalk.snp.makeConstraints { make in
-            make.height.equalTo(24)
-            make.width.equalTo(60)
-        }
-        
-        HttpClient.get(API_Recognize_Adress).addParams(["address":text]).completion { [self] rest in
-            if rest.code != 0 || rest.data == nil{
-                return
-            }
-            let res = JSON(rest.data!).dictionaryObject
-            if let address = Address.parse(d: try! JSONSerialization.data(withJSONObject: res as Any, options: [])){
-                if !address.tel.isEmpty && !address.province.isEmpty && !address.city.isEmpty && !address.area.isEmpty  {
-                    let btnAddTalk = UIButton()
-                    btnAddTalk.setTitle("开单", for: .normal)
-                    btnAddTalk.eventName = "剪贴板弹窗开单按钮"
-                    btnAddTalk.setTitleColor(cKeyTipColor, for: .normal)
-                    btnAddTalk.titleLabel?.font = UIFont.pingfangBold(size: 14)
-                    btnAddTalk.layer.cornerRadius = 12
-                    btnAddTalk.backgroundColor = UIColor(hexString: "17181a").withAlphaComponent(0.05) | UIColor(hexString: "3d3e42").withAlphaComponent(0.5)
-//                    btnAddTalk.layer.borderColor = kColor49c167.cgColor
-//                    btnAddTalk.layer.borderWidth = 0.5
-                    btnAddTalk.addTarget(self, action: #selector(gotoOrder), for: .touchUpInside)
-                    self.stackView.addArrangedSubview(btnAddTalk)
-                    btnAddTalk.snp.makeConstraints { make in
-                        make.height.equalTo(24)
-                        make.width.equalTo(48)
-                    }
-                }
-            }
-        }
-        
-        
-        //处理朋友圈发送
-        
+       
     }
- 
-    
-    func showSendLink(foldText:String?, link:String){
-        let piView = HeaderPIPopView()
-        piView.setContent(action: .sendLink(foldText, link))
-        self.addSubview(piView)
-        piView.snp.makeConstraints { make in
-            make.right.equalTo(-8)
-            make.centerY.equalTo(22)
-            make.height.equalTo(28)
-        }
-        textLabel.snp.remakeConstraints { m in
-            m.top.equalTo(0)
-            m.left.equalTo(12)
-            m.right.equalTo(piView.snp.left).offset(-12)
-            m.height.equalTo(44)
-        }
-        btnClose.isHidden = true
-    }
- 
-    
-    
     @objc func close(){
         PastboardManage.addKeyboardPastString(str: pastText)
         removeFromSuperview()
@@ -190,7 +126,7 @@ class HeaderPasteboardView: UIView {
     @objc func chooseText(){
         removeFromSuperview()
         keyboardVC?.insert(text: pastText)
-        globalKeyboard?.keyboard?.updateReturnKey(key: returnKey)
+        globalKeyboard?.keyboard?.updateReturnKey(key: ReturnKey)
     }
     
     lazy var textLabel: UILabel = {
