@@ -15,7 +15,8 @@ class KeyboardViewController: UIInputViewController{
 
     var containerView:UIView?
     var clientSockek:GCDAsyncSocket?
-    var pastboardManage: PastboardManage? // 剪切板内容管理器
+    var previousPastedText = ""                        //这个是用来保存分词前已经在输入框的内容
+    var pastboardManage: PastboardManage?              // 剪切板内容管理器
     var constraint : NSLayoutConstraint!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -135,7 +136,9 @@ extension KeyboardViewController{
      }
                       
              
-   
+    @objc func switchKeyboard() -> Void {
+        self.advanceToNextInputMode()
+    }
 }
 
 extension KeyboardViewController:GCDAsyncSocketDelegate{

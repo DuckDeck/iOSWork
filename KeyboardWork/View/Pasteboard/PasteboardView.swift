@@ -55,16 +55,21 @@ extension PasteboardView:UITableViewDelegate,UITableViewDataSource{
         return true
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        keyboardVC?.insert(text: self.arrStr[indexPath.row])
+    }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let action1 = UIContextualAction(style: .destructive, title: "删除") {  (contextualAction, view, boolValue) in
+        let action1 = UIContextualAction(style: .destructive, title: "拆词") {  (contextualAction, view, boolValue) in
+            let splitedWords = self.arrStr[indexPath.row].participleString
+            
+            
+            tableView.setEditing(false, animated: true)
+        }
+        let action2 = UIContextualAction(style: .normal, title: "删除")  {  (contextualAction, view, boolValue) in
             self.arrStr.remove(at: indexPath.row)
             self.tb.reloadData()
             PastInfo.Strings = self.arrStr
-            tableView.setEditing(false, animated: true)
-        }
-        let action2 = UIContextualAction(style: .normal, title: "发送")  {  (contextualAction, view, boolValue) in
-            keyboardVC?.insert(text: self.arrStr[indexPath.row])
             tableView.setEditing(false, animated: true)
         }
         let swipeActions = UISwipeActionsConfiguration(actions: [action1,action2])

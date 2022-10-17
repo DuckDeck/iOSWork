@@ -6,21 +6,19 @@
 //
 
 import Foundation
-extension UIFont{
-    static func pingfangRegular(size:CGFloat)->UIFont{
-        return UIFont(name: "PingFangSC-Regular", size: size)!
-    }
-    
-    static func pingfangMedium(size:CGFloat)->UIFont{
-        return UIFont(name: "PingFangSC-Medium", size: size)!
-    }
-    
-    
-    static func pingfangBold(size:CGFloat)->UIFont{
-        return UIFont(name: "PingFangSC-Semibold", size: size)!
-    }
-    
-    static func pingfangLight(size:CGFloat)->UIFont{
-        return UIFont(name: "PingFangSC-Light", size: size)!
+
+
+
+extension String{
+    var participleString:([RecognizeType],[String]){
+        let punctuation = ["，", "。" , "！" , "、" , "；" , "：", "？","【" , "】" , "（" , "）" ,"\n"]
+        
+        var words = self.count > 0 ? WGInputAssociateWraper.warp().get_split_list_(by: self) : []
+        words =  words.filter { (str) -> Bool in
+            return str.trimmingCharacters(in: .whitespaces).count > 0 && !punctuation.contains(str) && str != "️"
+        }
+        let recognizedWords = Recognize.recognize(self)
+        return (recognizedWords,words)
     }
 }
+

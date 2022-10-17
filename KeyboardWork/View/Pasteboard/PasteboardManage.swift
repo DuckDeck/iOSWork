@@ -95,8 +95,3 @@ class PastboardManage{
         pastChangeBlock = nil
     }
 }
-
-enum RecognizeType{
-    case phone(String)
-    case wechat(String)
-}

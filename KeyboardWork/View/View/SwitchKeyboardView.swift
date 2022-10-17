@@ -8,24 +8,65 @@
 import Foundation
 import UIKit
 class SwitchKeyboardView:KeyboardNav{
+    var icons = [("icon_setting_choose_zh9_normal","中文9键"),("icon_setting_choose_zh26_normal","中文26键"),
+                 ("icon_setting_choose_eng_normal","英文26键"),("icon_setting_switch_keyboard","切换输入法")]
     override init(frame: CGRect) {
         super.init(frame: frame)
-        title = "切换键盘"
         backgroundColor = UIColor.white
-       addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.centerX.equalTo(self)
-            make.top.equalTo(100)
+        title = "切换键盘"
+        addSubview(settingGrid)
+        settingGrid.snp.makeConstraints { make in
+            make.left.equalTo(0)
+            make.width.greaterThanOrEqualTo(kSCREEN_WIDTH - 56)
+            make.top.equalTo(44)
+            make.height.greaterThanOrEqualTo(250)
+            make.bottom.equalTo(0)
         }
         
-        stackView.addArrangedSubview(btn9Key)
-        stackView.addArrangedSubview(btn26Key)
-        stackView.addArrangedSubview(btnEngKey)
         
+        var btns = [UIView]()
+
+
+        for item in icons.enumerated() {
+            let btn = LayoutButton()
+            btn.imageSize = CGSize(width: 32, height: 32)
+            btn.layoutStyle = .TopImageBottomTitle
+            btn.midSpacing = 8
+            btn.layer.cornerRadius = 8
+            btn.tag = item.offset + 1
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+            btn.setTitleColor(kColor222222, for: .normal)
+            btn.addTarget(self, action: #selector(btnClick(sender:)), for: .touchUpInside)
+            btn.setTitle(item.element.1, for: .normal)
+            btn.setBackgroundColor(color: UIColor(hexString: "202f64")!.withAlphaComponent(0.06), forState: .highlighted)
+            btn.setImage(UIImage.yh_imageNamed(item.element.0), for: .normal)
+            btns.append(btn)
+            
+        }
+        
+        settingGrid.arrViews = btns
+        
+      
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+   
     
-    @objc func switchKeyboard(sender:UIButton){
+    lazy var settingGrid: GridView = {
+        let v = GridView()
+        v.cellSize = CGSize(width: 109, height: 93)
+        v.maxWidth = kSCREEN_WIDTH
+        v.horizontalSpace = 8
+        v.verticalSpace = 8
+        let margin = (kSCREEN_WIDTH - 343) / 2
+        v.padding = UIEdgeInsets(top: 16, left: margin, bottom: 16, right: margin)
+        return v
+    }()
+    
+    @objc func btnClick(sender:UIButton){
         switch sender.tag{
         case 1:
             KeyboardInfo.KeyboardType = .chinese9
@@ -33,69 +74,16 @@ class SwitchKeyboardView:KeyboardNav{
             KeyboardInfo.KeyboardType = .chinese26
         case 3:
             KeyboardInfo.KeyboardType = .english
-        default:
-            break
+        case 4:
+            keyboardVC?.switchKeyboard()
+        default:break
         }
-        
-        keyboardVC?.popToKeyboard()
+        if sender.tag < 4{
+            globalKeyboard = nil
+            keyboardVC?.popToKeyboard()
+        }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    lazy var stackView: UIStackView = {
-        let v = UIStackView()
-        v.spacing = 20
-        return v
-    }()
-    
-    lazy var btn9Key: LayoutButton = {
-        let v = LayoutButton()
-        v.setImage(UIImage.yh_imageNamed("icon_setting_choose_zh9_normal"), for: .normal)
-        v.setImage(UIImage.yh_imageNamed("icon_setting_choose_zh9_normal"), for: .selected)
-        v.setTitle("中文9键", for: .normal)
-        v.titleLabel?.font = UIFont.pingfangRegular(size: 12)
-        v.setTitleColor(kColor222222, for: .normal)
-        v.layoutStyle = .TopImageBottomTitle
-        v.midSpacing = 4
-        v.imageSize = CGSize(width: 32, height: 32)
-        v.frame = CGRect(x: 0, y: 0, width: 76, height: 70)
-        v.tag = 1
-        v.addTarget(self, action: #selector(switchKeyboard(sender:)), for: .touchUpInside)
-        return v
-    }()
-    
-    lazy var btn26Key: LayoutButton = {
-        let v = LayoutButton()
-        v.setImage(UIImage.yh_imageNamed("icon_setting_choose_zh26_normal"), for: .normal)
-        v.setImage(UIImage.yh_imageNamed("icon_setting_choose_zh26_normal"), for: .selected)
-        v.setTitle("中文26键", for: .normal)
-        v.titleLabel?.font = UIFont.pingfangRegular(size: 12)
-        v.setTitleColor(kColor222222, for: .normal)
-        v.layoutStyle = .TopImageBottomTitle
-        v.midSpacing = 4
-        v.imageSize = CGSize(width: 32, height: 32)
-        v.frame = CGRect(x: 0, y: 0, width: 76, height: 70)
-        v.tag = 2
-        v.addTarget(self, action: #selector(switchKeyboard(sender:)), for: .touchUpInside)
-        return v
-    }()
-    
-    lazy var btnEngKey: LayoutButton = {
-        let v = LayoutButton()
-        v.setImage(UIImage.yh_imageNamed("icon_setting_choose_eng_normal"), for: .normal)
-        v.setImage(UIImage.yh_imageNamed("icon_setting_choose_eng_normal"), for: .selected)
-        v.setTitle("英文26键", for: .normal)
-        v.titleLabel?.font = UIFont.pingfangRegular(size: 12)
-        v.setTitleColor(kColor222222, for: .normal)
-        v.layoutStyle = .TopImageBottomTitle
-        v.midSpacing = 4
-        v.imageSize = CGSize(width: 32, height: 32)
-        v.frame = CGRect(x: 0, y: 0, width: 76, height: 70)
-        v.tag = 3
-        v.addTarget(self, action: #selector(switchKeyboard(sender:)), for: .touchUpInside)
-        return v
-    }()
+ 
+  
 }

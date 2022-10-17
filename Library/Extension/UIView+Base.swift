@@ -375,58 +375,7 @@ extension UITextField{
     
    }
 
-extension UIButton{
 
-    public convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
-        self.init(frame: CGRect(x: x, y: y, width: w, height: h))
-    }
-    
-    func title(title:String) -> Self {
-        self.setTitle(title, for: .normal)
-        return self
-    }
-    
-    
-    func setTarget(_ target: Any?, action: Selector) -> Self {
-        self.addTarget(target, action: action, for: .touchUpInside)
-        return self
-    }
-    
-    func color(color:UIColor) -> Self {
-        self.setTitleColor(color, for: .normal)
-        return self
-    }
-    
-    func setFont(font:CGFloat) -> Self {
-        self.titleLabel?.font = UIFont.systemFont(ofSize: font)
-        return self
-    }
-    
-    func setUIFont(font:UIFont) -> Self {
-        self.titleLabel?.font = font
-        return self
-    }
-    
-    
-    
-    func img(img:UIImage) -> Self {
-        self.setImage(img, for: .normal)
-        return self
-    }
-    
-    
-    func setBackgroundColor(color: UIColor, forState: UIControl.State) {
-        self.clipsToBounds = true  // add this to maintain corner radius
-        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
-        if let context = UIGraphicsGetCurrentContext() {
-            context.setFillColor(color.cgColor)
-            context.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
-            let colorImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            self.setBackgroundImage(colorImage, for: forState)
-        }
-    }
-}
 
 open class BlockLongPress: UILongPressGestureRecognizer {
     private var longPressAction: ((UILongPressGestureRecognizer) -> Void)?

@@ -7,9 +7,3 @@
 
 import UIKit
 
-extension UIView{
-    func addBorder() {
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.random.cgColor
-    }
-}
