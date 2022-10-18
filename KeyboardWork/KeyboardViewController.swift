@@ -16,6 +16,7 @@ class KeyboardViewController: UIInputViewController{
     var containerView:UIView?
     var clientSockek:GCDAsyncSocket?
     var previousPastedText = ""                        //这个是用来保存分词前已经在输入框的内容
+    var previousText = ""                              //文字变化时上一次的文字
     var pastboardManage: PastboardManage?              // 剪切板内容管理器
     var constraint : NSLayoutConstraint!
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -73,10 +74,18 @@ class KeyboardViewController: UIInputViewController{
         }
     }
     
-    
+    override func textDidChange(_ textInput: UITextInput?) {
+        super.textDidChange(textInput)
+        print("--------------textDidChange---------------")
+        if previousText.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .newlines) != allText.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .newlines){
+            previousText = allText.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .newlines)
+            globalHeader?.refreshStatus()
+            globalKeyboard?.keyboard?.updateReturnKey(key: ReturnKey)
+        
+        }
+    }
     
     func addKeyboard(){
-        
         globalHeader = HeaderView()
         view.addSubview(globalHeader!)
         globalHeader?.snp.makeConstraints({ make in
@@ -108,7 +117,15 @@ extension KeyboardViewController{
              return before + after
          }
      }
-     
+    
+    var allText:String{
+        if #available(iOSApplicationExtension 11.0, *) {
+            return (textDocumentProxy.documentContextBeforeInput ?? "") + (textDocumentProxy.selectedText ?? "") + (textDocumentProxy.documentContextAfterInput ?? "")
+        } else {
+           return currentText!
+        }
+    }
+    
      @objc func insert(text: String?) {
          guard let _text = text else {
              return
@@ -156,5 +173,4 @@ extension KeyboardViewController:GCDAsyncSocketDelegate{
     func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) {
         print("socketDidDisconnect")
     }
-    
 }

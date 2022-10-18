@@ -20,15 +20,14 @@ class HeaderView: Header {
         addSubview(line)
         line.snp.makeConstraints { make in
             make.left.right.equalTo(0)
-            make.top.equalTo(14.5)
+            make.top.equalTo(17.5)
             make.height.equalTo(0.5)
         }
         
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.left.right.equalTo(0)
-            make.top.equalTo(15)
-            make.height.equalTo(35)
+            make.left.right.bottom.equalTo(0)
+            make.top.equalTo(line.snp.bottom)
         }
         
         let btnSetting = UIButton()
@@ -81,9 +80,6 @@ class HeaderView: Header {
             make.width.equalTo(60)
             make.height.equalTo(30)
         }
-        
-        
-        
     }
     
     @objc func menuClick(sender:UIButton){
@@ -99,6 +95,10 @@ class HeaderView: Header {
         default:
             break
         }
+    }
+    
+    func refreshStatus(){
+        
     }
     
     @objc func closeClick(){

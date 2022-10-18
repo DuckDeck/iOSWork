@@ -3792,12 +3792,12 @@
 		AEE3DB2B27FC0D1C007B2B58 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				AEE3DB2C27FC0D2A007B2B58 /* Store.swift */,
-				AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */,
-				AE9EE9F528083E2000EBE70A /* Shake.swift */,
 				AE128848280C51E00049A5E4 /* Extension.swift */,
-				AEF6CB40287A7CB200352100 /* Theme.swift */,
 				20B65A3E28FC24D000341DB9 /* Recognize.swift */,
+				AE9EE9F528083E2000EBE70A /* Shake.swift */,
+				AEE3DB2C27FC0D2A007B2B58 /* Store.swift */,
+				AEF6CB40287A7CB200352100 /* Theme.swift */,
+				AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
