@@ -98,7 +98,17 @@ class HeaderView: Header {
     }
     
     func refreshStatus(){
-        
+        let content = keyboardVC?.allText.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        if content.isEmpty{
+            return
+        }
+        let res = calculate(content)
+        switch res{
+        case .value(let num):
+            print(num)
+        case .error(_):
+            break
+        }
     }
     
     @objc func closeClick(){

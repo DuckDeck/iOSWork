@@ -68,8 +68,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
         case .del:
             deleteText()
             keyboard?.updateReturnKey(key: ReturnKey)
-            calculatorStr()
-            
+            globalHeader?.refreshStatus()
         case .space:
             output(text: " ")
             keyboard?.updateReturnKey(key: ReturnKey)
@@ -96,7 +95,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
             (keyboard as? FullKeyboardView)?.updateShift(shift: .normal)
         }
         keyboard?.updateReturnKey(key: ReturnKey)
-        calculatorStr()
+        globalHeader?.refreshStatus()
     }
     
     func keyLongPress(key:KeyInfo,state:UIGestureRecognizer.State) {
@@ -160,23 +159,11 @@ class KeyboardView: UIView ,keyPressDeleaget{
     
     func deleteText(){
         keyboardVC?.deleteText()
-        
     }
     
     @objc func keepDelete(){
-       
         deleteText()
         keyboard?.updateReturnKey(key: ReturnKey)
-        calculatorStr()
-        
+        globalHeader?.refreshStatus()
     }
-    
-    func calculatorStr(){
-        guard let str = keyboardVC?.currentText else {
-            return
-        }
-       
-       
-    }
-
 }
