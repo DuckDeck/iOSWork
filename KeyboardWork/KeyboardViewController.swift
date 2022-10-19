@@ -156,6 +156,18 @@ extension KeyboardViewController{
     @objc func switchKeyboard() -> Void {
         self.advanceToNextInputMode()
     }
+    
+    @objc var application:UIApplication?{
+         var res = self.next
+         while res != nil {
+             if res is UIApplication{
+                 return res as? UIApplication
+             } else {
+                 res = res?.next
+             }
+         }
+         return nil
+     }
 }
 
 extension KeyboardViewController:GCDAsyncSocketDelegate{
