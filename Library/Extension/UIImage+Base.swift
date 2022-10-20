@@ -355,7 +355,7 @@ extension UIImage{
         return newImage ?? self
     }
     
-    open func addWatermark(maskImage:UIImage,point:CGPoint = CGPoint(x: 0, y: 0), repeatMark:Bool = true,  scale:CGFloat = 1) -> UIImage {
+    public func addWatermark(maskImage:UIImage,point:CGPoint = CGPoint(x: 0, y: 0), repeatMark:Bool = true,  scale:CGFloat = 1) -> UIImage {
         UIGraphicsBeginImageContext(self.size)
         //        print("self.size")
         //        print(self.size)
@@ -408,7 +408,7 @@ extension UIImage{
     }
     
     
-    open  func saveToAlbum() {
+    public  func saveToAlbum() {
         try? PHPhotoLibrary.shared().performChangesAndWait {
             PHAssetChangeRequest.creationRequestForAsset(from: self)
         }

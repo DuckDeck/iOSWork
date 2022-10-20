@@ -14,7 +14,8 @@ class ImageInfoViewController:BaseViewController{
     let sc = UIScrollView()
     var arrImageInfo = [String]()
     var imagePickerController:TZImagePickerController!
-
+    let lblInfo = UILabel()
+    var tmpImg : UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "ImageIO"
@@ -64,6 +65,46 @@ class ImageInfoViewController:BaseViewController{
             make.bottom.equalTo(0)
             make.width.equalTo(ScreenWidth)
         }
+        
+        let slider = UISlider()
+        slider.maximumValue = 1
+        slider.minimumValue = 0
+        slider.addTarget(self, action: #selector(valueChange(sender:)), for: .valueChanged)
+        view.addSubview(slider)
+        slider.snp.makeConstraints { make in
+            make.top.equalTo(imgView.snp.bottom).offset(10)
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+        }
+        
+        view.addSubview(lblInfo)
+        lblInfo.snp.makeConstraints { make in
+            make.left.equalTo(10)
+            make.right.equalTo(-10)
+            make.top.equalTo(slider.snp.bottom)
+        }
+        
+        let btnSave = UIButton().title(title: "保存").color(color: UIColor.red).addTo(view: view)
+        btnSave.addTarget(self, action: #selector(saveImg), for: .touchUpInside)
+        btnSave.snp.makeConstraints { make in
+            make.top.equalTo(lblInfo.snp.bottom)
+            make.left.equalTo(20)
+        }
+        
+    }
+    
+    @objc func valueChange(sender:UISlider){
+        print(sender.value)
+        
+        
+        let data = tmpImg?.jpegData(compressionQuality: CGFloat(sender.value))
+        let newImg = UIImage(data: data!)!
+        lblInfo.text = "\(sender.value)--\(newImg.size)--\(newImg.memorySize)"
+        imgView.image = newImg
+    }
+    
+    @objc func saveImg(){
+        imgView.image?.saveToAlbum()
     }
     
     @objc func chooseNetImage(){
@@ -90,6 +131,7 @@ class ImageInfoViewController:BaseViewController{
             self.imgView.snp.updateConstraints { make in
                 make.height.equalTo(height)
             }
+            self.tmpImg = self.imgView.image
         }
        
         delay(time: 1) {
