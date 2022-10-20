@@ -157,17 +157,12 @@ extension KeyboardViewController{
         self.advanceToNextInputMode()
     }
     
-    @objc var application:UIApplication?{
-         var res = self.next
-         while res != nil {
-             if res is UIApplication{
-                 return res as? UIApplication
-             } else {
-                 res = res?.next
-             }
-         }
-         return nil
-     }
+    func open(Url:String){
+        if let u = URL(string: Url){
+            extensionContext?.open(u)
+        }
+        
+    }
 }
 
 extension KeyboardViewController:GCDAsyncSocketDelegate{

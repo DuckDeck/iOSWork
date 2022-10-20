@@ -25,6 +25,18 @@ class KeyboardSettingView:KeyboardNav{
         super.init(frame: frame)
         backgroundColor = UIColor.white
         title = "键盘设置"
+        
+        if !keyboardVC!.hasFullAccess{
+            let hintView = FullAccessHintView(hint: "体验打字震动等功能")
+            addSubview(hintView)
+            hintView.snp.makeConstraints { make in
+                make.top.equalTo(44)
+                make.centerX.equalTo(self)
+                make.height.equalTo(20)
+            }
+        }
+        
+        
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.left.right.equalTo(0)

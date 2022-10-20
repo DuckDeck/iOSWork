@@ -17,6 +17,7 @@ class FullAccessHintView:UIView{
     
     convenience init(hint:String) {
         self.init(frame: .zero)
+        backgroundColor = UIColor.orange.withAlphaComponent(0.6)
         lblHint.text = "开启完全访问，\(hint)"
         addSubview(lblHint)
         lblHint.snp.makeConstraints { make in
@@ -32,20 +33,22 @@ class FullAccessHintView:UIView{
     }
     
     @objc func gotoFullAccess(){
-        
+        keyboardVC?.open(Url: UIApplication.openSettingsURLString)
     }
     
     lazy var lblHint: UILabel = {
         let v = UILabel()
         v.textColor = UIColor.white
-        v.font = UIFont.pingfangRegular(size: 13)
+        v.font = UIFont.pingfangRegular(size: 12)
         return v
     }()
     
     lazy var btnOpen: UIButton = {
         let v = UIButton()
         v.setTitle("去开启 ➣", for: .normal)
+        v.titleLabel?.font = UIFont.pingfangRegular(size: 12)
         v.setTitleColor(UIColor.orange, for: .normal)
+        v.addTarget(self, action: #selector(gotoFullAccess), for: .touchUpInside)
         return v
     }()
 }

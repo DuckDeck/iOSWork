@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		20AE3B1F29003BDD008DB64A /* FullAccessHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE3B1E29003BDD008DB64A /* FullAccessHintView.swift */; };
-		20AE3B2129004329008DB64A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE3B2029004329008DB64A /* UIApplication+Extension.swift */; };
-		20AE3B2229004329008DB64A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE3B2029004329008DB64A /* UIApplication+Extension.swift */; };
-		20AE3B2329004329008DB64A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE3B2029004329008DB64A /* UIApplication+Extension.swift */; };
 		20B6595D28FC0BB100341DB9 /* HeaderPasteboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B6595C28FC0BB100341DB9 /* HeaderPasteboardView.swift */; };
 		20B6596428FC11B700341DB9 /* icon_setting_switch_keyboard.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20B6596328FC11B700341DB9 /* icon_setting_switch_keyboard.pdf */; };
 		20B659CE28FC224A00341DB9 /* ColorStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B659CC28FC224A00341DB9 /* ColorStyle.swift */; };
@@ -1103,7 +1100,6 @@
 /* Begin PBXFileReference section */
 		03D9AD4D8B41C508210EEC7F /* Pods-KeyboardWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardWork.release.xcconfig"; path = "Target Support Files/Pods-KeyboardWork/Pods-KeyboardWork.release.xcconfig"; sourceTree = "<group>"; };
 		20AE3B1E29003BDD008DB64A /* FullAccessHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAccessHintView.swift; sourceTree = "<group>"; };
-		20AE3B2029004329008DB64A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		20B6595C28FC0BB100341DB9 /* HeaderPasteboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPasteboardView.swift; sourceTree = "<group>"; };
 		20B6596328FC11B700341DB9 /* icon_setting_switch_keyboard.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_switch_keyboard.pdf; sourceTree = "<group>"; };
 		20B659CC28FC224A00341DB9 /* ColorStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorStyle.swift; path = KeyboardWork/Style/ColorStyle.swift; sourceTree = SOURCE_ROOT; };
@@ -2658,7 +2654,6 @@
 				AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */,
 				AEF6CB3C287A79D700352100 /* Style+Extension.swift */,
 				20B65A3928FC249200341DB9 /* UIFont+Extension.swift */,
-				20AE3B2029004329008DB64A /* UIApplication+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -4797,7 +4792,6 @@
 				AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */,
 				AEE010DB2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
 				AE12886C281CED0A0049A5E4 /* expression-combining.swift in Sources */,
-				20AE3B2129004329008DB64A /* UIApplication+Extension.swift in Sources */,
 				AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */,
 				AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AEE0113027425D8800C155D8 /* LinkGameViewController.swift in Sources */,
@@ -5163,7 +5157,6 @@
 				AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */,
 				AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */,
 				AE12889928210F590049A5E4 /* Global.swift in Sources */,
-				20AE3B2229004329008DB64A /* UIApplication+Extension.swift in Sources */,
 				AE128882281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE128866281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				20B65A3328FC227A00341DB9 /* WGInputAssociateWraper.mm in Sources */,
@@ -5389,7 +5382,6 @@
 				AEE010E92742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
 				AE62CB1727254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
-				20AE3B2329004329008DB64A /* UIApplication+Extension.swift in Sources */,
 				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE0442832803D465003DB6A1 /* InputText.swift in Sources */,
