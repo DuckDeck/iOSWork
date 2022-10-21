@@ -28,11 +28,12 @@ class KeyboardSettingView:KeyboardNav{
         
         if !keyboardVC!.hasFullAccess{
             let hintView = FullAccessHintView(hint: "体验打字震动等功能")
+            hintView.layer.cornerRadius = 12
             addSubview(hintView)
             hintView.snp.makeConstraints { make in
                 make.top.equalTo(44)
                 make.centerX.equalTo(self)
-                make.height.equalTo(20)
+                make.height.equalTo(24)
             }
         }
         

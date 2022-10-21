@@ -23,12 +23,14 @@ class FullAccessHintView:UIView{
         lblHint.snp.makeConstraints { make in
             make.left.equalTo(12)
             make.centerY.equalTo(self)
+            make.height.equalTo(self)
         }
         addSubview(btnOpen)
         btnOpen.snp.makeConstraints { make in
             make.left.equalTo(lblHint.snp.right).offset(8)
             make.centerY.equalTo(self)
             make.right.equalTo(-12)
+            make.height.equalTo(self)
         }
     }
     
@@ -49,6 +51,8 @@ class FullAccessHintView:UIView{
         v.titleLabel?.font = UIFont.pingfangRegular(size: 12)
         v.setTitleColor(UIColor.orange, for: .normal)
         v.addTarget(self, action: #selector(gotoFullAccess), for: .touchUpInside)
+        v.layer.borderWidth = 1
+        v.layer.borderColor = UIColor.random.cgColor
         return v
     }()
 }
