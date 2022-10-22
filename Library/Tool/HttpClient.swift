@@ -27,7 +27,9 @@ class HttpClient {
     
     fileprivate var isUseHandle = false
     var index = 0
-
+    
+    static var netStatus = NetworkReachabilityManager.NetworkReachabilityStatus.reachable(.ethernetOrWiFi)
+   
     @objc static func registerHandler() {
         HttpClient.registerUrlHander { url in
             url

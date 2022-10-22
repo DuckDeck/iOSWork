@@ -190,190 +190,26 @@ extension UIView{
         
     }
     
-    func currentVC() -> UIViewController? {
-        var vc:UIViewController! = nil
-        var window = UIApplication.shared.keyWindow!
-        if window.windowLevel != UIWindow.Level.normal{
-            let windows = UIApplication.shared.windows
-            for win in windows{
-                if win.windowLevel == UIWindow.Level.normal{
-                    window = win
-                    break
-                }
-            }
-        }
-        let frontView = window.subviews.first!
-        let responder = frontView.next
-        if responder != nil && responder! is UIViewController{
-            vc = responder! as? UIViewController
-        }
-        else{
-            vc = window.rootViewController
-        }
-        return vc
-    }
+ 
     
-    func asImage() -> UIImage {
-        if #available(iOS 10.0, *) {
-            let renderer = UIGraphicsImageRenderer(bounds: bounds)
-            return renderer.image { rendererContext in
-                layer.render(in: rendererContext.cgContext)
-            }
-        } else {
-            UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0)
-            defer { UIGraphicsEndImageContext() }
-            self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-            return UIGraphicsGetImageFromCurrentImageContext()!
+    func asImage(scale:CGFloat = 1.5) -> UIImage {
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = scale
+        format.opaque = false
+        let renderer = UIGraphicsImageRenderer(bounds: bounds, format: format)
+        let img =  renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
         }
+
+        return img
     }
 }
 
 
 
-extension UILabel{
-    func text(text:String) -> Self {
-        self.text = text
-        return self
-    }
-    
-    func attrText(text:NSAttributedString) -> Self {
-        self.attributedText = text
-        return self
-    }
-    
-    func setFont(font:CGFloat) -> Self {
-        self.font = UIFont.systemFont(ofSize: font)
-        return self
-    }
-    
-    func setUIFont(font:UIFont) -> Self {
-        self.font = font
-        return self
-    }
-    
-    
-    func color(color:UIColor) -> Self {
-        self.textColor = color
-        return self
-    }
-    
-    func txtAlignment(ali:NSTextAlignment) -> Self {
-        self.textAlignment = ali
-        return self
-    }
-  
-    func lineNum(num:Int) -> Self {
-        self.numberOfLines = num
-        return self
-    }
-    
-    func TwoSideAligment() {
-        guard let txt = self.text else {
-            return
-        }
-        let textSize = (txt as NSString).boundingRect(with: CGSize(width: self.frame.size.width, height: CGFloat(MAXFLOAT)), options: [NSStringDrawingOptions.usesLineFragmentOrigin,NSStringDrawingOptions.truncatesLastVisibleLine,NSStringDrawingOptions.usesFontLeading], attributes: [NSAttributedString.Key.font:self.font], context: nil)
-        let margin = (self.frame.size.width - textSize.size.width) / CGFloat(txt.count - 1)
-        let attrStr = NSMutableAttributedString(string: txt)
-        attrStr.addAttribute(kCTKernAttributeName as NSAttributedString.Key, value: margin, range: NSMakeRange(0, txt.count - 1))
-//        attrStr.addAttributes([kCTKernAttributeName:margin], range: NSMakeRange(0, txt.count - 1))
-        self.attributedText = attrStr
-    }
-    
-    
-    func longPressCopyContentToPastboard(){
-        self.addLongPressGesture {[weak self] (ges) in
-            self?.becomeFirstResponder()
-            self?.backgroundColor = UIColor(gray: 0.3, alpha: 0.3)
-            let item = UIMenuItem(title: "复制", action: #selector(self!.copyContent))
-            UIMenuController.shared.setTargetRect(self!.bounds, in: self!)
-            UIMenuController.shared.menuItems = [item]
-            UIMenuController.shared.arrowDirection = .up
-            UIMenuController.shared.setMenuVisible(true, animated: true)
-            NotificationCenter.default.addObserver(self!, selector: #selector(self!.hide), name: UIMenuController.didHideMenuNotification, object: nil)
-        }
-    }
-    
-    open override var canBecomeFirstResponder: Bool{
-        return true
-    }
-    
-    @objc func hide()  {
-        self.backgroundColor = UIColor.clear
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    
-    @objc func copyContent()  {
-        var txt = self.text ?? ""
-        if !txt.isEmpty{
-            let pastboard = UIPasteboard.general
-            if txt.contains(","){
-                txt = txt.replacingOccurrences(of: ",", with: "")
-            }
-            pastboard.string = txt
-            Toast.showToast(msg: "\(pastboard.string!) 已复制成功")
-        }
-    }
 
-    
-}
 
-extension UITextField{
-    func addOffsetView(value:Float){
-        let vOffset = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(value), height: self.frame.size.height))
-        self.leftViewMode = .always
-        self.leftView = vOffset
-    }
-    
-    func addOffsetLabel(width:Float,txt:NSMutableAttributedString) {
-        let vOffset = UILabel(frame: CGRect(x: 0, y: 0, width: CGFloat(width), height: self.frame.size.height))
-        vOffset.attributedText = txt
-        self.leftViewMode = .always
-        self.leftView = vOffset
-    }
-    
-    func text(text:String) -> Self {
-        self.text = text
-        return self
-    }
-    
-    func attrText(text:NSAttributedString) -> Self {
-        self.attributedText = text
-        return self
-    }
-    
-    func setFont(font:CGFloat) -> Self {
-        self.font = UIFont.systemFont(ofSize: font)
-        return self
-    }
-    
-    func setUIFont(font:UIFont) -> Self {
-        self.font = font
-        return self
-    }
-    
-    
-    func color(color:UIColor) -> Self {
-        self.textColor = color
-        return self
-    }
-    
-    func txtAlignment(ali:NSTextAlignment) -> Self {
-        self.textAlignment = ali
-        return self
-    }
-    
-    func plaHolder(txt:String) -> Self {
-        self.placeholder = txt
-        return self
-    }
-    
-    func attrPlaHolder(txt:NSAttributedString) -> Self {
-        self.attributedText = txt
-        return self
-    }
-    
-   }
+
 
 
 
@@ -425,9 +261,6 @@ open class BlockTap: UITapGestureRecognizer {
     @objc open func didTap (_ tap: UITapGestureRecognizer) {
         tapAction? (tap)
     }
-    
-    func hiddenKeyboard(){
-        UIApplication.shared.keyWindow?.rootViewController?.view.endEditing(true)
-    }
+
 
 }

@@ -50,6 +50,8 @@ target 'KeyboardWork' do
   pod 'YHPDFImageLoader'
   pod 'SwiftyJSON'
   pod 'CocoaAsyncSocket'
+  pod 'SwiftyBeaver'
+  pod "Alamofire"
   # Pods for KeyboardWork
 
 end

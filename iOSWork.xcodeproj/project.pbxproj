@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		208DA91C2902E8A000218246 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 208DA91B2902E8A000218246 /* Settings.bundle */; };
+		20A965592903C6B2007F8526 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965582903C6B2007F8526 /* UIView+Extension.swift */; };
+		20A9655A2903C6B2007F8526 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965582903C6B2007F8526 /* UIView+Extension.swift */; };
+		20A9655B2903C6B2007F8526 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965582903C6B2007F8526 /* UIView+Extension.swift */; };
+		20A9655D2903C794007F8526 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9655C2903C794007F8526 /* UILabel+Extension.swift */; };
+		20A9655E2903C794007F8526 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9655C2903C794007F8526 /* UILabel+Extension.swift */; };
+		20A965602903C794007F8526 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9655C2903C794007F8526 /* UILabel+Extension.swift */; };
+		20A965622903C7EC007F8526 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965612903C7EC007F8526 /* UITextField+Extension.swift */; };
+		20A965632903C7EC007F8526 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965612903C7EC007F8526 /* UITextField+Extension.swift */; };
+		20A965642903C7EC007F8526 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965612903C7EC007F8526 /* UITextField+Extension.swift */; };
+		20A965652903C7EC007F8526 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965612903C7EC007F8526 /* UITextField+Extension.swift */; };
+		20A965672903C934007F8526 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965662903C934007F8526 /* Log.swift */; };
+		20A965692903CA05007F8526 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965682903CA05007F8526 /* UIDevice+Extension.swift */; };
+		20A9656A2903CA05007F8526 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965682903CA05007F8526 /* UIDevice+Extension.swift */; };
+		20A9656B2903CA05007F8526 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965682903CA05007F8526 /* UIDevice+Extension.swift */; };
+		20A9656C2903CA05007F8526 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965682903CA05007F8526 /* UIDevice+Extension.swift */; };
+		20A9656D2903CA4A007F8526 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB7827254DD6007D51CD /* HttpClient.swift */; };
+		20A9656E2903CA4B007F8526 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB7827254DD6007D51CD /* HttpClient.swift */; };
 		20AE3B1F29003BDD008DB64A /* FullAccessHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE3B1E29003BDD008DB64A /* FullAccessHintView.swift */; };
 		20B6595D28FC0BB100341DB9 /* HeaderPasteboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B6595C28FC0BB100341DB9 /* HeaderPasteboardView.swift */; };
 		20B6596428FC11B700341DB9 /* icon_setting_switch_keyboard.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20B6596328FC11B700341DB9 /* icon_setting_switch_keyboard.pdf */; };
@@ -1101,6 +1118,11 @@
 /* Begin PBXFileReference section */
 		03D9AD4D8B41C508210EEC7F /* Pods-KeyboardWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardWork.release.xcconfig"; path = "Target Support Files/Pods-KeyboardWork/Pods-KeyboardWork.release.xcconfig"; sourceTree = "<group>"; };
 		208DA91B2902E8A000218246 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		20A965582903C6B2007F8526 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		20A9655C2903C794007F8526 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		20A965612903C7EC007F8526 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		20A965662903C934007F8526 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		20A965682903CA05007F8526 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		20AE3B1E29003BDD008DB64A /* FullAccessHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAccessHintView.swift; sourceTree = "<group>"; };
 		20B6595C28FC0BB100341DB9 /* HeaderPasteboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPasteboardView.swift; sourceTree = "<group>"; };
 		20B6596328FC11B700341DB9 /* icon_setting_switch_keyboard.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_switch_keyboard.pdf; sourceTree = "<group>"; };
@@ -2646,6 +2668,7 @@
 				AE62CB2E27254946007D51CD /* UIScrollView+Extension.swift */,
 				AE62CB2A27254946007D51CD /* UITableView+Extension.swift */,
 				AE62CB3027254946007D51CD /* UIView+Base.swift */,
+				20A965582903C6B2007F8526 /* UIView+Extension.swift */,
 				AE62CB2527254946007D51CD /* UIViewController+Extension.swift */,
 				AE62CB2327254946007D51CD /* UIWindow+Base.swift */,
 				AE62CB2727254946007D51CD /* WKWebView+Extension.swift */,
@@ -2656,6 +2679,9 @@
 				AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */,
 				AEF6CB3C287A79D700352100 /* Style+Extension.swift */,
 				20B65A3928FC249200341DB9 /* UIFont+Extension.swift */,
+				20A9655C2903C794007F8526 /* UILabel+Extension.swift */,
+				20A965612903C7EC007F8526 /* UITextField+Extension.swift */,
+				20A965682903CA05007F8526 /* UIDevice+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -3813,6 +3839,7 @@
 				AEE3DB2C27FC0D2A007B2B58 /* Store.swift */,
 				AEF6CB40287A7CB200352100 /* Theme.swift */,
 				AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */,
+				20A965662903C934007F8526 /* Log.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -4726,6 +4753,7 @@
 				AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE08AA9027C684D400EE0813 /* MediaTool.swift in Sources */,
 				AE62CAFB272542DC007D51CD /* ShadowEncoder.swift in Sources */,
+				20A9655D2903C794007F8526 /* UILabel+Extension.swift in Sources */,
 				AE62CB8727254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CB6B27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE6A7F4D274BE13B004A797A /* WebViewController.swift in Sources */,
@@ -4733,6 +4761,7 @@
 				AEE010E72742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
 				AEE0106E2742560200C155D8 /* Resolution.swift in Sources */,
 				AE62CA9E272542D1007D51CD /* PaletteSwatch.m in Sources */,
+				20A965692903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				AE62CA562725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE1C4F65274346BD0097EAC1 /* bzip2recover.c in Sources */,
 				AE6B2DD827550E180066017F /* MediaBroswerView.swift in Sources */,
@@ -4860,6 +4889,7 @@
 				AE080CD227D3A065007F42E1 /* WebviewMemoryViewController.swift in Sources */,
 				AEE010E42742569200C155D8 /* MJRefreshStateHeader.m in Sources */,
 				AE1C4F6C274346BD0097EAC1 /* bspatch.c in Sources */,
+				20A965592903C6B2007F8526 /* UIView+Extension.swift in Sources */,
 				AE62CB4027254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AE62CAF8272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AEE0113527425D8800C155D8 /* LinkPoint.swift in Sources */,
@@ -4867,6 +4897,7 @@
 				AE8C8DB027900BA300C656DF /* Codable+Extension.swift in Sources */,
 				AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */,
 				AE62CB8427254DD7007D51CD /* FPSTool.swift in Sources */,
+				20A965622903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
 				AE62CB7127254B12007D51CD /* Toast.swift in Sources */,
 				AE66E1C5275386D8006432FE /* FFMpegMenuViewController.swift in Sources */,
 				AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */,
@@ -4992,11 +5023,13 @@
 				AE62CA6A2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AEE010FA2742569200C155D8 /* MJRefreshComponent.m in Sources */,
 				AE62CB3E27254947007D51CD /* WKWebView+Extension.swift in Sources */,
+				20A9656A2903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				AEE010C42742569200C155D8 /* UIView+MJExtension.m in Sources */,
 				AE62CA7B2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CB3827254946007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE62CB6C27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */,
+				20A9656E2903CA4B007F8526 /* HttpClient.swift in Sources */,
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
 				20B65A3B28FC249200341DB9 /* UIFont+Extension.swift in Sources */,
 				AE62CAD8272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
@@ -5072,6 +5105,7 @@
 				AE128881281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE62CB0F272542F8007D51CD /* TransformMP3.m in Sources */,
 				AE62CA672725429B007D51CD /* TZPhotoPickerController.m in Sources */,
+				20A9655E2903C794007F8526 /* UILabel+Extension.swift in Sources */,
 				AE62CBC027255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CB5027254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AEE010CD2742569200C155D8 /* MJRefreshBackStateFooter.m in Sources */,
@@ -5088,6 +5122,7 @@
 				AE62CA99272542D1007D51CD /* PaletteColorUtils.m in Sources */,
 				AE62CA422725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CADB272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
+				20A965632903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
 				AE62CB02272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AE62CA492725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE128861281CED0A0049A5E4 /* glyph.swift in Sources */,
@@ -5102,6 +5137,7 @@
 				AE62CBD227255C20007D51CD /* SlideMenuView.swift in Sources */,
 				AE62CA82272542AF007D51CD /* fishhook.c in Sources */,
 				AE62CB8B27254DD7007D51CD /* CatoMonitor.swift in Sources */,
+				20A9655A2903C6B2007F8526 /* UIView+Extension.swift in Sources */,
 				AE62CB5627254947007D51CD /* UIImage+Base.swift in Sources */,
 				AEE010F32742569200C155D8 /* MJRefreshBackFooter.m in Sources */,
 				AE62CBDB27255C20007D51CD /* FlowLayout.swift in Sources */,
@@ -5122,6 +5158,7 @@
 			files = (
 				AEE3DB2927FC0C45007B2B58 /* FullKeyboardView.swift in Sources */,
 				AE12888E281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
+				20A965672903C934007F8526 /* Log.swift in Sources */,
 				AE9EE9F628083E2000EBE70A /* Shake.swift in Sources */,
 				AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
 				AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */,
@@ -5129,6 +5166,7 @@
 				20B65A3128FC227A00341DB9 /* SqlCommon.cpp in Sources */,
 				20AE3B1F29003BDD008DB64A /* FullAccessHintView.swift in Sources */,
 				AEE3DB2D27FC0D2A007B2B58 /* Store.swift in Sources */,
+				20A9656D2903CA4A007F8526 /* HttpClient.swift in Sources */,
 				20B65A5328FC297900341DB9 /* UIButton+Extension.swift in Sources */,
 				20B65A4928FC26BB00341DB9 /* PanCollectionView.swift in Sources */,
 				AEB517EA2826799200F2FA1D /* LayoutButton.swift in Sources */,
@@ -5173,6 +5211,7 @@
 				AE128849280C51E00049A5E4 /* Extension.swift in Sources */,
 				20B65A3028FC227A00341DB9 /* SqlValue.cpp in Sources */,
 				AEF6CB3E287A79E400352100 /* Style+Extension.swift in Sources */,
+				20A9656B2903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				20B65A2B28FC227A00341DB9 /* SqlRecordSet.cpp in Sources */,
 				AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */,
 				20B65A4E28FC274B00341DB9 /* KeyboardProtocal.swift in Sources */,
@@ -5194,6 +5233,7 @@
 				AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */,
 				20B65A5128FC28E300341DB9 /* GridView.swift in Sources */,
 				AE128876281CED0A0049A5E4 /* calculator.swift in Sources */,
+				20A965642903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
 				AE128862281CED0A0049A5E4 /* glyph.swift in Sources */,
 				AE0442852803D6BA003DB6A1 /* InputText.swift in Sources */,
 			);
@@ -5262,6 +5302,7 @@
 				AE72F53C273EBDD40060456A /* CitySearchView.swift in Sources */,
 				AEE010BC2742569200C155D8 /* UIScrollView+MJExtension.m in Sources */,
 				AEE010C52742569200C155D8 /* UIView+MJExtension.m in Sources */,
+				20A9655B2903C6B2007F8526 /* UIView+Extension.swift in Sources */,
 				AE62CA4D2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE12888B281CED0A0049A5E4 /* number.swift in Sources */,
 				AE62CA9D272542D1007D51CD /* Palette.m in Sources */,
@@ -5284,10 +5325,12 @@
 				AE62CA0D2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AEE010D12742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				AE62CAA4272542D1007D51CD /* UIImage+Palette.m in Sources */,
+				20A965652903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
 				AE62CA1B2725425A007D51CD /* FMDatabasePool.m in Sources */,
 				AE62CAF7272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE62CB8927254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CAEE272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
+				20A9656C2903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				AE128873281CED0A0049A5E4 /* expressionizer.swift in Sources */,
 				AE62CA122725425A007D51CD /* FMDatabaseAdditions.m in Sources */,
 				AE62CA732725429B007D51CD /* TZImagePickerController.m in Sources */,
@@ -5342,6 +5385,7 @@
 				AE128863281CED0A0049A5E4 /* glyph.swift in Sources */,
 				AEE010DA2742569200C155D8 /* MJRefreshAutoGifFooter.m in Sources */,
 				AE62CA152725425A007D51CD /* FMDatabase.m in Sources */,
+				20A965602903C794007F8526 /* UILabel+Extension.swift in Sources */,
 				AE62CB5E2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE12886B281CED0A0049A5E4 /* expression.swift in Sources */,
 				AE62CBD027255C20007D51CD /* GridView.swift in Sources */,
