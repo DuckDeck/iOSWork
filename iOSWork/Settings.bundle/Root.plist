@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+			<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>
+！！！如何开启iOSWork输入法
+
+1、请点击👆👆👆上面的「键盘」
+2、开启「KeyboardWork」
+3、开启「允许完全访问」
+
+
+⚠️ 如果没有显示「键盘」
+
+1、切换到系统多任务界面，上滑清除「设置」
+2、打开「设置」，再次进入此页面，操作上面的步骤
+            </string>
+		</dict>
+	
+	
+	</array>
+</dict>
+</plist>

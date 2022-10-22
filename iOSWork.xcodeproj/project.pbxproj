@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		208DA91C2902E8A000218246 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 208DA91B2902E8A000218246 /* Settings.bundle */; };
 		20AE3B1F29003BDD008DB64A /* FullAccessHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE3B1E29003BDD008DB64A /* FullAccessHintView.swift */; };
 		20B6595D28FC0BB100341DB9 /* HeaderPasteboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B6595C28FC0BB100341DB9 /* HeaderPasteboardView.swift */; };
 		20B6596428FC11B700341DB9 /* icon_setting_switch_keyboard.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20B6596328FC11B700341DB9 /* icon_setting_switch_keyboard.pdf */; };
@@ -1099,6 +1100,7 @@
 
 /* Begin PBXFileReference section */
 		03D9AD4D8B41C508210EEC7F /* Pods-KeyboardWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardWork.release.xcconfig"; path = "Target Support Files/Pods-KeyboardWork/Pods-KeyboardWork.release.xcconfig"; sourceTree = "<group>"; };
+		208DA91B2902E8A000218246 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		20AE3B1E29003BDD008DB64A /* FullAccessHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAccessHintView.swift; sourceTree = "<group>"; };
 		20B6595C28FC0BB100341DB9 /* HeaderPasteboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPasteboardView.swift; sourceTree = "<group>"; };
 		20B6596328FC11B700341DB9 /* icon_setting_switch_keyboard.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_switch_keyboard.pdf; sourceTree = "<group>"; };
@@ -3213,21 +3215,22 @@
 		AE7E7424272251E300F0C19C /* iOSWork */ = {
 			isa = PBXGroup;
 			children = (
+				208DA91B2902E8A000218246 /* Settings.bundle */,
 				AE38468627BB43F9004F6765 /* iOSWork.entitlements */,
-				AE62CBE527256630007D51CD /* Base_Web */,
-				AE62CBE42725661A007D51CD /* Media_Hardware */,
-				AE62CBE32725660A007D51CD /* Project */,
-				AE62CBE227256603007D51CD /* Data_Network */,
-				AE62CBE1272565EF007D51CD /* UI_Layout */,
+				AE62CB9B27254E3A007D51CD /* bridge.h */,
+				AE1C4F712743488F0097EAC1 /* diff.h */,
+				AE7E7433272251E500F0C19C /* Info.plist */,
+				AE1C4F7227434E300097EAC1 /* ADViewController.swift */,
 				AE7E7425272251E300F0C19C /* AppDelegate.swift */,
 				AE7E7427272251E300F0C19C /* SceneDelegate.swift */,
 				AE7E7429272251E300F0C19C /* ViewController.swift */,
 				AE7E742E272251E500F0C19C /* Assets.xcassets */,
+				AE62CBE527256630007D51CD /* Base_Web */,
+				AE62CBE227256603007D51CD /* Data_Network */,
 				AE7E7430272251E500F0C19C /* LaunchScreen.storyboard */,
-				AE7E7433272251E500F0C19C /* Info.plist */,
-				AE62CB9B27254E3A007D51CD /* bridge.h */,
-				AE1C4F712743488F0097EAC1 /* diff.h */,
-				AE1C4F7227434E300097EAC1 /* ADViewController.swift */,
+				AE62CBE42725661A007D51CD /* Media_Hardware */,
+				AE62CBE32725660A007D51CD /* Project */,
+				AE62CBE1272565EF007D51CD /* UI_Layout */,
 			);
 			path = iOSWork;
 			sourceTree = "<group>";
@@ -4378,6 +4381,7 @@
 				AE72F52F273EB9A50060456A /* city.json in Resources */,
 				AEE0114727425D8800C155D8 /* p_4.png in Resources */,
 				AEE0113727425D8800C155D8 /* p_9.png in Resources */,
+				208DA91C2902E8A000218246 /* Settings.bundle in Resources */,
 				AEE0113C27425D8800C155D8 /* p_20.png in Resources */,
 				AEE0114C27425D8800C155D8 /* p_3.png in Resources */,
 				AEE0114527425D8800C155D8 /* p_15.png in Resources */,

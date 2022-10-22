@@ -44,6 +44,7 @@ class TouchTestViewController: UIViewController,drawViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setToolbarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     

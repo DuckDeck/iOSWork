@@ -159,7 +159,14 @@ extension KeyboardViewController{
     
     func open(Url:String){
         if let u = URL(string: Url){
-            extensionContext?.open(u)
+            var responder: UIResponder? = self
+                while responder != nil {
+                    if let application = responder as? UIApplication {
+                        return application.performSelector(inBackground: "openURL:", with: u)
+                    }
+                    responder = responder?.next
+                }
+               
         }
         
     }

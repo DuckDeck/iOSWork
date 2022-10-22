@@ -94,6 +94,7 @@ class KeyboardSettingView:KeyboardNav{
                     } else {
                         Toast.showText("请开启完全访问再启用")
                         sender.isOn = false
+                        keyboardVC?.open(Url: "seioswork://openSetting")
                     }
                 } else {
                     KeyboardInfo.Shake = false
