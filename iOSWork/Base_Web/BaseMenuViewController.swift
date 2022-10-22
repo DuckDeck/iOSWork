@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftyBeaver
 class BaseMenuViewController:BaseViewController{
-    var arrData = ["多线程","内存","渲染","通知","扫码","分享","城市选择","二进制合并","二进制插桩","异常处理","日志处理","进程间通信"]
+    var arrData = ["多线程","内存","渲染","通知","扫码","分享","城市选择","二进制合并","二进制插桩","异常处理","进程间通信"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -28,6 +29,7 @@ class BaseMenuViewController:BaseViewController{
         let lblFps = FPSLable(frame: CGRect(x: ScreenWidth / 2.0 - 75 , y: 35, width: 150, height: 20))
         UIApplication.shared.keyWindow?.addSubview(lblFps)
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "日志分享", style: .plain, target: self, action: #selector(shareLog))
         
     }
     
@@ -36,6 +38,28 @@ class BaseMenuViewController:BaseViewController{
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
 
+    }
+    
+    @objc func shareLog(){
+        let log = SwiftyBeaver.self
+        log.info("用户设备信息:\n 设备名称:\(UIDevice.current.name)\n 系统名称:\(UIDevice.current.systemName)\n 系统版本:\(UIDevice.current.systemVersion)\n 设备型号:\(UIDevice.modelName)\n")
+        let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ShadowEdge.iOSProject")!.appendingPathComponent("logs")
+        if let files = try? FileManager.default.contentsOfDirectory(atPath: path.path){
+            let paths =  files.sorted().reversed().prefix(5).map { p in
+                return path.appendingPathComponent(p)
+            }
+            
+            let items = paths as [Any]
+            var activityVC : UIActivityViewController! = UIActivityViewController.init(activityItems: items, applicationActivities: nil)
+            activityVC.excludedActivityTypes = [.print,.copyToPasteboard,.assignToContact,.saveToCameraRoll]
+            navigationController?.present(activityVC, animated: true)
+            activityVC.completionWithItemsHandler = {( activityType,  completed,  returnedItems,  activityError) in
+                activityVC = nil
+            }
+            
+        }
+       
+        
     }
 }
 
@@ -97,13 +121,11 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         case 10:
-            let vc = AppLogViewController()
-            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
-        case 11:
             let vc = ProcessComViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
+     
+            
 
         default:
             break

@@ -16,7 +16,7 @@ let kSCREEN_WIDTH = UIScreen.main.bounds.size.width
 var keyboardVC : KeyboardViewController?
 var globalHeader: HeaderView?
 var globalKeyboard : KeyboardView?
-
+var globalKeybaordStatus = KeyboardStatus.inActive
 
 extension UITextDocumentProxy {
     var returnText : String {

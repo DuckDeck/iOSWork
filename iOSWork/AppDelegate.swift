@@ -9,6 +9,8 @@ import UIKit
 import WebKit
 import Library
 import SwiftyBeaver
+import GrandKit
+import Bugly
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -19,18 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        // UncaughtExceptionHandler.installUncaughtExceptionHandler()
         //
         
-//        let errs = Store.AppErrors.Value
-//        for item in errs{
-//            print(item.name)
-//        }
+        let errs = Store.AppErrors.Value
+        for item in errs{
+            print(item.name)
+        }
 
 //        Bugly.start(withAppId: "", config: BuglyConfig())
         
-//        let config = BuglyConfig()
-//        config.debugMode = true
-//        config.applicationGroupIdentifier = "group.ShadowEdge.iOSProject"
-//        
-//        Bugly.start(withAppId: "ddac261ac5", config: config)
+        let config = BuglyConfig()
+        config.debugMode = true
+        config.applicationGroupIdentifier = "group.ShadowEdge.iOSProject"
+        
+        Bugly.start(withAppId: "ddac261ac5", config: config)
         
         NSSetUncaughtExceptionHandler { exp in
             print(exp.name)
@@ -43,7 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let log = SwiftyBeaver.self
         
-        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ShadowEdge.iOSProject")!.appendingPathComponent("inputdata").appendingPathComponent("applog.log")
+        let dir = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ShadowEdge.iOSProject")!.appendingPathComponent("logs")
+        if !FileManager.default.fileExists(atPath: dir.path){
+           try?  FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        }
+        let url = dir.appendingPathComponent("\(DateTime.now.dateString).log")
         
         
         let console = ConsoleDestination()  // log to Xcode Console
@@ -61,8 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        log.addDestination(cloud)
 //
 //        // Now let’s log!
-//        log.verbose("not so important")  // prio 1, VERBOSE in silver
-//        log.debug("something to debug")  // prio 2, DEBUG in green
+        log.verbose("not so important")  // prio 1, VERBOSE in silver
+        log.debug("something to debug")  // prio 2, DEBUG in green
 //        log.info("a nice information")   // prio 3, INFO in blue
 //        log.warning("oh no, that won’t be good")  // prio 4, WARNING in yellow
 //        log.error("ouch, an error did occur!")  // prio 5, ERROR in red

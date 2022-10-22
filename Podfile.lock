@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (5.5.0)
+  - Bugly (2.5.93)
+  - BuglyExtension (1.1)
   - CocoaAsyncSocket (7.6.5)
   - Gifu (3.3.1)
   - IQKeyboardManagerSwift (6.5.9)
@@ -18,6 +20,8 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Bugly
+  - BuglyExtension
   - CocoaAsyncSocket
   - Gifu
   - IQKeyboardManagerSwift
@@ -35,6 +39,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Bugly
+    - BuglyExtension
     - CocoaAsyncSocket
     - Gifu
     - IQKeyboardManagerSwift
@@ -52,6 +58,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
+  BuglyExtension: 857435d3f1545404cbce9a777e4ce5b7123cf36c
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
@@ -67,6 +75,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   YHPDFImageLoader: cd9628397fff7fd72368cd26dbc5290f05311276
 
-PODFILE CHECKSUM: 68c803c0c531c3c7f26c075806c72794164fc5dc
+PODFILE CHECKSUM: 53203986ab06840ad01fbd3d02434d0d24cb0e2a
 
 COCOAPODS: 1.11.3

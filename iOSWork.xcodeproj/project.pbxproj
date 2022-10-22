@@ -25,6 +25,23 @@
 		20A9656C2903CA05007F8526 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965682903CA05007F8526 /* UIDevice+Extension.swift */; };
 		20A9656D2903CA4A007F8526 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB7827254DD6007D51CD /* HttpClient.swift */; };
 		20A9656E2903CA4B007F8526 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB7827254DD6007D51CD /* HttpClient.swift */; };
+		20A9656F2903CF5B007F8526 /* UIView+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB3027254946007D51CD /* UIView+Base.swift */; };
+		20A965712903D12E007F8526 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965702903D12E007F8526 /* UIImage+Extension.swift */; };
+		20A965722903D132007F8526 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965702903D12E007F8526 /* UIImage+Extension.swift */; };
+		20A965732903D133007F8526 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965702903D12E007F8526 /* UIImage+Extension.swift */; };
+		20A965742903D145007F8526 /* UIImage+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2F27254946007D51CD /* UIImage+Base.swift */; };
+		20A965762903D2D1007F8526 /* PHPLibraryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965752903D2D1007F8526 /* PHPLibraryTool.swift */; };
+		20A965772903D34C007F8526 /* PHPLibraryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965752903D2D1007F8526 /* PHPLibraryTool.swift */; };
+		20A965782903D34C007F8526 /* PHPLibraryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965752903D2D1007F8526 /* PHPLibraryTool.swift */; };
+		20A965792903D34D007F8526 /* PHPLibraryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965752903D2D1007F8526 /* PHPLibraryTool.swift */; };
+		20A9657B2903D377007F8526 /* PHPhotoLibrary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */; };
+		20A9657C2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */; };
+		20A9657D2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */; };
+		20A9657E2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */; };
+		20A965802903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657F2903D3A8007F8526 /* PHAssetCollection+Extension.swift */; };
+		20A965812903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657F2903D3A8007F8526 /* PHAssetCollection+Extension.swift */; };
+		20A965822903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657F2903D3A8007F8526 /* PHAssetCollection+Extension.swift */; };
+		20A965832903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657F2903D3A8007F8526 /* PHAssetCollection+Extension.swift */; };
 		20AE3B1F29003BDD008DB64A /* FullAccessHintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AE3B1E29003BDD008DB64A /* FullAccessHintView.swift */; };
 		20B6595D28FC0BB100341DB9 /* HeaderPasteboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B6595C28FC0BB100341DB9 /* HeaderPasteboardView.swift */; };
 		20B6596428FC11B700341DB9 /* icon_setting_switch_keyboard.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 20B6596328FC11B700341DB9 /* icon_setting_switch_keyboard.pdf */; };
@@ -787,7 +804,6 @@
 		AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */; };
 		AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */; };
 		AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */; };
-		AEC8FF0A2869AD3100A70F50 /* AppLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC8FF092869AD3100A70F50 /* AppLogViewController.swift */; };
 		AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9916828743E90002879A0 /* KeyboardNav.swift */; };
 		AEC9916B287442C4002879A0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9916A287442C4002879A0 /* HUD.swift */; };
 		AECDC15B2745E3090038BE68 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */; };
@@ -1123,6 +1139,10 @@
 		20A965612903C7EC007F8526 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		20A965662903C934007F8526 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		20A965682903CA05007F8526 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		20A965702903D12E007F8526 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		20A965752903D2D1007F8526 /* PHPLibraryTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPLibraryTool.swift; sourceTree = "<group>"; };
+		20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Extension.swift"; sourceTree = "<group>"; };
+		20A9657F2903D3A8007F8526 /* PHAssetCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAssetCollection+Extension.swift"; sourceTree = "<group>"; };
 		20AE3B1E29003BDD008DB64A /* FullAccessHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAccessHintView.swift; sourceTree = "<group>"; };
 		20B6595C28FC0BB100341DB9 /* HeaderPasteboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPasteboardView.swift; sourceTree = "<group>"; };
 		20B6596328FC11B700341DB9 /* icon_setting_switch_keyboard.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_setting_switch_keyboard.pdf; sourceTree = "<group>"; };
@@ -1673,7 +1693,6 @@
 		AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleAnimtaionView.swift; sourceTree = "<group>"; };
 		AEC18196288803F50082827B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		AEC8FF092869AD3100A70F50 /* AppLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogViewController.swift; sourceTree = "<group>"; };
 		AEC9916828743E90002879A0 /* KeyboardNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNav.swift; sourceTree = "<group>"; };
 		AEC9916A287442C4002879A0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
@@ -2663,6 +2682,7 @@
 				AE62CB2D27254946007D51CD /* UICollectView+Extension.swift */,
 				AE62CB2C27254946007D51CD /* UIColor+Extension.swift */,
 				AE62CB2F27254946007D51CD /* UIImage+Base.swift */,
+				20A965702903D12E007F8526 /* UIImage+Extension.swift */,
 				AE62CB2B27254946007D51CD /* UIImageView+Extension.swift */,
 				AE62CB2927254946007D51CD /* UINavigationController+Extension.swift */,
 				AE62CB2E27254946007D51CD /* UIScrollView+Extension.swift */,
@@ -2682,6 +2702,8 @@
 				20A9655C2903C794007F8526 /* UILabel+Extension.swift */,
 				20A965612903C7EC007F8526 /* UITextField+Extension.swift */,
 				20A965682903CA05007F8526 /* UIDevice+Extension.swift */,
+				20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */,
+				20A9657F2903D3A8007F8526 /* PHAssetCollection+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -2711,6 +2733,7 @@
 				AE62CB7627254DD5007D51CD /* Tool.swift */,
 				AEF86659274B6F5B002E33E5 /* Store.swift */,
 				AE08AA8B27C681D500EE0813 /* MediaTool.swift */,
+				20A965752903D2D1007F8526 /* PHPLibraryTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2798,7 +2821,6 @@
 			isa = PBXGroup;
 			children = (
 				AE2657C8287520DA002C88FB /* ProcessCommunication */,
-				AEC8FF082869AD1D00A70F50 /* AppLog */,
 				AECDC1562745E2AB0038BE68 /* Exception */,
 				AE1C4F74274380790097EAC1 /* RunLoop */,
 				AE1C4F462743468F0097EAC1 /* Patch */,
@@ -3416,14 +3438,6 @@
 				AE8306E027B4B16F00C657DC /* ScaleViewController.swift */,
 			);
 			path = Animation;
-			sourceTree = "<group>";
-		};
-		AEC8FF082869AD1D00A70F50 /* AppLog */ = {
-			isa = PBXGroup;
-			children = (
-				AEC8FF092869AD3100A70F50 /* AppLogViewController.swift */,
-			);
-			path = AppLog;
 			sourceTree = "<group>";
 		};
 		AECDC1562745E2AB0038BE68 /* Exception */ = {
@@ -4775,11 +4789,13 @@
 				AE66E1BF27538679006432FE /* SortFrameHandler.m in Sources */,
 				AEE010512742547C00C155D8 /* CaptureSession.swift in Sources */,
 				AEE0115527425D8800C155D8 /* GameService.swift in Sources */,
+				20A9657C2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
 				AEE0104627424EE700C155D8 /* TakePhotoViewController.swift in Sources */,
 				AEE010C02742569200C155D8 /* NSBundle+MJRefresh.m in Sources */,
 				AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AEE010722742560200C155D8 /* DynamicMitoViewController.swift in Sources */,
 				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
+				20A965772903D34C007F8526 /* PHPLibraryTool.swift in Sources */,
 				AEE0104F2742526700C155D8 /* PaletteViewController.swift in Sources */,
 				AE80EE0927FF0795004566D5 /* PopViewController.swift in Sources */,
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
@@ -4841,6 +4857,7 @@
 				AE62CA742725429B007D51CD /* TZLocationManager.m in Sources */,
 				AEE0104327424D6200C155D8 /* AudioListViewController.swift in Sources */,
 				AE4D0901273032E700899D2C /* H5ResourceCache.swift in Sources */,
+				20A965802903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
 				AEE0103C27424AA300C155D8 /* VideoPlayViewController.swift in Sources */,
 				AE4D08FE273032E700899D2C /* MemeryCache.swift in Sources */,
 				AE66E15C27537992006432FE /* OpenCV.mm in Sources */,
@@ -4908,7 +4925,6 @@
 				AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AEE010772742560200C155D8 /* MitoConfig.swift in Sources */,
 				AEE0104C2742509300C155D8 /* WatermarkViewController.swift in Sources */,
-				AEC8FF0A2869AD3100A70F50 /* AppLogViewController.swift in Sources */,
 				AE66E18E27537D37006432FE /* GrayVideoViewController.swift in Sources */,
 				AE66E1C82753872C006432FE /* AudioDecoderViewController.swift in Sources */,
 				AEE010CF2742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -4976,6 +4992,7 @@
 				AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */,
 				AE128880281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE1C4F6D274346BD0097EAC1 /* bsdiff.c in Sources */,
+				20A965722903D132007F8526 /* UIImage+Extension.swift in Sources */,
 				20B65A4728FC26BB00341DB9 /* PanCollectionView.swift in Sources */,
 				AE66E1CF27538B81006432FE /* VideoBoxViewController.swift in Sources */,
 				AE62CAF2272542DC007D51CD /* CameraModel.swift in Sources */,
@@ -5029,6 +5046,7 @@
 				AE62CB3827254946007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE62CB6C27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */,
+				20A965812903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
 				20A9656E2903CA4B007F8526 /* HttpClient.swift in Sources */,
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
 				20B65A3B28FC249200341DB9 /* UIFont+Extension.swift in Sources */,
@@ -5094,6 +5112,7 @@
 				AEE010DF2742569200C155D8 /* MJRefreshNormalHeader.m in Sources */,
 				AEE010AB2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
 				AE62CA5D2725429B007D51CD /* TZProgressView.m in Sources */,
+				20A9657D2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
 				AE62CB5927254947007D51CD /* UIView+Base.swift in Sources */,
 				AE1A875D27512195004FA0DA /* Spirograph.swift in Sources */,
 				AEE010B12742569200C155D8 /* MJRefreshConfig.m in Sources */,
@@ -5117,9 +5136,11 @@
 				AE62CAAE272542D1007D51CD /* PriorityBoxArray.m in Sources */,
 				AE62CB4D27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AEE010D02742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
+				20A965732903D133007F8526 /* UIImage+Extension.swift in Sources */,
 				AE62CAF6272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE62CB4127254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AE62CA99272542D1007D51CD /* PaletteColorUtils.m in Sources */,
+				20A965782903D34C007F8526 /* PHPLibraryTool.swift in Sources */,
 				AE62CA422725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CADB272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				20A965632903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
@@ -5188,10 +5209,12 @@
 				AEE3DB2227FC0BF2007B2B58 /* PopKeyView.swift in Sources */,
 				20B65A3F28FC24D000341DB9 /* Recognize.swift in Sources */,
 				AEF6CB41287A7CB200352100 /* Theme.swift in Sources */,
+				20A965762903D2D1007F8526 /* PHPLibraryTool.swift in Sources */,
 				AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */,
 				AE128847280C51820049A5E4 /* EmojiKeyboard.swift in Sources */,
 				20B659CF28FC224A00341DB9 /* ImageStyle.swift in Sources */,
 				AEB517E3282677F700F2FA1D /* SwitchKeyboardView.swift in Sources */,
+				20A965742903D145007F8526 /* UIImage+Base.swift in Sources */,
 				AEE3DB1727FC0960007B2B58 /* KeyboardInfo.swift in Sources */,
 				AEC9916B287442C4002879A0 /* HUD.swift in Sources */,
 				AEE3DB2827FC0C45007B2B58 /* FullRowKeysView.swift in Sources */,
@@ -5199,6 +5222,7 @@
 				AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */,
 				AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */,
 				AE12889928210F590049A5E4 /* Global.swift in Sources */,
+				20A965822903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
 				AE128882281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE128866281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				20B65A3328FC227A00341DB9 /* WGInputAssociateWraper.mm in Sources */,
@@ -5212,6 +5236,7 @@
 				20B65A3028FC227A00341DB9 /* SqlValue.cpp in Sources */,
 				AEF6CB3E287A79E400352100 /* Style+Extension.swift in Sources */,
 				20A9656B2903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
+				20A9656F2903CF5B007F8526 /* UIView+Base.swift in Sources */,
 				20B65A2B28FC227A00341DB9 /* SqlRecordSet.cpp in Sources */,
 				AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */,
 				20B65A4E28FC274B00341DB9 /* KeyboardProtocal.swift in Sources */,
@@ -5221,6 +5246,7 @@
 				AE12886E281CED0A0049A5E4 /* expression-combining.swift in Sources */,
 				AE128892281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AEE3DB2A27FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift in Sources */,
+				20A9657E2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
 				AE12887E281CED0A0049A5E4 /* calc-result.swift in Sources */,
 				AE128872281CED0A0049A5E4 /* expressionizer.swift in Sources */,
 				AE1A22EE2876D72000A5C18B /* PasteboardManage.swift in Sources */,
@@ -5305,6 +5331,7 @@
 				20A9655B2903C6B2007F8526 /* UIView+Extension.swift in Sources */,
 				AE62CA4D2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE12888B281CED0A0049A5E4 /* number.swift in Sources */,
+				20A965832903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
 				AE62CA9D272542D1007D51CD /* Palette.m in Sources */,
 				AE72F538273EBDB10060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE128877281CED0A0049A5E4 /* calculator.swift in Sources */,
@@ -5316,6 +5343,7 @@
 				AE7234AD278E6B610088C791 /* PHAssert+Extension.swift in Sources */,
 				AEE010C22742569200C155D8 /* NSBundle+MJRefresh.m in Sources */,
 				AEE010AF2742569200C155D8 /* MJRefreshConst.m in Sources */,
+				20A965712903D12E007F8526 /* UIImage+Extension.swift in Sources */,
 				AE62CBAE27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA83272542AF007D51CD /* fishhook.c in Sources */,
 				AE128883281CED0A0049A5E4 /* operationizer.swift in Sources */,
@@ -5348,6 +5376,7 @@
 				AE62CAFA272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE62CB3627254946007D51CD /* Number+Extension.swift in Sources */,
 				AE72F539273EBDB30060456A /* CityDB.swift in Sources */,
+				20A9657B2903D377007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
 				AE12887B281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				AE62CB7027254B12007D51CD /* GrandCue.swift in Sources */,
 				AE62CB00272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
@@ -5360,6 +5389,7 @@
 				AE62CBDF27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE62CB4227254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AEE010B22742569200C155D8 /* MJRefreshConfig.m in Sources */,
+				20A965792903D34D007F8526 /* PHPLibraryTool.swift in Sources */,
 				AE62CA6B2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE62CA552725429B007D51CD /* UIView+Layout.m in Sources */,
 				AE62CB5127254947007D51CD /* UICollectView+Extension.swift in Sources */,

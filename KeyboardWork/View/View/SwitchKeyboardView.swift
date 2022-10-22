@@ -73,6 +73,10 @@ class SwitchKeyboardView:KeyboardNav{
         case 2:
             KeyboardInfo.KeyboardType = .chinese26
         case 3:
+            
+            let exception = NSException(name: NSExceptionName(rawValue:"arbitrary"), reason:"arbitrary reason", userInfo: nil)
+                exception.raise()
+            
             KeyboardInfo.KeyboardType = .english
         case 4:
             keyboardVC?.switchKeyboard()

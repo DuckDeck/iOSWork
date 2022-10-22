@@ -18,28 +18,7 @@ extension UIImage{
         return image!
     }
     
-    static func captureScreen()->UIImage{
-        //        var view = UIScreen.mainScreen().snapshotViewAfterScreenUpdates(true); //snapshotViewAfterScreenUpdates这个方法有问题，实际上是返回正在显示的View的了，但是就是转化不了图片
-        //        return captureView(view)
-        //获取APP的RootViewController
-        var vc = UIApplication.shared.keyWindow?.rootViewController
-        //依次获取RootViewController 的上层ViewController
-        while vc?.presentationController == nil {
-            vc = vc?.presentedViewController
-        }
-        //如果最上层ViewContoller是导航ViewController，就得到它的topViewController
-        while (vc is UINavigationController && (vc as! UINavigationController).topViewController != nil)
-        {
-            vc = (vc as! UINavigationController).topViewController
-        }
-        if let view = vc?.view
-        {
-            //如果可以获取到View，就调用将View显示为图片的方法
-            return captureView(view: view)
-        }
-        return UIImage()
-    }
-    
+   
     func imageAtRect(rect:CGRect)->UIImage{
         let imgCg = self.cgImage
         // 从imgCg中“挖取”rect区域
@@ -414,6 +393,32 @@ extension UIImage{
         }
     }
     
+    func saveToAlbum(isTmp:Bool, _ completed:@escaping ((_ finish:Bool,_ err:Swift.Error?)->Void)) {
+        PHPhotoLibrary.auth { finish, err in
+            if err != nil{
+                completed(false,err)
+            } else {
+                if isTmp{
+                    let ac = PHAssetCollection.initWith(title: "iOSWork")
+                    if ac.1 != nil{
+                        completed(false,ac.1!)
+                    }
+                    PHPLibraryTool.save(asset: .img(self), collection: ac.0!) { finish, err in
+                        DispatchQueue.main.async {
+                            completed(finish,err)
+                        }
+                        
+                    }
+                } else {
+                    PHPLibraryTool.save(asset: .img(self), collection: nil) { finish, err in
+                        DispatchQueue.main.async {
+                            completed(finish,err)
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     open func compressWithMaxLength(maxLength:UInt) -> Data? {
         var compression:CGFloat = 1

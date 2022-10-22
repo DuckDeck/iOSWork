@@ -29,7 +29,8 @@ class KeyboardViewController: UIInputViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        kbLog.info("键盘弹出")
+        CrashReporterLite.start(withApplicationGroupIdentifier: "group.ShadowEdge.iOSProject")
         let hostBundleID = self.parent!.value(forKey: "_hostBundleID") as? String ?? ""
         if hostBundleID == "ShadowEdge.iOSWork"{
             clientSockek = GCDAsyncSocket(delegate: self, delegateQueue: DispatchQueue.main)
