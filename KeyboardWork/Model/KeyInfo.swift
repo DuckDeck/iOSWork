@@ -18,6 +18,8 @@ struct KeyInfo{
     var textColor = UIColor.clear
     var isEnable = true
     var keyType = KeyType.normal(.chinese)
+    var tips : [SymbleInfo]?      //某些符号可以有多个选择的，但不显示在上面
+    var defaultSymbleIndex : Int?
     var position = CGRect.zero
     //用于输入法引擎
     var engineCode : String{
@@ -56,9 +58,15 @@ struct KeyInfo{
     var keyLayer:CAShapeLayer?
     var textLayer:CATextLayer?
     var imgLayer:CALayer?
+    var tipLayer:CATextLayer?
     var textSize:CGFloat?
-    var popView:PopKeyView?
+    var showTip = true
+    var fontSize:CGFloat?
+    var tipSize:CGFloat?
+
+    
     var popViewImage:String?
+    var hotArea:CGRect?       //热区
     var index = 0 //用于9键时点击左侧
 }
 
@@ -77,8 +85,8 @@ enum KeyType:Equatable{
             returnKey(ReturnKeyType),//回车
             space, //空格
             backKeyboard, //返回默认键盘
-            reInput //重输
-    
+            reInput, //重输
+            newLine   //换行
     
     var isNormal:Bool{
         switch self {
@@ -92,6 +100,15 @@ enum KeyType:Equatable{
     var isReturnKey:Bool{
         switch self {
         case .returnKey(_):
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var isSwitch:Bool{
+        switch self {
+        case .switchKeyboard(_):
             return true
         default:
             return false
@@ -143,4 +160,12 @@ struct OutputInfo{
     var pinyin = ""
     var pinyinPartial : String?
     var texts = [String]()
+}
+
+struct SymbleInfo{
+    enum SymbleAngle{
+        case halfAngle,fullAngle
+    }
+    let text : String
+    let angle : SymbleAngle?
 }

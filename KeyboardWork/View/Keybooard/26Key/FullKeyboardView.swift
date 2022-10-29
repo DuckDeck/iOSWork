@@ -15,6 +15,7 @@ class FullKeyboardView: Keyboard {
     var thirdKeys: [KeyInfo]!
     var forthKeys: [KeyInfo]!
     var shiftStatus = KeyShiftType.normal
+    var panPosition : CGPoint?
     // 按键相关变量
     // 单个按键宽度
     let keyWidth = (kSCREEN_WIDTH - 53.0) / 10.0

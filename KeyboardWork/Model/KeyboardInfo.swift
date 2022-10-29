@@ -35,3 +35,15 @@ struct KeyboardInfo:Codable{
         set{var tmp = KeyboardInfo.keyboardInfo.Value;tmp.shake = newValue;KeyboardInfo.keyboardInfo.Value = tmp}
     }
 }
+
+var KBScale: CGFloat {
+    return kSCREEN_WIDTH / 375.0
+//    if UIDevice.isIpad {
+//        return s * 1.2
+//    } else {
+//        if orientation == .horizontal {
+//            return s * 0.8
+//        }
+//        return s
+//    }
+}

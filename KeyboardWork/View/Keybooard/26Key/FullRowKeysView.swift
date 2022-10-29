@@ -12,8 +12,9 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
     var pressedKey : KeyInfo?
     var panPoint:CGPoint?
     var previousPoint:CGPoint?
-    var pressLayer:CAShapeLayer?
-    var tmpOffset : CGFloat = 0
+    var tmpLayers = [CALayer]()
+    var row = 0
+    var range = [CGFloat]()
     var fullKeyboardView:FullKeyboardView{
         return superview as! FullKeyboardView
     }
@@ -27,14 +28,10 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
         pan.minimumNumberOfTouches = 1
         pan.delaysTouchesBegan = false
         pan.delegate = self
-        
         addGestureRecognizer(pan)
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGes(ges:)))
         longPress.minimumPressDuration = 0.4
-//        longPress.delaysTouchesBegan = false
-//        longPress.delaysTouchesEnded = false
-//        longPress.cancelsTouchesInView = false
         addGestureRecognizer(longPress)
     }
     
@@ -60,9 +57,9 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
         layer.addSublayer(keyLayer)
         
         if !tmpKey.image.isEmpty{
-            let img = UIImage.yh_imageNamed(tmpKey.image)!
+            let img = UIImage.themeImg(tmpKey.image, origin: true)
             let imgLayer = CALayer()
-            imgLayer.frame = tmpKey.position.centerRect(w: img.size.width, h: img.size.height)
+            imgLayer.frame = tmpKey.position.centerRect(w: img.size.width * KBScale, h: img.size.height * KBScale)
             imgLayer.contents = img.cgImage
             keys[index].imgLayer = imgLayer
             layer.addSublayer(imgLayer)
@@ -71,7 +68,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
         if !tmpKey.text.isEmpty{
             let lbl = UILabel()
             lbl.text = tmpKey.text
-            lbl.font = UIFont(name: "PingFangSC-Regular", size: 18)
+            lbl.font = UIFont(name: "PingFangSC-Regular", size: 18 * KBScale)
             let txtSize = lbl.sizeThatFits(CGSize(width: 100, height: 18))
             let txtLayer = CATextLayer()
             txtLayer.frame = tmpKey.position.centerRect(w: txtSize.width, h: txtSize.height)
@@ -79,7 +76,7 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             txtLayer.string = tmpKey.text
             txtLayer.contentsScale = UIScreen.main.scale
             txtLayer.font = CGFont.init("PingFangSC-Regular" as CFString)
-            txtLayer.fontSize = 18
+            txtLayer.fontSize = 18 * KBScale
             keys[index].textLayer = txtLayer
             layer.addSublayer(txtLayer)
         }
@@ -88,7 +85,23 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
     func updateKeys(newKeys:[KeyInfo]){
         self.keys = newKeys
         layer.sublayers?.forEach{$0.removeFromSuperlayer()}
+        range.removeAll()
         for  item in keys.enumerated(){
+            
+            if row == 2{
+                if item.offset == keys.count - 1{
+                    range.append(kSCREEN_WIDTH)
+                } else {
+                    range.append(item.element.hotArea?.maxX ?? item.element.position.maxX + 2.5)
+                }
+            } else{
+                if item.offset == keys.count - 1{
+                    range.append(kSCREEN_WIDTH)
+                } else {
+                    range.append(item.element.position.maxX + 2.5)
+                }
+            }
+            
             //key layer
             let keyLayer = CAShapeLayer()
             keyLayer.fillColor = item.element.fillColor.cgColor
@@ -100,73 +113,87 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             //shadowlayer
             let shadowLayer = CAShapeLayer()
             let shadowRect = CGRect(x: item.element.position.origin.x, y: item.element.position.maxY - 10, width: item.element.position.width, height: 11)
-            shadowLayer.fillColor = kColor898a8d.cgColor
+            shadowLayer.fillColor = cKeyShadowColor.cgColor
             shadowLayer.path = UIBezierPath(roundedRect: shadowRect, cornerRadius: 5).cgPath
             layer.insertSublayer(shadowLayer, below: keyLayer)
 
             //imageLayer
             
             if !item.element.image.isEmpty{
-                let img = UIImage.yh_imageNamed(item.element.image)!.withTintColor(.pink, renderingMode: .automatic)
+                let img =  UIImage.themeImg(item.element.image, origin: true)
                 let imgLayer = CALayer()
-                imgLayer.frame = item.element.position.centerRect(w: img.size.width, h: img.size.height)
+                imgLayer.frame = item.element.position.centerRect(w: img.size.width * KBScale, h: img.size.height * KBScale)
                 imgLayer.contents = img.cgImage
                 keys[item.offset].imgLayer = imgLayer
                 layer.addSublayer(imgLayer)
             }
             
             if !item.element.text.isEmpty{
-                let lbl = UILabel()
-                lbl.text = item.element.text
-                lbl.font = UIFont(name: "PingFangSC-Regular", size: item.element.textSize ?? 22)
-                let txtSize = lbl.sizeThatFits(CGSize(width: 100, height: 26))
+                let txtSize = item.element.text.getSize(font: UIFont(name: "PingFangSC-Regular", size: (item.element.fontSize ?? 22) * KBScale)!)
                 let txtLayer = CATextLayer()
                 let txtRect = item.element.position.centerRect(w: txtSize.width, h: txtSize.height)
-                if item.element.tip.isEmpty{
-                    txtLayer.frame = txtRect.offsetBy(dx: item.element.text.characherOffset, dy: 0)
-                } else{
-                    txtLayer.frame = txtRect.offsetBy(dx: item.element.text.characherOffset, dy: 4)
-                }
+//                if !item.element.tip.isEmpty && item.element.showTip{
+//                    txtLayer.frame = txtRect.offsetBy(dx: item.element.text.characherOffset, dy: 2)
+//                } else{
+//                    txtLayer.frame = txtRect.offsetBy(dx: item.element.text.characherOffset, dy: 0)
+//                }
+                txtLayer.frame = txtRect.offsetBy(dx: item.element.text.characherOffset, dy: 0)
                 txtLayer.foregroundColor = item.element.textColor.cgColor
                 txtLayer.string = item.element.text
                 txtLayer.contentsScale = UIScreen.main.scale
-                txtLayer.font = CGFont.init("PingFangSC-Regular" as CFString)
-                txtLayer.fontSize = item.element.textSize ?? 22
+                if item.element.text == ","{
+                    txtLayer.font = UIFont.systemFont(ofSize: 22 * KBScale) as CTFont
+                } else {
+                    txtLayer.font = CGFont.init("PingFangSC-Regular" as CFString)
+                }
+                var fontSize : CGFloat = 22
+                if item.element.fontSize == nil && fullKeyboardView.shiftStatus == .normal{
+                    fontSize = 23
+                }
+                if item.element.fontSize != nil{
+                    fontSize = item.element.fontSize!
+                }
+                txtLayer.fontSize = fontSize * KBScale
                 keys[item.offset].textLayer = txtLayer
                 layer.addSublayer(txtLayer)
                 
-                if !item.element.tip.isEmpty{
-                    let lbl = UILabel()
-                    lbl.text = item.element.tip
-                    lbl.font = UIFont(name: "PingFangSC-Regular", size: 10)
-                    let tipSize = lbl.sizeThatFits(CGSize(width: 20, height: 12))
+                if !item.element.tip.isEmpty && item.element.showTip{
+                    let tipSize = item.element.tip.getSize(font: UIFont(name: "PingFangSC-Regular", size: (item.element.tipSize ?? 10) * KBScale)!)
                     let tipLayer = CATextLayer()
-                    tipLayer.frame = item.element.position.centerRect(w: tipSize.width, h: tipSize.height).offsetBy(dx: item.element.text.characherOffset - 4, dy: -13)
-                    tipLayer.foregroundColor = item.element.tip == "。" ? kColor222222.cgColor  : kColorbbbbbb.cgColor
+                    tipLayer.frame = item.element.position.centerRect(w: tipSize.width, h: tipSize.height).offsetBy(dx: item.element.text.characherOffset * 0.5, dy: -13)
+                    tipLayer.foregroundColor = item.element.tip == "。" ? cKeyTextColor.cgColor  : cKeyTipColor.cgColor
                     tipLayer.string = item.element.tip
                     tipLayer.contentsScale = UIScreen.main.scale
                     tipLayer.font = CGFont.init("PingFangSC-Regular" as CFString)
-                    tipLayer.fontSize = 10
+                    tipLayer.fontSize = (item.element.tipSize ?? 10) * KBScale
+                    keys[item.offset].tipLayer = tipLayer
                     layer.addSublayer(tipLayer)
                 }
             }
         }
     }
+
     
     @objc func panGes(ges:UIPanGestureRecognizer){
+        print("panGes\(ges.state)")
         let point = ges.location(in: self)
         switch ges.state{
         case .began:
             panPoint = point
-            (superview as? FullKeyboardView)?.isGestured = true
+            fullKeyboardView.isGestured = true
+            fullKeyboardView.panPosition = point
         case .ended:
             //方向还没有处理
-            if pressedKey != nil && pressedKey!.keyType.isNormal && panPoint != nil{
-                let pressKey = pressedKey!
+            if pressedKey != nil && (pressedKey!.keyType.isNormal || pressedKey!.keyType == .del) && panPoint != nil{
                 let distance = panPoint!.y - point.y
-                if distance > 30 && point.x > pressKey.position.minX - distance * 0.6 && point.x < pressKey.position.maxX + distance * 0.6{
+                if abs(distance) < 10 && abs(panPoint!.x - point.x) < 10{ //如果触发了pan，这时可能这个距离特别短，那么可不可以认为是一次按键呢？对搜狗的试验可以认为是一次按键,那么这个距离设定为多少好呢？试试10看看效果
+                    if let keyboard = superview as? Keyboard{
+                        keyboard.keyPress(key: pressedKey!)
+                    }
+                }
+                if distance > 30 && point.x > pressedKey!.position.minX - distance * 0.6 && point.x < pressedKey!.position.maxX + distance * 0.6{
                     if let keyboard = superview as? FullKeyboardView{
-                        var key = pressKey
+                        var key = pressedKey!
                         key.clickType = .tip
                         key.keyType = .normal(.character)
                         Shake.keyShake()
@@ -178,13 +205,30 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             removePressEffect()
             pressedKey = nil
             panPoint = nil
-            (superview as? FullKeyboardView)?.isGestured = false
+            fullKeyboardView.isGestured = false
+            fullKeyboardView.panPosition = nil
         case .cancelled,.failed:
             fullKeyboardView.popKeyView.isHidden = true
             removePressEffect()
             panPoint = nil
             pressedKey = nil
-            (superview as? FullKeyboardView)?.isGestured = false
+            fullKeyboardView.isGestured = false
+            fullKeyboardView.panPosition = nil
+        case .changed:
+            print("paning:\(point)")
+            if fullKeyboardView.panPosition == nil{
+                fullKeyboardView.panPosition = point
+            }
+            fullKeyboardView.popKeyView.isHidden = true
+            let yoffset = point.y - panPoint!.y
+            let xOffset =  point.x - panPoint!.x
+            if point.x - fullKeyboardView.panPosition!.x > 20  && abs(yoffset / xOffset) < 0.8{
+                fullKeyboardView.panPosition = point
+                keyboardVC?.moveCursor(direction: true)
+            } else if point.x - fullKeyboardView.panPosition!.x < -20  && abs(yoffset / xOffset) < 0.8{
+                fullKeyboardView.panPosition = point
+                keyboardVC?.moveCursor(direction: false)
+            }
         default:
             break
         }
@@ -195,53 +239,69 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
 
         switch ges.state{
         case .began:
-            
-            (superview as? FullKeyboardView)?.isGestured = true
-            if (superview as? FullKeyboardView)?.popChooseView != nil &&  !(superview as! FullKeyboardView).popChooseView!.isHidden{
-                return
-            }
-            if  pressedKey != nil && !pressedKey!.keyType.isNormal{
-                if pressedKey!.keyType == .del{
-                    Shake.keyShake()
-                    (superview as! FullKeyboardView).keyLongPress(key: pressedKey!, state: ges.state)
-                }
+            fullKeyboardView.isGestured = true
+            if fullKeyboardView.popChooseView != nil &&  !(superview as! FullKeyboardView).popChooseView!.isHidden{
                 return
             }
             if pressedKey == nil{
                 return
             }
-            if !pressedKey!.text.first!.isLetter{
-                if !pressedKey!.tip.isEmpty{
-                    let key = pressedKey!
-                    Shake.keyShake()
-                    fullKeyboardView.popKeyView.lblKey.text = key.tip
-                }
+            if  pressedKey!.keyType.isReturnKey && pressedKey!.text == "发送"{
+                Shake.keyShake()
+                var k = KeyInfo()
+                k.keyType = .newLine
+                (superview as! FullKeyboardView).keyPress(key: k)
                 return
             }
-            for item in positions.enumerated(){
-                if item.element.large().contains(point){
-                    let key = keys[item.offset]
-                    let txt = "\(key.text.uppercased())\(key.tip)\(key.text.lowercased())"
-                    let width : CGFloat = CGFloat(txt.count * 30 + 8)
-                    let pos = convert(key.position, to: superview)
-                    var x = pos.midX - width / 2.0
-                    if x - 5 <= 0{
-                        x = 5
-                    }
-                    if x + width + 5 >= kSCREEN_WIDTH{
-                        x = kSCREEN_WIDTH - width - 5
-                    }
-                    let chooseView = PopKeyChooseView(frame: CGRect(x: x, y: pos.minY - 58, width: width, height: 52), keys: txt)
-                    if let v = superview as? FullKeyboardView{
-                        v.popChooseView = chooseView
-                        v.addSubview(chooseView)
-                        fullKeyboardView.popKeyView.isHidden = true
-                    }
-                    previousPoint = point
-                    addPressEffect(key: key)
-                    Shake.keyShake()
-                }
+            if  !pressedKey!.keyType.isNormal && pressedKey!.keyType == .del{
+                Shake.keyShake()
+                (superview as! FullKeyboardView).keyLongPress(key: pressedKey!, state: ges.state)
+                return
             }
+          
+            //分支说明，对于符号按键，如果存在有tip的情况，长按会优化输出tip，目前只有逗号和句号这一个按键，其他符号按键都没有tip
+            if !pressedKey!.text.isEmpty && !pressedKey!.text.first!.isLetter && !pressedKey!.tip.isEmpty{
+                let key = pressedKey!
+                Shake.keyShake()
+                fullKeyboardView.popKeyView.lblKey.text = key.tip
+                return
+            }
+            
+            //这种情况下不需要弹出多符号选择框
+            if pressedKey!.tip.isEmpty && pressedKey!.tips == nil {
+                return
+            }
+            
+            if let key = pressedKey{
+                var txt = [SymbleInfo]()
+                if key.tips != nil{
+                    txt = key.tips!
+                } else if !key.tip.isEmpty {
+                    txt = [SymbleInfo(text: key.text.uppercased(), angle: nil),SymbleInfo(text: key.tip, angle: nil),SymbleInfo(text: key.text.lowercased(), angle: nil)]
+                }
+                let txtCount = txt.count
+                let width : CGFloat = CGFloat(txtCount * 36 + 8)
+                let pos = convert(key.position, to: superview)
+                var x = pos.midX - width / 2.0
+                if x - 5 <= 0{
+                    x = 5
+                }
+                if x + width + 5 >= kSCREEN_WIDTH{
+                    x = kSCREEN_WIDTH - width - 5
+                }
+                let chooseView = PopKeyChooseView(frame: CGRect(x: x, y: pos.minY - 55 * KBScale, width: width, height: 50 * KBScale), keys: txt,defaultIndex: key.defaultSymbleIndex ?? -1)
+                
+                if let v = superview as? FullKeyboardView{
+                    v.popChooseView = chooseView
+                    v.addSubview(chooseView)
+                    fullKeyboardView.popKeyView.isHidden = true
+                }
+                previousPoint = point
+                addPressEffect(fillColor: UIColor(hexString: "a2a5ad")! | UIColor(hexString: "414245")!)
+                Shake.keyShake()
+            }
+                    
+             
             
 
         case .changed:
@@ -258,19 +318,18 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
         case .ended,.cancelled:
             previousPoint = nil
             if let v = (superview as! FullKeyboardView).popChooseView{
-                let str = v.keys.substring(from: v.selectIndex, length: 1)
                 var key = KeyInfo()
-                key.text = String(str)
+                key.text = v.selectedText
+                key.canBack = pressedKey!.canBack
                 key.keyType = .normal(.character)
-                (superview as! FullKeyboardView).keyPress(key: key)
-                (superview as! FullKeyboardView).popChooseView?.isHidden = true
-                (superview as! FullKeyboardView).popChooseView = nil
+                fullKeyboardView.keyPress(key: key)
+                fullKeyboardView.popChooseView?.removeFromSuperview()
+                fullKeyboardView.popChooseView = nil
                 fullKeyboardView.popKeyView.isHidden = true
                 removePressEffect()
                 pressedKey = nil
             }
             if pressedKey != nil && previousPoint == nil{
-               
                 if pressedKey!.keyType == .del{
                     (superview as! FullKeyboardView).keyLongPress(key: pressedKey!, state: ges.state)
                 } else if pressedKey!.keyType == .normal(.character){
@@ -287,6 +346,8 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             }
             (superview as? FullKeyboardView)?.isGestured = false
         case .failed:
+            fullKeyboardView.popChooseView?.removeFromSuperview()
+            fullKeyboardView.popChooseView = nil
             fullKeyboardView.popKeyView.isHidden = true
             (superview as? FullKeyboardView)?.isGestured = false
             removePressEffect()
@@ -296,93 +357,60 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
         }
        
     }
-    
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        print("gestureRecognizer，开始接收到触摸事件,touch phase 是\(touch.phase)")
-        if touch.phase == .began{
-            let point = touch.location(in: self)
-            if point.x > tmpOffset && point.x < kSCREEN_WIDTH - tmpOffset{
-                return true
-            }
-            if (superview as! FullKeyboardView).isGestured{
-                print("gestureRecognizer，有其他手势需要返回")
-                return true
-            }
-            for item in positions.enumerated(){
-                if item.element.large().contains(point){
-                    if pressedKey != nil{
-                        (superview as? FullKeyboardView)?.keyPress(key: pressedKey!)
-                    }
-                    pressedKey = keys[item.offset]
-                    print("识别到\(keys[item.offset].text)")
-                    addPopKeyView(pressKey: &keys[item.offset])
-                    addPressEffect()
-                    break
-                }
-            }
 
-        }
-        return true
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesBegan,开始接收到触摸事件")
+       
+        if fullKeyboardView.isGestured{
+            return
+        }
         guard let t = touches.first else {return}
         if t.phase == .began{
             let point = t.location(in: self)
-            if point.x <= tmpOffset || point.x >= kSCREEN_WIDTH - tmpOffset{
-                return
+            if pressedKey != nil{                                   //解释： 当用户几乎同时按下两个按键时，第二个按键的气泡会顶掉第一个，这时上字顺序是用户先松手的那个按键，这样会导致上字顺序错误，现在修改成当第二个气泡顶掉第一个时，也同时把第一个上字。这样肯定不会出现上字顺序错误和情况了
+                fullKeyboardView.keyPress(key: pressedKey!)
+                pressedKey = nil
             }
-            if (superview as! FullKeyboardView).isGestured{
-                return
-            }
-            for item in positions.enumerated(){
-                if item.element.large().contains(point){
-                    if pressedKey != nil{
-                        (superview as? FullKeyboardView)?.keyPress(key: pressedKey!)
-                    }
-                    pressedKey = keys[item.offset]
-                    print("识别到\(keys[item.offset].text)")
-                    addPopKeyView(pressKey: &keys[item.offset])
-                    addPressEffect()
+            Shake.keyShake()
+            for i in 0..<range.count{
+                if point.x <= range[0]{
+                    pressedKey = keys[0]
+                    addPopKeyView(pressKey: &keys[0])
+                    break
+                } else if point.x > range[i]  && point.x <= range[i + 1]{
+                    pressedKey = keys[i+1]
+                    addPopKeyView(pressKey: &keys[i+1])
                     break
                 }
             }
+           
+            addPressEffect()
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if (superview as! FullKeyboardView).isGestured{
+        if fullKeyboardView.isGestured{
             return
         }
         if pressedKey != nil{
             if let keyboard = superview as? FullKeyboardView{
-                self.fullKeyboardView.popKeyView.isHidden = true
                 keyboard.keyPress(key: pressedKey!)
-                Shake.keyShake()
             }
             removePressEffect()
             pressedKey = nil
+            self.fullKeyboardView.popKeyView.isHidden = true
+            
         }
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-   
-        if (superview as! FullKeyboardView).isGestured{
+        if fullKeyboardView.isGestured{
             return
         }
         if pressedKey != nil{
-            fullKeyboardView.popKeyView.isHidden = true
-            removePressEffect()
             pressedKey = nil
-        }
-    }
-    
-    
-    var positions : [CGRect]{
-        return keys.map { k in
-            return k.position
+            fullKeyboardView.popKeyView.isHidden = true
+            
         }
     }
     
@@ -393,73 +421,63 @@ class FullRowKeysView:UIView,UIGestureRecognizerDelegate{
             var location = PopKeyView.PopKeyViewLocation.center
             var popKeyPos:CGPoint!
             if pressKey.position.minX < 10{
-                popKeyPos = CGPoint(x: pos.midX + 18, y: pos.minY - 8)
+                popKeyPos = CGPoint(x: pos.midX + 19 * KBScale, y: pos.maxY)
                 location = .left
             } else if pressKey.position.maxX > kSCREEN_WIDTH - 10{
-                popKeyPos = CGPoint(x: pos.midX - 18, y: pos.minY - 8)
+                popKeyPos = CGPoint(x: pos.midX - 19 * KBScale, y: pos.maxY)
                 location = .right
             } else {
-                popKeyPos = CGPoint(x: pos.midX, y: pos.minY - 8)
+                popKeyPos = CGPoint(x: pos.midX, y: pos.maxY)
             }
             fullKeyboardView.popKeyView.setKey(key: pressKey.text, location: location,popImage: pressKey.popViewImage)
-            fullKeyboardView.popKeyView.center = popKeyPos
+//            fullKeyboardView.popKeyView.bottomCenter = popKeyPos
             fullKeyboardView.popKeyView.isHidden = false
         }
         
     }
 
     //添加按键效果
-    func addPressEffect(){
-        if pressedKey == nil{
+    func addPressEffect(fillColor:UIColor? = nil){
+        guard let key = pressedKey else {return}
+        if key.keyType.isReturnKey &&  !key.isEnable{
             return
         }
-        if pressedKey!.keyType.isReturnKey &&  !pressedKey!.isEnable{
-            return
-        }
-        if !pressedKey!.keyType.isNormal || (superview as! FullKeyboardView).isGestured{
-            if pressedKey!.keyType == .del{
-                pressedKey!.imgLayer?.contents = UIImage.yh_imageNamed("icon_delete_black").cgImage
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        
+        if !key.keyType.isNormal || (superview as! FullKeyboardView).isGestured{
+            if key.keyType == .del{
+                key.imgLayer?.contents = UIImage.themeImg("icon_key_delete_press").cgImage
             }
-            if pressLayer == nil{
-                pressLayer = CAShapeLayer()
+            if key.keyType.isReturnKey || key.keyType == .backKeyboard{
+                key.keyLayer?.fillColor = kColor3a9a52.cgColor
+            } else if key.keyType.isSwitch || key.keyType == .del{
+                key.keyLayer?.fillColor = (UIColor.white | UIColor(hexString: "696b70")!).cgColor
             } else {
-                pressLayer?.removeFromSuperlayer()
+                key.keyLayer?.fillColor = (fillColor ?? cKeyBgPressColor).cgColor
             }
-            if pressedKey!.keyType == .returnKey(.usable){
-                pressLayer?.fillColor = kColor3a9a52.cgColor
-            } else {
-                pressLayer?.fillColor = kColora6a6a6.cgColor
-            }
-            let path = UIBezierPath(roundedRect: pressedKey!.position, cornerRadius: 5)
-            pressLayer?.path = path.cgPath
-            layer.insertSublayer(pressLayer!, above: pressedKey!.keyLayer)
         }
+        CATransaction.commit()
     }
     
-    func addPressEffect(key:KeyInfo){
-        if pressLayer == nil{
-            pressLayer = CAShapeLayer()
-        } else {
-            pressLayer?.removeFromSuperlayer()
-        }
-        pressLayer?.fillColor = kColora6a6a6.cgColor
-        let path = UIBezierPath(roundedRect: key.position, cornerRadius: 5)
-        pressLayer?.path = path.cgPath
-        layer.insertSublayer(pressLayer!, above: key.keyLayer)
-    }
+    
     
     func removePressEffect(){
-        if pressedKey == nil{
+        guard let key = pressedKey else {return}
+        if key.keyType.isReturnKey &&  !key.isEnable{
             return
         }
-        if pressedKey!.keyType == .del{
-            pressedKey!.imgLayer?.contents = UIImage.yh_imageNamed("icon_delete_white").cgImage
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        if key.keyType == .del{
+            key.imgLayer?.contents = UIImage.themeImg("icon_key_delete").cgImage
         }
-        pressLayer?.removeFromSuperlayer()
-        pressLayer = nil
+        key.keyLayer?.fillColor = key.fillColor.cgColor
+        CATransaction.commit()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+

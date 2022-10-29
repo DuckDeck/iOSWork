@@ -182,7 +182,11 @@ extension String{
         return textSize
     }
 
-    
+    func getSize( font: UIFont) -> CGSize {
+       let fontAttribute = [NSAttributedString.Key.font: font]
+       let size = self.size(withAttributes: fontAttribute)
+       return size;
+    }
   
         
     func boundingRect(with constrainedSize: CGSize, font: UIFont, lineSpacing: CGFloat? = nil) -> CGSize {

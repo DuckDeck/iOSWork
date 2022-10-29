@@ -171,6 +171,10 @@ extension KeyboardViewController{
         }
         
     }
+    
+    func moveCursor(direction:Bool){
+        textDocumentProxy.adjustTextPosition(byCharacterOffset: direction ? 1 : -1)
+    }
 }
 
 extension KeyboardViewController:GCDAsyncSocketDelegate{

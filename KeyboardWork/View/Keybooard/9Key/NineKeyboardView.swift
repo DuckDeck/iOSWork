@@ -440,13 +440,13 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
                     if x + width + 4 >= kSCREEN_WIDTH{
                         x = kSCREEN_WIDTH - width - 4
                     }
-                    let chooseView = PopKeyChooseView(frame: CGRect(x: x, y: pos.minY - 58, width: width, height: 52), keys: txt)
-                    if let v = superview as? NineKeyboardView{
-                        v.popChooseView = chooseView
-                        v.addSubview(chooseView)
-                    }
-                    previousPoint = point
-                    Shake.keyShake()
+//                    let chooseView = PopKeyChooseView(frame: CGRect(x: x, y: pos.minY - 58, width: width, height: 52), keys: txt)
+//                    if let v = superview as? NineKeyboardView{
+//                        v.popChooseView = chooseView
+//                        v.addSubview(chooseView)
+//                    }
+//                    previousPoint = point
+//                    Shake.keyShake()
                 }
             }
             
@@ -465,13 +465,13 @@ class NineKeyCenterView:UIView,UIGestureRecognizerDelegate{
             isGesture = false
             previousPoint = nil
             if let v = (superview as! NineKeyboardView).popChooseView{
-                let str = v.keys.substring(from: v.selectIndex, length: 1)
-                var key = KeyInfo()
-                key.text = String(str)
-                key.keyType = .normal(.character)
-                (superview as! NineKeyboardView).keyPress(key: key)
-                (superview as! NineKeyboardView).popChooseView?.removeFromSuperview()
-                (superview as! NineKeyboardView).popChooseView = nil
+//                let str = v.keys.substring(from: v.selectIndex, length: 1)
+//                var key = KeyInfo()
+//                key.text = String(str)
+//                key.keyType = .normal(.character)
+//                (superview as! NineKeyboardView).keyPress(key: key)
+//                (superview as! NineKeyboardView).popChooseView?.removeFromSuperview()
+//                (superview as! NineKeyboardView).popChooseView = nil
             }
             if !pressedKey.isEmpty && previousPoint == nil{
                 pressedKey.removeAll()
