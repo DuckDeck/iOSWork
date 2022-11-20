@@ -7,56 +7,264 @@
 
 import UIKit
 
-class NumKeyboardView: Keyboard {
-    var nineKeysInfo:[KeyInfo]!
-    var rightKeyInfo:[KeyInfo]!
-    var bottomKeyInfo:[KeyInfo]!
+class NumberKeyboardView:Keyboard{
+
+    var pressedKey: KeyInfo?
+    var panPoint: CGPoint?
+    var previousPoint: CGPoint?
+    var isGesture = false
+    var panPosition: CGPoint?
+
+    
+    var keyTop : CGFloat = 0            //该行按键的上边
+    var keyIndent1 : CGFloat = 0        //缩进1
+    var keyIndent2 : CGFloat = 0        //缩进2
+    var keyUnitWidth : CGFloat = 0      //单元长度，按键长度是这个的比例
+    var keyCenterHeight : CGFloat = 0   //中央按键的宽度
+    
+    var rowRanges = [CGFloat]()
+    var ranges = [[CGFloat]]()
     override init(frame: CGRect) {
         super.init(frame: frame)
+        keyboardName = "123数字页"
         self.currentKeyBoardType = .number
-        backgroundColor = kColord1d5db
-        let xScale = (kSCREEN_WIDTH - 32) / 343.0
-        addSubview(leftView)
-        addSubview(bottomView)
-        addSubview(centerView)
-        addSubview(rightView)
-     
-        bottomView.snp.makeConstraints { make in
-            make.left.right.bottom.equalTo(0)
-            make.height.equalTo(58)
+        backgroundColor = UIColor(named: "keyboard_bg_color")
+        keyboardWidth = kSCREEN_WIDTH
+        
+        createLayout()
+        createKeys()
+        createRange()
+        createBoard()
+        createGesture()
+        
+        addSubview(popKeyView)
+    }
+    
+    func createLayout(){
+        if UIDevice.current.userInterfaceIdiom == .pad{         //pad参数
+           keyWidth = (kSCREEN_WIDTH - 117.5) / 10
+           keyHeight = 54
+           keyTopMargin = 8
+           keyHorGap = 8
+           keyVerGap = 11.5
+           keyIndent1 = 6
+        } else {
+            if UIDevice.orientation.rawValue > 2{              //横屏参数
+                keyWidth = (kSCREEN_WIDTH - 71) / 10
+                keyHeight = ((kSCREEN_HEIGHT * 0.6) - 90) * 0.2
+                keyTopMargin = 8
+                keyHorGap = 7
+                keyVerGap = 7
+                keyIndent1 = 4
+            } else {                                           //竖屏参数
+                keyWidth = (kSCREEN_WIDTH - 53) / 10
+                keyHeight = kSCREEN_WIDTH > 400 ? 44 : 40
+                keyTopMargin = 10
+                keyHorGap = 5
+                keyVerGap = 5
+                keyIndent1 = 4
+            }
+        }
+        keyUnitWidth = (kSCREEN_WIDTH - 2 * keyIndent1 - 4 * keyHorGap) / 13
+        keyIndent2 = keyUnitWidth * 2 + keyIndent1 + keyHorGap
+        keyCenterHeight = (250 - keyHeight * 2 - keyTopMargin - 4 - 4 * keyVerGap) / 3
+        keyTop = keyTopMargin
+    }
+    
+    func createKeys(){
+        let f = ["汇率","()","+","x","-","+"]
+        var numKeys = [KeyInfo]()
+        for item in f.enumerated(){
+            var k = KeyInfo()
+            k.text = item.element
+            k.fillColor = cKeyBgColor
+            k.textColor = cKeyTextColor
+            k.fontSize = 20
+            k.pressColor = cKeyBgPressColor
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + keyHorGap) + keyIndent1, y: keyTop, width: keyWidth, height: keyHeight)
+            k.keyType = .normal(.character)
+            numKeys.append(k)
+        }
+        keyTop += keyHeight + keyVerGap
+        keys.append(numKeys)
+        
+        var row2 = [KeyInfo]()
+        var row3 = [KeyInfo]()
+        var row4 = [KeyInfo]()
+        var row5 = [KeyInfo]()
+        let keyTexts = ["1","2","3","4","5","6","7","8","9"]
+        for item in keyTexts.enumerated(){
+            var k = KeyInfo()
+            k.text = item.element
+            k.keyType = .normal(.character)
+            k.fillColor = cKeyBgColor
+            k.textColor = cKeyTextColor
+            k.pressColor = cKeyBgPressColor
+            let r = item.offset / 3
+            let c = item.offset % 3
+            k.position = CGRect(x: keyIndent2 + (keyUnitWidth * 3 + keyHorGap) * CGFloat(c), y: keyTop + (keyCenterHeight + keyVerGap) * CGFloat(r), width: keyUnitWidth * 3, height: keyCenterHeight)
+            if r == 0{
+                row2.append(k)
+            } else if r == 1{
+                row3.append(k)
+            } else {
+                row4.append(k)
+            }
         }
         
-        leftView.snp.makeConstraints { make in
-            make.left.equalTo(0)
-            make.top.equalTo( 3)
-            make.width.equalTo(56.0 * xScale + 7)
-            make.bottom.equalTo(bottomView.snp.top)
-        }
-        centerView.snp.makeConstraints { make in
-            make.left.equalTo(leftView.snp.right)
-            make.top.equalTo( 3)
-            make.bottom.equalTo(bottomView.snp.top)
-            make.right.equalTo(rightView.snp.left)
-        }
-        rightView.snp.makeConstraints { make in
-            make.right.equalTo(0)
-            make.top.equalTo(3)
-            make.bottom.equalTo(bottomView.snp.top)
-            make.width.equalTo(56.0 * xScale + 7)
+        var delKey = KeyInfo()
+        delKey.position = CGRect(x: row2.last!.position.maxX + keyHorGap, y: row2.last!.position.minY, width: keyUnitWidth * 2, height: keyCenterHeight)
+        delKey.image = "icon_key_delete"
+        delKey.fillColor = cKeyBgColor2
+        delKey.pressColor = UIColor.white | Colors.color696B70
+        delKey.keyType = .del
+        row2.append(delKey)
+        
+        var atKey = KeyInfo()
+        atKey.position = CGRect(x: row3.last!.position.maxX + keyHorGap, y: row3.last!.position.minY, width: keyUnitWidth * 2, height: keyCenterHeight)
+        atKey.text = "@"
+        atKey.fillColor = cKeyBgColor2
+        atKey.textColor = cKeyTextColor
+        atKey.pressColor = UIColor.white | Colors.color696B70
+        atKey.fontSize = 22
+        atKey.keyType = .normal(.character)
+        row3.append(atKey)
+        
+        var pointKey = KeyInfo()
+        pointKey.position = CGRect(x: row4.last!.position.maxX + keyHorGap, y: row4.last!.position.minY, width: keyUnitWidth * 2, height: keyCenterHeight)
+        pointKey.text = "."
+        pointKey.fillColor = cKeyBgColor2
+        pointKey.textColor = cKeyTextColor
+        pointKey.pressColor = UIColor.white | Colors.color696B70
+        pointKey.keyType = .normal(.character)
+        row4.append(pointKey)
+        
+        var symbleKey = KeyInfo()
+        symbleKey.text = "符"
+        symbleKey.textColor = cKeyTextColor
+        symbleKey.fillColor = cKeyBgColor2
+        symbleKey.pressColor = UIColor.white | Colors.color696B70
+        symbleKey.position = CGRect(x: keyIndent1, y: row4.first!.position.maxY + keyVerGap, width: keyUnitWidth * 2, height: keyHeight)
+        symbleKey.keyType = .switchKeyboard(.symbleChiese)
+        row5.append(symbleKey)
+                
+        var backKey = KeyInfo()
+        backKey.text = "返回"
+        backKey.textColor = UIColor.white
+        backKey.fillColor = UIColor(named: "theme_color")!
+        backKey.pressColor = Colors.color3A9A52
+        backKey.position = CGRect(x: symbleKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: keyUnitWidth * 3, height: keyHeight)
+        backKey.keyType = .backKeyboard
+        row5.append(backKey)
+        
+        var zeroKey = KeyInfo()
+        zeroKey.text = "0"
+        zeroKey.textColor = cKeyTextColor
+        zeroKey.fillColor = cKeyBgColor
+        zeroKey.pressColor = cKeyBgPressColor
+        zeroKey.position = CGRect(x: backKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: keyUnitWidth * 3, height: keyHeight)
+        zeroKey.keyType = .normal(.character)
+        row5.append(zeroKey)
+                
+        var spaceKey = KeyInfo()
+        spaceKey.image = "icon_key_space"
+        spaceKey.fillColor = cKeyBgColor
+        spaceKey.pressColor = cKeyBgPressColor
+        spaceKey.position = CGRect(x: zeroKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: keyUnitWidth * 3, height: keyHeight)
+        spaceKey.keyType = .space
+        row5.append(spaceKey)
+        
+        var enterKey = ReturnKey
+        enterKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: keyUnitWidth * 2, height: keyHeight)
+        row5.append(enterKey)
+        
+        keys.append(row2)
+        keys.append(row3)
+        keys.append(row4)
+        keys.append(row5)
+    }
+    
+    func createRange(){
+        for row in keys{
+            rowRanges.append(row.first!.position.maxY + keyVerGap / 2)
+            var tmp = [CGFloat]()
+            for item in row{
+                tmp.append(item.position.maxX + keyVerGap / 2)
+            }
+            ranges.append(tmp)
         }
     }
     
-   
- 
-      
+    override func createBoard(){
+        addSubview(leftView)
+        leftView.snp.makeConstraints { make in
+            make.left.equalTo(keyIndent1)
+            make.top.equalTo(keyHeight + keyTopMargin + keyVerGap)
+            make.width.equalTo(keyUnitWidth * 2)
+            make.bottom.equalTo(-(4 + keyHeight + keyVerGap))
+        }
+        for i in 0..<keys.count{
+            for j in 0..<keys[i].count{
+                let k = keys[i][j]
+                let keyLayer = CAShapeLayer()
+                keyLayer.fillColor = k.fillColor.cgColor
+                let path = UIBezierPath(roundedRect: k.position, cornerRadius: 5)
+                keyLayer.path = path.cgPath
+                keys[i][j].keyLayer = keyLayer
+                layer.addSublayer(keyLayer)
+                
+                // shadowlayer
+                let shadowLayer = CAShapeLayer()
+                let shadowRect = CGRect(x: k.position.origin.x, y: k.position.maxY - 10, width: k.position.width, height: 11)
+                shadowLayer.fillColor = cKeyShadowColor.cgColor
+                shadowLayer.path = UIBezierPath(roundedRect: shadowRect, cornerRadius: 5).cgPath
+                layer.insertSublayer(shadowLayer, below: keyLayer)
+                
+                // imageLayer
+                
+                if !k.image.isEmpty {
+                    let img = UIImage.themeImg(k.image)
+                    let imgLayer = CALayer()
+                    imgLayer.frame = k.position.centerRect(w: img.size.width * KBScale, h: img.size.height * KBScale)
+                    imgLayer.contents = img.cgImage
+                    keys[i][j].imgLayer = imgLayer
+                    layer.addSublayer(imgLayer)
+                }
+                
+                if !k.text.isEmpty {
+                    let lbl = UILabel()
+                    lbl.text = k.text
+                    lbl.font = UIFont(name: "PingFangSC-Regular", size: 18 * KBScale)
+                    let txtSize = lbl.sizeThatFits(CGSize(width: 100, height: 26))
+                    let txtLayer = CATextLayer()
+                    txtLayer.frame = k.position.centerRect(w: txtSize.width, h: txtSize.height)
+                    txtLayer.foregroundColor = k.textColor.cgColor
+                    txtLayer.string = k.text
+                    txtLayer.contentsScale = UIScreen.main.scale
+                    txtLayer.font = CGFont("PingFangSC-Regular" as CFString)
+                    txtLayer.fontSize = 18 * KBScale
+                    keys[i][j].textLayer = txtLayer
+                    layer.addSublayer(txtLayer)
+                }
+            }
+        }
+    }
     
+    func createGesture(){
+        isUserInteractionEnabled = true
+        isMultipleTouchEnabled = true
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(panGes(ges:)))
+        addGestureRecognizer(pan)
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGes(ges:)))
+        longPress.minimumPressDuration = 0.4
+        addGestureRecognizer(longPress)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func keyPress(key:KeyInfo){
-        print("你点了\(key.clickText)")
         delegate?.keyPress(key: key)
     }
     
@@ -64,716 +272,78 @@ class NumKeyboardView: Keyboard {
         delegate?.keyLongPress(key: key, state: state)
     }
     
-    override func updateReturnKey(key: KeyInfo) {
-        bottomView.updateReturnKey(newKey: key)
-    }
-    
-
-    
-    lazy var leftView:NumberKeyLeftView = {
-       let v = NumberKeyLeftView(keys: ["=","+","-","x","÷","*","/","%","(",")","￥","$","#"])
-       return v
-    }()
-    
-    lazy var centerView: NumberKeyCenterView = {
-        
-        let xScale = (kSCREEN_WIDTH - 32) / 343.0
-        let itemWidth = 77 * xScale
-        let itemheight : CGFloat = 47
-        var sepKey = KeyInfo()
-        sepKey.position = CGRect(x: 3, y: 5, width: itemWidth, height: itemheight)
-        sepKey.text = "1"
-        sepKey.fillColor = UIColor.white
-        sepKey.keyType = .normal(.character)
-        sepKey.textColor = kColor222222
-        
-        var aKey = KeyInfo()
-        aKey.position = CGRect(x: sepKey.position.maxX + 6, y: 5, width: itemWidth, height: itemheight)
-        aKey.text = "2"
-        aKey.fillColor = UIColor.white
-        aKey.keyType = .normal(.character)
-        aKey.textColor = kColor222222
-        
-        var dKey = KeyInfo()
-        dKey.position = CGRect(x: aKey.position.maxX + 6, y: 5, width: itemWidth, height: itemheight)
-        dKey.text = "3"
-        dKey.fillColor = UIColor.white
-        dKey.keyType = .normal(.character)
-        dKey.textColor = kColor222222
-        
-        var gKey = KeyInfo()
-        gKey.position = CGRect(x: 3, y: sepKey.position.maxY + 6, width: itemWidth, height: itemheight)
-        gKey.text = "4"
-        gKey.fillColor = UIColor.white
-        gKey.keyType = .normal(.character)
-        gKey.textColor = kColor222222
-        
-        var jKey = KeyInfo()
-        jKey.position = CGRect(x: gKey.position.maxX + 6, y: sepKey.position.maxY + 6, width: itemWidth, height: itemheight)
-        jKey.text = "5"
-        jKey.fillColor = UIColor.white
-        jKey.keyType = .normal(.character)
-        jKey.textColor = kColor222222
-        
-        var mKey = KeyInfo()
-        mKey.position = CGRect(x: jKey.position.maxX + 6, y: sepKey.position.maxY + 6, width: itemWidth, height: itemheight)
-        mKey.text = "6"
-        mKey.fillColor = UIColor.white
-        mKey.keyType = .normal(.character)
-        mKey.textColor = kColor222222
-        
-        var pKey = KeyInfo()
-        pKey.position = CGRect(x: 3, y: gKey.position.maxY + 6, width: itemWidth, height: itemheight)
-        pKey.text = "7"
-        pKey.fillColor = UIColor.white
-        pKey.keyType = .normal(.character)
-        pKey.textColor = kColor222222
-        
-        var tKey = KeyInfo()
-        tKey.position = CGRect(x: pKey.position.maxX + 6, y: gKey.position.maxY + 6, width: itemWidth, height: itemheight)
-        tKey.text = "8"
-        tKey.fillColor = UIColor.white
-        tKey.keyType = .normal(.character)
-        tKey.textColor = kColor222222
-        
-        var wKey = KeyInfo()
-        wKey.position = CGRect(x: tKey.position.maxX + 6, y: gKey.position.maxY + 6, width: itemWidth, height: itemheight)
-        wKey.text = "9"
-        wKey.fillColor = UIColor.white
-        wKey.keyType = .normal(.character)
-        wKey.textColor = kColor222222
-        
-        let v = NumberKeyCenterView(keys: [sepKey,aKey,dKey,gKey,jKey,mKey,pKey,tKey,wKey])
-        return v
-    }()
-    
-    lazy var bottomView:NumberKeyBottomView = {
-        let xScale = (kSCREEN_WIDTH - 38) / 337.0
-//        var emojiKey = KeyInfo()
-//        emojiKey.image = "icon_keyboard_emoji"
-//        emojiKey.fillColor = kColorb3b7bC
-//        emojiKey.position = CGRect(x: 4, y: 3, width: 38 * xScale, height: 47)
-//        emojiKey.keyType = .switchKeyboard(.emoji)
-        var symbleKey = KeyInfo()
-        symbleKey.text = "符"
-        symbleKey.textColor = kColor222222
-        symbleKey.fillColor = kColorb3b7bC
-        symbleKey.position = CGRect(x: 4, y: 3, width: 56 * xScale, height: 47)
-        symbleKey.keyType = .switchKeyboard(.symbleChiese)
-        
-        var backKey = KeyInfo()
-        backKey.text = "返回"
-        backKey.textColor = kColor222222
-        backKey.fillColor = kColorb3b7bC
-        backKey.position = CGRect(x: symbleKey.position.maxX + 6, y: 3, width: 56 * xScale, height: 47)
-        backKey.keyType = .backKeyboard
-        
-        var zeroKey = KeyInfo()
-        zeroKey.text = "0"
-        zeroKey.textColor = kColor222222
-        zeroKey.fillColor = UIColor.white
-        zeroKey.position = CGRect(x: backKey.position.maxX + 6, y: 3, width: 77 * xScale, height: 47)
-        zeroKey.keyType = .normal(.character)
-        
-        var spaceKey = KeyInfo()
-        spaceKey.image = "icon_space_black"
-        spaceKey.fillColor = UIColor.white
-        spaceKey.position = CGRect(x: zeroKey.position.maxX + 6, y: 3, width: 98 * xScale, height: 47)
-        spaceKey.keyType = .space
-        
-        
-        var enterKey = ReturnKey
-        enterKey.position = CGRect(x: spaceKey.position.maxX + 6, y: 3, width: 56 * xScale, height: 47)
-        let v = NumberKeyBottomView(keys: [symbleKey,backKey,zeroKey,spaceKey,enterKey])
-        return v
-    }()
-    
-    lazy var rightView: NumberKeyRightView = {
-        let xScale = (kSCREEN_WIDTH - 32) / 343.0
-        var delKey = KeyInfo()
-        delKey.position = CGRect(x: 3, y: 5, width: 56 * xScale, height: 47)
-        delKey.image = "icon_delete_white"
-        delKey.fillColor = kColorb3b7bC
-        delKey.keyType = .del
-        
-        var pointKey = KeyInfo()
-        pointKey.position = CGRect(x: 3, y: delKey.position.maxY + 6, width: 56 * xScale, height: 47)
-        pointKey.text = "."
-        pointKey.fillColor = kColorb3b7bC
-        pointKey.textColor = kColor222222
-        pointKey.keyType = .normal(.character)
-        
-        var atKey = KeyInfo()
-        atKey.position = CGRect(x: 3, y: pointKey.position.maxY + 6, width: 56 * xScale, height: 47)
-        atKey.text = "@"
-        atKey.fillColor = kColorb3b7bC
-        atKey.textColor = kColor222222
-        atKey.keyType = .normal(.character)
-        let v = NumberKeyRightView(keys: [delKey,pointKey,atKey])
-        return v
-    }()
-}
-
-class NumberKeyLeftView:UIView, UITableViewDataSource,UITableViewDelegate{
-    
-    var keyType:KeyType = .symble
-    var keys = [String]()
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return keys.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NumberCell", for: indexPath) as! LeftToolViewCell
-        cell.lblText.text = keys[indexPath.row]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        if let keyboard = superview as? NumKeyboardView{
-            var key = KeyInfo()
-            key.keyType = .normal(.character)
-            key.text = keys[indexPath.row]
-            keyboard.keyPress(key: key)
-            Shake.keyShake()
+    override func updateStatus(_ status: BoardStatus) {
+        if status != boardStatus{
+            boardStatus =  status
+            updateReturnKey(key: ReturnKey)
         }
     }
     
-    fileprivate override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    convenience init(keys:[String]) {
-        self.init(frame: CGRect.zero)
-        let xScale = (kSCREEN_WIDTH - 32) / 343.0
-        let shadowLayer = CAShapeLayer()
-        let shadowRect = CGRect(x: 4, y: 150, width: 56.0 * xScale, height: 9)
-        shadowLayer.fillColor = kColor898a8d.cgColor
-        shadowLayer.path = UIBezierPath(roundedRect: shadowRect, cornerRadius: 5).cgPath
-        layer.addSublayer(shadowLayer)
+    func updateReturnKey(key: KeyInfo) {
+        let i = keys.count - 1
+        let j = keys[i].count - 1
+        keys[i][j].keyLayer?.removeFromSuperlayer()
+        keys[i][j].keyLayer = nil
+        keys[i][j].imgLayer?.removeFromSuperlayer()
+        keys[i][j].imgLayer = nil
+        keys[i][j].textLayer?.removeFromSuperlayer()
+        keys[i][j].textLayer = nil
+        var tmpKey = key
+        tmpKey.position = keys[i][j].position
         
-        self.keys = keys
-        addSubview(tb)
-        tb.snp.makeConstraints { make in
-            make.left.equalTo(4)
-            make.top.equalTo(5)
-            make.right.equalTo(-3)
-            make.bottom.equalTo(-3)
-        }
-        tb.layer.cornerRadius = 5
-        tb.clipsToBounds = true
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    lazy var tb: UITableView = {
-        let v = UITableView()
-        v.tableFooterView = UIView()
-        v.showsVerticalScrollIndicator = false
-        v.showsHorizontalScrollIndicator = false
-        v.separatorInset = UIEdgeInsets(top: 10, left: 5, bottom: 5, right: 5)
-        v.delegate = self
-        v.dataSource = self
-        v.rowHeight = 35
-        v.separatorStyle = .none
-        v.backgroundColor = kColorb3b7bC
-        v.register(LeftToolViewCell.self, forCellReuseIdentifier: "NumberCell")
-        return v
-    }()
-}
-
-
-class NumberKeyCenterView:UIView,UIGestureRecognizerDelegate{
-    var keys:[KeyInfo]!
-    var pressedKey = [Int]()
-    var panPoint:CGPoint?
-    var pressLayer:CAShapeLayer?
-    fileprivate override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    convenience init(keys:[KeyInfo]) {
-        self.init(frame: .zero)
-        self.keys = keys
-        isMultipleTouchEnabled = true
-        updateKeys()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
- 
-    func updateKeys(){
-        for  item in keys.enumerated(){
-            
-            //key layer
-            let keyLayer = CAShapeLayer()
-            keyLayer.fillColor = item.element.fillColor.cgColor
-            let path = UIBezierPath(roundedRect: item.element.position, cornerRadius: 5)
-            keyLayer.path = path.cgPath
-            keys[item.offset].keyLayer = keyLayer
-            layer.addSublayer(keyLayer)
-            
-            //shadowlayer
-            let shadowLayer = CAShapeLayer()
-            let shadowRect = CGRect(x: item.element.position.origin.x, y: item.element.position.maxY - 10, width: item.element.position.width, height: 11)
-            shadowLayer.fillColor = kColor898a8d.cgColor
-            shadowLayer.path = UIBezierPath(roundedRect: shadowRect, cornerRadius: 5).cgPath
-            layer.insertSublayer(shadowLayer, below: keyLayer)
-
-            
-            if !item.element.text.isEmpty{
-                let lbl = UILabel()
-                lbl.text = item.element.text
-                lbl.font = UIFont(name: "PingFangSC-Regular", size: 22)
-                let txtSize = lbl.sizeThatFits(CGSize(width: 100, height: 26))
-                let txtLayer = CATextLayer()
-                txtLayer.frame = item.element.position.centerRect(w: txtSize.width, h: txtSize.height)
-                txtLayer.foregroundColor = item.element.textColor.cgColor
-                txtLayer.string = item.element.text
-                txtLayer.contentsScale = UIScreen.main.scale
-                txtLayer.font = CGFont.init("PingFangSC-Regular" as CFString)
-                txtLayer.fontSize = 22
-                keys[item.offset].textLayer = txtLayer
-                layer.addSublayer(txtLayer)
-                
-                let tipLayer = CATextLayer()
-                tipLayer.frame = item.element.position.centerRect(w: 6, h: 12).offsetBy(dx: 0, dy: -16)
-                tipLayer.foregroundColor = kColorbbbbbb.cgColor
-                tipLayer.string = item.element.tip
-                tipLayer.contentsScale = UIScreen.main.scale
-                tipLayer.font = CGFont.init("PingFangSC-Regular" as CFString)
-                tipLayer.fontSize = 10
-                layer.addSublayer(tipLayer)
-                
-            }
-        }
-    }
-    
-   
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touchesBegan")
-        if panPoint != nil{
-            return
-        }
-        if let point = touches.first?.location(in: self){
-            for item in positions.enumerated(){
-                if item.element.large(w: 3, h: 3).contains(point){
-                    pressedKey.append(item.offset)
-                    let pressKey = keys[item.offset]
-                    if pressLayer == nil{
-                        pressLayer = CAShapeLayer()
-                    } else {
-                        pressLayer?.removeFromSuperlayer()
-                    }
-                    pressLayer?.fillColor = kColora9abb0.cgColor
-                    let path = UIBezierPath(roundedRect: pressKey.position, cornerRadius: 5)
-                    pressLayer?.path = path.cgPath
-                    layer.insertSublayer(pressLayer!, above: pressKey.keyLayer)
-                    break
-                }
-            }
-        }
-    }
-
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if panPoint != nil{
-            return
-        }
-        if !pressedKey.isEmpty{
-            var index = -1
-            let point = touches.first!.location(in: self)
-            if let keyboard = superview as? NumKeyboardView{
-                
-                for item in pressedKey.enumerated(){
-                    if keys[item.element].position.large(w: 3, h: 3).contains(point){
-                        keyboard.keyPress(key: keys[item.element])
-                        Shake.keyShake()
-                        index = item.offset
-                        break
-                    }
-                }
-            }
-            pressLayer?.removeFromSuperlayer()
-            pressLayer = nil
-            if index >= 0{
-                pressedKey.remove(at: index)
-            }
-        }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if panPoint != nil{
-            return
-        }
-        if !pressedKey.isEmpty{
-            var index = -1
-            let point = touches.first!.location(in: self)
-            for item in pressedKey.enumerated(){
-                if keys[item.element].position.large(w: 3, h: 3).contains(point){
-                    index = item.offset
-                    break
-                }
-            }
-            pressLayer?.removeFromSuperlayer()
-            pressLayer = nil
-            if index >= 0{
-                pressedKey.remove(at: index)
-            }
-        }
-    }
-    
-    
-    var positions : [CGRect]{
-        return keys.map { k in
-            return k.position
-        }
-    }
-}
-
-class NumberKeyRightView:UIView,UIGestureRecognizerDelegate{
-    var keys:[KeyInfo]!
-    var pressedKey:KeyInfo?
-    var pressLayer:CAShapeLayer?
-    var isGestured = false
-    fileprivate override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    convenience init(keys:[KeyInfo]) {
-        self.init(frame: .zero)
-        self.keys = keys
-        self.updateKeys()
-        let press = UILongPressGestureRecognizer(target: self, action: #selector(longPressGes(ges:)))
-        press.minimumPressDuration = 0.4
-        self.isUserInteractionEnabled = true
-        press.delegate = self
-        self.addGestureRecognizer(press)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
-    func updateKeys(){
-        for  item in keys.enumerated(){
-            //key layer
-            let keyLayer = CAShapeLayer()
-            keyLayer.fillColor = item.element.fillColor.cgColor
-            let path = UIBezierPath(roundedRect: item.element.position, cornerRadius: 5)
-            keyLayer.path = path.cgPath
-            keys[item.offset].keyLayer = keyLayer
-            layer.addSublayer(keyLayer)
-            
-            //shadowlayer
-            let shadowLayer = CAShapeLayer()
-            let shadowRect = CGRect(x: item.element.position.origin.x, y: item.element.position.maxY - 10, width: item.element.position.width, height: 11)
-            shadowLayer.fillColor = kColor898a8d.cgColor
-            shadowLayer.path = UIBezierPath(roundedRect: shadowRect, cornerRadius: 5).cgPath
-            layer.insertSublayer(shadowLayer, below: keyLayer)
-
-            //imageLayer
-            
-            if !item.element.image.isEmpty{
-                let img = UIImage.yh_imageNamed(item.element.image)!
-                let imgLayer = CALayer()
-                imgLayer.frame = item.element.position.centerRect(w: img.size.width, h: img.size.height)
-                imgLayer.contents = img.cgImage
-                keys[item.offset].imgLayer = imgLayer
-                layer.addSublayer(imgLayer)
-            }
-            
-            if !item.element.text.isEmpty{
-                let lbl = UILabel()
-                lbl.text = item.element.text
-                lbl.font = UIFont(name: "PingFangSC-Regular", size: 18)
-                let txtSize = lbl.sizeThatFits(CGSize(width: 100, height: 26))
-                let txtLayer = CATextLayer()
-                txtLayer.frame = item.element.position.centerRect(w: txtSize.width, h: txtSize.height)
-                txtLayer.foregroundColor = item.element.textColor.cgColor
-                txtLayer.string = item.element.text
-                txtLayer.contentsScale = UIScreen.main.scale
-                txtLayer.font = CGFont.init("PingFangSC-Regular" as CFString)
-                txtLayer.fontSize = 18
-                keys[item.offset].textLayer = txtLayer
-                layer.addSublayer(txtLayer)
-            }
-        }
-    }
-    
-    @objc func longPressGes(ges:UILongPressGestureRecognizer){
-        switch ges.state{
-        case .began:
-            isGestured = true
-            if  pressedKey != nil {
-                if pressedKey!.keyType == .del{
-                    (superview as! Keyboard).keyLongPress(key: pressedKey!, state: ges.state)
-                    Shake.keyShake()
-                }
-                return
-            }
-        case .ended,.cancelled:
-            if pressedKey != nil {
-                if pressedKey!.keyType == .del{
-                    (superview as! Keyboard).keyLongPress(key: pressedKey!, state: ges.state)
-                    pressedKey?.imgLayer?.contents = UIImage.yh_imageNamed("icon_delete_white").cgImage
-                }
-                pressLayer?.removeFromSuperlayer()
-                pressLayer = nil
-                pressedKey = nil
-            }
-            isGestured = false
-        default:
-            break
-        }
-    }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if touch.phase == .began{
-            if isGestured{
-                return true
-            }
-            let point = touch.location(in: self)
-            for item in positions.enumerated(){
-                if item.element.contains(point){
-                    pressedKey = keys[item.offset]
-                    if pressedKey!.keyType == .del{
-                        pressedKey?.imgLayer?.contents = UIImage.yh_imageNamed("icon_delete_black").cgImage
-                    }
-                    if pressLayer == nil{
-                        pressLayer = CAShapeLayer()
-                    } else {
-                        pressLayer?.removeFromSuperlayer()
-                    }
-                    pressLayer?.fillColor = kColora9abb0.cgColor
-                    let path = UIBezierPath(roundedRect: pressedKey!.position, cornerRadius: 5)
-                    pressLayer?.path = path.cgPath
-                    layer.insertSublayer(pressLayer!, above: pressedKey!.keyLayer)
-                    break
-                }
-            }
-        }
-        return true
-    }
-    
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if isGestured{
-            return
-        }
-        if pressedKey != nil{
-            if pressedKey!.keyType == .del{
-                pressedKey?.imgLayer?.contents = UIImage.yh_imageNamed("icon_delete_white").cgImage
-            }
-            if let keyboard = superview as? NumKeyboardView{
-                keyboard.keyPress(key: pressedKey!)
-                Shake.keyShake()
-            }
-            pressLayer?.removeFromSuperlayer()
-            pressLayer = nil
-            pressedKey = nil
-        }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if isGestured{
-            return
-        }
-        if pressedKey != nil{
-            if pressedKey!.keyType == .del{
-                pressedKey?.imgLayer?.contents = UIImage.yh_imageNamed("icon_delete_white").cgImage
-            }
-            pressLayer?.removeFromSuperlayer()
-            pressLayer = nil
-            pressedKey = nil
-        }
-    }
-    
-    
-    var positions : [CGRect]{
-        return keys.map { k in
-            return k.position
-        }
-    }
-}
-
-class NumberKeyBottomView:UIView{
-    
-    var keys:[KeyInfo]!
-    var pressedKey:KeyInfo?
-    var pressLayer:CAShapeLayer?
-    fileprivate override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    convenience init(keys:[KeyInfo]) {
-        self.init(frame: .zero)
-        self.keys = keys
-        self.updateKeys()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func updateReturnKey(newKey:KeyInfo){
-        let index = keys.count - 1
-        keys[index].keyLayer?.removeFromSuperlayer()
-        keys[index].imgLayer?.removeFromSuperlayer()
-        var tmpKey = newKey
-        tmpKey.position = keys.last!.position
-        
-        keys[index] = tmpKey
+        keys[i][j] = tmpKey
         
         let keyLayer = CAShapeLayer()
         keyLayer.fillColor = tmpKey.fillColor.cgColor
         let path = UIBezierPath(roundedRect: tmpKey.position, cornerRadius: 5)
         keyLayer.path = path.cgPath
-        keys[index].keyLayer = keyLayer
+        keys[i][j].keyLayer = keyLayer
         layer.addSublayer(keyLayer)
         
-        //shadowlayer
-        let shadowLayer = CAShapeLayer()
-        let shadowRect = CGRect(x: tmpKey.position.origin.x, y: tmpKey.position.maxY - 10, width: tmpKey.position.width, height: 11)
-        shadowLayer.fillColor = kColor898a8d.cgColor
-        shadowLayer.path = UIBezierPath(roundedRect: shadowRect, cornerRadius: 5).cgPath
-        layer.insertSublayer(shadowLayer, below: keyLayer)
-        
         if !tmpKey.image.isEmpty{
-            let img = UIImage.yh_imageNamed(tmpKey.image)!
+            let img =  UIImage.themeImg(tmpKey.image, origin: true)
             let imgLayer = CALayer()
-            imgLayer.frame = tmpKey.position.centerRect(w: img.size.width, h: img.size.height)
+            imgLayer.frame = tmpKey.position.centerRect(w: img.size.width * KBScale, h: img.size.height * KBScale)
             imgLayer.contents = img.cgImage
-            keys[index].imgLayer = imgLayer
+            keys[i][j].imgLayer = imgLayer
             layer.addSublayer(imgLayer)
         }
         
         if !tmpKey.text.isEmpty{
             let lbl = UILabel()
             lbl.text = tmpKey.text
-            lbl.font = UIFont(name: "PingFangSC-Regular", size: 18)
+            lbl.font = UIFont(name: "PingFangSC-Regular", size: 18 * KBScale)
             let txtSize = lbl.sizeThatFits(CGSize(width: 100, height: 26))
             let txtLayer = CATextLayer()
-            txtLayer.frame = tmpKey.position.centerRect(w: txtSize.width, h: txtSize.height).offsetBy(dx: 0, dy: 3)
+            txtLayer.frame = tmpKey.position.centerRect(w: txtSize.width, h: txtSize.height)
             txtLayer.foregroundColor = tmpKey.textColor.cgColor
             txtLayer.string = tmpKey.text
             txtLayer.contentsScale = UIScreen.main.scale
             txtLayer.font = CGFont.init("PingFangSC-Regular" as CFString)
-            txtLayer.fontSize = 18
-            keys[index].textLayer = txtLayer
+            txtLayer.fontSize = 18 * KBScale
+            keys[i][j].textLayer = txtLayer
             layer.addSublayer(txtLayer)
         }
     }
     
+    lazy var leftView:NineKeyLeftView = {
+       let v = NineKeyLeftView(keys: ["=","+","-","x","÷","*","/","%","(",")","￥","$","#"])
+       return v
+    }()
     
-    func updateKeys(){
-        for  item in keys.enumerated(){
-            //key layer
-            let keyLayer = CAShapeLayer()
-            keyLayer.fillColor = item.element.fillColor.cgColor
-            let path = UIBezierPath(roundedRect: item.element.position, cornerRadius: 5)
-            keyLayer.path = path.cgPath
-            keys[item.offset].keyLayer = keyLayer
-            layer.addSublayer(keyLayer)
-            
-            //shadowlayer
-            let shadowLayer = CAShapeLayer()
-            let shadowRect = CGRect(x: item.element.position.origin.x, y: item.element.position.maxY - 10, width: item.element.position.width, height: 11)
-            shadowLayer.fillColor = kColor898a8d.cgColor
-            shadowLayer.path = UIBezierPath(roundedRect: shadowRect, cornerRadius: 5).cgPath
-            layer.insertSublayer(shadowLayer, below: keyLayer)
-
-            //imageLayer
-            
-            if !item.element.image.isEmpty{
-                let img = UIImage.yh_imageNamed(item.element.image)!
-                let imgLayer = CALayer()
-                imgLayer.frame = item.element.position.centerRect(w: img.size.width, h: img.size.height)
-                imgLayer.contents = img.cgImage
-                keys[item.offset].imgLayer = imgLayer
-                layer.addSublayer(imgLayer)
-            }
-            
-            if !item.element.text.isEmpty{
-                let lbl = UILabel()
-                lbl.text = item.element.text
-                lbl.font = UIFont(name: "PingFangSC-Regular", size: 18)
-                let txtSize = lbl.sizeThatFits(CGSize(width: 100, height: 26))
-                let txtLayer = CATextLayer()
-                txtLayer.frame = item.element.position.centerRect(w: txtSize.width, h: txtSize.height)
-                txtLayer.foregroundColor = item.element.textColor.cgColor
-                txtLayer.string = item.element.text
-                txtLayer.contentsScale = UIScreen.main.scale
-                txtLayer.font = CGFont.init("PingFangSC-Regular" as CFString)
-                txtLayer.fontSize = 18
-                keys[item.offset].textLayer = txtLayer
-                layer.addSublayer(txtLayer)
-            }
+    
+    lazy var popKeyView: PopKeyView = {
+        var width = 79.5
+        if kSCREEN_WIDTH == 414{
+            width = 80
+        } else if kSCREEN_WIDTH == 428{
+            width = 80.5
         }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let point = touches.first?.location(in: self){
-            for item in positions.enumerated(){
-                if item.element.contains(point){
-                    pressedKey = keys[item.offset]
-                    if pressedKey!.keyType.isReturnKey &&  !pressedKey!.isEnable{
-                        return
-                    }
-                    if pressLayer == nil{
-                        pressLayer = CAShapeLayer()
-                    } else {
-                        pressLayer?.removeFromSuperlayer()
-                    }
-                    if pressedKey!.keyType == .returnKey(.usable){
-                        pressLayer?.fillColor = kColor3a9a52.cgColor
-                    } else {
-                        pressLayer?.fillColor = kColora6a6a6.cgColor
-                    }
-                    let path = UIBezierPath(roundedRect: pressedKey!.position, cornerRadius: 5)
-                    pressLayer?.path = path.cgPath
-                    layer.insertSublayer(pressLayer!, above: pressedKey!.keyLayer)
-                    break
-                }
-            }
-        }
-    }
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if pressedKey != nil{
-            if let keyboard = superview as? NumKeyboardView{
-                if pressedKey!.keyType.isReturnKey &&  !pressedKey!.isEnable{
-                    return
-                }
-                keyboard.keyPress(key: pressedKey!)
-                Shake.keyShake()
-            }
-            pressLayer?.removeFromSuperlayer()
-            pressLayer = nil
-            pressedKey = nil
-        }
-    }
-    
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if pressedKey != nil{
-            pressLayer?.removeFromSuperlayer()
-            pressLayer = nil
-            pressedKey = nil
-        }
-    }
-    
-    
-    var positions : [CGRect]{
-        return keys.map { k in
-            return k.position
-        }
-    }
+        let v = PopKeyView(frame: CGRect(x: 0, y: 0, width: width * KBScale, height: 95 * KBScale))
+        v.isHidden = true
+        return v
+    }()
 }
+
+
+

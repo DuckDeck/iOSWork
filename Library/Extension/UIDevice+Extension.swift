@@ -14,6 +14,12 @@ extension UIDevice{
         return abs(max(width, height) / min(width, height) - 896 / 414.0) < 0.01 || abs(max(width, height) / min(width, height) - 812 / 375.0) < 0.01
     }
     
+    static var orientation:UIDeviceOrientation{
+        if UIScreen.main.bounds.size.width > UIScreen.main.bounds.size.height {
+            return .landscapeLeft
+        }
+        return .portrait
+    }
     
     static var modelName: String {
           var systemInfo = utsname()

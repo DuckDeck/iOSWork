@@ -28,7 +28,7 @@ class PasteboardView:KeyboardNav{
         let tb = UITableView.init()
         tb.delegate = self
         tb.dataSource = self
-        tb.separatorColor = kColorebebeb
+        tb.separatorColor = Colors.colorEBEBEB
         tb.tableFooterView = UIView()
         tb.estimatedRowHeight = 32
         tb.showsVerticalScrollIndicator = false

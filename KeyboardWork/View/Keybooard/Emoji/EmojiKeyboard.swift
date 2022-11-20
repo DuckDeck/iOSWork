@@ -37,7 +37,7 @@ class EmojiKeyboard:Keyboard{
             let btn = UIButton()
             btn.tag = item.offset
             if item.offset == 0{
-                btn.setTitleColor(kColor222222, for: .normal)
+                btn.setTitleColor(Colors.color222222, for: .normal)
                 btn.setTitle(item.element, for: .normal)
                 btn.titleLabel?.font = UIFont.pingfangMedium(size: 15)
             } else if item.offset == 11{
@@ -108,7 +108,7 @@ class EmojiKeyboard:Keyboard{
     
             bottomMenu.arrangedSubviews[index + 1].backgroundColor = UIColor.clear
             index = sender.tag - 1
-            sender.backgroundColor = kColordddddd
+            sender.backgroundColor = UIColor("dddddd")
             
             if index == 0{
                 self.emoji = getUsedEmoji()
@@ -169,7 +169,7 @@ class EmojiKeyboard:Keyboard{
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         let v = UICollectionView.init(frame: .zero, collectionViewLayout: layout)
-        v.backgroundColor = kColord1d5db
+        v.backgroundColor = UIColor("d1d5db")
         v.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         v.backgroundColor = UIColor.white
         v.showsVerticalScrollIndicator = false

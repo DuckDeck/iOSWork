@@ -18,28 +18,6 @@ let NavigationBarHeight:CGFloat = 64.0 + (UIDevice.isNotchScreen ? NotchStatusBa
 let StatusBarHeight:CGFloat = 0.0 + (UIDevice.isNotchScreen ? NotchStatusBarHeight : 0)
 let iPhoneBottomBarHeight:CGFloat = 0.0 + (UIDevice.isNotchScreen ? 35 : 0)
 
-
-let kColorcccccc = UIColor(hexString: "cccccc")!
-let kColora6a6a6 = UIColor(hexString: "a6a6a6")!
-let kColor3a9a52 = UIColor(hexString: "3a9a52")!
-let kColor49c167 = UIColor(hexString: "49c167")!      //主题色
-let kColor222222 = UIColor(hexString: "222222")!
-let kColor0a0a0a = UIColor(hexString: "0a0a0a")!
-let kColor888888 = UIColor(hexString: "888888")!
-let kColorb3b7bC = UIColor(hexString: "B3B7BC")!
-let kColord1d5db = UIColor(hexString: "D1D5DB")!
-let kColor5b5b5b = UIColor(hexString: "5B5B5B")!
-let kColorff5338 = UIColor(hexString: "FF5338")!
-let kColorebebeb = UIColor(hexString: "EBEBEB")!
-let kColor626266 = UIColor(hexString: "626266")!
-let kColorbbbbbb = UIColor(hexString: "BBBBBB")!
-let kColorf5f5f5 = UIColor(hexString: "F5F5F5")!
-let kColorf5fff8 = UIColor(hexString: "F5FFF8")!
-let kColor285b9a = UIColor(hexString: "285B9A")!
-let kColordddddd = UIColor(hexString: "DDDDDD")!
-let kColor898a8d = UIColor(hexString: "898a8d")!
-let kColora9abb0 = UIColor(hexString: "A9ABB0")!
-
 struct regexTool {
     let regex:NSRegularExpression?
     init(_ pattern:String){
@@ -325,15 +303,3 @@ public func hookClassMethod(cls:AnyClass,originalSelector:Selector,swizzleSelect
     method_exchangeImplementations(originalMethod!, swizzledMethod!)
     //交换 static 或者 class 方法不能使用class_addMethod，直接使用method_exchangeImplementations就行
 }
-
-
-//let kColor222222 = UIColor(hexString: "222222")!
-//let kColorb3b7bC = UIColor(hexString: "b3b7bC")!
-//let kColor0a0a0a = UIColor(hexString: "0a0a0a")!
-//let kColor3a9a52 = UIColor(hexString: "3a9a52")!
-//let kColora6a6a6 = UIColor(hexString: "a6a6a6")!
-//let kColor898a8d = UIColor(hexString: "898a8d")!
-//let kColord1d5db = UIColor(hexString: "d1d5db")!
-//let kColor888888 = UIColor(hexString: "888888")!
-//let kColorbbbbbb = UIColor(hexString: "bbbbbb")!
-//let kCOlora9abb0 = UIColor(hexString: "a9abb0")!

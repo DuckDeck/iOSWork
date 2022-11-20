@@ -61,7 +61,7 @@ class PopKeyView: UIImageView {
     lazy var lblKey: UILabel = {
         let v = UILabel()
         v.font = UIFont(name: "PingFangSC-Regular", size: 36)
-        v.textColor = kColor222222
+        v.textColor = Colors.color222222
         return v
     }()
 }

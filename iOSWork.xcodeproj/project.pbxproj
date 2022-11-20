@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		208DA91C2902E8A000218246 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 208DA91B2902E8A000218246 /* Settings.bundle */; };
+		20986CE6292A2372006C992E /* FullKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20986CE5292A2372006C992E /* FullKeyboardView+Touch.swift */; };
+		20986CEC292A239A006C992E /* NumberKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20986CEB292A239A006C992E /* NumberKeyboardView+Touch.swift */; };
+		20986CEE292A23B3006C992E /* NineKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20986CED292A23B3006C992E /* NineKeyboardView+Touch.swift */; };
+		20986CF2292A2470006C992E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20986CF1292A2470006C992E /* Colors.swift */; };
 		20A965592903C6B2007F8526 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965582903C6B2007F8526 /* UIView+Extension.swift */; };
 		20A9655A2903C6B2007F8526 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965582903C6B2007F8526 /* UIView+Extension.swift */; };
 		20A9655B2903C6B2007F8526 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965582903C6B2007F8526 /* UIView+Extension.swift */; };
@@ -998,7 +1002,6 @@
 		AEE3DB1927FC09C1007B2B58 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2C27254946007D51CD /* UIColor+Extension.swift */; };
 		AEE3DB2227FC0BF2007B2B58 /* PopKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2027FC0BF1007B2B58 /* PopKeyView.swift */; };
 		AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2127FC0BF1007B2B58 /* PopKeyChooseView.swift */; };
-		AEE3DB2827FC0C45007B2B58 /* FullRowKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2527FC0C45007B2B58 /* FullRowKeysView.swift */; };
 		AEE3DB2927FC0C45007B2B58 /* FullKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2627FC0C45007B2B58 /* FullKeyboardView.swift */; };
 		AEE3DB2A27FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2727FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift */; };
 		AEE3DB2D27FC0D2A007B2B58 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2C27FC0D2A007B2B58 /* Store.swift */; };
@@ -1019,7 +1022,6 @@
 		AEE3DB5327FC0FD8007B2B58 /* icon_switch_chinese.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB4027FC0FD8007B2B58 /* icon_switch_chinese.pdf */; };
 		AEE3DB5627FC1081007B2B58 /* icon_switch_english.pdf in Resources */ = {isa = PBXBuildFile; fileRef = AEE3DB5527FC1081007B2B58 /* icon_switch_english.pdf */; };
 		AEE3DB5927FC2FFA007B2B58 /* NineKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB5827FC2FFA007B2B58 /* NineKeyboardView.swift */; };
-		AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB5A27FC307B007B2B58 /* NumKeysView.swift */; };
 		AEE3DB5E27FC31C4007B2B58 /* NumKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB5D27FC31C4007B2B58 /* NumKeyboardView.swift */; };
 		AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */; };
 		AEE3DB6427FC3DAC007B2B58 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB6327FC3DAC007B2B58 /* HeaderView.swift */; };
@@ -1134,6 +1136,10 @@
 /* Begin PBXFileReference section */
 		03D9AD4D8B41C508210EEC7F /* Pods-KeyboardWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardWork.release.xcconfig"; path = "Target Support Files/Pods-KeyboardWork/Pods-KeyboardWork.release.xcconfig"; sourceTree = "<group>"; };
 		208DA91B2902E8A000218246 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		20986CE5292A2372006C992E /* FullKeyboardView+Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+Touch.swift"; sourceTree = "<group>"; };
+		20986CEB292A239A006C992E /* NumberKeyboardView+Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberKeyboardView+Touch.swift"; sourceTree = "<group>"; };
+		20986CED292A23B3006C992E /* NineKeyboardView+Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NineKeyboardView+Touch.swift"; sourceTree = "<group>"; };
+		20986CF1292A2470006C992E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		20A965582903C6B2007F8526 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		20A9655C2903C794007F8526 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		20A965612903C7EC007F8526 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -1853,7 +1859,6 @@
 		AEE3DB1627FC0960007B2B58 /* KeyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyInfo.swift; sourceTree = "<group>"; };
 		AEE3DB2027FC0BF1007B2B58 /* PopKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopKeyView.swift; sourceTree = "<group>"; };
 		AEE3DB2127FC0BF1007B2B58 /* PopKeyChooseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopKeyChooseView.swift; sourceTree = "<group>"; };
-		AEE3DB2527FC0C45007B2B58 /* FullRowKeysView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullRowKeysView.swift; sourceTree = "<group>"; };
 		AEE3DB2627FC0C45007B2B58 /* FullKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullKeyboardView.swift; sourceTree = "<group>"; };
 		AEE3DB2727FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+KeyInfo.swift"; sourceTree = "<group>"; };
 		AEE3DB2C27FC0D2A007B2B58 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -1874,7 +1879,6 @@
 		AEE3DB4027FC0FD8007B2B58 /* icon_switch_chinese.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_switch_chinese.pdf; sourceTree = "<group>"; };
 		AEE3DB5527FC1081007B2B58 /* icon_switch_english.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = icon_switch_english.pdf; sourceTree = "<group>"; };
 		AEE3DB5827FC2FFA007B2B58 /* NineKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineKeyboardView.swift; sourceTree = "<group>"; };
-		AEE3DB5A27FC307B007B2B58 /* NumKeysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumKeysView.swift; sourceTree = "<group>"; };
 		AEE3DB5D27FC31C4007B2B58 /* NumKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumKeyboardView.swift; sourceTree = "<group>"; };
 		AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		AEE3DB6327FC3DAC007B2B58 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -3839,7 +3843,7 @@
 			children = (
 				AEE3DB2627FC0C45007B2B58 /* FullKeyboardView.swift */,
 				AEE3DB2727FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift */,
-				AEE3DB2527FC0C45007B2B58 /* FullRowKeysView.swift */,
+				20986CE5292A2372006C992E /* FullKeyboardView+Touch.swift */,
 			);
 			path = 26Key;
 			sourceTree = "<group>";
@@ -3854,6 +3858,7 @@
 				AEF6CB40287A7CB200352100 /* Theme.swift */,
 				AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */,
 				20A965662903C934007F8526 /* Log.swift */,
+				20986CF1292A2470006C992E /* Colors.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -3872,7 +3877,7 @@
 			isa = PBXGroup;
 			children = (
 				AEE3DB5827FC2FFA007B2B58 /* NineKeyboardView.swift */,
-				AEE3DB5A27FC307B007B2B58 /* NumKeysView.swift */,
+				20986CED292A23B3006C992E /* NineKeyboardView+Touch.swift */,
 			);
 			path = 9Key;
 			sourceTree = "<group>";
@@ -3881,6 +3886,7 @@
 			isa = PBXGroup;
 			children = (
 				AEE3DB5D27FC31C4007B2B58 /* NumKeyboardView.swift */,
+				20986CEB292A239A006C992E /* NumberKeyboardView+Touch.swift */,
 			);
 			path = NumKey;
 			sourceTree = "<group>";
@@ -5190,6 +5196,7 @@
 				20A9656D2903CA4A007F8526 /* HttpClient.swift in Sources */,
 				20B65A5328FC297900341DB9 /* UIButton+Extension.swift in Sources */,
 				20B65A4928FC26BB00341DB9 /* PanCollectionView.swift in Sources */,
+				20986CEE292A23B3006C992E /* NineKeyboardView+Touch.swift in Sources */,
 				AEB517EA2826799200F2FA1D /* LayoutButton.swift in Sources */,
 				AEE3DB5E27FC31C4007B2B58 /* NumKeyboardView.swift in Sources */,
 				20B659CE28FC224A00341DB9 /* ColorStyle.swift in Sources */,
@@ -5217,16 +5224,15 @@
 				20A965742903D145007F8526 /* UIImage+Base.swift in Sources */,
 				AEE3DB1727FC0960007B2B58 /* KeyboardInfo.swift in Sources */,
 				AEC9916B287442C4002879A0 /* HUD.swift in Sources */,
-				AEE3DB2827FC0C45007B2B58 /* FullRowKeysView.swift in Sources */,
 				AE1A22EB2876D37100A5C18B /* PasteboardView.swift in Sources */,
 				AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */,
-				AEE3DB5B27FC307B007B2B58 /* NumKeysView.swift in Sources */,
 				AE12889928210F590049A5E4 /* Global.swift in Sources */,
 				20A965822903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
 				AE128882281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE128866281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				20B65A3328FC227A00341DB9 /* WGInputAssociateWraper.mm in Sources */,
 				AEE3DB1827FC0960007B2B58 /* KeyInfo.swift in Sources */,
+				20986CF2292A2470006C992E /* Colors.swift in Sources */,
 				AE12887A281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				20B65A2D28FC227A00341DB9 /* SqlRecord.cpp in Sources */,
 				AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */,
@@ -5243,6 +5249,7 @@
 				AEF8665D274B7023002E33E5 /* Foundation+Extension.swift in Sources */,
 				20B65A3C28FC249200341DB9 /* UIFont+Extension.swift in Sources */,
 				20B65A2E28FC227A00341DB9 /* SqlDatabase.cpp in Sources */,
+				20986CE6292A2372006C992E /* FullKeyboardView+Touch.swift in Sources */,
 				AE12886E281CED0A0049A5E4 /* expression-combining.swift in Sources */,
 				AE128892281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AEE3DB2A27FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift in Sources */,
@@ -5261,6 +5268,7 @@
 				AE128876281CED0A0049A5E4 /* calculator.swift in Sources */,
 				20A965642903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
 				AE128862281CED0A0049A5E4 /* glyph.swift in Sources */,
+				20986CEC292A239A006C992E /* NumberKeyboardView+Touch.swift in Sources */,
 				AE0442852803D6BA003DB6A1 /* InputText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

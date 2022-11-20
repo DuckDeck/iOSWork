@@ -48,7 +48,7 @@ class InputText:UIView{
         didSet{
             if isEmpty{
                 lbl.text = placeHolder
-                lbl.textColor = kColorbbbbbb
+                lbl.textColor = UIColor("bbbbbb")
             }
         }
     }
@@ -128,7 +128,7 @@ class InputText:UIView{
         if lbl.text!.isEmpty{
             isEmpty = true
             lbl.text = placeHolder
-            lbl.textColor = kColorbbbbbb
+            lbl.textColor = UIColor("bbbbbb")
         } else {
             isEmpty = false
         }
@@ -151,7 +151,7 @@ class InputText:UIView{
         leftText = ""
         rightText = ""
         lbl.text = placeHolder
-        lbl.textColor = kColorbbbbbb
+        lbl.textColor = UIColor("bbbbbb")
         updateCursor()
         arrLocations.removeAll()
         txtChangeBlock?(text)
@@ -205,7 +205,7 @@ class InputText:UIView{
     
     lazy var cursor: UIView = {
         let v = UIView()
-        v.backgroundColor = kColor49c167
+        v.backgroundColor = UIColor.yellow
         v.isHidden = true
         return v
     }()

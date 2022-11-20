@@ -37,7 +37,7 @@ class KeyboardNav: UIView {
         }
         
         let line = UIView()
-        line.backgroundColor = kColorebebeb
+        line.backgroundColor = Colors.colorEBEBEB
         addSubview(line)
         line.snp.makeConstraints { make in
             make.top.equalTo(39.5)

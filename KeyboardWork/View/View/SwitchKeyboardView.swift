@@ -35,7 +35,7 @@ class SwitchKeyboardView:KeyboardNav{
             btn.layer.cornerRadius = 8
             btn.tag = item.offset + 1
             btn.titleLabel?.font = UIFont.systemFont(ofSize: 12)
-            btn.setTitleColor(kColor222222, for: .normal)
+            btn.setTitleColor(Colors.color222222, for: .normal)
             btn.addTarget(self, action: #selector(btnClick(sender:)), for: .touchUpInside)
             btn.setTitle(item.element.1, for: .normal)
             btn.setBackgroundColor(color: UIColor(hexString: "202f64")!.withAlphaComponent(0.06), forState: .highlighted)

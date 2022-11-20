@@ -24,7 +24,7 @@ class PopKeyChooseView:UIView{
             if _selectIndex != newValue{
                 if _selectIndex >= 0{
                     let lblOld = stackView.arrangedSubviews[_selectIndex] as! UILabel
-                    lblOld.textColor = kColor222222
+                    lblOld.textColor = Colors.color222222
                     if #available(iOSApplicationExtension 12.0, *) {
                         if traitCollection.userInterfaceStyle == .dark{
                             lblOld.textColor = UIColor.white
@@ -32,7 +32,7 @@ class PopKeyChooseView:UIView{
                     }
                     lblOld.backgroundColor = cKeyBgColor
                     if let lblAngle = lblOld.viewWithTag(100) as? UILabel{
-                        lblAngle.textColor = kColor222222
+                        lblAngle.textColor = Colors.color222222
                         if #available(iOSApplicationExtension 12.0, *) {
                             if traitCollection.userInterfaceStyle == .dark{
                                 lblAngle.textColor = UIColor.white
@@ -43,7 +43,7 @@ class PopKeyChooseView:UIView{
                 _selectIndex = newValue
                 let lblNew = stackView.arrangedSubviews[_selectIndex] as! UILabel
                 lblNew.textColor = UIColor.white
-                lblNew.backgroundColor = kColor49c167
+                lblNew.backgroundColor = Colors.color49C167
                 if let lblAngle = lblNew.viewWithTag(100) as? UILabel{
                     lblAngle.textColor = UIColor.white
                 }

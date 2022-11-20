@@ -25,3 +25,7 @@ enum KeyboardStatus{
     }
 }
 
+enum BoardStatus:Equatable{
+    case normal(Bool),       //键盘初始态，这时回车有可用不可用两种状态
+         input         //选词状态
+}

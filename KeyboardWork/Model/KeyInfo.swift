@@ -114,6 +114,16 @@ enum KeyType:Equatable{
             return false
         }
     }
+    
+    var isShift:Bool{
+        switch self {
+        case .shift(_):
+            return true
+        default:
+            return false
+        }
+    }
+    
 }
 
 enum KeyShiftType{
