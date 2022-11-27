@@ -40,8 +40,10 @@ class NineKeyboardView: Keyboard {
         createRange()
         createBoard()
         createGesture()
-        
-        addSubview(popKeyView)
+        if !UIDevice.isNotch{
+            keyboardVC?.removeSwitchInputView()
+            keyboardVC?.addSwitchInputView(pos: keys[3][1].position)
+        }
     }
     
     func createLayout(){
@@ -53,7 +55,7 @@ class NineKeyboardView: Keyboard {
            keyVerGap = 11.5
            keyIndent1 = 6
         } else {
-            if UIDevice.orientation.rawValue > 2{              //横屏参数
+            if UIDevice.current.orientation.rawValue > 2{              //横屏参数
                 keyWidth = (kSCREEN_WIDTH - 71) / 10
                 keyHeight = ((kSCREEN_HEIGHT * 0.6) - 90) * 0.2
                 keyTopMargin = 8
@@ -139,38 +141,54 @@ class NineKeyboardView: Keyboard {
         zeroKey.fillColor = cKeyBgColor2
         row4.append(zeroKey)
         
+        var widths : [CGFloat]!
+        if UIDevice.isNotch{
+            widths = [keyUnitWidth * 2 + keyHorGap,keyUnitWidth * 2 + keyHorGap,keyUnitWidth * 5 + 4 * keyHorGap,keyUnitWidth * 2 + keyHorGap,keyUnitWidth * 2 + keyHorGap]
+        } else {
+            let unitWidth = (keyUnitWidth * 4 + keyHorGap) / 3
+            widths = [unitWidth ,unitWidth,keyUnitWidth * 5 + 4 * keyHorGap,keyUnitWidth * 2 + keyHorGap,keyUnitWidth * 2 + keyHorGap]
+
+        }
+        
         var symbleKey = KeyInfo()
         symbleKey.text = "符"
         symbleKey.textColor = cKeyTextColor
         symbleKey.fillColor = cKeyBgColor2
-        symbleKey.position = CGRect(x: keyIndent1, y: row4.first!.position.maxY + keyVerGap, width: keyUnitWidth * 2, height: keyHeight)
+        symbleKey.position = CGRect(x: keyIndent1, y: row4.first!.position.maxY + keyVerGap, width: widths[0], height: keyHeight)
         symbleKey.keyType = .switchKeyboard(.symbleChiese)
         row5.append(symbleKey)
+        var tmpKey = symbleKey
+        if !UIDevice.isNotch{
+            var switchKey = KeyInfo()
+            switchKey.position = CGRect(x: symbleKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: widths[0], height: keyHeight)
+            row5.append(switchKey)
+            tmpKey = switchKey
+        }
         
         var numKey = KeyInfo()
         numKey.text = "123"
         numKey.textColor = cKeyTextColor
         numKey.fillColor = cKeyBgColor2
-        numKey.position = CGRect(x: symbleKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: keyUnitWidth * 2, height: keyHeight)
+        numKey.position = CGRect(x: tmpKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: widths[1], height: keyHeight)
         numKey.keyType = .switchKeyboard(.number)
         row5.append(numKey)
         
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_key_space"
         spaceKey.fillColor = cKeyBgColor
-        spaceKey.position = CGRect(x: numKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: keyUnitWidth * 5, height: keyHeight)
+        spaceKey.position = CGRect(x: numKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: widths[2], height: keyHeight)
         spaceKey.keyType = .space
         row5.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_key_ch_en_switch"
         switchKey.fillColor = cKeyBgColor2
-        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: keyUnitWidth * 2, height: keyHeight)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: widths[3], height: keyHeight)
         switchKey.keyType = .switchKeyboard(.english)
         row5.append(switchKey)
         
         var enterKey = ReturnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: keyUnitWidth * 2, height: keyHeight)
+        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: widths[4], height: keyHeight)
         row5.append(enterKey)
         
         keys.append(row2)
@@ -263,9 +281,6 @@ class NineKeyboardView: Keyboard {
     override func keyPress(key: KeyInfo) {
         print("你点了\(key.clickText)")
         delegate?.keyPress(key: key)
-        if key.keyType.isNormal {
-            SensorEvent(name: "srf_buttonpress", property: ["srf_button_name": "基础键盘字符按键点击"]).write()
-        }
     }
     
     override func keyLongPress(key: KeyInfo, state: UIGestureRecognizer.State) {
@@ -311,21 +326,21 @@ class NineKeyboardView: Keyboard {
         
         let p = 1,q = 0
         var changeSep = false
-        if globalheader?.isHavePinYin ?? false {
-            if keys[p][q].text != "分词" {
-                keys[p][q].textLayer?.removeFromSuperlayer()
-                keys[p][q].textLayer = nil
-                keys[p][q].text = "分词"
-                changeSep = true
-            }
-        } else {
-            if keys[p][q].text == "分词" {
-                keys[p][q].textLayer?.removeFromSuperlayer()
-                keys[p][q].textLayer = nil
-                keys[p][q].text = "@/."
-                changeSep = true
-            }
-        }
+//        if globalHeader?.isHavePinYin ?? false {
+//            if keys[p][q].text != "分词" {
+//                keys[p][q].textLayer?.removeFromSuperlayer()
+//                keys[p][q].textLayer = nil
+//                keys[p][q].text = "分词"
+//                changeSep = true
+//            }
+//        } else {
+//            if keys[p][q].text == "分词" {
+//                keys[p][q].textLayer?.removeFromSuperlayer()
+//                keys[p][q].textLayer = nil
+//                keys[p][q].text = "@/."
+//                changeSep = true
+//            }
+//        }
         if changeSep {
             let lbl = UILabel()
             lbl.text = keys[p][q].text
@@ -356,7 +371,7 @@ class NineKeyboardView: Keyboard {
         if status != boardStatus{
             boardStatus = status
             updateReturnKey(key: ReturnKey)
-            updateReInput(key: ReInputKey)
+//            updateReInput(key: ReInputKey)
         }
     }
     
@@ -406,18 +421,7 @@ class NineKeyboardView: Keyboard {
             layer.addSublayer(txtLayer)
         }
     }
-    
-    lazy var popKeyView: PopKeyView = {
-        var width = 79.5
-        if kSCREEN_WIDTH == 414 {
-            width = 80
-        } else if kSCREEN_WIDTH == 428 {
-            width = 80.5
-        }
-        let v = PopKeyView(frame: CGRect(x: 0, y: 0, width: width * KBScale, height: 95 * KBScale))
-        v.isHidden = true
-        return v
-    }()
+
     
 
     

@@ -9,25 +9,7 @@ import UIKit
 
 extension FullKeyboardView{
     
-    func setNumData(){
-        let f = ["1","2","3","4","5","6","7","8","9","0"]
-        var numKeys = [KeyInfo]()
-        for item in f.enumerated(){
-            var k = KeyInfo()
-            k.text = item.element
-            k.fillColor = cKeyBgColor
-            k.textColor = cKeyTextColor
-            k.fontSize = 20
-            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + keyHorGap) + keyIndent1, y: keyTop, width: keyWidth, height: keyHeight)
-            k.keyType = .normal(.character)
-            numKeys.append(k)
-        }
-        keyTop += keyHeight + keyVerGap
-        keys.append(numKeys)
-    }
-    
     func setChinese26Data(){
-        setNumData()
         let f = [("q","1"),("w","2"),("e","3"),("r","4"),("t","5"),("y","6"),("u","7"),("i","8"),("o","9"),("p","0")]
         var row2 = [KeyInfo]()
         for item in f.enumerated(){
@@ -56,6 +38,7 @@ extension FullKeyboardView{
             k.id = UInt8(item.offset + 10)
             k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + keyHorGap) + keyIndent2, y: keyTop, width: keyWidth, height: keyHeight)
             k.keyType = .normal(.chinese)
+            k.showTip = UIDevice.current.orientation.rawValue <= 2
             row3.append(k)
         }
         keyTop += keyHeight + keyVerGap
@@ -85,6 +68,7 @@ extension FullKeyboardView{
             } else if item.offset == t.count - 1{
                 k.hotArea = k.position.large(left: 5, top: 5, right: 10, bottom: 5)
             }
+            k.showTip = UIDevice.current.orientation.rawValue <= 2
             row4.append(k)
         }
         var del = KeyInfo()
@@ -99,14 +83,27 @@ extension FullKeyboardView{
         
         var row5 = [KeyInfo]()
         
-        let xScale = (kSCREEN_WIDTH - 33) / 342   //暂时用这个
+        let xScale = (kSCREEN_WIDTH - 33) / 342
+        var widths : [CGFloat]!
+        switch UIDevice.current.deviceDirection{
+        case .PadHor,.PadVer:
+            widths = [42 * xScale,41 * xScale,32 * xScale,116 * xScale,43 * xScale,68 * xScale]
+        case .PhoneHor:
+            widths = [keyWidthShift,keyWidthShift,keyWidth,4 * keyWidth + 3 * keyHorGap,keyWidthShift,keyWidthShift]
+        case .PhoneVer:
+            if UIDevice.isNotch{
+                widths = [42 * xScale,42 * xScale,32 * xScale,116 * xScale,42 * xScale,68 * xScale]
+            } else{
+                widths = [42 * xScale,42 * xScale,42 * xScale,106 * xScale,42 * xScale,68 * xScale]
+            }
+        }
         var symKey = KeyInfo()
         symKey.text = "符"
         symKey.fontSize = 18
         symKey.fillColor = cKeyBgColor2
         symKey.textColor = cKeyTextColor
         symKey.keyType = .switchKeyboard(.symbleChiese)
-        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: 42 * xScale, height: keyHeight)
+        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)
         row5.append(symKey)
         var sKey:KeyInfo!
         if UIDevice.isNotch{
@@ -116,7 +113,7 @@ extension FullKeyboardView{
             numKey.fillColor = cKeyBgColor2
             numKey.textColor = cKeyTextColor
             numKey.keyType = .switchKeyboard(.number)
-            numKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: 41 * xScale, height: keyHeight)
+            numKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: widths[1], height: keyHeight)
             row5.append(numKey)
             
             var commaKey = KeyInfo()
@@ -127,16 +124,17 @@ extension FullKeyboardView{
             commaKey.keyType = .normal(.character)
             commaKey.fontSize = 20
             commaKey.tipSize = 14
-            commaKey.position = CGRect(x: numKey.position.maxX + keyHorGap, y: keyTop, width: 32 * xScale, height: keyHeight)
+            commaKey.position = CGRect(x: numKey.position.maxX + keyHorGap, y: keyTop, width: widths[2], height: keyHeight)
             row5.append(commaKey)
             sKey =  commaKey
         } else {
             var switchKey = KeyInfo()
-            switchKey.image = "icon_key_switch"
-            switchKey.fillColor = cKeyBgColor
-            switchKey.keyType = .special("切换键盘")
-            switchKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: 32 * xScale, height: keyHeight)
+//            switchKey.image = "icon_key_switch"
+//            switchKey.fillColor = cKeyBgColor2
+//            switchKey.keyType = .special("切换键盘")
+            switchKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: widths[1], height: keyHeight)
             row5.append(switchKey)
+            
             
             var numKey = KeyInfo()
             numKey.text = "123"
@@ -144,7 +142,7 @@ extension FullKeyboardView{
             numKey.fillColor = cKeyBgColor2
             numKey.textColor = cKeyTextColor
             numKey.keyType = .switchKeyboard(.number)
-            numKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: 41 * xScale, height: keyHeight)
+            numKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: widths[2], height: keyHeight)
             row5.append(numKey)
             sKey = numKey
         }
@@ -154,25 +152,24 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_key_space"
         spaceKey.fillColor = cKeyBgColor
-        spaceKey.position = CGRect(x: sKey.position.maxX + keyHorGap, y: keyTop, width: 116 * xScale, height: keyHeight)
+        spaceKey.position = CGRect(x: sKey.position.maxX + keyHorGap, y: keyTop, width: widths[3], height: keyHeight)
         spaceKey.keyType = .space
         row5.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_key_ch_en_switch"
         switchKey.fillColor = cKeyBgColor2
-        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: 43 * xScale, height: keyHeight)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: widths[4], height: keyHeight)
         switchKey.keyType = .switchKeyboard(.english)
         row5.append(switchKey)
         
         var enterKey = ReturnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: 68 * xScale, height: keyHeight)
+        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: widths[5], height: keyHeight)
         row5.append(enterKey)
         keys.append(row5)
     }
 
     func setEnglish26Data(shiftType:KeyShiftType = .normal){
-        setNumData()
         let f = [("q","1"),("w","2"),("e","3"),("r","4"),("t","5"),("y","6"),("u","7"),("i","8"),("o","9"),("p","0")]
         var row2 = [KeyInfo]()
         for item in f.enumerated(){
@@ -203,6 +200,7 @@ extension FullKeyboardView{
             if shiftType != .normal{                //大写移除符号
                 k.showTip = false
             }
+            k.showTip = UIDevice.current.orientation.rawValue <= 2
             k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + keyHorGap) + keyIndent2, y: keyTop, width: keyWidth, height: keyHeight)
             k.keyType = .normal(.character)
             row3.append(k)
@@ -247,6 +245,7 @@ extension FullKeyboardView{
             }
             k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + keyHorGap) + letterStart, y: keyTop, width: keyWidth, height: keyHeight)
             k.keyType = .normal(.character)
+            k.showTip = UIDevice.current.orientation.rawValue <= 2
             if item.offset == 0{
                 k.hotArea = k.position.large(left: 10, top: 5, right: 2.5, bottom: 5)
             } else if item.offset == t.count - 1{
@@ -267,13 +266,26 @@ extension FullKeyboardView{
         
         var row5 = [KeyInfo]()
         let xScale = (kSCREEN_WIDTH - 33) / 342
+        var widths : [CGFloat]!
+        switch UIDevice.current.deviceDirection{
+        case .PadHor,.PadVer:
+            widths = [42 * xScale,41 * xScale,32 * xScale,116 * xScale,43 * xScale,68 * xScale]
+        case .PhoneHor:
+            widths = [keyWidthShift,keyWidthShift,keyWidth,4 * keyWidth + 3 * keyHorGap,keyWidthShift,keyWidthShift]
+        case .PhoneVer:
+            if UIDevice.isNotch{
+                widths = [42 * xScale,42 * xScale,32 * xScale,116 * xScale,42 * xScale,68 * xScale]
+            } else{
+                widths = [42 * xScale,42 * xScale,42 * xScale,106 * xScale,42 * xScale,68 * xScale]
+            }
+        }
         var symKey = KeyInfo()
         symKey.text = "符"
         symKey.fillColor = cKeyBgColor2
         symKey.textColor = cKeyTextColor
         symKey.fontSize = 18
         symKey.keyType = .switchKeyboard(.symbleEnglish)
-        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: 42 * xScale, height: keyHeight)
+        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)
         row5.append(symKey)
         
         var sKey:KeyInfo!
@@ -284,7 +296,7 @@ extension FullKeyboardView{
             numKey.fillColor = cKeyBgColor2
             numKey.textColor = cKeyTextColor
             numKey.keyType = .switchKeyboard(.number)
-            numKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: 41 * xScale, height: keyHeight)
+            numKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: widths[1], height: keyHeight)
             row5.append(numKey)
             
             var commaKey = KeyInfo()
@@ -295,15 +307,12 @@ extension FullKeyboardView{
             commaKey.fontSize = 20
             commaKey.tipSize = 14
             commaKey.keyType = .normal(.character)
-            commaKey.position = CGRect(x: numKey.position.maxX + keyHorGap, y: keyTop, width: 32 * xScale, height: keyHeight)
+            commaKey.position = CGRect(x: numKey.position.maxX + keyHorGap, y: keyTop, width: widths[2], height: keyHeight)
             row5.append(commaKey)
             sKey =  commaKey
         } else {
             var switchKey = KeyInfo()
-            switchKey.image = "icon_key_switch"
-            switchKey.fillColor = cKeyBgColor
-            switchKey.keyType = .special("切换键盘")
-            switchKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: 32 * xScale, height: keyHeight)
+            switchKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: widths[1], height: keyHeight)
             row5.append(switchKey)
             
             var numKey = KeyInfo()
@@ -312,7 +321,7 @@ extension FullKeyboardView{
             numKey.fillColor = cKeyBgColor2
             numKey.textColor = cKeyTextColor
             numKey.keyType = .switchKeyboard(.number)
-            numKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: 41 * xScale, height: keyHeight)
+            numKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: widths[2], height: keyHeight)
             row5.append(numKey)
             sKey = numKey
         }
@@ -320,25 +329,24 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_key_space"
         spaceKey.fillColor = cKeyBgColor
-        spaceKey.position = CGRect(x: sKey.position.maxX + keyHorGap, y: keyTop, width: 116 * xScale, height: keyHeight)
+        spaceKey.position = CGRect(x: sKey.position.maxX + keyHorGap, y: keyTop, width: widths[3], height: keyHeight)
         spaceKey.keyType = .space
         row5.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_key_en_ch_switch"
         switchKey.fillColor = cKeyBgColor2
-        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: 43 * xScale, height: keyHeight)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: widths[4], height: keyHeight)
         switchKey.keyType = .switchKeyboard(.chinese)
         row5.append(switchKey)
         
         var enterKey = ReturnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: 68 * xScale, height: keyHeight)
+        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: widths[5], height: keyHeight)
         row5.append(enterKey)
         keys.append(row5)
     }
     
     func setChineseSymbleData(){
-        setNumData()
         let f = ["1","2","3","4","5","6","7","8","9","0"]
         let fs = ["1一壹１①⑴⒈❶㊀㈠","贰2二２②⑵⒉❷㊁㈡","③叁3三３⑶⒊❸㊂㈢","⒋④肆4四４⑷❹㊃㈣","㊄⒌⑤伍5五５⑸❺㈤","㈥㊅⒍⑥陆6六６⑹❻","㈦㊆❼⒎⑦柒7七７⑺","㈧㊇❽⒏⑻⑧捌8八８","㈨㊈❾⒐⑼⑨９玖9九","°⓪零０0"]
         var row2 = [KeyInfo]()
@@ -406,8 +414,19 @@ extension FullKeyboardView{
                   [SymbleInfo(text: "!", angle: .halfAngle),SymbleInfo(text: "！", angle: nil)],
                   [SymbleInfo(text: "…", angle: nil),SymbleInfo(text: "．", angle: .fullAngle),SymbleInfo(text: ".", angle: nil)]]
         let tsIndex = [0,1,-1,0,1,2]
-        let keyWidth1 =  (keyInnerArea - 25) / 6.0
-        let letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+        var keyWidth1 : CGFloat = 0
+        var letterStart : CGFloat = 0
+        switch UIDevice.current.deviceDirection{
+        case .PadHor,.PadVer:
+            letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+            keyWidth1 =  (keyInnerArea - 25) / 6.0
+        case .PhoneHor:
+            letterStart = row3[2].position.minX
+            keyWidth1 =  keyWidth
+        case .PhoneVer:
+            letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+            keyWidth1 =  (keyInnerArea - 25) / 6.0
+        }
         var row4 = [KeyInfo]()
         var sep = KeyInfo()
         sep.text = "#+="
@@ -428,7 +447,6 @@ extension FullKeyboardView{
                 k.defaultSymbleIndex = tsIndex[item.offset]
             }
             k.position = CGRect(x: CGFloat(item.offset) * (keyWidth1 + keyHorGap) + letterStart, y: keyTop, width: keyWidth1, height: keyHeight)
-            k.popViewImage = "icon_key_pop_center_big"
             k.keyType = .normal(.character)
             if item.offset != 5{
                 k.canBack = true
@@ -446,20 +464,27 @@ extension FullKeyboardView{
         keys.append(row4)
        
         var row5 = [KeyInfo]()
-        let xScale = (kSCREEN_WIDTH - 28) / 347
+        var widths : [CGFloat]!
+        switch UIDevice.current.deviceDirection{
+        case .PadVer,.PadHor,.PhoneHor:
+            widths = [keyWidthShift,keyWidthShift,kSCREEN_WIDTH - 4 * (keyHorGap + keyWidthShift) - 2 * keyIndent1,keyWidthShift,keyWidthShift]
+        case .PhoneVer:
+            let xScale = (kSCREEN_WIDTH - 28) / 347
+            widths = [61 * xScale,59 * xScale,116 * xScale,43 * xScale,68 * xScale]
+        }
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.fontSize = 18
         symKey.fillColor = UIColor(named: "theme_color")!
         symKey.textColor = UIColor.white
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: 61 * xScale, height: keyHeight)
+        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)
         row5.append(symKey)
         
         var emojiKey = KeyInfo()
         emojiKey.image = "icon_key_emoji"
         emojiKey.fillColor = cKeyBgColor2
-        emojiKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: 59 * xScale, height: keyHeight)
+        emojiKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: widths[1], height: keyHeight)
         emojiKey.keyType = .switchKeyboard(.emoji)
         row5.append(emojiKey)
      
@@ -467,19 +492,19 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_key_space"
         spaceKey.fillColor = cKeyBgColor
-        spaceKey.position = CGRect(x: emojiKey.position.maxX + keyHorGap, y: keyTop, width: 116 * xScale, height: keyHeight)
+        spaceKey.position = CGRect(x: emojiKey.position.maxX + keyHorGap, y: keyTop, width: widths[2], height: keyHeight)
         spaceKey.keyType = .space
         row5.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_key_ch_en_switch"
         switchKey.fillColor = cKeyBgColor2
-        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: 43 * xScale, height: keyHeight)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: widths[3], height: keyHeight)
         switchKey.keyType = .switchKeyboard(.symbleEnglish)
         row5.append(switchKey)
         
         var enterKey = ReturnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y:keyTop, width: 68 * xScale, height: keyHeight)
+        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y:keyTop, width: widths[4], height: keyHeight)
         row5.append(enterKey)
         keys.append(row5)
         
@@ -487,7 +512,6 @@ extension FullKeyboardView{
     }
 
     func setEnglishSymbleData(){
-        setNumData()
         let f = ["1","2","3","4","5","6","7","8","9","0"]
         var row2 = [KeyInfo]()
         for item in f.enumerated(){
@@ -520,7 +544,7 @@ extension FullKeyboardView{
             } else {
                 k.defaultSymbleIndex = 0
             }
-            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + 4, y: keyTop, width: keyWidth, height: keyHeight)
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + keyHorGap) + keyIndent1, y: keyTop, width: keyWidth, height: keyHeight)
             k.keyType = .normal(.character)
             if item.offset > 2{
                 k.canBack = true
@@ -532,8 +556,19 @@ extension FullKeyboardView{
         
         let t = [".",",","?","!","`"]
         let ts = [".…","","?¿","!¡","`‘’'"]
-        let keyWidth1 =  (keyInnerArea - 20) / 5.0
-        let letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+        var keyWidth1 : CGFloat = 0
+        var letterStart : CGFloat = 0
+        switch UIDevice.current.deviceDirection{
+        case .PadHor,.PadVer:
+            letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+            keyWidth1 =  (keyInnerArea - 25) / 6.0
+        case .PhoneHor:
+            letterStart = row3[2].position.minX
+            keyWidth1 =  (6 * keyWidth + keyHorGap) * 0.2
+        case .PhoneVer:
+            letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+            keyWidth1 =  (keyInnerArea - keyHorGap * 4) / 5.0
+        }
         var row4 = [KeyInfo]()
         var sep = KeyInfo()
         sep.text = "#+="
@@ -560,7 +595,6 @@ extension FullKeyboardView{
                 k.defaultSymbleIndex = 0
             }
             k.position = CGRect(x: CGFloat(item.offset) * (keyWidth1 + keyHorGap) + letterStart, y: keyTop, width: keyWidth1, height: keyHeight)
-            k.popViewImage = "icon_key_pop_center_bigger"
             k.keyType = .normal(.character)
             if item.offset > 0{
                 k.canBack = true
@@ -578,20 +612,27 @@ extension FullKeyboardView{
         keys.append(row4)
         
         var row5 = [KeyInfo]()
-        let xScale = (kSCREEN_WIDTH - 28) / 347
+        var widths : [CGFloat]!
+        switch UIDevice.current.deviceDirection{
+        case .PadVer,.PadHor,.PhoneHor:
+            widths = [keyWidthShift,keyWidthShift,kSCREEN_WIDTH - 4 * (keyHorGap + keyWidthShift) - 2 * keyIndent1,keyWidthShift,keyWidthShift]
+        case .PhoneVer:
+            let xScale = (kSCREEN_WIDTH - 28) / 347
+            widths = [61 * xScale,59 * xScale,116 * xScale,43 * xScale,68 * xScale]
+        }
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.fontSize = 18
         symKey.fillColor = UIColor(named: "theme_color")!
         symKey.textColor = UIColor.white
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: 61 * xScale, height: keyHeight)
+        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)
         row5.append(symKey)
         
         var emojiKey = KeyInfo()
         emojiKey.image = "icon_key_emoji"
         emojiKey.fillColor = cKeyBgColor2
-        emojiKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: 59 * xScale, height: keyHeight)
+        emojiKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: widths[1], height: keyHeight)
         emojiKey.keyType = .switchKeyboard(.emoji)
         row5.append(emojiKey)
      
@@ -599,25 +640,24 @@ extension FullKeyboardView{
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_key_space"
         spaceKey.fillColor = cKeyBgColor
-        spaceKey.position = CGRect(x: emojiKey.position.maxX + keyHorGap, y: keyTop, width: 116 * xScale, height: keyHeight)
+        spaceKey.position = CGRect(x: emojiKey.position.maxX + keyHorGap, y: keyTop, width: widths[2], height: keyHeight)
         spaceKey.keyType = .space
         row5.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_key_en_ch_switch"
         switchKey.fillColor = cKeyBgColor2
-        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: 43 * xScale, height: keyHeight)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: widths[3], height: keyHeight)
         switchKey.keyType = .switchKeyboard(.symbleChiese)
         row5.append(switchKey)
         
         var enterKey = ReturnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: 68 * xScale, height: keyHeight)
+        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: widths[4], height: keyHeight)
         row5.append(enterKey)
         keys.append(row5)
     }
 
     func setChineseSymbleMoreData(){
-        setNumData()
         let f = ["【","】","{","}","#","%","^","*","+","="]
         let fs = [[SymbleInfo(text: "【", angle: nil),SymbleInfo(text: "［", angle: nil),SymbleInfo(text: "[", angle: nil),SymbleInfo(text: "〔", angle: nil)],
                   [SymbleInfo(text: "】", angle: nil),SymbleInfo(text: "］", angle: nil),SymbleInfo(text: "]", angle: nil),SymbleInfo(text: "〕", angle: nil)],
@@ -683,9 +723,19 @@ extension FullKeyboardView{
                   [SymbleInfo(text: "!", angle: .halfAngle),SymbleInfo(text: "！", angle: nil)],
                   [SymbleInfo(text: "`", angle: nil),SymbleInfo(text: "’", angle: nil),SymbleInfo(text: "‘", angle: nil),SymbleInfo(text: "＇", angle: .fullAngle),SymbleInfo(text: "'", angle: nil)],]
         let tsIndex = [1,1,-1,0,1,4]
-        let keywidth1 = (keyInnerArea - 25) / 6.0
-        let letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
-
+        var keyWidth1 : CGFloat = 0
+        var letterStart : CGFloat = 0
+        switch UIDevice.current.deviceDirection{
+        case .PadHor,.PadVer:
+            letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+            keyWidth1 =  (keyInnerArea - 25) / 6.0
+        case .PhoneHor:
+            letterStart = row3[2].position.minX
+            keyWidth1 =  keyWidth
+        case .PhoneVer:
+            letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+            keyWidth1 =  (keyInnerArea - 25) / 6.0
+        }
         var row4 = [KeyInfo]()
         var sep = KeyInfo()
         sep.text = "符"
@@ -703,8 +753,7 @@ extension FullKeyboardView{
             k.textColor = cKeyTextColor
             k.tips = ts[item.offset]
             k.defaultSymbleIndex = tsIndex[item.offset]
-            k.position = CGRect(x: CGFloat(item.offset) * (keywidth1 + keyHorGap) + letterStart, y: keyTop, width: keywidth1, height: keyHeight)
-            k.popViewImage = "icon_key_pop_center_big"
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth1 + keyHorGap) + letterStart, y: keyTop, width: keyWidth1, height: keyHeight)
             k.keyType = .normal(.character)
             if item.offset != 0{
                 k.canBack  = true
@@ -722,45 +771,52 @@ extension FullKeyboardView{
         keys.append(row4)
         
         var row5 = [KeyInfo]()
-        let xScale = (kSCREEN_WIDTH - 28) / 347
+        var widths : [CGFloat]!
+        switch UIDevice.current.deviceDirection{
+        case .PadVer,.PadHor,.PhoneHor:
+            widths = [keyWidthShift,keyWidthShift,kSCREEN_WIDTH - 4 * (keyHorGap + keyWidthShift) - 2 * keyIndent1,keyWidthShift,keyWidthShift]
+        case .PhoneVer:
+            let xScale = (kSCREEN_WIDTH - 28) / 347
+            widths = [61 * xScale,59 * xScale,116 * xScale,43 * xScale,68 * xScale]
+        }
+
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.fontSize = 18
         symKey.fillColor = UIColor(named: "theme_color")!
         symKey.textColor = UIColor.white
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: 61 * xScale, height: keyHeight)
+        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)
         row5.append(symKey)
         
         var emojiKey = KeyInfo()
         emojiKey.image = "icon_key_emoji"
         emojiKey.fillColor = cKeyBgColor2
-        emojiKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: 59 * xScale, height: keyHeight)
+        emojiKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: widths[1], height: keyHeight)
         emojiKey.keyType = .switchKeyboard(.emoji)
         row5.append(emojiKey)
         
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_key_space"
         spaceKey.fillColor = cKeyBgColor
-        spaceKey.position = CGRect(x: emojiKey.position.maxX + keyHorGap, y: keyTop, width: 116 * xScale, height: keyHeight)
+        spaceKey.position = CGRect(x: emojiKey.position.maxX + keyHorGap, y: keyTop, width: widths[2], height: keyHeight)
         spaceKey.keyType = .space
         row5.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_key_ch_en_switch"
         switchKey.fillColor = cKeyBgColor2
-        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: 43 * xScale, height: keyHeight)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: widths[3], height: keyHeight)
         switchKey.keyType = .switchKeyboard(.symbleEnglishMore)
         row5.append(switchKey)
         
         var enterKey = ReturnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: 68 * xScale, height: keyHeight)
+        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: widths[4], height: keyHeight)
         row5.append(enterKey)
         keys.append(row5)
     }
 
     func setEnglishSybmbleMoreData(){
-        setNumData()
         let f = ["[","]","{","}","#","%","^","*","+","="]
         let fs = ["","","","","","%‰","","","","≈≠="]
         var row2 = [KeyInfo()]
@@ -795,7 +851,7 @@ extension FullKeyboardView{
             k.text = item.element
             k.fillColor = cKeyBgColor
             k.textColor = cKeyTextColor
-            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + 5) + 4, y: keyTop, width: keyWidth, height: keyHeight)
+            k.position = CGRect(x: CGFloat(item.offset) * (keyWidth + keyHorGap) + keyIndent1, y: keyTop, width: keyWidth, height: keyHeight)
             k.keyType = .normal(.character)
             k.canBack = true
             row3.append(k)
@@ -805,8 +861,19 @@ extension FullKeyboardView{
         
         let t = [".",",","?","!","`"]
         let ts = [".…","","?¿","!¡","`‘’'"]
-        let keyWidth1 =  (keyInnerArea - 20) / 5.0
-        let letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+        var keyWidth1 : CGFloat = 0
+        var letterStart : CGFloat = 0
+        switch UIDevice.current.deviceDirection{
+        case .PadHor,.PadVer:
+            letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+            keyWidth1 =  (keyInnerArea - 25) / 6.0
+        case .PhoneHor:
+            letterStart = row3[2].position.minX
+            keyWidth1 =  (6 * keyWidth + keyHorGap) * 0.2
+        case .PhoneVer:
+            letterStart = (kSCREEN_WIDTH - keyInnerArea) / 2.0
+            keyWidth1 =  (keyInnerArea - 4 * keyHorGap) / 5.0
+        }
         var row4 = [KeyInfo]()
         var sep = KeyInfo()
         sep.text = "符"
@@ -833,7 +900,6 @@ extension FullKeyboardView{
                 k.defaultSymbleIndex = 0
             }
             k.position = CGRect(x: CGFloat(item.offset) * (keyWidth1 + keyHorGap) + letterStart, y: keyTop, width: keyWidth1, height: keyHeight)
-            k.popViewImage = "icon_key_pop_center_bigger"
             k.keyType = .normal(.character)
             k.canBack = true
             row4.append(k)
@@ -848,7 +914,14 @@ extension FullKeyboardView{
         keyTop += keyHeight + keyVerGap
         keys.append(row4)
 
-        let xScale = (kSCREEN_WIDTH - 28) / 347
+        var widths : [CGFloat]!
+        switch UIDevice.current.deviceDirection{
+        case .PadVer,.PadHor,.PhoneHor:
+            widths = [keyWidthShift,keyWidthShift,kSCREEN_WIDTH - 4 * (keyHorGap + keyWidthShift) - 2 * keyIndent1,keyWidthShift,keyWidthShift]
+        case .PhoneVer:
+            let xScale = (kSCREEN_WIDTH - 28) / 347
+            widths = [61 * xScale,59 * xScale,116 * xScale,43 * xScale,68 * xScale]
+        }
         var row5 = [KeyInfo]()
         var symKey = KeyInfo()
         symKey.text = "返回"
@@ -856,32 +929,32 @@ extension FullKeyboardView{
         symKey.fillColor = UIColor(named: "theme_color")!
         symKey.textColor = UIColor.white
         symKey.keyType = .backKeyboard
-        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: 61 * xScale, height: keyHeight)
+        symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)
         row5.append(symKey)
         
         var emojiKey = KeyInfo()
         emojiKey.image = "icon_key_emoji"
         emojiKey.fillColor = cKeyBgColor2
-        emojiKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: 59 * xScale, height: keyHeight)
+        emojiKey.position = CGRect(x: symKey.position.maxX + keyHorGap, y: keyTop, width: widths[1], height: keyHeight)
         emojiKey.keyType = .switchKeyboard(.emoji)
         row5.append(emojiKey)
 
         var spaceKey = KeyInfo()
         spaceKey.image = "icon_key_space"
         spaceKey.fillColor = cKeyBgColor
-        spaceKey.position = CGRect(x: emojiKey.position.maxX + keyHorGap, y: keyTop, width: 116 * xScale, height: keyHeight)
+        spaceKey.position = CGRect(x: emojiKey.position.maxX + keyHorGap, y: keyTop, width: widths[2], height: keyHeight)
         spaceKey.keyType = .space
         row5.append(spaceKey)
         
         var switchKey = KeyInfo()
         switchKey.image = "icon_key_en_ch_switch"
         switchKey.fillColor = cKeyBgColor2
-        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: 43 * xScale, height: keyHeight)
+        switchKey.position = CGRect(x: spaceKey.position.maxX + keyHorGap, y: keyTop, width: widths[3], height: keyHeight)
         switchKey.keyType = .switchKeyboard(.symbleChieseMore)
         row5.append(switchKey)
         
         var enterKey = ReturnKey
-        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: 68 * xScale, height: keyHeight)
+        enterKey.position = CGRect(x: switchKey.position.maxX + keyHorGap, y: keyTop, width: widths[4], height: keyHeight)
         row5.append(enterKey)
         keys.append(row5)
     }

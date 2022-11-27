@@ -17,7 +17,7 @@ var keyboardVC : KeyboardViewController?
 var globalHeader: HeaderView?
 var globalKeyboard : KeyboardView?
 var globalKeybaordStatus = KeyboardStatus.inActive
-
+var globalKeyboardHeight = KeyboardHeight.normal
 extension UITextDocumentProxy {
     var returnText : String {
         guard let _type = returnKeyType else { return "完成" }
@@ -74,6 +74,37 @@ extension UITextDocumentProxy {
     }
 }
 
+enum KeyboardHeight: CGFloat {
+    case normal = 50.0, big = 200
+    var value: CGFloat {
+        switch UIDevice.current.deviceDirection{
+        case .PadHor,.PadVer:
+            return 380
+        case .PhoneHor,.PhoneVer:
+            return self.boardHeight + self.rawValue
+        }
+    }
+    
+    var headerHeight:CGFloat{
+        if UIDevice.current.deviceDirection == .PhoneHor{
+            return 42
+        } else {
+            return 50
+        }
+    }
+    
+    var boardHeight:CGFloat{
+        switch UIDevice.current.deviceDirection{
+        case .PadVer,.PadHor:
+            return 318
+        case .PhoneHor:
+            return (UIScreen.main.bounds.width < 400 ? 180 : 200)
+        case .PhoneVer:
+            return (UIScreen.main.bounds.width < 400 ? 203 : 223)
+        }
+    }
+}
+
 
 var ReturnKey:KeyInfo{
         var k = KeyInfo()
@@ -94,9 +125,9 @@ var ReturnKey:KeyInfo{
             }
             k.keyType = .returnKey(.usable)
         } else {
-            k.fillColor = kColorb3b7bC
+            k.fillColor = UIColor("b3b7bc")
             if !k.text.isEmpty{
-                k.textColor = kColor888888
+                k.textColor = Colors.color888888
                 k.textSize = 18
             }
             if !k.image.isEmpty{
@@ -122,32 +153,6 @@ extension String{
     }
 }
 
-extension CGRect {
-    var center: CGPoint {
-        get {
-            return CGPoint.init(x: self.origin.x + self.size.width/2, y: self.origin.y + self.size.height/2)
-        }
-    }
-    
-    func centerRect(w:CGFloat,h:CGFloat)->CGRect{
-        if w >= self.width || h >= self.height{
-            return self
-        }
-        return CGRect(x: center.x - w / 2, y: center.y - h / 2, width: w, height: h)
-    }
-    
-    func large(w:CGFloat,h:CGFloat) -> CGRect{
-        return CGRect(x: origin.x - w, y: origin.y - h, width: size.width + w, height: size.height + h)
-    }
-    func large() -> CGRect{
-        if self.minX >= 20 && self.minX <= 25{
-            return CGRect(x: origin.x - 20, y: origin.y - 5, width: size.width + 20, height: size.height + 10)
-        } else if self.maxX >= kSCREEN_WIDTH - 25 && self.maxX <= kSCREEN_WIDTH - 20{
-            return CGRect(x: origin.x - 2, y: origin.y - 5, width: size.width + 23, height: size.height + 10)
-        }
-        return CGRect(x: origin.x - 2, y: origin.y - 5, width: size.width + 4, height: size.height + 10)
-    }
-}
 
 
 let Toast = Hud(frame: CGRect.zero)

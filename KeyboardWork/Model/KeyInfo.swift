@@ -135,7 +135,7 @@ enum KeyInputType:Equatable{
 }
 
 enum KeyboardType:Int,Codable,CustomDebugStringConvertible{
-    case  chinese9 = 0 ,chinese26,english,number,emoji,symbleChiese,symbleEnglish,symbleChieseMore,symbleEnglishMore,handwriting,chinese
+    case chinese = 0, chinese9,chinese26,english,number,emoji,symbleChiese,symbleEnglish,symbleChieseMore,symbleEnglishMore,handwriting
     
    
     public var debugDescription: String{

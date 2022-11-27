@@ -7,6 +7,12 @@
 
 import Foundation
 import CoreTelephony
+
+enum DeviceDirection{
+    case PadHor,PadVer,PhoneHor,PhoneVer
+}
+
+
 extension UIDevice{
     static var isNotch:Bool{
         let width = UIScreen.main.bounds.size.width
@@ -14,11 +20,20 @@ extension UIDevice{
         return abs(max(width, height) / min(width, height) - 896 / 414.0) < 0.01 || abs(max(width, height) / min(width, height) - 812 / 375.0) < 0.01
     }
     
-    static var orientation:UIDeviceOrientation{
-        if UIScreen.main.bounds.size.width > UIScreen.main.bounds.size.height {
-            return .landscapeLeft
+    var deviceDirection:DeviceDirection{
+        if userInterfaceIdiom == .pad{
+            if UIScreen.main.bounds.size.width > UIScreen.main.bounds.size.height {
+                return .PadHor
+            } else {
+                return .PadVer
+            }
+        } else {
+            if UIScreen.main.bounds.size.width > UIScreen.main.bounds.size.height {
+                return .PhoneHor
+            } else {
+                return .PhoneVer
+            }
         }
-        return .portrait
     }
     
     static var modelName: String {

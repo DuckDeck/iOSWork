@@ -136,6 +136,28 @@ extension CGRect {
     public init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
         self.init(x: x, y: y, width: w, height: h)
     }
+    
+    var center: CGPoint {
+        get {
+            return CGPoint.init(x: self.origin.x + self.size.width/2, y: self.origin.y + self.size.height/2)
+        }
+    }
+    
+    func centerRect(w:CGFloat,h:CGFloat)->CGRect{
+        if w >= self.width || h >= self.height{
+            return self
+        }
+        return CGRect(x: center.x - w / 2, y: center.y - h / 2, width: w, height: h)
+    }
+    
+    func large(w:CGFloat,h:CGFloat) -> CGRect{
+        return CGRect(x: origin.x - w, y: origin.y - h, width: size.width + w, height: size.height + h)
+    }
+    
+    func large(left:CGFloat,top:CGFloat,right:CGFloat,bottom:CGFloat) -> CGRect{
+        return CGRect(x: origin.x - left, y: origin.y - top, width: size.width + left + right, height: size.height + top + bottom)
+    }
+    
 }
 
 extension URL{

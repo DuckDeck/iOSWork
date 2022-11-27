@@ -188,12 +188,12 @@ class SelectWordCell:PanCollectionCell{
     func update(select:Bool){
         if select{
             lblWord.layer.borderWidth = 0
-            lblWord.backgroundColor = kColor49c167
+            lblWord.backgroundColor = UIColor.green
             lblWord.textColor = UIColor.white
         } else {
             lblWord.layer.borderWidth = 0.5
             lblWord.backgroundColor = UIColor.white
-            lblWord.textColor = kColor626266
+            lblWord.textColor = UIColor("626266")
         }
     }
  
@@ -222,7 +222,7 @@ class SelectWordCell:PanCollectionCell{
         v.layer.borderColor = UIColor.gray.cgColor
         v.isUserInteractionEnabled = true
         v.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGes(ges:))))
-        v.textColor = kColor626266
+        v.textColor = UIColor("626266")
         v.textAlignment = .center
         v.font = UIFont.pingfangRegular(size: 14)
         return v

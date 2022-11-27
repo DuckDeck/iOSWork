@@ -20,9 +20,7 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
             if pressedKey != nil, pressedKey!.keyType.isNormal || pressedKey!.keyType == .del, panPoint != nil {
                 let distance = panPoint!.y - point.y
                 if abs(distance) < 10, abs(panPoint!.x - point.x) < 10 { // 如果触发了pan，这时可能这个距离特别短，那么可不可以认为是一次按键呢？对搜狗的试验可以认为是一次按键,那么这个距离设定为多少好呢？试试10看看效果
-                    if let keyboard = superview as? Keyboard {
-                        keyboard.keyPress(key: pressedKey!)
-                    }
+                    keyPress(key: pressedKey!)
                 }
                 if distance > 30, point.x > pressedKey!.position.minX - distance * 0.6, point.x < pressedKey!.position.maxX + distance * 0.6 {
                     var key = pressedKey!
@@ -33,14 +31,14 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
                     
                 }
             }
-            popKeyView.isHidden = true
+            popLayer.removeFromSuperlayer()
             removePressEffect()
             pressedKey = nil
             panPoint = nil
             isGestured = false
             panPosition = nil
         case .cancelled, .failed:
-            popKeyView.isHidden = true
+            popLayer.removeFromSuperlayer()
             removePressEffect()
             panPoint = nil
             pressedKey = nil
@@ -51,7 +49,7 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
             if panPosition == nil {
                 panPosition = point
             }
-            popKeyView.isHidden = true
+            popLayer.removeFromSuperlayer()
             let yoffset = point.y - panPoint!.y
             let xOffset = point.x - panPoint!.x
             if point.x - panPosition!.x > 20, abs(yoffset / xOffset) < 0.8 {
@@ -95,7 +93,10 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
             if !pressedKey!.text.isEmpty, !pressedKey!.text.first!.isLetter, !pressedKey!.tip.isEmpty {
                 let key = pressedKey!
                 Shake.keyShake()
-                popKeyView.lblKey.text = key.tip
+                CATransaction.begin()
+                CATransaction.setDisableActions(true)
+                (popLayer.sublayers!.first! as? CATextLayer)?.string = key.tip
+                CATransaction.commit()
                 return
             }
               
@@ -124,7 +125,7 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
                 let chooseView = PopKeyChooseView(frame: CGRect(x: x, y: pos.minY - 55 * KBScale, width: width, height: 50 * KBScale), keys: txt, defaultIndex: key.defaultSymbleIndex ?? -1)
                 popChooseView = chooseView
                 addSubview(chooseView)
-                popKeyView.isHidden = true
+                popLayer.removeFromSuperlayer()
                 previousPoint = point
                 addPressEffect(fillColor: UIColor("a2a5ad") | UIColor("414245"))
                 Shake.keyShake()
@@ -150,7 +151,7 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
                 keyPress(key: key)
                 popChooseView?.removeFromSuperview()
                 popChooseView = nil
-                popKeyView.isHidden = true
+                popLayer.removeFromSuperlayer()
                 removePressEffect()
                 pressedKey = nil
             }
@@ -164,8 +165,7 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
                     }
                     keyPress(key: k)
                 }
-                  
-                popKeyView.isHidden = true
+                popLayer.removeFromSuperlayer()
                 removePressEffect()
                 pressedKey = nil
             }
@@ -173,7 +173,7 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
         case .failed:
             popChooseView?.removeFromSuperview()
             popChooseView = nil
-            popKeyView.isHidden = true
+            popLayer.removeFromSuperlayer()
             isGestured = false
             removePressEffect()
             pressedKey = nil
@@ -183,7 +183,6 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
         if isGestured {
             return
         }
@@ -195,7 +194,7 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
                 pressedKey = nil
             }
             Shake.keyShake()
-            let index = Int((point.y - keyVerGap / 2) / (keyHeight +  (keyTopMargin + keyVerGap) / 2))
+            let index = Int((point.y - (keyTopMargin - keyVerGap / 2) - 0.5) / (keyHeight + keyVerGap))
             let range = ranges[index]
             for i in 0..<range.count {
                 if point.x <= range[0] {
@@ -208,7 +207,6 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
                     break
                 }
             }
-         
             addPressEffect()
         }
     }
@@ -217,12 +215,11 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
         if isGestured {
             return
         }
-        popKeyView.isHidden = true
+        popLayer.removeFromSuperlayer()
         if pressedKey != nil {
             keyPress(key: pressedKey!)
             removePressEffect()
             pressedKey = nil
-          
         }
     }
     
@@ -230,30 +227,23 @@ extension FullKeyboardView: UIGestureRecognizerDelegate {
         if isGestured{
             return
         }
-        popKeyView.isHidden = true
-        if pressedKey != nil{
-            pressedKey = nil
-           
-        }
+        popLayer.removeFromSuperlayer()
+        pressedKey = nil
     }
     
     func addPopKeyView(pressKey: inout KeyInfo) {
         if pressKey.keyType.isNormal {
             let pos = convert(pressKey.position, to: superview)
-            var location = PopKeyView.PopKeyViewLocation.center
-            var popKeyPos: CGPoint!
-            if pressKey.position.minX < 10 {
-                popKeyPos = CGPoint(x: pos.midX + 19 * KBScale, y: pos.maxY)
-                location = .left
-            } else if pressKey.position.maxX > kSCREEN_WIDTH - 10 {
-                popKeyPos = CGPoint(x: pos.midX - 19 * KBScale, y: pos.maxY)
-                location = .right
-            } else {
-                popKeyPos = CGPoint(x: pos.midX, y: pos.maxY)
-            }
-            popKeyView.setKey(key: pressKey.text, location: location, popImage: pressKey.popViewImage)
-            popKeyView.bottomCenter = popKeyPos
-            popKeyView.isHidden = false
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            let popViewWidth = popViewWidthRatio * pressKey.position.width
+            popLayer.frame = CGRect(origin:  CGPoint(x: pos.midX - popViewWidth / 2, y: pos.maxY - popViewHeight), size: CGSize(width: popViewWidth, height: popViewHeight))
+            let size = pressKey.text.getSize(font: UIFont(name: "PingFangSC-Regular", size: 36)!)
+            let txtLayer = popLayer.sublayers!.first! as! CATextLayer
+            txtLayer.frame = CGRect(x: (popViewWidth - size.width) / 2, y: popViewHeight / 20, width: size.width, height: size.height)
+            txtLayer.string = pressKey.text
+            layer.addSublayer(popLayer)
+            CATransaction.commit()
         }
     }
 

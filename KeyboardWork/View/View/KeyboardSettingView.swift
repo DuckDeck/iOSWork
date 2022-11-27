@@ -109,7 +109,7 @@ class KeyboardSettingView:KeyboardNav{
         let lblTitle = UILabel()
         lblTitle.text = setting.title
         lblTitle.font = UIFont.pingfangRegular(size: 16)
-        lblTitle.textColor = kColor222222
+        lblTitle.textColor = Colors.color222222
         v.addSubview(lblTitle)
         lblTitle.snp.makeConstraints { make in
             make.left.top.equalTo(16)
@@ -120,7 +120,7 @@ class KeyboardSettingView:KeyboardNav{
         lblSubTitle.numberOfLines = 0
         lblSubTitle.text = setting.tip
         lblSubTitle.font = UIFont.pingfangMedium(size: 12)
-        lblSubTitle.textColor = kColor888888
+        lblSubTitle.textColor = Colors.color888888
         v.addSubview(lblSubTitle)
         lblSubTitle.snp.makeConstraints { make in
             make.left.equalTo(16)

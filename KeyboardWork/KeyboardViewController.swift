@@ -81,7 +81,6 @@ class KeyboardViewController: UIInputViewController{
         if previousText.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .newlines) != allText.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .newlines){
             previousText = allText.trimmingCharacters(in: .whitespaces).trimmingCharacters(in: .newlines)
             globalHeader?.refreshStatus()
-            globalKeyboard?.keyboard?.updateReturnKey(key: ReturnKey)
         
         }
     }
@@ -91,21 +90,47 @@ class KeyboardViewController: UIInputViewController{
         view.addSubview(globalHeader!)
         globalHeader?.snp.makeConstraints({ make in
             make.left.right.top.equalTo(0)
-            make.height.equalTo(50)
+            make.height.equalTo(globalKeyboardHeight.headerHeight)
         })
         
         globalKeyboard = KeyboardView()
         view.addSubview(globalKeyboard!)
         globalKeyboard?.snp.makeConstraints({ make in
             make.left.right.bottom.equalTo(0)
-            make.height.equalTo(222)
+            make.height.equalTo(globalKeyboardHeight.boardHeight)
         })
+        view.bringSubviewToFront(btnSwitchKeyboard)
     }
     
     func removeKeyboardView(){
         globalKeyboard?.removeFromSuperview()
         globalKeyboard = nil
     }
+    
+    
+    func addSwitchInputView(pos:CGRect){            //切换键盘的按键必须要放在KeyboardViewController的根视图里，并且一定是以按钮的形式存在，其他情况都不行
+        btnSwitchKeyboard.backgroundColor = cKeyBgColor2
+        btnSwitchKeyboard.setImage(UIImage.tintImage("icon_key_switch", color: UIColor.white), for: .normal)
+        self.view.addSubview(btnSwitchKeyboard)
+        print("addSwitchInputView\(pos.width)")
+        btnSwitchKeyboard.snp.remakeConstraints{ make in
+            make.bottom.equalTo(-5)
+            make.left.equalTo(pos.minX)
+            make.width.equalTo(pos.width)
+            make.height.equalTo(pos.height)
+        }
+    }
+    
+    func removeSwitchInputView(){
+        btnSwitchKeyboard.removeFromSuperview()
+    }
+    
+    lazy var btnSwitchKeyboard: UIButton = {
+        let v = UIButton()
+        v.addTarget(self, action: #selector(handleInputModeList(from:with:)), for: .allEvents)
+        v.layer.cornerRadius = 5
+        return v
+    }()
 }
 
 

@@ -18,7 +18,7 @@ class HeaderPasteboardView: UIView {
         addSubview(textLabel)
         addSubview(stackView)
         let line = UIView()
-        line.backgroundColor = kColorf5f5f5
+        line.backgroundColor = Colors.colorF5F5F5
         addSubview(line)
         line.snp.makeConstraints { make in
             make.left.right.equalTo(0)
@@ -126,7 +126,7 @@ class HeaderPasteboardView: UIView {
     @objc func chooseText(){
         removeFromSuperview()
         keyboardVC?.insert(text: pastText)
-        globalKeyboard?.keyboard?.updateReturnKey(key: ReturnKey)
+//        globalKeyboard?.keyboard?.updateReturnKey(key: ReturnKey)
     }
     
     lazy var textLabel: UILabel = {

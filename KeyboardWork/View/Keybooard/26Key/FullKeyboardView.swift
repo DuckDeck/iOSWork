@@ -21,7 +21,8 @@ class FullKeyboardView:Keyboard{
     var keyIndent2 : CGFloat = 0        //缩进2
     var keyWidthShift : CGFloat = 0       //shift键宽度
     var keyInnerArea : CGFloat = 0      //通常是第三排键的区域宽度，因为这几个按键宽度不一
-    
+    var popViewHeight : CGFloat = 0
+    var popViewWidthRatio : CGFloat = 0
     var ranges = [[CGFloat]]()
     
     var tmpLayers = [CALayer]()
@@ -51,39 +52,46 @@ class FullKeyboardView:Keyboard{
         createRange()
         createBoard()
         createGesture()
-        addSubview(popKeyView)
+        
+        if !UIDevice.isNotch && keyboardType.rawValue < 4{
+            keyboardVC?.removeSwitchInputView()
+            keyboardVC?.addSwitchInputView(pos: keys[3][1].position)
+        }
     }
    
   
     
     func createLayout(){
-        if UIDevice.current.userInterfaceIdiom == .pad{
-           keyWidth = (kSCREEN_WIDTH - 117.5) / 10
-           keyHeight = 54
-           keyTopMargin = 8
-           keyHorGap = 8
-           keyVerGap = 11.5
-           keyIndent1 = 6
-        } else {
-            if UIDevice.orientation.rawValue > 2{
-                keyWidth = (kSCREEN_WIDTH - 71) / 10
-                keyHeight = ((kSCREEN_HEIGHT * 0.6) - 90) * 0.2
-                keyTopMargin = 8
-                keyHorGap = 7
-                keyVerGap = 7
-                keyIndent1 = 4
-            } else {
-                keyWidth = (kSCREEN_WIDTH - 53) / 10
-                keyHeight = kSCREEN_WIDTH > 400 ? 44 : 40
-                keyTopMargin = 10
-                keyHorGap = 5
-                keyVerGap = 10
-                keyIndent1 = 4
-            }
+        switch UIDevice.current.deviceDirection{
+        case .PadVer,.PadHor:
+            keyWidth = (kSCREEN_WIDTH - 117.5) / 10
+            keyHeight = 54
+            keyTopMargin = 8
+            keyHorGap = 8
+            keyVerGap = 11.5
+            keyIndent1 = 6
+        case .PhoneHor:
+            keyTopMargin = 5
+            keyHorGap = 7
+            keyVerGap = 8
+            keyIndent1 = 4
+            popViewHeight = 81
+            popViewWidthRatio = 1.61
+            keyWidth = (kSCREEN_WIDTH - 71) / 10
+            keyHeight = (globalKeyboardHeight.boardHeight - 4 * keyVerGap - 10) * 0.2
+        case .PhoneVer:
+            keyTopMargin = 8
+            keyHorGap = 5
+            keyVerGap = 10
+            keyIndent1 = 4
+            popViewHeight = 95
+            popViewWidthRatio = 2.41
+            keyWidth = (kSCREEN_WIDTH - 53) / 10
+            keyHeight = kSCREEN_WIDTH > 400 ? 44 : 40
         }
         keyIndent2 = (kSCREEN_WIDTH - 9 * keyWidth - 8 * keyHorGap) / 2
-        keyWidthShift = (keyWidth * 2 + keyIndent2) / 2.0
-        keyInnerArea = keyWidth * 7 + 30.0
+        keyWidthShift = (keyWidth * 2 + keyIndent2 - keyIndent1) / 2.0
+        keyInnerArea = keyWidth * 7 + keyHorGap * 6
         keyTop = keyTopMargin
     }
     
@@ -123,11 +131,6 @@ class FullKeyboardView:Keyboard{
     }
 
     override func createBoard(){
-        layer.sublayers?.forEach{
-            if $0.delegate == nil{
-                $0.removeFromSuperlayer()
-            }
-        }
         for  i in 0..<keys.count{
             for j in 0..<keys[i].count{
                //key layer
@@ -192,7 +195,6 @@ class FullKeyboardView:Keyboard{
                }
            }
        }
-        bringSubviewToFront(popKeyView)
     }
     
     func createGesture(){
@@ -382,16 +384,17 @@ class FullKeyboardView:Keyboard{
         delegate?.keyLongPress(key: key, state: state)
     }
     
-    lazy var popKeyView: PopKeyView = {
-        var width = 79.5
-        if kSCREEN_WIDTH == 414{
-            width = 80
-        } else if kSCREEN_WIDTH == 428{
-            width = 80.5
-        }
-        let v = PopKeyView(frame: CGRect(x: 0, y: 0, width: width * KBScale, height: 95 * KBScale))
-        v.isHidden = true
-        return v
+    lazy var popLayer: CALayer = {              //超级大坑，对于所以有子view来说 使用UIImage(named:)从资源库里获取图片默认取的是iOS系统主题对应的图片，和当前app或者view设定的overrideUserInterfaceStyle不一定相同，但是如果把这个图片以UIImageVIew的形式显示出来，
+        //那么会在显示出来的时定变成当前app或者view设定设定的主题色，如果以Layer和形式显示出来。就是获取到的颜色，和app或者view设定设定的主题不一至。
+        let img =  UIImage.themeImg(UIDevice.current.orientation.rawValue > 2 ? "icon_key_pop_hor" : "icon_key_pop_center")
+        let imgLayer = CALayer()
+        imgLayer.contents = img.cgImage
+        imgLayer.name = "popLayer"
+        let txtLayer = CATextLayer()
+        txtLayer.foregroundColor = cKeyTextColor.cgColor
+        txtLayer.contentsScale = UIScreen.main.scale
+        imgLayer.addSublayer(txtLayer)
+        return imgLayer
     }()
 }
 

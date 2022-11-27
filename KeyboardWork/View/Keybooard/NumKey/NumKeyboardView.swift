@@ -49,7 +49,7 @@ class NumberKeyboardView:Keyboard{
            keyVerGap = 11.5
            keyIndent1 = 6
         } else {
-            if UIDevice.orientation.rawValue > 2{              //横屏参数
+            if UIDevice.current.orientation.rawValue > 2{              //横屏参数
                 keyWidth = (kSCREEN_WIDTH - 71) / 10
                 keyHeight = ((kSCREEN_HEIGHT * 0.6) - 90) * 0.2
                 keyTopMargin = 8
