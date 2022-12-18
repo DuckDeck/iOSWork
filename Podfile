@@ -48,7 +48,6 @@ target 'KeyboardWork' do
   use_frameworks!
   pod "Kingfisher"
   pod "SnapKit"
-  pod 'YHPDFImageLoader'
   pod 'SwiftyJSON'
   pod 'CocoaAsyncSocket'
   pod 'SwiftyBeaver'

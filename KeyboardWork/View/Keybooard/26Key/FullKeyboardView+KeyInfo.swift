@@ -475,7 +475,7 @@ extension FullKeyboardView{
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.fontSize = 18
-        symKey.fillColor = UIColor(named: "theme_color")!
+        symKey.fillColor = UIColor.yellow
         symKey.textColor = UIColor.white
         symKey.keyType = .backKeyboard
         symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)
@@ -623,7 +623,7 @@ extension FullKeyboardView{
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.fontSize = 18
-        symKey.fillColor = UIColor(named: "theme_color")!
+        symKey.fillColor = UIColor.yellow
         symKey.textColor = UIColor.white
         symKey.keyType = .backKeyboard
         symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)
@@ -783,7 +783,7 @@ extension FullKeyboardView{
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.fontSize = 18
-        symKey.fillColor = UIColor(named: "theme_color")!
+        symKey.fillColor = UIColor.yellow
         symKey.textColor = UIColor.white
         symKey.keyType = .backKeyboard
         symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)
@@ -926,7 +926,7 @@ extension FullKeyboardView{
         var symKey = KeyInfo()
         symKey.text = "返回"
         symKey.fontSize = 18
-        symKey.fillColor = UIColor(named: "theme_color")!
+        symKey.fillColor = UIColor.yellow
         symKey.textColor = UIColor.white
         symKey.keyType = .backKeyboard
         symKey.position = CGRect(x: keyIndent1, y: keyTop, width: widths[0], height: keyHeight)

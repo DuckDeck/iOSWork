@@ -16,7 +16,6 @@ PODS:
   - SwiftSoup (2.3.4)
   - SwiftyBeaver (1.9.6)
   - SwiftyJSON (5.0.1)
-  - YHPDFImageLoader (1.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -34,7 +33,6 @@ DEPENDENCIES:
   - SwiftSoup
   - SwiftyBeaver
   - SwiftyJSON
-  - YHPDFImageLoader
 
 SPEC REPOS:
   trunk:
@@ -54,7 +52,6 @@ SPEC REPOS:
     - SwiftSoup
     - SwiftyBeaver
     - SwiftyJSON
-    - YHPDFImageLoader
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
@@ -73,8 +70,7 @@ SPEC CHECKSUMS:
   SwiftSoup: d5b9645498f8d09fdc5f96b9c70b5858099fd411
   SwiftyBeaver: c8241b4745aa269a78ca5a022532c6915e948536
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
-  YHPDFImageLoader: cd9628397fff7fd72368cd26dbc5290f05311276
 
-PODFILE CHECKSUM: 53203986ab06840ad01fbd3d02434d0d24cb0e2a
+PODFILE CHECKSUM: 475c3d22d33640818be5c6b1d6477b6516864097
 
 COCOAPODS: 1.11.3

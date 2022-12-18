@@ -36,7 +36,7 @@ class KeyboardViewController: UIInputViewController{
             clientSockek = GCDAsyncSocket(delegate: self, delegateQueue: DispatchQueue.main)
             startListen()
         }
-        self.constraint = NSLayoutConstraint(item: view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 272)
+        self.constraint = NSLayoutConstraint(item: view!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: globalKeyboardHeight.value)
         self.constraint.priority = .defaultHigh
         view.addConstraint(self.constraint)
         overrideUserInterfaceStyle = UserDefaults.standard.overridedUserInterfaceStyle

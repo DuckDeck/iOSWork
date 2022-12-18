@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //这里的代码目前用不了，不知为何
         // UncaughtExceptionHandler.installUncaughtExceptionHandler()
         //
-        
+        ViewChaosStart.awake()
         let errs = Store.AppErrors.Value
         for item in errs{
             print(item.name)

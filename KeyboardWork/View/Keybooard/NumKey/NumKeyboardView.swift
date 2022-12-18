@@ -151,7 +151,7 @@ class NumberKeyboardView:Keyboard{
         var backKey = KeyInfo()
         backKey.text = "返回"
         backKey.textColor = UIColor.white
-        backKey.fillColor = UIColor(named: "theme_color")!
+        backKey.fillColor = UIColor.yellow
         backKey.pressColor = Colors.color3A9A52
         backKey.position = CGRect(x: symbleKey.position.maxX + keyHorGap, y: symbleKey.position.minY, width: keyUnitWidth * 3, height: keyHeight)
         backKey.keyType = .backKeyboard
