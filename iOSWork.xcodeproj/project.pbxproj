@@ -758,6 +758,7 @@
 		AE72F541273EBDE20060456A /* city.json in Resources */ = {isa = PBXBuildFile; fileRef = AE72F526273EB9A50060456A /* city.json */; };
 		AE74AAC727D4A14C00296960 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74AAC627D4A14C00296960 /* CalculatorViewController.swift */; };
 		AE74AAC927D4A36A00296960 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE74AAC827D4A36A00296960 /* Calculator.swift */; };
+		AE76530129545C6400B9B4E3 /* FlowerTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE76530029545C6400B9B4E3 /* FlowerTextViewController.swift */; };
 		AE7E7426272251E300F0C19C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7425272251E300F0C19C /* AppDelegate.swift */; };
 		AE7E7428272251E300F0C19C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7427272251E300F0C19C /* SceneDelegate.swift */; };
 		AE7E742A272251E300F0C19C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7E7429272251E300F0C19C /* ViewController.swift */; };
@@ -1622,6 +1623,7 @@
 		AE72F527273EB9A50060456A /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		AE74AAC627D4A14C00296960 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		AE74AAC827D4A36A00296960 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		AE76530029545C6400B9B4E3 /* FlowerTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerTextViewController.swift; sourceTree = "<group>"; };
 		AE7E7422272251E300F0C19C /* iOSWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7E7425272251E300F0C19C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE7E7427272251E300F0C19C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -2723,6 +2725,7 @@
 		AE62CBE1272565EF007D51CD /* UI_Layout */ = {
 			isa = PBXGroup;
 			children = (
+				AE7652FF29545C1900B9B4E3 /* Text */,
 				AEF6CB38287A6F3B00352100 /* Theme */,
 				AEB649C1273FE70700BCBF4E /* Animation */,
 				AE6E5DCD273FC5D300523EA8 /* Layout */,
@@ -3184,6 +3187,14 @@
 				AE74AAC827D4A36A00296960 /* Calculator.swift */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		AE7652FF29545C1900B9B4E3 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				AE76530029545C6400B9B4E3 /* FlowerTextViewController.swift */,
+			);
+			path = Text;
 			sourceTree = "<group>";
 		};
 		AE7E7419272251E300F0C19C = {
@@ -4833,6 +4844,7 @@
 				AE66E1BD27538679006432FE /* VideoDecoder.mm in Sources */,
 				AE9EE9F8280843B500EBE70A /* PanCollectionViewController.swift in Sources */,
 				AE72F52C273EB9A50060456A /* CitySearchView.swift in Sources */,
+				AE76530129545C6400B9B4E3 /* FlowerTextViewController.swift in Sources */,
 				AE66E1B027538679006432FE /* AudioFileHandler.m in Sources */,
 				AEE0106F2742560200C155D8 /* MitoListViewController.swift in Sources */,
 				AEF86666274B9B52002E33E5 /* ClassifyingImagesViewController.swift in Sources */,
