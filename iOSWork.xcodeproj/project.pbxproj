@@ -5569,7 +5569,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWork;
+				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWorking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -5674,7 +5674,7 @@
 					"-weak_framework",
 					"\"SwiftUI\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWork;
+				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWorking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -5804,7 +5804,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWork.KeyboardWork;
+				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWorking.KeyboardWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -5851,7 +5851,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWork.KeyboardWork;
+				PRODUCT_BUNDLE_IDENTIFIER = ShadowEdge.iOSWorking.KeyboardWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import BBIconFont
 class TestKeyboardViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -57,9 +57,11 @@ class TestKeyboardViewController: UIViewController {
             make.height.equalTo(30)
         }
         let lbl1 = UILabel()
-        lbl1.text = "👆(如果先前是系统键盘，会使用系统数字键盘，否则会启用第三方键盘的)"
-        lbl1.textColor = UIColor.black
-        lbl1.font = UIFont.systemFont(ofSize: 12)
+        
+        lbl1.font = UIFont.if_iconFont(16)
+        // 纯 Icon
+        lbl1.textColor = .darkGray
+        lbl1.text = " \(BBIconNames.提示面)(如果先前是系统键盘，会使用系统数字键盘，否则会启用第三方键盘的)"
         lbl1.numberOfLines = 0
         panelView.addArrangedSubview(lbl1)
         lbl1.snp.makeConstraints { make in

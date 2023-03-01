@@ -17,6 +17,7 @@ pod "SwiftSoup"
 pod 'SwiftyBeaver'
 pod 'CocoaAsyncSocket'
 pod 'Bugly'
+pod 'BBIconFont', :path=>'BBIconFont'
 end
 
 target 'CLangWork' do

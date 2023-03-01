@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.5.0)
+  - BBIconFont (0.1.0)
   - Bugly (2.5.93)
   - BuglyExtension (1.1)
   - CocoaAsyncSocket (7.6.5)
@@ -19,6 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BBIconFont (from `BBIconFont`)
   - Bugly
   - BuglyExtension
   - CocoaAsyncSocket
@@ -53,8 +55,13 @@ SPEC REPOS:
     - SwiftyBeaver
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  BBIconFont:
+    :path: BBIconFont
+
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  BBIconFont: 7d7e64afb4a53b6b9d2c0e28c167ec8331bd6e66
   Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
   BuglyExtension: 857435d3f1545404cbce9a777e4ce5b7123cf36c
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
@@ -71,6 +78,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: c8241b4745aa269a78ca5a022532c6915e948536
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 475c3d22d33640818be5c6b1d6477b6516864097
+PODFILE CHECKSUM: b13a5126b37e367e552c6e742355aa5d87c124d1
 
 COCOAPODS: 1.11.2
