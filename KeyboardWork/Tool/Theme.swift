@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 infix operator |: AdditionPrecedence
 public extension UIColor {
     static func | (lightMode: UIColor, darkMode: UIColor) -> UIColor {
@@ -20,6 +20,32 @@ public extension UIColor {
         }
     }
 }
+
+var MenuBgColor: UIColor {
+    return  menuBgColor
+}
+
+
+
+var cPopChooseBorderColor:UIColor{
+    return Colors.colorB4B7C0 | Colors.color48494D
+}
+var cSelectTextBorderColor:UIColor{
+    return Colors.color17181A.withAlphaComponent(0.08) | UIColor.white.withAlphaComponent(0.16)
+}
+
+var menuBgColor:UIColor{
+    return Colors.colorF6F6F6 | UIColor("444444")
+}
+
+var chatMenuBgColor:UIColor{
+    return Colors.colorF6F6F6 | UIColor("1C1D1F")
+}
+
+var keyboardBgColor:UIColor{
+    return UIColor("D1D3D9") | UIColor("313131")
+}
+
 
 var cKeyCalBgColor: UIColor {
     return UIColor(hexString: "F6F6F6")! | UIColor(hexString: "414347")!

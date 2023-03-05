@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreTelephony
-
+import UIKit
 enum DeviceDirection{
     case PadHor,PadVer,PhoneHor,PhoneVer
 }
@@ -35,6 +35,7 @@ extension UIDevice{
             }
         }
     }
+    
     
     static var modelName: String {
           var systemInfo = utsname()

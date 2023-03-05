@@ -5,7 +5,7 @@
 //  Created by Stan Hu on 2022/7/7.
 //
 
-import Foundation
+import UIKit
 class PasteboardView:KeyboardNav{
     var arrStr = [String]()
     override init(frame: CGRect) {

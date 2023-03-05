@@ -7,6 +7,7 @@
 
 import Foundation
 import Photos
+import UIKit
 enum PHPAsset{
     case img(UIImage)
     case imgUrl(URL)

@@ -152,6 +152,10 @@ extension KeyboardViewController{
         }
     }
     
+    var hasText : Bool{
+        return textDocumentProxy.hasText
+    }
+    
      @objc func insert(text: String?) {
          guard let _text = text else {
              return

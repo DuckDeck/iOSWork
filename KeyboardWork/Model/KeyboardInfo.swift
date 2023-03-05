@@ -15,7 +15,9 @@ struct KeyboardInfo:Codable{
     var correctInput = true
     
     var shake = false
-    
+    private static let keyboardHorHeight = "keyboardHorHeight"    //键盘横屏高度
+    private static let keyboardVerHeight = "keyboardHorHeight"    //键盘竖屏高度
+
     static let keyboardInfo = Store(name: "keyboardInfo", defaultValue: KeyboardInfo(),isUseKeyboardStore: true)
     
     static var KeyboardType : KeyboardType{
@@ -34,6 +36,39 @@ struct KeyboardInfo:Codable{
         get{return KeyboardInfo.keyboardInfo.Value.shake}
         set{var tmp = KeyboardInfo.keyboardInfo.Value;tmp.shake = newValue;KeyboardInfo.keyboardInfo.Value = tmp}
     }
+    
+    
+    static var boardHeight:CGFloat{
+        var height = 0
+        let tmpDict = Store<[String:String]>.innerValue(key: "KeyboardSetting") ?? [String:String]()
+        if UIDevice.current.orientation.isPortrait{
+            height = Int(tmpDict[keyboardVerHeight] ?? "") ?? 0
+        } else {
+            height = Int(tmpDict[keyboardHorHeight] ?? "") ?? 0
+        }
+        if height == 0{
+           return standardBoardHeight
+        }
+        return  CGFloat(height)
+    }
+    
+    static var standardBoardHeight:CGFloat{
+        switch UIDevice.current.deviceDirection{
+        case .PadVer:
+            return 264
+        case .PadHor:
+            return 352
+        case .PhoneHor:
+            return 161
+        case .PhoneVer:
+            if UIScreen.main.bounds.width < kSepScreenWidth{
+                return 216
+            } else {
+                return 226 
+            }
+        }
+    }
+    
 }
 
 var KBScale: CGFloat {

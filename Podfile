@@ -54,6 +54,7 @@ target 'KeyboardWork' do
   pod 'SwiftyBeaver'
   pod "Alamofire"
   pod 'BuglyExtension'
+  pod 'BBIconFont', :path=>'BBIconFont'
   # Pods for KeyboardWork
 
 end

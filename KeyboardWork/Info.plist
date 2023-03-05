@@ -20,5 +20,10 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).KeyboardViewController</string>
 	</dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>WegoKeyboard-Pale.otf</string>
+		<string>WegoKeyboard-PaleMedium.otf</string>
+	</array>
 </dict>
 </plist>

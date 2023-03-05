@@ -74,85 +74,13 @@ extension UITextDocumentProxy {
     }
 }
 
-enum KeyboardHeight: CGFloat {
-    case normal = 50.0, big = 200
-    var value: CGFloat {
-        switch UIDevice.current.deviceDirection{
-        case .PadHor,.PadVer:
-            return 380
-        case .PhoneHor,.PhoneVer:
-            return self.boardHeight + self.rawValue
-        }
-    }
-    
-    var headerHeight:CGFloat{
-        if UIDevice.current.deviceDirection == .PhoneHor{
-            return 42
-        } else {
-            return 50
-        }
-    }
-    
-    var boardHeight:CGFloat{
-        switch UIDevice.current.deviceDirection{
-        case .PadVer,.PadHor:
-            return 318
-        case .PhoneHor:
-            return (UIScreen.main.bounds.width < 400 ? 180 : 200)
-        case .PhoneVer:
-            return (UIScreen.main.bounds.width < 400 ? 203 : 223)
-        }
-    }
-}
 
 
-var ReturnKey:KeyInfo{
-        var k = KeyInfo()
-        
-        let type = keyboardVC?.textDocumentProxy.returnText ?? ""
-        k.text = type
-        let str = keyboardVC?.currentText ?? ""
-        if type == "换行"{
-            k.isEnable = true
-        } else{
-            k.isEnable = !str.isEmpty
-        }
-        if k.isEnable{
-            k.fillColor = UIColor.orange
-            if !k.text.isEmpty{
-                k.textColor = UIColor.white
-                k.textSize = 18
-            }
-            k.keyType = .returnKey(.usable)
-        } else {
-            k.fillColor = UIColor("b3b7bc")
-            if !k.text.isEmpty{
-                k.textColor = Colors.color888888
-                k.textSize = 18
-            }
-            if !k.image.isEmpty{
-                k.image = "icon_keyboard_enter_gray"
-            }
-            k.keyType = .returnKey(.disable)
-        }
-        
-        return k
-}
+let kSepScreenWidth : CGFloat  = 391            //区别屏幕宽度的分界大小，
 
 
-let FullLeftCharacher = Set<String>.init(arrayLiteral: "，","。","；","：","》","？","！","、","）","】")
-let FullRightCharacher = Set<String>.init(arrayLiteral: "（","【","《")
-extension String{
-    var characherOffset:CGFloat{
-        if FullLeftCharacher.contains(self){
-            return 5
-        } else if FullRightCharacher.contains(self){
-            return -5
-        }
-        return 0
-    }
-}
-
+var globalCache = [String:String]()                    //临时保存的值，键盘后台被杀会重置
 
 
 let Toast = Hud(frame: CGRect.zero)
+

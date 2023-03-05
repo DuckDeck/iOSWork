@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 struct Colors{
     static var colorF9F9F9: UIColor = {
         let v = UIColor("f9f9f9")
@@ -191,6 +192,26 @@ struct Colors{
     
     static var color3D3E42: UIColor = {
         let v = UIColor("3d3e42")
+        return v
+    }()
+    
+    static var colorA2A5AD : UIColor = {
+        let v = UIColor("a2a5ad")
+        return v
+    }()
+    
+    static var color92DAA4 : UIColor = {
+        let v = UIColor("92daa4")
+        return v
+    }()
+    
+    static var colorE8E9EC : UIColor = {
+        let v = UIColor("e8e9ec")
+        return v
+    }()
+    
+    static var color969AA0 : UIColor = {
+        let v = UIColor("969aa0")
         return v
     }()
 }

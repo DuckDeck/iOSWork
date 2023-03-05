@@ -12,6 +12,7 @@ class Header:UIView{
 }
 
 class HeaderView: Header {
+    var isHavePinYin = false
     override init(frame: CGRect) {
         super.init(frame: frame)
         

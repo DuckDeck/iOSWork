@@ -5,7 +5,7 @@
 //  Created by ShadowEdge on 2022/10/19.
 //
 
-import Foundation
+import UIKit
 class FullAccessHintView:UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)

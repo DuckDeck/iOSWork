@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		208DA91C2902E8A000218246 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 208DA91B2902E8A000218246 /* Settings.bundle */; };
-		20986CE6292A2372006C992E /* FullKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20986CE5292A2372006C992E /* FullKeyboardView+Touch.swift */; };
-		20986CEC292A239A006C992E /* NumberKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20986CEB292A239A006C992E /* NumberKeyboardView+Touch.swift */; };
-		20986CEE292A23B3006C992E /* NineKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20986CED292A23B3006C992E /* NineKeyboardView+Touch.swift */; };
 		20986CF2292A2470006C992E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20986CF1292A2470006C992E /* Colors.swift */; };
 		20A965592903C6B2007F8526 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965582903C6B2007F8526 /* UIView+Extension.swift */; };
 		20A9655A2903C6B2007F8526 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965582903C6B2007F8526 /* UIView+Extension.swift */; };
@@ -103,7 +100,6 @@
 		AE128843280C515B0049A5E4 /* ISEmojiList.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE128840280C515B0049A5E4 /* ISEmojiList.plist */; };
 		AE128844280C515B0049A5E4 /* ISEmojiList_iOS10.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE128841280C515B0049A5E4 /* ISEmojiList_iOS10.plist */; };
 		AE128845280C515B0049A5E4 /* ISEmojiList_iOS11.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE128842280C515B0049A5E4 /* ISEmojiList_iOS11.plist */; };
-		AE128847280C51820049A5E4 /* EmojiKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128846280C51820049A5E4 /* EmojiKeyboard.swift */; };
 		AE128849280C51E00049A5E4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE128848280C51E00049A5E4 /* Extension.swift */; };
 		AE128860281CED0A0049A5E4 /* glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884E281CED0A0049A5E4 /* glyph.swift */; };
 		AE128861281CED0A0049A5E4 /* glyph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12884E281CED0A0049A5E4 /* glyph.swift */; };
@@ -809,6 +805,20 @@
 		AED0C2BB274E83F3007A3547 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AED0C2C9274E8511007A3547 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AED0C2CA274E8548007A3547 /* ShadowVideoPlayControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CABD272542DC007D51CD /* ShadowVideoPlayControlView.swift */; };
+		AEDF535529B437FC00094B6B /* FullKeyboardView+keyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535229B437FC00094B6B /* FullKeyboardView+keyInfo.swift */; };
+		AEDF535629B437FC00094B6B /* FullKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535329B437FC00094B6B /* FullKeyboardView+Touch.swift */; };
+		AEDF535729B437FC00094B6B /* FullkeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535429B437FC00094B6B /* FullkeyboardView.swift */; };
+		AEDF535A29B4380300094B6B /* EmojiKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535929B4380300094B6B /* EmojiKeyboard.swift */; };
+		AEDF535E29B4380F00094B6B /* NineKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535C29B4380F00094B6B /* NineKeyboardView+Touch.swift */; };
+		AEDF535F29B4380F00094B6B /* NineKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535D29B4380F00094B6B /* NineKeyboardView.swift */; };
+		AEDF536329B4381400094B6B /* NumberKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF536129B4381400094B6B /* NumberKeyboardView+Touch.swift */; };
+		AEDF536429B4381400094B6B /* NumberKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF536229B4381400094B6B /* NumberKeyboardView.swift */; };
+		AEDF536829B4385200094B6B /* WegoKeyboard-Pale.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEDF536629B4385100094B6B /* WegoKeyboard-Pale.otf */; };
+		AEDF536929B4385200094B6B /* WegoKeyboard-PaleMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AEDF536729B4385100094B6B /* WegoKeyboard-PaleMedium.otf */; };
+		AEDF536D29B43D3A00094B6B /* PopKeyChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF536B29B43D3A00094B6B /* PopKeyChooseView.swift */; };
+		AEDF536E29B43D3A00094B6B /* PopKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF536C29B43D3A00094B6B /* PopKeyView.swift */; };
+		AEDF537229B4408000094B6B /* KeyboardConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF537029B4408000094B6B /* KeyboardConstant.swift */; };
+		AEDF537329B4408000094B6B /* KeyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF537129B4408000094B6B /* KeyInfo.swift */; };
 		AEE0103627424A0100C155D8 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103527424A0100C155D8 /* VideoListViewController.swift */; };
 		AEE0103827424A1000C155D8 /* VideoRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103727424A1000C155D8 /* VideoRecordViewController.swift */; };
 		AEE0103A27424A3600C155D8 /* VideoFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE0103927424A3600C155D8 /* VideoFileManager.swift */; };
@@ -992,15 +1002,8 @@
 		AEE011A92742788B00C155D8 /* b.c in Sources */ = {isa = PBXBuildFile; fileRef = AEE011A72742788B00C155D8 /* b.c */; };
 		AEE3DB1127FC0958007B2B58 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB0C27FC0957007B2B58 /* KeyboardView.swift */; };
 		AEE3DB1727FC0960007B2B58 /* KeyboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB1527FC0960007B2B58 /* KeyboardInfo.swift */; };
-		AEE3DB1827FC0960007B2B58 /* KeyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB1627FC0960007B2B58 /* KeyInfo.swift */; };
 		AEE3DB1927FC09C1007B2B58 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2C27254946007D51CD /* UIColor+Extension.swift */; };
-		AEE3DB2227FC0BF2007B2B58 /* PopKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2027FC0BF1007B2B58 /* PopKeyView.swift */; };
-		AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2127FC0BF1007B2B58 /* PopKeyChooseView.swift */; };
-		AEE3DB2927FC0C45007B2B58 /* FullKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2627FC0C45007B2B58 /* FullKeyboardView.swift */; };
-		AEE3DB2A27FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2727FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift */; };
 		AEE3DB2D27FC0D2A007B2B58 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB2C27FC0D2A007B2B58 /* Store.swift */; };
-		AEE3DB5927FC2FFA007B2B58 /* NineKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB5827FC2FFA007B2B58 /* NineKeyboardView.swift */; };
-		AEE3DB5E27FC31C4007B2B58 /* NumKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB5D27FC31C4007B2B58 /* NumKeyboardView.swift */; };
 		AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */; };
 		AEE3DB6427FC3DAC007B2B58 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE3DB6327FC3DAC007B2B58 /* HeaderView.swift */; };
 		AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE3272946FF00DCA7B8 /* Group.swift */; };
@@ -1110,9 +1113,6 @@
 /* Begin PBXFileReference section */
 		03D9AD4D8B41C508210EEC7F /* Pods-KeyboardWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardWork.release.xcconfig"; path = "Target Support Files/Pods-KeyboardWork/Pods-KeyboardWork.release.xcconfig"; sourceTree = "<group>"; };
 		208DA91B2902E8A000218246 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		20986CE5292A2372006C992E /* FullKeyboardView+Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+Touch.swift"; sourceTree = "<group>"; };
-		20986CEB292A239A006C992E /* NumberKeyboardView+Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberKeyboardView+Touch.swift"; sourceTree = "<group>"; };
-		20986CED292A23B3006C992E /* NineKeyboardView+Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NineKeyboardView+Touch.swift"; sourceTree = "<group>"; };
 		20986CF1292A2470006C992E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		20A965582903C6B2007F8526 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		20A9655C2903C794007F8526 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -1225,7 +1225,6 @@
 		AE128840280C515B0049A5E4 /* ISEmojiList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ISEmojiList.plist; sourceTree = "<group>"; };
 		AE128841280C515B0049A5E4 /* ISEmojiList_iOS10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ISEmojiList_iOS10.plist; sourceTree = "<group>"; };
 		AE128842280C515B0049A5E4 /* ISEmojiList_iOS11.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ISEmojiList_iOS11.plist; sourceTree = "<group>"; };
-		AE128846280C51820049A5E4 /* EmojiKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiKeyboard.swift; sourceTree = "<group>"; };
 		AE128848280C51E00049A5E4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		AE12884E281CED0A0049A5E4 /* glyph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = glyph.swift; sourceTree = "<group>"; };
 		AE12884F281CED0A0049A5E4 /* input-parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "input-parser.swift"; sourceTree = "<group>"; };
@@ -1671,6 +1670,20 @@
 		AEC9916A287442C4002879A0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		AEDF535229B437FC00094B6B /* FullKeyboardView+keyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+keyInfo.swift"; sourceTree = "<group>"; };
+		AEDF535329B437FC00094B6B /* FullKeyboardView+Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+Touch.swift"; sourceTree = "<group>"; };
+		AEDF535429B437FC00094B6B /* FullkeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullkeyboardView.swift; sourceTree = "<group>"; };
+		AEDF535929B4380300094B6B /* EmojiKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiKeyboard.swift; sourceTree = "<group>"; };
+		AEDF535C29B4380F00094B6B /* NineKeyboardView+Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NineKeyboardView+Touch.swift"; sourceTree = "<group>"; };
+		AEDF535D29B4380F00094B6B /* NineKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NineKeyboardView.swift; sourceTree = "<group>"; };
+		AEDF536129B4381400094B6B /* NumberKeyboardView+Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NumberKeyboardView+Touch.swift"; sourceTree = "<group>"; };
+		AEDF536229B4381400094B6B /* NumberKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberKeyboardView.swift; sourceTree = "<group>"; };
+		AEDF536629B4385100094B6B /* WegoKeyboard-Pale.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WegoKeyboard-Pale.otf"; sourceTree = "<group>"; };
+		AEDF536729B4385100094B6B /* WegoKeyboard-PaleMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WegoKeyboard-PaleMedium.otf"; sourceTree = "<group>"; };
+		AEDF536B29B43D3A00094B6B /* PopKeyChooseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopKeyChooseView.swift; sourceTree = "<group>"; };
+		AEDF536C29B43D3A00094B6B /* PopKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopKeyView.swift; sourceTree = "<group>"; };
+		AEDF537029B4408000094B6B /* KeyboardConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardConstant.swift; sourceTree = "<group>"; };
+		AEDF537129B4408000094B6B /* KeyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyInfo.swift; sourceTree = "<group>"; };
 		AEE0103527424A0100C155D8 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
 		AEE0103727424A1000C155D8 /* VideoRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRecordViewController.swift; sourceTree = "<group>"; };
 		AEE0103927424A3600C155D8 /* VideoFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFileManager.swift; sourceTree = "<group>"; };
@@ -1824,14 +1837,7 @@
 		AEE011A72742788B00C155D8 /* b.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = b.c; sourceTree = "<group>"; };
 		AEE3DB0C27FC0957007B2B58 /* KeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		AEE3DB1527FC0960007B2B58 /* KeyboardInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInfo.swift; sourceTree = "<group>"; };
-		AEE3DB1627FC0960007B2B58 /* KeyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyInfo.swift; sourceTree = "<group>"; };
-		AEE3DB2027FC0BF1007B2B58 /* PopKeyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopKeyView.swift; sourceTree = "<group>"; };
-		AEE3DB2127FC0BF1007B2B58 /* PopKeyChooseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopKeyChooseView.swift; sourceTree = "<group>"; };
-		AEE3DB2627FC0C45007B2B58 /* FullKeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullKeyboardView.swift; sourceTree = "<group>"; };
-		AEE3DB2727FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+KeyInfo.swift"; sourceTree = "<group>"; };
 		AEE3DB2C27FC0D2A007B2B58 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		AEE3DB5827FC2FFA007B2B58 /* NineKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineKeyboardView.swift; sourceTree = "<group>"; };
-		AEE3DB5D27FC31C4007B2B58 /* NumKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumKeyboardView.swift; sourceTree = "<group>"; };
 		AEE3DB6027FC3AD8007B2B58 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		AEE3DB6327FC3DAC007B2B58 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		AEF0EBE3272946FF00DCA7B8 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -2098,20 +2104,10 @@
 			path = easySqlite;
 			sourceTree = "<group>";
 		};
-		20B65A4F28FC27FB00341DB9 /* Keybooard */ = {
-			isa = PBXGroup;
-			children = (
-				AE12883C280C50910049A5E4 /* Emoji */,
-				AEE3DB5C27FC31B1007B2B58 /* NumKey */,
-				AEE3DB2427FC0C2E007B2B58 /* 26Key */,
-				AEE3DB5727FC2FD6007B2B58 /* 9Key */,
-			);
-			path = Keybooard;
-			sourceTree = "<group>";
-		};
 		20CEA0B1293A3A460079C763 /* Files */ = {
 			isa = PBXGroup;
 			children = (
+				AEDF536529B4384200094B6B /* font */,
 				AE12883F280C515B0049A5E4 /* emoji */,
 			);
 			path = Files;
@@ -2131,14 +2127,6 @@
 				AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */,
 			);
 			path = Download;
-			sourceTree = "<group>";
-		};
-		AE12883C280C50910049A5E4 /* Emoji */ = {
-			isa = PBXGroup;
-			children = (
-				AE128846280C51820049A5E4 /* EmojiKeyboard.swift */,
-			);
-			path = Emoji;
 			sourceTree = "<group>";
 		};
 		AE12883F280C515B0049A5E4 /* emoji */ = {
@@ -2226,7 +2214,6 @@
 			isa = PBXGroup;
 			children = (
 				AEE3DB1527FC0960007B2B58 /* KeyboardInfo.swift */,
-				AEE3DB1627FC0960007B2B58 /* KeyInfo.swift */,
 				20B65A3628FC242D00341DB9 /* KeyboardEnum.swift */,
 				20B65A4D28FC274B00341DB9 /* KeyboardProtocal.swift */,
 			);
@@ -2237,10 +2224,14 @@
 			isa = PBXGroup;
 			children = (
 				AEE3DB0C27FC0957007B2B58 /* KeyboardView.swift */,
+				AEDF536F29B4408000094B6B /* KeyInfo */,
+				AEDF536A29B43D3A00094B6B /* KeyView */,
+				AEDF536029B4381400094B6B /* Number */,
+				AEDF535B29B4380F00094B6B /* NineKey */,
+				AEDF535829B4380300094B6B /* Emoji */,
+				AEDF535129B437FC00094B6B /* 26Key */,
 				AEE3DB6227FC3D9E007B2B58 /* Header */,
-				20B65A4F28FC27FB00341DB9 /* Keybooard */,
 				AE1A22EC2876D70600A5C18B /* Pasteboard */,
-				AEE3DB1F27FC0BD0007B2B58 /* PopView */,
 				AEB517E1282677EA00F2FA1D /* View */,
 			);
 			path = View;
@@ -3419,6 +3410,69 @@
 			path = Exception;
 			sourceTree = "<group>";
 		};
+		AEDF535129B437FC00094B6B /* 26Key */ = {
+			isa = PBXGroup;
+			children = (
+				AEDF535429B437FC00094B6B /* FullkeyboardView.swift */,
+				AEDF535229B437FC00094B6B /* FullKeyboardView+keyInfo.swift */,
+				AEDF535329B437FC00094B6B /* FullKeyboardView+Touch.swift */,
+			);
+			path = 26Key;
+			sourceTree = "<group>";
+		};
+		AEDF535829B4380300094B6B /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				AEDF535929B4380300094B6B /* EmojiKeyboard.swift */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
+		AEDF535B29B4380F00094B6B /* NineKey */ = {
+			isa = PBXGroup;
+			children = (
+				AEDF535D29B4380F00094B6B /* NineKeyboardView.swift */,
+				AEDF535C29B4380F00094B6B /* NineKeyboardView+Touch.swift */,
+			);
+			path = NineKey;
+			sourceTree = "<group>";
+		};
+		AEDF536029B4381400094B6B /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				AEDF536229B4381400094B6B /* NumberKeyboardView.swift */,
+				AEDF536129B4381400094B6B /* NumberKeyboardView+Touch.swift */,
+			);
+			path = Number;
+			sourceTree = "<group>";
+		};
+		AEDF536529B4384200094B6B /* font */ = {
+			isa = PBXGroup;
+			children = (
+				AEDF536629B4385100094B6B /* WegoKeyboard-Pale.otf */,
+				AEDF536729B4385100094B6B /* WegoKeyboard-PaleMedium.otf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		AEDF536A29B43D3A00094B6B /* KeyView */ = {
+			isa = PBXGroup;
+			children = (
+				AEDF536B29B43D3A00094B6B /* PopKeyChooseView.swift */,
+				AEDF536C29B43D3A00094B6B /* PopKeyView.swift */,
+			);
+			path = KeyView;
+			sourceTree = "<group>";
+		};
+		AEDF536F29B4408000094B6B /* KeyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				AEDF537029B4408000094B6B /* KeyboardConstant.swift */,
+				AEDF537129B4408000094B6B /* KeyInfo.swift */,
+			);
+			path = KeyInfo;
+			sourceTree = "<group>";
+		};
 		AEE01034274249E600C155D8 /* VideoRecord */ = {
 			isa = PBXGroup;
 			children = (
@@ -3794,25 +3848,6 @@
 			path = CLangWork;
 			sourceTree = "<group>";
 		};
-		AEE3DB1F27FC0BD0007B2B58 /* PopView */ = {
-			isa = PBXGroup;
-			children = (
-				AEE3DB2127FC0BF1007B2B58 /* PopKeyChooseView.swift */,
-				AEE3DB2027FC0BF1007B2B58 /* PopKeyView.swift */,
-			);
-			path = PopView;
-			sourceTree = "<group>";
-		};
-		AEE3DB2427FC0C2E007B2B58 /* 26Key */ = {
-			isa = PBXGroup;
-			children = (
-				AEE3DB2627FC0C45007B2B58 /* FullKeyboardView.swift */,
-				AEE3DB2727FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift */,
-				20986CE5292A2372006C992E /* FullKeyboardView+Touch.swift */,
-			);
-			path = 26Key;
-			sourceTree = "<group>";
-		};
 		AEE3DB2B27FC0D1C007B2B58 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -3826,24 +3861,6 @@
 				20986CF1292A2470006C992E /* Colors.swift */,
 			);
 			path = Tool;
-			sourceTree = "<group>";
-		};
-		AEE3DB5727FC2FD6007B2B58 /* 9Key */ = {
-			isa = PBXGroup;
-			children = (
-				AEE3DB5827FC2FFA007B2B58 /* NineKeyboardView.swift */,
-				20986CED292A23B3006C992E /* NineKeyboardView+Touch.swift */,
-			);
-			path = 9Key;
-			sourceTree = "<group>";
-		};
-		AEE3DB5C27FC31B1007B2B58 /* NumKey */ = {
-			isa = PBXGroup;
-			children = (
-				AEE3DB5D27FC31C4007B2B58 /* NumKeyboardView.swift */,
-				20986CEB292A239A006C992E /* NumberKeyboardView+Touch.swift */,
-			);
-			path = NumKey;
 			sourceTree = "<group>";
 		};
 		AEE3DB6227FC3D9E007B2B58 /* Header */ = {
@@ -4402,7 +4419,9 @@
 				AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */,
 				AE128844280C515B0049A5E4 /* ISEmojiList_iOS10.plist in Resources */,
 				20B65A2428FC227A00341DB9 /* jieba.dict.utf8.cad346b82a217a06f2713f6efba49e04.1.dat_cache in Resources */,
+				AEDF536829B4385200094B6B /* WegoKeyboard-Pale.otf in Resources */,
 				20B65A2228FC227A00341DB9 /* stop_words.utf8 in Resources */,
+				AEDF536929B4385200094B6B /* WegoKeyboard-PaleMedium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5071,7 +5090,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEE3DB2927FC0C45007B2B58 /* FullKeyboardView.swift in Sources */,
+				AEDF535729B437FC00094B6B /* FullkeyboardView.swift in Sources */,
 				AE12888E281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
 				20A965672903C934007F8526 /* Log.swift in Sources */,
 				AE9EE9F628083E2000EBE70A /* Shake.swift in Sources */,
@@ -5084,9 +5103,9 @@
 				20A9656D2903CA4A007F8526 /* HttpClient.swift in Sources */,
 				20B65A5328FC297900341DB9 /* UIButton+Extension.swift in Sources */,
 				20B65A4928FC26BB00341DB9 /* PanCollectionView.swift in Sources */,
-				20986CEE292A23B3006C992E /* NineKeyboardView+Touch.swift in Sources */,
 				AEB517EA2826799200F2FA1D /* LayoutButton.swift in Sources */,
-				AEE3DB5E27FC31C4007B2B58 /* NumKeyboardView.swift in Sources */,
+				AEDF537329B4408000094B6B /* KeyInfo.swift in Sources */,
+				AEDF535629B437FC00094B6B /* FullKeyboardView+Touch.swift in Sources */,
 				20B659CE28FC224A00341DB9 /* ColorStyle.swift in Sources */,
 				AEF86663274B9A38002E33E5 /* String+Extension.swift in Sources */,
 				AEE3DB1927FC09C1007B2B58 /* UIColor+Extension.swift in Sources */,
@@ -5101,32 +5120,33 @@
 				AEE3DB1127FC0958007B2B58 /* KeyboardView.swift in Sources */,
 				20B65A4C28FC26FF00341DB9 /* SepWordsView.swift in Sources */,
 				20B65A2F28FC227A00341DB9 /* SqlField.cpp in Sources */,
-				AEE3DB2227FC0BF2007B2B58 /* PopKeyView.swift in Sources */,
 				20B65A3F28FC24D000341DB9 /* Recognize.swift in Sources */,
 				AEF6CB41287A7CB200352100 /* Theme.swift in Sources */,
 				20A965762903D2D1007F8526 /* PHPLibraryTool.swift in Sources */,
 				AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */,
-				AE128847280C51820049A5E4 /* EmojiKeyboard.swift in Sources */,
 				20B659CF28FC224A00341DB9 /* ImageStyle.swift in Sources */,
+				AEDF535529B437FC00094B6B /* FullKeyboardView+keyInfo.swift in Sources */,
 				AEB517E3282677F700F2FA1D /* SwitchKeyboardView.swift in Sources */,
+				AEDF537229B4408000094B6B /* KeyboardConstant.swift in Sources */,
 				20A965742903D145007F8526 /* UIImage+Base.swift in Sources */,
 				AEE3DB1727FC0960007B2B58 /* KeyboardInfo.swift in Sources */,
 				AEC9916B287442C4002879A0 /* HUD.swift in Sources */,
+				AEDF536E29B43D3A00094B6B /* PopKeyView.swift in Sources */,
 				AE1A22EB2876D37100A5C18B /* PasteboardView.swift in Sources */,
-				AEE3DB2327FC0BF2007B2B58 /* PopKeyChooseView.swift in Sources */,
 				AE12889928210F590049A5E4 /* Global.swift in Sources */,
 				20A965822903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
 				AE128882281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE128866281CED0A0049A5E4 /* input-parser.swift in Sources */,
 				20B65A3328FC227A00341DB9 /* WGInputAssociateWraper.mm in Sources */,
-				AEE3DB1827FC0960007B2B58 /* KeyInfo.swift in Sources */,
 				20986CF2292A2470006C992E /* Colors.swift in Sources */,
+				AEDF536D29B43D3A00094B6B /* PopKeyChooseView.swift in Sources */,
 				AE12887A281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				20B65A2D28FC227A00341DB9 /* SqlRecord.cpp in Sources */,
 				AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */,
 				20B6595D28FC0BB100341DB9 /* HeaderPasteboardView.swift in Sources */,
 				AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */,
 				AE128849280C51E00049A5E4 /* Extension.swift in Sources */,
+				AEDF535A29B4380300094B6B /* EmojiKeyboard.swift in Sources */,
 				20B65A3028FC227A00341DB9 /* SqlValue.cpp in Sources */,
 				AEF6CB3E287A79E400352100 /* Style+Extension.swift in Sources */,
 				20A9656B2903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
@@ -5136,27 +5156,27 @@
 				20B65A4E28FC274B00341DB9 /* KeyboardProtocal.swift in Sources */,
 				AEF8665D274B7023002E33E5 /* Foundation+Extension.swift in Sources */,
 				20B65A3C28FC249200341DB9 /* UIFont+Extension.swift in Sources */,
+				AEDF535E29B4380F00094B6B /* NineKeyboardView+Touch.swift in Sources */,
 				20B65A2E28FC227A00341DB9 /* SqlDatabase.cpp in Sources */,
-				20986CE6292A2372006C992E /* FullKeyboardView+Touch.swift in Sources */,
 				AE12886E281CED0A0049A5E4 /* expression-combining.swift in Sources */,
 				AE128892281CED0A0049A5E4 /* tokenizer.swift in Sources */,
-				AEE3DB2A27FC0C45007B2B58 /* FullKeyboardView+KeyInfo.swift in Sources */,
 				20A9657E2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
+				AEDF536329B4381400094B6B /* NumberKeyboardView+Touch.swift in Sources */,
+				AEDF536429B4381400094B6B /* NumberKeyboardView.swift in Sources */,
 				AE12887E281CED0A0049A5E4 /* calc-result.swift in Sources */,
 				AE128872281CED0A0049A5E4 /* expressionizer.swift in Sources */,
 				AE1A22EE2876D72000A5C18B /* PasteboardManage.swift in Sources */,
 				20B65A1D28FC227A00341DB9 /* InputAssociate.cpp in Sources */,
 				AE128896281CED0A0049A5E4 /* token.swift in Sources */,
 				AE7E7452272252AC00F0C19C /* KeyboardViewController.swift in Sources */,
-				AEE3DB5927FC2FFA007B2B58 /* NineKeyboardView.swift in Sources */,
 				20B65A2C28FC227A00341DB9 /* SHA1.cpp in Sources */,
 				AEE3DB6427FC3DAC007B2B58 /* HeaderView.swift in Sources */,
 				AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */,
 				20B65A5128FC28E300341DB9 /* GridView.swift in Sources */,
 				AE128876281CED0A0049A5E4 /* calculator.swift in Sources */,
 				20A965642903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
+				AEDF535F29B4380F00094B6B /* NineKeyboardView.swift in Sources */,
 				AE128862281CED0A0049A5E4 /* glyph.swift in Sources */,
-				20986CEC292A239A006C992E /* NumberKeyboardView+Touch.swift in Sources */,
 				AE0442852803D6BA003DB6A1 /* InputText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

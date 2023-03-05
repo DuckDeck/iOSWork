@@ -5,7 +5,7 @@
 //  Created by ShadowEdge on 2022/10/22.
 //
 
-import Foundation
+import UIKit
 extension UITextField{
     func addOffsetView(value:Float){
         let vOffset = UIView(frame: CGRect(x: 0, y: 0, width: CGFloat(value), height: self.frame.size.height))

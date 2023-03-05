@@ -39,7 +39,7 @@ class SwitchKeyboardView:KeyboardNav{
             btn.addTarget(self, action: #selector(btnClick(sender:)), for: .touchUpInside)
             btn.setTitle(item.element.1, for: .normal)
             btn.setBackgroundColor(color: UIColor(hexString: "202f64")!.withAlphaComponent(0.06), forState: .highlighted)
-            btn.setImage(UIImage.yh_imageNamed(item.element.0), for: .normal)
+            btn.setImage(UIImage(named: item.element.0), for: .normal)
             btns.append(btn)
             
         }

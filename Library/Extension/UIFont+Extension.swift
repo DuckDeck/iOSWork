@@ -24,4 +24,12 @@ extension UIFont{
     static func pingfangLight(size:CGFloat)->UIFont{
         return UIFont(name: "PingFangSC-Light", size: size)!
     }
+    
+    static func paleRegular(size:CGFloat)->UIFont{
+        return UIFont(name: "WegoKeyboard-Palios", size: size)!
+    }
+    
+    static func paleMedium(size:CGFloat)->UIFont{           //更粗点
+        return UIFont(name: "WegoKeyboard-PaleMedium", size: size)!
+    }
 }

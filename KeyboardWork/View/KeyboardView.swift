@@ -15,14 +15,19 @@ protocol keyPressDeleaget:NSObjectProtocol{
 class Keyboard:UIView{
     var keyboardName = ""
     weak var delegate: keyPressDeleaget?
-    var boardStatus = BoardStatus.normal(!keyboardVC!.allText.isEmpty)
+    var boardStatus : BoardStatus?
     func createBoard() {}
     func keyPress(key: KeyInfo) {}
     func keyLongPress(key: KeyInfo, state: UIGestureRecognizer.State) {}
     func updateStatus(_ status:BoardStatus){}
+    func update(returnKey:KeyInfo){}
     var currentKeyBoardType: KeyboardType!
     var keyboardWidth: CGFloat = 0
-    
+    var tmpReturnKey:KeyInfo?           //用于切换键盘时传入先前键盘的回车键状态。对于有换行的输入框，有时可以获取到这个输入框的换行符号，有时不行 当切换键盘时获取到的回车符很可能不准确，需要记录下，这个特别恶心，
+    var scale : CGFloat = 1
+    var isSwipe = false                 //是否正在移动
+    var touchLayers = [CALayer]()
+
     // 公有属性
     var keys = [[KeyInfo]]()
     var keyWidth: CGFloat = 0
@@ -30,6 +35,10 @@ class Keyboard:UIView{
     var keyTopMargin: CGFloat = 0
     var keyHorGap: CGFloat = 0 // 水平间隙
     var keyVerGap: CGFloat = 0 // 垂直间隙
+    var stardKeyHeight:CGFloat{
+        return (KeyboardInfo.boardHeight - 12 - globalKeyboardHeight.bottomMargin - 39) / 4
+    }
+
 }
 
 class KeyboardView: UIView ,keyPressDeleaget{
@@ -50,7 +59,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
         if KeyboardInfo.KeyboardType == .chinese9 {
             keyboard = NineKeyboardView()
         } else {
-            keyboard = FullKeyboardView(keyboardType: KeyboardInfo.KeyboardType)
+            keyboard = FullKeyboardView(keyboardType: KeyboardInfo.KeyboardType, returnKey: nil)
         }
         keyboard?.delegate = self
         addSubview(keyboard!)
@@ -147,17 +156,8 @@ class KeyboardView: UIView ,keyPressDeleaget{
             newKeyboard = NumberKeyboardView()
         case .emoji:
             newKeyboard = EmojiKeyboard()
-        case .chinese: // 返回中文键盘，具体是什么样的和自己系统设置有关
-            if KeyboardInfo.KeyboardType == .chinese9 {
-                newKeyboard = NineKeyboardView()
-            } else {
-                // 有可能选择了英文键盘。那么KeyboardInfo.KeyboardType 就是英文了。这里要换成中文
-                newKeyboard = FullKeyboardView(keyboardType: .chinese26)
-                KeyboardInfo.KeyboardType = .chinese26
-            }
         default:
-            newKeyboard = FullKeyboardView(keyboardType: keyboardType)
-            
+            newKeyboard = FullKeyboardView(keyboardType: keyboardType, returnKey: nil)
         }
         
         keyboard?.removeFromSuperview()

@@ -1,12 +1,12 @@
 //
 //  PopKeyChooseView.swift
-//  KeyboardWork
+//  WGKeyBoard
 //
-//  Created by Stan Hu on 2022/4/4.
+//  Created by Stan Hu on 2022/7/12.
 //
 
+import Foundation
 import UIKit
-
 class PopKeyChooseView:UIView{
     
     var keys : [SymbleInfo]!
@@ -64,30 +64,31 @@ class PopKeyChooseView:UIView{
         self.init(frame: frame)
         backgroundColor = cKeyBgColor
         self.keys = keys
-        layer.cornerRadius = 9
-        layer.borderColor = (UIColor(hexString: "B4B7C0")! | UIColor(hexString: "48494D")!).cgColor
+        layer.cornerRadius = 12
+        layer.borderColor = cPopChooseBorderColor.cgColor
         layer.borderWidth = 0.5
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.left.top.equalTo(4)
             make.bottom.right.equalTo(-4)
         }
-        
+        let itemWidth = kSCREEN_WIDTH <= 320 ? 30 : 36
+        let fontSize : CGFloat = kSCREEN_WIDTH <= 320 ? 25 : 30
         for item in keys.enumerated(){
             let lbl = UILabel()
             lbl.text = String(item.element.text)
             lbl.textColor = cKeyTextColor
             lbl.textAlignment = .center
-            lbl.layer.cornerRadius = 6
+            lbl.layer.cornerRadius = 8
             lbl.clipsToBounds = true
             if item.element.text.count > 1{
-                lbl.font =  UIFont(name: "PingFangSC-Regular", size: 13)
+                lbl.font =  UIFont.paleRegular(size: 15)
             } else {
-                lbl.font =  UIFont(name: "PingFangSC-Regular", size: 32)
+                lbl.font =  UIFont.paleRegular(size: fontSize)
             }
             stackView.addArrangedSubview(lbl)
             lbl.snp.makeConstraints { make in
-                make.width.equalTo(36)
+                make.width.equalTo(itemWidth)
                 make.height.equalTo(44)
             }
             if let angle = item.element.angle{
