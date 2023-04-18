@@ -798,6 +798,7 @@
 		AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */; };
 		AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */; };
 		AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */; };
+		AEC23C8829E78CF400E93C5A /* HardwareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC23C8729E78CF400E93C5A /* HardwareInfoViewController.swift */; };
 		AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9916828743E90002879A0 /* KeyboardNav.swift */; };
 		AEC9916B287442C4002879A0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9916A287442C4002879A0 /* HUD.swift */; };
 		AECDC15B2745E3090038BE68 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */; };
@@ -1666,6 +1667,7 @@
 		AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleAnimtaionView.swift; sourceTree = "<group>"; };
 		AEC18196288803F50082827B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		AEC23C8729E78CF400E93C5A /* HardwareInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareInfoViewController.swift; sourceTree = "<group>"; };
 		AEC9916828743E90002879A0 /* KeyboardNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNav.swift; sourceTree = "<group>"; };
 		AEC9916A287442C4002879A0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
@@ -2752,6 +2754,7 @@
 		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
 			isa = PBXGroup;
 			children = (
+				AEC23C8629E78CD900E93C5A /* HardwareMonitor */,
 				AE043D7627897B9000626B82 /* ImageIO */,
 				AE66E1D327538ECB006432FE /* Live */,
 				AE66E19A27538621006432FE /* FFMpeg */,
@@ -3398,6 +3401,14 @@
 				AE8306E027B4B16F00C657DC /* ScaleViewController.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		AEC23C8629E78CD900E93C5A /* HardwareMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				AEC23C8729E78CF400E93C5A /* HardwareInfoViewController.swift */,
+			);
+			path = HardwareMonitor;
 			sourceTree = "<group>";
 		};
 		AECDC1562745E2AB0038BE68 /* Exception */ = {
@@ -4666,6 +4677,7 @@
 				AE61165B27410CF8008466AB /* TwoSideView.swift in Sources */,
 				AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE1C4F5D274346BD0097EAC1 /* randtable.c in Sources */,
+				AEC23C8829E78CF400E93C5A /* HardwareInfoViewController.swift in Sources */,
 				AE62CBC227255C20007D51CD /* LimitTextView.swift in Sources */,
 				AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */,
 				AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */,

@@ -50,15 +50,20 @@ class VideoListViewController: UIViewController {
             return VideoModel(url: url,  fileName: url.lastPathComponent)
         })
         
-        let url1 = URL(string: "http://lovelive.ink:9001/video/%5B%E5%90%90%E6%A7%BD%E5%A4%A7%E4%BC%9A%5D0707%E6%9C%9F%EF%BC%9A%E5%91%A8%E6%9D%B0%E8%A2%AB%E9%9B%AA%E5%A7%A8%E5%BD%93%E9%9D%A2%E5%90%90%E6%A7%BD_bd.mp4")!
+        let url1 = URL(string: "http://stanhu.cc:9030/api/raw/Video/%E8%AE%A9%E4%BD%A0%E7%9A%84%E8%80%B3%E6%9C%B5%E6%80%80%E5%AD%95%EF%BC%81%E3%80%8AA%20Moment%20Apart%E3%80%8B%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%EF%BC%9A%E5%9C%B0%E5%B9%B3%E7%BA%BF4%E9%85%8D%E4%B9%90_P2_%E9%9F%B3%E8%B4%A8%E5%8A%A0%E5%BC%BA%E7%89%88.mp4?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJ6aC1jbiIsInZpZXdNb2RlIjoibW9zYWljIiwic2hvd0hpZGRlbiI6ZmFsc2UsInBlcm0iOnsiYWRtaW4iOnRydWUsImV4ZWN1dGUiOnRydWUsImNyZWF0ZSI6dHJ1ZSwicmVuYW1lIjp0cnVlLCJtb2RpZnkiOnRydWUsImRlbGV0ZSI6dHJ1ZSwic2hhcmUiOnRydWUsImRvd25sb2FkIjp0cnVlfSwiY29tbWFuZHMiOltdLCJsb2NrUGFzc3dvcmQiOmZhbHNlLCJvdHAiOmZhbHNlLCJvdHBLZXkiOiJMNlpOSE1YREpRUDZGNk1LTU9SNEJSVEgzQVNLQU9aUyJ9LCJleHAiOjE2ODE0MzM4NTYsImlhdCI6MTY4MTM0NzQ1NiwiaXNzIjoiRmlsZSBCcm93c2VyICB2Mi45LjMvNGUzMWFkYTZcbkJ1aWx0IEZvciAgIDogbGludXgvYW1kNjRcbkdvIFZlcnNpb24gIDogZ28xLjE0LjJcblJlbGVhc2UgRGF0ZTogMjAyMDA0MzAtMTA0NiJ9.gaEIgTT6RDVNxBQb296XWJojxKlOtHQ4sXuEAf_46kg&inline=true")!
         let video1 = VideoModel(url: url1, fileName: "吐槽大会")
         arrFile.append(video1)
-        let url2 = URL(string: "http://lovelive.ink:9001/video/%E4%BA%9A%E7%89%B9%E5%85%B0%E8%92%82%E6%96%AF%E5%B0%91%E5%A5%B3.mp4")!
+        let url2 = URL(string: "http://stanhu.cc:9030/api/raw/Video/%E5%B0%8F%E5%A7%90%E5%A7%90/%E8%95%BE%E5%A7%86cos%E5%9B%BE%E9%9B%86.mp4?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJ6aC1jbiIsInZpZXdNb2RlIjoibW9zYWljIiwic2hvd0hpZGRlbiI6ZmFsc2UsInBlcm0iOnsiYWRtaW4iOnRydWUsImV4ZWN1dGUiOnRydWUsImNyZWF0ZSI6dHJ1ZSwicmVuYW1lIjp0cnVlLCJtb2RpZnkiOnRydWUsImRlbGV0ZSI6dHJ1ZSwic2hhcmUiOnRydWUsImRvd25sb2FkIjp0cnVlfSwiY29tbWFuZHMiOltdLCJsb2NrUGFzc3dvcmQiOmZhbHNlLCJvdHAiOmZhbHNlLCJvdHBLZXkiOiJMNlpOSE1YREpRUDZGNk1LTU9SNEJSVEgzQVNLQU9aUyJ9LCJleHAiOjE2ODE0MzM5NTAsImlhdCI6MTY4MTM0NzU1MCwiaXNzIjoiRmlsZSBCcm93c2VyICB2Mi45LjMvNGUzMWFkYTZcbkJ1aWx0IEZvciAgIDogbGludXgvYW1kNjRcbkdvIFZlcnNpb24gIDogZ28xLjE0LjJcblJlbGVhc2UgRGF0ZTogMjAyMDA0MzAtMTA0NiJ9._ASQ9hIKVJPrq2NEUxdeaSF8t7utN6tCs2l-n9VldYA&inline=true")!
         let video2 = VideoModel(url: url2,  fileName: "TAEYEON")
         arrFile.append(video2)
-
+       
+        let video3 = VideoModel(url: URL(string: "http://stanhu.cc:9030/api/raw/Video/%E8%B0%83%E8%AF%95%E4%BF%9D%E9%99%A9%E4%B8%9D.mp4?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJ6aC1jbiIsInZpZXdNb2RlIjoibW9zYWljIiwic2hvd0hpZGRlbiI6ZmFsc2UsInBlcm0iOnsiYWRtaW4iOnRydWUsImV4ZWN1dGUiOnRydWUsImNyZWF0ZSI6dHJ1ZSwicmVuYW1lIjp0cnVlLCJtb2RpZnkiOnRydWUsImRlbGV0ZSI6dHJ1ZSwic2hhcmUiOnRydWUsImRvd25sb2FkIjp0cnVlfSwiY29tbWFuZHMiOltdLCJsb2NrUGFzc3dvcmQiOmZhbHNlLCJvdHAiOmZhbHNlLCJvdHBLZXkiOiJMNlpOSE1YREpRUDZGNk1LTU9SNEJSVEgzQVNLQU9aUyJ9LCJleHAiOjE2ODE0MzM5NTAsImlhdCI6MTY4MTM0NzU1MCwiaXNzIjoiRmlsZSBCcm93c2VyICB2Mi45LjMvNGUzMWFkYTZcbkJ1aWx0IEZvciAgIDogbGludXgvYW1kNjRcbkdvIFZlcnNpb24gIDogZ28xLjE0LjJcblJlbGVhc2UgRGF0ZTogMjAyMDA0MzAtMTA0NiJ9._ASQ9hIKVJPrq2NEUxdeaSF8t7utN6tCs2l-n9VldYA&inline=true"))
+        arrFile.append(video3)
        //不支持mkv
         vc.reloadData()
+        
+        
+        
     }
 
     @objc func recordVideo() {

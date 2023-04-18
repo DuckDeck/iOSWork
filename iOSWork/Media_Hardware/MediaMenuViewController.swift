@@ -7,7 +7,7 @@
 
 import Foundation
 class MediaMenuViewController:BaseViewController{
-    var arrData = ["图片旋转","多点Touch","拍照片","视频列表","音频列表","GIF图片","水印","Palette图片着色主题","ImageIO","OpenCV","FFMpeg"]
+    var arrData = ["图片旋转","多点Touch","拍照片","视频列表","音频列表","GIF图片","水印","Palette图片着色主题","ImageIO","OpenCV","FFMpeg","硬件信息"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -84,6 +84,10 @@ extension MediaMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 10:
             let vc = FFmpegMenuViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 11:
+            let vc = HardwareInfoViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         default:
