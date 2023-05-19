@@ -65,7 +65,7 @@ extension UIDevice{
             }
             let data = hostInfo.move()
             hostInfo.deallocate()
-        let user = data.cpu_ticks.0
+            let user = data.cpu_ticks.0
             return data
     }
 }
