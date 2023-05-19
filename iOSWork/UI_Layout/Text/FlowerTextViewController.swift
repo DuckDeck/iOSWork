@@ -28,47 +28,15 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         }
       
         
-        let arrowTop: CGFloat = 10
-        let arrowWidth: CGFloat = 10
-        let arrowHeight: CGFloat = 10
-        let radius: CGFloat = 20
-        let width: CGFloat = 200 - arrowWidth
-        let height: CGFloat = 100
+      
         
-        let bubble = UIView(frame: CGRect(x: 150, y: 130, width: 200, height: 100))
-
-        let bubbleBezier = UIBezierPath()
-        bubbleBezier.move(to: CGPoint(x: 0, y: radius + arrowTop + arrowHeight / 2)) // 箭头
-        bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: radius + arrowTop)) // 箭头右上
-        //bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: radius)) // 左上圆角
-        bubbleBezier.addArc(withCenter: CGPoint(x: arrowWidth+radius, y: radius), radius: radius, startAngle: CGFloat.pi, endAngle: CGFloat.pi*1.5, clockwise: true) // 左上圆角
-        bubbleBezier.addLine(to: CGPoint(x: arrowWidth+radius, y: 0)) // 左上
-        bubbleBezier.addLine(to: CGPoint(x: width-radius, y: 0)) // 右上
-        //bubbleBezier.addLine(to: CGPoint(x: width, y: radius)) // 右上圆角
-        bubbleBezier.addArc(withCenter: CGPoint(x: width-radius, y: radius), radius: radius, startAngle: CGFloat.pi*1.5, endAngle: CGFloat.pi*2, clockwise: true) // 右上圆角
-        bubbleBezier.addLine(to: CGPoint(x: width, y: height-radius)) // 右下
-        //bubbleBezier.addLine(to: CGPoint(x: width-radius, y: height)) // 右下圆角
-        bubbleBezier.addArc(withCenter: CGPoint(x: width-radius, y: height-radius), radius: radius, startAngle: 0, endAngle: CGFloat.pi*0.5, clockwise: true) // 右下圆角
-        bubbleBezier.addLine(to: CGPoint(x: arrowWidth+radius, y: height)) // 左下
-        //bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: height-radius)) // 左下圆角
-        bubbleBezier.addArc(withCenter: CGPoint(x: arrowWidth+radius, y: height-radius), radius: radius, startAngle: CGFloat.pi*0.5, endAngle: CGFloat.pi, clockwise: true) // 左下圆角
-        bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: radius + arrowTop + arrowHeight)) // 箭头右下
-        bubbleBezier.close()
-        let bubbleShape = CAShapeLayer()
-        bubbleShape.path = bubbleBezier.cgPath
-        bubbleShape.lineWidth = 2
-        bubbleShape.strokeColor = UIColor.systemRed.cgColor
-        bubbleShape.fillColor = UIColor.clear.cgColor
-        bubble.layer.addSublayer(bubbleShape)
-        view.addSubview(bubble)
-        
-        let v = PopView(raius: 12, arrowOffset: 0.4)
+        let v = PopView(radius: 12, arrowOffset: 0.5, arrowLocation: .left)
         view.addSubview(v)
         v.backgroundColor = UIColor.yellow
         v.snp.makeConstraints { make in
             make.left.equalTo(100)
             make.top.equalTo(240)
-            make.width.equalTo(300)
+            make.width.equalTo(200)
             make.height.equalTo(100)
         }
         
@@ -137,30 +105,51 @@ class PopView:UIView{
         let arrowTop: CGFloat = 10
         let arrowWidth: CGFloat = 10
         let arrowHeight: CGFloat = 10
-        
-
+        let width = bounds.size.width
+        let height = bounds.size.height
         let bubbleBezier = UIBezierPath()
-        bubbleBezier.move(to: CGPoint(x: 0, y: radius + arrowTop + arrowHeight / 2)) // 箭头
-        bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: radius + arrowTop)) // 箭头右上
-        //bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: radius)) // 左上圆角
-        bubbleBezier.addArc(withCenter: CGPoint(x: arrowWidth+radius, y: radius), radius: radius, startAngle: CGFloat.pi, endAngle: CGFloat.pi*1.5, clockwise: true) // 左上圆角
-        bubbleBezier.addLine(to: CGPoint(x: arrowWidth+radius, y: 0)) // 左上
-        bubbleBezier.addLine(to: CGPoint(x: width-radius, y: 0)) // 右上
-        //bubbleBezier.addLine(to: CGPoint(x: width, y: radius)) // 右上圆角
-        bubbleBezier.addArc(withCenter: CGPoint(x: width-radius, y: radius), radius: radius, startAngle: CGFloat.pi*1.5, endAngle: CGFloat.pi*2, clockwise: true) // 右上圆角
-        bubbleBezier.addLine(to: CGPoint(x: width, y: height-radius)) // 右下
-        //bubbleBezier.addLine(to: CGPoint(x: width-radius, y: height)) // 右下圆角
-        bubbleBezier.addArc(withCenter: CGPoint(x: width-radius, y: height-radius), radius: radius, startAngle: 0, endAngle: CGFloat.pi*0.5, clockwise: true) // 右下圆角
-        bubbleBezier.addLine(to: CGPoint(x: arrowWidth+radius, y: height)) // 左下
-        //bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: height-radius)) // 左下圆角
-        bubbleBezier.addArc(withCenter: CGPoint(x: arrowWidth+radius, y: height-radius), radius: radius, startAngle: CGFloat.pi*0.5, endAngle: CGFloat.pi, clockwise: true) // 左下圆角
-        bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: radius + arrowTop + arrowHeight)) // 箭头右下
+        switch self.arrowLocation{
+        case .left:
+            bubbleBezier.move(to: CGPoint(x: 0, y: arrowOffset * height)) // 箭头
+            bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: arrowOffset * height - arrowWidth / 2)) // 箭头右上
+            //bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: radius)) // 左上圆角
+            bubbleBezier.addArc(withCenter: CGPoint(x: arrowWidth+radius, y: radius), radius: radius, startAngle: CGFloat.pi, endAngle: CGFloat.pi*1.5, clockwise: true) // 左上圆角
+            bubbleBezier.addLine(to: CGPoint(x: arrowWidth+radius, y: 0)) // 左上
+            bubbleBezier.addLine(to: CGPoint(x: width-radius, y: 0)) // 右上
+            //bubbleBezier.addLine(to: CGPoint(x: width, y: radius)) // 右上圆角
+            bubbleBezier.addArc(withCenter: CGPoint(x: width-radius, y: radius), radius: radius, startAngle: CGFloat.pi*1.5, endAngle: CGFloat.pi*2, clockwise: true) // 右上圆角
+            bubbleBezier.addLine(to: CGPoint(x: width, y: height-radius)) // 右下
+            //bubbleBezier.addLine(to: CGPoint(x: width-radius, y: height)) // 右下圆角
+            bubbleBezier.addArc(withCenter: CGPoint(x: width-radius, y: height-radius), radius: radius, startAngle: 0, endAngle: CGFloat.pi*0.5, clockwise: true) // 右下圆角
+            bubbleBezier.addLine(to: CGPoint(x: arrowWidth+radius, y: height)) // 左下
+            //bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: height-radius)) // 左下圆角
+            bubbleBezier.addArc(withCenter: CGPoint(x: arrowWidth+radius, y: height-radius), radius: radius, startAngle: CGFloat.pi*0.5, endAngle: CGFloat.pi, clockwise: true) // 左下圆角
+            bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: arrowOffset * height + arrowWidth / 2)) // 箭头右下
+        case .right:
+            bubbleBezier.move(to: CGPoint(x: 0, y: arrowOffset * height)) // 箭头
+            bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: arrowOffset * height - arrowWidth / 2)) // 箭头右上
+            //bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: radius)) // 左上圆角
+            bubbleBezier.addArc(withCenter: CGPoint(x: arrowWidth+radius, y: radius), radius: radius, startAngle: CGFloat.pi, endAngle: CGFloat.pi*1.5, clockwise: true) // 左上圆角
+            bubbleBezier.addLine(to: CGPoint(x: arrowWidth+radius, y: 0)) // 左上
+            bubbleBezier.addLine(to: CGPoint(x: width-radius, y: 0)) // 右上
+            //bubbleBezier.addLine(to: CGPoint(x: width, y: radius)) // 右上圆角
+            bubbleBezier.addArc(withCenter: CGPoint(x: width-radius, y: radius), radius: radius, startAngle: CGFloat.pi*1.5, endAngle: CGFloat.pi*2, clockwise: true) // 右上圆角
+            bubbleBezier.addLine(to: CGPoint(x: width, y: height-radius)) // 右下
+            //bubbleBezier.addLine(to: CGPoint(x: width-radius, y: height)) // 右下圆角
+            bubbleBezier.addArc(withCenter: CGPoint(x: width-radius, y: height-radius), radius: radius, startAngle: 0, endAngle: CGFloat.pi*0.5, clockwise: true) // 右下圆角
+            bubbleBezier.addLine(to: CGPoint(x: arrowWidth+radius, y: height)) // 左下
+            //bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: height-radius)) // 左下圆角
+            bubbleBezier.addArc(withCenter: CGPoint(x: arrowWidth+radius, y: height-radius), radius: radius, startAngle: CGFloat.pi*0.5, endAngle: CGFloat.pi, clockwise: true) // 左下圆角
+            bubbleBezier.addLine(to: CGPoint(x: arrowWidth, y: arrowOffset * height + arrowWidth / 2)) // 箭头右下
+        default:
+            break
+        }
         bubbleBezier.close()
         let bubbleShape = CAShapeLayer()
         bubbleShape.path = bubbleBezier.cgPath
         bubbleShape.lineWidth = 2
         bubbleShape.strokeColor = UIColor.systemRed.cgColor
-        bubbleShape.fillColor = UIColor.clear.cgColor
+        bubbleShape.fillColor = backgroundColor?.cgColor
         layer.addSublayer(bubbleShape)
        
     }
