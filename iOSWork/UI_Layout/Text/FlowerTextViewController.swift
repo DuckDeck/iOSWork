@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Lottie
 class FlowerTextViewController:UIViewController,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         txtInput.snp.makeConstraints { make in
             make.left.equalTo(10)
             make.right.equalTo(-10)
-            make.top.equalTo(70)
+            make.top.equalTo(100)
             make.height.equalTo(30)
         }
       
@@ -40,7 +41,12 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
             make.height.equalTo(100)
         }
         
-        
+        addNofication()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        guideView.removeSubviews()
     }
     
 //    let k = "你大有你有我什么"
@@ -53,6 +59,85 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
 //
 //    var datadec  = xx.data(using: String.Encoding.utf8)
 //    var decodevalue = String(data: datadec!, encoding: String.Encoding.nonLossyASCII)
+    
+    func addNofication() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardChanged(_:)), name: UITextInputMode.currentInputModeDidChangeNotification, object: nil)
+    }
+    
+    @objc func keyboardChanged(_ notifi: NSNotification) {
+        if KeyboardManage.isUseWGKeyboard {
+            DispatchQueue.main.async {
+               
+                self.guideView.stop()
+                self.guideView.removeFromSuperview()
+                
+                _ = delay(time: 0.5) {
+                    self.dismiss(animated: true, completion: nil)
+                 
+                }
+            }
+        } else {
+            delay(time: 1) {
+                self.addGuide()
+            }
+        }
+    }
+    
+    @objc func keyboardWillShow(_ notifi: NSNotification) {
+        let userInfo = notifi.userInfo!
+        let rect = userInfo["UIKeyboardFrameEndUserInfoKey"] as! CGRect
+        let height = rect.size.height
+//        texField.snp_remakeConstraints({ (make) in
+//            make.bottom.equalTo(view).offset(-(height))
+//            make.left.equalTo(16)
+//            make.right.equalTo(-16)
+//            make.height.equalTo(46)
+//        })
+    }
+    
+    @objc func closeVC() {
+        guideView.removeFromSuperview()
+        dismiss(animated: true, completion: nil)
+       
+    }
+    
+    @objc func keyboardWillHide(_ notifi: NSNotification) {
+//        texField.snp_remakeConstraints { (make) in
+//            make.top.equalTo(imgView.snp_bottom).offset(50)
+//            make.left.equalTo(16)
+//            make.right.equalTo(-16)
+//            make.height.equalTo(46)
+//        }
+    }
+    
+    
+    func addGuide() {
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            if self.guideView.superview != nil{
+                return
+            }
+            let scenes = UIApplication.shared.connectedScenes.map({$0 as? UIWindowScene}).compactMap({$0})
+            
+            let lastWindow = scenes.last?.windows.last
+            
+            self.guideView.removeFromSuperview()
+            let window = UIApplication.shared.windows.last!
+            window.isUserInteractionEnabled = true
+            window.windowLevel = .alert
+            self.guideView.isUserInteractionEnabled = true
+            window.subviews.first?.addSubview(self.guideView)
+            self.guideView.play()
+            self.guideView.snp.makeConstraints { make in
+                make.left.equalTo(-10)
+                make.bottom.equalTo(-20)
+                make.width.equalTo(260)
+                make.height.equalTo(120)
+            }
+        }
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString str: String) -> Bool {
         var dataenc = str.data(using: String.Encoding.nonLossyASCII)
@@ -73,7 +158,19 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         v.textColor = UIColor.carrot
         v.font = UIFont.systemFont(ofSize: 15)
         v.delegate = self
+        v.layer.borderWidth = 0.5
+        v.layer.borderColor = UIColor.greenSea.cgColor
+//        let input = UIView()
+//        input.backgroundColor = UIColor.cyan
+//        v.inputView = input
         return v
+    }()
+    
+
+    lazy var guideView: LottieAnimationView = {
+        let guideView = LottieAnimationView(name: "switch_keyboard")
+        guideView.loopMode = .loop
+        return guideView
     }()
 }
 

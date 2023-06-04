@@ -199,6 +199,10 @@
 		AE35149C27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
 		AE35149F27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
+		AE3EB4E52A2C2EA200097934 /* KeyboardManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */; };
+		AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */; };
+		AE3EB4EC2A2C303000097934 /* siimg_0.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3EB4EA2A2C303000097934 /* siimg_0.png */; };
+		AE3EB4ED2A2C303000097934 /* switch_keyboard.json in Resources */ = {isa = PBXBuildFile; fileRef = AE3EB4EB2A2C303000097934 /* switch_keyboard.json */; };
 		AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48CECD27C7D10B009A0673 /* asset.xcassets */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -1281,6 +1285,9 @@
 		AE38468627BB43F9004F6765 /* iOSWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSWork.entitlements; sourceTree = "<group>"; };
 		AE38468727BB440A004F6765 /* KeyboardWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardWork.entitlements; sourceTree = "<group>"; };
 		AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardWork-Bridging-Header.h"; sourceTree = "<group>"; };
+		AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManage.swift; sourceTree = "<group>"; };
+		AE3EB4EA2A2C303000097934 /* siimg_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = siimg_0.png; sourceTree = "<group>"; };
+		AE3EB4EB2A2C303000097934 /* switch_keyboard.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = switch_keyboard.json; sourceTree = "<group>"; };
 		AE48CECD27C7D10B009A0673 /* asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = asset.xcassets; sourceTree = "<group>"; };
 		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
 		AE4D08EB273025DB00899D2C /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
@@ -2308,6 +2315,31 @@
 			path = ProcessCommunication;
 			sourceTree = "<group>";
 		};
+		AE3EB4E72A2C301A00097934 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AE3EB4E82A2C303000097934 /* switch_keyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		AE3EB4E82A2C303000097934 /* switch_keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AE3EB4E92A2C303000097934 /* images */,
+				AE3EB4EB2A2C303000097934 /* switch_keyboard.json */,
+			);
+			path = switch_keyboard;
+			sourceTree = "<group>";
+		};
+		AE3EB4E92A2C303000097934 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				AE3EB4EA2A2C303000097934 /* siimg_0.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		AE4D08E52730259200899D2C /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2687,6 +2719,7 @@
 				AEF86659274B6F5B002E33E5 /* Store.swift */,
 				AE08AA8B27C681D500EE0813 /* MediaTool.swift */,
 				20A965752903D2D1007F8526 /* PHPLibraryTool.swift */,
+				AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -3226,6 +3259,7 @@
 		AE7E7424272251E300F0C19C /* iOSWork */ = {
 			isa = PBXGroup;
 			children = (
+				AE3EB4E72A2C301A00097934 /* Resource */,
 				208DA91B2902E8A000218246 /* Settings.bundle */,
 				AE38468627BB43F9004F6765 /* iOSWork.entitlements */,
 				AE62CB9B27254E3A007D51CD /* bridge.h */,
@@ -4344,6 +4378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3EB4EC2A2C303000097934 /* siimg_0.png in Resources */,
 				AE35149E27CBB54D000326F1 /* 8k.jpg in Resources */,
 				AEE0114D27425D8800C155D8 /* p_1.png in Resources */,
 				AE4D08EC273025DB00899D2C /* demo.html in Resources */,
@@ -4389,6 +4424,7 @@
 				AEE0113F27425D8800C155D8 /* p_11.png in Resources */,
 				AE62C9EA272541E2007D51CD /* question.html in Resources */,
 				AEE010B62742569200C155D8 /* MJRefresh.bundle in Resources */,
+				AE3EB4ED2A2C303000097934 /* switch_keyboard.json in Resources */,
 				AE7E742F272251E500F0C19C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4873,6 +4909,7 @@
 				AEE010D52742569200C155D8 /* MJRefreshAutoStateFooter.m in Sources */,
 				AE1A875B275117BA004FA0DA /* OpenWebViewController.swift in Sources */,
 				AE66E1BD27538679006432FE /* VideoDecoder.mm in Sources */,
+				AE3EB4E52A2C2EA200097934 /* KeyboardManage.swift in Sources */,
 				AE9EE9F8280843B500EBE70A /* PanCollectionViewController.swift in Sources */,
 				AE72F52C273EB9A50060456A /* CitySearchView.swift in Sources */,
 				AE76530129545C6400B9B4E3 /* FlowerTextViewController.swift in Sources */,
@@ -5388,6 +5425,7 @@
 				AEE010E92742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
 				AE62CB1727254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
+				AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */,
 				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE0442832803D465003DB6A1 /* InputText.swift in Sources */,

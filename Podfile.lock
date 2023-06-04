@@ -1,21 +1,24 @@
 PODS:
-  - Alamofire (5.5.0)
+  - Alamofire (5.7.1)
   - BBIconFont (0.1.0)
   - Bugly (2.5.93)
   - BuglyExtension (1.1)
   - CocoaAsyncSocket (7.6.5)
   - Gifu (3.3.1)
-  - IQKeyboardManagerSwift (6.5.9)
+  - IQKeyboardManagerSwift (6.5.11)
   - Kanna (5.2.7)
-  - Kingfisher (7.1.2)
+  - Kingfisher (7.7.0)
   - KRActivityIndicatorView (3.0.7)
   - KRProgressHUD (3.4.7):
     - KRActivityIndicatorView (= 3.0.7)
-  - LookinServer (1.0.4)
-  - SkeletonView (1.26.0)
-  - SnapKit (5.0.1)
-  - SwiftSoup (2.3.4)
-  - SwiftyBeaver (1.9.6)
+  - LookinServer (1.1.7):
+    - LookinServer/Core (= 1.1.7)
+  - LookinServer/Core (1.1.7)
+  - lottie-ios (4.2.0)
+  - SkeletonView (1.30.4)
+  - SnapKit (5.6.0)
+  - SwiftSoup (2.6.0)
+  - SwiftyBeaver (2.0.0)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -30,6 +33,7 @@ DEPENDENCIES:
   - Kingfisher
   - KRProgressHUD
   - LookinServer
+  - lottie-ios
   - SkeletonView
   - SnapKit
   - SwiftSoup
@@ -49,6 +53,7 @@ SPEC REPOS:
     - KRActivityIndicatorView
     - KRProgressHUD
     - LookinServer
+    - lottie-ios
     - SkeletonView
     - SnapKit
     - SwiftSoup
@@ -60,24 +65,25 @@ EXTERNAL SOURCES:
     :path: BBIconFont
 
 SPEC CHECKSUMS:
-  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   BBIconFont: 7d7e64afb4a53b6b9d2c0e28c167ec8331bd6e66
   Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
   BuglyExtension: 857435d3f1545404cbce9a777e4ce5b7123cf36c
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
-  IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   Kanna: 01cfbddc127f5ff0963692f285fcbc8a9d62d234
-  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
+  Kingfisher: f043ac666dfc96c1f37604f93effb45a7ee3a3e1
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
-  LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
-  SkeletonView: 6b62a8ddbc64abb113ea3243e4a9979e5750f147
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftSoup: d5b9645498f8d09fdc5f96b9c70b5858099fd411
-  SwiftyBeaver: c8241b4745aa269a78ca5a022532c6915e948536
+  LookinServer: 4ce0469b066871525611d009d8d16a7a50c23491
+  lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftSoup: dd9baab0fba4b6ab3ade23a6a47132ebd7d22cb1
+  SwiftyBeaver: 014b0c12065026b731bac80305294f27d63e27f6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 1ad6b4696556988dfd39bc9962c71a473f453fb1
+PODFILE CHECKSUM: e84c734d04176560a08ca7339de9a569dafbf3ce
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
