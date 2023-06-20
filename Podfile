@@ -16,9 +16,8 @@ pod "SwiftSoup"
 #pod 'AMKLaunchTimeProfiler'
 pod 'SwiftyBeaver'
 pod 'CocoaAsyncSocket'
-pod 'Bugly'
 pod 'lottie-ios'
-pod 'BBIconFont', :path=>'BBIconFont'
+
 end
 
 target 'CLangWork' do
@@ -54,8 +53,7 @@ target 'KeyboardWork' do
   pod 'CocoaAsyncSocket'
   pod 'SwiftyBeaver'
   pod "Alamofire"
-  pod 'BuglyExtension'
-  pod 'BBIconFont', :path=>'BBIconFont'
+ 
   # Pods for KeyboardWork
 
 end

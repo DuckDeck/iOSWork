@@ -1,8 +1,5 @@
 PODS:
-  - Alamofire (5.7.1)
-  - BBIconFont (0.1.0)
-  - Bugly (2.5.93)
-  - BuglyExtension (1.1)
+  - Alamofire (5.5.0)
   - CocoaAsyncSocket (7.6.5)
   - Gifu (3.3.1)
   - IQKeyboardManagerSwift (6.5.11)
@@ -23,9 +20,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - BBIconFont (from `BBIconFont`)
-  - Bugly
-  - BuglyExtension
   - CocoaAsyncSocket
   - Gifu
   - IQKeyboardManagerSwift
@@ -43,8 +37,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Bugly
-    - BuglyExtension
     - CocoaAsyncSocket
     - Gifu
     - IQKeyboardManagerSwift
@@ -60,15 +52,8 @@ SPEC REPOS:
     - SwiftyBeaver
     - SwiftyJSON
 
-EXTERNAL SOURCES:
-  BBIconFont:
-    :path: BBIconFont
-
 SPEC CHECKSUMS:
-  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
-  BBIconFont: 7d7e64afb4a53b6b9d2c0e28c167ec8331bd6e66
-  Bugly: b8715e6ec4004b7f7fbffab0643ba80545aee3da
-  BuglyExtension: 857435d3f1545404cbce9a777e4ce5b7123cf36c
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
   IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
@@ -84,6 +69,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 014b0c12065026b731bac80305294f27d63e27f6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: e84c734d04176560a08ca7339de9a569dafbf3ce
+PODFILE CHECKSUM: 5d647fade6877f7a759604c7fc71c14188d4f74e
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
