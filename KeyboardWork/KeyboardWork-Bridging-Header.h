@@ -4,4 +4,3 @@
 
 
 #import "WGInputAssociateWraper.h"
-#import <BuglyExtension/CrashReporterLite.h>

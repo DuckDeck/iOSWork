@@ -7,7 +7,7 @@
 
 import Foundation
 class MediaMenuViewController:BaseViewController{
-    var arrData = ["图片旋转","多点Touch","拍照片","视频列表","音频列表","GIF图片","水印","Palette图片着色主题","ImageIO","OpenCV","FFMpeg","硬件信息"]
+    var arrData = ["图片旋转","多点Touch","拍照片","视频列表","音频列表","GIF图片","水印","Palette图片着色主题","ImageIO","OpenCV","FFMpeg","硬件信息","语音合成"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -18,6 +18,7 @@ class MediaMenuViewController:BaseViewController{
         view.backgroundColor = UIColor.white
         tbMenu.dataSource = self
         tbMenu.delegate = self
+        tbMenu.contentInset  = UIEdgeInsets(top: 10, left: 0, bottom: 20, right: 0)
         tbMenu.tableFooterView = UIView()
         view.addSubview(tbMenu)
         tbMenu.snp.makeConstraints { (m) in
@@ -88,6 +89,10 @@ extension MediaMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 11:
             let vc = HardwareInfoViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 12:
+            let vc = SpeechViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         default:
