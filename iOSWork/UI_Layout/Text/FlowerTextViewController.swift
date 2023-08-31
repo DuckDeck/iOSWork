@@ -23,7 +23,7 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         txtInput.snp.makeConstraints { make in
             make.left.equalTo(10)
             make.right.equalTo(-10)
-            make.top.equalTo(70)
+            make.bottom.equalTo(-70)
             make.height.equalTo(30)
         }
       

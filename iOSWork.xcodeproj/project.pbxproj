@@ -824,6 +824,14 @@
 		AEA0A122278940680044D012 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0A121278940680044D012 /* ImageInfo.swift */; };
 		AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */; };
 		AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2CB273D66A700153D20 /* ShareViewController.swift */; };
+		AEAFBBD02AA025A6003D92B5 /* WebDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBCF2AA025A6003D92B5 /* WebDemoViewController.swift */; };
+		AEAFBBD22AA0260F003D92B5 /* WKHttpHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD12AA0260F003D92B5 /* WKHttpHandler.swift */; };
+		AEAFBBD52AA02658003D92B5 /* ObjcTry.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAFBBD32AA02658003D92B5 /* ObjcTry.h */; };
+		AEAFBBD62AA02658003D92B5 /* ObjcTry.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD42AA02658003D92B5 /* ObjcTry.m */; };
+		AEAFBBD72AA02658003D92B5 /* ObjcTry.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD42AA02658003D92B5 /* ObjcTry.m */; };
+		AEAFBBD92AA02820003D92B5 /* UIDevice+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD82AA02820003D92B5 /* UIDevice+Ex.swift */; };
+		AEAFBBDA2AA02820003D92B5 /* UIDevice+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD82AA02820003D92B5 /* UIDevice+Ex.swift */; };
+		AEAFBBDB2AA02820003D92B5 /* UIDevice+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD82AA02820003D92B5 /* UIDevice+Ex.swift */; };
 		AEB517E3282677F700F2FA1D /* SwitchKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB517E2282677F700F2FA1D /* SwitchKeyboardView.swift */; };
 		AEB517EA2826799200F2FA1D /* LayoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CBAB27255C0E007D51CD /* LayoutButton.swift */; };
 		AEB517EC28267A3600F2FA1D /* KeyboardViewController+Nav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB517EB28267A3600F2FA1D /* KeyboardViewController+Nav.swift */; };
@@ -1705,6 +1713,11 @@
 		AEA0A121278940680044D012 /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
 		AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		AEADA2CB273D66A700153D20 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		AEAFBBCF2AA025A6003D92B5 /* WebDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDemoViewController.swift; sourceTree = "<group>"; };
+		AEAFBBD12AA0260F003D92B5 /* WKHttpHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKHttpHandler.swift; sourceTree = "<group>"; };
+		AEAFBBD32AA02658003D92B5 /* ObjcTry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcTry.h; sourceTree = "<group>"; };
+		AEAFBBD42AA02658003D92B5 /* ObjcTry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcTry.m; sourceTree = "<group>"; };
+		AEAFBBD82AA02820003D92B5 /* UIDevice+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ex.swift"; sourceTree = "<group>"; };
 		AEB517E2282677F700F2FA1D /* SwitchKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchKeyboardView.swift; sourceTree = "<group>"; };
 		AEB517EB28267A3600F2FA1D /* KeyboardViewController+Nav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardViewController+Nav.swift"; sourceTree = "<group>"; };
 		AEB649BD273FCCB100BCBF4E /* GridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
@@ -2391,7 +2404,9 @@
 			children = (
 				AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */,
 				AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */,
+				AEAFBBCF2AA025A6003D92B5 /* WebDemoViewController.swift */,
 				AE6A7F4C274BE13B004A797A /* WebViewController.swift */,
+				AEAFBBD12AA0260F003D92B5 /* WKHttpHandler.swift */,
 			);
 			path = WKWebView;
 			sourceTree = "<group>";
@@ -2701,6 +2716,8 @@
 				AE62CB1227254873007D51CD /* BaseViewController.swift */,
 				AE62CB1327254873007D51CD /* ResultInfo.swift */,
 				AE62CB1427254873007D51CD /* BaseModel.swift */,
+				AEAFBBD32AA02658003D92B5 /* ObjcTry.h */,
+				AEAFBBD42AA02658003D92B5 /* ObjcTry.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -2734,6 +2751,7 @@
 				20A9655C2903C794007F8526 /* UILabel+Extension.swift */,
 				20A965612903C7EC007F8526 /* UITextField+Extension.swift */,
 				20A965682903CA05007F8526 /* UIDevice+Extension.swift */,
+				AEAFBBD82AA02820003D92B5 /* UIDevice+Ex.swift */,
 				20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */,
 				20A9657F2903D3A8007F8526 /* PHAssetCollection+Extension.swift */,
 			);
@@ -4091,6 +4109,7 @@
 				AE66E109275369D3006432FE /* avformat.h in Headers */,
 				AE62CAA6272542D1007D51CD /* PaletteSwatch.h in Headers */,
 				AE62CA6C2725429B007D51CD /* NSBundle+TZImagePicker.h in Headers */,
+				AEAFBBD52AA02658003D92B5 /* ObjcTry.h in Headers */,
 				AE62CAA7272542D1007D51CD /* Palette.h in Headers */,
 				AE66E0CD275369D3006432FE /* hwcontext_vdpau.h in Headers */,
 				AE66E0C5275369D3006432FE /* rational.h in Headers */,
@@ -4788,6 +4807,7 @@
 				AEE0104127424D4500C155D8 /* VolumeView.swift in Sources */,
 				AE6E5DC2273FB6FF00523EA8 /* CrossLine.swift in Sources */,
 				AE66E19227537F98006432FE /* ImageRecognitionViewController.swift in Sources */,
+				AEAFBBD22AA0260F003D92B5 /* WKHttpHandler.swift in Sources */,
 				AEE011022742581500C155D8 /* LockView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE74AAC727D4A14C00296960 /* CalculatorViewController.swift in Sources */,
@@ -4908,6 +4928,7 @@
 				AE62CBBF27255C20007D51CD /* TimerButton.swift in Sources */,
 				AEE010F52742569200C155D8 /* MJRefreshAutoFooter.m in Sources */,
 				AE62CAD4272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
+				AEAFBBD62AA02658003D92B5 /* ObjcTry.m in Sources */,
 				AE043D7527896BFB00626B82 /* ImageInfo.swift in Sources */,
 				AEF0EBE72729470000DCA7B8 /* Group.swift in Sources */,
 				AE1C4F64274346BD0097EAC1 /* dlltest.c in Sources */,
@@ -4918,6 +4939,7 @@
 				AEE010742742560200C155D8 /* ResolutionFilterView.swift in Sources */,
 				AE62CB6E27254B12007D51CD /* GrandCue.swift in Sources */,
 				AEF6CB3A287A6F4800352100 /* ThemeViewController.swift in Sources */,
+				AEAFBBD02AA025A6003D92B5 /* WebDemoViewController.swift in Sources */,
 				AE72F52B273EB9A50060456A /* CityChooseViewController.swift in Sources */,
 				AE62CADA272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				AE128864281CED0A0049A5E4 /* input-parser.swift in Sources */,
@@ -5023,6 +5045,7 @@
 				AE128880281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE1C4F6D274346BD0097EAC1 /* bsdiff.c in Sources */,
 				20A965722903D132007F8526 /* UIImage+Extension.swift in Sources */,
+				AEAFBBD92AA02820003D92B5 /* UIDevice+Ex.swift in Sources */,
 				20B65A4728FC26BB00341DB9 /* PanCollectionView.swift in Sources */,
 				AE66E1CF27538B81006432FE /* VideoBoxViewController.swift in Sources */,
 				AE62CAF2272542DC007D51CD /* CameraModel.swift in Sources */,
@@ -5133,6 +5156,7 @@
 				AE62CAAB272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AE62CAF9272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE128889281CED0A0049A5E4 /* number.swift in Sources */,
+				AEAFBBDA2AA02820003D92B5 /* UIDevice+Ex.swift in Sources */,
 				AE62CBBD27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CBD827255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CBD527255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
@@ -5417,6 +5441,7 @@
 				AE72F539273EBDB30060456A /* CityDB.swift in Sources */,
 				20A9657B2903D377007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
 				AE12887B281CED0A0049A5E4 /* calc-error.swift in Sources */,
+				AEAFBBDB2AA02820003D92B5 /* UIDevice+Ex.swift in Sources */,
 				AE62CB7027254B12007D51CD /* GrandCue.swift in Sources */,
 				AE62CB00272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CA9A272542D1007D51CD /* PaletteColorUtils.m in Sources */,
@@ -5464,6 +5489,7 @@
 				AE62CB9227254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CBD927255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CA582725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
+				AEAFBBD72AA02658003D92B5 /* ObjcTry.m in Sources */,
 				AE62CAE8272542DC007D51CD /* ShadowDownloader.swift in Sources */,
 				AE61165F27410F2C008466AB /* GrandSlider.swift in Sources */,
 				AEE010EC2742569200C155D8 /* MJRefreshFooter.m in Sources */,
@@ -5941,7 +5967,7 @@
 					"$(SRCROOT)/KeyboardWork/Lib/associate",
 				);
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = KeyboardWork;
+				INFOPLIST_KEY_CFBundleDisplayName = Keyboard;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5988,7 +6014,7 @@
 					"$(SRCROOT)/KeyboardWork/Lib/associate",
 				);
 				INFOPLIST_FILE = KeyboardWork/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = KeyboardWork;
+				INFOPLIST_KEY_CFBundleDisplayName = Keyboard;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

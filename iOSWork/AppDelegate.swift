@@ -10,7 +10,7 @@ import WebKit
 import Library
 import SwiftyBeaver
 import GrandKit
-
+import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(item.name)
         }
         
-        
+        IQKeyboardManager.shared.enable = true
      
         
         NSSetUncaughtExceptionHandler { exp in

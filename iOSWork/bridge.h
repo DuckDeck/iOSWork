@@ -22,4 +22,5 @@
 #import "SortFrameHandler.h"
 #import "VideoDecoder.h"
 #import "FFmpegVideoDecoder.h"
+#import "ObjcTry.h"
 #endif /* bridge_h */
