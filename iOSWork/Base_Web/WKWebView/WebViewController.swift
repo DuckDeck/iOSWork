@@ -66,6 +66,11 @@ extension WebViewController:UITableViewDelegate,UITableViewDataSource{
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         case 4:
+            if !isHooked{
+                (UIApplication.shared.delegate as? AppDelegate)?.hookMethod()
+                WebViewReusePool.load()
+                isHooked = true
+            }
             let vc = WebDemoViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)

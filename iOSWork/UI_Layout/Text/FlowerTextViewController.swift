@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import IQKeyboardManagerSwift
 class FlowerTextViewController:UIViewController,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,11 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         txtInput.snp.makeConstraints { make in
             make.left.equalTo(10)
             make.right.equalTo(-10)
-            make.bottom.equalTo(-70)
+            make.top.equalTo(100)
             make.height.equalTo(30)
         }
       
-        
+        txtInput.inputAccessoryView = txtInput.doneAccessoryView
       
         
         let v = PopArrowView(radius: 12, arrowOffset: 0.2, arrowLocation: .bottom, fillColor: UIColor.red, borderColor: .clear, arrowWidth: 12, arrowHeight: 6)
@@ -48,6 +49,15 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        IQKeyboardManager.shared.enableAutoToolbar = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        IQKeyboardManager.shared.enableAutoToolbar = true
+    }
 //    let k = "你大有你有我什么"
 //    var dataenc = k.data(using: String.Encoding.nonLossyASCII)
 //    var encodevalue = String(data: dataenc!, encoding: String.Encoding.utf8)
@@ -78,6 +88,7 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         v.textColor = UIColor.carrot
         v.font = UIFont.systemFont(ofSize: 15)
         v.delegate = self
+        v.layer.borderWidth = 1
         return v
     }()
 }

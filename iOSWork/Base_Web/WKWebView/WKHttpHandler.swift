@@ -79,7 +79,7 @@ extension WKHttpHandler {
             // 天猫商品信息获取
             if let d = data, let u = httpResp.url, u.absoluteString.contains("mtop.taobao.detail.data"), let str = String(data: d, encoding: .utf8),!str.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 DispatchQueue.main.async {
-                    
+                    print(str)
                 }
             }
           

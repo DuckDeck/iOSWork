@@ -203,6 +203,18 @@ extension UIView{
 
         return img
     }
+    
+    var doneAccessoryView:UIToolbar{
+        let v = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 44))
+        v.barStyle = .default
+        v.backgroundColor = UIColor("efeff4")
+        let btn1 = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        let btn2 = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        let done = UIBarButtonItem(title: "完成", style: .done, target: self, action: #selector(resignFirstResponder))
+        v.setItems([btn1,btn2,done], animated: false)
+        return v
+        
+    }
 }
 
 

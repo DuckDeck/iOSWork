@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 class DownloadViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,13 @@ class DownloadViewController:UIViewController{
             make.top.equalTo(100)
         }
         
-        
+        view.addSubview(imgView)
+        imgView.snp.makeConstraints { make in
+            make.left.right.equalTo(0)
+            make.top.equalTo(200)
+            make.height.equalTo(400)
+        }
+        imgView.setImg(url: "https://wx1.sinaimg.cn/large/008heIDbgy1hhlhzs8falj30u013z46f.jpg")
     }
     
     @objc func startDownload(){
@@ -35,4 +42,9 @@ class DownloadViewController:UIViewController{
         }
     }
 
+    lazy var imgView: UIImageView = {
+        let v = UIImageView()
+        v.contentMode = .scaleAspectFit
+        return v
+    }()
 }

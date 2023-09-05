@@ -53,17 +53,52 @@ class WebDemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "webView相关测试"
+        view.backgroundColor = .white
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.top.equalTo(UIDevice.topAreaHeight + 44)
             make.left.right.bottom.equalTo(0)
         }
         
+        view.addSubview(progressView)
+        progressView.snp.makeConstraints { make in
+            make.left.right.equalTo(0)
+            make.top.equalTo(UIDevice.topAreaHeight + 44)
+            make.height.equalTo(2.5)
+        }
+        
+        webView.inputAccessoryView = webView.doneAccessoryView
         
         webView.load(URLRequest(url: URL(string: "https://detail.m.tmall.com/item.htm?abbucket=0&id=592146045916")!))
     }
     
 
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
+        if let t = object as? WKWebView, t == webView, keyPath == "estimatedProgress" {
+            progressView.alpha = 1
+            progressView.setProgress(Float(t.estimatedProgress), animated: true)
+            if t.estimatedProgress >= 1 {
+                UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut) {
+                    self.progressView.alpha = 0
+                } completion: { _ in
+                    self.progressView.setProgress(0, animated: false)
+                }
+                
+                
+            }
+        } else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
+
+    lazy var progressView: UIProgressView = {
+        let v = UIProgressView()
+        v.trackTintColor = UIColor("efeff4").withAlphaComponent(0)
+        v.progressTintColor = UIColor.green
+        v.progressViewStyle = .bar
+        return v
+    }()
+    
     lazy var webView: WKWebView = {
         let v = WKWebView(frame: .zero, configuration: useHandle ? congig1 : congig2)
         v.uiDelegate = self
