@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(item.name)
         }
         
-        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enable = false
      
         
         NSSetUncaughtExceptionHandler { exp in

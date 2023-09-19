@@ -47,12 +47,14 @@ class WebDemoViewController: UIViewController {
     }
     
     var platform = TransferGoodsPlatform.TaoBao
-    
+    var observer:NSKeyValueObservation?
+
     var useHandle = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "webView相关测试"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "完成", style: .done, target: self, action: #selector(done))
         view.backgroundColor = .white
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
@@ -67,27 +69,30 @@ class WebDemoViewController: UIViewController {
             make.height.equalTo(2.5)
         }
         
-        webView.inputAccessoryView = webView.doneAccessoryView
+      //  webView.wAccessoryView = webView.doneAccessoryView
         
         webView.load(URLRequest(url: URL(string: "https://detail.m.tmall.com/item.htm?abbucket=0&id=592146045916")!))
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        observer = nil
+    }
+    
+    @objc func done(){
+      //  webView.resignFirstResponder()
+    }
 
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
-        if let t = object as? WKWebView, t == webView, keyPath == "estimatedProgress" {
-            progressView.alpha = 1
-            progressView.setProgress(Float(t.estimatedProgress), animated: true)
-            if t.estimatedProgress >= 1 {
-                UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut) {
-                    self.progressView.alpha = 0
-                } completion: { _ in
-                    self.progressView.setProgress(0, animated: false)
-                }
-                
-                
+    func changeProgress(value:Double){
+  
+        progressView.alpha = 1
+        progressView.setProgress(Float(value), animated: true)
+        if value >= 1 {
+            UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseOut) {
+                self.progressView.alpha = 0
+            } completion: { _ in
+                self.progressView.setProgress(0, animated: false)
             }
-        } else {
-            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }
     }
 
@@ -99,8 +104,8 @@ class WebDemoViewController: UIViewController {
         return v
     }()
     
-    lazy var webView: WKWebView = {
-        let v = WKWebView(frame: .zero, configuration: useHandle ? congig1 : congig2)
+    lazy var webView: WWKWebView = {
+        let v = WWKWebView(frame: .zero, configuration: useHandle ? congig1 : congig2)
         v.uiDelegate = self
         v.navigationDelegate = self
         v.isMultipleTouchEnabled = true
@@ -112,7 +117,11 @@ class WebDemoViewController: UIViewController {
         } else if platform == .KuaiShou{
             v.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.54"
         }
-        v.addObserver(self, forKeyPath: "estimatedProgress", options: [.new, .old], context: nil)
+        observer = v.observe(\.estimatedProgress, options: [.old,.new], changeHandler: { [weak self] web, change in
+            if let value = change.newValue{
+                self?.changeProgress(value: value)
+            }
+        })
         return v
 
     }()
