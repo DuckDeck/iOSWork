@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import WebKit
+class WWKWebView:WKWebView{
+//    var wAccessoryView:UIView?
+//    override var inputAccessoryView: UIView?{
+//        return wAccessoryView ?? superview?.inputAccessoryView
+//    }
+//    
+//    override func resignFirstResponder() -> Bool {
+//        super.resignFirstResponder()
+//    }
+}

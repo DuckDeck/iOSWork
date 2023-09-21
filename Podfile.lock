@@ -4,7 +4,7 @@ PODS:
   - Gifu (3.3.1)
   - IQKeyboardManagerSwift (6.5.9)
   - Kanna (5.2.7)
-  - Kingfisher (7.1.2)
+  - Kingfisher (7.9.1)
   - KRActivityIndicatorView (3.0.7)
   - KRProgressHUD (3.4.7):
     - KRActivityIndicatorView (= 3.0.7)
@@ -22,6 +22,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kanna
   - Kingfisher
+  - Kingfisher (~> 7.9.0)
   - KRProgressHUD
   - LookinServer
   - SkeletonView
@@ -53,7 +54,7 @@ SPEC CHECKSUMS:
   Gifu: 416d4e38c4c2fed012f019e0a1d3ffcb58e5b842
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   Kanna: 01cfbddc127f5ff0963692f285fcbc8a9d62d234
-  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
+  Kingfisher: 1d14e9f59cbe19389f591c929000332bf70efd32
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
   LookinServer: 743c1681771d0a8dcc38825325a080c3186404a5
@@ -63,6 +64,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: c8241b4745aa269a78ca5a022532c6915e948536
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: ef82ee4e0ac21f61797fe42059054498d292ddcb
+PODFILE CHECKSUM: 09f100ccf5b6560a77889a8675aa145a97c45981
 
 COCOAPODS: 1.12.0

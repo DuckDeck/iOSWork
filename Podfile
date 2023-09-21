@@ -7,7 +7,7 @@ pod "Alamofire"
 pod "Gifu"
 pod "Kanna"
 pod "IQKeyboardManagerSwift"
-pod "Kingfisher"
+pod "Kingfisher", '~> 7.9.0'
 pod "KRProgressHUD"
 pod "SnapKit"
 pod "SkeletonView"
@@ -16,7 +16,7 @@ pod "SwiftSoup"
 #pod 'AMKLaunchTimeProfiler'
 pod 'SwiftyBeaver'
 pod 'CocoaAsyncSocket'
-
+pod 'SwiftyBeaver'
 end
 
 target 'CLangWork' do
@@ -52,7 +52,7 @@ target 'KeyboardWork' do
   pod 'CocoaAsyncSocket'
   pod 'SwiftyBeaver'
   pod "Alamofire"
- 
+  pod 'SwiftyBeaver'
   # Pods for KeyboardWork
 
 end

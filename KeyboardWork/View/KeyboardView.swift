@@ -71,7 +71,7 @@ class KeyboardView: UIView ,keyPressDeleaget{
     
     
     deinit {
-        kbLog.info("键盘回收")
+        Zlog.info("键盘回收")
         print("keyboard view deint")
     }
     

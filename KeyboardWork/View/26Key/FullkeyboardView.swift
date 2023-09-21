@@ -314,7 +314,7 @@ class FullKeyboardView: Keyboard {
     }
 
     override func keyPress(key: KeyInfo) {
-        kbLog.info("你点了\(key.clickText)")
+        Zlog.info("你点了\(key.clickText)")
         // 点击上档键记录下当前键盘
         if key.keyType != .shift(.normal) {
             shiftKeyboartType = currentKeyBoardType
