@@ -30,7 +30,7 @@ extension UIImageView{
         }
         
         if url!.hasPrefix("http"){
-            let res = ImageResource(downloadURL: URL(string: url!)!)
+            let res = KF.ImageResource(downloadURL: URL(string: url!)!)
             var place:UIImage? = nil
             if let p = placeHolder{
                 place = UIImage(named: p)

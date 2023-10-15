@@ -148,7 +148,7 @@ extension CustomURLSchemeHandler: WKURLSchemeHandler {
             print("image = \(String(describing: requestUrlString))")
             guard let originUrlString = urlSchemeTask.request.url?.absoluteString.replacingOccurrences(of: "customscheme", with: "https") else { return }
             
-           let _ = KingfisherManager.shared.retrieveImage(with: .network(ImageResource(downloadURL: URL(string: originUrlString)!, cacheKey: nil)), options: nil, progressBlock: nil, downloadTaskUpdated: nil) { result in
+            let _ = KingfisherManager.shared.retrieveImage(with: .network(KF.ImageResource(downloadURL: URL(string: originUrlString)!, cacheKey: nil)), options: nil, progressBlock: nil, downloadTaskUpdated: nil) { result in
                 if let img =  try? result.get().image{
                     guard let data = img.jpegData(compressionQuality: 1) else {return}
                     self.resendRequset(urlSchemeTask: urlSchemeTask, mineType: "image/jpeg", requestData: data)
