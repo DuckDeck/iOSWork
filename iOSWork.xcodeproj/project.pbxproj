@@ -194,36 +194,6 @@
 		AE2657CA2875218C002C88FB /* ProcessComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2657C92875218C002C88FB /* ProcessComViewController.swift */; };
 		AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */; };
 		AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */; };
-		AE2D1CDF2A4182D400545BF9 /* jsonwswift.py in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CD42A4182D400545BF9 /* jsonwswift.py */; };
-		AE2D1CE02A4182D400545BF9 /* jsonwswift.py in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CD42A4182D400545BF9 /* jsonwswift.py */; };
-		AE2D1CE12A4182D400545BF9 /* jsonwswift.py in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CD42A4182D400545BF9 /* jsonwswift.py */; };
-		AE2D1CE22A4182D400545BF9 /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D1CD52A4182D400545BF9 /* IconNames.swift */; };
-		AE2D1CE32A4182D400545BF9 /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D1CD52A4182D400545BF9 /* IconNames.swift */; };
-		AE2D1CE42A4182D400545BF9 /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D1CD52A4182D400545BF9 /* IconNames.swift */; };
-		AE2D1CE52A4182D400545BF9 /* UIImage+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D1CD62A4182D400545BF9 /* UIImage+BBIconFont.swift */; };
-		AE2D1CE62A4182D400545BF9 /* UIImage+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D1CD62A4182D400545BF9 /* UIImage+BBIconFont.swift */; };
-		AE2D1CE72A4182D400545BF9 /* UIImage+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D1CD62A4182D400545BF9 /* UIImage+BBIconFont.swift */; };
-		AE2D1CE82A4182D400545BF9 /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CD82A4182D400545BF9 /* iconfont.js */; };
-		AE2D1CE92A4182D400545BF9 /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CD82A4182D400545BF9 /* iconfont.js */; };
-		AE2D1CEA2A4182D400545BF9 /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CD82A4182D400545BF9 /* iconfont.js */; };
-		AE2D1CEB2A4182D400545BF9 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CD92A4182D400545BF9 /* demo.css */; };
-		AE2D1CEC2A4182D400545BF9 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CD92A4182D400545BF9 /* demo.css */; };
-		AE2D1CED2A4182D400545BF9 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CD92A4182D400545BF9 /* demo.css */; };
-		AE2D1CEE2A4182D400545BF9 /* iconfont.json in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDA2A4182D400545BF9 /* iconfont.json */; };
-		AE2D1CEF2A4182D400545BF9 /* iconfont.json in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDA2A4182D400545BF9 /* iconfont.json */; };
-		AE2D1CF02A4182D400545BF9 /* iconfont.json in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDA2A4182D400545BF9 /* iconfont.json */; };
-		AE2D1CF12A4182D400545BF9 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDB2A4182D400545BF9 /* iconfont.ttf */; };
-		AE2D1CF22A4182D400545BF9 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDB2A4182D400545BF9 /* iconfont.ttf */; };
-		AE2D1CF32A4182D400545BF9 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDB2A4182D400545BF9 /* iconfont.ttf */; };
-		AE2D1CF42A4182D400545BF9 /* demo_index.html in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDC2A4182D400545BF9 /* demo_index.html */; };
-		AE2D1CF52A4182D400545BF9 /* demo_index.html in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDC2A4182D400545BF9 /* demo_index.html */; };
-		AE2D1CF62A4182D400545BF9 /* demo_index.html in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDC2A4182D400545BF9 /* demo_index.html */; };
-		AE2D1CF72A4182D400545BF9 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDD2A4182D400545BF9 /* iconfont.css */; };
-		AE2D1CF82A4182D400545BF9 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDD2A4182D400545BF9 /* iconfont.css */; };
-		AE2D1CF92A4182D400545BF9 /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = AE2D1CDD2A4182D400545BF9 /* iconfont.css */; };
-		AE2D1CFA2A4182D400545BF9 /* UIFont+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D1CDE2A4182D400545BF9 /* UIFont+BBIconFont.swift */; };
-		AE2D1CFB2A4182D400545BF9 /* UIFont+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D1CDE2A4182D400545BF9 /* UIFont+BBIconFont.swift */; };
-		AE2D1CFC2A4182D400545BF9 /* UIFont+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2D1CDE2A4182D400545BF9 /* UIFont+BBIconFont.swift */; };
 		AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE313F25282E46DD00245791 /* KeyboardSettingView.swift */; };
 		AE35149B27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149C27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
@@ -1057,6 +1027,46 @@
 		AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE42729470000DCA7B8 /* Apply.swift */; };
 		AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE52729470000DCA7B8 /* Semaphore.swift */; };
 		AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */; };
+		AEF5BF062ADD2BC000A7305D /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BEFB2ADD2BBF00A7305D /* IconNames.swift */; };
+		AEF5BF072ADD2BC000A7305D /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BEFB2ADD2BBF00A7305D /* IconNames.swift */; };
+		AEF5BF082ADD2BC000A7305D /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BEFB2ADD2BBF00A7305D /* IconNames.swift */; };
+		AEF5BF092ADD2BC000A7305D /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BEFB2ADD2BBF00A7305D /* IconNames.swift */; };
+		AEF5BF0A2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BEFC2ADD2BBF00A7305D /* UIImage+BBIconFont.swift */; };
+		AEF5BF0B2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BEFC2ADD2BBF00A7305D /* UIImage+BBIconFont.swift */; };
+		AEF5BF0C2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BEFC2ADD2BBF00A7305D /* UIImage+BBIconFont.swift */; };
+		AEF5BF0D2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BEFC2ADD2BBF00A7305D /* UIImage+BBIconFont.swift */; };
+		AEF5BF0E2ADD2BC000A7305D /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BEFE2ADD2BBF00A7305D /* iconfont.js */; };
+		AEF5BF0F2ADD2BC000A7305D /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BEFE2ADD2BBF00A7305D /* iconfont.js */; };
+		AEF5BF102ADD2BC000A7305D /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BEFE2ADD2BBF00A7305D /* iconfont.js */; };
+		AEF5BF112ADD2BC000A7305D /* iconfont.js in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BEFE2ADD2BBF00A7305D /* iconfont.js */; };
+		AEF5BF122ADD2BC000A7305D /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BEFF2ADD2BBF00A7305D /* demo.css */; };
+		AEF5BF132ADD2BC000A7305D /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BEFF2ADD2BBF00A7305D /* demo.css */; };
+		AEF5BF142ADD2BC000A7305D /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BEFF2ADD2BBF00A7305D /* demo.css */; };
+		AEF5BF152ADD2BC000A7305D /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BEFF2ADD2BBF00A7305D /* demo.css */; };
+		AEF5BF162ADD2BC000A7305D /* iconfont.json in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF002ADD2BBF00A7305D /* iconfont.json */; };
+		AEF5BF172ADD2BC000A7305D /* iconfont.json in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF002ADD2BBF00A7305D /* iconfont.json */; };
+		AEF5BF182ADD2BC000A7305D /* iconfont.json in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF002ADD2BBF00A7305D /* iconfont.json */; };
+		AEF5BF192ADD2BC000A7305D /* iconfont.json in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF002ADD2BBF00A7305D /* iconfont.json */; };
+		AEF5BF1A2ADD2BC000A7305D /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF012ADD2BBF00A7305D /* iconfont.woff */; };
+		AEF5BF1B2ADD2BC000A7305D /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF012ADD2BBF00A7305D /* iconfont.woff */; };
+		AEF5BF1C2ADD2BC000A7305D /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF012ADD2BBF00A7305D /* iconfont.woff */; };
+		AEF5BF1D2ADD2BC000A7305D /* iconfont.woff in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF012ADD2BBF00A7305D /* iconfont.woff */; };
+		AEF5BF1E2ADD2BC000A7305D /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF022ADD2BBF00A7305D /* iconfont.ttf */; };
+		AEF5BF1F2ADD2BC000A7305D /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF022ADD2BBF00A7305D /* iconfont.ttf */; };
+		AEF5BF202ADD2BC000A7305D /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF022ADD2BBF00A7305D /* iconfont.ttf */; };
+		AEF5BF212ADD2BC000A7305D /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF022ADD2BBF00A7305D /* iconfont.ttf */; };
+		AEF5BF222ADD2BC000A7305D /* iconfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF032ADD2BBF00A7305D /* iconfont.woff2 */; };
+		AEF5BF232ADD2BC000A7305D /* iconfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF032ADD2BBF00A7305D /* iconfont.woff2 */; };
+		AEF5BF242ADD2BC000A7305D /* iconfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF032ADD2BBF00A7305D /* iconfont.woff2 */; };
+		AEF5BF252ADD2BC000A7305D /* iconfont.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF032ADD2BBF00A7305D /* iconfont.woff2 */; };
+		AEF5BF262ADD2BC000A7305D /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF042ADD2BBF00A7305D /* iconfont.css */; };
+		AEF5BF272ADD2BC000A7305D /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF042ADD2BBF00A7305D /* iconfont.css */; };
+		AEF5BF282ADD2BC000A7305D /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF042ADD2BBF00A7305D /* iconfont.css */; };
+		AEF5BF292ADD2BC000A7305D /* iconfont.css in Resources */ = {isa = PBXBuildFile; fileRef = AEF5BF042ADD2BBF00A7305D /* iconfont.css */; };
+		AEF5BF2A2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BF052ADD2BBF00A7305D /* UIFont+BBIconFont.swift */; };
+		AEF5BF2B2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BF052ADD2BBF00A7305D /* UIFont+BBIconFont.swift */; };
+		AEF5BF2C2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BF052ADD2BBF00A7305D /* UIFont+BBIconFont.swift */; };
+		AEF5BF2D2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF5BF052ADD2BBF00A7305D /* UIFont+BBIconFont.swift */; };
 		AEF6CB3A287A6F4800352100 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6CB39287A6F4800352100 /* ThemeViewController.swift */; };
 		AEF6CB3D287A79D700352100 /* Style+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6CB3C287A79D700352100 /* Style+Extension.swift */; };
 		AEF6CB3E287A79E400352100 /* Style+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF6CB3C287A79D700352100 /* Style+Extension.swift */; };
@@ -1321,16 +1331,6 @@
 		AE2657C92875218C002C88FB /* ProcessComViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessComViewController.swift; sourceTree = "<group>"; };
 		AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKeyboardViewController.swift; sourceTree = "<group>"; };
 		AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGlobal.swift; sourceTree = "<group>"; };
-		AE2D1CD42A4182D400545BF9 /* jsonwswift.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = jsonwswift.py; sourceTree = "<group>"; };
-		AE2D1CD52A4182D400545BF9 /* IconNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconNames.swift; sourceTree = "<group>"; };
-		AE2D1CD62A4182D400545BF9 /* UIImage+BBIconFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BBIconFont.swift"; sourceTree = "<group>"; };
-		AE2D1CD82A4182D400545BF9 /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
-		AE2D1CD92A4182D400545BF9 /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
-		AE2D1CDA2A4182D400545BF9 /* iconfont.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iconfont.json; sourceTree = "<group>"; };
-		AE2D1CDB2A4182D400545BF9 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
-		AE2D1CDC2A4182D400545BF9 /* demo_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo_index.html; sourceTree = "<group>"; };
-		AE2D1CDD2A4182D400545BF9 /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
-		AE2D1CDE2A4182D400545BF9 /* UIFont+BBIconFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BBIconFont.swift"; sourceTree = "<group>"; };
 		AE313F25282E46DD00245791 /* KeyboardSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSettingView.swift; sourceTree = "<group>"; };
 		AE35149A27CBB549000326F1 /* 5k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5k.jpg; sourceTree = "<group>"; };
 		AE35149D27CBB54D000326F1 /* 8k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k.jpg; sourceTree = "<group>"; };
@@ -1912,6 +1912,16 @@
 		AEF0EBE42729470000DCA7B8 /* Apply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		AEF0EBE52729470000DCA7B8 /* Semaphore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Semaphore.swift; sourceTree = "<group>"; };
 		AEF0EBE62729470000DCA7B8 /* ThreadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
+		AEF5BEFB2ADD2BBF00A7305D /* IconNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconNames.swift; sourceTree = "<group>"; };
+		AEF5BEFC2ADD2BBF00A7305D /* UIImage+BBIconFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+BBIconFont.swift"; sourceTree = "<group>"; };
+		AEF5BEFE2ADD2BBF00A7305D /* iconfont.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = iconfont.js; sourceTree = "<group>"; };
+		AEF5BEFF2ADD2BBF00A7305D /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
+		AEF5BF002ADD2BBF00A7305D /* iconfont.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iconfont.json; sourceTree = "<group>"; };
+		AEF5BF012ADD2BBF00A7305D /* iconfont.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff; sourceTree = "<group>"; };
+		AEF5BF022ADD2BBF00A7305D /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
+		AEF5BF032ADD2BBF00A7305D /* iconfont.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.woff2; sourceTree = "<group>"; };
+		AEF5BF042ADD2BBF00A7305D /* iconfont.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = iconfont.css; sourceTree = "<group>"; };
+		AEF5BF052ADD2BBF00A7305D /* UIFont+BBIconFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BBIconFont.swift"; sourceTree = "<group>"; };
 		AEF6CB39287A6F4800352100 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		AEF6CB3C287A79D700352100 /* Style+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Extension.swift"; sourceTree = "<group>"; };
 		AEF6CB40287A7CB200352100 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -2382,31 +2392,6 @@
 			path = ProcessCommunication;
 			sourceTree = "<group>";
 		};
-		AE2D1CD32A4182D400545BF9 /* IconFont */ = {
-			isa = PBXGroup;
-			children = (
-				AE2D1CD72A4182D400545BF9 /* font */,
-				AE2D1CD42A4182D400545BF9 /* jsonwswift.py */,
-				AE2D1CD52A4182D400545BF9 /* IconNames.swift */,
-				AE2D1CD62A4182D400545BF9 /* UIImage+BBIconFont.swift */,
-				AE2D1CDE2A4182D400545BF9 /* UIFont+BBIconFont.swift */,
-			);
-			path = IconFont;
-			sourceTree = "<group>";
-		};
-		AE2D1CD72A4182D400545BF9 /* font */ = {
-			isa = PBXGroup;
-			children = (
-				AE2D1CD82A4182D400545BF9 /* iconfont.js */,
-				AE2D1CD92A4182D400545BF9 /* demo.css */,
-				AE2D1CDA2A4182D400545BF9 /* iconfont.json */,
-				AE2D1CDB2A4182D400545BF9 /* iconfont.ttf */,
-				AE2D1CDC2A4182D400545BF9 /* demo_index.html */,
-				AE2D1CDD2A4182D400545BF9 /* iconfont.css */,
-			);
-			path = font;
-			sourceTree = "<group>";
-		};
 		AE4D08E52730259200899D2C /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2537,7 +2522,7 @@
 		AE62C9EC272541F2007D51CD /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				AE2D1CD32A4182D400545BF9 /* IconFont */,
+				AEF5BEFA2ADD2BBF00A7305D /* IconFont */,
 				AE66E14D2753790E006432FE /* FrameWork */,
 				AE66E034275369D3006432FE /* ffmpeg_ios */,
 				AE66E02927536944006432FE /* fat-x264 */,
@@ -4004,6 +3989,31 @@
 			path = Thread;
 			sourceTree = "<group>";
 		};
+		AEF5BEFA2ADD2BBF00A7305D /* IconFont */ = {
+			isa = PBXGroup;
+			children = (
+				AEF5BEFB2ADD2BBF00A7305D /* IconNames.swift */,
+				AEF5BEFC2ADD2BBF00A7305D /* UIImage+BBIconFont.swift */,
+				AEF5BEFD2ADD2BBF00A7305D /* font */,
+				AEF5BF052ADD2BBF00A7305D /* UIFont+BBIconFont.swift */,
+			);
+			path = IconFont;
+			sourceTree = "<group>";
+		};
+		AEF5BEFD2ADD2BBF00A7305D /* font */ = {
+			isa = PBXGroup;
+			children = (
+				AEF5BEFE2ADD2BBF00A7305D /* iconfont.js */,
+				AEF5BEFF2ADD2BBF00A7305D /* demo.css */,
+				AEF5BF002ADD2BBF00A7305D /* iconfont.json */,
+				AEF5BF012ADD2BBF00A7305D /* iconfont.woff */,
+				AEF5BF022ADD2BBF00A7305D /* iconfont.ttf */,
+				AEF5BF032ADD2BBF00A7305D /* iconfont.woff2 */,
+				AEF5BF042ADD2BBF00A7305D /* iconfont.css */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		AEF6CB38287A6F3B00352100 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
@@ -4462,7 +4472,6 @@
 				AE66E19927538149006432FE /* haarcascade_eye_tree_eyeglasses.xml in Resources */,
 				AEE0114A27425D8800C155D8 /* p_6.png in Resources */,
 				AE1C4F6A274346BD0097EAC1 /* old.zip in Resources */,
-				AE2D1CE82A4182D400545BF9 /* iconfont.js in Resources */,
 				AE62C9E2272541C3007D51CD /* cxk.mp4 in Resources */,
 				AEE0114627425D8800C155D8 /* p_14.png in Resources */,
 				AE1C4F6B274346BD0097EAC1 /* new.zip in Resources */,
@@ -4476,17 +4485,16 @@
 				AEE0114827425D8800C155D8 /* p_5.png in Resources */,
 				AEE0113D27425D8800C155D8 /* selected.png in Resources */,
 				AEF8666F274B9BCD002E33E5 /* LICENSE.txt in Resources */,
-				AE2D1CF12A4182D400545BF9 /* iconfont.ttf in Resources */,
+				AEF5BF1A2ADD2BC000A7305D /* iconfont.woff in Resources */,
 				AE62CA592725429B007D51CD /* TZImagePickerController.bundle in Resources */,
-				AE2D1CF42A4182D400545BF9 /* demo_index.html in Resources */,
-				AE2D1CEE2A4182D400545BF9 /* iconfont.json in Resources */,
 				AEE0114027425D8800C155D8 /* p_13.png in Resources */,
 				AEE0115027425D8800C155D8 /* gu.mp3 in Resources */,
 				AEE0113827425D8800C155D8 /* bubble.jpg in Resources */,
-				AE2D1CDF2A4182D400545BF9 /* jsonwswift.py in Resources */,
+				AEF5BF1E2ADD2BC000A7305D /* iconfont.ttf in Resources */,
 				AE72F52F273EB9A50060456A /* city.json in Resources */,
 				AEE0114727425D8800C155D8 /* p_4.png in Resources */,
 				AEE0113727425D8800C155D8 /* p_9.png in Resources */,
+				AEF5BF122ADD2BC000A7305D /* demo.css in Resources */,
 				208DA91C2902E8A000218246 /* Settings.bundle in Resources */,
 				AEE0113C27425D8800C155D8 /* p_20.png in Resources */,
 				AEE0114C27425D8800C155D8 /* p_3.png in Resources */,
@@ -4498,17 +4506,19 @@
 				AEE0114127425D8800C155D8 /* start_down.png in Resources */,
 				AEE0113627425D8800C155D8 /* p_8.png in Resources */,
 				AEE0114327425D8800C155D8 /* p_16.png in Resources */,
+				AEF5BF222ADD2BC000A7305D /* iconfont.woff2 in Resources */,
 				AEE0114F27425D8800C155D8 /* dis.wav in Resources */,
-				AE2D1CEB2A4182D400545BF9 /* demo.css in Resources */,
-				AE2D1CF72A4182D400545BF9 /* iconfont.css in Resources */,
 				AEE0114E27425D8800C155D8 /* start.png in Resources */,
 				AE4D091B273032FC00899D2C /* upload.html in Resources */,
 				AEE0113A27425D8800C155D8 /* p_18.png in Resources */,
+				AEF5BF0E2ADD2BC000A7305D /* iconfont.js in Resources */,
 				AEE0114B27425D8800C155D8 /* p_2.png in Resources */,
 				AEE0113F27425D8800C155D8 /* p_11.png in Resources */,
 				AE62C9EA272541E2007D51CD /* question.html in Resources */,
+				AEF5BF162ADD2BC000A7305D /* iconfont.json in Resources */,
 				AEE010B62742569200C155D8 /* MJRefresh.bundle in Resources */,
 				AE7E742F272251E500F0C19C /* Assets.xcassets in Resources */,
+				AEF5BF262ADD2BC000A7305D /* iconfont.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4518,7 +4528,10 @@
 			files = (
 				AE35149F27CBB54D000326F1 /* 8k.jpg in Resources */,
 				AE4D08ED273025DB00899D2C /* demo.html in Resources */,
+				AEF5BF232ADD2BC000A7305D /* iconfont.woff2 in Resources */,
+				AEF5BF272ADD2BC000A7305D /* iconfont.css in Resources */,
 				AE62C9E3272541C3007D51CD /* cxk.mp4 in Resources */,
+				AEF5BF1F2ADD2BC000A7305D /* iconfont.ttf in Resources */,
 				AE7E74472722528400F0C19C /* Preview Assets.xcassets in Resources */,
 				AE62C9E7272541D0007D51CD /* gif0.gif in Resources */,
 				AE62CA5A2725429B007D51CD /* TZImagePickerController.bundle in Resources */,
@@ -4527,7 +4540,11 @@
 				AE62C9EB272541E2007D51CD /* question.html in Resources */,
 				AEE010B72742569200C155D8 /* MJRefresh.bundle in Resources */,
 				AE35149C27CBB549000326F1 /* 5k.jpg in Resources */,
+				AEF5BF172ADD2BC000A7305D /* iconfont.json in Resources */,
 				AE7E74442722528400F0C19C /* Assets.xcassets in Resources */,
+				AEF5BF1B2ADD2BC000A7305D /* iconfont.woff in Resources */,
+				AEF5BF132ADD2BC000A7305D /* demo.css in Resources */,
+				AEF5BF0F2ADD2BC000A7305D /* iconfont.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4538,27 +4555,27 @@
 				20B65A1E28FC227A00341DB9 /* prob_trans.utf8 in Resources */,
 				20B65A2128FC227A00341DB9 /* prob_start.utf8 in Resources */,
 				20B65A2528FC227A00341DB9 /* README.md in Resources */,
-				AE2D1CE92A4182D400545BF9 /* iconfont.js in Resources */,
+				AEF5BF102ADD2BC000A7305D /* iconfont.js in Resources */,
 				AE128845280C515B0049A5E4 /* ISEmojiList_iOS11.plist in Resources */,
 				20B65A1F28FC227A00341DB9 /* prob_emit.utf8 in Resources */,
 				20B65A2028FC227A00341DB9 /* char_state_tab.utf8 in Resources */,
+				AEF5BF242ADD2BC000A7305D /* iconfont.woff2 in Resources */,
 				AE128843280C515B0049A5E4 /* ISEmojiList.plist in Resources */,
 				20B65A2728FC227A00341DB9 /* idf.utf8 in Resources */,
 				20B65A2328FC227A00341DB9 /* hmm_model.utf8 in Resources */,
 				20B65A2628FC227A00341DB9 /* user.dict.utf8 in Resources */,
-				AE2D1CF82A4182D400545BF9 /* iconfont.css in Resources */,
-				AE2D1CEF2A4182D400545BF9 /* iconfont.json in Resources */,
-				AE2D1CE02A4182D400545BF9 /* jsonwswift.py in Resources */,
+				AEF5BF282ADD2BC000A7305D /* iconfont.css in Resources */,
 				20B65A2828FC227A00341DB9 /* jieba.dict.utf8 in Resources */,
+				AEF5BF142ADD2BC000A7305D /* demo.css in Resources */,
+				AEF5BF1C2ADD2BC000A7305D /* iconfont.woff in Resources */,
+				AEF5BF182ADD2BC000A7305D /* iconfont.json in Resources */,
 				AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */,
 				AE128844280C515B0049A5E4 /* ISEmojiList_iOS10.plist in Resources */,
 				20B65A2428FC227A00341DB9 /* jieba.dict.utf8.cad346b82a217a06f2713f6efba49e04.1.dat_cache in Resources */,
-				AE2D1CEC2A4182D400545BF9 /* demo.css in Resources */,
-				AE2D1CF22A4182D400545BF9 /* iconfont.ttf in Resources */,
 				AEDF536829B4385200094B6B /* WegoKeyboard-Pale.otf in Resources */,
 				20B65A2228FC227A00341DB9 /* stop_words.utf8 in Resources */,
-				AE2D1CF52A4182D400545BF9 /* demo_index.html in Resources */,
 				AEDF536929B4385200094B6B /* WegoKeyboard-PaleMedium.otf in Resources */,
+				AEF5BF202ADD2BC000A7305D /* iconfont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4567,17 +4584,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE72F536273EBDAC0060456A /* city.json in Resources */,
-				AE2D1CF62A4182D400545BF9 /* demo_index.html in Resources */,
+				AEF5BF252ADD2BC000A7305D /* iconfont.woff2 in Resources */,
+				AEF5BF292ADD2BC000A7305D /* iconfont.css in Resources */,
 				AE4D08EE273025DB00899D2C /* demo.html in Resources */,
+				AEF5BF212ADD2BC000A7305D /* iconfont.ttf in Resources */,
 				AE62CA5B2725429B007D51CD /* TZImagePickerController.bundle in Resources */,
 				AEE010B82742569200C155D8 /* MJRefresh.bundle in Resources */,
-				AE2D1CED2A4182D400545BF9 /* demo.css in Resources */,
-				AE2D1CE12A4182D400545BF9 /* jsonwswift.py in Resources */,
-				AE2D1CEA2A4182D400545BF9 /* iconfont.js in Resources */,
 				AE4D091D273032FC00899D2C /* upload.html in Resources */,
-				AE2D1CF32A4182D400545BF9 /* iconfont.ttf in Resources */,
-				AE2D1CF02A4182D400545BF9 /* iconfont.json in Resources */,
-				AE2D1CF92A4182D400545BF9 /* iconfont.css in Resources */,
+				AEF5BF192ADD2BC000A7305D /* iconfont.json in Resources */,
+				AEF5BF1D2ADD2BC000A7305D /* iconfont.woff in Resources */,
+				AEF5BF152ADD2BC000A7305D /* demo.css in Resources */,
+				AEF5BF112ADD2BC000A7305D /* iconfont.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4803,7 +4820,6 @@
 				AE62CB5527254947007D51CD /* UIImage+Base.swift in Sources */,
 				AEF8665B274B6F97002E33E5 /* Store.swift in Sources */,
 				AE1C4F67274346BD0097EAC1 /* unzcrash.c in Sources */,
-				AE2D1CE22A4182D400545BF9 /* IconNames.swift in Sources */,
 				AE62CB3727254946007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE62CBCE27255C20007D51CD /* GridView.swift in Sources */,
 				AE62CAB0272542D1007D51CD /* PaletteTarget.m in Sources */,
@@ -4827,6 +4843,7 @@
 				AE12889E2821524A0049A5E4 /* Shake.swift in Sources */,
 				AE61165B27410CF8008466AB /* TwoSideView.swift in Sources */,
 				AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */,
+				AEF5BF0A2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */,
 				AE1C4F5D274346BD0097EAC1 /* randtable.c in Sources */,
 				AEC23C8829E78CF400E93C5A /* HardwareInfoViewController.swift in Sources */,
 				AE62CBC227255C20007D51CD /* LimitTextView.swift in Sources */,
@@ -4862,12 +4879,12 @@
 				AE6E5DC4273FB6FF00523EA8 /* DrawView.swift in Sources */,
 				AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
 				AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */,
+				AEF5BF062ADD2BC000A7305D /* IconNames.swift in Sources */,
 				AE66E1BF27538679006432FE /* SortFrameHandler.m in Sources */,
 				AEE010512742547C00C155D8 /* CaptureSession.swift in Sources */,
 				AEE0115527425D8800C155D8 /* GameService.swift in Sources */,
 				20A9657C2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
 				AEE0104627424EE700C155D8 /* TakePhotoViewController.swift in Sources */,
-				AE2D1CFA2A4182D400545BF9 /* UIFont+BBIconFont.swift in Sources */,
 				AEE010C02742569200C155D8 /* NSBundle+MJRefresh.m in Sources */,
 				AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AEE010722742560200C155D8 /* DynamicMitoViewController.swift in Sources */,
@@ -4875,6 +4892,7 @@
 				20A965772903D34C007F8526 /* PHPLibraryTool.swift in Sources */,
 				AEE0104F2742526700C155D8 /* PaletteViewController.swift in Sources */,
 				AE80EE0927FF0795004566D5 /* PopViewController.swift in Sources */,
+				AEF5BF2A2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */,
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
 				AEE010492742500100C155D8 /* GifViewController.swift in Sources */,
 				AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */,
@@ -5110,7 +5128,6 @@
 				AE1C4F66274346BD0097EAC1 /* crctable.c in Sources */,
 				AE1C4F69274346BD0097EAC1 /* bzip2.c in Sources */,
 				AE62CBD127255C20007D51CD /* SlideMenuView.swift in Sources */,
-				AE2D1CE52A4182D400545BF9 /* UIImage+BBIconFont.swift in Sources */,
 				AEE0113427425D8800C155D8 /* LinkLine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5138,6 +5155,7 @@
 				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
 				20B65A3B28FC249200341DB9 /* UIFont+Extension.swift in Sources */,
 				AE62CAD8272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
+				AEF5BF072ADD2BC000A7305D /* IconNames.swift in Sources */,
 				AEE010522742547C00C155D8 /* CaptureSession.swift in Sources */,
 				AE62CB3B27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				20B65A4828FC26BB00341DB9 /* PanCollectionView.swift in Sources */,
@@ -5190,6 +5208,7 @@
 				AE128889281CED0A0049A5E4 /* number.swift in Sources */,
 				AEAFBBDA2AA02820003D92B5 /* UIDevice+Ex.swift in Sources */,
 				AE62CBBD27255C20007D51CD /* BarSlider.swift in Sources */,
+				AEF5BF2B2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */,
 				AE62CBD827255C20007D51CD /* FlowView.swift in Sources */,
 				AE62CBD527255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
 				AE128875281CED0A0049A5E4 /* calculator.swift in Sources */,
@@ -5248,6 +5267,7 @@
 				AE62CB8B27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				20A9655A2903C6B2007F8526 /* UIView+Extension.swift in Sources */,
 				AE62CB5627254947007D51CD /* UIImage+Base.swift in Sources */,
+				AEF5BF0B2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */,
 				AEE010F32742569200C155D8 /* MJRefreshBackFooter.m in Sources */,
 				AE62CBDB27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE62CBDE27255C20007D51CD /* GrandTextView.swift in Sources */,
@@ -5268,7 +5288,6 @@
 				AEDF535729B437FC00094B6B /* FullkeyboardView.swift in Sources */,
 				AE12888E281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
 				AE9EE9F628083E2000EBE70A /* Shake.swift in Sources */,
-				AE2D1CE32A4182D400545BF9 /* IconNames.swift in Sources */,
 				AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
 				AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */,
 				AE1C4F38274341FE0097EAC1 /* Array+Extension.swift in Sources */,
@@ -5301,8 +5320,8 @@
 				AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */,
 				20B659CF28FC224A00341DB9 /* ImageStyle.swift in Sources */,
 				AEDF535529B437FC00094B6B /* FullKeyboardView+keyInfo.swift in Sources */,
-				AE2D1CE62A4182D400545BF9 /* UIImage+BBIconFont.swift in Sources */,
 				AEB517E3282677F700F2FA1D /* SwitchKeyboardView.swift in Sources */,
+				AEF5BF2C2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */,
 				AEDF537229B4408000094B6B /* KeyboardConstant.swift in Sources */,
 				20A965742903D145007F8526 /* UIImage+Base.swift in Sources */,
 				AEE3DB1727FC0960007B2B58 /* KeyboardInfo.swift in Sources */,
@@ -5316,6 +5335,7 @@
 				20B65A3328FC227A00341DB9 /* WGInputAssociateWraper.mm in Sources */,
 				20986CF2292A2470006C992E /* Colors.swift in Sources */,
 				AEDF536D29B43D3A00094B6B /* PopKeyChooseView.swift in Sources */,
+				AEF5BF082ADD2BC000A7305D /* IconNames.swift in Sources */,
 				AE12887A281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				20B65A2D28FC227A00341DB9 /* SqlRecord.cpp in Sources */,
 				AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */,
@@ -5327,7 +5347,6 @@
 				AEF6CB3E287A79E400352100 /* Style+Extension.swift in Sources */,
 				20A9656B2903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				20A9656F2903CF5B007F8526 /* UIView+Base.swift in Sources */,
-				AE2D1CFB2A4182D400545BF9 /* UIFont+BBIconFont.swift in Sources */,
 				20B65A2B28FC227A00341DB9 /* SqlRecordSet.cpp in Sources */,
 				AE1C4F3A274342010097EAC1 /* WKWebView+Extension.swift in Sources */,
 				20B65A4E28FC274B00341DB9 /* KeyboardProtocal.swift in Sources */,
@@ -5355,6 +5374,7 @@
 				20A965642903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
 				AEDF535F29B4380F00094B6B /* NineKeyboardView.swift in Sources */,
 				AE128862281CED0A0049A5E4 /* glyph.swift in Sources */,
+				AEF5BF0C2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */,
 				AE0442852803D6BA003DB6A1 /* InputText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5426,7 +5446,6 @@
 				AE62CA4D2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE12888B281CED0A0049A5E4 /* number.swift in Sources */,
 				20A965832903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
-				AE2D1CE72A4182D400545BF9 /* UIImage+BBIconFont.swift in Sources */,
 				AE62CA9D272542D1007D51CD /* Palette.m in Sources */,
 				AE72F538273EBDB10060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE128877281CED0A0049A5E4 /* calculator.swift in Sources */,
@@ -5488,6 +5507,7 @@
 				AEE010B22742569200C155D8 /* MJRefreshConfig.m in Sources */,
 				20A965792903D34D007F8526 /* PHPLibraryTool.swift in Sources */,
 				AE62CA6B2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
+				AEF5BF2D2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */,
 				AE62CA552725429B007D51CD /* UIView+Layout.m in Sources */,
 				AE62CB5127254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AEF6CB3D287A79D700352100 /* Style+Extension.swift in Sources */,
@@ -5501,6 +5521,7 @@
 				AE62CA472725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE62CAEB272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE80EE0727FF017E004566D5 /* PopHintView.swift in Sources */,
+				AEF5BF092ADD2BC000A7305D /* IconNames.swift in Sources */,
 				AE62CB3927254947007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE6B2DD927550E180066017F /* MediaBroswerView.swift in Sources */,
 				AEE010F72742569200C155D8 /* MJRefreshAutoFooter.m in Sources */,
@@ -5531,7 +5552,6 @@
 				AE128893281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AEAFBBE22AA72825003D92B5 /* WWKWebView.swift in Sources */,
 				AE62CA642725429B007D51CD /* TZImageManager.m in Sources */,
-				AE2D1CFC2A4182D400545BF9 /* UIFont+BBIconFont.swift in Sources */,
 				AEE010F02742569200C155D8 /* MJRefreshHeader.m in Sources */,
 				AE62CAD9272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CB8C27254DD7007D51CD /* CatoMonitor.swift in Sources */,
@@ -5541,6 +5561,7 @@
 				AE72F537273EBDAE0060456A /* CityChooseViewController.swift in Sources */,
 				AEA0A122278940680044D012 /* ImageInfo.swift in Sources */,
 				AE62CA682725429B007D51CD /* TZPhotoPickerController.m in Sources */,
+				AEF5BF0D2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */,
 				AE62CB4527254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CB1D27254873007D51CD /* BaseModel.swift in Sources */,
 				AE62CAF4272542DC007D51CD /* CameraModel.swift in Sources */,
@@ -5563,7 +5584,6 @@
 				AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */,
 				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
 				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
-				AE2D1CE42A4182D400545BF9 /* IconNames.swift in Sources */,
 				AE0442832803D465003DB6A1 /* InputText.swift in Sources */,
 				AE128897281CED0A0049A5E4 /* token.swift in Sources */,
 				AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
     }
 
     @discardableResult
-    static func dynamicallyLoadFont() -> Bool {
+    static func dynamicallyLoadFont() -> Bool { //这里只会加载一次，因为成功了 UIFont(name: "iconfont", size: size) 就会返回正确的font
         guard let filePath = Bundle.main.url(forResource: "iconfont", withExtension: "ttf")?.path else { return false }
         guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else { return false }
         guard let provider = CGDataProvider(data: data as CFData) else { return false }

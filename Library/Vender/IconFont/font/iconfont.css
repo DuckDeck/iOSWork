@@ -1,6 +1,8 @@
 @font-face {
-  font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1687242898443') format('truetype');
+  font-family: "iconfont"; /* Project id 4131508 */
+  src: url('iconfont.woff2?t=1689930822285') format('woff2'),
+       url('iconfont.woff?t=1689930822285') format('woff'),
+       url('iconfont.ttf?t=1689930822285') format('truetype');
 }
 
 .iconfont {
@@ -11,143 +13,447 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-bofang-mian:before {
-  content: "\e624";
+.wegokeyboard-liebiao:before {
+  content: "\e6c6";
 }
 
-.icon-cha:before {
-  content: "\e625";
+.wegokeyboard-weixinzhifu1:before {
+  content: "\e60e";
 }
 
-.icon-bianji:before {
-  content: "\e626";
+.wegokeyboard-fuzhi:before {
+  content: "\e6e8";
 }
 
-.icon-dingdan:before {
-  content: "\e62c";
+.wegokeyboard-yincang:before {
+  content: "\e6a4";
 }
 
-.icon-biaoqing:before {
-  content: "\e62e";
+.wegokeyboard-zuojiantou-mian16:before {
+  content: "\e67b";
 }
 
-.icon-dabao:before {
-  content: "\e62f";
+.wegokeyboard-youjiantou-mian16:before {
+  content: "\e67c";
 }
 
-.icon-dizhi:before {
-  content: "\e630";
+.wegokeyboard-s-ra-s:before {
+  content: "\e64a";
 }
 
-.icon-dianpu:before {
-  content: "\e633";
+.wegokeyboard-s-un-n:before {
+  content: "\e64c";
 }
 
-.icon-chexiao:before {
-  content: "\e634";
+.wegokeyboard-huabei:before {
+  content: "\e6e5";
 }
 
-.icon-cuxiao:before {
-  content: "\e63b";
+.wegokeyboard-kb_clipboard_sepratewords:before {
+  content: "\e679";
 }
 
-.icon-haibao:before {
-  content: "\e63c";
+.wegokeyboard-kb_clipboard_newphrase:before {
+  content: "\e65a";
 }
 
-.icon-dianhua:before {
-  content: "\e63e";
+.wegokeyboard-kb_global:before {
+  content: "\e65b";
 }
 
-.icon-shipin:before {
-  content: "\e691";
+.wegokeyboard-kb_menu_flip125:before {
+  content: "\e65c";
 }
 
-.icon-sousuo:before {
-  content: "\e696";
+.wegokeyboard-kb_menu_clipboard125:before {
+  content: "\e65f";
 }
 
-.icon-yuangou-mian:before {
-  content: "\e697";
+.wegokeyboard-kb_menu_add_circle125:before {
+  content: "\e661";
 }
 
-.icon-yuanjia:before {
-  content: "\e6a1";
+.wegokeyboard-kb_menu_more125:before {
+  content: "\e662";
 }
 
-.icon-yuangou:before {
-  content: "\e6a2";
+.wegokeyboard-kb_more_Applogo125:before {
+  content: "\e665";
 }
 
-.icon-zhuanxiangxiaochengxu:before {
-  content: "\e6a6";
+.wegokeyboard-kb_menu_phrase125:before {
+  content: "\e667";
 }
 
-.icon-xiaochengxu:before {
-  content: "\e6a7";
+.wegokeyboard-kb_type_writing:before {
+  content: "\e66a";
 }
 
-.icon-jia:before {
-  content: "\e6b8";
+.wegokeyboard-kb_more_service125:before {
+  content: "\e66b";
 }
 
-.icon-weixuanze-daidi:before {
-  content: "\e6c9";
+.wegokeyboard-kb_goods_cardmode:before {
+  content: "\e66c";
 }
 
-.icon-danxuan:before {
-  content: "\e6ca";
+.wegokeyboard-kb_more_miniprogram_unique125:before {
+  content: "\e66e";
 }
 
-.icon-weixuanze:before {
-  content: "\e6cb";
+.wegokeyboard-kb_more_mascot125:before {
+  content: "\e66f";
 }
 
-.icon-duoxuan:before {
-  content: "\e6cc";
+.wegokeyboard-kb_notice_top_left_arrow16:before {
+  content: "\e672";
 }
 
-.icon-weixuanze-tushang:before {
-  content: "\e6cd";
+.wegokeyboard-kb_more_KBtype125:before {
+  content: "\e673";
 }
 
-.icon-gou16:before {
+.wegokeyboard-kb_more_setting125:before {
+  content: "\e674";
+}
+
+.wegokeyboard-kb_type_26:before {
+  content: "\e675";
+}
+
+.wegokeyboard-kb_notice_recommend:before {
+  content: "\e676";
+}
+
+.wegokeyboard-kb_type_9:before {
+  content: "\e677";
+}
+
+.wegokeyboard-tanhao-mian:before {
+  content: "\e658";
+}
+
+.wegokeyboard-shuaxin:before {
+  content: "\e689";
+}
+
+.wegokeyboard-tanhao:before {
+  content: "\e6b4";
+}
+
+.wegokeyboard-gou-jiacu:before {
+  content: "\e6b6";
+}
+
+.wegokeyboard-gou16:before {
   content: "\e6ce";
 }
 
-.icon-cha16:before {
-  content: "\e6cf";
+.wegokeyboard-tupian:before {
+  content: "\e666";
 }
 
-.icon-jia16:before {
-  content: "\e6d0";
+.wegokeyboard-yinhangka-mian:before {
+  content: "\e688";
 }
 
-.icon-jian16:before {
-  content: "\e6d1";
+.wegokeyboard-zhifubao:before {
+  content: "\e60d";
 }
 
-.icon-shangjiantou-mian16:before {
+.wegokeyboard-xiaoxi1:before {
+  content: "\e715";
+}
+
+.wegokeyboard-qian:before {
+  content: "\e669";
+}
+
+.wegokeyboard-jianqieban:before {
+  content: "\e6e3";
+}
+
+.wegokeyboard-shouji:before {
+  content: "\e664";
+}
+
+.wegokeyboard-shijian:before {
+  content: "\e68a";
+}
+
+.wegokeyboard-duoren:before {
+  content: "\e638";
+}
+
+.wegokeyboard-xianshi:before {
+  content: "\e69d";
+}
+
+.wegokeyboard-zhiding:before {
+  content: "\e6aa";
+}
+
+.wegokeyboard-fasongjiantou:before {
+  content: "\e704";
+}
+
+.wegokeyboard-yuangou-mian:before {
+  content: "\e697";
+}
+
+.wegokeyboard-yuangou:before {
+  content: "\e6a2";
+}
+
+.wegokeyboard-cuxiao:before {
+  content: "\e63b";
+}
+
+.wegokeyboard-cuxiao-mian:before {
+  content: "\e647";
+}
+
+.wegokeyboard-shipin:before {
+  content: "\e691";
+}
+
+.wegokeyboard-dingdan:before {
+  content: "\e62c";
+}
+
+.wegokeyboard-dianpu:before {
+  content: "\e633";
+}
+
+.wegokeyboard-duotu:before {
+  content: "\e643";
+}
+
+.wegokeyboard-pintu:before {
+  content: "\e652";
+}
+
+.wegokeyboard-lianjie:before {
+  content: "\e654";
+}
+
+.wegokeyboard-ren:before {
+  content: "\e659";
+}
+
+.wegokeyboard-suo:before {
+  content: "\e66d";
+}
+
+.wegokeyboard-pengyouquan:before {
+  content: "\e671";
+}
+
+.wegokeyboard-xiazai:before {
+  content: "\e685";
+}
+
+.wegokeyboard-sousuo:before {
+  content: "\e696";
+}
+
+.wegokeyboard-xiangji-mian:before {
+  content: "\e68d";
+}
+
+.wegokeyboard-xiangji:before {
+  content: "\e698";
+}
+
+.wegokeyboard-tuji:before {
+  content: "\e6c4";
+}
+
+.wegokeyboard-datu:before {
+  content: "\e6c5";
+}
+
+.wegokeyboard-shangpin:before {
+  content: "\e6ef";
+}
+
+.wegokeyboard-bianji:before {
+  content: "\e626";
+}
+
+.wegokeyboard-douyin:before {
+  content: "\e62d";
+}
+
+.wegokeyboard-erweima:before {
+  content: "\e63f";
+}
+
+.wegokeyboard-kefu-guanfang:before {
+  content: "\e653";
+}
+
+.wegokeyboard-quan-mian:before {
+  content: "\e65d";
+}
+
+.wegokeyboard-wenben:before {
+  content: "\e660";
+}
+
+.wegokeyboard-fenxiang:before {
+  content: "\e663";
+}
+
+.wegokeyboard-saoyisao-weixinzhifu:before {
+  content: "\e668";
+}
+
+.wegokeyboard-quan:before {
+  content: "\e670";
+}
+
+.wegokeyboard-weixinzhifu:before {
+  content: "\e67a";
+}
+
+.wegokeyboard-xiaochengxuma:before {
+  content: "\e681";
+}
+
+.wegokeyboard-shezhi:before {
+  content: "\e682";
+}
+
+.wegokeyboard-xiangcewangzhi:before {
+  content: "\e69a";
+}
+
+.wegokeyboard-zhuanxiangxiaochengxu:before {
+  content: "\e6a6";
+}
+
+.wegokeyboard-xiaochengxu:before {
+  content: "\e6a7";
+}
+
+.wegokeyboard-bianji16:before {
+  content: "\e6d3";
+}
+
+.wegokeyboard-shangjiantou-mian16:before {
   content: "\e6d4";
 }
 
-.icon-shangjiantou16:before {
+.wegokeyboard-shangjiantou16:before {
   content: "\e6d6";
 }
 
-.icon-xiajiantou16:before {
+.wegokeyboard-zuojiantou16:before {
+  content: "\e6da";
+}
+
+.wegokeyboard-xiajiantou-mian16:before {
+  content: "\e6db";
+}
+
+.wegokeyboard-xiajiantou16:before {
   content: "\e6dc";
 }
 
-.icon-lajitong16:before {
-  content: "\e6df";
-}
-
-.icon-youjiantou16:before {
+.wegokeyboard-youjiantou16:before {
   content: "\e6e0";
 }
 
-.icon-tishi-mian:before {
-  content: "\e6e2";
+.wegokeyboard-shangxiajiantou16:before {
+  content: "\e6e1";
+}
+
+.wegokeyboard-kaidan:before {
+  content: "\e6e4";
+}
+
+.wegokeyboard-fenxiangjiu:before {
+  content: "\e6f6";
+}
+
+.wegokeyboard-xiaochengxu-mian:before {
+  content: "\e6ea";
+}
+
+.wegokeyboard-douyinyinliu:before {
+  content: "\e701";
+}
+
+.wegokeyboard-fenxiang-mian:before {
+  content: "\e620";
+}
+
+.wegokeyboard-fanhui:before {
+  content: "\e641";
+}
+
+.wegokeyboard-fanhui-juzhong:before {
+  content: "\e61b";
+}
+
+.wegokeyboard-cha:before {
+  content: "\e625";
+}
+
+.wegokeyboard-sandian:before {
+  content: "\e65e";
+}
+
+.wegokeyboard-shanchu:before {
+  content: "\e678";
+}
+
+.wegokeyboard-yuancha:before {
+  content: "\e699";
+}
+
+.wegokeyboard-yuancha-mian:before {
+  content: "\e69c";
+}
+
+.wegokeyboard-yuanjia:before {
+  content: "\e6a1";
+}
+
+.wegokeyboard-yuanjian-mian:before {
+  content: "\e6a9";
+}
+
+.wegokeyboard-yuanjia-mian:before {
+  content: "\e6ad";
+}
+
+.wegokeyboard-yuansandian:before {
+  content: "\e6af";
+}
+
+.wegokeyboard-jia:before {
+  content: "\e6b8";
+}
+
+.wegokeyboard-cha16:before {
+  content: "\e6cf";
+}
+
+.wegokeyboard-jia16:before {
+  content: "\e6d0";
+}
+
+.wegokeyboard-jian16:before {
+  content: "\e6d1";
+}
+
+.wegokeyboard-sandian16:before {
+  content: "\e6d7";
+}
+
+.wegokeyboard-yuanjian:before {
+  content: "\e607";
 }
 
