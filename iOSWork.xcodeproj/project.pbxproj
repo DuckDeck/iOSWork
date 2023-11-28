@@ -191,6 +191,9 @@
 		AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F7227434E300097EAC1 /* ADViewController.swift */; };
 		AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */; };
 		AE256CB42A2D8EB00022F6BC /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE256CB32A2D8EB00022F6BC /* SpeechViewController.swift */; };
+		AE264E362B1576D8002F78D9 /* ClickImage.h in Headers */ = {isa = PBXBuildFile; fileRef = AE264E342B1576D8002F78D9 /* ClickImage.h */; };
+		AE264E372B1576D8002F78D9 /* ClickImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE264E352B1576D8002F78D9 /* ClickImage.m */; };
+		AE264E382B1576DD002F78D9 /* ClickImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE264E352B1576D8002F78D9 /* ClickImage.m */; };
 		AE2657CA2875218C002C88FB /* ProcessComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2657C92875218C002C88FB /* ProcessComViewController.swift */; };
 		AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */; };
 		AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */; };
@@ -1328,6 +1331,8 @@
 		AE1C4F75274380910097EAC1 /* RerangeBinaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RerangeBinaryViewController.h; sourceTree = "<group>"; };
 		AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RerangeBinaryViewController.m; sourceTree = "<group>"; };
 		AE256CB32A2D8EB00022F6BC /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		AE264E342B1576D8002F78D9 /* ClickImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickImage.h; sourceTree = "<group>"; };
+		AE264E352B1576D8002F78D9 /* ClickImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickImage.m; sourceTree = "<group>"; };
 		AE2657C92875218C002C88FB /* ProcessComViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessComViewController.swift; sourceTree = "<group>"; };
 		AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKeyboardViewController.swift; sourceTree = "<group>"; };
 		AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGlobal.swift; sourceTree = "<group>"; };
@@ -2750,6 +2755,8 @@
 				AEAFBBD82AA02820003D92B5 /* UIDevice+Ex.swift */,
 				20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */,
 				20A9657F2903D3A8007F8526 /* PHAssetCollection+Extension.swift */,
+				AE264E342B1576D8002F78D9 /* ClickImage.h */,
+				AE264E352B1576D8002F78D9 /* ClickImage.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -4142,6 +4149,7 @@
 				AE66E0F9275369D3006432FE /* ripemd.h in Headers */,
 				AE66E0BF275369D3006432FE /* version.h in Headers */,
 				AEE010C62742569200C155D8 /* MJRefreshBackGifFooter.h in Headers */,
+				AE264E362B1576D8002F78D9 /* ClickImage.h in Headers */,
 				AE66E0D7275369D3006432FE /* threadmessage.h in Headers */,
 				AE66E0FE275369D3006432FE /* timestamp.h in Headers */,
 				AE66E108275369D3006432FE /* avio.h in Headers */,
@@ -4936,6 +4944,7 @@
 				AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */,
 				AEE010DB2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
 				AE12886C281CED0A0049A5E4 /* expression-combining.swift in Sources */,
+				AE264E382B1576DD002F78D9 /* ClickImage.m in Sources */,
 				AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */,
 				AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AEE0113027425D8800C155D8 /* LinkGameViewController.swift in Sources */,
@@ -5471,6 +5480,7 @@
 				AE62CA1B2725425A007D51CD /* FMDatabasePool.m in Sources */,
 				AE62CAF7272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE62CB8927254DD7007D51CD /* HttpClient.swift in Sources */,
+				AE264E372B1576D8002F78D9 /* ClickImage.m in Sources */,
 				AE62CAEE272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
 				20A9656C2903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				AE128873281CED0A0049A5E4 /* expressionizer.swift in Sources */,

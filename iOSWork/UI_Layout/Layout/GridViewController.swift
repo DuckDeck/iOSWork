@@ -102,6 +102,7 @@ class GridViewController: UIViewController {
         subview.setImg(url: "https://pic.netbian.com/uploads/allimg/211109/223232-163646835246df.jpg")
         subview.clipsToBounds = true
         subview.contentMode = .scaleAspectFill
+        subview.canClick = true
         arr.append(subview)
         viewContainer.arrViews = arr
     }

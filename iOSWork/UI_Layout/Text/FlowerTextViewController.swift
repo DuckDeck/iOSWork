@@ -47,6 +47,11 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         lbl.snp.makeConstraints { make in
             make.center.equalTo(v)
         }
+        
+        let img = UIImageView(image: UIImage(data: Data()))
+        img.frame = CGRect(x: 01, y: 100, width: 100, height: 100)
+        view.addSubview(img)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

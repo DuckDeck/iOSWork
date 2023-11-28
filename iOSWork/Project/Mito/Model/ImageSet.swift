@@ -55,8 +55,8 @@ struct ImageSet:Codable {
             var doc:HTMLDocument?
             do {
                 let codeing = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))
-                let str = NSString(data: data!, encoding: codeing)
-                doc = try HTML(html: str! as! String, encoding: .utf8)
+                guard let str = NSString(data: data!, encoding: codeing) else {return}
+                doc = try HTML(html: str as String, encoding: .utf8)
             }
             catch{
                 result.code = 10
