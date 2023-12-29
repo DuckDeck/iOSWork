@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyBeaver
 class BaseMenuViewController:BaseViewController{
-    var arrData = ["多线程","内存","渲染","通知","扫码","分享","城市选择","二进制合并","二进制插桩","异常处理","进程间通信"]
+    var arrData = ["多线程","内存","渲染","通知","扫码","分享","城市选择","二进制合并","二进制插桩","异常处理","进程间通信","进程间通信2"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -126,7 +126,10 @@ extension BaseMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
      
             
-
+        case 11:
+            let vc = ProcessComSendViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }

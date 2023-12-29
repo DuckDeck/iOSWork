@@ -50,6 +50,7 @@ class MediaBroswerViewController: UIViewController {
                 
             }
         }
+        print(modalPresentationStyle.rawValue)
         view.addSubview(viewBroswer)
     }
 }

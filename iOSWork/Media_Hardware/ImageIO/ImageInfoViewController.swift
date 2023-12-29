@@ -109,11 +109,13 @@ class ImageInfoViewController:BaseViewController{
     
     @objc func chooseNetImage(){
         let vc = SnapkitTableViewController()
-        vc.modalPresentationStyle = .fullScreen
-        vc.dismissBlock = { url in
-            self.getImgInfo(url: url)
-        }
-        present(vc, animated: true, completion: nil)
+        let nav = UINavigationController(rootViewController: vc)
+//        nav.view.backgroundColor = .clear
+        nav.modalPresentationStyle = .overFullScreen
+//        vc.dismissBlock = { url in
+//            self.getImgInfo(url: url)
+//        }
+        present(nav, animated: true, completion: nil)
     
     }
     

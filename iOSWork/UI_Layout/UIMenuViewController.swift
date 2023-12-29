@@ -73,11 +73,8 @@ extension UIMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 7:
             let vc = MediaBroswerViewController()
-
-            let nav = UINavigationController(rootViewController: vc)
-            
-            nav.modalPresentationStyle = .fullScreen
-            present(nav, animated: true, completion: nil)
+            vc.modalPresentationStyle = .overFullScreen
+            present(vc, animated: true, completion: nil)
         case 8:
             let vc = ScaleViewController()
             vc.hidesBottomBarWhenPushed = true

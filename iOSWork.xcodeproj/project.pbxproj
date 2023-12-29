@@ -206,6 +206,7 @@
 		AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */; };
 		AE4717AC2ADBF38900023738 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4717AB2ADBF34800023738 /* libiconv.tbd */; };
 		AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48CECD27C7D10B009A0673 /* asset.xcassets */; };
+		AE4B07612B3AECEC008BC4E3 /* ProcessComSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4B07602B3AECEC008BC4E3 /* ProcessComSendViewController.swift */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08ED273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -1345,6 +1346,7 @@
 		AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManage.swift; sourceTree = "<group>"; };
 		AE4717AB2ADBF34800023738 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		AE48CECD27C7D10B009A0673 /* asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = asset.xcassets; sourceTree = "<group>"; };
+		AE4B07602B3AECEC008BC4E3 /* ProcessComSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessComSendViewController.swift; sourceTree = "<group>"; };
 		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
 		AE4D08EB273025DB00899D2C /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomURLSchemeHandler.swift; sourceTree = "<group>"; };
@@ -2393,6 +2395,7 @@
 			isa = PBXGroup;
 			children = (
 				AE2657C92875218C002C88FB /* ProcessComViewController.swift */,
+				AE4B07602B3AECEC008BC4E3 /* ProcessComSendViewController.swift */,
 			);
 			path = ProcessCommunication;
 			sourceTree = "<group>";
@@ -4937,6 +4940,7 @@
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CB3A27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE1C4F62274346BD0097EAC1 /* huffman.c in Sources */,
+				AE4B07612B3AECEC008BC4E3 /* ProcessComSendViewController.swift in Sources */,
 				AE62CA5C2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE7234AE278E6B640088C791 /* PHAssert+Extension.swift in Sources */,
 				AE66E18C27537CC9006432FE /* OpenCVMenuViewController.swift in Sources */,

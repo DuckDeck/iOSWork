@@ -17,7 +17,7 @@ class SnapkitTableViewController: UIViewController {
     var dismissBlock:((_ url:String)->Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.clear
         title = "CELL 高度"
         
         if navigationController == nil{
