@@ -295,14 +295,14 @@ class ShadowVideoPlayerView: UIView {
     }
     
     func play() {
-        if player != nil {
+        if player != nil && player.playStatus != .Playing{
             player.play()
             vPlay.setState(state: true)
         }
     }
     
     func pause() {
-        if player != nil {
+        if player != nil && player.playStatus != .Paused{
             player.pause()
             vPlay.setState(state: false)
         }
@@ -423,11 +423,11 @@ class ShadowVideoPlayerView: UIView {
 extension ShadowVideoPlayerView: UIGestureRecognizerDelegate, ShadowVideoControlViewDelegate {
     func controlView(view: ShadowVideoControlView, pointSliderLocationWithCurrentValue: Float) {
         ShadowVideoPlayerView.count = 0
-        
         player.currentTime = Double(pointSliderLocationWithCurrentValue)
     }
     
     func controlView(view: ShadowVideoControlView, draggedPositionWithSlider: UISlider) {
+        player.isPositioning = true
         isDraging = true
         ShadowVideoPlayerView.count = 0
         player.currentTime = Double(view.value)
@@ -435,6 +435,7 @@ extension ShadowVideoPlayerView: UIGestureRecognizerDelegate, ShadowVideoControl
     
     func controlView(view: ShadowVideoControlView, draggedPositionExitWithSlider: UISlider) {
         isDraging = false
+        player.isPositioning = false
     }
     
     func controlView(view: ShadowVideoControlView, withLargeButton: UIButton) {
@@ -566,7 +567,7 @@ extension ShadowVideoPlayerView: ShadowPlayDelegate {
         print("播放到\(current)")
         vControl.value = current
         vControl.currentTime = convertTime(second: current)
-        if ShadowVideoPlayerView.count >= 4 {
+        if ShadowVideoPlayerView.count >= 200 {
             setSubViewsIsHide(isHide: true)
         }
         else {

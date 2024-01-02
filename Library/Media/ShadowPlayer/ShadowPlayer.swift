@@ -88,24 +88,25 @@ class ShadowPlayer:NSObject {
     var isSeeking = false
     var mediaInfo:MediaInfo?
     var errorInfo:MediaError?
+    var isPositioning = false //用于拖动条正在定位，因为seeking太快会导致isSeeking为false，会触发进度事件，不符合预期
     var currentTime:Double
     {
         get{
             return item.currentTime().seconds
         }
         set{
-            let tmp = playStatus
-            
             if isSeeking {
                 return
             }
             if let timeScale = player.currentItem?.asset.duration.timescale {
                 print("seek 到 \(newValue)timescale \(timeScale) ")
                 isSeeking = true
+                player.pause()
                 player.seek(to: CMTimeMakeWithSeconds(newValue, preferredTimescale: timeScale), completionHandler: {[weak self] (complete) in
-                    self?.isSeeking = false
-                    if tmp == .Playing{
-                        self?.play()
+                    guard let self = self else {return}
+                    self.isSeeking = false
+                    if self.playStatus == .Playing && !isPositioning{
+                        self.play()
                     }
                 })
             }
@@ -279,17 +280,14 @@ class ShadowPlayer:NSObject {
     }
     
     func addPeriodicTimeObserver()  {
-        weak var weakself = self
-        playbackTimerObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 1), queue: nil, using: { (time) in
+        playbackTimerObserver = player.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 50), queue: nil, using: { [weak self] (time) in
             //ISSUE 当在滑动的时侯，又会反馈带动这里滑动，所以会出现一跳一跳的情况。
-            if weakself == nil{
+            guard let self = self else {return}
+            if self.isSeeking || self.isPositioning{
                 return
             }
-            if weakself!.isSeeking{
-                return
-            }
-            let value = Float(weakself!.item.currentTime().value / Int64(weakself!.item.currentTime().timescale))
-            weakself?.delegate?.playProcess(current: value, duration: Float(weakself!.item.duration.seconds))
+            let value = Float(self.item.currentTime().value) / Float(self.item.currentTime().timescale)
+            self.delegate?.playProcess(current: value, duration: Float(self.item.duration.seconds))
         })
     }
     
@@ -349,7 +347,9 @@ class ShadowPlayer:NSObject {
         }
         else if key == "rate"{
             if change![NSKeyValueChangeKey.newKey] as! Int == 0{
-                playStatus = .Playing
+                if !isPositioning{
+                    playStatus = .Playing
+                }
             }
             else{
                 playStatus = .Stopped
@@ -392,7 +392,7 @@ class ShadowPlayer:NSObject {
     }
     
     func pause() {
-        if self.player != nil{
+        if self.player != nil && self.playStatus != .Paused{
             self.player.pause()
             playStatus = .Paused
             delegate?.playStateChange(status: playStatus)
@@ -401,7 +401,7 @@ class ShadowPlayer:NSObject {
     }
     
     func stop() {
-        if item == nil{
+        if item == nil || playStatus == .Stopped{
             return
         }
         item.removeObserver(self, forKeyPath: "status")
