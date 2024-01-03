@@ -39,8 +39,8 @@ class VideoPlayViewController: BaseViewController {
         view.addSubview(shadowPlayer)
         shadowPlayer.snp.makeConstraints { (m) in
             m.left.right.equalTo(0)
-            m.top.equalTo(20)
-            m.height.equalTo(ScreenWidth * 0.7)
+            m.top.equalTo(UIDevice.topAreaHeight)
+            m.height.equalTo(ScreenHeight * 0.7)
         }
         
         
