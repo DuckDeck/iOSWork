@@ -1,0 +1,93 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "102693125",
+      "name": "未选择-带底",
+      "font_class": "weixuanze-daidi",
+      "unicode": "e6c9",
+      "unicode_decimal": 59081
+    },
+    {
+      "icon_id": "102693126",
+      "name": "单选",
+      "font_class": "danxuan",
+      "unicode": "e6ca",
+      "unicode_decimal": 59082
+    },
+    {
+      "icon_id": "102693127",
+      "name": "未选择",
+      "font_class": "weixuanze",
+      "unicode": "e6cb",
+      "unicode_decimal": 59083
+    },
+    {
+      "icon_id": "102693128",
+      "name": "多选",
+      "font_class": "duoxuan",
+      "unicode": "e6cc",
+      "unicode_decimal": 59084
+    },
+    {
+      "icon_id": "102693130",
+      "name": "勾16",
+      "font_class": "gou16",
+      "unicode": "e6ce",
+      "unicode_decimal": 59086
+    },
+    {
+      "icon_id": "102693131",
+      "name": "叉16",
+      "font_class": "cha16",
+      "unicode": "e6cf",
+      "unicode_decimal": 59087
+    },
+    {
+      "icon_id": "102693132",
+      "name": "加16",
+      "font_class": "jia16",
+      "unicode": "e6d0",
+      "unicode_decimal": 59088
+    },
+    {
+      "icon_id": "102693133",
+      "name": "减16",
+      "font_class": "jian16",
+      "unicode": "e6d1",
+      "unicode_decimal": 59089
+    },
+    {
+      "icon_id": "102693136",
+      "name": "上箭头-面16",
+      "font_class": "shangjiantou-mian16",
+      "unicode": "e6d4",
+      "unicode_decimal": 59092
+    },
+    {
+      "icon_id": "102693138",
+      "name": "上箭头16",
+      "font_class": "shangjiantou16",
+      "unicode": "e6d6",
+      "unicode_decimal": 59094
+    },
+    {
+      "icon_id": "102693144",
+      "name": "下箭头16",
+      "font_class": "xiajiantou16",
+      "unicode": "e6dc",
+      "unicode_decimal": 59100
+    },
+    {
+      "icon_id": "102693150",
+      "name": "提示-面",
+      "font_class": "tishi-mian",
+      "unicode": "e6e2",
+      "unicode_decimal": 59106
+    }
+  ]
+}

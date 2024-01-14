@@ -1,0 +1,6 @@
+use_frameworks!
+target 'BBIconFont_Tests' do
+  pod 'BBIconFont', :path => '../'
+  
+  
+end
