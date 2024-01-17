@@ -828,6 +828,10 @@
 		AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */; };
 		AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */; };
 		AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */; };
+		AEB9CBA92B464055008BD731 /* NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9CBA82B464055008BD731 /* NetTool.swift */; };
+		AEB9CBAA2B464055008BD731 /* NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9CBA82B464055008BD731 /* NetTool.swift */; };
+		AEB9CBAB2B464055008BD731 /* NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9CBA82B464055008BD731 /* NetTool.swift */; };
+		AEB9CBAD2B464280008BD731 /* NetToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9CBAC2B464280008BD731 /* NetToolViewController.swift */; };
 		AEC23C8829E78CF400E93C5A /* HardwareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC23C8729E78CF400E93C5A /* HardwareInfoViewController.swift */; };
 		AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9916828743E90002879A0 /* KeyboardNav.swift */; };
 		AEC9916B287442C4002879A0 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9916A287442C4002879A0 /* HUD.swift */; };
@@ -1096,6 +1100,11 @@
 		AEF8666D274B9BCD002E33E5 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AEF8666A274B9BCD002E33E5 /* MobileNet.mlmodel */; };
 		AEF8666E274B9BCD002E33E5 /* NOTICE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEF8666B274B9BCD002E33E5 /* NOTICE.txt */; };
 		AEF8666F274B9BCD002E33E5 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AEF8666C274B9BCD002E33E5 /* LICENSE.txt */; };
+		AEF8814C2B551E1D0032492B /* BaseBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF8814A2B551E1D0032492B /* BaseBridge.h */; };
+		AEF8814D2B551E1D0032492B /* BaseBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF8814B2B551E1D0032492B /* BaseBridge.m */; };
+		AEF8814E2B551E1D0032492B /* BaseBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF8814B2B551E1D0032492B /* BaseBridge.m */; };
+		AEF881502B551E7B0032492B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF8814F2B551E6B0032492B /* libresolv.tbd */; };
+		AEF881542B551F2E0032492B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF881532B551F290032492B /* libresolv.tbd */; };
 		D041815A9CC7AAAF62FC71C3 /* Pods_ConsoleWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7CAFD203AF3AB070FDE21F /* Pods_ConsoleWork.framework */; };
 		FA1903311DC70AF999EB312A /* Pods_OCWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90ED39A76819A2B0EE8A035A /* Pods_OCWork.framework */; };
 		FB1B59CA83911767848A98D4 /* Pods_iOSWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF858320072437C6DA25C19 /* Pods_iOSWork.framework */; };
@@ -1754,6 +1763,8 @@
 		AEB649BF273FCEAC00BCBF4E /* SnapkitTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapkitTableViewController.swift; sourceTree = "<group>"; };
 		AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleAnimtaionView.swift; sourceTree = "<group>"; };
+		AEB9CBA82B464055008BD731 /* NetTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetTool.swift; sourceTree = "<group>"; };
+		AEB9CBAC2B464280008BD731 /* NetToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetToolViewController.swift; sourceTree = "<group>"; };
 		AEC18196288803F50082827B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		AEC23C8729E78CF400E93C5A /* HardwareInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardwareInfoViewController.swift; sourceTree = "<group>"; };
 		AEC9916828743E90002879A0 /* KeyboardNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardNav.swift; sourceTree = "<group>"; };
@@ -1953,6 +1964,11 @@
 		AEF8666A274B9BCD002E33E5 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		AEF8666B274B9BCD002E33E5 /* NOTICE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NOTICE.txt; sourceTree = "<group>"; };
 		AEF8666C274B9BCD002E33E5 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		AEF8814A2B551E1D0032492B /* BaseBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseBridge.h; sourceTree = "<group>"; };
+		AEF8814B2B551E1D0032492B /* BaseBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseBridge.m; sourceTree = "<group>"; };
+		AEF8814F2B551E6B0032492B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		AEF881512B551F170032492B /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		AEF881532B551F290032492B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/lib/libresolv.tbd; sourceTree = DEVELOPER_DIR; };
 		B40729E3A2D7297B9088E89F /* Pods_SwiftUIWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F57584843CAE9C4103FED2 /* Pods_KeyboardWork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardWork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF41C2448DDF4DA4DA08F90D /* Pods-OCWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWork.debug.xcconfig"; path = "Target Support Files/Pods-OCWork/Pods-OCWork.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1970,6 +1986,7 @@
 				AE62CB0A272542F8007D51CD /* libmp3lame.a in Frameworks */,
 				AE66E131275369D4006432FE /* libswscale.a in Frameworks */,
 				AE66E03127536944006432FE /* libx264.a in Frameworks */,
+				AEF881502B551E7B0032492B /* libresolv.tbd in Frameworks */,
 				AE66E128275369D4006432FE /* libavformat.a in Frameworks */,
 				AEA0A11A27884A350044D012 /* GrandKit in Frameworks */,
 				AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */,
@@ -2041,6 +2058,7 @@
 				AE66E127275369D4006432FE /* libavcodec.a in Frameworks */,
 				AE62CB0C272542F8007D51CD /* libmp3lame.a in Frameworks */,
 				AEA0A11827884A1B0044D012 /* GrandKit in Frameworks */,
+				AEF881542B551F2E0032492B /* libresolv.tbd in Frameworks */,
 				AE66E121275369D4006432FE /* libavutil.a in Frameworks */,
 				AE66E130275369D4006432FE /* libswresample.a in Frameworks */,
 				AE66E12A275369D4006432FE /* libavformat.a in Frameworks */,
@@ -2493,6 +2511,9 @@
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEF881532B551F290032492B /* libresolv.tbd */,
+				AEF881512B551F170032492B /* libresolv.9.tbd */,
+				AEF8814F2B551E6B0032492B /* libresolv.tbd */,
 				AE4717AB2ADBF34800023738 /* libiconv.tbd */,
 				20B65A3428FC22CE00341DB9 /* libsqlite3.0.tbd */,
 				AE1288A2282154B00049A5E4 /* CoreAudio.framework */,
@@ -2819,6 +2840,7 @@
 				AE08AA8B27C681D500EE0813 /* MediaTool.swift */,
 				20A965752903D2D1007F8526 /* PHPLibraryTool.swift */,
 				AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */,
+				AEB9CBA82B464055008BD731 /* NetTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2864,6 +2886,7 @@
 		AE62CBE227256603007D51CD /* Data_Network */ = {
 			isa = PBXGroup;
 			children = (
+				AEB9CBAC2B464280008BD731 /* NetToolViewController.swift */,
 				AE08AA8A27C6817D00EE0813 /* Download */,
 				AEF86664274B9B38002E33E5 /* ClassifyingImages */,
 				AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */,
@@ -3169,6 +3192,8 @@
 			children = (
 				AE66E15927537992006432FE /* OpenCV.h */,
 				AE66E15A27537992006432FE /* OpenCV.mm */,
+				AEF8814A2B551E1D0032492B /* BaseBridge.h */,
+				AEF8814B2B551E1D0032492B /* BaseBridge.m */,
 			);
 			path = Mediator;
 			sourceTree = "<group>";
@@ -4108,6 +4133,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF8814C2B551E1D0032492B /* BaseBridge.h in Headers */,
 				AE66E11C275369D3006432FE /* dv_profile.h in Headers */,
 				AE66E0CE275369D3006432FE /* frame.h in Headers */,
 				AE66E113275369D3006432FE /* mediacodec.h in Headers */,
@@ -4937,6 +4963,7 @@
 				AE7E742A272251E300F0C19C /* ViewController.swift in Sources */,
 				AEE010492742500100C155D8 /* GifViewController.swift in Sources */,
 				AEB649C0273FCEAC00BCBF4E /* SnapkitTableViewController.swift in Sources */,
+				AEF8814D2B551E1D0032492B /* BaseBridge.m in Sources */,
 				AE62CBDA27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE6E5DC8273FBC3D00523EA8 /* HorizontalTableViewController.swift in Sources */,
 				AE66E19427537FBB006432FE /* OpenCVBaseViewController.swift in Sources */,
@@ -4976,9 +5003,11 @@
 				AE66E18C27537CC9006432FE /* OpenCVMenuViewController.swift in Sources */,
 				AE61166027410F2F008466AB /* GrandSlider.swift in Sources */,
 				AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */,
+				AEB9CBAD2B464280008BD731 /* NetToolViewController.swift in Sources */,
 				AEE010DB2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
 				AE12886C281CED0A0049A5E4 /* expression-combining.swift in Sources */,
 				AE264E382B1576DD002F78D9 /* ClickImage.m in Sources */,
+				AEB9CBA92B464055008BD731 /* NetTool.swift in Sources */,
 				AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */,
 				AE62CBEF272566A2007D51CD /* ProjectMenuViewController.swift in Sources */,
 				AEE0113027425D8800C155D8 /* LinkGameViewController.swift in Sources */,
@@ -5388,6 +5417,7 @@
 				20B6595D28FC0BB100341DB9 /* HeaderPasteboardView.swift in Sources */,
 				AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */,
 				AE128849280C51E00049A5E4 /* Extension.swift in Sources */,
+				AEB9CBAA2B464055008BD731 /* NetTool.swift in Sources */,
 				AEDF535A29B4380300094B6B /* EmojiKeyboard.swift in Sources */,
 				20B65A3028FC227A00341DB9 /* SqlValue.cpp in Sources */,
 				AEF6CB3E287A79E400352100 /* Style+Extension.swift in Sources */,
@@ -5511,6 +5541,7 @@
 				AE62CACD272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
 				AE62CADC272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				AE128887281CED0A0049A5E4 /* operation.swift in Sources */,
+				AEB9CBAB2B464055008BD731 /* NetTool.swift in Sources */,
 				AE62CA0D2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AEE010D12742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				AE62CAA4272542D1007D51CD /* UIImage+Palette.m in Sources */,
@@ -5634,6 +5665,7 @@
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */,
 				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
+				AEF8814E2B551E1D0032492B /* BaseBridge.m in Sources */,
 				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE0442832803D465003DB6A1 /* InputText.swift in Sources */,
 				AE128897281CED0A0049A5E4 /* token.swift in Sources */,

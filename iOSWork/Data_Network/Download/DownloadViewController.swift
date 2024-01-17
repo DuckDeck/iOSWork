@@ -29,6 +29,8 @@ class DownloadViewController:UIViewController{
             make.height.equalTo(400)
         }
         imgView.setImg(url: "https://wx1.sinaimg.cn/large/008heIDbgy1hhlhzs8falj30u013z46f.jpg")
+        
+        
     }
     
     @objc func startDownload(){

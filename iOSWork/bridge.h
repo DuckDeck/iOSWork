@@ -24,4 +24,5 @@
 #import "FFmpegVideoDecoder.h"
 #import "ObjcTry.h"
 #import "ClickImage.h"
+#import "BaseBridge.h"
 #endif /* bridge_h */

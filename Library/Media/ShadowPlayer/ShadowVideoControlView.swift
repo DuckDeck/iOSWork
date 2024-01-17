@@ -110,6 +110,8 @@ class ShadowVideoControlView: UIView {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(ges:)))
         slider.addTarget(self, action: #selector(handleSliderPosition(sender:)), for: .valueChanged)
         slider.addTarget(self, action: #selector(handleSliderPositionExit(sender:)), for: UIControl.Event.touchUpInside)
+        slider.addTarget(self, action: #selector(handleSliderPositionExit(sender:)), for: UIControl.Event.touchUpOutside)
+
         slider.addGestureRecognizer(tapGesture!)
         slider.maximumTrackTintColor = UIColor.clear
         slider.minimumTrackTintColor = UIColor.white

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import Kingfisher
 class DataMenuViewController:BaseViewController{
-    var arrData = ["照片识别分类","文件下载"]
+    var arrData = ["照片识别分类","文件下载","网络工具"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -23,6 +24,14 @@ class DataMenuViewController:BaseViewController{
         tbMenu.snp.makeConstraints { (m) in
             m.edges.equalTo(0)
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "清空缓存", style: .plain, target: self, action: #selector(clearCache))
+    }
+    
+    @objc func clearCache(){
+        Kingfisher.ImageCache.default.clearMemoryCache()
+        Kingfisher.ImageCache.default.clearDiskCache()
+        Toast.showToast(msg: "缓存清理完成")
     }
 }
 extension DataMenuViewController:UITableViewDelegate,UITableViewDataSource{
@@ -47,6 +56,11 @@ extension DataMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
         case 1:
             let vc = DownloadViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+            
+        case 2:
+            let vc = NetToolViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
             break

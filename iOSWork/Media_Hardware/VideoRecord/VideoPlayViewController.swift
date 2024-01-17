@@ -33,7 +33,7 @@ class VideoPlayViewController: BaseViewController {
       
         
         shadowPlayer = ShadowVideoPlayerView(frame: CGRect(), url: url)
-        
+        shadowPlayer.player.isAutoPlay = false
         shadowPlayer.title = url.lastPathComponent
         shadowPlayer.backgroundColor = UIColor.black
         view.addSubview(shadowPlayer)

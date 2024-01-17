@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(item.name)
         }
         
+        let dnss = BaseBridge().getDnsAddress()
+        print(dnss)
+            
         IQKeyboardManager.shared.enable = false
      
         
