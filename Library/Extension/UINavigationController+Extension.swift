@@ -28,7 +28,7 @@ extension UINavigationController{
     
     func setNavgationBarClear()  {
         navigationBar.isTranslucent = true
-        let rect = CGRect(x: 0, y: 0, w: ScreenWidth, h: NavigationBarHeight)
+        let rect = CGRect(x: 0, y: 0, w: ScreenWidth, h: UIDevice.topAreaHeight)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         context?.setFillColor(UIColor.clear.cgColor)

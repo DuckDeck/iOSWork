@@ -57,7 +57,7 @@ class ScanCodeViewController: UIViewController {
         outPut?.metadataObjectTypes = getMetadataObjectTypes()
         preview = AVCaptureVideoPreviewLayer(session: session!)
         preview?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        preview?.frame = CGRect(x: 0, y: NavigationBarHeight, width: ScreenWidth, height: ScreenHeight - NavigationBarHeight)
+        preview?.frame = CGRect(x: 0, y: UIDevice.topAreaHeight, width: ScreenWidth, height: ScreenHeight - UIDevice.topAreaHeight)
         view.layer.insertSublayer(preview!, at: 0)
         session?.startRunning()
     }

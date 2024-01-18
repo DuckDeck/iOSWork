@@ -6,17 +6,20 @@
 //
 
 import UIKit
+import Foundation
 import GrandKit
-let ScreenWidth = UIScreen.main.bounds.width
-let ScreenHeight = UIScreen.main.bounds.height
-let TabBarHeight:CGFloat = 49.0
+var ScreenWidth : CGFloat{
+    return UIScreen.main.bounds.width
+}
+var ScreenHeight : CGFloat {
+   return UIScreen.main.bounds.height
+}
+
 let SystemVersion:Double = Double(UIDevice.current.systemVersion)!
 let APPVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-
-let NotchStatusBarHeight : CGFloat = 25
-let NavigationBarHeight:CGFloat = 64.0 + (UIDevice.isNotchScreen ? NotchStatusBarHeight : 0)
-let StatusBarHeight:CGFloat = 0.0 + (UIDevice.isNotchScreen ? NotchStatusBarHeight : 0)
-let iPhoneBottomBarHeight:CGFloat = 0.0 + (UIDevice.isNotchScreen ? 35 : 0)
+let appIdentifier = Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String
+let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as! String
+let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
 
 struct regexTool {
     let regex:NSRegularExpression?
@@ -303,3 +306,5 @@ public func hookClassMethod(cls:AnyClass,originalSelector:Selector,swizzleSelect
     method_exchangeImplementations(originalMethod!, swizzledMethod!)
     //交换 static 或者 class 方法不能使用class_addMethod，直接使用method_exchangeImplementations就行
 }
+
+//let log = Logger(subsystem: "system", category: "cat1")

@@ -31,7 +31,7 @@ class SlideMenuView: UIView {
         vMenu.backgroundColor = UIColor.white
         
         img.addTo(view: vMenu).snp.makeConstraints { (m) in
-            m.top.equalTo(NavigationBarHeight)
+            m.top.equalTo(UIDevice.topAreaHeight)
             m.left.right.equalTo(0)
             m.height.equalTo(0.6 * UIScreen.main.bounds.size.width)
         }

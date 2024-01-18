@@ -25,7 +25,7 @@ class StyleTableViewController:UIViewController{
         view.addSubview(tb)
         tb.snp.makeConstraints { (m) in
             m.left.right.bottom.equalTo(0)
-            m.top.equalTo(NavigationBarHeight)
+            m.top.equalTo(UIDevice.topAreaHeight)
         }
     }
     

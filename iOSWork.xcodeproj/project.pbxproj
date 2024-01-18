@@ -204,16 +204,6 @@
 		AE35149F27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
 		AE3EB4E52A2C2EA200097934 /* KeyboardManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */; };
 		AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */; };
-		AE3F5E642B492E1D00AD1667 /* Pinger+Sockopt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E5F2B492E1C00AD1667 /* Pinger+Sockopt.swift */; };
-		AE3F5E652B492E1D00AD1667 /* Pinger+Sockopt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E5F2B492E1C00AD1667 /* Pinger+Sockopt.swift */; };
-		AE3F5E662B492E1D00AD1667 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E602B492E1D00AD1667 /* Utilities.swift */; };
-		AE3F5E672B492E1D00AD1667 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E602B492E1D00AD1667 /* Utilities.swift */; };
-		AE3F5E682B492E1D00AD1667 /* Pinger+Trace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E612B492E1D00AD1667 /* Pinger+Trace.swift */; };
-		AE3F5E692B492E1D00AD1667 /* Pinger+Trace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E612B492E1D00AD1667 /* Pinger+Trace.swift */; };
-		AE3F5E6A2B492E1D00AD1667 /* IPAddr.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E622B492E1D00AD1667 /* IPAddr.swift */; };
-		AE3F5E6B2B492E1D00AD1667 /* IPAddr.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E622B492E1D00AD1667 /* IPAddr.swift */; };
-		AE3F5E6C2B492E1D00AD1667 /* Pinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E632B492E1D00AD1667 /* Pinger.swift */; };
-		AE3F5E6D2B492E1D00AD1667 /* Pinger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3F5E632B492E1D00AD1667 /* Pinger.swift */; };
 		AE4717AC2ADBF38900023738 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4717AB2ADBF34800023738 /* libiconv.tbd */; };
 		AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48CECD27C7D10B009A0673 /* asset.xcassets */; };
 		AE4B07612B3AECEC008BC4E3 /* ProcessComSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4B07602B3AECEC008BC4E3 /* ProcessComSendViewController.swift */; };
@@ -1363,11 +1353,6 @@
 		AE38468727BB440A004F6765 /* KeyboardWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardWork.entitlements; sourceTree = "<group>"; };
 		AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardWork-Bridging-Header.h"; sourceTree = "<group>"; };
 		AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManage.swift; sourceTree = "<group>"; };
-		AE3F5E5F2B492E1C00AD1667 /* Pinger+Sockopt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pinger+Sockopt.swift"; sourceTree = "<group>"; };
-		AE3F5E602B492E1D00AD1667 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		AE3F5E612B492E1D00AD1667 /* Pinger+Trace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Pinger+Trace.swift"; sourceTree = "<group>"; };
-		AE3F5E622B492E1D00AD1667 /* IPAddr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPAddr.swift; sourceTree = "<group>"; };
-		AE3F5E632B492E1D00AD1667 /* Pinger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pinger.swift; sourceTree = "<group>"; };
 		AE4717AB2ADBF34800023738 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		AE48CECD27C7D10B009A0673 /* asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = asset.xcassets; sourceTree = "<group>"; };
 		AE4B07602B3AECEC008BC4E3 /* ProcessComSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessComSendViewController.swift; sourceTree = "<group>"; };
@@ -2433,18 +2418,6 @@
 			path = ProcessCommunication;
 			sourceTree = "<group>";
 		};
-		AE3F5E5E2B492E0D00AD1667 /* net */ = {
-			isa = PBXGroup;
-			children = (
-				AE3F5E622B492E1D00AD1667 /* IPAddr.swift */,
-				AE3F5E632B492E1D00AD1667 /* Pinger.swift */,
-				AE3F5E5F2B492E1C00AD1667 /* Pinger+Sockopt.swift */,
-				AE3F5E612B492E1D00AD1667 /* Pinger+Trace.swift */,
-				AE3F5E602B492E1D00AD1667 /* Utilities.swift */,
-			);
-			path = net;
-			sourceTree = "<group>";
-		};
 		AE4D08E52730259200899D2C /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2825,7 +2798,6 @@
 		AE62CB7427254DC9007D51CD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				AE3F5E5E2B492E0D00AD1667 /* net */,
 				AE12884C281CEC9D0049A5E4 /* calculator */,
 				AE62CB7B27254DD6007D51CD /* Auth.swift */,
 				AE62CB7927254DD6007D51CD /* CatoMonitor.swift */,
@@ -4916,10 +4888,8 @@
 				AEF0EBEA2729470000DCA7B8 /* ThreadViewController.swift in Sources */,
 				AE1C4F68274346BD0097EAC1 /* bzlib.c in Sources */,
 				AEE0104127424D4500C155D8 /* VolumeView.swift in Sources */,
-				AE3F5E662B492E1D00AD1667 /* Utilities.swift in Sources */,
 				AE6E5DC2273FB6FF00523EA8 /* CrossLine.swift in Sources */,
 				AE66E19227537F98006432FE /* ImageRecognitionViewController.swift in Sources */,
-				AE3F5E6A2B492E1D00AD1667 /* IPAddr.swift in Sources */,
 				AEAFBBD22AA0260F003D92B5 /* WKHttpHandler.swift in Sources */,
 				AEE011022742581500C155D8 /* LockView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
@@ -5106,7 +5076,6 @@
 				AE62CA712725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE8306E127B4B16F00C657DC /* ScaleViewController.swift in Sources */,
 				AE128884281CED0A0049A5E4 /* operation.swift in Sources */,
-				AE3F5E642B492E1D00AD1667 /* Pinger+Sockopt.swift in Sources */,
 				AE62CA532725429A007D51CD /* UIView+Layout.m in Sources */,
 				AEAFBBE12AA72825003D92B5 /* WWKWebView.swift in Sources */,
 				AEE010CC2742569200C155D8 /* MJRefreshBackStateFooter.m in Sources */,
@@ -5144,7 +5113,6 @@
 				AE62CADD272542DC007D51CD /* ShadowPlayer.swift in Sources */,
 				AE62CAFE272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CA412725429A007D51CD /* TZImageCropManager.m in Sources */,
-				AE3F5E682B492E1D00AD1667 /* Pinger+Trace.swift in Sources */,
 				AE62CAF5272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE128860281CED0A0049A5E4 /* glyph.swift in Sources */,
 				AEE010782742560200C155D8 /* CollectedViewController.swift in Sources */,
@@ -5153,7 +5121,6 @@
 				AE1A51A027C284B500162D66 /* ImageMemoryViewController.swift in Sources */,
 				AE62CA772725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
 				AE62CA81272542AF007D51CD /* fishhook.c in Sources */,
-				AE3F5E6C2B492E1D00AD1667 /* Pinger.swift in Sources */,
 				AE66E1D927538EE0006432FE /* PullLiveViewController.swift in Sources */,
 				AE66E1DA27538EE0006432FE /* PushLiveViewController.swift in Sources */,
 				AEE010F22742569200C155D8 /* MJRefreshBackFooter.m in Sources */,
@@ -5529,7 +5496,6 @@
 				AE62CB8F27254DD7007D51CD /* DBTool.swift in Sources */,
 				AEE010E02742569200C155D8 /* MJRefreshNormalHeader.m in Sources */,
 				AE62CB7327254B12007D51CD /* Toast.swift in Sources */,
-				AE3F5E652B492E1D00AD1667 /* Pinger+Sockopt.swift in Sources */,
 				AE62CA502725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE7234AD278E6B610088C791 /* PHAssert+Extension.swift in Sources */,
 				AEE010C22742569200C155D8 /* NSBundle+MJRefresh.m in Sources */,
@@ -5591,7 +5557,6 @@
 				AE62CB5127254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AEF6CB3D287A79D700352100 /* Style+Extension.swift in Sources */,
 				AE62CA5E2725429B007D51CD /* TZProgressView.m in Sources */,
-				AE3F5E6B2B492E1D00AD1667 /* IPAddr.swift in Sources */,
 				AE62CB3C27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE62CBC727255C20007D51CD /* ProgressButton.swift in Sources */,
 				AEE010F42742569200C155D8 /* MJRefreshBackFooter.m in Sources */,
@@ -5628,7 +5593,6 @@
 				AE61165F27410F2C008466AB /* GrandSlider.swift in Sources */,
 				AEE010EC2742569200C155D8 /* MJRefreshFooter.m in Sources */,
 				AE62CB5A27254947007D51CD /* UIView+Base.swift in Sources */,
-				AE3F5E672B492E1D00AD1667 /* Utilities.swift in Sources */,
 				20B65A3D28FC249200341DB9 /* UIFont+Extension.swift in Sources */,
 				AE128893281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AEAFBBE22AA72825003D92B5 /* WWKWebView.swift in Sources */,
@@ -5660,7 +5624,6 @@
 				AE08AA8C27C681D500EE0813 /* MediaTool.swift in Sources */,
 				AE62CBC427255C20007D51CD /* LimitTextView.swift in Sources */,
 				AEE010E92742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
-				AE3F5E6D2B492E1D00AD1667 /* Pinger.swift in Sources */,
 				AE62CB1727254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */,
@@ -5671,7 +5634,6 @@
 				AE128897281CED0A0049A5E4 /* token.swift in Sources */,
 				AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */,
 				AE62CB10272542F8007D51CD /* TransformMP3.m in Sources */,
-				AE3F5E692B492E1D00AD1667 /* Pinger+Trace.swift in Sources */,
 				AE62CB8627254DD7007D51CD /* FPSTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

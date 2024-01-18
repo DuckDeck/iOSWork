@@ -21,7 +21,7 @@ class ShareViewController: BaseViewController {
         btnOrigin.setBackgroundColor(color: UIColor.green, forState: .highlighted)
         btnOrigin.title(title: "原生的ActivityViewController").addTo(view: view).snp.makeConstraints { (m) in
             m.centerX.equalTo(view)
-            m.top.equalTo(NavigationBarHeight + 20)
+            m.top.equalTo(UIDevice.topAreaHeight + 20)
         }
         
         btnOrigin.addTarget(self, action: #selector(originShare), for: .touchUpInside)

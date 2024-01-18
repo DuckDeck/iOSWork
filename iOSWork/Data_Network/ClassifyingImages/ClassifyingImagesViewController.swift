@@ -35,7 +35,7 @@ class ClassifyingImagesViewController:BaseViewController,TZImagePickerController
         img.clipsToBounds = true
         img.addTo(view: view).snp.makeConstraints { (m) in
             m.left.right.equalTo(0)
-            m.top.equalTo(NavigationBarHeight)
+            m.top.equalTo(UIDevice.topAreaHeight)
             m.height.equalTo(ScreenWidth * 0.6)
         }
 

@@ -18,7 +18,7 @@ class MitoPlayViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.black
         let config = [ShadowUIConfig.HideFullScreenButton:true]
-        player = ShadowVideoPlayerView(frame: CGRect(x: 0, y: 80, width: ScreenWidth, height: ScreenHeight - 140 - iPhoneBottomBarHeight), url: URL(string: item!.videoLink)!,config: config)
+        player = ShadowVideoPlayerView(frame: CGRect(x: 0, y: 80, width: ScreenWidth, height: ScreenHeight - 140 - UIDevice.bottomAreaHeight), url: URL(string: item!.videoLink)!,config: config)
         player.title = item!.title
         view.addSubview(player)
        

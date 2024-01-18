@@ -153,11 +153,11 @@ class CityChooseViewController: UIViewController {
         }
         
         
-        vSearchResult = CitySearchResultView(frame: CGRect(x: 0, y: NavigationBarHeight + 50, width: ScreenWidth, height: ScreenHeight - NavigationBarHeight - 50))
+        vSearchResult = CitySearchResultView(frame: CGRect(x: 0, y: UIDevice.topAreaHeight + 50, width: ScreenWidth, height: ScreenHeight - UIDevice.topAreaHeight - 50))
         vSearchResult?.delegate = self
-        vBlackMask.frame = CGRect(x: 0, y: NavigationBarHeight + 50, width: ScreenWidth, height: ScreenHeight - 50 - NavigationBarHeight)
+        vBlackMask.frame = CGRect(x: 0, y: UIDevice.topAreaHeight + 50, width: ScreenWidth, height: ScreenHeight - 50 - UIDevice.topAreaHeight)
         
-        tbCity.frame = CGRect(x: 0, y: NavigationBarHeight, width: ScreenWidth, height: ScreenHeight - NavigationBarHeight)
+        tbCity.frame = CGRect(x: 0, y: UIDevice.topAreaHeight, width: ScreenWidth, height: ScreenHeight - UIDevice.topAreaHeight)
         
 
     }

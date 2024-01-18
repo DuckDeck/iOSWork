@@ -30,7 +30,7 @@ class AudioListViewController: UIViewController {
         view.addSubview(tb)
         tb.snp.makeConstraints { (m) in
             m.left.right.equalTo(0)
-            m.top.equalTo(NavigationBarHeight)
+            m.top.equalTo(UIDevice.topAreaHeight)
             m.bottom.equalTo(-80)
         }
         let v = UITableView.createEmptyView(size: CGSize(width: ScreenWidth, height: 50), text: "目前没有音频文件", font: UIFont.systemFont(ofSize: 20), color: UIColor.brown)

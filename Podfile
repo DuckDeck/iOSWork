@@ -17,6 +17,7 @@ pod "SwiftSoup"
 pod 'SwiftyBeaver'
 pod 'CocoaAsyncSocket'
 pod 'SwiftyBeaver'
+pod 'PhoneNetSDK'
 end
 
 target 'CLangWork' do

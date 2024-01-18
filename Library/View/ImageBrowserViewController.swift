@@ -25,7 +25,7 @@ class ImageBrowserViewController: UIViewController {
         layout.scrollDirection = .horizontal
         layout.itemSize = UIScreen.main.bounds.size
         layout.minimumLineSpacing = 0 //这个很重要，不然两个分页之间有空隙导致后面的页面偏见右
-        vc = UICollectionView(frame: CGRect(x: 0, y: NavigationBarHeight, width: ScreenWidth, height: ScreenHeight - NavigationBarHeight), collectionViewLayout: layout)
+        vc = UICollectionView(frame: CGRect(x: 0, y: UIDevice.topAreaHeight, width: ScreenWidth, height: ScreenHeight - UIDevice.topAreaHeight), collectionViewLayout: layout)
         vc.isPagingEnabled = true
         vc.register(ImageBrowserCell.self, forCellWithReuseIdentifier: "ImageBrowserCell")
         vc.delegate = self

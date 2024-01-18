@@ -33,7 +33,7 @@ class MitoSearchViewController: UIViewController,UITextFieldDelegate {
         txtSearch.addOffsetView(value: 10)
         txtSearch.addTo(view: view).snp.makeConstraints { (m) in
             m.left.equalTo(5)
-            m.top.equalTo(NavigationBarHeight + 5)
+            m.top.equalTo(UIDevice.topAreaHeight + 5)
             m.height.equalTo(36)
             m.right.equalTo(-75)
         }

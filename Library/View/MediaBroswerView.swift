@@ -29,8 +29,8 @@ class MediaBroswerView:UIView{
         addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.width.equalTo(ScreenWidth)
-            make.height.equalTo(ScreenHeight - NavigationBarHeight - 50)
-            make.top.equalTo(NavigationBarHeight)
+            make.height.equalTo(ScreenHeight - UIDevice.topAreaHeight - 50)
+            make.top.equalTo(UIDevice.topAreaHeight)
             make.left.equalTo(0)
         }
         
@@ -138,7 +138,7 @@ class ImageBroswerCell:UICollectionViewCell,UIScrollViewDelegate{
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        sc.frame = CGRect(x: 0, y: NavigationBarHeight, w: ScreenWidth, h: ScreenHeight - NavigationBarHeight - 50)
+        sc.frame = CGRect(x: 0, y: UIDevice.topAreaHeight, w: ScreenWidth, h: ScreenHeight - UIDevice.topAreaHeight - 50)
         contentView.addSubview(sc)
         
 

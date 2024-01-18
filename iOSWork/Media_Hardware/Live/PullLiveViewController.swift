@@ -61,7 +61,7 @@ class PullLiveViewController: UIViewController {
        
         vPanel.backgroundColor = UIColor(gray: 0.9, alpha: 0.1)
         vPanel.addTo(view: view).snp.makeConstraints { (m) in
-            m.bottom.equalTo(-iPhoneBottomBarHeight)
+            m.bottom.equalTo(-UIDevice.bottomAreaHeight)
             m.left.right.equalTo(0)
             m.height.equalTo(50)
         }
@@ -80,14 +80,14 @@ class PullLiveViewController: UIViewController {
        initPlayer()
         addNotif()
 //        view.addSubview(barrageManager.renderView)
-//        barrageManager.renderView.frame = CGRect(x: 0, y: NavigationBarHeight, w: ScreenWidth, h: ScreenWidth + 100)
+//        barrageManager.renderView.frame = CGRect(x: 0, y: UIDevice.topAreaHeight, w: ScreenWidth, h: ScreenWidth + 100)
 //        barrageManager.renderView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth,UIView.AutoresizingMask.flexibleHeight]
     }
     
     func initPlayer(){
         player = IJKFFMoviePlayerController(contentURLString: url, with: self.option)
         
-        player.view.frame = CGRect(x: 0, y: NavigationBarHeight, w: ScreenWidth, h: ScreenWidth + 100)
+        player.view.frame = CGRect(x: 0, y: UIDevice.topAreaHeight, w: ScreenWidth, h: ScreenWidth + 100)
         //player!.view.backgroundColor = UIColor.white
         player.view.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth,UIView.AutoresizingMask.flexibleHeight]
         

@@ -65,7 +65,7 @@ class MitoViewController: UIViewController {
         grandMenu?.sliderBarHeight = 2
         navigationItem.titleView = grandMenu
         
-        grandMenuTable = GrandMenuTable(frame: CGRect(x: 0, y: NavigationBarHeight, width: ScreenWidth, height: ScreenHeight - NavigationBarHeight), childViewControllers: arrControllers, parentViewController: self)
+        grandMenuTable = GrandMenuTable(frame: CGRect(x: 0, y: UIDevice.topAreaHeight, width: ScreenWidth, height: ScreenHeight - UIDevice.topAreaHeight), childViewControllers: arrControllers, parentViewController: self)
         grandMenuTable?.scrollToIndex = {[weak self](index:Int)in
             self?.grandMenu?.selectSlideBarItemAtIndex(index)
             self?.currentDisplayTaskPageIndex = index
