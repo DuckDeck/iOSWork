@@ -84,7 +84,7 @@ class SnapkitTableViewController: UIViewController {
     func createModel() {
         var m = Model1()
         m.content = "小哥我在办公室有台式机2台，家里台式长期吃灰，更不用移动PC好多年。05年买的三星X05，用了12年，17年早些时候，180元在咸鱼也被我卖"
-        m.img = "https://img1.gamersky.com/upimg/users/2021/05/17/origin_202105171753366303.jpg"
+        m.img = "https://wx1.sinaimg.cn/large/8eea5ec9gy1hkj7zx06kjj22c02c07wh.jpg"
         arr.append(m)
         
         m = Model1()

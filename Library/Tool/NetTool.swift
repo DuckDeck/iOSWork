@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import PhoneNetSDK
 class NetTool {
     func getIpAddress(url:String)->String?{
         guard let u = URL(string: url) else { return nil }
@@ -26,4 +26,35 @@ class NetTool {
         }
         return nil
     }
+    
+    func checkDNS(url: String) async -> Result<[DomainInfo],Error>{
+        await withCheckedContinuation { con in
+            guard let u = URL(string: url) else {
+                return con.resume(returning: .failure(NSError(domain: "url不合法", code: -1)))
+            }
+            guard let host = u.host else {
+                return con.resume(returning: .failure(NSError(domain: "url没有host", code: -1)))
+            }
+            PhoneNetManager.shareInstance().netLookupDomain(host) { arr, err in
+                if let err = err{
+                    con.resume(returning: .failure(err.error))
+                } else if let arr = arr,arr.count > 0,let domains = arr as? [DomainLookUpRes] {
+                    var ips = [DomainInfo]()
+                    for item in domains{
+                        let d = DomainInfo(name: item.name,ip: item.ip)
+                        ips.append(d)
+                    }
+                    con.resume(returning: .success(ips))
+                } else {
+                    con.resume(returning: .failure(NSError(domain: "PhoneNetManager没返回正确的数据", code: -1)))
+                }
+            }
+        }
+        
+    }
+}
+
+struct DomainInfo{
+    var name = ""
+    var ip = ""
 }

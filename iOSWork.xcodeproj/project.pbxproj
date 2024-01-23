@@ -225,6 +225,7 @@
 		AE4D091F2730331100899D2C /* HttpInterceptWebMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D091E2730331100899D2C /* HttpInterceptWebMenuViewController.swift */; };
 		AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09222730333100899D2C /* CacheWebViewController.swift */; };
 		AE4D09272730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D09262730338B00899D2C /* HttpInterceptWebViewController.swift */; };
+		AE5819F72B5FB6DA009D0067 /* NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9CBA82B464055008BD731 /* NetTool.swift */; };
 		AE61165B27410CF8008466AB /* TwoSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165A27410CF8008466AB /* TwoSideView.swift */; };
 		AE61165F27410F2C008466AB /* GrandSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165E27410F2C008466AB /* GrandSlider.swift */; };
 		AE61166027410F2F008466AB /* GrandSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165E27410F2C008466AB /* GrandSlider.swift */; };
@@ -819,8 +820,6 @@
 		AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C2273FF39700BCBF4E /* AnimationViewController.swift */; };
 		AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB649C4273FF45E00BCBF4E /* RippleAnimtaionView.swift */; };
 		AEB9CBA92B464055008BD731 /* NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9CBA82B464055008BD731 /* NetTool.swift */; };
-		AEB9CBAA2B464055008BD731 /* NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9CBA82B464055008BD731 /* NetTool.swift */; };
-		AEB9CBAB2B464055008BD731 /* NetTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9CBA82B464055008BD731 /* NetTool.swift */; };
 		AEB9CBAD2B464280008BD731 /* NetToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB9CBAC2B464280008BD731 /* NetToolViewController.swift */; };
 		AEC23C8829E78CF400E93C5A /* HardwareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC23C8729E78CF400E93C5A /* HardwareInfoViewController.swift */; };
 		AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9916828743E90002879A0 /* KeyboardNav.swift */; };
@@ -5384,7 +5383,6 @@
 				20B6595D28FC0BB100341DB9 /* HeaderPasteboardView.swift in Sources */,
 				AE1C4F30274341D50097EAC1 /* Number+Extension.swift in Sources */,
 				AE128849280C51E00049A5E4 /* Extension.swift in Sources */,
-				AEB9CBAA2B464055008BD731 /* NetTool.swift in Sources */,
 				AEDF535A29B4380300094B6B /* EmojiKeyboard.swift in Sources */,
 				20B65A3028FC227A00341DB9 /* SqlValue.cpp in Sources */,
 				AEF6CB3E287A79E400352100 /* Style+Extension.swift in Sources */,
@@ -5507,7 +5505,6 @@
 				AE62CACD272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
 				AE62CADC272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				AE128887281CED0A0049A5E4 /* operation.swift in Sources */,
-				AEB9CBAB2B464055008BD731 /* NetTool.swift in Sources */,
 				AE62CA0D2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AEE010D12742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				AE62CAA4272542D1007D51CD /* UIImage+Palette.m in Sources */,
@@ -5607,6 +5604,7 @@
 				AEA0A122278940680044D012 /* ImageInfo.swift in Sources */,
 				AE62CA682725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AEF5BF0D2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */,
+				AE5819F72B5FB6DA009D0067 /* NetTool.swift in Sources */,
 				AE62CB4527254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE62CB1D27254873007D51CD /* BaseModel.swift in Sources */,
 				AE62CAF4272542DC007D51CD /* CameraModel.swift in Sources */,

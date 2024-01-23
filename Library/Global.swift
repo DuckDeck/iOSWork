@@ -55,16 +55,16 @@ let REGEX_TEL_PHONE = "^(([0\\+]\\d{2,3}-)?(0\\d{2,3})-)?(\\d{7,8})(-(\\d{3,}))?
 
 
 
-typealias Task = (_ cancel:Bool)->()
+typealias delayTask = (_ cancel:Bool)->()
 @discardableResult
-func delay(time:TimeInterval,task:@escaping ()->())->Task?{
+func delay(time:TimeInterval,task:@escaping ()->())->delayTask?{
     func dispatch_later( block: @escaping ()->Void){
         let delayTime = DispatchTime.now() + time
         DispatchQueue.main.asyncAfter(deadline: delayTime, execute: block)
     }
     var closure:(()->Void)? = task
-    var result:Task?
-    let delayClosure:Task = {
+    var result:delayTask?
+    let delayClosure:delayTask = {
         cancel in
         if let internalClosure = closure{
             if cancel == false{
@@ -83,7 +83,7 @@ func delay(time:TimeInterval,task:@escaping ()->())->Task?{
     return result
 }
 
-func cancel(task:Task?){
+func cancel(task:delayTask?){
     task?(true)
 }
 
