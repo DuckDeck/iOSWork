@@ -6,12 +6,13 @@
 //
 
 import UIKit
-
+import PhoneNetSDK
 class NetToolViewController: UIViewController {
     var netTool = NetTool()
     var netText = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         title = "网络工具"
         view.addSubview(txtUrl)
         txtUrl.snp.makeConstraints { make in
@@ -42,15 +43,30 @@ class NetToolViewController: UIViewController {
     
     
     @objc func netDiagnosis(){
+        netText = ""
         if txtUrl.text?.isEmpty ?? true{
             Toast.showToast(msg: "请输入URL")
             return
         }
+        guard let u = URL(string: txtUrl.text!) else {
+            Toast.showToast(msg: "url不合法")
+            return
+        }
+        guard let _ = u.host else {
+            Toast.showToast(msg: "url没有host")
+            return
+        }
+        let dnss = netTool.getDNSAddress()
+        netText += "获取到本机的DNS地址为："
+        for item in dnss{
+            netText += item + ","
+        }
+        netText += "\n"
         Task{
-            let res =  await diagnosis()
+            let res =  await netTool.checkDNS(url: txtUrl.text!)
             switch res {
             case .success(let ips):
-                netText = "获取IP地址成功\n"
+                netText += "获取IP地址成功\n"
                 for item in ips{
                     netText += "\(item.ip)\n"
                 }
@@ -59,22 +75,31 @@ class NetToolViewController: UIViewController {
             }
             lblNetInfo.text = netText
         }
+        
+        netTool.checkPing(url: txtUrl.text!) {[weak self] str in
+            if let s  = str {
+                self?.netText += "\(s)\n"
+                self?.lblNetInfo.text = self?.netText
+            }
+        } lossCallback: { [weak self](count,err) in
+            if err != nil{
+                self?.netText += "\(err!.localizedDescription)\n"
+                self?.lblNetInfo.text = self?.netText
+            } else {
+                if count > 5 {
+                    
+                } 
+            }
+            
+            
+        }
     }
     
     func pingIp(){
         
     }
 
-     func diagnosis() async -> Result<[DomainInfo],Error>{
-       
-//        if let ip = NetTool().getIpAddress(url: txtUrl.text!){
-//            Toast.showToast(msg: "ip是\(ip)")
-//        }
-
-        return await netTool.checkDNS(url: txtUrl.text!)
-         
-        
-    }
+   
 
     lazy var txtUrl: UITextField = {
         let v = UITextField()
@@ -92,7 +117,7 @@ class NetToolViewController: UIViewController {
     
     lazy var lblNetInfo: UILabel = {
         let v = UILabel()
-        v.font = UIFont.pingfangMedium(size: 12)
+        v.font = UIFont.pingfangMedium(size: 10)
         v.numberOfLines = 0
         v.textColor = .blue
         return v

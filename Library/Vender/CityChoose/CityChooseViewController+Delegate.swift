@@ -190,7 +190,7 @@ extension CityChooseViewController :CitySearchDelegate,CitySearchResultDelegate{
     }
     
     func isLetter(str:String) -> Bool {
-        return regexTool("^[A-Za-z]+$").match(input: str)
+        return RegexTool("^[A-Za-z]+$").match(input: str)
     }
 }
 

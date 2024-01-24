@@ -21,7 +21,7 @@ let appIdentifier = Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String
 let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as! String
 let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
 
-struct regexTool {
+struct RegexTool {
     let regex:NSRegularExpression?
     init(_ pattern:String){
         regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
@@ -34,13 +34,17 @@ struct regexTool {
             return false
         }
     }
+
+    func matchResult(input:String)->[NSTextCheckingResult]?{
+        return regex?.matches(in: input, options: NSRegularExpression.MatchingOptions.withoutAnchoringBounds, range: NSMakeRange(0, (input as NSString).length)) 
+    }
 }
 
 
 
 infix operator =~
 func =~(lhs:String,rhs:String) -> Bool{ //正则判断
-    return regexTool(rhs).match(input: lhs)
+    return RegexTool(rhs).match(input: lhs)
 }
 
 let REGEX_FlOAT = "^([0-9]*.)?[0-9]+$"

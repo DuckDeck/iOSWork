@@ -8,6 +8,18 @@
 import UIKit
 import PhoneNetSDK
 class NetTool {
+    
+    var traceroute: PNUdpTraceroute?
+    
+    lazy var queue: OperationQueue = {
+        $0.maxConcurrentOperationCount = 1
+        return $0
+    }(OperationQueue.init())
+    
+    func getDNSAddress()->[String]{
+        return BaseBridge().getDnsAddress()
+    }
+    
     func getIpAddress(url:String)->String?{
         guard let u = URL(string: url) else { return nil }
         if u.host == nil{
@@ -52,8 +64,38 @@ class NetTool {
         }
     }
     
-    func checkPing(ip:String) async {
-        
+    func checkPing(url:String,callback: @escaping NetPingResultHandler, lossCallback: @escaping (_ count: Int,_ error:Error?) -> Void) {
+        guard let u = URL(string: url) else {
+            lossCallback(0,NSError(domain: "url不合法", code: -1))
+            return
+        }
+        guard let host = u.host else {
+            lossCallback(0,NSError(domain: "url没有host", code: -1))
+            return
+        }
+        self.queue.addOperation {
+            if PhoneNetManager.shareInstance().isDoingPing() {
+                PhoneNetManager.shareInstance().netStopPing()
+            }
+            if self.traceroute?.isDoingUdpTraceroute() ?? false {
+                self.traceroute?.stop()
+            }
+            let pingRegular = "[\\s\\S]*?packets transmitted , loss:(\\d*?) , delay:[\\s\\S]*?"
+            PhoneNetManager.shareInstance().netStartPing(host, packetCount: 10) { (res) in
+                DispatchQueue.main.async {
+                    NSObject.cancelPreviousPerformRequests(withTarget: self)
+                    if let r = res,let result = RegexTool.init(pingRegular).matchResult(input: r),result.count > 0{
+                        let  range = result[0].range
+                        let count = r.substring(from: range.location, length: range.length)
+                        lossCallback(Int(count) ?? 0, nil)
+                        print(result)
+                    }
+                    
+                    callback(res)
+                }
+            }
+        }
+        NSObject.cancelPreviousPerformRequests(withTarget: self)
     }
 }
 
