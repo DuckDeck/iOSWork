@@ -47,32 +47,32 @@ class NetToolViewController: UIViewController {
             return
         }
         Task{
-            await diagnosis()
+            let res =  await diagnosis()
+            switch res {
+            case .success(let ips):
+                netText = "获取IP地址成功\n"
+                for item in ips{
+                    netText += "\(item.ip)\n"
+                }
+            case .failure(let failure):
+                netText = "获取ip地址失败。原因是\(failure.localizedDescription)"
+            }
             lblNetInfo.text = netText
         }
+    }
     
+    func pingIp(){
         
     }
 
-     func diagnosis() async{
+     func diagnosis() async -> Result<[DomainInfo],Error>{
        
 //        if let ip = NetTool().getIpAddress(url: txtUrl.text!){
 //            Toast.showToast(msg: "ip是\(ip)")
 //        }
 
-        let res = await netTool.checkDNS(url: txtUrl.text!)
-         switch res {
-         case .success(let ips):
-             netText += "获取到的ip有\n"
-             for item in ips{
-                 netText += item.ip + "\n"
-             }
-             
-         case .failure(let failure):
-            let err = failure as NSError
-            netText += err.localizedDescription
-            
-         }
+        return await netTool.checkDNS(url: txtUrl.text!)
+         
         
     }
 

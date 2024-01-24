@@ -50,6 +50,9 @@ class NetTool {
                 }
             }
         }
+    }
+    
+    func checkPing(ip:String) async {
         
     }
 }
