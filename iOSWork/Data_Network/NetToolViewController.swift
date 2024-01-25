@@ -21,8 +21,9 @@ class NetToolViewController: UIViewController {
             make.right.equalTo(-100)
             make.height.equalTo(30)
         }
-        txtUrl.text = "https://www.szwego.com/"
-        
+    //    txtUrl.text = "https://www.szwego.com/"
+   
+        txtUrl.text = "https://www.bqbbq.com/"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "诊断", style: .plain, target: self, action: #selector(netDiagnosis))
        
         view.addSubview(scrollView)
@@ -59,7 +60,7 @@ class NetToolViewController: UIViewController {
         let dnss = netTool.getDNSAddress()
         netText += "获取到本机的DNS地址为："
         for item in dnss{
-            netText += item + ","
+            netText += "[\(item)],"
         }
         netText += "\n"
         Task{
@@ -68,12 +69,13 @@ class NetToolViewController: UIViewController {
             case .success(let ips):
                 netText += "获取IP地址成功\n"
                 for item in ips{
-                    netText += "\(item.ip)\n"
+                    netText += "[\(item.ip)],"
                 }
             case .failure(let failure):
                 netText = "获取ip地址失败。原因是\(failure.localizedDescription)"
             }
             lblNetInfo.text = netText
+            netText += "\n"
         }
         
         netTool.checkPing(url: txtUrl.text!) {[weak self] str in
@@ -86,21 +88,28 @@ class NetToolViewController: UIViewController {
                 self?.netText += "\(err!.localizedDescription)\n"
                 self?.lblNetInfo.text = self?.netText
             } else {
-                if count > 5 {
-                    
-                } 
+                if count > 3 { //说明过多ping不通
+                    self?.traceRoute()
+                }
             }
-            
-            
         }
     }
-    
-    func pingIp(){
-        
+
+
+    func traceRoute(){
+        netTool.traceRoute(url: txtUrl.text!) { str in
+            print(str)
+        } completeCallback: {[weak self] msg, err in
+            if err != nil{
+                self?.netText += "\(err!.localizedDescription)\n"
+                self?.lblNetInfo.text = self?.netText
+            } else {
+                print(msg)
+            }
+        }
+
     }
-
-   
-
+    
     lazy var txtUrl: UITextField = {
         let v = UITextField()
         v.placeholder = "输入url"

@@ -9,12 +9,8 @@ import UIKit
 import PhoneNetSDK
 class NetTool {
     
-    var traceroute: PNUdpTraceroute?
-    
-    lazy var queue: OperationQueue = {
-        $0.maxConcurrentOperationCount = 1
-        return $0
-    }(OperationQueue.init())
+    fileprivate var traceroute: PNUdpTraceroute?
+
     
     func getDNSAddress()->[String]{
         return BaseBridge().getDnsAddress()
@@ -73,29 +69,48 @@ class NetTool {
             lossCallback(0,NSError(domain: "url没有host", code: -1))
             return
         }
-        self.queue.addOperation {
-            if PhoneNetManager.shareInstance().isDoingPing() {
-                PhoneNetManager.shareInstance().netStopPing()
+        if PhoneNetManager.shareInstance().isDoingPing() {
+            PhoneNetManager.shareInstance().netStopPing()
+        }
+        if self.traceroute?.isDoingUdpTraceroute() ?? false {
+            self.traceroute?.stop()
+        }
+        let pingRegular = "[\\s\\S]*?packets transmitted , loss:(\\d*?) , delay:[\\s\\S]*?"
+        PhoneNetManager.shareInstance().netStartPing(host, packetCount: 10) { (res) in
+            DispatchQueue.main.async {
+                if let r = res,let result = RegexTool.init(pingRegular).matchResult(input: r),result.count > 0{
+                    let  range = result[0].range
+                    let count = r.substring(from: range.location, length: range.length)
+                    lossCallback(Int(count) ?? 0, nil)
+                    print(result)
+                }
+                
+                callback(res)
             }
-            if self.traceroute?.isDoingUdpTraceroute() ?? false {
-                self.traceroute?.stop()
-            }
-            let pingRegular = "[\\s\\S]*?packets transmitted , loss:(\\d*?) , delay:[\\s\\S]*?"
-            PhoneNetManager.shareInstance().netStartPing(host, packetCount: 10) { (res) in
-                DispatchQueue.main.async {
-                    NSObject.cancelPreviousPerformRequests(withTarget: self)
-                    if let r = res,let result = RegexTool.init(pingRegular).matchResult(input: r),result.count > 0{
-                        let  range = result[0].range
-                        let count = r.substring(from: range.location, length: range.length)
-                        lossCallback(Int(count) ?? 0, nil)
-                        print(result)
-                    }
-                    
-                    callback(res)
+        }
+    }
+    
+    func traceRoute(url:String,callback: @escaping PNUdpTracerouteHandler, completeCallback: @escaping (_ msg: String?,_ err:Error?) -> Void){
+        guard let u = URL(string: url) else {
+            completeCallback(nil,NSError(domain: "url不合法", code: -1))
+            return
+        }
+        guard let host = u.host else {
+            completeCallback(nil,NSError(domain: "url没有host", code: -1))
+            return
+        }
+        if self.traceroute?.isDoingUdpTraceroute() ?? false {
+            self.traceroute?.stop()
+        }
+        let traceRegular = "udp traceroute complete"
+        self.traceroute = PNUdpTraceroute.start(host) { (res) in
+            DispatchQueue.main.async {
+                callback(res)
+                if let r = res,let result = RegexTool.init(traceRegular).matchResult(input: r as String),result.count > 0{
+                    completeCallback(r as String,nil)
                 }
             }
         }
-        NSObject.cancelPreviousPerformRequests(withTarget: self)
     }
 }
 
