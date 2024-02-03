@@ -21,9 +21,9 @@ class NetToolViewController: UIViewController {
             make.right.equalTo(-100)
             make.height.equalTo(30)
         }
-    //    txtUrl.text = "https://www.szwego.com/"
+        txtUrl.text = "https://www.szwego.com/"
    
-        txtUrl.text = "https://www.bqbbq.com/"
+//        txtUrl.text = "github.com"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "诊断", style: .plain, target: self, action: #selector(netDiagnosis))
        
         view.addSubview(scrollView)
@@ -88,7 +88,7 @@ class NetToolViewController: UIViewController {
                 self?.netText += "\(err!.localizedDescription)\n"
                 self?.lblNetInfo.text = self?.netText
             } else {
-                if count > 3 { //说明过多ping不通
+                if count > 0 { //说明过多ping不通
                     self?.traceRoute()
                 }
             }
@@ -97,8 +97,12 @@ class NetToolViewController: UIViewController {
 
 
     func traceRoute(){
-        netTool.traceRoute(url: txtUrl.text!) { str in
-            print(str)
+        netText += "\n开始TraceRoute\n"
+        netTool.traceRoute(url: txtUrl.text!) { [weak self] str in
+            if let s = str{
+                self?.netText += "\(s)\n"
+                self?.lblNetInfo.text = self?.netText
+            }
         } completeCallback: {[weak self] msg, err in
             if err != nil{
                 self?.netText += "\(err!.localizedDescription)\n"

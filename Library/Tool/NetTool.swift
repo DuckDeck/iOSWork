@@ -78,10 +78,11 @@ class NetTool {
         let pingRegular = "[\\s\\S]*?packets transmitted , loss:(\\d*?) , delay:[\\s\\S]*?"
         PhoneNetManager.shareInstance().netStartPing(host, packetCount: 10) { (res) in
             DispatchQueue.main.async {
-                if let r = res,let result = RegexTool.init(pingRegular).matchResult(input: r),result.count > 0{
-                    let  range = result[0].range
-                    let count = r.substring(from: range.location, length: range.length)
-                    lossCallback(Int(count) ?? 0, nil)
+                if let r = res,let result = RegexTool.init(pingRegular).fetch(input: r),result.count > 0{
+                    let count = result.compactMap { s in
+                        return Int(s)
+                    }.first ?? 0
+                    lossCallback(count / 10, nil)
                     print(result)
                 }
                 
