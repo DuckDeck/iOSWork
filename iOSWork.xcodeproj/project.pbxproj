@@ -191,6 +191,8 @@
 		AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F7227434E300097EAC1 /* ADViewController.swift */; };
 		AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */; };
 		AE256CB42A2D8EB00022F6BC /* SpeechViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE256CB32A2D8EB00022F6BC /* SpeechViewController.swift */; };
+		AE257F912B9744F400AEEABB /* NetToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE257F902B9744F400AEEABB /* NetToolView.swift */; };
+		AE257F922B9744F400AEEABB /* NetToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE257F902B9744F400AEEABB /* NetToolView.swift */; };
 		AE264E362B1576D8002F78D9 /* ClickImage.h in Headers */ = {isa = PBXBuildFile; fileRef = AE264E342B1576D8002F78D9 /* ClickImage.h */; };
 		AE264E372B1576D8002F78D9 /* ClickImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE264E352B1576D8002F78D9 /* ClickImage.m */; };
 		AE264E382B1576DD002F78D9 /* ClickImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE264E352B1576D8002F78D9 /* ClickImage.m */; };
@@ -1340,6 +1342,7 @@
 		AE1C4F75274380910097EAC1 /* RerangeBinaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RerangeBinaryViewController.h; sourceTree = "<group>"; };
 		AE1C4F76274380910097EAC1 /* RerangeBinaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RerangeBinaryViewController.m; sourceTree = "<group>"; };
 		AE256CB32A2D8EB00022F6BC /* SpeechViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechViewController.swift; sourceTree = "<group>"; };
+		AE257F902B9744F400AEEABB /* NetToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetToolView.swift; sourceTree = "<group>"; };
 		AE264E342B1576D8002F78D9 /* ClickImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickImage.h; sourceTree = "<group>"; };
 		AE264E352B1576D8002F78D9 /* ClickImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickImage.m; sourceTree = "<group>"; };
 		AE2657C92875218C002C88FB /* ProcessComViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessComViewController.swift; sourceTree = "<group>"; };
@@ -2812,6 +2815,7 @@
 				20A965752903D2D1007F8526 /* PHPLibraryTool.swift */,
 				AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */,
 				AEB9CBA82B464055008BD731 /* NetTool.swift */,
+				AE257F902B9744F400AEEABB /* NetToolView.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -5097,6 +5101,7 @@
 				AE66E1B027538679006432FE /* AudioFileHandler.m in Sources */,
 				AEE0106F2742560200C155D8 /* MitoListViewController.swift in Sources */,
 				AEF86666274B9B52002E33E5 /* ClassifyingImagesViewController.swift in Sources */,
+				AE257F912B9744F400AEEABB /* NetToolView.swift in Sources */,
 				AE62CB5C2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE62CA1C2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE62CA7A2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
@@ -5594,6 +5599,7 @@
 				AE128893281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AEAFBBE22AA72825003D92B5 /* WWKWebView.swift in Sources */,
 				AE62CA642725429B007D51CD /* TZImageManager.m in Sources */,
+				AE257F922B9744F400AEEABB /* NetToolView.swift in Sources */,
 				AEE010F02742569200C155D8 /* MJRefreshHeader.m in Sources */,
 				AE62CAD9272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CB8C27254DD7007D51CD /* CatoMonitor.swift in Sources */,

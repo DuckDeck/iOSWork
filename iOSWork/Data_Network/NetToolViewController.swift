@@ -21,9 +21,9 @@ class NetToolViewController: UIViewController {
             make.right.equalTo(-100)
             make.height.equalTo(30)
         }
-        txtUrl.text = "https://www.szwego.com/"
+//        txtUrl.text = "https://www.szwego.com/"
    
-//        txtUrl.text = "github.com"
+        txtUrl.text = "https://github.com/"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "诊断", style: .plain, target: self, action: #selector(netDiagnosis))
        
         view.addSubview(scrollView)
@@ -57,14 +57,14 @@ class NetToolViewController: UIViewController {
             Toast.showToast(msg: "url没有host")
             return
         }
-        let dnss = netTool.getDNSAddress()
+        let dnss = netTool.getLocalDNSAddress()
         netText += "获取到本机的DNS地址为："
         for item in dnss{
             netText += "[\(item)],"
         }
         netText += "\n"
         Task{
-            let res =  await netTool.checkDNS(url: txtUrl.text!)
+            let res =  await netTool.getDomainIpAddress(url: txtUrl.text!)
             switch res {
             case .success(let ips):
                 netText += "获取IP地址成功\n"
@@ -88,9 +88,9 @@ class NetToolViewController: UIViewController {
                 self?.netText += "\(err!.localizedDescription)\n"
                 self?.lblNetInfo.text = self?.netText
             } else {
-                if count > 0 { //说明过多ping不通
+                //if count > 0 { //说明过多ping不通
                     self?.traceRoute()
-                }
+               // }
             }
         }
     }
@@ -99,9 +99,8 @@ class NetToolViewController: UIViewController {
     func traceRoute(){
         netText += "\n开始TraceRoute\n"
         netTool.traceRoute(url: txtUrl.text!) { [weak self] str in
-            if let s = str{
-                self?.netText += "\(s)\n"
-                self?.lblNetInfo.text = self?.netText
+            if let s = str,let txt = self?.netText{
+                self?.lblNetInfo.text = txt + (s as String);
             }
         } completeCallback: {[weak self] msg, err in
             if err != nil{

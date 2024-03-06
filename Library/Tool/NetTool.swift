@@ -12,11 +12,11 @@ class NetTool {
     fileprivate var traceroute: PNUdpTraceroute?
 
     
-    func getDNSAddress()->[String]{
+    func getLocalDNSAddress()->[String]{
         return BaseBridge().getDnsAddress()
     }
     
-    func getIpAddress(url:String)->String?{
+    func getLocalIpAddress(url:String)->String?{
         guard let u = URL(string: url) else { return nil }
         if u.host == nil{
             return nil
@@ -35,7 +35,7 @@ class NetTool {
         return nil
     }
     
-    func checkDNS(url: String) async -> Result<[DomainInfo],Error>{
+    func getDomainIpAddress(url: String) async -> Result<[DomainInfo],Error>{
         await withCheckedContinuation { con in
             guard let u = URL(string: url) else {
                 return con.resume(returning: .failure(NSError(domain: "url不合法", code: -1)))
@@ -118,4 +118,5 @@ class NetTool {
 struct DomainInfo{
     var name = ""
     var ip = ""
+    var url = ""
 }
