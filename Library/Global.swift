@@ -19,7 +19,7 @@ var ScreenHeight: CGFloat {
 let SystemVersion = Double(UIDevice.current.systemVersion)!
 let APPVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
 let appIdentifier = Bundle.main.infoDictionary?["CFBundleIdentifier"] as! String
-let appName = Bundle.main.infoDictionary?["CFBundleDisplayName"] as! String
+let appName = Bundle.main.infoDictionary?["CFBundleName"] as! String
 let appBuild = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
 
 struct RegexTool {

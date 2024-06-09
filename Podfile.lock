@@ -19,21 +19,20 @@ PODS:
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
-  - Alamofire
-  - CocoaAsyncSocket
-  - Gifu
-  - IQKeyboardManagerSwift
-  - Kanna
-  - Kingfisher
-  - Kingfisher (~> 7.9.0)
-  - KRProgressHUD
+  - Alamofire (= 5.8.1)
+  - CocoaAsyncSocket (= 7.6.5)
+  - Gifu (= 3.3.1)
+  - IQKeyboardManagerSwift (= 6.5.16)
+  - Kanna (= 5.2.7)
+  - Kingfisher (= 7.9.1)
+  - KRProgressHUD (= 3.4.7)
   - LookinServer
-  - PhoneNetSDK
-  - SkeletonView
-  - SnapKit
-  - SwiftSoup
-  - SwiftyBeaver
-  - SwiftyJSON
+  - PhoneNetSDK (= 1.0.12)
+  - SkeletonView (= 1.30.4)
+  - SnapKit (= 5.6.0)
+  - SwiftSoup (= 2.6.1)
+  - SwiftyBeaver (= 2.0.0)
+  - SwiftyJSON (= 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -70,6 +69,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 014b0c12065026b731bac80305294f27d63e27f6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 593c876bd6891bc655fd7b5afea5bcf2ca1e5ad6
+PODFILE CHECKSUM: fad6e6f95e33843ec2b3550effb1745e9896b506
 
 COCOAPODS: 1.13.0

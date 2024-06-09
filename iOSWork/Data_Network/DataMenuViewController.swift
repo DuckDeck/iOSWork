@@ -8,7 +8,7 @@
 import Foundation
 import Kingfisher
 class DataMenuViewController:BaseViewController{
-    var arrData = ["照片识别分类","文件下载","网络工具"]
+    var arrData = ["照片识别分类","文件下载","网络工具","沙盒文件"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -63,6 +63,10 @@ extension DataMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let vc = NetToolViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
+            break
+        case 3:
+            let file = FileBrowser()
+            present(file, animated: true, completion: nil)
             break
         default:
             break

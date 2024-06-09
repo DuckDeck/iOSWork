@@ -29,6 +29,17 @@ extension NSObject {
         free(vars)
         return selfProperties
     }
+    
+    var className: String {
+        get {
+            let name = type(of: self).description()
+            if name.contains(".") {
+                return name.components(separatedBy: ".").last ?? ""
+            } else {
+                return name
+            }
+        }
+    }
 }
 
 extension Dictionary {
