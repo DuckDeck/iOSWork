@@ -50,7 +50,7 @@ class VideoListViewController: UIViewController {
             return VideoModel(url: url,  fileName: url.lastPathComponent)
         })
         
-        let url1 = URL(string: "https://xcimg.szwego.com/pvod/88a81f54/20231229/o1703818167_2317_0.mp4")!
+        let url1 = URL(string: "https://xcimg.szwego.com/etc/increase_growth_video_vip181_stock_up.mp4")!
         let video1 = VideoModel(url: url1, fileName: "完美身材")
         arrFile.append(video1)
         let url2 = URL(string: "https://xcimg.szwego.com/pvod/03299c1c/20231205/o1701776676_4959_0.mp4")!
