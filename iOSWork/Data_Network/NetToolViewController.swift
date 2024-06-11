@@ -23,7 +23,7 @@ class NetToolViewController: UIViewController {
         }
 //        txtUrl.text = "https://www.szwego.com/"
    
-        txtUrl.text = "https://github.com/"
+        txtUrl.text = "https://www.wsxcme.com/"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "诊断", style: .plain, target: self, action: #selector(netDiagnosis))
        
         view.addSubview(scrollView)

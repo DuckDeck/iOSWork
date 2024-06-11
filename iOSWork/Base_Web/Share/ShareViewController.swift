@@ -60,27 +60,30 @@ class ShareViewController: BaseViewController {
     }
     
     @objc func shareToSina()  {
-        guard let vc = SLComposeViewController(forServiceType: SLServiceTypeSinaWeibo) else{
-            print("没有安装新浪微博")
-            return
-        }
-        //这里需要手机绑定该平强账号才行，所以基本不可行
-        if !SLComposeViewController.isAvailable(forServiceType: SLServiceTypeSinaWeibo){
-            print("软件没有配置登录信息")
-            return
-        }
-        vc.setInitialText("这里要分享的内容")
-        vc.add(UIImage(named: "a6")!)
-        vc.add(URL(string: "http://baidu.com")!)
-        present(vc, animated: true, completion: nil)
-        vc.completionHandler = {(result:SLComposeViewControllerResult) in
-            if result == SLComposeViewControllerResult.cancelled{
-                Toast.showToast(msg: "你点了取消")
-            }
-            else{
-                Toast.showToast(msg: "你点了发送")
+        let itemsToShare = ["Hello, Share Extension!"] // 要分享的数据
+        let myShareExtensionBundleID = "net.whatsapp.WhatsApp.ShareExtension" // 分享扩展程序的 Bundle ID
+
+        // 创建 UIActivityViewController,但不显示它
+        
+        let shareExtensionActivity = whatAppActivityType()
+        
+        
+        let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: [shareExtensionActivity])
+
+
+        // 设置完成处理器
+        activityViewController.completionWithItemsHandler = { activityType, completed, returnedItems, error in
+            if completed {
+                print("Share completed")
+            } else {
+                print("Share cancelled")
             }
         }
+
+        // 执行分享请求
+       
+            present(activityViewController, animated: true)
+       
     }
     
     
@@ -209,5 +212,19 @@ class ShareView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class whatAppActivityType:UIActivity{
+    override var activityType: UIActivity.ActivityType?{
+        return .postToTwitter
+    }
+    
+    override var activityTitle: String?{
+        return "123123123123123"
+    }
+    
+    override var activityImage: UIImage?{
+        return UIImage(named: "a3")
     }
 }

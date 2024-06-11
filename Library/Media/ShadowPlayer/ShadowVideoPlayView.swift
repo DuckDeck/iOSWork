@@ -463,7 +463,7 @@ extension ShadowVideoPlayerView: UIGestureRecognizerDelegate, ShadowVideoControl
 extension ShadowVideoPlayerView {
     @objc func deviceOrientationDidChange(notif: Notification) {
         if currentVC == nil {
-            currentVC = topMostController()
+            currentVC = iq.topMostController()
             if currentVC == nil {
                 return
             }

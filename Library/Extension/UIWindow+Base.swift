@@ -11,7 +11,7 @@ import IQKeyboardManagerSwift
 extension UIWindow{
     
     @objc open  func currentViewController() -> UIViewController? {
-        var currentViewController = topMostController()
+        var currentViewController = iq.topMostController()
         while currentViewController is UINavigationController && (currentViewController as! UINavigationController).topViewController != nil  {
             currentViewController = (currentViewController as! UINavigationController).topViewController!
         }

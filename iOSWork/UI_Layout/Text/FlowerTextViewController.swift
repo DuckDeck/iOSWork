@@ -8,6 +8,7 @@
 import Foundation
 import IQKeyboardManagerSwift
 class FlowerTextViewController:UIViewController,UITextFieldDelegate{
+    let con = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
@@ -35,7 +36,7 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         view.addSubview(v)
         v.snp.makeConstraints { make in
             make.left.equalTo(100)
-            make.top.equalTo(240)
+            make.top.equalTo(140)
             make.width.equalTo(200)
             make.height.equalTo(100)
         }
@@ -52,6 +53,24 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         img.frame = CGRect(x: 01, y: 100, width: 100, height: 100)
         view.addSubview(img)
         
+        
+        
+       
+        con.backgroundColor = UIColor.green
+        view.addSubview(con)
+        con.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(400)
+            make.width.height.equalTo(200)
+        }
+        let v2 = UIView()
+        v2.backgroundColor = .carrot
+        con.addSubview(v2)
+        v2.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(100)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +82,24 @@ class FlowerTextViewController:UIViewController,UITextFieldDelegate{
         super.viewWillDisappear(animated)
         IQKeyboardManager.shared.enableAutoToolbar = true
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 1) {
+            self.con.snp.updateConstraints { make in
+                make.width.height.equalTo(150)
+            }
+            self.view.layoutIfNeeded()
+        }  completion: { _ in
+            UIView.animate(withDuration: 1) {
+                self.con.snp.updateConstraints { make in
+                    make.width.height.equalTo(200)
+                }
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
 //    let k = "你大有你有我什么"
 //    var dataenc = k.data(using: String.Encoding.nonLossyASCII)
 //    var encodevalue = String(data: dataenc!, encoding: String.Encoding.utf8)
