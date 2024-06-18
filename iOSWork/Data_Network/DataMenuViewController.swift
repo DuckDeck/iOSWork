@@ -65,7 +65,8 @@ extension DataMenuViewController:UITableViewDelegate,UITableViewDataSource{
             navigationController?.pushViewController(vc, animated: true)
             break
         case 3:
-            let file = FileBrowser()
+            let file = FileBrowser(initialPath: FileParser.sharedInstance.appSandboxURL,allowEditing: true,showCancelButton: true)
+            file.modalPresentationStyle = .fullScreen
             present(file, animated: true, completion: nil)
             break
         default:

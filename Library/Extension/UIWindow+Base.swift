@@ -8,10 +8,10 @@
 
 import UIKit
 import IQKeyboardManagerSwift
-extension UIWindow{
+extension UIView{
     
     @objc open  func currentViewController() -> UIViewController? {
-        var currentViewController = iq.topMostController()
+        var currentViewController = self.topMostController()
         while currentViewController is UINavigationController && (currentViewController as! UINavigationController).topViewController != nil  {
             currentViewController = (currentViewController as! UINavigationController).topViewController!
         }
