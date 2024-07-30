@@ -824,6 +824,8 @@
 		AE6E5DCC273FC51C00523EA8 /* OptimizeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */; };
 		AE6E5DCF273FC5E500523EA8 /* FlowLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */; };
 		AE6FED3C2A95C05F003C6626 /* DemoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */; };
+		AE71F2162C579A9600DE980A /* ShadowVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */; };
+		AE71F2172C579A9600DE980A /* ShadowVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */; };
 		AE7234AD278E6B610088C791 /* PHAssert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */; };
 		AE7234AE278E6B640088C791 /* PHAssert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */; };
 		AE72F528273EB9A50060456A /* CitySearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F51F273EB9A40060456A /* CitySearchResultView.swift */; };
@@ -1791,6 +1793,7 @@
 		AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizeTableViewController.swift; sourceTree = "<group>"; };
 		AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutViewController.swift; sourceTree = "<group>"; };
 		AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWebViewController.swift; sourceTree = "<group>"; };
+		AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowVideoInfo.swift; sourceTree = "<group>"; };
 		AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAssert+Extension.swift"; sourceTree = "<group>"; };
 		AE72F51F273EB9A40060456A /* CitySearchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchResultView.swift; sourceTree = "<group>"; };
 		AE72F520273EB9A40060456A /* CityDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDB.swift; sourceTree = "<group>"; };
@@ -2837,6 +2840,7 @@
 				AE62CABE272542DC007D51CD /* ShadowVideoPlayView.swift */,
 				AE62CABF272542DC007D51CD /* ShadowDownloader.swift */,
 				AE62CAC0272542DC007D51CD /* ShadowVideoControlView.swift */,
+				AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */,
 			);
 			path = ShadowPlayer;
 			sourceTree = "<group>";
@@ -5264,6 +5268,7 @@
 				AE128884281CED0A0049A5E4 /* operation.swift in Sources */,
 				AE62CA532725429A007D51CD /* UIView+Layout.m in Sources */,
 				AEAFBBE12AA72825003D92B5 /* WWKWebView.swift in Sources */,
+				AE71F2162C579A9600DE980A /* ShadowVideoInfo.swift in Sources */,
 				AEE010CC2742569200C155D8 /* MJRefreshBackStateFooter.m in Sources */,
 				AE62CAAD272542D1007D51CD /* PriorityBoxArray.m in Sources */,
 				AE62CAE3272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
@@ -5815,6 +5820,7 @@
 				20B65A3D28FC249200341DB9 /* UIFont+Extension.swift in Sources */,
 				AE128893281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AEAFBBE22AA72825003D92B5 /* WWKWebView.swift in Sources */,
+				AE71F2172C579A9600DE980A /* ShadowVideoInfo.swift in Sources */,
 				AE62CA642725429B007D51CD /* TZImageManager.m in Sources */,
 				AE58464A2C15515C00F758EC /* FileListPreview.swift in Sources */,
 				AE257F922B9744F400AEEABB /* NetToolView.swift in Sources */,

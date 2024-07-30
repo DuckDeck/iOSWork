@@ -7,6 +7,7 @@
 //
 
 import AVKit
+import CoreMedia
 import Foundation
 
 class ShadowVideoPlayerView: UIView {
@@ -295,14 +296,14 @@ class ShadowVideoPlayerView: UIView {
     }
     
     func play() {
-        if player != nil && player.playStatus != .Playing{
+        if player != nil, player.playStatus != .Playing {
             player.play()
             vPlay.setState(state: true)
         }
     }
     
     func pause() {
-        if player != nil && player.playStatus != .Paused{
+        if player != nil, player.playStatus != .Paused {
             player.pause()
             vPlay.setState(state: false)
         }
@@ -396,6 +397,21 @@ class ShadowVideoPlayerView: UIView {
                 info.append(("时长", "\(track.timeRange.duration.seconds)秒"))
                 info.append(("帧率", "\(track.nominalFrameRate)帧每秒"))
                 info.append(("码率", "\(track.estimatedDataRate / 8000000) M每秒"))
+                
+                let format = track.formatDescriptions
+                for item in format where item is CMVideoFormatDescription {
+                    let t = item as! CMVideoFormatDescription
+                    let exts = t.extensions
+                    
+                    if let value = exts[CMFormatDescription.Extensions.Key.sampleDescriptionExtensionAtoms] as? CFPropertyList {
+                        let vv = CMFormatDescription.Extensions.Value(value)
+                        
+                        let dictCF = value as! CFDictionary
+                        let count = CFDictionaryGetCount(dictCF)
+                        let r1 = CFDictionaryContainsKey(dictCF, Unmanaged.passRetained("avcC" as NSString).autorelease().toOpaque())
+                        let r2 = CFDictionaryGetValue(dictCF, Unmanaged.passRetained("avcC" as NSString).autorelease().toOpaque())
+                    }
+                }
             }
             else if type == kCMMediaType_Audio {
                 info.append(("类型", "音频"))
@@ -463,7 +479,7 @@ extension ShadowVideoPlayerView: UIGestureRecognizerDelegate, ShadowVideoControl
 extension ShadowVideoPlayerView {
     @objc func deviceOrientationDidChange(notif: Notification) {
         if currentVC == nil {
-            currentVC = self.currentViewController()
+            currentVC = currentViewController()
             if currentVC == nil {
                 return
             }
@@ -527,7 +543,6 @@ extension ShadowVideoPlayerView: ShadowPlayDelegate {
         }
     }
     
-   
     func resouceStateChange(status: ResourceStatus) {
         switch status {
         case .Unknow:
@@ -542,18 +557,18 @@ extension ShadowVideoPlayerView: ShadowPlayDelegate {
 
         case .ReadyToPlay:
             vActivity.stopAnimating()
-           if player.isAutoPlay{
-               if player.playStatus == .Playing{
-                   vPlay.setState(state: true)
-               }
-           } else {
-               vPlay.isHidden = false
-               
-           }
+            if player.isAutoPlay {
+                if player.playStatus == .Playing {
+                    vPlay.setState(state: true)
+                }
+            }
+            else {
+                vPlay.isHidden = false
+            }
         case .Buffering:
             if !vActivity.isHidden {
-               vActivity.startAnimating()
-           }
+                vActivity.startAnimating()
+            }
         }
     }
     
@@ -561,7 +576,6 @@ extension ShadowVideoPlayerView: ShadowPlayDelegate {
         print(current)
         vControl.bufferValue = current / duration
     }
-    
     
     func playProcess(current: Float, duration: Float) {
         print("播放到\(current)")

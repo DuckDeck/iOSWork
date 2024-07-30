@@ -9,7 +9,7 @@ import UIKit
 import GrandKit
 class AdViewController: UIViewController {
     lazy var timer  = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.global())
-    var seconds = 5
+    var seconds = 1
     lazy var btnCount = UIButton()
     lazy var imgBg = UIImageView()
     override func viewDidLoad() {
