@@ -826,6 +826,11 @@
 		AE6FED3C2A95C05F003C6626 /* DemoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */; };
 		AE71F2162C579A9600DE980A /* ShadowVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */; };
 		AE71F2172C579A9600DE980A /* ShadowVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */; };
+		AE71F2212C58E79D00DE980A /* XlogDecodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2202C58E79D00DE980A /* XlogDecodeViewController.swift */; };
+		AE71F2242C58E7F400DE980A /* XlogDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2222C58E7F400DE980A /* XlogDecoder.m */; };
+		AE71F2272C58E87F00DE980A /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AEF881512B551F170032492B /* libresolv.9.tbd */; };
+		AE71F23D2C58EA1D00DE980A /* mars.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE71F23C2C58EA1D00DE980A /* mars.xcframework */; };
+		AE71F23E2C58EA1D00DE980A /* mars.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE71F23C2C58EA1D00DE980A /* mars.xcframework */; };
 		AE7234AD278E6B610088C791 /* PHAssert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */; };
 		AE7234AE278E6B640088C791 /* PHAssert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */; };
 		AE72F528273EB9A50060456A /* CitySearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE72F51F273EB9A40060456A /* CitySearchResultView.swift */; };
@@ -1794,6 +1799,12 @@
 		AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutViewController.swift; sourceTree = "<group>"; };
 		AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWebViewController.swift; sourceTree = "<group>"; };
 		AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowVideoInfo.swift; sourceTree = "<group>"; };
+		AE71F2202C58E79D00DE980A /* XlogDecodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XlogDecodeViewController.swift; sourceTree = "<group>"; };
+		AE71F2222C58E7F400DE980A /* XlogDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XlogDecoder.m; sourceTree = "<group>"; };
+		AE71F2232C58E7F400DE980A /* XlogDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XlogDecoder.h; sourceTree = "<group>"; };
+		AE71F2252C58E86200DE980A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		AE71F2262C58E87300DE980A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		AE71F23C2C58EA1D00DE980A /* mars.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mars.xcframework; sourceTree = "<group>"; };
 		AE7234AC278E6B610088C791 /* PHAssert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAssert+Extension.swift"; sourceTree = "<group>"; };
 		AE72F51F273EB9A40060456A /* CitySearchResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitySearchResultView.swift; sourceTree = "<group>"; };
 		AE72F520273EB9A40060456A /* CityDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDB.swift; sourceTree = "<group>"; };
@@ -2076,6 +2087,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE62CB0A272542F8007D51CD /* libmp3lame.a in Frameworks */,
+				AE71F23D2C58EA1D00DE980A /* mars.xcframework in Frameworks */,
 				AE66E131275369D4006432FE /* libswscale.a in Frameworks */,
 				AE66E03127536944006432FE /* libx264.a in Frameworks */,
 				AEF881502B551E7B0032492B /* libresolv.tbd in Frameworks */,
@@ -2087,6 +2099,7 @@
 				AE66E11F275369D3006432FE /* libavutil.a in Frameworks */,
 				AE66E12B275369D4006432FE /* libavdevice.a in Frameworks */,
 				AE66E1562753794F006432FE /* CoreMedia.framework in Frameworks */,
+				AE71F2272C58E87F00DE980A /* libresolv.9.tbd in Frameworks */,
 				FB1B59CA83911767848A98D4 /* Pods_iOSWork.framework in Frameworks */,
 				AE66E122275369D4006432FE /* libavfilter.a in Frameworks */,
 				AE66E12E275369D4006432FE /* libswresample.a in Frameworks */,
@@ -2153,6 +2166,7 @@
 				AEF881542B551F2E0032492B /* libresolv.tbd in Frameworks */,
 				AE66E121275369D4006432FE /* libavutil.a in Frameworks */,
 				AE66E130275369D4006432FE /* libswresample.a in Frameworks */,
+				AE71F23E2C58EA1D00DE980A /* mars.xcframework in Frameworks */,
 				AE66E12A275369D4006432FE /* libavformat.a in Frameworks */,
 				AE66E12D275369D4006432FE /* libavdevice.a in Frameworks */,
 				AE66E18827537C91006432FE /* opencv2.framework in Frameworks */,
@@ -2627,6 +2641,8 @@
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE71F2262C58E87300DE980A /* libc++.tbd */,
+				AE71F2252C58E86200DE980A /* libz.tbd */,
 				AEF881532B551F290032492B /* libresolv.tbd */,
 				AEF881512B551F170032492B /* libresolv.9.tbd */,
 				AEF8814F2B551E6B0032492B /* libresolv.tbd */,
@@ -2694,6 +2710,7 @@
 		AE62C9EC272541F2007D51CD /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AE71F2292C58EA1100DE980A /* mars */,
 				AE5846192C15515C00F758EC /* FileBrowser */,
 				AEF5BEFA2ADD2BBF00A7305D /* IconFont */,
 				AE66E14D2753790E006432FE /* FrameWork */,
@@ -3005,6 +3022,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB9CBAC2B464280008BD731 /* NetToolViewController.swift */,
+				AE71F21F2C58E78900DE980A /* Xlog */,
 				AE08AA8A27C6817D00EE0813 /* Download */,
 				AEF86664274B9B38002E33E5 /* ClassifyingImages */,
 				AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */,
@@ -3434,6 +3452,24 @@
 				AE9EE9F7280843B500EBE70A /* PanCollectionViewController.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		AE71F21F2C58E78900DE980A /* Xlog */ = {
+			isa = PBXGroup;
+			children = (
+				AE71F2232C58E7F400DE980A /* XlogDecoder.h */,
+				AE71F2222C58E7F400DE980A /* XlogDecoder.m */,
+				AE71F2202C58E79D00DE980A /* XlogDecodeViewController.swift */,
+			);
+			path = Xlog;
+			sourceTree = "<group>";
+		};
+		AE71F2292C58EA1100DE980A /* mars */ = {
+			isa = PBXGroup;
+			children = (
+				AE71F23C2C58EA1D00DE980A /* mars.xcframework */,
+			);
+			path = mars;
 			sourceTree = "<group>";
 		};
 		AE72F51E273EB9820060456A /* CityChoose */ = {
@@ -5089,6 +5125,7 @@
 				AEE010E72742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
 				AEE0106E2742560200C155D8 /* Resolution.swift in Sources */,
 				AE62CA9E272542D1007D51CD /* PaletteSwatch.m in Sources */,
+				AE71F2242C58E7F400DE980A /* XlogDecoder.m in Sources */,
 				20A965692903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				AE62CA562725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE1C4F65274346BD0097EAC1 /* bzip2recover.c in Sources */,
@@ -5337,6 +5374,7 @@
 				AE66E1CF27538B81006432FE /* VideoBoxViewController.swift in Sources */,
 				AE62CAF2272542DC007D51CD /* CameraModel.swift in Sources */,
 				AEE010B02742569200C155D8 /* MJRefreshConfig.m in Sources */,
+				AE71F2212C58E79D00DE980A /* XlogDecodeViewController.swift in Sources */,
 				AEF0EBE82729470000DCA7B8 /* Apply.swift in Sources */,
 				AE62CA102725425A007D51CD /* FMDatabaseAdditions.m in Sources */,
 				AE62CB3D27254947007D51CD /* WKWebView+Extension.swift in Sources */,
@@ -6051,6 +6089,7 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include",
 				);
 				INFOPLIST_FILE = iOSWork/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = " 用一下相机";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "用一下殃";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "看一下相册";
@@ -6108,6 +6147,7 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include",
 				);
 				INFOPLIST_FILE = iOSWork/Info.plist;
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = " 用一下相机";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "用一下殃";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "看一下相册";

@@ -17,6 +17,7 @@ pod "SwiftSoup", '2.6.1'
 pod 'SwiftyBeaver', '2.0.0'
 pod 'CocoaAsyncSocket', '7.6.5'
 pod 'PhoneNetSDK', '1.0.12'
+pod 'SSZipArchive'
 end
 
 target 'CLangWork' do

@@ -14,6 +14,7 @@ PODS:
   - PhoneNetSDK (1.0.12)
   - SkeletonView (1.30.4)
   - SnapKit (5.6.0)
+  - SSZipArchive (2.4.3)
   - SwiftSoup (2.6.1)
   - SwiftyBeaver (2.0.0)
   - SwiftyJSON (5.0.1)
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - PhoneNetSDK (= 1.0.12)
   - SkeletonView (= 1.30.4)
   - SnapKit (= 5.6.0)
+  - SSZipArchive
   - SwiftSoup (= 2.6.1)
   - SwiftyBeaver (= 2.0.0)
   - SwiftyJSON (= 5.0.1)
@@ -48,6 +50,7 @@ SPEC REPOS:
     - PhoneNetSDK
     - SkeletonView
     - SnapKit
+    - SSZipArchive
     - SwiftSoup
     - SwiftyBeaver
     - SwiftyJSON
@@ -65,10 +68,11 @@ SPEC CHECKSUMS:
   PhoneNetSDK: d0f24d066e8a7f2dd8e7c1a162d4c6910266def7
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   SwiftSoup: 5dd2c1b06afc964f30d99894af6ede22ede627aa
   SwiftyBeaver: 014b0c12065026b731bac80305294f27d63e27f6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: fad6e6f95e33843ec2b3550effb1745e9896b506
+PODFILE CHECKSUM: 4b112f58f1ecf5fbbb63e3cf0df9dfa00a47d700
 
 COCOAPODS: 1.14.3

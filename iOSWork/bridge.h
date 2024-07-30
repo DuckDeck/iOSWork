@@ -25,4 +25,5 @@
 #import "ObjcTry.h"
 #import "ClickImage.h"
 #import "BaseBridge.h"
+#import "XlogDecoder.h"
 #endif /* bridge_h */
