@@ -27,7 +27,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
             
         IQKeyboardManager.shared.enable = false
-     
+        print("CFBagGetTypeID()\(CFBagGetTypeID())")
+        print("CFSetGetTypeID()\(CFSetGetTypeID())")
+        print("CFDataGetTypeID()\(CFDataGetTypeID())")
+        print("CFDateGetTypeID()\(CFDateGetTypeID())")
+        print("CFNullGetTypeID()\(CFNullGetTypeID())")
+        print("CFTreeGetTypeID()\(CFTreeGetTypeID())")
+        print("CFArrayGetTypeID()\(CFArrayGetTypeID())")
+        print("CFErrorGetTypeID()\(CFErrorGetTypeID())")
+        print("CFBundleGetTypeID()\(CFBundleGetTypeID())")
+        print("CFLocaleGetTypeID()\(CFLocaleGetTypeID())")
+        print("CFNumberGetTypeID()\(CFNumberGetTypeID())")
+        print("CFSocketGetTypeID()\(CFSocketGetTypeID())")
+        print("CFBooleanGetTypeID()\(CFBooleanGetTypeID())")
+        print("CFCalendarGetTypeID()\(CFCalendarGetTypeID())")
+        print("CFAllocatorGetTypeID()\(CFAllocatorGetTypeID())")
+        print("CFDictionaryGetTypeID()\(CFDictionaryGetTypeID())")
+        print("CFRunLoopGetTypeID()\(CFRunLoopGetTypeID())")
+        print("CFMachPortGetTypeID()\(CFMachPortGetTypeID())")
+        print("CFTimeZoneGetTypeID()\(CFTimeZoneGetTypeID())")
+        print("CFBitVectorGetTypeID()\(CFBitVectorGetTypeID())")
+        print("CFBinaryHeapGetTypeID()\(CFBinaryHeapGetTypeID())")
+
+        print("CFReadStreamGetTypeID()\(CFReadStreamGetTypeID())")
+        print("CFWriteStreamGetTypeID()\(CFWriteStreamGetTypeID())")
+        print("CFCharacterSetGetTypeID()\(CFCharacterSetGetTypeID())")
+        print("CFFileSecurityGetTypeID()\(CFFileSecurityGetTypeID())")
+        print("CFNumberFormatterGetTypeID()\(CFNumberFormatterGetTypeID())")
+        print("CFNotificationCenterGetTypeID()\(CFNotificationCenterGetTypeID())")
+        print("CFRunLoopTimerGetTypeID()\(CFRunLoopTimerGetTypeID())")
+        print("CFRunLoopSourceGetTypeID()\(CFRunLoopSourceGetTypeID())")
+        print("CFRunLoopObserverGetTypeID()\(CFRunLoopObserverGetTypeID())")
+
+        
+
+        
+        print("CFStringGetTypeID()\(CFStringGetTypeID())")
+        print("CFPlugInGetTypeID()\(CFPlugInGetTypeID())")
+        print("CFMessagePortGetTypeID()\(CFMessagePortGetTypeID())")
+        print("CFFileDescriptorGetTypeID()\(CFFileDescriptorGetTypeID())")
+        print("CFStringTokenizerGetTypeID()\(CFStringTokenizerGetTypeID())")
+        print("CFAttributedStringGetTypeID()\(CFAttributedStringGetTypeID())")
+
+        print("CFPlugInInstanceGetTypeID()\(CFPlugInInstanceGetTypeID())")
+
+        
+        
         
         NSSetUncaughtExceptionHandler { exp in
             print(exp.name)

@@ -19,6 +19,7 @@
 #import "CategoryDemo.h"
 #import "Block/BlockChain.h"
 #import "fishhook.h"
+
 @interface Father : NSObject
 @property (nonatomic,copy) NSString* name;
 @property (nonatomic,copy) NSString* address;
@@ -76,8 +77,33 @@ int main(int argc, const char * argv[]) {
         [gcd testGCDGroup];
         
         [gcd testTaskSeq];
+        NSString* tmp1 = @"{\"name\": \"John\",\"age\": 30,\"city\": \"New York\"";
+        NSDictionary* dict1 = [NSJSONSerialization JSONObjectWithData:[tmp1 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@",dict1);
         
+        
+        
+        NSString* tmp2 = @"{\"name\":\"John\",\"age\":30,\"city\":\"New York\"}";
+        NSDictionary* dict2 = [NSJSONSerialization JSONObjectWithData:[tmp2 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@",dict2);
+        
+        
+        NSString* tmp3 = @"{\"name\":\"John\",\"age\":30,\"city\":\"New York\"!\"}";
+        NSDictionary* dict3 = [NSJSONSerialization JSONObjectWithData:[tmp3 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@",dict3);
+
+        NSString* tmp4 = @"{\"user\":{\"name\"국 :\"John천상 제국, 제국 중국에 부여된 속국 칭호\",\"details\":{\"age\":30,\"city\":\"New York\"}}}";
+        NSDictionary* dict4 = [NSJSONSerialization JSONObjectWithData:[tmp4 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@",dict4);
         //不知道这个是干什么的
+        
+        NSDictionary* dict5 = [NSJSONSerialization JSONObjectWithData:[NSImage new] options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@",dict5);
+
+        
+        
+        NSDictionary* dict11 = [NSJSONSerialization JSONObjectWithData:nil options:NSJSONReadingMutableLeaves error:nil];
+        NSLog(@"%@",dict11);
         
         //测试消息转发
         //Hydron* h1 = [[Hydron alloc] init];

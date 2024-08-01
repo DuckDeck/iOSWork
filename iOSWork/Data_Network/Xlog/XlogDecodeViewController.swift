@@ -8,7 +8,7 @@
 import Foundation
 import SSZipArchive
 
-class XlogDecodeViewController:BaseViewController{
+class XlogDecodeViewController: BaseViewController {
     let publicKey = "b11894e1a0540dc2df4e4a994fce26569095bad2c34e1f17376b257b4d1b4a4fec9081cf0cacb9e7f67003e9973f81264f253ee586ec65f3efca1ac22ae542d1"
     let privateKey = "352053949d33311161e936a96b8c3534019dd5f1af024054e5571b8f7f73b296"
     override func viewDidLoad() {
@@ -35,74 +35,64 @@ class XlogDecodeViewController:BaseViewController{
             make.width.equalTo(150)
             make.height.equalTo(50)
         }
-        
-        
     }
     
-    
-    
-    @objc func selectFile(){
-       
-        
-        let file = FileBrowser(initialPath: FileParser.sharedInstance.documentsURL,allowEditing: true,showCancelButton: true)
-        file.didSelectFile = {file in
+    @objc func selectFile() {
+        let file = FileBrowser(initialPath: FileParser.sharedInstance.documentsURL, allowEditing: true, showCancelButton: true)
+        file.didSelectFile = { file in
             self.unArchFile(zipPath: file.filePath.path)
         }
         file.modalPresentationStyle = .fullScreen
         present(file, animated: true, completion: nil)
-        
     }
     
-    func unArchFile(zipPath:String){
-        if zipPath.isEmpty || !zipPath.hasSuffix("zip"){
+    func unArchFile(zipPath: String) {
+        if zipPath.isEmpty || !zipPath.hasSuffix("zip") {
             Toast.showToast(msg: "你没有选择压缩文件")
             return
         }
         
-       let res =  SSZipArchive.unzipFile(atPath: zipPath, toDestination: FileParser.sharedInstance.documentsURL.path.appending("/xlog"))
-        
+        let res = SSZipArchive.unzipFile(atPath: zipPath, toDestination: FileParser.sharedInstance.documentsURL.path.appending("/xlog"))
     }
     
-    @objc func selectDecodeFile(){
-        let file = FileBrowser(initialPath: FileParser.sharedInstance.documentsURL,allowEditing: true,showCancelButton: true)
-        file.didSelectFile = {file in
+    @objc func selectDecodeFile() {
+        let file = FileBrowser(initialPath: FileParser.sharedInstance.documentsURL, allowEditing: true, showCancelButton: true)
+        file.didSelectFile = { file in
             self.decodeXlog(logPath: file.filePath.path)
         }
         file.modalPresentationStyle = .fullScreen
         present(file, animated: true, completion: nil)
-
     }
     
-    func decodeXlog(logPath:String){
-        if logPath.isEmpty || !logPath.hasSuffix("xlog"){
+    func decodeXlog(logPath: String) {
+        if logPath.isEmpty || !logPath.hasSuffix("xlog") {
             Toast.showToast(msg: "xlog文件错误")
             return
         }
         let decoder = XlogDecoder()
         let outPath = FileParser.sharedInstance.documentsURL.path.appending("/decodeXlog")
-        if !FileManager.default.fileExists(atPath: outPath){
+        if !FileManager.default.fileExists(atPath: outPath) {
             try? FileManager.default.createDirectory(atPath: outPath, withIntermediateDirectories: true, attributes: nil)
         }
         let res = decoder.decode(atPath: logPath, privateKey: privateKey, outPath: outPath.appending("/1.log"))
         Toast.showToast(msg: res ? "解码成功" : "解码失败")
     }
     
-    @objc func selectShareLog(){
-        let file = FileBrowser(initialPath: FileParser.sharedInstance.documentsURL,allowEditing: true,showCancelButton: true)
-        file.didSelectFile = {file in
+    @objc func selectShareLog() {
+        let file = FileBrowser(initialPath: FileParser.sharedInstance.documentsURL, allowEditing: true, showCancelButton: true)
+        file.didSelectFile = { file in
             self.shareLog(logPath: file.filePath.path)
         }
         file.modalPresentationStyle = .fullScreen
         present(file, animated: true, completion: nil)
     }
     
-    func shareLog(logPath:String){
-        guard let data = try? Data(contentsOf: URL(fileURLWithPath: logPath)) else { return }
-        let items = [data, URL(fileURLWithPath: logPath)] as [Any]
+    func shareLog(logPath: String) {
+        let items = [URL(fileURLWithPath: logPath)] as [Any]
         let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
         
         if UIDevice.current.userInterfaceIdiom == .pad {
-            activityVC.popoverPresentationController?.sourceView = self.view
+            activityVC.popoverPresentationController?.sourceView = view
             activityVC.popoverPresentationController?.sourceRect = CGRect(x: 0, y: 0, width: 1, height: 1)
         }
         activityVC.excludedActivityTypes = [.print, .copyToPasteboard, .assignToContact, .saveToCameraRoll]
@@ -112,7 +102,7 @@ class XlogDecodeViewController:BaseViewController{
     }
     
     lazy var btnUnarch: UIButton = {
-        let  v = UIButton()
+        let v = UIButton()
         v.setTitle("解压文件", for: .normal)
         v.titleLabel?.font = UIFont.pingfangMedium(size: 15)
         v.setTitleColor(.blue, for: .normal)
@@ -121,7 +111,7 @@ class XlogDecodeViewController:BaseViewController{
     }()
     
     lazy var btnDecode: UIButton = {
-        let  v = UIButton()
+        let v = UIButton()
         v.setTitle("解码Xlog", for: .normal)
         v.titleLabel?.font = UIFont.pingfangMedium(size: 15)
         v.setTitleColor(.blue, for: .normal)
@@ -130,7 +120,7 @@ class XlogDecodeViewController:BaseViewController{
     }()
   
     lazy var btnShare: UIButton = {
-        let  v = UIButton()
+        let v = UIButton()
         v.setTitle("分享Xlog", for: .normal)
         v.titleLabel?.font = UIFont.pingfangMedium(size: 15)
         v.setTitleColor(.blue, for: .normal)

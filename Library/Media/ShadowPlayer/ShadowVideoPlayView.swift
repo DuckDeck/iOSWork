@@ -405,11 +405,13 @@ class ShadowVideoPlayerView: UIView {
                     
                     if let value = exts[CMFormatDescription.Extensions.Key.sampleDescriptionExtensionAtoms] as? CFPropertyList {
                         let vv = CMFormatDescription.Extensions.Value(value)
-                        
-                        let dictCF = value as! CFDictionary
-                        let count = CFDictionaryGetCount(dictCF)
-                        let r1 = CFDictionaryContainsKey(dictCF, Unmanaged.passRetained("avcC" as NSString).autorelease().toOpaque())
-                        let r2 = CFDictionaryGetValue(dictCF, Unmanaged.passRetained("avcC" as NSString).autorelease().toOpaque())
+                        print(vv)
+                        print(CFGetTypeID(value))
+                        print(value.self)
+                    }
+                    if let format = exts[CMFormatDescription.Extensions.Key.formatName] as? CFTypeRef{
+                        print(format)
+                        print(format.self)
                     }
                 }
             }
