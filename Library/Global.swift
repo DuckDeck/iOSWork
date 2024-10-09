@@ -309,3 +309,42 @@ public func hookClassMethod(cls: AnyClass, originalSelector: Selector, swizzleSe
 }
 
 // let log = Logger(subsystem: "system", category: "cat1")
+
+class SKOperationQueue: OperationQueue {
+    var tasks = Set<String>()
+    override func addOperation(_ op: Operation) {
+        if let name = op.name {
+            if !tasks.contains(name) {
+                tasks.insert(name)
+                super.addOperation(op)
+            }
+        } else {
+            super.addOperation(op)
+        }
+    }
+
+    func clearTask() {
+        tasks.removeAll()
+        cancelAllOperations()
+    }
+
+    func removeTask(id: String) {
+        tasks.remove(id) // 任务成功，移除该任务
+        print("移除失败任务名================\(id)")
+    }
+
+    convenience init(qualityOfService: QualityOfService = .default,
+                     maxConcurrentOperationCount: Int = OperationQueue.defaultMaxConcurrentOperationCount,
+                     underlyingQueue: DispatchQueue? = nil,
+                     name: String? = nil,
+                     startSuspended: Bool = false) {
+        self.init()
+        self.qualityOfService = qualityOfService
+        self.maxConcurrentOperationCount = maxConcurrentOperationCount
+        self.underlyingQueue = underlyingQueue
+        self.name = name
+        isSuspended = startSuspended
+    }
+
+}
+

@@ -169,7 +169,7 @@ extension NumberKeyboardView {
         
         if key.fillColor == cKeyBgColor2 {
             key.keyLayer?.fillColor = (UIColor.white | Colors.color696B70).cgColor
-        } else if key.fillColor == Colors.color49C167{
+        } else if key.fillColor == .green{
             key.keyLayer?.fillColor = Colors.color92DAA4.cgColor
         }else {
             key.keyLayer?.fillColor = cKeyBgPressColor.cgColor

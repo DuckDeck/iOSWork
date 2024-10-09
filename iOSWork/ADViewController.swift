@@ -58,7 +58,7 @@ class AdViewController: UIViewController {
         UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve) {
             let old = UIView.areAnimationsEnabled
             UIView.setAnimationsEnabled(false)
-            window.rootViewController = self.tab
+            window.rootViewController = self.ksTab
             UIView.setAnimationsEnabled(old)
             
         } completion: { (_) in
@@ -67,7 +67,7 @@ class AdViewController: UIViewController {
         
     }
     
-    lazy var tab:UITabBarController = {
+    lazy var ksTab:UITabBarController = {
         let tabbarCtl = UITabBarController()
         let baseVC = BaseMenuViewController()
         baseVC.tabBarItem.image = UIImage(named: "house_black")?.withRenderingMode(.alwaysOriginal)

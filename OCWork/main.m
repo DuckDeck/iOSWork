@@ -95,10 +95,6 @@ int main(int argc, const char * argv[]) {
         NSString* tmp4 = @"{\"user\":{\"name\"국 :\"John천상 제국, 제국 중국에 부여된 속국 칭호\",\"details\":{\"age\":30,\"city\":\"New York\"}}}";
         NSDictionary* dict4 = [NSJSONSerialization JSONObjectWithData:[tmp4 dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
         NSLog(@"%@",dict4);
-        //不知道这个是干什么的
-        
-        NSDictionary* dict5 = [NSJSONSerialization JSONObjectWithData:[NSImage new] options:NSJSONReadingMutableLeaves error:nil];
-        NSLog(@"%@",dict5);
 
         
         

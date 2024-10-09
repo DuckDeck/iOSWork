@@ -11,6 +11,7 @@ PODS:
   - LookinServer (1.2.6):
     - LookinServer/Core (= 1.2.6)
   - LookinServer/Core (1.2.6)
+  - lottie-ios (3.4.4)
   - PhoneNetSDK (1.0.12)
   - SkeletonView (1.30.4)
   - SnapKit (5.6.0)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - Kingfisher (= 7.9.1)
   - KRProgressHUD (= 3.4.7)
   - LookinServer
+  - lottie-ios (~> 3.4.0)
   - PhoneNetSDK (= 1.0.12)
   - SkeletonView (= 1.30.4)
   - SnapKit (= 5.6.0)
@@ -47,6 +49,7 @@ SPEC REPOS:
     - KRActivityIndicatorView
     - KRProgressHUD
     - LookinServer
+    - lottie-ios
     - PhoneNetSDK
     - SkeletonView
     - SnapKit
@@ -65,6 +68,7 @@ SPEC CHECKSUMS:
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
   LookinServer: de929b55f8fa2e241c18c39af3f900eaa9166389
+  lottie-ios: 8f97d3271e155c2d688875c29cd3c74908aef5f8
   PhoneNetSDK: d0f24d066e8a7f2dd8e7c1a162d4c6910266def7
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
@@ -73,6 +77,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 014b0c12065026b731bac80305294f27d63e27f6
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 4b112f58f1ecf5fbbb63e3cf0df9dfa00a47d700
+PODFILE CHECKSUM: c0d8bf8ecc62d3e25f61d207572fd298ff7a0383
 
 COCOAPODS: 1.14.3

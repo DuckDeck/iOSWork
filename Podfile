@@ -18,6 +18,7 @@ pod 'SwiftyBeaver', '2.0.0'
 pod 'CocoaAsyncSocket', '7.6.5'
 pod 'PhoneNetSDK', '1.0.12'
 pod 'SSZipArchive'
+pod 'lottie-ios', '~> 3.4.0'
 end
 
 target 'CLangWork' do

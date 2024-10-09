@@ -149,7 +149,7 @@ class SelectWordCell: PanCollectionCell {
     func update(select: Bool) {
         if select {
             lblWord.layer.borderWidth = 0
-            lblWord.backgroundColor = Colors.color49C167
+            lblWord.backgroundColor = .green
             lblWord.textColor = UIColor.white
             lblWord.font = UIFont.pingfangMedium(size: 14)
         } else {

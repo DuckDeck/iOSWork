@@ -432,6 +432,14 @@ extension String{
         return String(self[start..<end])
     }
     
+    var removePrefixZero: String {
+        var tmp = self
+        while tmp.hasPrefix("0") {
+            tmp.removeFirst()
+        }
+        return tmp
+    }
+    
 }
 
 extension NSMutableAttributedString{

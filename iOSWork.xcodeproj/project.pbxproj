@@ -196,7 +196,6 @@
 		AE264E362B1576D8002F78D9 /* ClickImage.h in Headers */ = {isa = PBXBuildFile; fileRef = AE264E342B1576D8002F78D9 /* ClickImage.h */; };
 		AE264E372B1576D8002F78D9 /* ClickImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE264E352B1576D8002F78D9 /* ClickImage.m */; };
 		AE264E382B1576DD002F78D9 /* ClickImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE264E352B1576D8002F78D9 /* ClickImage.m */; };
-		AE2657CA2875218C002C88FB /* ProcessComViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2657C92875218C002C88FB /* ProcessComViewController.swift */; };
 		AE28B85F27C3907100D399F3 /* TestKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */; };
 		AE28B86627C501C000D399F3 /* KeyboardGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */; };
 		AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE313F25282E46DD00245791 /* KeyboardSettingView.swift */; };
@@ -208,7 +207,6 @@
 		AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */; };
 		AE4717AC2ADBF38900023738 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4717AB2ADBF34800023738 /* libiconv.tbd */; };
 		AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48CECD27C7D10B009A0673 /* asset.xcassets */; };
-		AE4B07612B3AECEC008BC4E3 /* ProcessComSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4B07602B3AECEC008BC4E3 /* ProcessComSendViewController.swift */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
 		AE4D08EC273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
 		AE4D08ED273025DB00899D2C /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = AE4D08EB273025DB00899D2C /* demo.html */; };
@@ -824,6 +822,14 @@
 		AE6E5DCC273FC51C00523EA8 /* OptimizeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */; };
 		AE6E5DCF273FC5E500523EA8 /* FlowLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */; };
 		AE6FED3C2A95C05F003C6626 /* DemoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */; };
+		AE7090162CB69A14005F38F6 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7090152CB69A14005F38F6 /* LivePhoto.swift */; };
+		AE7090172CB69A14005F38F6 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7090152CB69A14005F38F6 /* LivePhoto.swift */; };
+		AE70901F2CB69B9E005F38F6 /* HWThrottle.h in Headers */ = {isa = PBXBuildFile; fileRef = AE70901B2CB69B9E005F38F6 /* HWThrottle.h */; };
+		AE7090202CB69B9E005F38F6 /* HWDebounce.h in Headers */ = {isa = PBXBuildFile; fileRef = AE7090182CB69B9E005F38F6 /* HWDebounce.h */; };
+		AE7090212CB69B9E005F38F6 /* HWThrottle.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70901C2CB69B9E005F38F6 /* HWThrottle.m */; };
+		AE7090222CB69B9E005F38F6 /* HWDebounce.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7090192CB69B9E005F38F6 /* HWDebounce.m */; };
+		AE7090232CB69B9E005F38F6 /* HWThrottle.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70901C2CB69B9E005F38F6 /* HWThrottle.m */; };
+		AE7090242CB69B9E005F38F6 /* HWDebounce.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7090192CB69B9E005F38F6 /* HWDebounce.m */; };
 		AE71F2162C579A9600DE980A /* ShadowVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */; };
 		AE71F2172C579A9600DE980A /* ShadowVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */; };
 		AE71F2212C58E79D00DE980A /* XlogDecodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2202C58E79D00DE980A /* XlogDecodeViewController.swift */; };
@@ -877,6 +883,24 @@
 		AE890D0A27240DEC00FAB7D7 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AE890D1127240DFE00FAB7D7 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
+		AE8C50482C94406100021D92 /* WKHttpHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C502F2C94406000021D92 /* WKHttpHandler.swift */; };
+		AE8C504A2C94406100021D92 /* CatchWebInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50312C94406000021D92 /* CatchWebInfo.swift */; };
+		AE8C504C2C94406100021D92 /* KuaiShouCatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50342C94406100021D92 /* KuaiShouCatchHandler.swift */; };
+		AE8C504D2C94406100021D92 /* DouYinCatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50352C94406100021D92 /* DouYinCatchHandler.swift */; };
+		AE8C504E2C94406100021D92 /* TMallCatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50362C94406100021D92 /* TMallCatchHandler.swift */; };
+		AE8C504F2C94406100021D92 /* Mall1688CatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50372C94406100021D92 /* Mall1688CatchHandler.swift */; };
+		AE8C50502C94406100021D92 /* TaobaoCatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50382C94406100021D92 /* TaobaoCatchHandler.swift */; };
+		AE8C50512C94406100021D92 /* PDDCatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50392C94406100021D92 /* PDDCatchHandler.swift */; };
+		AE8C50522C94406100021D92 /* CatchGoodsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C503C2C94406100021D92 /* CatchGoodsHandler.swift */; };
+		AE8C50532C94406100021D92 /* CatchGoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C503D2C94406100021D92 /* CatchGoods.swift */; };
+		AE8C50542C94406100021D92 /* CatchWebSiteInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C503E2C94406100021D92 /* CatchWebSiteInfo.swift */; };
+		AE8C50552C94406100021D92 /* GoodsSaveQuene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C503F2C94406100021D92 /* GoodsSaveQuene.swift */; };
+		AE8C50562C94406100021D92 /* ImageUploadQuene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50402C94406100021D92 /* ImageUploadQuene.swift */; };
+		AE8C50572C94406100021D92 /* CatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50412C94406100021D92 /* CatchExtension.swift */; };
+		AE8C505A2C94406100021D92 /* TransferIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50452C94406100021D92 /* TransferIndicatorView.swift */; };
+		AE8C505B2C94406100021D92 /* TransferGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C50462C94406100021D92 /* TransferGoodsViewController.swift */; };
+		AE8C505E2C94422D00021D92 /* PopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C505D2C94422D00021D92 /* PopView.swift */; };
+		AE8C505F2C94422D00021D92 /* PopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C505D2C94422D00021D92 /* PopView.swift */; };
 		AE8C8DB027900BA300C656DF /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */; };
 		AE8C8DB127900BA300C656DF /* Codable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */; };
 		AE94D3332742421A00ACEDDC /* AnimationVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE94D3322742421A00ACEDDC /* AnimationVIew.swift */; };
@@ -893,7 +917,6 @@
 		AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */; };
 		AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2CB273D66A700153D20 /* ShareViewController.swift */; };
 		AEAFBBD02AA025A6003D92B5 /* WebDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBCF2AA025A6003D92B5 /* WebDemoViewController.swift */; };
-		AEAFBBD22AA0260F003D92B5 /* WKHttpHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD12AA0260F003D92B5 /* WKHttpHandler.swift */; };
 		AEAFBBD52AA02658003D92B5 /* ObjcTry.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAFBBD32AA02658003D92B5 /* ObjcTry.h */; };
 		AEAFBBD62AA02658003D92B5 /* ObjcTry.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD42AA02658003D92B5 /* ObjcTry.m */; };
 		AEAFBBD72AA02658003D92B5 /* ObjcTry.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD42AA02658003D92B5 /* ObjcTry.m */; };
@@ -1433,7 +1456,6 @@
 		AE257F902B9744F400AEEABB /* NetToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetToolView.swift; sourceTree = "<group>"; };
 		AE264E342B1576D8002F78D9 /* ClickImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickImage.h; sourceTree = "<group>"; };
 		AE264E352B1576D8002F78D9 /* ClickImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickImage.m; sourceTree = "<group>"; };
-		AE2657C92875218C002C88FB /* ProcessComViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessComViewController.swift; sourceTree = "<group>"; };
 		AE28B85E27C3907100D399F3 /* TestKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestKeyboardViewController.swift; sourceTree = "<group>"; };
 		AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGlobal.swift; sourceTree = "<group>"; };
 		AE313F25282E46DD00245791 /* KeyboardSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSettingView.swift; sourceTree = "<group>"; };
@@ -1445,7 +1467,6 @@
 		AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManage.swift; sourceTree = "<group>"; };
 		AE4717AB2ADBF34800023738 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		AE48CECD27C7D10B009A0673 /* asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = asset.xcassets; sourceTree = "<group>"; };
-		AE4B07602B3AECEC008BC4E3 /* ProcessComSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessComSendViewController.swift; sourceTree = "<group>"; };
 		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
 		AE4D08EB273025DB00899D2C /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
 		AE4D08F2273032E100899D2C /* CustomURLSchemeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomURLSchemeHandler.swift; sourceTree = "<group>"; };
@@ -1798,6 +1819,11 @@
 		AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizeTableViewController.swift; sourceTree = "<group>"; };
 		AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutViewController.swift; sourceTree = "<group>"; };
 		AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWebViewController.swift; sourceTree = "<group>"; };
+		AE7090152CB69A14005F38F6 /* LivePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
+		AE7090182CB69B9E005F38F6 /* HWDebounce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDebounce.h; sourceTree = "<group>"; };
+		AE7090192CB69B9E005F38F6 /* HWDebounce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWDebounce.m; sourceTree = "<group>"; };
+		AE70901B2CB69B9E005F38F6 /* HWThrottle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWThrottle.h; sourceTree = "<group>"; };
+		AE70901C2CB69B9E005F38F6 /* HWThrottle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWThrottle.m; sourceTree = "<group>"; };
 		AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowVideoInfo.swift; sourceTree = "<group>"; };
 		AE71F2202C58E79D00DE980A /* XlogDecodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XlogDecodeViewController.swift; sourceTree = "<group>"; };
 		AE71F2222C58E7F400DE980A /* XlogDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XlogDecoder.m; sourceTree = "<group>"; };
@@ -1844,6 +1870,23 @@
 		AE8306E027B4B16F00C657DC /* ScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleViewController.swift; sourceTree = "<group>"; };
 		AE890D0327240DEC00FAB7D7 /* Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE890D0F27240DFC00FAB7D7 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		AE8C502F2C94406000021D92 /* WKHttpHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKHttpHandler.swift; sourceTree = "<group>"; };
+		AE8C50312C94406000021D92 /* CatchWebInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchWebInfo.swift; sourceTree = "<group>"; };
+		AE8C50342C94406100021D92 /* KuaiShouCatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KuaiShouCatchHandler.swift; sourceTree = "<group>"; };
+		AE8C50352C94406100021D92 /* DouYinCatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DouYinCatchHandler.swift; sourceTree = "<group>"; };
+		AE8C50362C94406100021D92 /* TMallCatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMallCatchHandler.swift; sourceTree = "<group>"; };
+		AE8C50372C94406100021D92 /* Mall1688CatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mall1688CatchHandler.swift; sourceTree = "<group>"; };
+		AE8C50382C94406100021D92 /* TaobaoCatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaobaoCatchHandler.swift; sourceTree = "<group>"; };
+		AE8C50392C94406100021D92 /* PDDCatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDDCatchHandler.swift; sourceTree = "<group>"; };
+		AE8C503C2C94406100021D92 /* CatchGoodsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchGoodsHandler.swift; sourceTree = "<group>"; };
+		AE8C503D2C94406100021D92 /* CatchGoods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchGoods.swift; sourceTree = "<group>"; };
+		AE8C503E2C94406100021D92 /* CatchWebSiteInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchWebSiteInfo.swift; sourceTree = "<group>"; };
+		AE8C503F2C94406100021D92 /* GoodsSaveQuene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsSaveQuene.swift; sourceTree = "<group>"; };
+		AE8C50402C94406100021D92 /* ImageUploadQuene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadQuene.swift; sourceTree = "<group>"; };
+		AE8C50412C94406100021D92 /* CatchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatchExtension.swift; sourceTree = "<group>"; };
+		AE8C50452C94406100021D92 /* TransferIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferIndicatorView.swift; sourceTree = "<group>"; };
+		AE8C50462C94406100021D92 /* TransferGoodsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferGoodsViewController.swift; sourceTree = "<group>"; };
+		AE8C505D2C94422D00021D92 /* PopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopView.swift; sourceTree = "<group>"; };
 		AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
 		AE94D3322742421A00ACEDDC /* AnimationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVIew.swift; sourceTree = "<group>"; };
 		AE958D532AB934C800FD599B /* ZLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLog.swift; sourceTree = "<group>"; };
@@ -1855,7 +1898,6 @@
 		AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		AEADA2CB273D66A700153D20 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		AEAFBBCF2AA025A6003D92B5 /* WebDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDemoViewController.swift; sourceTree = "<group>"; };
-		AEAFBBD12AA0260F003D92B5 /* WKHttpHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKHttpHandler.swift; sourceTree = "<group>"; };
 		AEAFBBD32AA02658003D92B5 /* ObjcTry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcTry.h; sourceTree = "<group>"; };
 		AEAFBBD42AA02658003D92B5 /* ObjcTry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcTry.m; sourceTree = "<group>"; };
 		AEAFBBD82AA02820003D92B5 /* UIDevice+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ex.swift"; sourceTree = "<group>"; };
@@ -2530,15 +2572,6 @@
 			path = Speech;
 			sourceTree = "<group>";
 		};
-		AE2657C8287520DA002C88FB /* ProcessCommunication */ = {
-			isa = PBXGroup;
-			children = (
-				AE2657C92875218C002C88FB /* ProcessComViewController.swift */,
-				AE4B07602B3AECEC008BC4E3 /* ProcessComSendViewController.swift */,
-			);
-			path = ProcessCommunication;
-			sourceTree = "<group>";
-		};
 		AE4D08E52730259200899D2C /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2547,7 +2580,6 @@
 				AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */,
 				AEAFBBCF2AA025A6003D92B5 /* WebDemoViewController.swift */,
 				AE6A7F4C274BE13B004A797A /* WebViewController.swift */,
-				AEAFBBD12AA0260F003D92B5 /* WKHttpHandler.swift */,
 			);
 			path = WKWebView;
 			sourceTree = "<group>";
@@ -2960,6 +2992,7 @@
 		AE62CB7427254DC9007D51CD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				AE70901E2CB69B9E005F38F6 /* HWThrottle */,
 				AE12884C281CEC9D0049A5E4 /* calculator */,
 				AE62CB7B27254DD6007D51CD /* Auth.swift */,
 				AE62CB7927254DD6007D51CD /* CatoMonitor.swift */,
@@ -2976,6 +3009,7 @@
 				AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */,
 				AEB9CBA82B464055008BD731 /* NetTool.swift */,
 				AE257F902B9744F400AEEABB /* NetToolView.swift */,
+				AE7090152CB69A14005F38F6 /* LivePhoto.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2983,6 +3017,7 @@
 		AE62CBAA27255BE2007D51CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AE8C505D2C94422D00021D92 /* PopView.swift */,
 				AE62CBAF27255C1F007D51CD /* BarSlider.swift */,
 				AE62CBB927255C1F007D51CD /* FlowLayout.swift */,
 				AE62CBB827255C1F007D51CD /* FlowView.swift */,
@@ -3068,7 +3103,7 @@
 		AE62CBE527256630007D51CD /* Base_Web */ = {
 			isa = PBXGroup;
 			children = (
-				AE2657C8287520DA002C88FB /* ProcessCommunication */,
+				AE8C502E2C94404400021D92 /* TransferGoods */,
 				AECDC1562745E2AB0038BE68 /* Exception */,
 				AE1C4F74274380790097EAC1 /* RunLoop */,
 				AE1C4F462743468F0097EAC1 /* Patch */,
@@ -3454,6 +3489,33 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
+		AE70901A2CB69B9E005F38F6 /* Debounce */ = {
+			isa = PBXGroup;
+			children = (
+				AE7090182CB69B9E005F38F6 /* HWDebounce.h */,
+				AE7090192CB69B9E005F38F6 /* HWDebounce.m */,
+			);
+			path = Debounce;
+			sourceTree = "<group>";
+		};
+		AE70901D2CB69B9E005F38F6 /* Throttle */ = {
+			isa = PBXGroup;
+			children = (
+				AE70901B2CB69B9E005F38F6 /* HWThrottle.h */,
+				AE70901C2CB69B9E005F38F6 /* HWThrottle.m */,
+			);
+			path = Throttle;
+			sourceTree = "<group>";
+		};
+		AE70901E2CB69B9E005F38F6 /* HWThrottle */ = {
+			isa = PBXGroup;
+			children = (
+				AE70901A2CB69B9E005F38F6 /* Debounce */,
+				AE70901D2CB69B9E005F38F6 /* Throttle */,
+			);
+			path = HWThrottle;
+			sourceTree = "<group>";
+		};
 		AE71F21F2C58E78900DE980A /* Xlog */ = {
 			isa = PBXGroup;
 			children = (
@@ -3666,6 +3728,53 @@
 				AE890D0F27240DFC00FAB7D7 /* Global.swift */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		AE8C502E2C94404400021D92 /* TransferGoods */ = {
+			isa = PBXGroup;
+			children = (
+				AE8C50462C94406100021D92 /* TransferGoodsViewController.swift */,
+				AE8C502F2C94406000021D92 /* WKHttpHandler.swift */,
+				AE8C50312C94406000021D92 /* CatchWebInfo.swift */,
+				AE8C50332C94406100021D92 /* CatchHandler */,
+				AE8C503B2C94406100021D92 /* Models */,
+				AE8C50422C94406100021D92 /* Views */,
+			);
+			path = TransferGoods;
+			sourceTree = "<group>";
+		};
+		AE8C50332C94406100021D92 /* CatchHandler */ = {
+			isa = PBXGroup;
+			children = (
+				AE8C50342C94406100021D92 /* KuaiShouCatchHandler.swift */,
+				AE8C50352C94406100021D92 /* DouYinCatchHandler.swift */,
+				AE8C50362C94406100021D92 /* TMallCatchHandler.swift */,
+				AE8C50372C94406100021D92 /* Mall1688CatchHandler.swift */,
+				AE8C50382C94406100021D92 /* TaobaoCatchHandler.swift */,
+				AE8C50392C94406100021D92 /* PDDCatchHandler.swift */,
+			);
+			path = CatchHandler;
+			sourceTree = "<group>";
+		};
+		AE8C503B2C94406100021D92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE8C503C2C94406100021D92 /* CatchGoodsHandler.swift */,
+				AE8C503D2C94406100021D92 /* CatchGoods.swift */,
+				AE8C503E2C94406100021D92 /* CatchWebSiteInfo.swift */,
+				AE8C503F2C94406100021D92 /* GoodsSaveQuene.swift */,
+				AE8C50402C94406100021D92 /* ImageUploadQuene.swift */,
+				AE8C50412C94406100021D92 /* CatchExtension.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AE8C50422C94406100021D92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE8C50452C94406100021D92 /* TransferIndicatorView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AEA0A120278940440044D012 /* ImageIO */ = {
@@ -4460,6 +4569,8 @@
 				AEE010C72742569200C155D8 /* MJRefreshBackStateFooter.h in Headers */,
 				AE62CA0E2725425A007D51CD /* FMResultSet.h in Headers */,
 				AE66E15B27537992006432FE /* OpenCV.h in Headers */,
+				AE70901F2CB69B9E005F38F6 /* HWThrottle.h in Headers */,
+				AE7090202CB69B9E005F38F6 /* HWDebounce.h in Headers */,
 				AE66E11D275369D3006432FE /* version.h in Headers */,
 				AE66E11A275369D3006432FE /* vorbis_parser.h in Headers */,
 				AE62CA5F2725429B007D51CD /* TZGifPhotoPreviewController.h in Headers */,
@@ -5080,6 +5191,8 @@
 				AE62CBCE27255C20007D51CD /* GridView.swift in Sources */,
 				AE62CAB0272542D1007D51CD /* PaletteTarget.m in Sources */,
 				AE62CA0B2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
+				AE7090232CB69B9E005F38F6 /* HWThrottle.m in Sources */,
+				AE7090242CB69B9E005F38F6 /* HWDebounce.m in Sources */,
 				AE62CB9027254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CB4C27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AE128874281CED0A0049A5E4 /* calculator.swift in Sources */,
@@ -5102,6 +5215,7 @@
 				AE62CBC527255C20007D51CD /* ProgressButton.swift in Sources */,
 				AEF5BF0A2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */,
 				AE1C4F5D274346BD0097EAC1 /* randtable.c in Sources */,
+				AE8C50572C94406100021D92 /* CatchExtension.swift in Sources */,
 				AEC23C8829E78CF400E93C5A /* HardwareInfoViewController.swift in Sources */,
 				AE62CBC227255C20007D51CD /* LimitTextView.swift in Sources */,
 				AE1C4F7327434E300097EAC1 /* ADViewController.swift in Sources */,
@@ -5110,7 +5224,6 @@
 				AEE0104127424D4500C155D8 /* VolumeView.swift in Sources */,
 				AE6E5DC2273FB6FF00523EA8 /* CrossLine.swift in Sources */,
 				AE66E19227537F98006432FE /* ImageRecognitionViewController.swift in Sources */,
-				AEAFBBD22AA0260F003D92B5 /* WKHttpHandler.swift in Sources */,
 				AEE011022742581500C155D8 /* LockView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE74AAC727D4A14C00296960 /* CalculatorViewController.swift in Sources */,
@@ -5120,6 +5233,7 @@
 				20A9655D2903C794007F8526 /* UILabel+Extension.swift in Sources */,
 				AE62CB8727254DD7007D51CD /* HttpClient.swift in Sources */,
 				AE62CB6B27254B12007D51CD /* GandAlert.swift in Sources */,
+				AE8C504C2C94406100021D92 /* KuaiShouCatchHandler.swift in Sources */,
 				AE6A7F4D274BE13B004A797A /* WebViewController.swift in Sources */,
 				AE4D0904273032E700899D2C /* CacheProtocol.swift in Sources */,
 				AEE010E72742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
@@ -5145,9 +5259,12 @@
 				AEE010512742547C00C155D8 /* CaptureSession.swift in Sources */,
 				AEE0115527425D8800C155D8 /* GameService.swift in Sources */,
 				20A9657C2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
+				AE8C50502C94406100021D92 /* TaobaoCatchHandler.swift in Sources */,
 				AEE0104627424EE700C155D8 /* TakePhotoViewController.swift in Sources */,
 				AEE010C02742569200C155D8 /* NSBundle+MJRefresh.m in Sources */,
+				AE8C504F2C94406100021D92 /* Mall1688CatchHandler.swift in Sources */,
 				AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */,
+				AE8C505B2C94406100021D92 /* TransferGoodsViewController.swift in Sources */,
 				AEE010722742560200C155D8 /* DynamicMitoViewController.swift in Sources */,
 				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
 				20A965772903D34C007F8526 /* PHPLibraryTool.swift in Sources */,
@@ -5174,6 +5291,7 @@
 				AE6E5DC3273FB6FF00523EA8 /* TouchTestViewController.swift in Sources */,
 				AEF8666D274B9BCD002E33E5 /* MobileNet.mlmodel in Sources */,
 				AEE0115127425D8800C155D8 /* Constants.swift in Sources */,
+				AE8C504D2C94406100021D92 /* DouYinCatchHandler.swift in Sources */,
 				AE62CB1F2725487B007D51CD /* LogInfo.swift in Sources */,
 				AE62CB8A27254DD7007D51CD /* CatoMonitor.swift in Sources */,
 				AE62CAEF272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
@@ -5192,7 +5310,6 @@
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CB3A27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE1C4F62274346BD0097EAC1 /* huffman.c in Sources */,
-				AE4B07612B3AECEC008BC4E3 /* ProcessComSendViewController.swift in Sources */,
 				AE62CA5C2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE7234AE278E6B640088C791 /* PHAssert+Extension.swift in Sources */,
 				AE66E18C27537CC9006432FE /* OpenCVMenuViewController.swift in Sources */,
@@ -5212,6 +5329,7 @@
 				AEF6CB3F287A79E500352100 /* Style+Extension.swift in Sources */,
 				AEE010732742560200C155D8 /* ImageSetListViewController.swift in Sources */,
 				AE74AAC927D4A36A00296960 /* Calculator.swift in Sources */,
+				AE8C50532C94406100021D92 /* CatchGoods.swift in Sources */,
 				AE63390F272AF37B00FBAAA3 /* NotifcationViewController.swift in Sources */,
 				AE66E1B427538679006432FE /* PreviewView.mm in Sources */,
 				AEE010C92742569200C155D8 /* MJRefreshBackGifFooter.m in Sources */,
@@ -5240,6 +5358,7 @@
 				AE62CA132725425A007D51CD /* FMDatabase.m in Sources */,
 				AE62CB8127254DD7007D51CD /* Tool.swift in Sources */,
 				AE62CBBF27255C20007D51CD /* TimerButton.swift in Sources */,
+				AE8C505E2C94422D00021D92 /* PopView.swift in Sources */,
 				AEE010F52742569200C155D8 /* MJRefreshAutoFooter.m in Sources */,
 				AE62CAD4272542DC007D51CD /* ShadowVideoPlayerViewController.swift in Sources */,
 				AEAFBBD62AA02658003D92B5 /* ObjcTry.m in Sources */,
@@ -5279,7 +5398,9 @@
 				AE8C8DB027900BA300C656DF /* Codable+Extension.swift in Sources */,
 				AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */,
 				AE62CB8427254DD7007D51CD /* FPSTool.swift in Sources */,
+				AE8C50482C94406100021D92 /* WKHttpHandler.swift in Sources */,
 				20A965622903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
+				AE8C50512C94406100021D92 /* PDDCatchHandler.swift in Sources */,
 				AE62CB7127254B12007D51CD /* Toast.swift in Sources */,
 				AE66E1C5275386D8006432FE /* FFMpegMenuViewController.swift in Sources */,
 				AE5846472C15515C00F758EC /* FileListPreview.swift in Sources */,
@@ -5287,14 +5408,17 @@
 				AEB649C5273FF45E00BCBF4E /* RippleAnimtaionView.swift in Sources */,
 				AE62CB3127254946007D51CD /* UIWindow+Base.swift in Sources */,
 				AE4D08FB273032E700899D2C /* DiskFileCache.swift in Sources */,
+				AE8C50542C94406100021D92 /* CatchWebSiteInfo.swift in Sources */,
 				AE62CB4F27254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE62CBDD27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AEE010772742560200C155D8 /* MitoConfig.swift in Sources */,
+				AE8C504A2C94406100021D92 /* CatchWebInfo.swift in Sources */,
 				AEE0104C2742509300C155D8 /* WatermarkViewController.swift in Sources */,
 				AE66E18E27537D37006432FE /* GrayVideoViewController.swift in Sources */,
 				AE66E1C82753872C006432FE /* AudioDecoderViewController.swift in Sources */,
 				AEE010CF2742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				AE6E5DC5273FB6FF00523EA8 /* SettingViewController.swift in Sources */,
+				AE8C50552C94406100021D92 /* GoodsSaveQuene.swift in Sources */,
 				AE6B2DDB2755155F0066017F /* MediaBroswerViewController.swift in Sources */,
 				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
 				AEE010702742560200C155D8 /* MitoPlayViewController.swift in Sources */,
@@ -5329,6 +5453,7 @@
 				AEF86666274B9B52002E33E5 /* ClassifyingImagesViewController.swift in Sources */,
 				AE257F912B9744F400AEEABB /* NetToolView.swift in Sources */,
 				AE62CB5C2725495E007D51CD /* Array+Extension.swift in Sources */,
+				AE8C50562C94406100021D92 /* ImageUploadQuene.swift in Sources */,
 				AE62CA1C2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE62CA7A2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE6E5DCA273FC34600523EA8 /* StyleTableViewController.swift in Sources */,
@@ -5339,6 +5464,7 @@
 				AEE010BA2742569200C155D8 /* UIScrollView+MJExtension.m in Sources */,
 				AE62CBAC27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				AE62CA622725429B007D51CD /* TZImageManager.m in Sources */,
+				AE7090162CB69A14005F38F6 /* LivePhoto.swift in Sources */,
 				AE1C4F5E274346BD0097EAC1 /* mk251.c in Sources */,
 				AE62CA4E2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE62CADD272542DC007D51CD /* ShadowPlayer.swift in Sources */,
@@ -5346,6 +5472,7 @@
 				AE62CA412725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAF5272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE128860281CED0A0049A5E4 /* glyph.swift in Sources */,
+				AE8C504E2C94406100021D92 /* TMallCatchHandler.swift in Sources */,
 				AEE010782742560200C155D8 /* CollectedViewController.swift in Sources */,
 				AE1C4F60274346BD0097EAC1 /* decompress.c in Sources */,
 				AE62CBD727255C20007D51CD /* FlowView.swift in Sources */,
@@ -5355,6 +5482,7 @@
 				AE66E1D927538EE0006432FE /* PullLiveViewController.swift in Sources */,
 				AE66E1DA27538EE0006432FE /* PushLiveViewController.swift in Sources */,
 				AEE010F22742569200C155D8 /* MJRefreshBackFooter.m in Sources */,
+				AE8C50522C94406100021D92 /* CatchGoodsHandler.swift in Sources */,
 				AE72F530273EB9A50060456A /* CityTableViewCell.swift in Sources */,
 				AE62CB4327254947007D51CD /* UINavigationController+Extension.swift in Sources */,
 				AE66E1DB27538EE0006432FE /* LivePreview.swift in Sources */,
@@ -5393,7 +5521,7 @@
 				AE66E1D827538EE0006432FE /* HeartView.swift in Sources */,
 				AE128868281CED0A0049A5E4 /* expression.swift in Sources */,
 				AEE010AA2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
-				AE2657CA2875218C002C88FB /* ProcessComViewController.swift in Sources */,
+				AE8C505A2C94406100021D92 /* TransferIndicatorView.swift in Sources */,
 				AE128888281CED0A0049A5E4 /* number.swift in Sources */,
 				AE58465F2C15515C00F758EC /* PreviewManager.swift in Sources */,
 				AE256CB42A2D8EB00022F6BC /* SpeechViewController.swift in Sources */,
@@ -5733,6 +5861,7 @@
 				AE62CA1E2725425A007D51CD /* FMResultSet.m in Sources */,
 				AEF8665A274B6F5B002E33E5 /* Store.swift in Sources */,
 				AEE010DD2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
+				AE7090172CB69A14005F38F6 /* LivePhoto.swift in Sources */,
 				AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */,
 				AE62CBC127255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CBCA27255C20007D51CD /* HintView.swift in Sources */,
@@ -5802,6 +5931,7 @@
 				AE62CA432725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAE5272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
 				AEE010532742547C00C155D8 /* CaptureSession.swift in Sources */,
+				AE8C505F2C94422D00021D92 /* PopView.swift in Sources */,
 				AEE010AC2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
 				AE62CBDF27255C20007D51CD /* GrandTextView.swift in Sources */,
 				AE5846412C15515C00F758EC /* FBFile.swift in Sources */,
@@ -5816,6 +5946,8 @@
 				AEF6CB3D287A79D700352100 /* Style+Extension.swift in Sources */,
 				AE62CA5E2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE62CB3C27254947007D51CD /* Foundation+Extension.swift in Sources */,
+				AE7090212CB69B9E005F38F6 /* HWThrottle.m in Sources */,
+				AE7090222CB69B9E005F38F6 /* HWDebounce.m in Sources */,
 				AE62CBC727255C20007D51CD /* ProgressButton.swift in Sources */,
 				AE58466A2C15515C00F758EC /* WebviewPreviewViewContoller.swift in Sources */,
 				AEE010F42742569200C155D8 /* MJRefreshBackFooter.m in Sources */,

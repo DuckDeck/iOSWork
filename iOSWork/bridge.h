@@ -26,4 +26,5 @@
 #import "ClickImage.h"
 #import "BaseBridge.h"
 #import "XlogDecoder.h"
+#import "HWDebounce.h"
 #endif /* bridge_h */

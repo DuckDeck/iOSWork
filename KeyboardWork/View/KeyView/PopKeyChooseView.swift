@@ -43,7 +43,7 @@ class PopKeyChooseView:UIView{
                 _selectIndex = newValue
                 let lblNew = stackView.arrangedSubviews[_selectIndex] as! UILabel
                 lblNew.textColor = UIColor.white
-                lblNew.backgroundColor = Colors.color49C167
+                lblNew.backgroundColor = .green
                 if let lblAngle = lblNew.viewWithTag(100) as? UILabel{
                     lblAngle.textColor = UIColor.white
                 }

@@ -298,7 +298,7 @@ extension FullKeyboardView {
             }
             if pressedKey!.fillColor == cKeyBgColor2 {
                 pressedKey?.keyLayer?.fillColor = (UIColor.white | Colors.color696B70).cgColor
-            } else if pressedKey!.fillColor == Colors.color49C167{
+            } else if pressedKey!.fillColor == .green{
                 pressedKey?.keyLayer?.fillColor = Colors.color92DAA4.cgColor
             }else {
                 pressedKey?.keyLayer?.fillColor = (fillColor ?? cKeyBgPressColor).cgColor

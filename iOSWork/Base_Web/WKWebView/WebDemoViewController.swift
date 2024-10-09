@@ -153,14 +153,14 @@ class WebDemoViewController: UIViewController {
                log("💥", "Uncaught", [`${e.message} at ${e.filename}:${e.lineno}:${e.colno}`])
             })
         """
-        u.add(LoggingMessageHandler(), name: "logging")
+        u.add(LogMessageHandler(), name: "logging")
         u.addUserScript(WKUserScript(source: overrideConsole, injectionTime: .atDocumentStart, forMainFrameOnly: true))
         v.userContentController = u
         return v
     }()
 }
 
-class LoggingMessageHandler: NSObject, WKScriptMessageHandler {
+class LogMessageHandler: NSObject, WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "logging", let str = message.body as? String {
           print(str)

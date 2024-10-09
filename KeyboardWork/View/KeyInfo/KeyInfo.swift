@@ -86,7 +86,7 @@ struct KeyInfo{
 //                k.text = "确定"
 //                k.fontSize = 20
 //                k.textColor = UIColor.white
-//                k.fillColor = Colors.color49C167
+//                k.fillColor = .green
 //                k.isEnable = true
 //                k.keyType = .returnKey(.intermediate)
 //            } else {
@@ -108,7 +108,7 @@ struct KeyInfo{
                     }
                     if k.isEnable{
                         k.textColor = UIColor.white
-                        k.fillColor = Colors.color49C167
+                        k.fillColor = .green
                         k.keyType = .returnKey(.usable)
                     } else {
                         k.textColor = Colors.color1E2028.withAlphaComponent(0.3) | UIColor.white.withAlphaComponent(0.2)
