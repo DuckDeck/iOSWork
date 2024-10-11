@@ -830,6 +830,7 @@
 		AE7090222CB69B9E005F38F6 /* HWDebounce.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7090192CB69B9E005F38F6 /* HWDebounce.m */; };
 		AE7090232CB69B9E005F38F6 /* HWThrottle.m in Sources */ = {isa = PBXBuildFile; fileRef = AE70901C2CB69B9E005F38F6 /* HWThrottle.m */; };
 		AE7090242CB69B9E005F38F6 /* HWDebounce.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7090192CB69B9E005F38F6 /* HWDebounce.m */; };
+		AE7090272CB6A680005F38F6 /* LivePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7090262CB6A674005F38F6 /* LivePhotoViewController.swift */; };
 		AE71F2162C579A9600DE980A /* ShadowVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */; };
 		AE71F2172C579A9600DE980A /* ShadowVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */; };
 		AE71F2212C58E79D00DE980A /* XlogDecodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE71F2202C58E79D00DE980A /* XlogDecodeViewController.swift */; };
@@ -1824,6 +1825,7 @@
 		AE7090192CB69B9E005F38F6 /* HWDebounce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWDebounce.m; sourceTree = "<group>"; };
 		AE70901B2CB69B9E005F38F6 /* HWThrottle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWThrottle.h; sourceTree = "<group>"; };
 		AE70901C2CB69B9E005F38F6 /* HWThrottle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWThrottle.m; sourceTree = "<group>"; };
+		AE7090262CB6A674005F38F6 /* LivePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotoViewController.swift; sourceTree = "<group>"; };
 		AE71F2152C579A9600DE980A /* ShadowVideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowVideoInfo.swift; sourceTree = "<group>"; };
 		AE71F2202C58E79D00DE980A /* XlogDecodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XlogDecodeViewController.swift; sourceTree = "<group>"; };
 		AE71F2222C58E7F400DE980A /* XlogDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XlogDecoder.m; sourceTree = "<group>"; };
@@ -3081,6 +3083,7 @@
 		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
 			isa = PBXGroup;
 			children = (
+				AE7090252CB6A66C005F38F6 /* LivePhoto */,
 				AE256CB22A2D8E980022F6BC /* Speech */,
 				AEC23C8629E78CD900E93C5A /* HardwareMonitor */,
 				AE043D7627897B9000626B82 /* ImageIO */,
@@ -3514,6 +3517,14 @@
 				AE70901D2CB69B9E005F38F6 /* Throttle */,
 			);
 			path = HWThrottle;
+			sourceTree = "<group>";
+		};
+		AE7090252CB6A66C005F38F6 /* LivePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				AE7090262CB6A674005F38F6 /* LivePhotoViewController.swift */,
+			);
+			path = LivePhoto;
 			sourceTree = "<group>";
 		};
 		AE71F21F2C58E78900DE980A /* Xlog */ = {
@@ -5387,6 +5398,7 @@
 				AEE010AD2742569200C155D8 /* MJRefreshConst.m in Sources */,
 				AEE0115427425D8800C155D8 /* BaseBoard.swift in Sources */,
 				AE080CD227D3A065007F42E1 /* WebviewMemoryViewController.swift in Sources */,
+				AE7090272CB6A680005F38F6 /* LivePhotoViewController.swift in Sources */,
 				AEE010E42742569200C155D8 /* MJRefreshStateHeader.m in Sources */,
 				AE1C4F6C274346BD0097EAC1 /* bspatch.c in Sources */,
 				20A965592903C6B2007F8526 /* UIView+Extension.swift in Sources */,
