@@ -8,8 +8,7 @@
 import Foundation
 
 class VideoCreate {
-    
-    func generateVideo(image:UIImage, duration: Double, size: CGSize, completion: @escaping (URL?) -> Void) {
+    func generateVideo(images: [UIImage], duration: Double, size: CGSize, completion: @escaping (URL?) -> Void) {
         // 创建视频输出路径
         let outputURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("tmp_video.mp4")
         
@@ -51,96 +50,56 @@ class VideoCreate {
         videoWriter.startWriting()
         videoWriter.startSession(atSourceTime: .zero)
         
-        // 准备像素缓冲区
-        let pixelBufferPool = pixelBufferAdaptor.pixelBufferPool!
-        let frameDuration = CMTimeMake(value: 1, timescale: 30) // 每帧持续 1/30 秒
-        let totalFrames = Int(duration * 30) // 计算总帧数
-        
-        DispatchQueue.global().async {
-            var frameCount = 0
-            while frameCount < totalFrames {
-                autoreleasepool {
-                    let presentationTime = CMTimeMultiply(frameDuration, multiplier: Int32(frameCount))
-                    if let pixelBuffer = self.createPixelBuffer(from: image, size: size, pixelBufferPool: pixelBufferPool), videoInput.isReadyForMoreMediaData {
-                        pixelBufferAdaptor.append(pixelBuffer, withPresentationTime: presentationTime)
-                    }
-                    frameCount += 1
-                }
-            }
+        if images.count == 1 {
+            // 准备像素缓冲区
+            let pixelBufferPool = pixelBufferAdaptor.pixelBufferPool!
+            let frameDuration = CMTimeMake(value: 1, timescale: 30) // 每帧持续 1/30 秒
+            let totalFrames = Int(duration * 30) // 计算总帧数
             
-            // 结束写入
-            videoInput.markAsFinished()
-            videoWriter.finishWriting {
-                DispatchQueue.main.async {
-                    completion(videoWriter.status == .completed ? outputURL : nil)
-                }
-            }
-        }
-    }
-    
-    
-    func generateVideo(from images: [UIImage], frameDuration: Double, outputSize: CGSize, completion: @escaping (URL?) -> Void) {
-        // 创建视频输出路径
-        let outputURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("tmp_video.mp4")
-        
-        // 删除已有文件（如果存在）
-        if FileManager.default.fileExists(atPath: outputURL.path) {
-            try? FileManager.default.removeItem(at: outputURL)
-        }
-        
-        // 设置视频写入器
-        let writer = try? AVAssetWriter(outputURL: outputURL, fileType: .mp4)
-        guard let videoWriter = writer else {
-            completion(nil)
-            return
-        }
-        
-        // 设置视频输入
-        let videoSettings: [String: Any] = [
-            AVVideoCodecKey: AVVideoCodecType.h264,
-            AVVideoWidthKey: outputSize.width,
-            AVVideoHeightKey: outputSize.height
-        ]
-        let videoInput = AVAssetWriterInput(mediaType: .video, outputSettings: videoSettings)
-        videoInput.expectsMediaDataInRealTime = false
-        
-        // 设置像素缓冲区
-        let pixelBufferAttributes: [String: Any] = [
-            kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32ARGB),
-            kCVPixelBufferWidthKey as String: outputSize.width,
-            kCVPixelBufferHeightKey as String: outputSize.height
-        ]
-        let pixelBufferAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: videoInput, sourcePixelBufferAttributes: pixelBufferAttributes)
-        
-        // 添加输入到写入器
-        if videoWriter.canAdd(videoInput) {
-            videoWriter.add(videoInput)
-        }
-        
-        // 开始写入
-        videoWriter.startWriting()
-        videoWriter.startSession(atSourceTime: .zero)
-        
-        // 准备像素缓冲区
-        let pixelBufferPool = pixelBufferAdaptor.pixelBufferPool!
-        let frameDurationTime = CMTimeMake(value: Int64(frameDuration * 1000), timescale: 1000) // 每帧的持续时间
-        
-        DispatchQueue.global().async {
-            var frameCount = 0
-            for image in images {
-                autoreleasepool {
-                    let presentationTime = CMTimeMultiply(frameDurationTime, multiplier: Int32(frameCount))
-                    if let pixelBuffer = self.createPixelBuffer(from: image, size: outputSize, pixelBufferPool: pixelBufferPool), videoInput.isReadyForMoreMediaData {
-                        pixelBufferAdaptor.append(pixelBuffer, withPresentationTime: presentationTime)
+            DispatchQueue.global().async {
+                var frameCount = 0
+                while frameCount < totalFrames {
+                    autoreleasepool {
+                        let presentationTime = CMTimeMultiply(frameDuration, multiplier: Int32(frameCount))
+                        if let pixelBuffer = self.createPixelBuffer(from: images[0], size: size, pixelBufferPool: pixelBufferPool), videoInput.isReadyForMoreMediaData {
+                            pixelBufferAdaptor.append(pixelBuffer, withPresentationTime: presentationTime)
+                        }
+                        frameCount += 1
                     }
-                    frameCount += 1
+                }
+                
+                // 结束写入
+                videoInput.markAsFinished()
+                videoWriter.finishWriting {
+                    DispatchQueue.main.async {
+                        completion(videoWriter.status == .completed ? outputURL : nil)
+                    }
                 }
             }
+        } else {
+            // 准备像素缓冲区
+            let pixelBufferPool = pixelBufferAdaptor.pixelBufferPool!
+            let frameDurationTime = CMTimeMake(value: Int64(duration * 1000), timescale: 1000) // 每帧的持续时间
             
-            // 结束写入
-            videoInput.markAsFinished()
-            videoWriter.finishWriting {
-                completion(videoWriter.status == .completed ? outputURL : nil)
+            DispatchQueue.global().async {
+                var frameCount = 0
+                for image in images {
+                    autoreleasepool {
+                        let presentationTime = CMTimeMultiply(frameDurationTime, multiplier: Int32(frameCount))
+                        if let pixelBuffer = self.createPixelBuffer(from: image, size: size, pixelBufferPool: pixelBufferPool), videoInput.isReadyForMoreMediaData {
+                            pixelBufferAdaptor.append(pixelBuffer, withPresentationTime: presentationTime)
+                        }
+                        frameCount += 1
+                    }
+                }
+                
+                // 结束写入
+                videoInput.markAsFinished()
+                videoWriter.finishWriting {
+                    DispatchQueue.main.async {
+                        completion(videoWriter.status == .completed ? outputURL : nil)
+                    }
+                }
             }
         }
     }
