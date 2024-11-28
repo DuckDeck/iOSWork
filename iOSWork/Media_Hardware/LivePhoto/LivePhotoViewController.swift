@@ -5,6 +5,8 @@
 //  Created by Stan Hu on 2024/10/9.
 //
 
+import AVFoundation
+
 class LivePhotoViewController: UIViewController,TZImagePickerControllerDelegate {
     var imgView: UIImageView!
     var arrImageInfo = [String]()
@@ -13,8 +15,7 @@ class LivePhotoViewController: UIViewController,TZImagePickerControllerDelegate 
     var imagePickerController: TZImagePickerController!
     let lblInfo = UILabel()
     var tmpImg: UIImage?
-    private let videoSize = CGSize(width: 640, height: 480)
-    private let videoDuration: TimeInterval = 1.5 // 视频时长1.5秒
+    var videoURL: URL?
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "ImageIO"
@@ -29,14 +30,15 @@ class LivePhotoViewController: UIViewController,TZImagePickerControllerDelegate 
         }
         
         imgView = UIImageView()
-        imgView.contentMode = .scaleToFill
+        imgView.contentMode = .scaleAspectFit
         imgView.layer.borderColor = UIColor.random.cgColor
         imgView.layer.borderWidth = 1
         view.addSubview(imgView)
         imgView.snp.makeConstraints { make in
-            make.left.equalTo(0)
+            make.centerX.equalToSuperview()
             make.top.equalTo(10)
-            make.height.width.equalTo(ScreenWidth).multipliedBy(0.5)
+            make.width.equalTo(ScreenWidth - 80)
+            make.height.equalTo(250)
         }
         
         
@@ -44,15 +46,28 @@ class LivePhotoViewController: UIViewController,TZImagePickerControllerDelegate 
         let btnSave = UIButton().title(title: "保存").color(color: UIColor.red).addTo(view: view)
         btnSave.addTarget(self, action: #selector(saveImg), for: .touchUpInside)
         btnSave.snp.makeConstraints { make in
-            make.top.equalTo(imgView.snp.bottom)
-            make.left.equalTo(20)
+            make.left.equalTo(0)
+            make.top.equalTo(100)
         }
     }
     
 
     
     @objc func saveImg() {
-      
+        guard let videoURL = videoURL else { return  }
+        LivePhoto.generate(from: nil, videoURL: videoURL) { _ in
+            
+        } completion: { photo, resouce in
+            if let source = resouce {
+                LivePhoto.saveToLibrary(source) { finish in
+                    if finish {
+                        Toast.showToast(msg: "保存成功")
+                    }
+                }
+            }
+           
+        }
+
     }
 
     @objc func chooseLocalImage() {
@@ -60,21 +75,31 @@ class LivePhotoViewController: UIViewController,TZImagePickerControllerDelegate 
     }
     
     func createVideo(img:UIImage) {
-        let videoUrl = FileManager.default.temporaryDirectory.appendingPathComponent("zoom_video.mp4")
-    
-//        shadowPlayer = ShadowVideoPlayerView(frame: CGRect(), url: videoUrl)
-//        shadowPlayer.player.isAutoPlay = false
-//        shadowPlayer.title = "Live Photo"
-//        shadowPlayer.backgroundColor = UIColor.black
-//        view.addSubview(shadowPlayer)
-//        shadowPlayer.snp.makeConstraints { (m) in
-//            m.left.equalTo(ScreenWidth / 2)
-//            m.top.equalTo(imgView)
-//            m.height.width.equalTo(ScreenWidth).multipliedBy(0.5)
-//        }
+        imgView.image = img
+        VideoCreate().generateVideo(image: img, duration: 3, size: img.size) {  videoUrl in
+            if let u = videoUrl {
+                self.playVideo(url: u)
+            }
+        }
     }
-    
-    
+  
+    func playVideo(url:URL) {
+        videoURL = url
+        shadowPlayer = ShadowVideoPlayerView(frame: CGRect(), url: url)
+        shadowPlayer.player.isAutoPlay = false
+        shadowPlayer.title = "Live Photo"
+        shadowPlayer.backgroundColor = UIColor.black
+        view.addSubview(shadowPlayer)
+        shadowPlayer.snp.makeConstraints { (m) in
+            m.left.equalTo(0)
+            m.top.equalTo(imgView.snp.bottom)
+            m.width.equalTo(ScreenWidth)
+            m.height.equalTo(ScreenWidth).multipliedBy(0.6)
+        }
+    }
+
+   
+
    
 }
 

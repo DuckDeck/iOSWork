@@ -908,6 +908,8 @@
 		AE958D542AB934C800FD599B /* ZLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE958D532AB934C800FD599B /* ZLog.swift */; };
 		AE958D562AB934C800FD599B /* ZLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE958D532AB934C800FD599B /* ZLog.swift */; };
 		AE958D572AB934C800FD599B /* ZLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE958D532AB934C800FD599B /* ZLog.swift */; };
+		AE96A5352CF7FC62004C2A00 /* VideoCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96A5342CF7FC62004C2A00 /* VideoCreate.swift */; };
+		AE96A5362CF7FC62004C2A00 /* VideoCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE96A5342CF7FC62004C2A00 /* VideoCreate.swift */; };
 		AE97D3322745FCAF00157DBE /* TriggerErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE97D3312745FCAF00157DBE /* TriggerErrorViewController.swift */; };
 		AE9EE9F628083E2000EBE70A /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9EE9F528083E2000EBE70A /* Shake.swift */; };
 		AE9EE9F8280843B500EBE70A /* PanCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9EE9F7280843B500EBE70A /* PanCollectionViewController.swift */; };
@@ -1892,6 +1894,7 @@
 		AE8C8DAF27900BA300C656DF /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
 		AE94D3322742421A00ACEDDC /* AnimationVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationVIew.swift; sourceTree = "<group>"; };
 		AE958D532AB934C800FD599B /* ZLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLog.swift; sourceTree = "<group>"; };
+		AE96A5342CF7FC62004C2A00 /* VideoCreate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCreate.swift; sourceTree = "<group>"; };
 		AE97D3312745FCAF00157DBE /* TriggerErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerErrorViewController.swift; sourceTree = "<group>"; };
 		AE9EE9F528083E2000EBE70A /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 		AE9EE9F7280843B500EBE70A /* PanCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanCollectionViewController.swift; sourceTree = "<group>"; };
@@ -3012,6 +3015,7 @@
 				AEB9CBA82B464055008BD731 /* NetTool.swift */,
 				AE257F902B9744F400AEEABB /* NetToolView.swift */,
 				AE7090152CB69A14005F38F6 /* LivePhoto.swift */,
+				AE96A5342CF7FC62004C2A00 /* VideoCreate.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -5235,6 +5239,7 @@
 				AEE0104127424D4500C155D8 /* VolumeView.swift in Sources */,
 				AE6E5DC2273FB6FF00523EA8 /* CrossLine.swift in Sources */,
 				AE66E19227537F98006432FE /* ImageRecognitionViewController.swift in Sources */,
+				AE96A5362CF7FC62004C2A00 /* VideoCreate.swift in Sources */,
 				AEE011022742581500C155D8 /* LockView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE74AAC727D4A14C00296960 /* CalculatorViewController.swift in Sources */,
@@ -5935,6 +5940,7 @@
 				20A9657B2903D377007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
 				AE12887B281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				AEAFBBDB2AA02820003D92B5 /* UIDevice+Ex.swift in Sources */,
+				AE96A5352CF7FC62004C2A00 /* VideoCreate.swift in Sources */,
 				AE958D572AB934C800FD599B /* ZLog.swift in Sources */,
 				AE62CB7027254B12007D51CD /* GrandCue.swift in Sources */,
 				AE62CB00272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
