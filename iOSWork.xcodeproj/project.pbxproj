@@ -4334,9 +4334,9 @@
 			isa = PBXGroup;
 			children = (
 				AEF5BEFB2ADD2BBF00A7305D /* IconNames.swift */,
+				AEF5BF052ADD2BBF00A7305D /* UIFont+BBIconFont.swift */,
 				AEF5BEFC2ADD2BBF00A7305D /* UIImage+BBIconFont.swift */,
 				AEF5BEFD2ADD2BBF00A7305D /* font */,
-				AEF5BF052ADD2BBF00A7305D /* UIFont+BBIconFont.swift */,
 			);
 			path = IconFont;
 			sourceTree = "<group>";
