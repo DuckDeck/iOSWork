@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -4609,7 +4609,6 @@
 				AE7E745A272252AC00F0C19C /* Embed App Extensions */,
 				AE890D0E27240DEC00FAB7D7 /* Embed Frameworks */,
 				42AF18CD5F0531D08136AB1A /* [CP] Embed Pods Frameworks */,
-				AEFC8CF22AD6E1AF007C57FF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -4791,6 +4790,7 @@
 			);
 			mainGroup = AE7E7419272251E300F0C19C;
 			packageReferences = (
+				AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "../GrandKit" */,
 			);
 			productRefGroup = AE7E7423272251E300F0C19C /* Products */;
 			projectDirPath = "";
@@ -5131,23 +5131,6 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		AEFC8CF22AD6E1AF007C57FF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nnode -v\n";
 		};
 		B4B0ACF013992D04F4F69B89 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -6835,6 +6818,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "../GrandKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../GrandKit;
+		};
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		AEA0A11727884A1B0044D012 /* GrandKit */ = {

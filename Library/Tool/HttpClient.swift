@@ -173,30 +173,6 @@ class HttpClient {
                     }
                 }
             }
-            //使用了这玩意直接报网络错误了，以后再看
-//            let session : Session = {
-//                let configuration = URLSessionConfiguration.af.default
-//
-//                if cacheTime ?? 0 > 0{
-//                    configuration.requestCachePolicy = .returnCacheDataElseLoad
-//                    let responseCacher = ResponseCacher(behavior: .modify { _, response in
-//                        let userInfo = ["date": Date(timeInterval: 100, since: Date())]
-//                      return CachedURLResponse(
-//                        response: response.response,
-//                        data: response.data,
-//                        userInfo: userInfo,
-//                        storagePolicy: .allowed)
-//                    })
-//                    let capacity = 100_000_000
-//                    let directory = (NSTemporaryDirectory() as NSString).appendingPathComponent(UUID().uuidString)
-//                    let cache = URLCache(memoryCapacity: capacity, diskCapacity: capacity, diskPath: directory)
-//                    configuration.urlCache = cache
-//                    return Session(configuration:configuration,cachedResponseHandler: responseCacher)
-//                } else {
-//
-//                    return Session(configuration: configuration)
-//                }
-//            }()
             
             AF.request(paras.isEmpty ? url : url + paras, method: method, parameters: params,encoding: encodeType, headers: headers).responseData { data in
                 if let d = data.data {
@@ -210,7 +186,13 @@ class HttpClient {
         }
     }
     
-    func completion<T: Codable>(completed: @escaping (_ res: Rest<T>)->Void) {
+    func finish<T: Codable>() async throws -> Rest<T> {
+        let request = AF.request(url, method: method, parameters: params, headers: headers)
+        return try await request.responseAsync()
+    }
+    
+    @discardableResult
+    func completion<T: Codable>(completed: @escaping (_ res: Rest<T>)->Void) -> DataRequest{
         
         let session : Session = {
             let configuration = URLSessionConfiguration.af.default
@@ -232,7 +214,7 @@ class HttpClient {
             }
         }()
         
-        session.request(url, method: method, parameters: params, headers: headers).responseData { data in
+        return session.request(url, method: method, parameters: params, headers: headers).responseData { data in
             var result = Rest<T>()
             if data.data == nil || data.error != nil {
                 result.code = -100
@@ -358,6 +340,51 @@ struct Rest<T>: Codable where T: Codable {
     var code = 0
     var msg = ""
     var data: T?
+}
+
+extension DataRequest {
+    func responseAsync<T: Codable>() async throws -> Rest<T> {
+        // 使用 withTaskCancellationHandler 处理取消
+        try await withTaskCancellationHandler(
+            operation: {
+                // 使用 withCheckedThrowingContinuation 桥接回调
+                try await withCheckedThrowingContinuation { continuation in
+                    // 保存 DataRequest 以支持取消
+                    let request = self
+                    
+                    // 调用 Alamofire 的 responseData
+                    request.responseData { response in
+                        switch response.result {
+                        case .success(let data):
+                            var result = Rest<T>()
+                            result.code = -110
+                            if let res  = Rest<T>.parse(d: data) {
+                                result = res
+                            } else {
+                                result.msg = "解码失败"
+                            }
+                            continuation.resume(returning: result)
+                        case .failure(let error):
+                            // 检查是否为取消错误
+                            if error.isExplicitlyCancelledError {
+                                continuation.resume(throwing: CancellationError())
+                            } else {
+                                // 其他网络错误
+                                var result = Rest<T>()
+                                result.code = -100
+                                result.msg = error.localizedDescription
+                                continuation.resume(returning: result)
+                            }
+                        }
+                    }
+                }
+            },
+            onCancel: {
+                // 当任务取消时，调用 DataRequest 的 cancel()
+                self.cancel()
+            }
+        )
+    }
 }
 
 // 在Swift4下错误太多，根本改不过来。不需要改了，以后也不怎么用

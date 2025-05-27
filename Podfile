@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '13.0'
 
 def iOSWork_pod
 pod 'LookinServer', :configurations => ['Debug']
@@ -14,11 +14,12 @@ pod "SkeletonView", '1.30.4'
 pod "SwiftyJSON", '5.0.1'
 pod "SwiftSoup", '2.6.1'
 #pod 'AMKLaunchTimeProfiler'
-pod 'SwiftyBeaver', '2.0.0'
+pod 'SwiftyBeaver'
 pod 'CocoaAsyncSocket', '7.6.5'
 pod 'PhoneNetSDK', '1.0.12'
 pod 'SSZipArchive'
 pod 'lottie-ios', '~> 3.4.0'
+pod 'SDWebImage', '5.11.1'
 end
 
 target 'CLangWork' do
@@ -52,7 +53,7 @@ target 'KeyboardWork' do
   pod "SnapKit", '5.6.0'
   pod "SwiftyJSON", '5.0.1'
   pod 'CocoaAsyncSocket', '7.6.5'
-  pod 'SwiftyBeaver', '2.0.0'
+  pod 'SwiftyBeaver'
   pod "Alamofire", '5.8.1'
   # Pods for KeyboardWork
 

@@ -8,16 +8,34 @@ PODS:
   - KRActivityIndicatorView (3.0.7)
   - KRProgressHUD (3.4.7):
     - KRActivityIndicatorView (= 3.0.7)
-  - LookinServer (1.2.6):
-    - LookinServer/Core (= 1.2.6)
-  - LookinServer/Core (1.2.6)
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
+  - LookinServer (1.2.8):
+    - LookinServer/Core (= 1.2.8)
+  - LookinServer/Core (1.2.8)
   - lottie-ios (3.4.4)
   - PhoneNetSDK (1.0.12)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - SDWebImageWebPCoder (0.8.4):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.10)
   - SkeletonView (1.30.4)
   - SnapKit (5.6.0)
   - SSZipArchive (2.4.3)
   - SwiftSoup (2.6.1)
-  - SwiftyBeaver (2.0.0)
+  - SwiftyBeaver (1.9.5)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
@@ -31,11 +49,13 @@ DEPENDENCIES:
   - LookinServer
   - lottie-ios (~> 3.4.0)
   - PhoneNetSDK (= 1.0.12)
+  - SDWebImage (= 5.11.1)
+  - SDWebImageWebPCoder (= 0.8.4)
   - SkeletonView (= 1.30.4)
   - SnapKit (= 5.6.0)
   - SSZipArchive
   - SwiftSoup (= 2.6.1)
-  - SwiftyBeaver (= 2.0.0)
+  - SwiftyBeaver
   - SwiftyJSON (= 5.0.1)
 
 SPEC REPOS:
@@ -48,9 +68,12 @@ SPEC REPOS:
     - Kingfisher
     - KRActivityIndicatorView
     - KRProgressHUD
+    - libwebp
     - LookinServer
     - lottie-ios
     - PhoneNetSDK
+    - SDWebImage
+    - SDWebImageWebPCoder
     - SkeletonView
     - SnapKit
     - SSZipArchive
@@ -67,16 +90,19 @@ SPEC CHECKSUMS:
   Kingfisher: 1d14e9f59cbe19389f591c929000332bf70efd32
   KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
   KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
-  LookinServer: de929b55f8fa2e241c18c39af3f900eaa9166389
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
+  LookinServer: 1b2b61c6402ae29fa22182d48f5cd067b4e99e80
   lottie-ios: 8f97d3271e155c2d688875c29cd3c74908aef5f8
   PhoneNetSDK: d0f24d066e8a7f2dd8e7c1a162d4c6910266def7
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   SwiftSoup: 5dd2c1b06afc964f30d99894af6ede22ede627aa
-  SwiftyBeaver: 014b0c12065026b731bac80305294f27d63e27f6
+  SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: c0d8bf8ecc62d3e25f61d207572fd298ff7a0383
+PODFILE CHECKSUM: e4a4cfee78614e155af3d19032765e93582c5398
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2

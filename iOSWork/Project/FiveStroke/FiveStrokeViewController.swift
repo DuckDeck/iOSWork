@@ -31,10 +31,10 @@ class FiveStrokeViewController: UIViewController,UITextFieldDelegate {
 
         view.backgroundColor = UIColor.white
         navigationItem.title = "五笔反查"
-        
+        let topHeight = UIDevice.topAreaHeight + 44
         let btnClearLog = UIButton(type: .custom)
         btnClearLog.setImage(UIImage(named: "btn_video_delete_confirm"), for: .normal)
-        btnClearLog.frame = CGRect(x: 0, y: 0, w: 34, h: 34)
+        btnClearLog.frame = CGRect(x: 0, y: topHeight, w: 34, h: 34)
         btnClearLog.widthAnchor.constraint(equalToConstant: 35).isActive = true
         btnClearLog.heightAnchor.constraint(equalToConstant: 35).isActive = true
         btnClearLog.addTarget(self, action: #selector(clearLog), for: .touchUpInside)
@@ -50,7 +50,7 @@ class FiveStrokeViewController: UIViewController,UITextFieldDelegate {
         txtSearch.addOffsetView(value: 10)
         txtSearch.addTo(view: view).snp.makeConstraints { (m) in
             m.left.equalTo(5)
-            m.top.equalTo(UIDevice.topAreaHeight + 5)
+            m.top.equalTo(topHeight)
             m.height.equalTo(36)
             m.right.equalTo(-75)
         }
@@ -102,18 +102,27 @@ class FiveStrokeViewController: UIViewController,UITextFieldDelegate {
             return
         }
         Toast.showLoading()
-        FiveStroke.getFiveStroke(key: txtSearch.text!) { (res) in
-            if !handleResult(result: res){
+//        FiveStroke.getFiveStroke(key: txtSearch.text!) { (res) in
+//            if !handleResult(result: res){
+//                return
+//            }
+//            self.arrFiveStrokes.insertItems(array: res.data! as! [FiveStroke], index: 0)
+//            self.tb.reloadData()
+//        }
+     
+//        let url = "https://144.34.157.61:9090/five/\(key)"
+        
+        Task {
+            guard let rest:Rest<[FiveStroke]> = try? await HttpClient.get("http://144.34.157.61:9090/five/\(txtSearch.text!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)").finish() else {Toast.showToast(msg: "网络请求错误");return}
+            if rest.code != 0 || rest.data == nil {
+                Toast.showToast(msg: rest.msg)
                 return
             }
-            self.arrFiveStrokes.insertItems(array: res.data! as! [FiveStroke], index: 0)
+            self.arrFiveStrokes = rest.data!
             self.tb.reloadData()
+            
         }
-     
         
-        FiveStroke.getFive(key: txtSearch.text!) { res in
-           
-        }
     }
  
 
@@ -163,14 +172,12 @@ class strokeCell: UITableViewCell {
             guard let f = fiveStroke else {
                 return
             }
-            lblText.text = f.text
+            lblText.text = f.word
             lblPinyin.text = f.spell
             lblCode.text = f.code
 //            let url = URL(string: f.imgDecodeUrl.urlEncoded())!
 //            imgFive.animate(withGIFURL: url)
 //            imgFive.startAnimating()
-            
-            imgFive.setImg(url: f.imgDecodeUrl.urlEncoded())
             
         }
     }
