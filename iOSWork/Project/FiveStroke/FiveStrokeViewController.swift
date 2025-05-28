@@ -102,16 +102,6 @@ class FiveStrokeViewController: UIViewController,UITextFieldDelegate {
             return
         }
         Toast.showLoading()
-//        FiveStroke.getFiveStroke(key: txtSearch.text!) { (res) in
-//            if !handleResult(result: res){
-//                return
-//            }
-//            self.arrFiveStrokes.insertItems(array: res.data! as! [FiveStroke], index: 0)
-//            self.tb.reloadData()
-//        }
-     
-//        let url = "https://144.34.157.61:9090/five/\(key)"
-        
         Task {
             guard let rest:Rest<[FiveStroke]> = try? await HttpClient.get("http://144.34.157.61:9090/five/\(txtSearch.text!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)").finish() else {Toast.showToast(msg: "网络请求错误");return}
             if rest.code != 0 || rest.data == nil {

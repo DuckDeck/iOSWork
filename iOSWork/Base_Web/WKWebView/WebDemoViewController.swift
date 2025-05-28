@@ -49,7 +49,7 @@ class WebDemoViewController: UIViewController {
     var platform = TransferGoodsPlatform.TaoBao
     var observer:NSKeyValueObservation?
 
-    var useHandle = true
+    var useHandle = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,8 @@ class WebDemoViewController: UIViewController {
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.top.equalTo(UIDevice.topAreaHeight + 44)
-            make.left.right.bottom.equalTo(0)
+            make.left.right.equalTo(0)
+            make.bottom.equalTo(-50 - UIDevice.bottomAreaHeight)
         }
         
         view.addSubview(progressView)
@@ -72,6 +73,20 @@ class WebDemoViewController: UIViewController {
       //  webView.wAccessoryView = webView.doneAccessoryView
         
         webView.load(URLRequest(url: URL(string: "https://detail.m.tmall.com/item.htm?abbucket=0&id=592146045916")!))
+        
+        let btn1 = UIButton().title(title: "注入unhandledrejection").color(color: .blue).addTo(view: view)
+        btn1.addTarget(self, action: #selector(action1), for: .touchUpInside)
+        btn1.snp.makeConstraints { make in
+            make.top.equalTo(webView.snp.bottom)
+            make.left.equalTo(5)
+        }
+        
+        let btn2 = UIButton().title(title: "注入window.error").color(color: .blue).addTo(view: view)
+        btn2.addTarget(self, action: #selector(action2), for: .touchUpInside)
+        btn2.snp.makeConstraints { make in
+            make.top.equalTo(webView.snp.bottom)
+            make.left.equalTo(btn1.snp.right).offset(10)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -83,6 +98,29 @@ class WebDemoViewController: UIViewController {
       //  webView.resignFirstResponder()
     }
 
+    @objc func action1(){
+        let simulateUnhandledRejection =  """
+            (function() {
+                console.log('--- 模拟 unhandledrejection (方法二 - 异步) ---');
+                // 模拟一个异步操作，例如 setTimeout 中的错误 Promise
+                setTimeout(() => {
+                    // 在异步代码中拒绝一个 Promise，并且不添加 .catch()
+                    Promise.reject('异步操作中发生的未处理的拒绝！');
+                }, 100); // 延迟100毫秒
+                console.log('模拟 unhandledrejection 已计划 (异步触发)。');
+            })();
+          """
+        webView.evaluateJavaScript(simulateUnhandledRejection)
+    }
+    
+    @objc func action2(){
+        let simulateUnhandledRejection =  """
+            
+           myString(); // TypeError: myString is not a function
+          """
+        webView.evaluateJavaScript(simulateUnhandledRejection)
+    }
+    
     func changeProgress(value:Double){
   
         progressView.alpha = 1
@@ -112,6 +150,9 @@ class WebDemoViewController: UIViewController {
         v.autoresizesSubviews = true
         v.scrollView.alwaysBounceVertical = true
         v.allowsBackForwardNavigationGestures = false
+        if #available(iOS 16.4, *) {
+            v.isInspectable = true
+        }
         if platform == .TMall || platform == .TaoBao || platform == .Mall1688{
             v.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.15"
         } else if platform == .KuaiShou{
@@ -146,12 +187,21 @@ class WebDemoViewController: UIViewController {
               )
             }
 
+            window.addEventListener('unhandledrejection', function(event) {
+                const currentUrl = window.location.href;
+                const data = {type:'unhandledrejection',msg:event.reason,url:currentUrl}
+                window.webkit.messageHandlers.logging.postMessage(JSON.stringify(data))
+            });
+        
+            window.addEventListener("error", function(e) {
+                const currentUrl = window.location.href;
+                const data = {type:'window.error',msg:e.message,url:currentUrl,line:e.lineno,col:e.colno}
+                window.webkit.messageHandlers.logging.postMessage(JSON.stringify(data))
+            })
+        
             let originalLog = console.log
             console.log = function() { log(arguments); originalLog.apply(null, arguments) }
-
-            window.addEventListener("error", function(e) {
-               log("💥", "Uncaught", [`${e.message} at ${e.filename}:${e.lineno}:${e.colno}`])
-            })
+        
         """
         u.add(LogMessageHandler(), name: "logging")
         u.addUserScript(WKUserScript(source: overrideConsole, injectionTime: .atDocumentStart, forMainFrameOnly: true))
@@ -163,7 +213,7 @@ class WebDemoViewController: UIViewController {
 class LogMessageHandler: NSObject, WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "logging", let str = message.body as? String {
-          print(str)
+            print("=============收到H5数据--\(message.body)===============")
         }
     }
 }
