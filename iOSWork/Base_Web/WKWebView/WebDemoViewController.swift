@@ -60,7 +60,7 @@ class WebDemoViewController: UIViewController {
         webView.snp.makeConstraints { make in
             make.top.equalTo(UIDevice.topAreaHeight + 44)
             make.left.right.equalTo(0)
-            make.bottom.equalTo(-50 - UIDevice.bottomAreaHeight)
+            make.bottom.equalTo(-100 - UIDevice.bottomAreaHeight)
         }
         
         view.addSubview(progressView)
@@ -86,6 +86,13 @@ class WebDemoViewController: UIViewController {
         btn2.snp.makeConstraints { make in
             make.top.equalTo(webView.snp.bottom)
             make.left.equalTo(btn1.snp.right).offset(10)
+        }
+        
+        let btn3 = UIButton().title(title: "注入网络请求错误").color(color: .blue).addTo(view: view)
+        btn3.addTarget(self, action: #selector(action3), for: .touchUpInside)
+        btn3.snp.makeConstraints { make in
+            make.top.equalTo(btn1.snp.bottom)
+            make.left.equalTo(5)
         }
     }
     
@@ -119,6 +126,25 @@ class WebDemoViewController: UIViewController {
            myString(); // TypeError: myString is not a function
           """
         webView.evaluateJavaScript(simulateUnhandledRejection)
+    }
+    
+    @objc func action3() {
+        let trigger404Script = """
+                (function() {
+                    console.log('Attempting to fetch a 404 URL...');
+                    fetch('http://144.34.157.61:9090/fve/4') // Use a reliable 404 test URL
+                        .then(response => {
+                            console.log('Fetch completed with status:', response.status);
+                            // This block will be executed if the fetch promise resolves
+                            // The hijacked fetch should have already sent the error to native
+                        })
+                        .catch(error => {
+                            console.error('Original JS caught fetch network error:', error);
+                            // This block will only execute for network failures (not HTTP errors like 404)
+                        });
+                })();
+                """
+        webView.evaluateJavaScript(trigger404Script)
     }
     
     func changeProgress(value:Double){
@@ -198,6 +224,18 @@ class WebDemoViewController: UIViewController {
                 const data = {type:'window.error',msg:e.message,url:currentUrl,line:e.lineno,col:e.colno}
                 window.webkit.messageHandlers.logging.postMessage(JSON.stringify(data))
             })
+        
+        
+            const originalFetch = window.fetch;
+            window.fetch = function(...args) {
+                return originalFetch(...args)
+                    .catch(error => {
+                            const currentUrl = window.location.href;
+                            const data = {type:'http error',msg:error.message,url:currentUrl,requestUrl:args[0]}
+                            window.webkit.messageHandlers.logging.postMessage(JSON.stringify(data));
+                        throw error;
+                    });
+            };
         
             let originalLog = console.log
             console.log = function() { log(arguments); originalLog.apply(null, arguments) }
