@@ -79,12 +79,13 @@ class XlogDecodeViewController: BaseViewController {
     }
     
     @objc func selectShareLog() {
-        let file = FileBrowser(initialPath: FileParser.sharedInstance.documentsURL, allowEditing: true, showCancelButton: true)
-        file.didSelectFile = { file in
-            self.shareLog(logPath: file.filePath.path)
-        }
-        file.modalPresentationStyle = .fullScreen
-        present(file, animated: true, completion: nil)
+        print(123)
+//        let file = FileBrowser(initialPath: FileParser.sharedInstance.documentsURL, allowEditing: true, showCancelButton: true)
+//        file.didSelectFile = { file in
+//            self.shareLog(logPath: file.filePath.path)
+//        }
+//        file.modalPresentationStyle = .fullScreen
+//        present(file, animated: true, completion: nil)
     }
     
     func shareLog(logPath: String) {
@@ -124,6 +125,7 @@ class XlogDecodeViewController: BaseViewController {
         v.setTitle("分享Xlog", for: .normal)
         v.titleLabel?.font = UIFont.pingfangMedium(size: 15)
         v.setTitleColor(.blue, for: .normal)
+        v.delayTime = 1
         v.addTarget(self, action: #selector(selectShareLog), for: .touchUpInside)
         return v
     }()

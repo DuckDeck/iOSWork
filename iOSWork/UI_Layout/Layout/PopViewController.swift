@@ -103,6 +103,70 @@ class PopViewController:UIViewController{
         btn.setBackgroundColor(color: UIColor.lightGray, forState: .normal)
         btn.setBackgroundColor(color: UIColor.darkGray, forState: .highlighted)
         
+        let sc = UIScrollView()
+        sc.layer.borderWidth = 1
+        view.addSubview(sc)
+        sc.snp.makeConstraints { make in
+            make.left.equalTo(50)
+            make.right.equalTo(-50)
+            make.top.equalTo(btn.snp.bottom).offset(10)
+            make.height.equalTo(30)
+        }
+        
+        
+        let contView = UIView()
+        sc.addSubview(contView)
+        contView.backgroundColor = .purple.withAlphaComponent(0.2)
+        // 关键：约束 contentView 填满 scrollView 的 contentLayoutGuide
+        contView.snp.makeConstraints { make in
+            make.trailing.leading.equalTo(0)
+                make.top.bottom.equalTo(sc.contentLayoutGuide)
+                make.height.equalTo(sc.frameLayoutGuide)
+            make.width.greaterThanOrEqualToSuperview()
+        }
+        
+       
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        contView.addSubview(stackView)
+        stackView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.height.equalToSuperview()
+            make.trailing.equalTo(-10).priority(.required)
+            make.leading.equalToSuperview().priority(.low)
+        }
+        
+        stackView.setContentHuggingPriority(.required, for: .horizontal)
+        stackView.setContentCompressionResistancePriority(.required, for: .horizontal)
+        let v1 = UILabel()
+        v1.backgroundColor = UIColor.red
+        v1.text = "v1"
+        v1.textAlignment = .center
+        stackView.addArrangedSubview(v1)
+        v1.snp.makeConstraints { make in
+            make.height.equalToSuperview()
+            make.width.equalTo(120)
+        }
+        
+        let v2 = UILabel()
+        v2.text = "v2"
+        v2.textAlignment = .center
+        v2.backgroundColor = UIColor.green
+        stackView.addArrangedSubview(v2)
+        v2.snp.makeConstraints { make in
+            make.height.equalToSuperview()
+            make.width.equalTo(120)
+        }
+        
+//        let v3 = UILabel()
+//        v3.text = "v3"
+//        v3.textAlignment = .center
+//        v3.backgroundColor = UIColor.blue
+//        stackView.addArrangedSubview(v3)
+//        v3.snp.makeConstraints { make in
+//            make.height.equalToSuperview()
+//            make.width.equalTo(120)
+//        }
         
     }
     
