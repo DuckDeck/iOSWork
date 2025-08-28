@@ -26,8 +26,19 @@ class BaseMenuViewController:BaseViewController{
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "WebView", style: .plain, target: self, action: #selector(toWebView))
         
-        let lblFps = FPSLable(frame: CGRect(x: ScreenWidth / 2.0 - 75 , y: 35, width: 150, height: 20))
+        let lblFps = FPSLable()
         UIApplication.shared.keyWindow?.addSubview(lblFps)
+        if UIDevice.isNotch {
+            lblFps.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.bottom.equalTo(-15)
+            }
+        } else {
+            lblFps.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(10)
+            }
+        }
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "日志分享", style: .plain, target: self, action: #selector(shareLog))
         

@@ -17,7 +17,7 @@ class ThreadViewController: UIViewController {
     var data:Data?
     static var  recursiveCount = 0
      var arrData = ["测试信号量","os_unfair_lock","Pthread_mutex_normal","Pthread_mutex_recursive","semaphore_asnyc_to_sync","semaphore_to_lock_thread"
-    ,"semaphore_to_limit_max_concurrent","NSLock","NSCondition","NSConditionLock"]
+    ,"semaphore_to_limit_max_concurrent","NSLock","NSCondition","NSConditionLock","卡顿模拟1：主线程下载图片"]
 //    let btn = UIButton().then {
 //        $0.setTitle("按钮", for: .normal)
 //        $0.color(color: UIColor.red).bgColor(color: UIColor.gray).completed()
@@ -43,6 +43,7 @@ class ThreadViewController: UIViewController {
             m.edges.equalTo(0)
         }
      
+        RunLoopMonitor.shareInstance.start()
     }
 
 //    @objc func clickDown(sender:UIButton)  {
@@ -110,10 +111,22 @@ extension ThreadViewController:UITableViewDelegate,UITableViewDataSource{
             useNSCondition()
         case 9:
             useNSConditionLock()
+        case 10:
+            downloadImage()
         default:
             break
         }
     }
+    
+    
+    func downloadImage() {
+        let data1 = try? Data.init(contentsOf: URL(string: "https://xcimg.szwego.com/img/2f2939ca/20250721/a1753089414451_3316.jpg")!)
+        delay(time: 2) {
+            let data2 = try? Data.init(contentsOf: URL(string: "https://xcimg.szwego.com/imgHD/0ff77623/20250718/cmp_i1752809702497_5831_0_1.jpg")!)
+
+        }
+    }
+    
 }
 // test os_unfair_lock
 extension ThreadViewController{

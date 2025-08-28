@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -2128,6 +2128,10 @@
 		F1B41DE8A652497D52A19CD8 /* Pods-OCWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWork.release.xcconfig"; path = "Target Support Files/Pods-OCWork/Pods-OCWork.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AE7B0B172E5F0AF000AF830D /* PDFHandle */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PDFHandle; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		AE7E741F272251E300F0C19C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -3087,6 +3091,7 @@
 		AE62CBE42725661A007D51CD /* Media_Hardware */ = {
 			isa = PBXGroup;
 			children = (
+				AE7B0B172E5F0AF000AF830D /* PDFHandle */,
 				AE7090252CB6A66C005F38F6 /* LivePhoto */,
 				AE256CB22A2D8E980022F6BC /* Speech */,
 				AEC23C8629E78CD900E93C5A /* HardwareMonitor */,
@@ -4615,6 +4620,9 @@
 			dependencies = (
 				AE7E7455272252AC00F0C19C /* PBXTargetDependency */,
 				AE890D0827240DEC00FAB7D7 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AE7B0B172E5F0AF000AF830D /* PDFHandle */,
 			);
 			name = iOSWork;
 			packageProductDependencies = (
@@ -6222,6 +6230,7 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include",
 				);
 				INFOPLIST_FILE = iOSWork/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = " 用一下相机";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "用一下殃";
@@ -6280,6 +6289,7 @@
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/Vender/ffmpeg_ios/include",
 				);
 				INFOPLIST_FILE = iOSWork/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = " 用一下相机";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "用一下殃";
