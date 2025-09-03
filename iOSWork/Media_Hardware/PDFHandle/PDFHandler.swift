@@ -1,23 +1,26 @@
 import CoreGraphics
+import PDFKit
 import UIKit
 
 /// PDF图片提取工具类（最终可用版）
-final class PDFImageExtractor {
-    
-    /// 从PDF文件中提取所有图片
-    static func extractAllImages(from pdfURL: URL, pageIndex:Int) -> [UIImage] {
+enum PDFImageExtractor {
+    /// 从PDF文件中提取所有图片, 如果pageIndex是小于0， 返回没有图片
+    static func extractAllImages(from pdfURL: URL, pageIndex: Int) -> Result<([String], [UIImage]), XError> {
         guard let pdfDocument = loadPDFDocument(from: pdfURL) else {
             print("❌ 无法加载PDF文档或文档已加密")
-            return []
+            return .failure(XError(msg: "❌ 无法加载PDF文档或文档已加密", code: -1))
         }
+        guard let pdf = PDFDocument(url: pdfURL) else { return .failure(XError(msg: "❌ 无法加载PDF文档或文档已加密", code: -1)) }
         
         var allImages: [UIImage] = []
+        var allText: [String] = []
         let totalPages = pdfDocument.numberOfPages
         print("一共有\(totalPages)页面")
-        for pageNumber in 1...totalPages {
+        for pageNumber in 1 ... totalPages {
             if pageNumber != pageIndex && pageIndex > 0 {
                 continue
             }
+           
             guard let pdfPage = pdfDocument.page(at: pageNumber) else {
                 print("❌ 无法获取第\(pageNumber)页")
                 continue
@@ -27,18 +30,20 @@ final class PDFImageExtractor {
                 print("   ⚠️ 第\(pageNumber)页无资源信息")
                 continue
             }
+            if let page = pdf.page(at: pageNumber), let pageText = page.string {
+                allText.append(pageText)
+            }
             let pageImages = extractImages(from: pageResources)
             allImages.append(contentsOf: pageImages)
             print("📄 第\(pageNumber)/\(totalPages)页提取到\(pageImages.count)张图片")
         }
         
         print("✅ 总计提取到\(allImages.count)张图片")
-        return allImages
+        return .success((allText, allImages))
     }
     
-    
-    
     // MARK: - 获取页面资源
+
     private static func getPageResources(from page: CGPDFPage) -> CGPDFDictionaryRef? {
         guard let pageDict = page.dictionary else {
             print("   ❌ 无法获取页面字典")
@@ -51,6 +56,7 @@ final class PDFImageExtractor {
     }
     
     // MARK: - 提取图片核心逻辑
+
     private static func extractImages(from resources: CGPDFDictionaryRef) -> [UIImage] {
         var extractedImages: [UIImage] = []
         
@@ -63,7 +69,7 @@ final class PDFImageExtractor {
         withUnsafeMutablePointer(to: &extractedImages) { imagesPointer in
             CGPDFDictionaryApplyFunction(
                 xObjectDictionary,
-                pdfDictionaryCallback,  // 使用全局C函数
+                pdfDictionaryCallback, // 使用全局C函数
                 UnsafeMutableRawPointer(imagesPointer)
             )
         }
@@ -72,6 +78,7 @@ final class PDFImageExtractor {
     }
     
     // MARK: - 其他辅助方法
+
     private static func getXObjectDictionary(from resources: CGPDFDictionaryRef) -> CGPDFDictionaryRef? {
         var xObjectDict: CGPDFDictionaryRef?
         let hasXObject = CGPDFDictionaryGetDictionary(resources, "XObject", &xObjectDict)
@@ -106,7 +113,8 @@ final class PDFImageExtractor {
         }
         
         guard let subtype = getStreamSubtype(from: streamDictionary),
-              subtype == "Image" else {
+              subtype == "Image"
+        else {
             return false
         }
         
@@ -161,7 +169,8 @@ final class PDFImageExtractor {
     private static func getStreamData(from stream: CGPDFStreamRef) -> Data? {
         var dataFormat = CGPDFDataFormat.raw
         guard let data = CGPDFStreamCopyData(stream, &dataFormat) as Data?,
-              !data.isEmpty else {
+              !data.isEmpty
+        else {
             return nil
         }
         return data
@@ -188,8 +197,9 @@ final class PDFImageExtractor {
 }
 
 // MARK: - 全局C风格回调函数（关键修复）
+
 /// 必须定义为全局函数才能作为C函数指针
- private func pdfDictionaryCallback(
+private func pdfDictionaryCallback(
     key: UnsafePointer<CChar>,
     value: CGPDFObjectRef,
     info: UnsafeMutableRawPointer?
@@ -215,10 +225,10 @@ final class PDFImageExtractor {
 }
 
 // MARK: - 使用示例
-/*
-if let pdfURL = Bundle.main.url(forResource: "example", withExtension: "pdf") {
-    let images = PDFImageExtractor.extractAllImages(from: pdfURL)
-    // 使用提取的图片
-}
-*/
 
+/*
+ if let pdfURL = Bundle.main.url(forResource: "example", withExtension: "pdf") {
+     let images = PDFImageExtractor.extractAllImages(from: pdfURL)
+     // 使用提取的图片
+ }
+ */

@@ -58,3 +58,9 @@ func handleResult(result:ResultInfo,needHideWait:Bool) -> Bool {
     }
     return true
 }
+
+struct XError:Error {
+    var msg = ""
+    var code = 0
+    var userInfo:[String:Any]?
+}

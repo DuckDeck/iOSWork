@@ -15,13 +15,13 @@ class PDFHandleViewConvroller: UIViewController, UIDocumentPickerDelegate {
     var arrImages = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         for _ in 0 ..< 5000 {
             heights.append(300)
         }
-        
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "PDF", style: .plain, target: self, action: #selector(choosePDF))
-        
+
         let layout = FlowLayout(columnCount: 1, columnMargin: 2) { [weak self] index -> Double in
             return self!.heights[index.row]
         }
@@ -33,7 +33,7 @@ class PDFHandleViewConvroller: UIViewController, UIDocumentPickerDelegate {
         vCol.register(ImageSetCell.self, forCellWithReuseIdentifier: "Cell")
         view.addSubview(vCol)
     }
-    
+
     @objc func choosePDF() {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [UTType.pdf], asCopy: false)
         documentPicker.delegate = self
@@ -41,7 +41,7 @@ class PDFHandleViewConvroller: UIViewController, UIDocumentPickerDelegate {
 
         present(documentPicker, animated: true, completion: nil)
     }
-    
+
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         // 用户选择了文件，urls 数组包含了选择的文件的 URL
         guard let url = urls.first else { return }
@@ -55,28 +55,34 @@ class PDFHandleViewConvroller: UIViewController, UIDocumentPickerDelegate {
             }
         }
 
-        let images = PDFImageExtractor.extractAllImages(from: url, pageIndex: -1)
+        let infos = PDFImageExtractor.extractAllImages(from: url, pageIndex: 3)
+        if case .failure(let failure) = infos {
+            Toast.showToast(msg: failure.msg)
+            return
+        }
+        guard case .success(let info) = infos else { return }
+        let texts = info.0
+        let images = info.1
+        print(texts)
         Toast.showToast(msg: "第二页获取到\(images.count)张图片")
         arrImages = images
         vCol.reloadData()
         Toast.showLoading(txt: "正在保存图")
         for item in arrImages.enumerated() {
-            item.element.saveToAlbum(isTmp: true) { finish, err in
-                
+            item.element.saveToAlbum(isTmp: true) { _, _ in
             }
             if item.offset == arrImages.count - 1 {
                 Toast.dismissLoading()
             }
         }
-        
-      }
+    }
 }
 
 extension PDFHandleViewConvroller: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrImages.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageSetCell
         cell.img.image = arrImages[indexPath.row]
