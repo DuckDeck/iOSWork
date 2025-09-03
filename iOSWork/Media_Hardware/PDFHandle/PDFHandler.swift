@@ -2,21 +2,30 @@ import CoreGraphics
 import PDFKit
 import UIKit
 
+struct PdfPageContent {
+    var  text = ""
+    var images:[UIImage]?
+}
 /// PDF图片提取工具类（最终可用版）
 enum PDFImageExtractor {
-    /// 从PDF文件中提取所有图片, 如果pageIndex是小于0， 返回没有图片
-    static func extractAllImages(from pdfURL: URL, pageIndex: Int) -> Result<([String], [UIImage]), XError> {
+    
+    /// 从PDF提取图片和文本
+    /// - Parameters:
+    ///   - pdfURL: pdf的url地址
+    ///   - pageIndex: pgeindex，从1开始,如果传0，是获取所有page
+    /// - Returns: 文本和图片，还的错误码
+    static func extractAllImages(from pdfURL: URL, pageIndex: Int) -> Result<[PdfPageContent], XError> {
         guard let pdfDocument = loadPDFDocument(from: pdfURL) else {
             print("❌ 无法加载PDF文档或文档已加密")
             return .failure(XError(msg: "❌ 无法加载PDF文档或文档已加密", code: -1))
         }
         guard let pdf = PDFDocument(url: pdfURL) else { return .failure(XError(msg: "❌ 无法加载PDF文档或文档已加密", code: -1)) }
         
-        var allImages: [UIImage] = []
-        var allText: [String] = []
+        
+        var pdfContents = [PdfPageContent]()
         let totalPages = pdfDocument.numberOfPages
         print("一共有\(totalPages)页面")
-        for pageNumber in 1 ... totalPages {
+        for pageNumber in 1 ... totalPages { // 貌似pdfDocument.page(at:是从1开始的，但是pdf.page(at: 是从0开始的
             if pageNumber != pageIndex && pageIndex > 0 {
                 continue
             }
@@ -30,16 +39,18 @@ enum PDFImageExtractor {
                 print("   ⚠️ 第\(pageNumber)页无资源信息")
                 continue
             }
-            if let page = pdf.page(at: pageNumber), let pageText = page.string {
-                allText.append(pageText)
+            
+            var content = PdfPageContent()
+            
+            if let page = pdf.page(at: pageNumber - 1), let pageText = page.string {
+                content.text = pageText
             }
             let pageImages = extractImages(from: pageResources)
-            allImages.append(contentsOf: pageImages)
+            content.images = pageImages
             print("📄 第\(pageNumber)/\(totalPages)页提取到\(pageImages.count)张图片")
+            pdfContents.append(content)
         }
-        
-        print("✅ 总计提取到\(allImages.count)张图片")
-        return .success((allText, allImages))
+        return .success(pdfContents)
     }
     
     // MARK: - 获取页面资源

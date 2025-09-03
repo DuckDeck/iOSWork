@@ -11,26 +11,25 @@ import PDFKit
 
 class PDFHandleViewConvroller: UIViewController, UIDocumentPickerDelegate {
     var vCol: UICollectionView!
-    var heights = [Double]()
-    var arrImages = [UIImage]()
+
+    var arrPdfContents = [PdfPageContent]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for _ in 0 ..< 5000 {
-            heights.append(300)
-        }
-
+     
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "PDF", style: .plain, target: self, action: #selector(choosePDF))
 
         let layout = FlowLayout(columnCount: 1, columnMargin: 2) { [weak self] index -> Double in
-            return self!.heights[index.row]
+            let imageCount = self!.arrPdfContents[index.row].images?.count ?? 0
+            let rowCount = ceil(Double(imageCount) / 3.0)
+            return rowCount * 100 + 150
         }
 
-        vCol = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        vCol = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         vCol.backgroundColor = UIColor.white
         vCol.delegate = self
         vCol.dataSource = self
-        vCol.register(ImageSetCell.self, forCellWithReuseIdentifier: "Cell")
+        vCol.register(PDFPageCell.self, forCellWithReuseIdentifier: "Cell")
         view.addSubview(vCol)
     }
 
@@ -55,37 +54,100 @@ class PDFHandleViewConvroller: UIViewController, UIDocumentPickerDelegate {
             }
         }
 
-        let infos = PDFImageExtractor.extractAllImages(from: url, pageIndex: 3)
+        let infos = PDFImageExtractor.extractAllImages(from: url, pageIndex: 0) // 0 取出pdf所有页面的图片
         if case .failure(let failure) = infos {
             Toast.showToast(msg: failure.msg)
             return
         }
         guard case .success(let info) = infos else { return }
-        let texts = info.0
-        let images = info.1
-        print(texts)
-        Toast.showToast(msg: "第二页获取到\(images.count)张图片")
-        arrImages = images
+        self.arrPdfContents = info
+    
+       
         vCol.reloadData()
-        Toast.showLoading(txt: "正在保存图")
-        for item in arrImages.enumerated() {
-            item.element.saveToAlbum(isTmp: true) { _, _ in
-            }
-            if item.offset == arrImages.count - 1 {
-                Toast.dismissLoading()
-            }
-        }
+
     }
 }
 
 extension PDFHandleViewConvroller: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrImages.count
+        return arrPdfContents.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageSetCell
-        cell.img.image = arrImages[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PDFPageCell
+        cell.setPdfPage(content: arrPdfContents[indexPath.row])
         return cell
     }
+}
+
+class PDFPageCell:UICollectionViewCell, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return content?.images?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageItemCell", for: indexPath) as! ImageItemCell
+        if let imgs = content?.images {
+            cell.imgView.image = imgs[indexPath.row]
+        }
+        return cell
+    }
+    
+    
+    var content:PdfPageContent?
+    let lblTitle = UILabel()
+    func setPdfPage(content:PdfPageContent) {
+        self.content = content
+        lblTitle.text = content.text
+        nestedCollectionView.reloadData()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        lblTitle.numberOfLines = 0
+        lblTitle.font = UIFont.systemFont(ofSize: 12)
+        contentView.addSubview(lblTitle)
+        lblTitle.snp.makeConstraints { make in
+            make.left.right.bottom.equalTo(0)
+            make.height.lessThanOrEqualTo(150)
+        }
+        contentView.addSubview(nestedCollectionView)
+        nestedCollectionView.dataSource = self
+        nestedCollectionView.snp.makeConstraints { make in
+            make.left.top.right.equalTo(0)
+            make.bottom.equalTo(lblTitle.snp.top)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private let nestedCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 96, height: 96)
+        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 2
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.register(ImageItemCell.self, forCellWithReuseIdentifier: "ImageItemCell")
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        return cv
+    }()
+}
+
+class ImageItemCell:UICollectionViewCell {
+    let imgView = UIImageView()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(imgView)
+        imgView.snp.makeConstraints { make in
+            make.edges.equalTo(0)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
