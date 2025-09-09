@@ -40,7 +40,9 @@ class HandleJSViewController: BaseViewController {
     @objc func runJS() {
         let js = "callJs()"
         web.evaluate(script: js) { (res, err) in
-            print(res!)
+            if let res = res {
+                print(res)
+            }
         }
     }
     

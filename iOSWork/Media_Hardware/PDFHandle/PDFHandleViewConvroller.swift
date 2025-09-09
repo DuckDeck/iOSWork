@@ -98,7 +98,7 @@ class PDFPageCell:UICollectionViewCell, UICollectionViewDataSource {
     let lblTitle = UILabel()
     func setPdfPage(content:PdfPageContent) {
         self.content = content
-        lblTitle.text = content.text
+        lblTitle.text = "第\(content.pageIndex)页\n \(content.text)"
         nestedCollectionView.reloadData()
     }
     

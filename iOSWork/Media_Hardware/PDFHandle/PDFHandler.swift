@@ -3,6 +3,7 @@ import PDFKit
 import UIKit
 
 struct PdfPageContent {
+    var pageIndex = 0
     var  text = ""
     var images:[UIImage]?
 }
@@ -41,7 +42,7 @@ enum PDFImageExtractor {
             }
             
             var content = PdfPageContent()
-            
+            content.pageIndex = pageNumber
             if let page = pdf.page(at: pageNumber - 1), let pageText = page.string {
                 content.text = pageText
             }
