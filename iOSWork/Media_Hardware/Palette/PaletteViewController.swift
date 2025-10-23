@@ -6,10 +6,10 @@
 //
 
 import UIKit
-
-class PaletteViewController: UIViewController,TZImagePickerControllerDelegate {
-    var imagePickerController:TZImagePickerController!
-    let img = UIImageView()
+import PhotosUI
+class PaletteViewController: UIViewController {
+    var imagePickerController:PHPickerViewController!
+    let imgView = UIImageView()
     var recommandColor = ""
     var colorsHint:[String:Any]?
     let tb = UITableView()
@@ -22,34 +22,19 @@ class PaletteViewController: UIViewController,TZImagePickerControllerDelegate {
     
     func initView() {
         view.backgroundColor = UIColor.white
-
-        imagePickerController = TZImagePickerController(maxImagesCount: 3, delegate: self)
-        imagePickerController.didFinishPickingPhotosHandle = {[weak self](images,assert,isSelectOriginalPhoto) in
-            if let one = images?.first{
-                self?.img.image = one
-                
-                one.getPaletteImageColor(with: .ALL_MODE_PALETTE) { [weak self](mode, dict, err) in
-                    if err != nil || mode == nil{
-                        Toast.showToast(msg: err?.localizedDescription ?? "识别失败")
-                        return
-                    }
-                    self?.recommandColor = mode!.imageColorString
-                    self?.colorsHint = dict as? [String:Any]
-                    let c = UIColor(hexString: mode!.imageColorString)
-
-                    self?.img.layer.borderColor = c!.cgColor
-                    self?.tb.reloadData()
-                }
-            }
-        }
+        var config = PHPickerConfiguration()
+        config.filter = .images
+        config.selectionLimit = 1
+        imagePickerController = PHPickerViewController(configuration: config)
+        imagePickerController.delegate = self
         
         let btnChoose = UIBarButtonItem(title: "添加照片", style: .plain, target: self, action: #selector(addImage))
         navigationItem.rightBarButtonItem = btnChoose
-        img.contentMode = .scaleAspectFill
-        img.layer.borderWidth = 6
-        img.layer.borderColor = UIColor.clear.cgColor
-        img.clipsToBounds = true
-        img.addTo(view: view).snp.makeConstraints { (m) in
+        imgView.contentMode = .scaleAspectFill
+        imgView.layer.borderWidth = 6
+        imgView.layer.borderColor = UIColor.clear.cgColor
+        imgView.clipsToBounds = true
+        imgView.addTo(view: view).snp.makeConstraints { (m) in
             m.left.right.equalTo(0)
             m.top.equalTo(UIDevice.topAreaHeight)
             m.height.equalTo(ScreenWidth * 0.6)
@@ -63,7 +48,7 @@ class PaletteViewController: UIViewController,TZImagePickerControllerDelegate {
         view.addSubview(tb)
         tb.snp.makeConstraints { (m) in
             m.bottom.left.right.equalTo(0)
-            m.top.equalTo(img.snp.bottom).offset(10)
+            m.top.equalTo(imgView.snp.bottom).offset(10)
         }
     }
     
@@ -76,10 +61,26 @@ class PaletteViewController: UIViewController,TZImagePickerControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func show(img:UIImage) {
+        imgView.image = img
+
+        img.getPaletteImageColor(with: .ALL_MODE_PALETTE) { [weak self](mode, dict, err) in
+            if err != nil || mode == nil{
+                Toast.showToast(msg: err?.localizedDescription ?? "识别失败")
+                return
+            }
+            self?.recommandColor = mode!.imageColorString
+            self?.colorsHint = dict as? [String:Any]
+            let c = UIColor(hexString: mode!.imageColorString)
+
+            self?.imgView.layer.borderColor = c!.cgColor
+            self?.tb.reloadData()
+        }
+    }
 
 }
 
-extension PaletteViewController:UITableViewDelegate,UITableViewDataSource{
+extension PaletteViewController:UITableViewDelegate,UITableViewDataSource, PHPickerViewControllerDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colorsHint?.count ?? 0
     }
@@ -112,6 +113,22 @@ extension PaletteViewController:UITableViewDelegate,UITableViewDataSource{
         }
         cell.fillCell(model: model, key: key)
         return cell
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true) // 关闭选择器        
+        for result in results {
+            if !result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                continue
+            }
+            // 使用 itemProvider 加载图片数据
+            result.itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                guard let image = image as? UIImage else {return}
+                DispatchQueue.main.async {
+                    self.show(img: image)
+                }
+            }
+        }
     }
 }
 

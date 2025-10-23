@@ -6,9 +6,11 @@
 //
 
 import UIKit
-class ClassifyingImagesViewController:BaseViewController,TZImagePickerControllerDelegate{
+import PhotosUI
+
+class ClassifyingImagesViewController:BaseViewController,PHPickerViewControllerDelegate{
     
-    var imagePickerController:TZImagePickerController!
+    var imagePickerController:PHPickerViewController!
     let img = UIImageView()
     let lblResult = UILabel()
     let imagePredictor = ImagePredictor()
@@ -20,14 +22,12 @@ class ClassifyingImagesViewController:BaseViewController,TZImagePickerController
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "选择照片", style: .plain, target: self, action: #selector(chooseImage))
         view.backgroundColor = UIColor.white
 
-        imagePickerController = TZImagePickerController(maxImagesCount: 3, delegate: self)
-        imagePickerController.didFinishPickingPhotosHandle = {[weak self](images,assert,isSelectOriginalPhoto) in
-            if let one = images?.first{
-                self?.img.image = one
-                self?.classifyImage(one)
-               
-            }
-        }
+        var config = PHPickerConfiguration()
+        config.filter = .images
+        config.selectionLimit = 3
+        imagePickerController = PHPickerViewController(configuration: config)
+        imagePickerController.delegate = self
+
         
         img.contentMode = .scaleAspectFill
         img.layer.borderWidth = 6
@@ -42,6 +42,23 @@ class ClassifyingImagesViewController:BaseViewController,TZImagePickerController
         lblResult.addTo(view: view).snp.makeConstraints { make in
             make.left.right.equalTo(0)
             make.top.equalTo(img.snp.bottom).offset(50)
+        }
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true) // 关闭选择器
+        for result in results {
+            if !result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                continue
+            }
+            // 使用 itemProvider 加载图片数据
+            result.itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                guard let image = image as? UIImage else {return}
+                DispatchQueue.main.async {
+                    self.img.image = image
+                    self.classifyImage(image)
+                }
+            }
         }
     }
     

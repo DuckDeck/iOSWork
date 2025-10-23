@@ -6,25 +6,26 @@
 //
 
 import UIKit
-class WatermarkViewController: UIViewController,TZImagePickerControllerDelegate {
+import PhotosUI
+class WatermarkViewController: UIViewController,PHPickerViewControllerDelegate {
 
     let txtWatermark = UITextField()
     let btnAddWatermark = UIButton()
     let btnAddImageWatermark = UIButton()
     let imgWatermark = UIImageView()
     var strWatermark = "此处设置水印"
-    var imagePickerController:TZImagePickerController!
+    var imagePickerController:PHPickerViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         navigationItem.title = "添加水印"
-        imagePickerController = TZImagePickerController(maxImagesCount: 3, delegate: self)
-        imagePickerController.didFinishPickingPhotosHandle = {[weak self](images,assert,isSelectOriginalPhoto) in
-            if let one = images?.first{
-                self?.imgWatermark.image = one
-            }
-        }
+        var config = PHPickerConfiguration()
+        config.filter = .images
+        config.selectionLimit = 3
+        imagePickerController = PHPickerViewController(configuration: config)
+        imagePickerController.delegate = self
+//
         
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "设置图片", style: .plain, target: self, action: #selector(chooseImg))
@@ -93,5 +94,22 @@ class WatermarkViewController: UIViewController,TZImagePickerControllerDelegate 
         // Dispose of any resources that can be recreated.
     }
     
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true) // 关闭选择器
+
+            // 遍历所有选择的结果
+        for result in results {
+            if !result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                continue
+            }
+            // 使用 itemProvider 加载图片数据
+            result.itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                guard let image = image as? UIImage else {return}
+                DispatchQueue.main.async {
+                    self.imgWatermark.image = image
+                }
+            }
+        }
+    }
 }
 

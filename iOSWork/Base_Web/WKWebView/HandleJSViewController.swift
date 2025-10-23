@@ -7,10 +7,11 @@
 
 import UIKit
 import WebKit
+import PhotosUI
 //这里用js打开相册和摄像头
 class HandleJSViewController: BaseViewController {
     var web:WKWebView!
-    var imagePickerController:TZImagePickerController!
+    var imagePickerController:PHPickerViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
         let btnRunjs = UIBarButtonItem(title: "RunJs", style: .plain, target: self, action: #selector(runJS))
@@ -51,7 +52,11 @@ class HandleJSViewController: BaseViewController {
     }
 }
 
-extension HandleJSViewController:WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler{
+extension HandleJSViewController:WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler,PHPickerViewControllerDelegate{
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+    }
+    
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
       
         if message.name == "mobile"{
@@ -66,10 +71,12 @@ extension HandleJSViewController:WKUIDelegate,WKNavigationDelegate,WKScriptMessa
                 }
             }
             else if let t = title , t == "openAlbum"{
-                imagePickerController = TZImagePickerController(maxImagesCount: 1, delegate: self)
-                imagePickerController.didFinishPickingPhotosHandle = {(images,assert,isSelectOriginalPhoto) in
-                   
-                }
+                var config = PHPickerConfiguration()
+                config.filter = .images
+                config.selectionLimit = 1
+                imagePickerController = PHPickerViewController(configuration: config)
+                imagePickerController.delegate = self
+                
                 present(imagePickerController, animated: true, completion: nil)
             }
             else{
@@ -105,10 +112,6 @@ extension HandleJSViewController:WKUIDelegate,WKNavigationDelegate,WKScriptMessa
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         print("navigation: WKNavigation")
     }
-}
-
-extension HandleJSViewController:TZImagePickerControllerDelegate{
-    
 }
 
 class ScriptMessageHandler: NSObject {

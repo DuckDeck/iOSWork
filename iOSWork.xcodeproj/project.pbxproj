@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -339,69 +339,6 @@
 		AE62CA1C2725425A007D51CD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA0927254259007D51CD /* FMResultSet.m */; };
 		AE62CA1D2725425A007D51CD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA0927254259007D51CD /* FMResultSet.m */; };
 		AE62CA1E2725425A007D51CD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA0927254259007D51CD /* FMResultSet.m */; };
-		AE62CA3F2725429A007D51CD /* TZPhotoPreviewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA202725429A007D51CD /* TZPhotoPreviewCell.h */; };
-		AE62CA402725429A007D51CD /* TZPhotoPickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA212725429A007D51CD /* TZPhotoPickerController.h */; };
-		AE62CA412725429A007D51CD /* TZImageCropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA222725429A007D51CD /* TZImageCropManager.m */; };
-		AE62CA422725429A007D51CD /* TZImageCropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA222725429A007D51CD /* TZImageCropManager.m */; };
-		AE62CA432725429A007D51CD /* TZImageCropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA222725429A007D51CD /* TZImageCropManager.m */; };
-		AE62CA442725429A007D51CD /* TZImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA232725429A007D51CD /* TZImageManager.h */; };
-		AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA242725429A007D51CD /* TZAssetCell.m */; };
-		AE62CA462725429A007D51CD /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA242725429A007D51CD /* TZAssetCell.m */; };
-		AE62CA472725429A007D51CD /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA242725429A007D51CD /* TZAssetCell.m */; };
-		AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA252725429A007D51CD /* TZVideoPlayerController.m */; };
-		AE62CA492725429A007D51CD /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA252725429A007D51CD /* TZVideoPlayerController.m */; };
-		AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA252725429A007D51CD /* TZVideoPlayerController.m */; };
-		AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA262725429A007D51CD /* TZAssetModel.m */; };
-		AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA262725429A007D51CD /* TZAssetModel.m */; };
-		AE62CA4D2725429A007D51CD /* TZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA262725429A007D51CD /* TZAssetModel.m */; };
-		AE62CA4E2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA272725429A007D51CD /* NSBundle+TZImagePicker.m */; };
-		AE62CA4F2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA272725429A007D51CD /* NSBundle+TZImagePicker.m */; };
-		AE62CA502725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA272725429A007D51CD /* NSBundle+TZImagePicker.m */; };
-		AE62CA512725429A007D51CD /* TZLocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA282725429A007D51CD /* TZLocationManager.h */; };
-		AE62CA522725429A007D51CD /* TZImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA292725429A007D51CD /* TZImagePickerController.h */; };
-		AE62CA532725429A007D51CD /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA2A2725429A007D51CD /* UIView+Layout.m */; };
-		AE62CA542725429B007D51CD /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA2A2725429A007D51CD /* UIView+Layout.m */; };
-		AE62CA552725429B007D51CD /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA2A2725429A007D51CD /* UIView+Layout.m */; };
-		AE62CA562725429B007D51CD /* TZPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA2B2725429A007D51CD /* TZPhotoPreviewController.m */; };
-		AE62CA572725429B007D51CD /* TZPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA2B2725429A007D51CD /* TZPhotoPreviewController.m */; };
-		AE62CA582725429B007D51CD /* TZPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA2B2725429A007D51CD /* TZPhotoPreviewController.m */; };
-		AE62CA592725429B007D51CD /* TZImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE62CA2C2725429A007D51CD /* TZImagePickerController.bundle */; };
-		AE62CA5A2725429B007D51CD /* TZImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE62CA2C2725429A007D51CD /* TZImagePickerController.bundle */; };
-		AE62CA5B2725429B007D51CD /* TZImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE62CA2C2725429A007D51CD /* TZImagePickerController.bundle */; };
-		AE62CA5C2725429B007D51CD /* TZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA2D2725429A007D51CD /* TZProgressView.m */; };
-		AE62CA5D2725429B007D51CD /* TZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA2D2725429A007D51CD /* TZProgressView.m */; };
-		AE62CA5E2725429B007D51CD /* TZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA2D2725429A007D51CD /* TZProgressView.m */; };
-		AE62CA5F2725429B007D51CD /* TZGifPhotoPreviewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA2E2725429A007D51CD /* TZGifPhotoPreviewController.h */; };
-		AE62CA602725429B007D51CD /* TZImageRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA2F2725429A007D51CD /* TZImageRequestOperation.h */; };
-		AE62CA612725429B007D51CD /* TZAssetCell.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA302725429A007D51CD /* TZAssetCell.h */; };
-		AE62CA622725429B007D51CD /* TZImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA312725429A007D51CD /* TZImageManager.m */; };
-		AE62CA632725429B007D51CD /* TZImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA312725429A007D51CD /* TZImageManager.m */; };
-		AE62CA642725429B007D51CD /* TZImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA312725429A007D51CD /* TZImageManager.m */; };
-		AE62CA652725429B007D51CD /* TZImageCropManager.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA322725429A007D51CD /* TZImageCropManager.h */; };
-		AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA332725429A007D51CD /* TZPhotoPickerController.m */; };
-		AE62CA672725429B007D51CD /* TZPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA332725429A007D51CD /* TZPhotoPickerController.m */; };
-		AE62CA682725429B007D51CD /* TZPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA332725429A007D51CD /* TZPhotoPickerController.m */; };
-		AE62CA692725429B007D51CD /* TZPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA342725429A007D51CD /* TZPhotoPreviewCell.m */; };
-		AE62CA6A2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA342725429A007D51CD /* TZPhotoPreviewCell.m */; };
-		AE62CA6B2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA342725429A007D51CD /* TZPhotoPreviewCell.m */; };
-		AE62CA6C2725429B007D51CD /* NSBundle+TZImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA352725429A007D51CD /* NSBundle+TZImagePicker.h */; };
-		AE62CA6D2725429B007D51CD /* TZAssetModel.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA362725429A007D51CD /* TZAssetModel.h */; };
-		AE62CA6E2725429B007D51CD /* TZVideoPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA372725429A007D51CD /* TZVideoPlayerController.h */; };
-		AE62CA6F2725429B007D51CD /* TZPhotoPreviewController.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA382725429A007D51CD /* TZPhotoPreviewController.h */; };
-		AE62CA702725429B007D51CD /* UIView+Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA392725429A007D51CD /* UIView+Layout.h */; };
-		AE62CA712725429B007D51CD /* TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3A2725429A007D51CD /* TZImagePickerController.m */; };
-		AE62CA722725429B007D51CD /* TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3A2725429A007D51CD /* TZImagePickerController.m */; };
-		AE62CA732725429B007D51CD /* TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3A2725429A007D51CD /* TZImagePickerController.m */; };
-		AE62CA742725429B007D51CD /* TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3B2725429A007D51CD /* TZLocationManager.m */; };
-		AE62CA752725429B007D51CD /* TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3B2725429A007D51CD /* TZLocationManager.m */; };
-		AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3B2725429A007D51CD /* TZLocationManager.m */; };
-		AE62CA772725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3C2725429A007D51CD /* TZGifPhotoPreviewController.m */; };
-		AE62CA782725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3C2725429A007D51CD /* TZGifPhotoPreviewController.m */; };
-		AE62CA792725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3C2725429A007D51CD /* TZGifPhotoPreviewController.m */; };
-		AE62CA7A2725429B007D51CD /* TZImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3D2725429A007D51CD /* TZImageRequestOperation.m */; };
-		AE62CA7B2725429B007D51CD /* TZImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3D2725429A007D51CD /* TZImageRequestOperation.m */; };
-		AE62CA7C2725429B007D51CD /* TZImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA3D2725429A007D51CD /* TZImageRequestOperation.m */; };
-		AE62CA7D2725429B007D51CD /* TZProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA3E2725429A007D51CD /* TZProgressView.h */; };
 		AE62CA81272542AF007D51CD /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA7F272542AF007D51CD /* fishhook.c */; };
 		AE62CA82272542AF007D51CD /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA7F272542AF007D51CD /* fishhook.c */; };
 		AE62CA83272542AF007D51CD /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA7F272542AF007D51CD /* fishhook.c */; };
@@ -1522,37 +1459,6 @@
 		AE62CA0727254259007D51CD /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		AE62CA0827254259007D51CD /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		AE62CA0927254259007D51CD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		AE62CA202725429A007D51CD /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewCell.h; sourceTree = "<group>"; };
-		AE62CA212725429A007D51CD /* TZPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPickerController.h; sourceTree = "<group>"; };
-		AE62CA222725429A007D51CD /* TZImageCropManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageCropManager.m; sourceTree = "<group>"; };
-		AE62CA232725429A007D51CD /* TZImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImageManager.h; sourceTree = "<group>"; };
-		AE62CA242725429A007D51CD /* TZAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZAssetCell.m; sourceTree = "<group>"; };
-		AE62CA252725429A007D51CD /* TZVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZVideoPlayerController.m; sourceTree = "<group>"; };
-		AE62CA262725429A007D51CD /* TZAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZAssetModel.m; sourceTree = "<group>"; };
-		AE62CA272725429A007D51CD /* NSBundle+TZImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+TZImagePicker.m"; sourceTree = "<group>"; };
-		AE62CA282725429A007D51CD /* TZLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZLocationManager.h; sourceTree = "<group>"; };
-		AE62CA292725429A007D51CD /* TZImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImagePickerController.h; sourceTree = "<group>"; };
-		AE62CA2A2725429A007D51CD /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
-		AE62CA2B2725429A007D51CD /* TZPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPreviewController.m; sourceTree = "<group>"; };
-		AE62CA2C2725429A007D51CD /* TZImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TZImagePickerController.bundle; sourceTree = "<group>"; };
-		AE62CA2D2725429A007D51CD /* TZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZProgressView.m; sourceTree = "<group>"; };
-		AE62CA2E2725429A007D51CD /* TZGifPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZGifPhotoPreviewController.h; sourceTree = "<group>"; };
-		AE62CA2F2725429A007D51CD /* TZImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImageRequestOperation.h; sourceTree = "<group>"; };
-		AE62CA302725429A007D51CD /* TZAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetCell.h; sourceTree = "<group>"; };
-		AE62CA312725429A007D51CD /* TZImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageManager.m; sourceTree = "<group>"; };
-		AE62CA322725429A007D51CD /* TZImageCropManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImageCropManager.h; sourceTree = "<group>"; };
-		AE62CA332725429A007D51CD /* TZPhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPickerController.m; sourceTree = "<group>"; };
-		AE62CA342725429A007D51CD /* TZPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPreviewCell.m; sourceTree = "<group>"; };
-		AE62CA352725429A007D51CD /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
-		AE62CA362725429A007D51CD /* TZAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetModel.h; sourceTree = "<group>"; };
-		AE62CA372725429A007D51CD /* TZVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZVideoPlayerController.h; sourceTree = "<group>"; };
-		AE62CA382725429A007D51CD /* TZPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewController.h; sourceTree = "<group>"; };
-		AE62CA392725429A007D51CD /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
-		AE62CA3A2725429A007D51CD /* TZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImagePickerController.m; sourceTree = "<group>"; };
-		AE62CA3B2725429A007D51CD /* TZLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZLocationManager.m; sourceTree = "<group>"; };
-		AE62CA3C2725429A007D51CD /* TZGifPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZGifPhotoPreviewController.m; sourceTree = "<group>"; };
-		AE62CA3D2725429A007D51CD /* TZImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageRequestOperation.m; sourceTree = "<group>"; };
-		AE62CA3E2725429A007D51CD /* TZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZProgressView.h; sourceTree = "<group>"; };
 		AE62CA7F272542AF007D51CD /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		AE62CA80272542AF007D51CD /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		AE62CA86272542D1007D51CD /* iOSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSPalette.h; sourceTree = "<group>"; };
@@ -2763,7 +2669,6 @@
 				AE62CB04272542F8007D51CD /* Lame */,
 				AE62CA85272542D1007D51CD /* Palette */,
 				AE62CA7E272542AF007D51CD /* FishHook */,
-				AE62CA1F2725429A007D51CD /* TZImagePickerController */,
 				AE62C9FE27254259007D51CD /* fmdb */,
 			);
 			path = Vender;
@@ -2785,44 +2690,6 @@
 				AE62CA0327254259007D51CD /* FMDatabaseAdditions.m */,
 			);
 			path = fmdb;
-			sourceTree = "<group>";
-		};
-		AE62CA1F2725429A007D51CD /* TZImagePickerController */ = {
-			isa = PBXGroup;
-			children = (
-				AE62CA202725429A007D51CD /* TZPhotoPreviewCell.h */,
-				AE62CA212725429A007D51CD /* TZPhotoPickerController.h */,
-				AE62CA222725429A007D51CD /* TZImageCropManager.m */,
-				AE62CA232725429A007D51CD /* TZImageManager.h */,
-				AE62CA242725429A007D51CD /* TZAssetCell.m */,
-				AE62CA252725429A007D51CD /* TZVideoPlayerController.m */,
-				AE62CA262725429A007D51CD /* TZAssetModel.m */,
-				AE62CA272725429A007D51CD /* NSBundle+TZImagePicker.m */,
-				AE62CA282725429A007D51CD /* TZLocationManager.h */,
-				AE62CA292725429A007D51CD /* TZImagePickerController.h */,
-				AE62CA2A2725429A007D51CD /* UIView+Layout.m */,
-				AE62CA2B2725429A007D51CD /* TZPhotoPreviewController.m */,
-				AE62CA2C2725429A007D51CD /* TZImagePickerController.bundle */,
-				AE62CA2D2725429A007D51CD /* TZProgressView.m */,
-				AE62CA2E2725429A007D51CD /* TZGifPhotoPreviewController.h */,
-				AE62CA2F2725429A007D51CD /* TZImageRequestOperation.h */,
-				AE62CA302725429A007D51CD /* TZAssetCell.h */,
-				AE62CA312725429A007D51CD /* TZImageManager.m */,
-				AE62CA322725429A007D51CD /* TZImageCropManager.h */,
-				AE62CA332725429A007D51CD /* TZPhotoPickerController.m */,
-				AE62CA342725429A007D51CD /* TZPhotoPreviewCell.m */,
-				AE62CA352725429A007D51CD /* NSBundle+TZImagePicker.h */,
-				AE62CA362725429A007D51CD /* TZAssetModel.h */,
-				AE62CA372725429A007D51CD /* TZVideoPlayerController.h */,
-				AE62CA382725429A007D51CD /* TZPhotoPreviewController.h */,
-				AE62CA392725429A007D51CD /* UIView+Layout.h */,
-				AE62CA3A2725429A007D51CD /* TZImagePickerController.m */,
-				AE62CA3B2725429A007D51CD /* TZLocationManager.m */,
-				AE62CA3C2725429A007D51CD /* TZGifPhotoPreviewController.m */,
-				AE62CA3D2725429A007D51CD /* TZImageRequestOperation.m */,
-				AE62CA3E2725429A007D51CD /* TZProgressView.h */,
-			);
-			path = TZImagePickerController;
 			sourceTree = "<group>";
 		};
 		AE62CA7E272542AF007D51CD /* FishHook */ = {
@@ -4427,12 +4294,10 @@
 				AE66E0FA275369D3006432FE /* bprint.h in Headers */,
 				AE66E0EC275369D3006432FE /* macros.h in Headers */,
 				AE66E0C1275369D3006432FE /* stereo3d.h in Headers */,
-				AE62CA442725429A007D51CD /* TZImageManager.h in Headers */,
 				AE66E0C0275369D3006432FE /* murmur3.h in Headers */,
 				AE66E0C2275369D3006432FE /* samplefmt.h in Headers */,
 				AE66E0DE275369D3006432FE /* display.h in Headers */,
 				AEE010FC2742569200C155D8 /* MJRefreshFooter.h in Headers */,
-				AE62CA7D2725429B007D51CD /* TZProgressView.h in Headers */,
 				AE66E0D2275369D3006432FE /* hwcontext_vaapi.h in Headers */,
 				AE66E112275369D3006432FE /* xvmc.h in Headers */,
 				AE66E110275369D3006432FE /* vaapi.h in Headers */,
@@ -4446,14 +4311,12 @@
 				AE66E0CF275369D3006432FE /* file.h in Headers */,
 				AE66E103275369D3006432FE /* intreadwrite.h in Headers */,
 				AE66E119275369D3006432FE /* avdct.h in Headers */,
-				AE62CA6F2725429B007D51CD /* TZPhotoPreviewController.h in Headers */,
 				AE66E0E0275369D3006432FE /* camellia.h in Headers */,
 				AE62CA84272542AF007D51CD /* fishhook.h in Headers */,
 				AE66E0E7275369D3006432FE /* random_seed.h in Headers */,
 				AE66E0BA275369D3006432FE /* intfloat.h in Headers */,
 				AE66E0B9275369D3006432FE /* hwcontext_cuda.h in Headers */,
 				AE62CA172725425A007D51CD /* FMDB.h in Headers */,
-				AE62CA702725429B007D51CD /* UIView+Layout.h in Headers */,
 				AE66E0DF275369D3006432FE /* buffer.h in Headers */,
 				AE66E11E275369D3006432FE /* swresample.h in Headers */,
 				AE66E0B8275369D3006432FE /* time.h in Headers */,
@@ -4463,7 +4326,6 @@
 				AE66E0E9275369D3006432FE /* mastering_display_metadata.h in Headers */,
 				AE66E0E4275369D3006432FE /* hmac.h in Headers */,
 				AE66E0FD275369D3006432FE /* aes_ctr.h in Headers */,
-				AE62CA652725429B007D51CD /* TZImageCropManager.h in Headers */,
 				AEE010E32742569200C155D8 /* MJRefreshNormalHeader.h in Headers */,
 				AE66E116275369D3006432FE /* vda.h in Headers */,
 				AE66E0F1275369D3006432FE /* lzo.h in Headers */,
@@ -4471,12 +4333,10 @@
 				AE66E0D9275369D3006432FE /* adler32.h in Headers */,
 				AEE010B42742569200C155D8 /* MJRefresh.h in Headers */,
 				AEE010E12742569200C155D8 /* MJRefreshStateHeader.h in Headers */,
-				AE62CA6D2725429B007D51CD /* TZAssetModel.h in Headers */,
 				AE62CB09272542F8007D51CD /* TransformMP3.h in Headers */,
 				AE66E0F4275369D3006432FE /* twofish.h in Headers */,
 				AE66E109275369D3006432FE /* avformat.h in Headers */,
 				AE62CAA6272542D1007D51CD /* PaletteSwatch.h in Headers */,
-				AE62CA6C2725429B007D51CD /* NSBundle+TZImagePicker.h in Headers */,
 				AEAFBBD52AA02658003D92B5 /* ObjcTry.h in Headers */,
 				AE62CAA7272542D1007D51CD /* Palette.h in Headers */,
 				AE66E0CD275369D3006432FE /* hwcontext_vdpau.h in Headers */,
@@ -4494,14 +4354,12 @@
 				AE66E0FE275369D3006432FE /* timestamp.h in Headers */,
 				AE66E108275369D3006432FE /* avio.h in Headers */,
 				AE66E106275369D3006432FE /* avdevice.h in Headers */,
-				AE62CA402725429A007D51CD /* TZPhotoPickerController.h in Headers */,
 				AEE010BE2742569200C155D8 /* MJRefreshConst.h in Headers */,
 				AE66E0D8275369D3006432FE /* attributes.h in Headers */,
 				AE66E0B3275369D3006432FE /* buffersrc.h in Headers */,
 				AE66E0DA275369D3006432FE /* hwcontext_d3d11va.h in Headers */,
 				AE66E0EF275369D3006432FE /* tea.h in Headers */,
 				AE66E10F275369D3006432FE /* qsv.h in Headers */,
-				AE62CA602725429B007D51CD /* TZImageRequestOperation.h in Headers */,
 				AE66E0D1275369D3006432FE /* cast5.h in Headers */,
 				AEE010B32742569200C155D8 /* UIScrollView+MJExtension.h in Headers */,
 				AE66E0D5275369D3006432FE /* audio_fifo.h in Headers */,
@@ -4519,12 +4377,9 @@
 				AE66E0DD275369D3006432FE /* hwcontext_dxva2.h in Headers */,
 				AE66E0DC275369D3006432FE /* sha512.h in Headers */,
 				AE66E0E8275369D3006432FE /* opt.h in Headers */,
-				AE62CA512725429A007D51CD /* TZLocationManager.h in Headers */,
 				AE66E0B5275369D3006432FE /* avfilter.h in Headers */,
 				AE62CA162725425A007D51CD /* FMDatabaseQueue.h in Headers */,
-				AE62CA522725429A007D51CD /* TZImagePickerController.h in Headers */,
 				AE66E03027536944006432FE /* x264.h in Headers */,
-				AE62CA612725429B007D51CD /* TZAssetCell.h in Headers */,
 				AE66E0B6275369D3006432FE /* avfiltergraph.h in Headers */,
 				AEE010BD2742569200C155D8 /* MJRefreshConfig.h in Headers */,
 				AE66E10B275369D3006432FE /* swscale.h in Headers */,
@@ -4536,7 +4391,6 @@
 				AE66E111275369D3006432FE /* videotoolbox.h in Headers */,
 				AE66E0C7275369D3006432FE /* motion_vector.h in Headers */,
 				AE66E0D4275369D3006432FE /* ffversion.h in Headers */,
-				AE62CA6E2725429B007D51CD /* TZVideoPlayerController.h in Headers */,
 				AEE010ED2742569200C155D8 /* MJRefreshComponent.h in Headers */,
 				AE62CA182725425A007D51CD /* FMDatabaseAdditions.h in Headers */,
 				AE66E101275369D3006432FE /* hash.h in Headers */,
@@ -4560,7 +4414,6 @@
 				AE66E1BA27538679006432FE /* PreviewView.h in Headers */,
 				AE66E0F6275369D3006432FE /* hwcontext_videotoolbox.h in Headers */,
 				AE62CAA5272542D1007D51CD /* PaletteTarget.h in Headers */,
-				AE62CA3F2725429A007D51CD /* TZPhotoPreviewCell.h in Headers */,
 				AE66E0E2275369D3006432FE /* hwcontext_drm.h in Headers */,
 				AE62CAA9272542D1007D51CD /* PaletteColorModel.h in Headers */,
 				AEE010D22742569200C155D8 /* MJRefreshAutoStateFooter.h in Headers */,
@@ -4593,7 +4446,6 @@
 				AE7090202CB69B9E005F38F6 /* HWDebounce.h in Headers */,
 				AE66E11D275369D3006432FE /* version.h in Headers */,
 				AE66E11A275369D3006432FE /* vorbis_parser.h in Headers */,
-				AE62CA5F2725429B007D51CD /* TZGifPhotoPreviewController.h in Headers */,
 				AE66E0EB275369D3006432FE /* aes.h in Headers */,
 				AE66E0C4275369D3006432FE /* base64.h in Headers */,
 				AE66E1B827538679006432FE /* VideoDecoder.h in Headers */,
@@ -4843,7 +4695,6 @@
 				AEE0113D27425D8800C155D8 /* selected.png in Resources */,
 				AEF8666F274B9BCD002E33E5 /* LICENSE.txt in Resources */,
 				AEF5BF1A2ADD2BC000A7305D /* iconfont.woff in Resources */,
-				AE62CA592725429B007D51CD /* TZImagePickerController.bundle in Resources */,
 				AEE0114027425D8800C155D8 /* p_13.png in Resources */,
 				AEE0115027425D8800C155D8 /* gu.mp3 in Resources */,
 				AEE0113827425D8800C155D8 /* bubble.jpg in Resources */,
@@ -4906,7 +4757,6 @@
 				AE5846272C15515C00F758EC /* folder@2x.png in Resources */,
 				AE62C9E7272541D0007D51CD /* gif0.gif in Resources */,
 				AE58462B2C15515C00F758EC /* image@2x.png in Resources */,
-				AE62CA5A2725429B007D51CD /* TZImagePickerController.bundle in Resources */,
 				AE72F541273EBDE20060456A /* city.json in Resources */,
 				AE4D091C273032FC00899D2C /* upload.html in Resources */,
 				AE62C9EB272541E2007D51CD /* question.html in Resources */,
@@ -4976,7 +4826,6 @@
 				AE5846292C15515C00F758EC /* folder@2x.png in Resources */,
 				AEF5BF212ADD2BC000A7305D /* iconfont.ttf in Resources */,
 				AE5846312C15515C00F758EC /* pdf@2x.png in Resources */,
-				AE62CA5B2725429B007D51CD /* TZImagePickerController.bundle in Resources */,
 				AE5846392C15515C00F758EC /* WebviewPreviewViewContoller.xib in Resources */,
 				AEE010B82742569200C155D8 /* MJRefresh.bundle in Resources */,
 				AE4D091D273032FC00899D2C /* upload.html in Resources */,
@@ -5234,7 +5083,6 @@
 				AEE011022742581500C155D8 /* LockView.swift in Sources */,
 				AE62CAD7272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE74AAC727D4A14C00296960 /* CalculatorViewController.swift in Sources */,
-				AE62CA482725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE08AA9027C684D400EE0813 /* MediaTool.swift in Sources */,
 				AE62CAFB272542DC007D51CD /* ShadowEncoder.swift in Sources */,
 				20A9655D2903C794007F8526 /* UILabel+Extension.swift in Sources */,
@@ -5248,7 +5096,6 @@
 				AE62CA9E272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE71F2242C58E7F400DE980A /* XlogDecoder.m in Sources */,
 				20A965692903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
-				AE62CA562725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE1C4F65274346BD0097EAC1 /* bzip2recover.c in Sources */,
 				AE6B2DD827550E180066017F /* MediaBroswerView.swift in Sources */,
 				AEE010572742551F00C155D8 /* FiveStroke.swift in Sources */,
@@ -5273,7 +5120,6 @@
 				AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE8C505B2C94406100021D92 /* TransferGoodsViewController.swift in Sources */,
 				AEE010722742560200C155D8 /* DynamicMitoViewController.swift in Sources */,
-				AE62CA452725429A007D51CD /* TZAssetCell.m in Sources */,
 				20A965772903D34C007F8526 /* PHPLibraryTool.swift in Sources */,
 				AEE0104F2742526700C155D8 /* PaletteViewController.swift in Sources */,
 				AE80EE0927FF0795004566D5 /* PopViewController.swift in Sources */,
@@ -5317,7 +5163,6 @@
 				AE62CAE0272542DC007D51CD /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CB3A27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE1C4F62274346BD0097EAC1 /* huffman.c in Sources */,
-				AE62CA5C2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE7234AE278E6B640088C791 /* PHAssert+Extension.swift in Sources */,
 				AE66E18C27537CC9006432FE /* OpenCVMenuViewController.swift in Sources */,
 				AE61166027410F2F008466AB /* GrandSlider.swift in Sources */,
@@ -5332,7 +5177,6 @@
 				AEE0113027425D8800C155D8 /* LinkGameViewController.swift in Sources */,
 				AE62CACE272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE4D09232730333100899D2C /* CacheWebViewController.swift in Sources */,
-				AE62CA4B2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AEF6CB3F287A79E500352100 /* Style+Extension.swift in Sources */,
 				AEE010732742560200C155D8 /* ImageSetListViewController.swift in Sources */,
 				AE74AAC927D4A36A00296960 /* Calculator.swift in Sources */,
@@ -5341,7 +5185,6 @@
 				AE66E1B427538679006432FE /* PreviewView.mm in Sources */,
 				AEE010C92742569200C155D8 /* MJRefreshBackGifFooter.m in Sources */,
 				AE4D091F2730331100899D2C /* HttpInterceptWebMenuViewController.swift in Sources */,
-				AE62CA742725429B007D51CD /* TZLocationManager.m in Sources */,
 				AEE0104327424D6200C155D8 /* AudioListViewController.swift in Sources */,
 				AE4D0901273032E700899D2C /* H5ResourceCache.swift in Sources */,
 				20A965802903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
@@ -5432,10 +5275,8 @@
 				AEE010702742560200C155D8 /* MitoPlayViewController.swift in Sources */,
 				AE6E5DC1273FB6FF00523EA8 /* Trace.swift in Sources */,
 				AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */,
-				AE62CA712725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE8306E127B4B16F00C657DC /* ScaleViewController.swift in Sources */,
 				AE128884281CED0A0049A5E4 /* operation.swift in Sources */,
-				AE62CA532725429A007D51CD /* UIView+Layout.m in Sources */,
 				AEAFBBE12AA72825003D92B5 /* WWKWebView.swift in Sources */,
 				AE71F2162C579A9600DE980A /* ShadowVideoInfo.swift in Sources */,
 				AEE010CC2742569200C155D8 /* MJRefreshBackStateFooter.m in Sources */,
@@ -5463,21 +5304,16 @@
 				AE62CB5C2725495E007D51CD /* Array+Extension.swift in Sources */,
 				AE8C50562C94406100021D92 /* ImageUploadQuene.swift in Sources */,
 				AE62CA1C2725425A007D51CD /* FMResultSet.m in Sources */,
-				AE62CA7A2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE6E5DCA273FC34600523EA8 /* StyleTableViewController.swift in Sources */,
 				AE94D3332742421A00ACEDDC /* AnimationVIew.swift in Sources */,
-				AE62CA692725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE5846432C15515C00F758EC /* FileBrowser.swift in Sources */,
 				AE62CB8D27254DD7007D51CD /* DBTool.swift in Sources */,
 				AEE010BA2742569200C155D8 /* UIScrollView+MJExtension.m in Sources */,
 				AE62CBAC27255C0E007D51CD /* LayoutButton.swift in Sources */,
-				AE62CA622725429B007D51CD /* TZImageManager.m in Sources */,
 				AE7090162CB69A14005F38F6 /* LivePhoto.swift in Sources */,
 				AE1C4F5E274346BD0097EAC1 /* mk251.c in Sources */,
-				AE62CA4E2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE62CADD272542DC007D51CD /* ShadowPlayer.swift in Sources */,
 				AE62CAFE272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
-				AE62CA412725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAF5272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE128860281CED0A0049A5E4 /* glyph.swift in Sources */,
 				AE8C504E2C94406100021D92 /* TMallCatchHandler.swift in Sources */,
@@ -5485,7 +5321,6 @@
 				AE1C4F60274346BD0097EAC1 /* decompress.c in Sources */,
 				AE62CBD727255C20007D51CD /* FlowView.swift in Sources */,
 				AE1A51A027C284B500162D66 /* ImageMemoryViewController.swift in Sources */,
-				AE62CA772725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
 				AE62CA81272542AF007D51CD /* fishhook.c in Sources */,
 				AE66E1D927538EE0006432FE /* PullLiveViewController.swift in Sources */,
 				AE66E1DA27538EE0006432FE /* PushLiveViewController.swift in Sources */,
@@ -5524,7 +5359,6 @@
 				AE62CB1827254873007D51CD /* ResultInfo.swift in Sources */,
 				AE4D0910273032F300899D2C /* WebViewReusePool.swift in Sources */,
 				AEE0103A27424A3600C155D8 /* VideoFileManager.swift in Sources */,
-				AE62CA662725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AE1C4F77274380910097EAC1 /* RerangeBinaryViewController.m in Sources */,
 				AE66E1D827538EE0006432FE /* HeartView.swift in Sources */,
 				AE128868281CED0A0049A5E4 /* expression.swift in Sources */,
@@ -5549,24 +5383,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE62CB9127254DD7007D51CD /* Auth.swift in Sources */,
-				AE62CA782725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
 				AE62CB4727254947007D51CD /* UITableView+Extension.swift in Sources */,
 				AEE010E52742569200C155D8 /* MJRefreshStateHeader.m in Sources */,
 				AE62CB8227254DD7007D51CD /* Tool.swift in Sources */,
-				AE62CA6A2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AE5846542C15515C00F758EC /* FileListViewController.swift in Sources */,
 				AEE010FA2742569200C155D8 /* MJRefreshComponent.m in Sources */,
 				AE5846582C15515C00F758EC /* FileParser.swift in Sources */,
 				AE62CB3E27254947007D51CD /* WKWebView+Extension.swift in Sources */,
 				20A9656A2903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				AEE010C42742569200C155D8 /* UIView+MJExtension.m in Sources */,
-				AE62CA7B2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CB3827254946007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE62CB6C27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CBAD27255C0E007D51CD /* LayoutButton.swift in Sources */,
 				20A965812903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
 				20A9656E2903CA4B007F8526 /* HttpClient.swift in Sources */,
-				AE62CA4C2725429A007D51CD /* TZAssetModel.m in Sources */,
 				20B65A3B28FC249200341DB9 /* UIFont+Extension.swift in Sources */,
 				AE62CAD8272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AEF5BF072ADD2BC000A7305D /* IconNames.swift in Sources */,
@@ -5576,7 +5406,6 @@
 				AE61166127410F30008466AB /* GrandSlider.swift in Sources */,
 				AEE010BB2742569200C155D8 /* UIScrollView+MJExtension.m in Sources */,
 				AE62CBC627255C20007D51CD /* ProgressButton.swift in Sources */,
-				AE62CA752725429B007D51CD /* TZLocationManager.m in Sources */,
 				AEE010D62742569200C155D8 /* MJRefreshAutoStateFooter.m in Sources */,
 				AE12886D281CED0A0049A5E4 /* expression-combining.swift in Sources */,
 				AEF8665C274B6F98002E33E5 /* Store.swift in Sources */,
@@ -5608,10 +5437,8 @@
 				AE12888D281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
 				AE62CAF3272542DC007D51CD /* CameraModel.swift in Sources */,
 				AE62CBC327255C20007D51CD /* LimitTextView.swift in Sources */,
-				AE62CA632725429B007D51CD /* TZImageManager.m in Sources */,
 				AE62CAD2272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
 				AE62CAFC272542DC007D51CD /* ShadowEncoder.swift in Sources */,
-				AE62CA542725429B007D51CD /* UIView+Layout.m in Sources */,
 				AEE010E82742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
 				AE62CA142725425A007D51CD /* FMDatabase.m in Sources */,
 				AE128879281CED0A0049A5E4 /* calc-error.swift in Sources */,
@@ -5632,10 +5459,8 @@
 				AE5846602C15515C00F758EC /* PreviewManager.swift in Sources */,
 				AE62CAA3272542D1007D51CD /* UIImage+Palette.m in Sources */,
 				AEE010AE2742569200C155D8 /* MJRefreshConst.m in Sources */,
-				AE62CA4F2725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AEE010DF2742569200C155D8 /* MJRefreshNormalHeader.m in Sources */,
 				AEE010AB2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
-				AE62CA5D2725429B007D51CD /* TZProgressView.m in Sources */,
 				20A9657D2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */,
 				AE58463F2C15515C00F758EC /* FBFile.swift in Sources */,
 				AE62CB5927254947007D51CD /* UIView+Base.swift in Sources */,
@@ -5643,12 +5468,10 @@
 				AEE010B12742569200C155D8 /* MJRefreshConfig.m in Sources */,
 				AED0C2CA274E8548007A3547 /* ShadowVideoPlayControlView.swift in Sources */,
 				AE62CAE4272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
-				AE62CA462725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE62CB6F27254B12007D51CD /* GrandCue.swift in Sources */,
 				AE62CAED272542DC007D51CD /* CaptureSessionCoordinator.swift in Sources */,
 				AE128881281CED0A0049A5E4 /* operationizer.swift in Sources */,
 				AE62CB0F272542F8007D51CD /* TransformMP3.m in Sources */,
-				AE62CA672725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				20A9655E2903C794007F8526 /* UILabel+Extension.swift in Sources */,
 				AE62CBC027255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CB5027254947007D51CD /* UICollectView+Extension.swift in Sources */,
@@ -5669,18 +5492,15 @@
 				AE5846442C15515C00F758EC /* FileBrowser.swift in Sources */,
 				20A965782903D34C007F8526 /* PHPLibraryTool.swift in Sources */,
 				AE58464C2C15515C00F758EC /* FileListSearch.swift in Sources */,
-				AE62CA422725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CADB272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				20A965632903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
 				AE62CB02272542DC007D51CD /* ShadowCameraHandle.swift in Sources */,
 				AE5846702C155B7000F758EC /* CalFileSize.swift in Sources */,
-				AE62CA492725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE128861281CED0A0049A5E4 /* glyph.swift in Sources */,
 				AE62CA1D2725425A007D51CD /* FMResultSet.m in Sources */,
 				AE128885281CED0A0049A5E4 /* operation.swift in Sources */,
 				AEE010C12742569200C155D8 /* NSBundle+MJRefresh.m in Sources */,
 				AEE010CA2742569200C155D8 /* MJRefreshBackGifFooter.m in Sources */,
-				AE62CA572725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AE62CB65272549A3007D51CD /* String+Extension.swift in Sources */,
 				AE62CB4A27254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE5846642C15515C00F758EC /* PreviewTransitionViewController.swift in Sources */,
@@ -5700,7 +5520,6 @@
 				AE12887D281CED0A0049A5E4 /* calc-result.swift in Sources */,
 				AE62CAEA272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CBCF27255C20007D51CD /* GridView.swift in Sources */,
-				AE62CA722725429B007D51CD /* TZImagePickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5880,7 +5699,6 @@
 				AEE010BC2742569200C155D8 /* UIScrollView+MJExtension.m in Sources */,
 				AEE010C52742569200C155D8 /* UIView+MJExtension.m in Sources */,
 				20A9655B2903C6B2007F8526 /* UIView+Extension.swift in Sources */,
-				AE62CA4D2725429A007D51CD /* TZAssetModel.m in Sources */,
 				AE12888B281CED0A0049A5E4 /* number.swift in Sources */,
 				20A965832903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
 				AE62CA9D272542D1007D51CD /* Palette.m in Sources */,
@@ -5890,7 +5708,6 @@
 				AE62CB8F27254DD7007D51CD /* DBTool.swift in Sources */,
 				AEE010E02742569200C155D8 /* MJRefreshNormalHeader.m in Sources */,
 				AE62CB7327254B12007D51CD /* Toast.swift in Sources */,
-				AE62CA502725429A007D51CD /* NSBundle+TZImagePicker.m in Sources */,
 				AE7234AD278E6B610088C791 /* PHAssert+Extension.swift in Sources */,
 				AEE010C22742569200C155D8 /* NSBundle+MJRefresh.m in Sources */,
 				AEE010AF2742569200C155D8 /* MJRefreshConst.m in Sources */,
@@ -5913,7 +5730,6 @@
 				20A9656C2903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				AE128873281CED0A0049A5E4 /* expressionizer.swift in Sources */,
 				AE62CA122725425A007D51CD /* FMDatabaseAdditions.m in Sources */,
-				AE62CA732725429B007D51CD /* TZImagePickerController.m in Sources */,
 				AE62CAD3272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
 				AE72F532273EBDA60060456A /* AddressInfo.swift in Sources */,
 				AE12888F281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
@@ -5937,7 +5753,6 @@
 				AE62CB00272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CA9A272542D1007D51CD /* PaletteColorUtils.m in Sources */,
 				AE62CB8027254DD7007D51CD /* LogTool.swift in Sources */,
-				AE62CA432725429A007D51CD /* TZImageCropManager.m in Sources */,
 				AE62CAE5272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
 				AEE010532742547C00C155D8 /* CaptureSession.swift in Sources */,
 				AE8C505F2C94422D00021D92 /* PopView.swift in Sources */,
@@ -5947,13 +5762,10 @@
 				AE62CB4227254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AEE010B22742569200C155D8 /* MJRefreshConfig.m in Sources */,
 				20A965792903D34D007F8526 /* PHPLibraryTool.swift in Sources */,
-				AE62CA6B2725429B007D51CD /* TZPhotoPreviewCell.m in Sources */,
 				AEF5BF2D2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */,
-				AE62CA552725429B007D51CD /* UIView+Layout.m in Sources */,
 				AE62CB5127254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE58465A2C15515C00F758EC /* FileParser.swift in Sources */,
 				AEF6CB3D287A79D700352100 /* Style+Extension.swift in Sources */,
-				AE62CA5E2725429B007D51CD /* TZProgressView.m in Sources */,
 				AE62CB3C27254947007D51CD /* Foundation+Extension.swift in Sources */,
 				AE7090212CB69B9E005F38F6 /* HWThrottle.m in Sources */,
 				AE7090222CB69B9E005F38F6 /* HWDebounce.m in Sources */,
@@ -5962,8 +5774,6 @@
 				AEE010F42742569200C155D8 /* MJRefreshBackFooter.m in Sources */,
 				AE62CB6D27254B12007D51CD /* GandAlert.swift in Sources */,
 				AE62CB5427254947007D51CD /* UIScrollView+Extension.swift in Sources */,
-				AE62CA792725429B007D51CD /* TZGifPhotoPreviewController.m in Sources */,
-				AE62CA472725429A007D51CD /* TZAssetCell.m in Sources */,
 				AE62CAEB272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE80EE0727FF017E004566D5 /* PopHintView.swift in Sources */,
 				AEF5BF092ADD2BC000A7305D /* IconNames.swift in Sources */,
@@ -5986,11 +5796,9 @@
 				AE62CBD027255C20007D51CD /* GridView.swift in Sources */,
 				AE5846462C15515C00F758EC /* FileBrowser.swift in Sources */,
 				AE62CAAC272542D1007D51CD /* PaletteColorModel.m in Sources */,
-				AE62CA7C2725429B007D51CD /* TZImageRequestOperation.m in Sources */,
 				AE62CBBE27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CB9227254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CBD927255C20007D51CD /* FlowView.swift in Sources */,
-				AE62CA582725429B007D51CD /* TZPhotoPreviewController.m in Sources */,
 				AEAFBBD72AA02658003D92B5 /* ObjcTry.m in Sources */,
 				AE62CAE8272542DC007D51CD /* ShadowDownloader.swift in Sources */,
 				AE61165F27410F2C008466AB /* GrandSlider.swift in Sources */,
@@ -6000,7 +5808,6 @@
 				AE128893281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AEAFBBE22AA72825003D92B5 /* WWKWebView.swift in Sources */,
 				AE71F2172C579A9600DE980A /* ShadowVideoInfo.swift in Sources */,
-				AE62CA642725429B007D51CD /* TZImageManager.m in Sources */,
 				AE58464A2C15515C00F758EC /* FileListPreview.swift in Sources */,
 				AE257F922B9744F400AEEABB /* NetToolView.swift in Sources */,
 				AEE010F02742569200C155D8 /* MJRefreshHeader.m in Sources */,
@@ -6012,7 +5819,6 @@
 				AE5846622C15515C00F758EC /* PreviewManager.swift in Sources */,
 				AE72F537273EBDAE0060456A /* CityChooseViewController.swift in Sources */,
 				AEA0A122278940680044D012 /* ImageInfo.swift in Sources */,
-				AE62CA682725429B007D51CD /* TZPhotoPickerController.m in Sources */,
 				AEF5BF0D2ADD2BC000A7305D /* UIImage+BBIconFont.swift in Sources */,
 				AE5819F72B5FB6DA009D0067 /* NetTool.swift in Sources */,
 				AE62CB4527254947007D51CD /* UINavigationController+Extension.swift in Sources */,
@@ -6035,9 +5841,7 @@
 				AE62CB1727254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CAD0272542DC007D51CD /* ShadowDataManager.swift in Sources */,
 				AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */,
-				AE62CA762725429B007D51CD /* TZLocationManager.m in Sources */,
 				AEF8814E2B551E1D0032492B /* BaseBridge.m in Sources */,
-				AE62CA4A2725429A007D51CD /* TZVideoPlayerController.m in Sources */,
 				AE0442832803D465003DB6A1 /* InputText.swift in Sources */,
 				AE128897281CED0A0049A5E4 /* token.swift in Sources */,
 				AE72F53D273EBDD70060456A /* CitySearchResultView.swift in Sources */,

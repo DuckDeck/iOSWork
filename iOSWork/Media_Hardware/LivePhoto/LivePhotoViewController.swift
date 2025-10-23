@@ -6,13 +6,14 @@
 //
 
 import AVFoundation
+import PhotosUI
 
-class LivePhotoViewController: UIViewController, TZImagePickerControllerDelegate {
+class LivePhotoViewController: UIViewController, PHPickerViewControllerDelegate {
     var imgView: UIImageView!
     var arrImageInfo = [String]()
     var shadowPlayer: ShadowVideoPlayerView!
 
-    var imagePickerController: TZImagePickerController!
+    var imagePickerController: PHPickerViewController!
     let lblInfo = UILabel()
     var tmpImg: UIImage?
     var videoURL: URL?
@@ -21,15 +22,12 @@ class LivePhotoViewController: UIViewController, TZImagePickerControllerDelegate
         navigationItem.title = "ImageIO"
         view.backgroundColor = UIColor.white
 
-        imagePickerController = TZImagePickerController(maxImagesCount: 1, delegate: self)
-        imagePickerController.didFinishPickingPhotosHandle = { [weak self] images, _, _ in
-            guard let images = images, images.count > 0 else { return }
-            if images.count == 1 {
-                self?.createVideo(img: images[0])
-            } else {
-                self?.createVideos(imgs: images)
-            }
-        }
+        var config = PHPickerConfiguration()
+        config.filter = .images
+        config.selectionLimit = 1
+        imagePickerController = PHPickerViewController(configuration: config)
+        imagePickerController.delegate = self
+        
 
         imgView = UIImageView()
         imgView.contentMode = .scaleAspectFit
@@ -81,12 +79,12 @@ class LivePhotoViewController: UIViewController, TZImagePickerControllerDelegate
     }
 
     @objc func chooseOneImage() {
-        imagePickerController.maxImagesCount = 1
+//        imagePickerController.maxImagesCount = 1
         present(imagePickerController, animated: true, completion: nil)
     }
 
     @objc func chooseMoreImage() {
-        imagePickerController.maxImagesCount = 5
+//        imagePickerController.maxImagesCount = 5
         present(imagePickerController, animated: true, completion: nil)
     }
 
@@ -95,6 +93,21 @@ class LivePhotoViewController: UIViewController, TZImagePickerControllerDelegate
         VideoCreate().generateVideo(images: [img], duration: 4, size: img.size) { videoUrl in
             if let u = videoUrl {
                 self.playVideo(url: u)
+            }
+        }
+    }
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true) // 关闭选择器
+        for result in results {
+            if !result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                continue
+            }
+            // 使用 itemProvider 加载图片数据
+            result.itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                guard let image = image as? UIImage else {return}
+                DispatchQueue.main.async {
+                    self.createVideo(img: image)
+                }
             }
         }
     }

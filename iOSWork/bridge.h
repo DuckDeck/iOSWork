@@ -10,7 +10,6 @@
 #import "TransformMP3.h"
 #import "iOSPalette.h"
 #import "FMDB.h"
-#import "TZImagePickerController.h"
 #import "MJRefresh.h"
 #import "diff.h"
 #import "PatchViewController.h"

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Photos
 extension PHAsset{
     func getUrl(completed:@escaping ((_ url:URL?)->Void)){
         if self.mediaType == .image{
