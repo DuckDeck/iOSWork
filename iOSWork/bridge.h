@@ -8,7 +8,6 @@
 #ifndef bridge_h
 #define bridge_h
 #import "TransformMP3.h"
-#import "iOSPalette.h"
 #import "FMDB.h"
 #import "MJRefresh.h"
 #import "diff.h"

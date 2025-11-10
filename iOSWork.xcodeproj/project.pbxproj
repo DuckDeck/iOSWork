@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -343,35 +343,6 @@
 		AE62CA82272542AF007D51CD /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA7F272542AF007D51CD /* fishhook.c */; };
 		AE62CA83272542AF007D51CD /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA7F272542AF007D51CD /* fishhook.c */; };
 		AE62CA84272542AF007D51CD /* fishhook.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA80272542AF007D51CD /* fishhook.h */; };
-		AE62CA97272542D1007D51CD /* iOSPalette.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA86272542D1007D51CD /* iOSPalette.h */; };
-		AE62CA98272542D1007D51CD /* PaletteColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA88272542D1007D51CD /* PaletteColorUtils.m */; };
-		AE62CA99272542D1007D51CD /* PaletteColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA88272542D1007D51CD /* PaletteColorUtils.m */; };
-		AE62CA9A272542D1007D51CD /* PaletteColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA88272542D1007D51CD /* PaletteColorUtils.m */; };
-		AE62CA9B272542D1007D51CD /* Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA89272542D1007D51CD /* Palette.m */; };
-		AE62CA9C272542D1007D51CD /* Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA89272542D1007D51CD /* Palette.m */; };
-		AE62CA9D272542D1007D51CD /* Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA89272542D1007D51CD /* Palette.m */; };
-		AE62CA9E272542D1007D51CD /* PaletteSwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA8A272542D1007D51CD /* PaletteSwatch.m */; };
-		AE62CA9F272542D1007D51CD /* PaletteSwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA8A272542D1007D51CD /* PaletteSwatch.m */; };
-		AE62CAA0272542D1007D51CD /* PaletteSwatch.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA8A272542D1007D51CD /* PaletteSwatch.m */; };
-		AE62CAA1272542D1007D51CD /* PriorityBoxArray.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA8B272542D1007D51CD /* PriorityBoxArray.h */; };
-		AE62CAA2272542D1007D51CD /* UIImage+Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA8C272542D1007D51CD /* UIImage+Palette.m */; };
-		AE62CAA3272542D1007D51CD /* UIImage+Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA8C272542D1007D51CD /* UIImage+Palette.m */; };
-		AE62CAA4272542D1007D51CD /* UIImage+Palette.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA8C272542D1007D51CD /* UIImage+Palette.m */; };
-		AE62CAA5272542D1007D51CD /* PaletteTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA8D272542D1007D51CD /* PaletteTarget.h */; };
-		AE62CAA6272542D1007D51CD /* PaletteSwatch.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA8E272542D1007D51CD /* PaletteSwatch.h */; };
-		AE62CAA7272542D1007D51CD /* Palette.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA8F272542D1007D51CD /* Palette.h */; };
-		AE62CAA8272542D1007D51CD /* PaletteColorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA90272542D1007D51CD /* PaletteColorUtils.h */; };
-		AE62CAA9272542D1007D51CD /* PaletteColorModel.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA92272542D1007D51CD /* PaletteColorModel.h */; };
-		AE62CAAA272542D1007D51CD /* PaletteColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA93272542D1007D51CD /* PaletteColorModel.m */; };
-		AE62CAAB272542D1007D51CD /* PaletteColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA93272542D1007D51CD /* PaletteColorModel.m */; };
-		AE62CAAC272542D1007D51CD /* PaletteColorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA93272542D1007D51CD /* PaletteColorModel.m */; };
-		AE62CAAD272542D1007D51CD /* PriorityBoxArray.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA94272542D1007D51CD /* PriorityBoxArray.m */; };
-		AE62CAAE272542D1007D51CD /* PriorityBoxArray.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA94272542D1007D51CD /* PriorityBoxArray.m */; };
-		AE62CAAF272542D1007D51CD /* PriorityBoxArray.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA94272542D1007D51CD /* PriorityBoxArray.m */; };
-		AE62CAB0272542D1007D51CD /* PaletteTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA95272542D1007D51CD /* PaletteTarget.m */; };
-		AE62CAB1272542D1007D51CD /* PaletteTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA95272542D1007D51CD /* PaletteTarget.m */; };
-		AE62CAB2272542D1007D51CD /* PaletteTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = AE62CA95272542D1007D51CD /* PaletteTarget.m */; };
-		AE62CAB3272542D1007D51CD /* UIImage+Palette.h in Headers */ = {isa = PBXBuildFile; fileRef = AE62CA96272542D1007D51CD /* UIImage+Palette.h */; };
 		AE62CACB272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CAB6272542DC007D51CD /* ShadowAudioPlayerView.swift */; };
 		AE62CACC272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CAB6272542DC007D51CD /* ShadowAudioPlayerView.swift */; };
 		AE62CACD272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CAB6272542DC007D51CD /* ShadowAudioPlayerView.swift */; };
@@ -856,6 +827,12 @@
 		AEA0A122278940680044D012 /* ImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA0A121278940680044D012 /* ImageInfo.swift */; };
 		AEADA2C9273D65D200153D20 /* ScanCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */; };
 		AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEADA2CB273D66A700153D20 /* ShareViewController.swift */; };
+		AEAE0EE42EC2024A00ED8786 /* MMCQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE0EE32EC2024A00ED8786 /* MMCQ.swift */; };
+		AEAE0EE52EC2024A00ED8786 /* ColorThief.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE0EE22EC2024A00ED8786 /* ColorThief.swift */; };
+		AEAE0EE62EC2024A00ED8786 /* MMCQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE0EE32EC2024A00ED8786 /* MMCQ.swift */; };
+		AEAE0EE72EC2024A00ED8786 /* ColorThief.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE0EE22EC2024A00ED8786 /* ColorThief.swift */; };
+		AEAE0EE82EC2024A00ED8786 /* MMCQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE0EE32EC2024A00ED8786 /* MMCQ.swift */; };
+		AEAE0EE92EC2024A00ED8786 /* ColorThief.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAE0EE22EC2024A00ED8786 /* ColorThief.swift */; };
 		AEAFBBD02AA025A6003D92B5 /* WebDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBCF2AA025A6003D92B5 /* WebDemoViewController.swift */; };
 		AEAFBBD52AA02658003D92B5 /* ObjcTry.h in Headers */ = {isa = PBXBuildFile; fileRef = AEAFBBD32AA02658003D92B5 /* ObjcTry.h */; };
 		AEAFBBD62AA02658003D92B5 /* ObjcTry.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAFBBD42AA02658003D92B5 /* ObjcTry.m */; };
@@ -1461,21 +1438,6 @@
 		AE62CA0927254259007D51CD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		AE62CA7F272542AF007D51CD /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
 		AE62CA80272542AF007D51CD /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
-		AE62CA86272542D1007D51CD /* iOSPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSPalette.h; sourceTree = "<group>"; };
-		AE62CA88272542D1007D51CD /* PaletteColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteColorUtils.m; sourceTree = "<group>"; };
-		AE62CA89272542D1007D51CD /* Palette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Palette.m; sourceTree = "<group>"; };
-		AE62CA8A272542D1007D51CD /* PaletteSwatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteSwatch.m; sourceTree = "<group>"; };
-		AE62CA8B272542D1007D51CD /* PriorityBoxArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriorityBoxArray.h; sourceTree = "<group>"; };
-		AE62CA8C272542D1007D51CD /* UIImage+Palette.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Palette.m"; sourceTree = "<group>"; };
-		AE62CA8D272542D1007D51CD /* PaletteTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteTarget.h; sourceTree = "<group>"; };
-		AE62CA8E272542D1007D51CD /* PaletteSwatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteSwatch.h; sourceTree = "<group>"; };
-		AE62CA8F272542D1007D51CD /* Palette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Palette.h; sourceTree = "<group>"; };
-		AE62CA90272542D1007D51CD /* PaletteColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteColorUtils.h; sourceTree = "<group>"; };
-		AE62CA92272542D1007D51CD /* PaletteColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaletteColorModel.h; sourceTree = "<group>"; };
-		AE62CA93272542D1007D51CD /* PaletteColorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteColorModel.m; sourceTree = "<group>"; };
-		AE62CA94272542D1007D51CD /* PriorityBoxArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriorityBoxArray.m; sourceTree = "<group>"; };
-		AE62CA95272542D1007D51CD /* PaletteTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaletteTarget.m; sourceTree = "<group>"; };
-		AE62CA96272542D1007D51CD /* UIImage+Palette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Palette.h"; sourceTree = "<group>"; };
 		AE62CAB6272542DC007D51CD /* ShadowAudioPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowAudioPlayerView.swift; sourceTree = "<group>"; };
 		AE62CAB7272542DC007D51CD /* ShadowDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowDataManager.swift; sourceTree = "<group>"; };
 		AE62CAB8272542DC007D51CD /* ShadowAudioPlayerBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowAudioPlayerBack.swift; sourceTree = "<group>"; };
@@ -1808,6 +1770,8 @@
 		AEA0A121278940680044D012 /* ImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInfo.swift; sourceTree = "<group>"; };
 		AEADA2C8273D65D200153D20 /* ScanCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCodeViewController.swift; sourceTree = "<group>"; };
 		AEADA2CB273D66A700153D20 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		AEAE0EE22EC2024A00ED8786 /* ColorThief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThief.swift; sourceTree = "<group>"; };
+		AEAE0EE32EC2024A00ED8786 /* MMCQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMCQ.swift; sourceTree = "<group>"; };
 		AEAFBBCF2AA025A6003D92B5 /* WebDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDemoViewController.swift; sourceTree = "<group>"; };
 		AEAFBBD32AA02658003D92B5 /* ObjcTry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcTry.h; sourceTree = "<group>"; };
 		AEAFBBD42AA02658003D92B5 /* ObjcTry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcTry.m; sourceTree = "<group>"; };
@@ -2657,6 +2621,7 @@
 		AE62C9EC272541F2007D51CD /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AEAE0EE12EC2023500ED8786 /* ColorThief */,
 				AE71F2292C58EA1100DE980A /* mars */,
 				AE5846192C15515C00F758EC /* FileBrowser */,
 				AEF5BEFA2ADD2BBF00A7305D /* IconFont */,
@@ -2667,7 +2632,6 @@
 				AE72F51E273EB9820060456A /* CityChoose */,
 				AE62CB6727254B12007D51CD /* Toast */,
 				AE62CB04272542F8007D51CD /* Lame */,
-				AE62CA85272542D1007D51CD /* Palette */,
 				AE62CA7E272542AF007D51CD /* FishHook */,
 				AE62C9FE27254259007D51CD /* fmdb */,
 			);
@@ -2699,44 +2663,6 @@
 				AE62CA80272542AF007D51CD /* fishhook.h */,
 			);
 			path = FishHook;
-			sourceTree = "<group>";
-		};
-		AE62CA85272542D1007D51CD /* Palette */ = {
-			isa = PBXGroup;
-			children = (
-				AE62CA86272542D1007D51CD /* iOSPalette.h */,
-				AE62CA87272542D1007D51CD /* Source */,
-			);
-			path = Palette;
-			sourceTree = "<group>";
-		};
-		AE62CA87272542D1007D51CD /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				AE62CA88272542D1007D51CD /* PaletteColorUtils.m */,
-				AE62CA89272542D1007D51CD /* Palette.m */,
-				AE62CA8A272542D1007D51CD /* PaletteSwatch.m */,
-				AE62CA8B272542D1007D51CD /* PriorityBoxArray.h */,
-				AE62CA8C272542D1007D51CD /* UIImage+Palette.m */,
-				AE62CA8D272542D1007D51CD /* PaletteTarget.h */,
-				AE62CA8E272542D1007D51CD /* PaletteSwatch.h */,
-				AE62CA8F272542D1007D51CD /* Palette.h */,
-				AE62CA90272542D1007D51CD /* PaletteColorUtils.h */,
-				AE62CA91272542D1007D51CD /* Model */,
-				AE62CA94272542D1007D51CD /* PriorityBoxArray.m */,
-				AE62CA95272542D1007D51CD /* PaletteTarget.m */,
-				AE62CA96272542D1007D51CD /* UIImage+Palette.h */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		AE62CA91272542D1007D51CD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				AE62CA92272542D1007D51CD /* PaletteColorModel.h */,
-				AE62CA93272542D1007D51CD /* PaletteColorModel.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		AE62CAB4272542DC007D51CD /* Media */ = {
@@ -3688,6 +3614,15 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		AEAE0EE12EC2023500ED8786 /* ColorThief */ = {
+			isa = PBXGroup;
+			children = (
+				AEAE0EE22EC2024A00ED8786 /* ColorThief.swift */,
+				AEAE0EE32EC2024A00ED8786 /* MMCQ.swift */,
+			);
+			path = ColorThief;
+			sourceTree = "<group>";
+		};
 		AEB517E1282677EA00F2FA1D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -4303,10 +4238,8 @@
 				AE66E110275369D3006432FE /* vaapi.h in Headers */,
 				AE66E0ED275369D3006432FE /* bswap.h in Headers */,
 				AE66E0FC275369D3006432FE /* pixfmt.h in Headers */,
-				AE62CAA1272542D1007D51CD /* PriorityBoxArray.h in Headers */,
 				AE66E11B275369D3006432FE /* dxva2.h in Headers */,
 				AE66E1B927538679006432FE /* FFmpegVideoDecoder.h in Headers */,
-				AE62CA97272542D1007D51CD /* iOSPalette.h in Headers */,
 				AEE010F12742569200C155D8 /* MJRefreshAutoFooter.h in Headers */,
 				AE66E0CF275369D3006432FE /* file.h in Headers */,
 				AE66E103275369D3006432FE /* intreadwrite.h in Headers */,
@@ -4322,7 +4255,6 @@
 				AE66E0B8275369D3006432FE /* time.h in Headers */,
 				AE66E115275369D3006432FE /* avfft.h in Headers */,
 				AE66E0F0275369D3006432FE /* cpu.h in Headers */,
-				AE62CAA8272542D1007D51CD /* PaletteColorUtils.h in Headers */,
 				AE66E0E9275369D3006432FE /* mastering_display_metadata.h in Headers */,
 				AE66E0E4275369D3006432FE /* hmac.h in Headers */,
 				AE66E0FD275369D3006432FE /* aes_ctr.h in Headers */,
@@ -4336,9 +4268,7 @@
 				AE62CB09272542F8007D51CD /* TransformMP3.h in Headers */,
 				AE66E0F4275369D3006432FE /* twofish.h in Headers */,
 				AE66E109275369D3006432FE /* avformat.h in Headers */,
-				AE62CAA6272542D1007D51CD /* PaletteSwatch.h in Headers */,
 				AEAFBBD52AA02658003D92B5 /* ObjcTry.h in Headers */,
-				AE62CAA7272542D1007D51CD /* Palette.h in Headers */,
 				AE66E0CD275369D3006432FE /* hwcontext_vdpau.h in Headers */,
 				AE66E0C5275369D3006432FE /* rational.h in Headers */,
 				AE66E10D275369D3006432FE /* version.h in Headers */,
@@ -4405,7 +4335,6 @@
 				AE66E0F5275369D3006432FE /* imgutils.h in Headers */,
 				AE66E0BB275369D3006432FE /* error.h in Headers */,
 				AE66E0F2275369D3006432FE /* des.h in Headers */,
-				AE62CAB3272542D1007D51CD /* UIImage+Palette.h in Headers */,
 				AEE010F82742569200C155D8 /* MJRefreshHeader.h in Headers */,
 				AE66E0C8275369D3006432FE /* avconfig.h in Headers */,
 				AE66E0BC275369D3006432FE /* fifo.h in Headers */,
@@ -4413,9 +4342,7 @@
 				AE66E118275369D3006432FE /* dirac.h in Headers */,
 				AE66E1BA27538679006432FE /* PreviewView.h in Headers */,
 				AE66E0F6275369D3006432FE /* hwcontext_videotoolbox.h in Headers */,
-				AE62CAA5272542D1007D51CD /* PaletteTarget.h in Headers */,
 				AE66E0E2275369D3006432FE /* hwcontext_drm.h in Headers */,
-				AE62CAA9272542D1007D51CD /* PaletteColorModel.h in Headers */,
 				AEE010D22742569200C155D8 /* MJRefreshAutoStateFooter.h in Headers */,
 				AE66E0D3275369D3006432FE /* spherical.h in Headers */,
 				AE62CB0D272542F8007D51CD /* lame.h in Headers */,
@@ -4647,6 +4574,9 @@
 				en,
 				Base,
 				"zh-Hans",
+				de,
+				ja,
+				ru,
 			);
 			mainGroup = AE7E7419272251E300F0C19C;
 			packageReferences = (
@@ -5044,7 +4974,6 @@
 				AE1C4F67274346BD0097EAC1 /* unzcrash.c in Sources */,
 				AE62CB3727254946007D51CD /* UIViewController+Extension.swift in Sources */,
 				AE62CBCE27255C20007D51CD /* GridView.swift in Sources */,
-				AE62CAB0272542D1007D51CD /* PaletteTarget.m in Sources */,
 				AE62CA0B2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AE7090232CB69B9E005F38F6 /* HWThrottle.m in Sources */,
 				AE7090242CB69B9E005F38F6 /* HWDebounce.m in Sources */,
@@ -5093,7 +5022,6 @@
 				AE4D0904273032E700899D2C /* CacheProtocol.swift in Sources */,
 				AEE010E72742569200C155D8 /* MJRefreshGifHeader.m in Sources */,
 				AEE0106E2742560200C155D8 /* Resolution.swift in Sources */,
-				AE62CA9E272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE71F2242C58E7F400DE980A /* XlogDecoder.m in Sources */,
 				20A965692903CA05007F8526 /* UIDevice+Extension.swift in Sources */,
 				AE1C4F65274346BD0097EAC1 /* bzip2recover.c in Sources */,
@@ -5131,7 +5059,6 @@
 				AE62CBDA27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE6E5DC8273FBC3D00523EA8 /* HorizontalTableViewController.swift in Sources */,
 				AE66E19427537FBB006432FE /* OpenCVBaseViewController.swift in Sources */,
-				AE62CAA2272542D1007D51CD /* UIImage+Palette.m in Sources */,
 				AE62CAE9272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CB4927254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE62CACB272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
@@ -5199,7 +5126,6 @@
 				AE1C4F63274346BD0097EAC1 /* spewG.c in Sources */,
 				AEE010C32742569200C155D8 /* UIView+MJExtension.m in Sources */,
 				AEE0113227425D8800C155D8 /* PieceImage.swift in Sources */,
-				AE62CA98272542D1007D51CD /* PaletteColorUtils.m in Sources */,
 				AEE0103F27424D2000C155D8 /* AudioRecordViewController.swift in Sources */,
 				AE66E1C227538679006432FE /* FFmpegVideoDecoder.mm in Sources */,
 				AEF0EBE92729470000DCA7B8 /* Semaphore.swift in Sources */,
@@ -5230,7 +5156,6 @@
 				AE62CB6027254977007D51CD /* Dict+Extension.swift in Sources */,
 				AE6E5DCC273FC51C00523EA8 /* OptimizeTableViewController.swift in Sources */,
 				20B65A3A28FC249200341DB9 /* UIFont+Extension.swift in Sources */,
-				AE62CAAA272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AEE0105A2742551F00C155D8 /* FiveStrokeViewController.swift in Sources */,
 				AE128878281CED0A0049A5E4 /* calc-error.swift in Sources */,
 				AE7F9133272AC3C900733BC8 /* OffSreenRenderViewController.swift in Sources */,
@@ -5245,6 +5170,8 @@
 				AE62CAF8272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AEE0113527425D8800C155D8 /* LinkPoint.swift in Sources */,
 				AEE011012742581500C155D8 /* PointLockViewController.swift in Sources */,
+				AEAE0EE82EC2024A00ED8786 /* MMCQ.swift in Sources */,
+				AEAE0EE92EC2024A00ED8786 /* ColorThief.swift in Sources */,
 				AE58464F2C15515C00F758EC /* FileListTableView.swift in Sources */,
 				AE8C8DB027900BA300C656DF /* Codable+Extension.swift in Sources */,
 				AEB649C3273FF39700BCBF4E /* AnimationViewController.swift in Sources */,
@@ -5271,7 +5198,6 @@
 				AE6E5DC5273FB6FF00523EA8 /* SettingViewController.swift in Sources */,
 				AE8C50552C94406100021D92 /* GoodsSaveQuene.swift in Sources */,
 				AE6B2DDB2755155F0066017F /* MediaBroswerViewController.swift in Sources */,
-				AE62CA9B272542D1007D51CD /* Palette.m in Sources */,
 				AEE010702742560200C155D8 /* MitoPlayViewController.swift in Sources */,
 				AE6E5DC1273FB6FF00523EA8 /* Trace.swift in Sources */,
 				AE7F912C272AC27E00733BC8 /* MemoryLeak.swift in Sources */,
@@ -5280,7 +5206,6 @@
 				AEAFBBE12AA72825003D92B5 /* WWKWebView.swift in Sources */,
 				AE71F2162C579A9600DE980A /* ShadowVideoInfo.swift in Sources */,
 				AEE010CC2742569200C155D8 /* MJRefreshBackStateFooter.m in Sources */,
-				AE62CAAD272542D1007D51CD /* PriorityBoxArray.m in Sources */,
 				AE62CAE3272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
 				AE62CB7E27254DD7007D51CD /* LogTool.swift in Sources */,
 				AEE010F92742569200C155D8 /* MJRefreshComponent.m in Sources */,
@@ -5383,6 +5308,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE62CB9127254DD7007D51CD /* Auth.swift in Sources */,
+				AEAE0EE62EC2024A00ED8786 /* MMCQ.swift in Sources */,
+				AEAE0EE72EC2024A00ED8786 /* ColorThief.swift in Sources */,
 				AE62CB4727254947007D51CD /* UITableView+Extension.swift in Sources */,
 				AEE010E52742569200C155D8 /* MJRefreshStateHeader.m in Sources */,
 				AE62CB8227254DD7007D51CD /* Tool.swift in Sources */,
@@ -5416,12 +5343,10 @@
 				AE7E74422722528200F0C19C /* ContentView.swift in Sources */,
 				AE62CAF0272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE62CA0C2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
-				AE62CA9C272542D1007D51CD /* Palette.m in Sources */,
 				AE62CB1627254873007D51CD /* BaseViewController.swift in Sources */,
 				AE62CB8527254DD7007D51CD /* FPSTool.swift in Sources */,
 				AE62CB5327254947007D51CD /* UIScrollView+Extension.swift in Sources */,
 				AEE010DC2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
-				AE62CA9F272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE128869281CED0A0049A5E4 /* expression.swift in Sources */,
 				AE128891281CED0A0049A5E4 /* tokenizer.swift in Sources */,
 				AE62CB7227254B12007D51CD /* Toast.swift in Sources */,
@@ -5430,7 +5355,6 @@
 				AEE010EB2742569200C155D8 /* MJRefreshFooter.m in Sources */,
 				AE62CADE272542DC007D51CD /* ShadowPlayer.swift in Sources */,
 				AE5846682C15515C00F758EC /* WebviewPreviewViewContoller.swift in Sources */,
-				AE62CAB1272542D1007D51CD /* PaletteTarget.m in Sources */,
 				AEE010F62742569200C155D8 /* MJRefreshAutoFooter.m in Sources */,
 				AE128871281CED0A0049A5E4 /* expressionizer.swift in Sources */,
 				AE62CB1C27254873007D51CD /* BaseModel.swift in Sources */,
@@ -5446,7 +5370,6 @@
 				AE62CA1A2725425A007D51CD /* FMDatabasePool.m in Sources */,
 				AE62CB1927254873007D51CD /* ResultInfo.swift in Sources */,
 				AE62CACF272542DC007D51CD /* ShadowDataManager.swift in Sources */,
-				AE62CAAB272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AE62CAF9272542DC007D51CD /* AssetWriterCoordinator.swift in Sources */,
 				AE128889281CED0A0049A5E4 /* number.swift in Sources */,
 				AEAFBBDA2AA02820003D92B5 /* UIDevice+Ex.swift in Sources */,
@@ -5457,7 +5380,6 @@
 				AE128875281CED0A0049A5E4 /* calculator.swift in Sources */,
 				AEE010D92742569200C155D8 /* MJRefreshAutoGifFooter.m in Sources */,
 				AE5846602C15515C00F758EC /* PreviewManager.swift in Sources */,
-				AE62CAA3272542D1007D51CD /* UIImage+Palette.m in Sources */,
 				AEE010AE2742569200C155D8 /* MJRefreshConst.m in Sources */,
 				AEE010DF2742569200C155D8 /* MJRefreshNormalHeader.m in Sources */,
 				AEE010AB2742569200C155D8 /* UIScrollView+MJRefresh.m in Sources */,
@@ -5481,14 +5403,12 @@
 				AED0C2C9274E8511007A3547 /* Global.swift in Sources */,
 				AE62CAFF272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
 				AE62CB3227254946007D51CD /* UIWindow+Base.swift in Sources */,
-				AE62CAAE272542D1007D51CD /* PriorityBoxArray.m in Sources */,
 				AE5846482C15515C00F758EC /* FileListPreview.swift in Sources */,
 				AE62CB4D27254947007D51CD /* UIColor+Extension.swift in Sources */,
 				AEE010D02742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
 				20A965732903D133007F8526 /* UIImage+Extension.swift in Sources */,
 				AE62CAF6272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE62CB4127254947007D51CD /* UIButton+Extension.swift in Sources */,
-				AE62CA99272542D1007D51CD /* PaletteColorUtils.m in Sources */,
 				AE5846442C15515C00F758EC /* FileBrowser.swift in Sources */,
 				20A965782903D34C007F8526 /* PHPLibraryTool.swift in Sources */,
 				AE58464C2C15515C00F758EC /* FileListSearch.swift in Sources */,
@@ -5701,7 +5621,6 @@
 				20A9655B2903C6B2007F8526 /* UIView+Extension.swift in Sources */,
 				AE12888B281CED0A0049A5E4 /* number.swift in Sources */,
 				20A965832903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
-				AE62CA9D272542D1007D51CD /* Palette.m in Sources */,
 				AE72F538273EBDB10060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE128877281CED0A0049A5E4 /* calculator.swift in Sources */,
 				AE62CB66272549A3007D51CD /* String+Extension.swift in Sources */,
@@ -5720,7 +5639,6 @@
 				AE128887281CED0A0049A5E4 /* operation.swift in Sources */,
 				AE62CA0D2725425A007D51CD /* FMDatabaseQueue.m in Sources */,
 				AEE010D12742569200C155D8 /* MJRefreshBackNormalFooter.m in Sources */,
-				AE62CAA4272542D1007D51CD /* UIImage+Palette.m in Sources */,
 				20A965652903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
 				AE62CA1B2725425A007D51CD /* FMDatabasePool.m in Sources */,
 				AE62CAF7272542DC007D51CD /* FocusFrameView.swift in Sources */,
@@ -5751,7 +5669,6 @@
 				AE958D572AB934C800FD599B /* ZLog.swift in Sources */,
 				AE62CB7027254B12007D51CD /* GrandCue.swift in Sources */,
 				AE62CB00272542DC007D51CD /* ShadowCameraModel.swift in Sources */,
-				AE62CA9A272542D1007D51CD /* PaletteColorUtils.m in Sources */,
 				AE62CB8027254DD7007D51CD /* LogTool.swift in Sources */,
 				AE62CAE5272542DC007D51CD /* ShadowVideoPlayView.swift in Sources */,
 				AEE010532742547C00C155D8 /* CaptureSession.swift in Sources */,
@@ -5762,6 +5679,8 @@
 				AE62CB4227254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AEE010B22742569200C155D8 /* MJRefreshConfig.m in Sources */,
 				20A965792903D34D007F8526 /* PHPLibraryTool.swift in Sources */,
+				AEAE0EE42EC2024A00ED8786 /* MMCQ.swift in Sources */,
+				AEAE0EE52EC2024A00ED8786 /* ColorThief.swift in Sources */,
 				AEF5BF2D2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */,
 				AE62CB5127254947007D51CD /* UICollectView+Extension.swift in Sources */,
 				AE58465A2C15515C00F758EC /* FileParser.swift in Sources */,
@@ -5795,7 +5714,6 @@
 				AE12886B281CED0A0049A5E4 /* expression.swift in Sources */,
 				AE62CBD027255C20007D51CD /* GridView.swift in Sources */,
 				AE5846462C15515C00F758EC /* FileBrowser.swift in Sources */,
-				AE62CAAC272542D1007D51CD /* PaletteColorModel.m in Sources */,
 				AE62CBBE27255C20007D51CD /* BarSlider.swift in Sources */,
 				AE62CB9227254DD7007D51CD /* Auth.swift in Sources */,
 				AE62CBD927255C20007D51CD /* FlowView.swift in Sources */,
@@ -5813,7 +5731,6 @@
 				AEE010F02742569200C155D8 /* MJRefreshHeader.m in Sources */,
 				AE62CAD9272542DC007D51CD /* ShadowPlayBack.swift in Sources */,
 				AE62CB8C27254DD7007D51CD /* CatoMonitor.swift in Sources */,
-				AE62CAAF272542D1007D51CD /* PriorityBoxArray.m in Sources */,
 				AE12886F281CED0A0049A5E4 /* expression-combining.swift in Sources */,
 				AE62CAF1272542DC007D51CD /* CaptureSessionAssetWriterCoordinator.swift in Sources */,
 				AE5846622C15515C00F758EC /* PreviewManager.swift in Sources */,
@@ -5827,8 +5744,6 @@
 				AE62CBDC27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE72F53B273EBDD20060456A /* CityTableViewCell.swift in Sources */,
 				AE62CB212725487B007D51CD /* LogInfo.swift in Sources */,
-				AE62CAB2272542D1007D51CD /* PaletteTarget.m in Sources */,
-				AE62CAA0272542D1007D51CD /* PaletteSwatch.m in Sources */,
 				AE62CB4B27254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AEE010CE2742569200C155D8 /* MJRefreshBackStateFooter.m in Sources */,
 				20B65A4A28FC26BB00341DB9 /* PanCollectionView.swift in Sources */,

@@ -36,7 +36,8 @@ class OpenWebViewController:BaseViewController{
         let path = Bundle.main.path(forResource: "upload", ofType: "html")
         let url = URL(fileURLWithPath: path!)
         let request = URLRequest(url: url)
-        
+//        let request = URLRequest(url: URL("https://www.szwego.com/qq_conn/102791471/openApp")!)
+
         _ =  webView?.load(request)
 
         

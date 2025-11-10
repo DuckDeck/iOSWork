@@ -11,7 +11,7 @@ class PaletteViewController: UIViewController {
     var imagePickerController:PHPickerViewController!
     let imgView = UIImageView()
     var recommandColor = ""
-    var colorsHint:[String:Any]?
+    var colorsHint:[UIColor]?
     let tb = UITableView()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,19 +63,12 @@ class PaletteViewController: UIViewController {
     
     func show(img:UIImage) {
         imgView.image = img
+        guard let colors = ColorThief.getPalette(from: img, colorCount: 10) else {return}
+        self.recommandColor = colors.first?.makePlatformNativeColor().hex ?? ""
+        self.colorsHint = colors.compactMap{$0.makePlatformNativeColor()}
+        imgView.layer.borderColor = colors.first?.makePlatformNativeColor().cgColor
+        tb.reloadData()
 
-        img.getPaletteImageColor(with: .ALL_MODE_PALETTE) { [weak self](mode, dict, err) in
-            if err != nil || mode == nil{
-                Toast.showToast(msg: err?.localizedDescription ?? "识别失败")
-                return
-            }
-            self?.recommandColor = mode!.imageColorString
-            self?.colorsHint = dict as? [String:Any]
-            let c = UIColor(hexString: mode!.imageColorString)
-
-            self?.imgView.layer.borderColor = c!.cgColor
-            self?.tb.reloadData()
-        }
     }
 
 }
@@ -87,31 +80,8 @@ extension PaletteViewController:UITableViewDelegate,UITableViewDataSource, PHPic
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ColorHintCell
-        var model:PaletteColorModel?
-        var key = ""
-        switch indexPath.row {
-        case 0:
-            model = colorsHint!["vibrant"] as? PaletteColorModel
-            key = "vibrant"
-        case 1:
-            model = colorsHint!["muted"] as? PaletteColorModel
-            key = "muted"
-        case 2:
-            model = colorsHint!["light_vibrant"] as? PaletteColorModel
-            key = "light_vibrant"
-        case 3:
-            model = colorsHint!["light_muted"] as? PaletteColorModel
-            key = "light_muted"
-        case 4:
-            model = colorsHint!["dark_vibrant"] as? PaletteColorModel
-            key = "dark_vibrant"
-        case 5:
-            model = colorsHint!["dark_muted"] as? PaletteColorModel
-            key = "dark_muted"
-        default:
-            break
-        }
-        cell.fillCell(model: model, key: key)
+        cell.lblColor.text = colorsHint![indexPath.row].hex
+        cell.lblColor.backgroundColor = colorsHint![indexPath.row]
         return cell
     }
     
@@ -134,17 +104,7 @@ extension PaletteViewController:UITableViewDelegate,UITableViewDataSource, PHPic
 
 class ColorHintCell: UITableViewCell {
     let lblColor = UILabel()
-    func fillCell(model:PaletteColorModel?,key:String)  {
-        if let m = model{
-            lblColor.text = "\(key):--\(m.imageColorString ?? "识别失败")--\(roundf(Float(m.percentage * 10000)) / 100)%"
-            lblColor.backgroundColor = UIColor(hexString: m.imageColorString)!
-
-        }
-        else{
-            lblColor.text = "\(key):-- 识别失败"
-            lblColor.backgroundColor = UIColor.darkGray
-        }
-    }
+  
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         lblColor.txtAlignment(ali: .center).color(color: UIColor.white).addTo(view: contentView).snp.makeConstraints { (m) in
