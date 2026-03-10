@@ -9,7 +9,7 @@ import Foundation
 import WebKit
 import SwiftyJSON
 class WebViewController:BaseViewController{
-    var arrData = ["本地使用js上传文件","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)","WKWebView测试"]
+    var arrData = ["本地使用js上传文件","JS交互","WKWebView拦截请求(使用Custom Scheme)","WKWebView拦截请求(使用Swizzle交换HTTP)","WKWebView测试","web截屏"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -74,6 +74,11 @@ extension WebViewController:UITableViewDelegate,UITableViewDataSource{
             let vc = WebDemoViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
+        case 5:
+            let vc = WebScreenShotViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+
         default:
             break
         }

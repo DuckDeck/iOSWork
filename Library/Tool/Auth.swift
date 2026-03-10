@@ -8,7 +8,6 @@
 
 import UIKit
 import Photos
-import AssetsLibrary
 import CoreLocation
 @objc enum AuthType:Int {
     case Camera = 0, Photo,Position,PushNotifcation,BackgroundAppRefresh,Video,Audio
@@ -40,13 +39,9 @@ class Auth:NSObject {
     }
     
     @objc static func isAuthPhoto()->Bool{
-        if #available(iOS 9.0, *) {
-            let library:PHAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
-            return  library != PHAuthorizationStatus.denied && library != PHAuthorizationStatus.restricted
-        }else{
-            let authStatus = ALAssetsLibrary.authorizationStatus()
-            return authStatus != .restricted && authStatus != .denied
-        }
+        let library:PHAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        return  library != PHAuthorizationStatus.denied && library != PHAuthorizationStatus.restricted
+        
     }
     
     @objc static func isAuthLocation()->Bool{

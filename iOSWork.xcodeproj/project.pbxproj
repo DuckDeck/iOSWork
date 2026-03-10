@@ -205,6 +205,22 @@
 		AE35149F27CBB54D000326F1 /* 8k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149D27CBB54D000326F1 /* 8k.jpg */; };
 		AE3EB4E52A2C2EA200097934 /* KeyboardManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */; };
 		AE3EB4E62A2C2EA200097934 /* KeyboardManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */; };
+		AE3FD5312F5EE06200117C15 /* WebScreenShotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5302F5EE06200117C15 /* WebScreenShotViewController.swift */; };
+		AE3FD5542F5EE80D00117C15 /* WKWebView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5522F5EE80D00117C15 /* WKWebView+TYSnapshot.m */; };
+		AE3FD5552F5EE80D00117C15 /* UIView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5502F5EE80D00117C15 /* UIView+TYSnapshot.m */; };
+		AE3FD5562F5EE80D00117C15 /* TYSnapshotAuxiliaryPDFTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD53D2F5EE80D00117C15 /* TYSnapshotAuxiliaryPDFTool.m */; };
+		AE3FD5572F5EE80D00117C15 /* UITextView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD54E2F5EE80D00117C15 /* UITextView+TYSnapshot.m */; };
+		AE3FD5582F5EE80D00117C15 /* UIScrollView+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD54A2F5EE80D00117C15 /* UIScrollView+TYSnapshot.m */; };
+		AE3FD5592F5EE80D00117C15 /* UIViewController+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5372F5EE80D00117C15 /* UIViewController+TYSnapshot.m */; };
+		AE3FD55A2F5EE80D00117C15 /* UIScrollView+TYSnapshotAuxiliary.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5412F5EE80D00117C15 /* UIScrollView+TYSnapshotAuxiliary.m */; };
+		AE3FD55B2F5EE80D00117C15 /* UIImage+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5352F5EE80D00117C15 /* UIImage+TYSnapshot.m */; };
+		AE3FD55C2F5EE80D00117C15 /* WKWebView+TYSnapshotAuxiliary.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5432F5EE80D00117C15 /* WKWebView+TYSnapshotAuxiliary.m */; };
+		AE3FD55D2F5EE80D00117C15 /* TYSpellImage.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD53F2F5EE80D00117C15 /* TYSpellImage.m */; };
+		AE3FD55E2F5EE80D00117C15 /* TYSnapshotAuxiliaryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD53B2F5EE80D00117C15 /* TYSnapshotAuxiliaryCache.m */; };
+		AE3FD55F2F5EE80D00117C15 /* TYSnapshotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5462F5EE80D00117C15 /* TYSnapshotManager.m */; };
+		AE3FD5602F5EE80D00117C15 /* TYSnapshotScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5482F5EE80D00117C15 /* TYSnapshotScroll.m */; };
+		AE3FD5612F5EE80D00117C15 /* UIScrollView+TYSplice.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD54C2F5EE80D00117C15 /* UIScrollView+TYSplice.m */; };
+		AE3FD5672F5EEF6F00117C15 /* pdfPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3FD5662F5EEF6F00117C15 /* pdfPrinter.swift */; };
 		AE4717AC2ADBF38900023738 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4717AB2ADBF34800023738 /* libiconv.tbd */; };
 		AE48CECE27C7D10B009A0673 /* asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48CECD27C7D10B009A0673 /* asset.xcassets */; };
 		AE4D08E8273025BA00899D2C /* HandleJSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */; };
@@ -1382,6 +1398,39 @@
 		AE38468727BB440A004F6765 /* KeyboardWork.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardWork.entitlements; sourceTree = "<group>"; };
 		AE38468827BB4494004F6765 /* KeyboardWork-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KeyboardWork-Bridging-Header.h"; sourceTree = "<group>"; };
 		AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardManage.swift; sourceTree = "<group>"; };
+		AE3FD5302F5EE06200117C15 /* WebScreenShotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebScreenShotViewController.swift; sourceTree = "<group>"; };
+		AE3FD5322F5EE80D00117C15 /* TYGCDTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYGCDTools.h; sourceTree = "<group>"; };
+		AE3FD5332F5EE80D00117C15 /* TYGeneral.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYGeneral.h; sourceTree = "<group>"; };
+		AE3FD5342F5EE80D00117C15 /* UIImage+TYSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+TYSnapshot.h"; sourceTree = "<group>"; };
+		AE3FD5352F5EE80D00117C15 /* UIImage+TYSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TYSnapshot.m"; sourceTree = "<group>"; };
+		AE3FD5362F5EE80D00117C15 /* UIViewController+TYSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TYSnapshot.h"; sourceTree = "<group>"; };
+		AE3FD5372F5EE80D00117C15 /* UIViewController+TYSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TYSnapshot.m"; sourceTree = "<group>"; };
+		AE3FD5392F5EE80D00117C15 /* TYSnapshotAuxiliary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSnapshotAuxiliary.h; sourceTree = "<group>"; };
+		AE3FD53A2F5EE80D00117C15 /* TYSnapshotAuxiliaryCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSnapshotAuxiliaryCache.h; sourceTree = "<group>"; };
+		AE3FD53B2F5EE80D00117C15 /* TYSnapshotAuxiliaryCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotAuxiliaryCache.m; sourceTree = "<group>"; };
+		AE3FD53C2F5EE80D00117C15 /* TYSnapshotAuxiliaryPDFTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSnapshotAuxiliaryPDFTool.h; sourceTree = "<group>"; };
+		AE3FD53D2F5EE80D00117C15 /* TYSnapshotAuxiliaryPDFTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotAuxiliaryPDFTool.m; sourceTree = "<group>"; };
+		AE3FD53E2F5EE80D00117C15 /* TYSpellImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSpellImage.h; sourceTree = "<group>"; };
+		AE3FD53F2F5EE80D00117C15 /* TYSpellImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSpellImage.m; sourceTree = "<group>"; };
+		AE3FD5402F5EE80D00117C15 /* UIScrollView+TYSnapshotAuxiliary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TYSnapshotAuxiliary.h"; sourceTree = "<group>"; };
+		AE3FD5412F5EE80D00117C15 /* UIScrollView+TYSnapshotAuxiliary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TYSnapshotAuxiliary.m"; sourceTree = "<group>"; };
+		AE3FD5422F5EE80D00117C15 /* WKWebView+TYSnapshotAuxiliary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+TYSnapshotAuxiliary.h"; sourceTree = "<group>"; };
+		AE3FD5432F5EE80D00117C15 /* WKWebView+TYSnapshotAuxiliary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+TYSnapshotAuxiliary.m"; sourceTree = "<group>"; };
+		AE3FD5452F5EE80D00117C15 /* TYSnapshotManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSnapshotManager.h; sourceTree = "<group>"; };
+		AE3FD5462F5EE80D00117C15 /* TYSnapshotManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotManager.m; sourceTree = "<group>"; };
+		AE3FD5472F5EE80D00117C15 /* TYSnapshotScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYSnapshotScroll.h; sourceTree = "<group>"; };
+		AE3FD5482F5EE80D00117C15 /* TYSnapshotScroll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYSnapshotScroll.m; sourceTree = "<group>"; };
+		AE3FD5492F5EE80D00117C15 /* UIScrollView+TYSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TYSnapshot.h"; sourceTree = "<group>"; };
+		AE3FD54A2F5EE80D00117C15 /* UIScrollView+TYSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TYSnapshot.m"; sourceTree = "<group>"; };
+		AE3FD54B2F5EE80D00117C15 /* UIScrollView+TYSplice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TYSplice.h"; sourceTree = "<group>"; };
+		AE3FD54C2F5EE80D00117C15 /* UIScrollView+TYSplice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TYSplice.m"; sourceTree = "<group>"; };
+		AE3FD54D2F5EE80D00117C15 /* UITextView+TYSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+TYSnapshot.h"; sourceTree = "<group>"; };
+		AE3FD54E2F5EE80D00117C15 /* UITextView+TYSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+TYSnapshot.m"; sourceTree = "<group>"; };
+		AE3FD54F2F5EE80D00117C15 /* UIView+TYSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TYSnapshot.h"; sourceTree = "<group>"; };
+		AE3FD5502F5EE80D00117C15 /* UIView+TYSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TYSnapshot.m"; sourceTree = "<group>"; };
+		AE3FD5512F5EE80D00117C15 /* WKWebView+TYSnapshot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+TYSnapshot.h"; sourceTree = "<group>"; };
+		AE3FD5522F5EE80D00117C15 /* WKWebView+TYSnapshot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+TYSnapshot.m"; sourceTree = "<group>"; };
+		AE3FD5662F5EEF6F00117C15 /* pdfPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pdfPrinter.swift; sourceTree = "<group>"; };
 		AE4717AB2ADBF34800023738 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		AE48CECD27C7D10B009A0673 /* asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = asset.xcassets; sourceTree = "<group>"; };
 		AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleJSViewController.swift; sourceTree = "<group>"; };
@@ -2451,14 +2500,71 @@
 			path = Speech;
 			sourceTree = "<group>";
 		};
+		AE3FD5382F5EE80D00117C15 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AE3FD5322F5EE80D00117C15 /* TYGCDTools.h */,
+				AE3FD5332F5EE80D00117C15 /* TYGeneral.h */,
+				AE3FD5342F5EE80D00117C15 /* UIImage+TYSnapshot.h */,
+				AE3FD5352F5EE80D00117C15 /* UIImage+TYSnapshot.m */,
+				AE3FD5362F5EE80D00117C15 /* UIViewController+TYSnapshot.h */,
+				AE3FD5372F5EE80D00117C15 /* UIViewController+TYSnapshot.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		AE3FD5442F5EE80D00117C15 /* TYSnapshotAuxiliary */ = {
+			isa = PBXGroup;
+			children = (
+				AE3FD5392F5EE80D00117C15 /* TYSnapshotAuxiliary.h */,
+				AE3FD53A2F5EE80D00117C15 /* TYSnapshotAuxiliaryCache.h */,
+				AE3FD53B2F5EE80D00117C15 /* TYSnapshotAuxiliaryCache.m */,
+				AE3FD53C2F5EE80D00117C15 /* TYSnapshotAuxiliaryPDFTool.h */,
+				AE3FD53D2F5EE80D00117C15 /* TYSnapshotAuxiliaryPDFTool.m */,
+				AE3FD53E2F5EE80D00117C15 /* TYSpellImage.h */,
+				AE3FD53F2F5EE80D00117C15 /* TYSpellImage.m */,
+				AE3FD5402F5EE80D00117C15 /* UIScrollView+TYSnapshotAuxiliary.h */,
+				AE3FD5412F5EE80D00117C15 /* UIScrollView+TYSnapshotAuxiliary.m */,
+				AE3FD5422F5EE80D00117C15 /* WKWebView+TYSnapshotAuxiliary.h */,
+				AE3FD5432F5EE80D00117C15 /* WKWebView+TYSnapshotAuxiliary.m */,
+			);
+			path = TYSnapshotAuxiliary;
+			sourceTree = "<group>";
+		};
+		AE3FD5532F5EE80D00117C15 /* TYSnapshotScroll */ = {
+			isa = PBXGroup;
+			children = (
+				AE3FD5382F5EE80D00117C15 /* Tools */,
+				AE3FD5442F5EE80D00117C15 /* TYSnapshotAuxiliary */,
+				AE3FD5452F5EE80D00117C15 /* TYSnapshotManager.h */,
+				AE3FD5462F5EE80D00117C15 /* TYSnapshotManager.m */,
+				AE3FD5472F5EE80D00117C15 /* TYSnapshotScroll.h */,
+				AE3FD5482F5EE80D00117C15 /* TYSnapshotScroll.m */,
+				AE3FD5492F5EE80D00117C15 /* UIScrollView+TYSnapshot.h */,
+				AE3FD54A2F5EE80D00117C15 /* UIScrollView+TYSnapshot.m */,
+				AE3FD54B2F5EE80D00117C15 /* UIScrollView+TYSplice.h */,
+				AE3FD54C2F5EE80D00117C15 /* UIScrollView+TYSplice.m */,
+				AE3FD54D2F5EE80D00117C15 /* UITextView+TYSnapshot.h */,
+				AE3FD54E2F5EE80D00117C15 /* UITextView+TYSnapshot.m */,
+				AE3FD54F2F5EE80D00117C15 /* UIView+TYSnapshot.h */,
+				AE3FD5502F5EE80D00117C15 /* UIView+TYSnapshot.m */,
+				AE3FD5512F5EE80D00117C15 /* WKWebView+TYSnapshot.h */,
+				AE3FD5522F5EE80D00117C15 /* WKWebView+TYSnapshot.m */,
+			);
+			path = TYSnapshotScroll;
+			sourceTree = "<group>";
+		};
 		AE4D08E52730259200899D2C /* WKWebView */ = {
 			isa = PBXGroup;
 			children = (
+				AE3FD5532F5EE80D00117C15 /* TYSnapshotScroll */,
+				AE3FD5302F5EE06200117C15 /* WebScreenShotViewController.swift */,
 				AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */,
 				AE4D08E7273025BA00899D2C /* HandleJSViewController.swift */,
 				AE1A875A275117BA004FA0DA /* OpenWebViewController.swift */,
 				AEAFBBCF2AA025A6003D92B5 /* WebDemoViewController.swift */,
 				AE6A7F4C274BE13B004A797A /* WebViewController.swift */,
+				AE3FD5662F5EEF6F00117C15 /* pdfPrinter.swift */,
 			);
 			path = WKWebView;
 			sourceTree = "<group>";
@@ -4822,9 +4928,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iOSWork/Pods-iOSWork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iOSWork/Pods-iOSWork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4949,9 +5059,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftUIWork/Pods-SwiftUIWork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftUIWork/Pods-SwiftUIWork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -5034,6 +5148,7 @@
 				AE62CAD1272542DC007D51CD /* ShadowAudioPlayerBack.swift in Sources */,
 				AE6E5DC4273FB6FF00523EA8 /* DrawView.swift in Sources */,
 				AE4D08F3273032E100899D2C /* CustomURLSchemeHandler.swift in Sources */,
+				AE3FD5312F5EE06200117C15 /* WebScreenShotViewController.swift in Sources */,
 				AE62CBEB2725669C007D51CD /* DataMenuViewController.swift in Sources */,
 				AEF5BF062ADD2BC000A7305D /* IconNames.swift in Sources */,
 				AE66E1BF27538679006432FE /* SortFrameHandler.m in Sources */,
@@ -5058,6 +5173,20 @@
 				AEF8814D2B551E1D0032492B /* BaseBridge.m in Sources */,
 				AE62CBDA27255C20007D51CD /* FlowLayout.swift in Sources */,
 				AE6E5DC8273FBC3D00523EA8 /* HorizontalTableViewController.swift in Sources */,
+				AE3FD5542F5EE80D00117C15 /* WKWebView+TYSnapshot.m in Sources */,
+				AE3FD5552F5EE80D00117C15 /* UIView+TYSnapshot.m in Sources */,
+				AE3FD5562F5EE80D00117C15 /* TYSnapshotAuxiliaryPDFTool.m in Sources */,
+				AE3FD5572F5EE80D00117C15 /* UITextView+TYSnapshot.m in Sources */,
+				AE3FD5582F5EE80D00117C15 /* UIScrollView+TYSnapshot.m in Sources */,
+				AE3FD5592F5EE80D00117C15 /* UIViewController+TYSnapshot.m in Sources */,
+				AE3FD55A2F5EE80D00117C15 /* UIScrollView+TYSnapshotAuxiliary.m in Sources */,
+				AE3FD55B2F5EE80D00117C15 /* UIImage+TYSnapshot.m in Sources */,
+				AE3FD55C2F5EE80D00117C15 /* WKWebView+TYSnapshotAuxiliary.m in Sources */,
+				AE3FD55D2F5EE80D00117C15 /* TYSpellImage.m in Sources */,
+				AE3FD55E2F5EE80D00117C15 /* TYSnapshotAuxiliaryCache.m in Sources */,
+				AE3FD55F2F5EE80D00117C15 /* TYSnapshotManager.m in Sources */,
+				AE3FD5602F5EE80D00117C15 /* TYSnapshotScroll.m in Sources */,
+				AE3FD5612F5EE80D00117C15 /* UIScrollView+TYSplice.m in Sources */,
 				AE66E19427537FBB006432FE /* OpenCVBaseViewController.swift in Sources */,
 				AE62CAE9272542DC007D51CD /* ShadowVideoControlView.swift in Sources */,
 				AE62CB4927254947007D51CD /* UIImageView+Extension.swift in Sources */,
@@ -5232,6 +5361,7 @@
 				AE6E5DCA273FC34600523EA8 /* StyleTableViewController.swift in Sources */,
 				AE94D3332742421A00ACEDDC /* AnimationVIew.swift in Sources */,
 				AE5846432C15515C00F758EC /* FileBrowser.swift in Sources */,
+				AE3FD5672F5EEF6F00117C15 /* pdfPrinter.swift in Sources */,
 				AE62CB8D27254DD7007D51CD /* DBTool.swift in Sources */,
 				AEE010BA2742569200C155D8 /* UIScrollView+MJExtension.m in Sources */,
 				AE62CBAC27255C0E007D51CD /* LayoutButton.swift in Sources */,

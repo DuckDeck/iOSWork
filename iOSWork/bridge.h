@@ -25,4 +25,5 @@
 #import "BaseBridge.h"
 #import "XlogDecoder.h"
 #import "HWDebounce.h"
+#import "TYSnapshotScroll.h"
 #endif /* bridge_h */
