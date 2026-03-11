@@ -745,6 +745,10 @@
 		AE6E5DCA273FC34600523EA8 /* StyleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DC9273FC34600523EA8 /* StyleTableViewController.swift */; };
 		AE6E5DCC273FC51C00523EA8 /* OptimizeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */; };
 		AE6E5DCF273FC5E500523EA8 /* FlowLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */; };
+		AE6F3CF02F5FC6B400EAFB78 /* UploadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F3CEF2F5FC6B400EAFB78 /* UploadImageViewController.swift */; };
+		AE6F3CF62F60068200EAFB78 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F3CF52F60068200EAFB78 /* Uploader.swift */; };
+		AE6F3CF72F60068200EAFB78 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F3CF52F60068200EAFB78 /* Uploader.swift */; };
+		AE6F3CF82F60068200EAFB78 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F3CF52F60068200EAFB78 /* Uploader.swift */; };
 		AE6FED3C2A95C05F003C6626 /* DemoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */; };
 		AE7090162CB69A14005F38F6 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7090152CB69A14005F38F6 /* LivePhoto.swift */; };
 		AE7090172CB69A14005F38F6 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7090152CB69A14005F38F6 /* LivePhoto.swift */; };
@@ -1738,6 +1742,8 @@
 		AE6E5DC9273FC34600523EA8 /* StyleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTableViewController.swift; sourceTree = "<group>"; };
 		AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizeTableViewController.swift; sourceTree = "<group>"; };
 		AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutViewController.swift; sourceTree = "<group>"; };
+		AE6F3CEF2F5FC6B400EAFB78 /* UploadImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageViewController.swift; sourceTree = "<group>"; };
+		AE6F3CF52F60068200EAFB78 /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
 		AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWebViewController.swift; sourceTree = "<group>"; };
 		AE7090152CB69A14005F38F6 /* LivePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
 		AE7090182CB69B9E005F38F6 /* HWDebounce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDebounce.h; sourceTree = "<group>"; };
@@ -2919,6 +2925,7 @@
 				AE257F902B9744F400AEEABB /* NetToolView.swift */,
 				AE7090152CB69A14005F38F6 /* LivePhoto.swift */,
 				AE96A5342CF7FC62004C2A00 /* VideoCreate.swift */,
+				AE6F3CF52F60068200EAFB78 /* Uploader.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2965,11 +2972,12 @@
 		AE62CBE227256603007D51CD /* Data_Network */ = {
 			isa = PBXGroup;
 			children = (
-				AEB9CBAC2B464280008BD731 /* NetToolViewController.swift */,
+				AE6F3CEE2F5FC69D00EAFB78 /* UploadDownload */,
 				AE71F21F2C58E78900DE980A /* Xlog */,
 				AE08AA8A27C6817D00EE0813 /* Download */,
 				AEF86664274B9B38002E33E5 /* ClassifyingImages */,
 				AE62CBEA2725669C007D51CD /* DataMenuViewController.swift */,
+				AEB9CBAC2B464280008BD731 /* NetToolViewController.swift */,
 			);
 			path = Data_Network;
 			sourceTree = "<group>";
@@ -3398,6 +3406,14 @@
 				AE9EE9F7280843B500EBE70A /* PanCollectionViewController.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		AE6F3CEE2F5FC69D00EAFB78 /* UploadDownload */ = {
+			isa = PBXGroup;
+			children = (
+				AE6F3CEF2F5FC6B400EAFB78 /* UploadImageViewController.swift */,
+			);
+			path = UploadDownload;
 			sourceTree = "<group>";
 		};
 		AE70901A2CB69B9E005F38F6 /* Debounce */ = {
@@ -5176,6 +5192,7 @@
 				AE3FD5542F5EE80D00117C15 /* WKWebView+TYSnapshot.m in Sources */,
 				AE3FD5552F5EE80D00117C15 /* UIView+TYSnapshot.m in Sources */,
 				AE3FD5562F5EE80D00117C15 /* TYSnapshotAuxiliaryPDFTool.m in Sources */,
+				AE6F3CF72F60068200EAFB78 /* Uploader.swift in Sources */,
 				AE3FD5572F5EE80D00117C15 /* UITextView+TYSnapshot.m in Sources */,
 				AE3FD5582F5EE80D00117C15 /* UIScrollView+TYSnapshot.m in Sources */,
 				AE3FD5592F5EE80D00117C15 /* UIViewController+TYSnapshot.m in Sources */,
@@ -5340,6 +5357,7 @@
 				AEE010F92742569200C155D8 /* MJRefreshComponent.m in Sources */,
 				AE62CAE6272542DC007D51CD /* ShadowDownloader.swift in Sources */,
 				AE62CBBC27255C20007D51CD /* BarSlider.swift in Sources */,
+				AE6F3CF02F5FC6B400EAFB78 /* UploadImageViewController.swift in Sources */,
 				AE958D542AB934C800FD599B /* ZLog.swift in Sources */,
 				AE62CA192725425A007D51CD /* FMDatabasePool.m in Sources */,
 				AEE010D52742569200C155D8 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -5579,6 +5597,7 @@
 			files = (
 				AEDF535729B437FC00094B6B /* FullkeyboardView.swift in Sources */,
 				AE12888E281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
+				AE6F3CF82F60068200EAFB78 /* Uploader.swift in Sources */,
 				AE9EE9F628083E2000EBE70A /* Shake.swift in Sources */,
 				AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
 				AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */,
@@ -5739,6 +5758,7 @@
 				AEF8665A274B6F5B002E33E5 /* Store.swift in Sources */,
 				AEE010DD2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
 				AE7090172CB69A14005F38F6 /* LivePhoto.swift in Sources */,
+				AE6F3CF62F60068200EAFB78 /* Uploader.swift in Sources */,
 				AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */,
 				AE62CBC127255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CBCA27255C20007D51CD /* HintView.swift in Sources */,

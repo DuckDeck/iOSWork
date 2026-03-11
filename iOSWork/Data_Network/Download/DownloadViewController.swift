@@ -38,7 +38,7 @@ class DownloadViewController:UIViewController{
         let urls = ["https://xcimg.szwego.com/20210116/a1610803638361_1135.jpg"]
         Toast.showLoading()
         
-        MediaTool.downloadToFile(resources: urls) { failCount, paths in
+        MediaTool().downloadToFile(resources: urls) { failCount, paths in
             Toast.dismissLoading()
             print(paths)
         }
