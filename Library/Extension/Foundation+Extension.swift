@@ -252,5 +252,23 @@ extension Data {
         }
         return digestHex
     }
+    
+    var isGif:Bool {
+        // GIF 文件头固定为 6 个字节: "GIF87a" 或 "GIF89a"
+                // 所以至少需要 6 个字节来验证
+        guard self.count >= 6 else { return false }
+        
+        // 提取前 6 个字节
+        let gifHeaderBytes = Array(self[0..<6])
+        
+        // 定义 GIF 文件头的字节数组
+        // "GIF87a" -> [0x47, 0x49, 0x46, 0x38, 0x37, 0x61]
+        // "GIF89a" -> [0x47, 0x49, 0x46, 0x38, 0x39, 0x61]
+        let gif87aHeader: [UInt8] = [0x47, 0x49, 0x46, 0x38, 0x37, 0x61] // G I F 8 7 a
+        let gif89aHeader: [UInt8] = [0x47, 0x49, 0x46, 0x38, 0x39, 0x61] // G I F 8 9 a
+        
+        return gifHeaderBytes.elementsEqual(gif87aHeader) ||
+               gifHeaderBytes.elementsEqual(gif89aHeader)
+    }
 }
 

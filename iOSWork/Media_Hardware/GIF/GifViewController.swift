@@ -15,7 +15,7 @@ class GifViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "选择照片", style: .plain, target: self, action: #selector(download))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下载gif", style: .plain, target: self, action: #selector(download))
 
         initView()
         initData()
@@ -25,7 +25,9 @@ class GifViewController: BaseViewController {
         MediaTool().downloadToImage(resources: ["http://wx2.sinaimg.cn/mw690/92e8647aly1frt8sudfcgg20f008mx6q.gif"]) { result in
             switch result {
             case .success(let array):
-                array[0].saveToAlbum()
+                if array.count > 0 {
+                    MediaData(data: array[0])?.saveToAlbum(name: "iOSWork")
+                }
             case .fail(let int, let aFError):
                 Toast.showToast(msg: aFError.localizedDescription)
             case .cancel:

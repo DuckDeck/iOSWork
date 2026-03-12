@@ -7,10 +7,14 @@
 
 import Foundation
 import Alamofire
+import MobileCoreServices
+import Photos
 
-enum ImgsDownloadResult {
-    case success([UIImage]),
-         fail(Int, AFError),
+
+
+enum ImgDownloadResult {
+    case success([Data]),
+         fail(Int, Error),
          cancel
 }
 
@@ -37,20 +41,20 @@ class MediaTool{
         }
     }
     
-    func downloadToImage(resources: [String], completed: @escaping ((_ result: ImgsDownloadResult)->Void)){
+    func downloadToImage(resources: [String], completed: @escaping ((_ result: ImgDownloadResult)->Void)){
         var failCount = 0
         if resources.count == 0 {
-            completed(.fail(0, .invalidURL(url: "")))
+            completed(.fail(0, AFError.invalidURL(url: "")))
             return
         }
-        var downloadImgs = [UIImage?].init(repeating: nil, count: resources.count)
+        var downloadImgs = [Data?].init(repeating: nil, count: resources.count)
         let oq = OperationQueue()
-        var error:AFError?
+        var error:Error?
         for item in resources.enumerated(){
             
             let q = DownDataQueue(url: item.element) { data, err in
-                if let imgDate = data, let img = UIImage(data: imgDate) {
-                    downloadImgs[item.offset] = img
+                if let imgDate = data {
+                    downloadImgs.append(imgDate)
                 } else {
                     failCount += 1
                     error = err
@@ -154,7 +158,7 @@ class DownDataQueue: Operation {
             
             // 2. 响应数据（获取 Data）
             request.responseData(queue: DispatchQueue.main) { resData in
-                self.isFinished = true
+                
                 switch resData.result {
                 case .success(let data):
                     // 回调返回 Data（替代原有的 path）
@@ -163,6 +167,7 @@ class DownDataQueue: Operation {
                 case .failure(let fail):
                     self.finish?(nil, fail)
                 }
+                self.isFinished = true
             }
     }
 }

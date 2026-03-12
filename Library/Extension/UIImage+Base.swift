@@ -399,11 +399,16 @@ extension UIImage{
                 completed(false,err)
             } else {
                 if isTmp{
-                    let ac = PHAssetCollection.initWith(title: "iOSWork")
-                    if ac.1 != nil{
-                        completed(false,ac.1!)
+                    let ac = PHAssetCollection.named("iOSWork")
+                    var collection:PHAssetCollection!
+                    switch ac {
+                    case .success(let a):
+                        collection = a
+                    case .failure(let failure):
+                        completed(false, failure)
+                        return
                     }
-                    PHPLibraryTool.save(asset: .img(self), collection: ac.0!) { finish, err in
+                    PHPLibraryTool.save(asset: .img(self), collection: collection) { finish, err in
                         DispatchQueue.main.async {
                             completed(finish,err)
                         }
@@ -577,4 +582,152 @@ extension CGImagePropertyOrientation{
         }
     }
 
+}
+
+enum MediaSaveError: Error {
+    
+    case albumError(AlbumError)
+    
+    /// 媒体数据为空（图片/GIF/视频数据无效）
+    case emptyMediaData
+    /// 视频 URL 无效（非本地文件/文件不存在）
+    case invalidVideoURL(String)
+    /// GIF 临时文件写入失败
+    case gifTempFileWriteFailed(String)
+    /// LivePhoto 暂未实现保存
+    case livePhotoNotSupported
+    /// 媒体保存操作失败（Photos 框架返回错误）
+    case saveOperationFailed(String)
+    /// 未知错误
+    case other(NSError)
+    
+    // 用户可读的错误描述
+    var errorDescription: String? {
+        switch self {
+        case .albumError(let err):
+            return err.errorDescription
+    
+        case .emptyMediaData:
+            return "媒体数据为空（图片/GIF/视频无效）"
+        case .invalidVideoURL(let url):
+            return "视频 URL 无效或文件不存在：\(url)"
+        case .gifTempFileWriteFailed(let msg):
+            return "GIF 临时文件写入失败：\(msg)"
+        case .livePhotoNotSupported:
+            return "暂未支持 LivePhoto 保存"
+        case .saveOperationFailed(let msg):
+            return "媒体保存失败：\(msg)"
+        case .other(let msg):
+            return "未知错误：\(msg.localizedDescription)"
+        }
+    }
+}
+
+enum MediaData {
+    case image(UIImage),
+         gif(Data),
+         livePhoto(PHLivePhoto),
+         video(url:String) // 视频，本地url地址
+    // 辅助判断：当前类型是否为GIF
+    var isGif: Bool {
+        if case .gif = self { return true }
+        return false
+    }
+    
+    init?(data:Data) {
+        if data.isGif {
+            self = .gif(data)
+        } else if let img = UIImage(data: data){
+            self = .image(img)
+        } else {
+            return nil
+        }
+    }
+    
+    // 辅助判断：当前类型是否为LivePhoto
+    var isLivePhoto: Bool {
+        if case .livePhoto = self { return true }
+        return false
+    }
+    
+    // 保存到特定相册，如果该相册获取或者创建失败，返回error
+    func saveToAlbum(name: String, completion: ((_ res: Result<Bool,MediaSaveError>)->Void)? = nil) {
+        let album = PHAssetCollection.named(name)
+        var collection: PHAssetCollection!
+        switch album {
+        case .success(let a):
+            collection = a
+        case .failure(let f):
+            completion?(.failure(.albumError(f)))
+            return
+        }
+      
+        PHPhotoLibrary.shared().performChanges({
+            // 创建资产请求
+            let creationRequest: PHAssetChangeRequest?
+        
+            switch self {
+            case .image(let image):
+                creationRequest = PHAssetChangeRequest.creationRequestForAsset(from: image)
+            
+            case .gif(let data):
+                // GIF 需要写临时文件
+                creationRequest = PHAssetCreationRequest.forAsset()
+                let options = PHAssetResourceCreationOptions()
+                options.uniformTypeIdentifier = "com.compuserve.gif"   // 强烈推荐！帮助系统正确识别为 GIF
+                (creationRequest as? PHAssetCreationRequest)?.addResource(with: .photo, data: data, options: options)
+            case .livePhoto(let livePhoto):
+                // Live Photo 直接使用 PHAssetCreationRequest
+                let request = PHAssetCreationRequest.forAsset()
+                let options = PHAssetResourceCreationOptions()
+                options.shouldMoveFile = true
+                // 先不处理livephoto
+                // 添加静态图片资源
+//                if let imageData = livePhoto.imageData {
+//                    request.addResource(with: .photo, data: imageData, options: options)
+//                }
+//                // 添加视频资源
+//                if let videoURL = livePhoto.videoURL {
+//                    request.addResource(with: .pairedVideo, fileURL: videoURL, options: options)
+//                }
+//                creationRequest = nil // 不需要额外赋值，因为 request 已创建资产
+//
+//                // 把 Live Photo 的资产加到相册
+//                if let collection = collection {
+//                    let addAssetRequest = PHAssetCollectionChangeRequest(for: collection)
+//                    addAssetRequest?.addAssets([request.placeholderForCreatedAsset] as NSArray)
+//                }
+                return // 直接返回，performChanges 会处理
+            case .video(let urlStr):
+                guard let url = URL(string: urlStr), url.isFileURL else {
+                    completion?(.failure(.invalidVideoURL(urlStr)))
+                    return
+                }
+                creationRequest = PHAssetCreationRequest.forAsset()
+                let options = PHAssetResourceCreationOptions()
+                options.shouldMoveFile = false // 不移动原文件，避免删除本地文件
+                (creationRequest as? PHAssetCreationRequest)?.addResource(with: .video, fileURL: url, options: options)
+                
+            }
+        
+            // 普通 image / gif 的后续处理
+            guard let assetPlaceholder = creationRequest?.placeholderForCreatedAsset,
+                  let collection = collection else { return }
+        
+            let albumChangeRequest = PHAssetCollectionChangeRequest(for: collection)
+            albumChangeRequest?.addAssets([assetPlaceholder] as NSArray)
+        
+        }, completionHandler: { success, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("保存失败: \(error.localizedDescription)")
+                    completion?(.failure(.other(error as NSError)))
+                } else {
+//                    completion?(success, error)
+                    completion?(.success(true))
+                }
+                
+            }
+        })
+     }
 }
