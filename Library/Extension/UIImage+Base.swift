@@ -393,37 +393,7 @@ extension UIImage{
         }
     }
     
-    func saveToAlbum(isTmp:Bool, _ completed:@escaping ((_ finish:Bool,_ err:Swift.Error?)->Void)) {
-        PHPhotoLibrary.auth { finish, err in
-            if err != nil{
-                completed(false,err)
-            } else {
-                if isTmp{
-                    let ac = PHAssetCollection.named("iOSWork")
-                    var collection:PHAssetCollection!
-                    switch ac {
-                    case .success(let a):
-                        collection = a
-                    case .failure(let failure):
-                        completed(false, failure)
-                        return
-                    }
-                    PHPLibraryTool.save(asset: .img(self), collection: collection) { finish, err in
-                        DispatchQueue.main.async {
-                            completed(finish,err)
-                        }
-                        
-                    }
-                } else {
-                    PHPLibraryTool.save(asset: .img(self), collection: nil) { finish, err in
-                        DispatchQueue.main.async {
-                            completed(finish,err)
-                        }
-                    }
-                }
-            }
-        }
-    }
+    
     
     open func compressWithMaxLength(maxLength:UInt) -> Data? {
         var compression:CGFloat = 1
@@ -584,7 +554,8 @@ extension CGImagePropertyOrientation{
 
 }
 
-enum MediaSaveError: Error {
+enum MediaResult: Error,Equatable {
+    case OK
     
     case albumError(AlbumError)
     
@@ -592,10 +563,6 @@ enum MediaSaveError: Error {
     case emptyMediaData
     /// 视频 URL 无效（非本地文件/文件不存在）
     case invalidVideoURL(String)
-    /// GIF 临时文件写入失败
-    case gifTempFileWriteFailed(String)
-    /// LivePhoto 暂未实现保存
-    case livePhotoNotSupported
     /// 媒体保存操作失败（Photos 框架返回错误）
     case saveOperationFailed(String)
     /// 未知错误
@@ -604,6 +571,8 @@ enum MediaSaveError: Error {
     // 用户可读的错误描述
     var errorDescription: String? {
         switch self {
+        case .OK:
+            return "成功"
         case .albumError(let err):
             return err.errorDescription
     
@@ -611,10 +580,7 @@ enum MediaSaveError: Error {
             return "媒体数据为空（图片/GIF/视频无效）"
         case .invalidVideoURL(let url):
             return "视频 URL 无效或文件不存在：\(url)"
-        case .gifTempFileWriteFailed(let msg):
-            return "GIF 临时文件写入失败：\(msg)"
-        case .livePhotoNotSupported:
-            return "暂未支持 LivePhoto 保存"
+     
         case .saveOperationFailed(let msg):
             return "媒体保存失败：\(msg)"
         case .other(let msg):
@@ -651,16 +617,20 @@ enum MediaData {
     }
     
     // 保存到特定相册，如果该相册获取或者创建失败，返回error
-    func saveToAlbum(name: String, completion: ((_ res: Result<Bool,MediaSaveError>)->Void)? = nil) {
-        let album = PHAssetCollection.named(name)
-        var collection: PHAssetCollection!
-        switch album {
-        case .success(let a):
-            collection = a
-        case .failure(let f):
-            completion?(.failure(.albumError(f)))
-            return
+    func saveToAlbum(name: String?, completion: ((_ res: MediaResult)->Void)? = nil) {
+        
+        var collection: PHAssetCollection?
+        if let name = name {
+            let album = PHAssetCollection.named(name)
+            switch album {
+            case .success(let a):
+                collection = a
+            case .failure(let f):
+                completion?(.albumError(f))
+                return
+            }
         }
+       
       
         PHPhotoLibrary.shared().performChanges({
             // 创建资产请求
@@ -669,7 +639,11 @@ enum MediaData {
             switch self {
             case .image(let image):
                 creationRequest = PHAssetChangeRequest.creationRequestForAsset(from: image)
-            
+                guard let placeholder = creationRequest?.placeholderForCreatedAsset else {
+                    completion?(.emptyMediaData)
+                    return
+                }
+                
             case .gif(let data):
                 // GIF 需要写临时文件
                 creationRequest = PHAssetCreationRequest.forAsset()
@@ -700,7 +674,7 @@ enum MediaData {
                 return // 直接返回，performChanges 会处理
             case .video(let urlStr):
                 guard let url = URL(string: urlStr), url.isFileURL else {
-                    completion?(.failure(.invalidVideoURL(urlStr)))
+                    completion?(.invalidVideoURL(urlStr))
                     return
                 }
                 creationRequest = PHAssetCreationRequest.forAsset()
@@ -721,13 +695,29 @@ enum MediaData {
             DispatchQueue.main.async {
                 if let error = error {
                     print("保存失败: \(error.localizedDescription)")
-                    completion?(.failure(.other(error as NSError)))
+                    completion?(.other(error as NSError))
                 } else {
 //                    completion?(success, error)
-                    completion?(.success(true))
+                    completion?(.OK)
                 }
                 
             }
         })
      }
+    
+    func convertToJPEGIfNeeded(_ data: Data) -> Data? {
+        guard let source = CGImageSourceCreateWithData(data as CFData, nil),
+              let uti = CGImageSourceGetType(source) as String? else {
+            return nil
+        }
+        
+        // 如果已经是 JPEG，直接返回
+        if uti == "public.jpeg" || uti == "public.jpg" {
+            return data
+        }
+        
+        // 创建 UIImage 并转 JPEG
+        guard let image = UIImage(data: data) else { return nil }
+        return image.jpegData(compressionQuality: 0.9)
+    }
 }

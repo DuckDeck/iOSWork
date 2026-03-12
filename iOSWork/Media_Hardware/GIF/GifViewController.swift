@@ -15,29 +15,13 @@ class GifViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下载gif", style: .plain, target: self, action: #selector(download))
+     //   navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下载gif", style: .plain, target: self, action: #selector(download))
 
         initView()
         initData()
     }
     
-    @objc func download() {
-        MediaTool().downloadToImage(resources: ["http://wx2.sinaimg.cn/mw690/92e8647aly1frt8sudfcgg20f008mx6q.gif"]) { result in
-            switch result {
-            case .success(let array):
-                if array.count > 0 {
-                    MediaData(data: array[0])?.saveToAlbum(name: "iOSWork")
-                }
-            case .fail(let int, let aFError):
-                Toast.showToast(msg: aFError.localizedDescription)
-            case .cancel:
-                break
-            }
-        }
-        
-        
-    }
-    
+   
     func initView()  {
        
         navigationItem.title = "GIF"
@@ -93,6 +77,7 @@ extension GifViewController:UICollectionViewDelegate,UICollectionViewDataSource{
 class GifCell: UICollectionViewCell {
     let img = GIFImageView()
     let btnPlay = UIButton()
+    let btnDownload = UIButton()
     var url:URL?{
         didSet{
             guard let u = url else {
@@ -116,11 +101,18 @@ class GifCell: UICollectionViewCell {
         btnPlay.setTitle("Play", for: .selected)
         btnPlay.title(title: "Stop").setFont(font: 15).color(color: UIColor.red).addTo(view: contentView).snp.makeConstraints { (m) in
             m.left.equalTo(5)
-            m.right.equalTo(-5)
+            m.width.equalTo(100)
             m.bottom.equalTo(-5)
         }
         btnPlay.addTarget(self, action: #selector(playGif), for: .touchUpInside)
-        
+     
+        btnDownload.setTitle("Play", for: .selected)
+        btnDownload.title(title: "下载").setFont(font: 15).color(color: UIColor.red).addTo(view: contentView).snp.makeConstraints { (m) in
+            m.right.equalTo(-5)
+            m.width.equalTo(100)
+            m.bottom.equalTo(-5)
+        }
+        btnDownload.addTarget(self, action: #selector(download), for: .touchUpInside)
     }
     
     @objc func playGif() {
@@ -131,6 +123,26 @@ class GifCell: UICollectionViewCell {
             img.stopAnimatingGIF()
         }
         btnPlay.isSelected = !btnPlay.isSelected
+    }
+    
+    @objc func download() {
+        guard let url = self.url?.absoluteString else {return}
+        MediaTool().downloadToImage(resources: [url]) { result in
+            switch result {
+            case .success(let array):
+                if array.count > 0 {
+                    MediaData(data: array[0])?.saveToAlbum(name: "iOSWork") { res in
+                        if res == .OK {
+                            Toast.showToast(msg: "保存成功")
+                        }
+                    }
+                }
+            case .fail(let int, let aFError):
+                Toast.showToast(msg: aFError.localizedDescription)
+            case .cancel:
+                break
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

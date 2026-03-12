@@ -30,10 +30,6 @@
 		20A965722903D132007F8526 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965702903D12E007F8526 /* UIImage+Extension.swift */; };
 		20A965732903D133007F8526 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965702903D12E007F8526 /* UIImage+Extension.swift */; };
 		20A965742903D145007F8526 /* UIImage+Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CB2F27254946007D51CD /* UIImage+Base.swift */; };
-		20A965762903D2D1007F8526 /* PHPLibraryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965752903D2D1007F8526 /* PHPLibraryTool.swift */; };
-		20A965772903D34C007F8526 /* PHPLibraryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965752903D2D1007F8526 /* PHPLibraryTool.swift */; };
-		20A965782903D34C007F8526 /* PHPLibraryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965752903D2D1007F8526 /* PHPLibraryTool.swift */; };
-		20A965792903D34D007F8526 /* PHPLibraryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A965752903D2D1007F8526 /* PHPLibraryTool.swift */; };
 		20A9657B2903D377007F8526 /* PHPhotoLibrary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */; };
 		20A9657C2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */; };
 		20A9657D2903D379007F8526 /* PHPhotoLibrary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */; };
@@ -1238,7 +1234,6 @@
 		20A965612903C7EC007F8526 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		20A965682903CA05007F8526 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		20A965702903D12E007F8526 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		20A965752903D2D1007F8526 /* PHPLibraryTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHPLibraryTool.swift; sourceTree = "<group>"; };
 		20A9657A2903D377007F8526 /* PHPhotoLibrary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Extension.swift"; sourceTree = "<group>"; };
 		20A9657F2903D3A8007F8526 /* PHAssetCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHAssetCollection+Extension.swift"; sourceTree = "<group>"; };
 		20AE3B1E29003BDD008DB64A /* FullAccessHintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullAccessHintView.swift; sourceTree = "<group>"; };
@@ -2919,7 +2914,6 @@
 				AE62CB7627254DD5007D51CD /* Tool.swift */,
 				AEF86659274B6F5B002E33E5 /* Store.swift */,
 				AE08AA8B27C681D500EE0813 /* MediaTool.swift */,
-				20A965752903D2D1007F8526 /* PHPLibraryTool.swift */,
 				AE3EB4E42A2C2EA200097934 /* KeyboardManage.swift */,
 				AEB9CBA82B464055008BD731 /* NetTool.swift */,
 				AE257F902B9744F400AEEABB /* NetToolView.swift */,
@@ -5179,7 +5173,6 @@
 				AE72F52E273EB9A50060456A /* CityChooseViewController+Delegate.swift in Sources */,
 				AE8C505B2C94406100021D92 /* TransferGoodsViewController.swift in Sources */,
 				AEE010722742560200C155D8 /* DynamicMitoViewController.swift in Sources */,
-				20A965772903D34C007F8526 /* PHPLibraryTool.swift in Sources */,
 				AEE0104F2742526700C155D8 /* PaletteViewController.swift in Sources */,
 				AE80EE0927FF0795004566D5 /* PopViewController.swift in Sources */,
 				AEF5BF2A2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */,
@@ -5558,7 +5551,6 @@
 				AE62CAF6272542DC007D51CD /* FocusFrameView.swift in Sources */,
 				AE62CB4127254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AE5846442C15515C00F758EC /* FileBrowser.swift in Sources */,
-				20A965782903D34C007F8526 /* PHPLibraryTool.swift in Sources */,
 				AE58464C2C15515C00F758EC /* FileListSearch.swift in Sources */,
 				AE62CADB272542DC007D51CD /* ShadowRangeManager.swift in Sources */,
 				20A965632903C7EC007F8526 /* UITextField+Extension.swift in Sources */,
@@ -5629,7 +5621,6 @@
 				20B65A2F28FC227A00341DB9 /* SqlField.cpp in Sources */,
 				20B65A3F28FC24D000341DB9 /* Recognize.swift in Sources */,
 				AEF6CB41287A7CB200352100 /* Theme.swift in Sources */,
-				20A965762903D2D1007F8526 /* PHPLibraryTool.swift in Sources */,
 				AEC9916928743E90002879A0 /* KeyboardNav.swift in Sources */,
 				20B659CF28FC224A00341DB9 /* ImageStyle.swift in Sources */,
 				AEDF535529B437FC00094B6B /* FullKeyboardView+keyInfo.swift in Sources */,
@@ -5828,7 +5819,6 @@
 				AE5846412C15515C00F758EC /* FBFile.swift in Sources */,
 				AE62CB4227254947007D51CD /* UIButton+Extension.swift in Sources */,
 				AEE010B22742569200C155D8 /* MJRefreshConfig.m in Sources */,
-				20A965792903D34D007F8526 /* PHPLibraryTool.swift in Sources */,
 				AEAE0EE42EC2024A00ED8786 /* MMCQ.swift in Sources */,
 				AEAE0EE52EC2024A00ED8786 /* ColorThief.swift in Sources */,
 				AEF5BF2D2ADD2BC000A7305D /* UIFont+BBIconFont.swift in Sources */,

@@ -38,9 +38,20 @@ class DownloadViewController:UIViewController{
         let urls = ["https://xcimg.szwego.com/20210116/a1610803638361_1135.jpg"]
         Toast.showLoading()
         
-        MediaTool().downloadToFile(resources: urls) { failCount, paths in
+        MediaTool().downloadToImage(resources: urls) { result in
             Toast.dismissLoading()
-            print(paths)
+            switch result {
+            case .success(let imgs):
+                MediaData(data: imgs[0])?.saveToAlbum(name: nil) { res in
+                    if res == .OK {
+                        Toast.showToast(msg: "保存成功")
+                    }
+                }
+            case .fail(let int, let error):
+                break
+            case .cancel:
+                break
+            }
         }
     }
 

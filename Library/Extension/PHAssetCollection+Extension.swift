@@ -8,7 +8,7 @@
 import Foundation
 import Photos
 
-enum AlbumError: LocalizedError {
+enum AlbumError: LocalizedError, Equatable {
     /// 相册写入权限被拒绝/受限
     case permissionDenied
     /// 相册创建操作失败（performChangesAndWait 抛出异常）
