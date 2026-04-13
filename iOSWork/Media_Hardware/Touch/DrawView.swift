@@ -12,12 +12,24 @@ protocol drawViewDelegate{
     func btnClick(sender:UIButton)
 }
 
-class DrawView: UIView {
+class DrawView: UIView, UIKeyInput {
+    var hasText: Bool {return true}
+    
+    func insertText(_ text: String) {
+        
+    }
+    
+    func deleteBackward() {
+        
+    }
+    
     var delegate:drawViewDelegate?
     var _btnPrevious:UIButton?
     var _btnNext:UIButton?
     var _btnSetting:UIButton?
     var _btnClear:UIButton?
+    var _btnKeyboard:UIButton?
+
     let Colors = [UIColor.red,UIColor.blue,UIColor.green,UIColor.white,UIColor.yellow,UIColor.purple,UIColor.brown,UIColor.cyan,UIColor.gray,UIColor.orange,UIColor.magenta]
     var colors:Array<UIColor>?
     private var arrTraces:Array<Trace>?
@@ -40,6 +52,7 @@ class DrawView: UIView {
         self.addSubview(btnNext)
         self.addSubview(btnSetting)
         self.addSubview(btnClear)
+   //     self.addSubview(btnKeyboard)
     }
     
     override func draw(_ rect: CGRect) {
@@ -263,6 +276,10 @@ class DrawView: UIView {
 
     }
     
+    override var canBecomeFirstResponder: Bool{
+        return  true
+    }
+    
     func clear()
     {
         arrLines?.removeAll(keepingCapacity: false)
@@ -385,6 +402,24 @@ class DrawView: UIView {
             return _btnClear!
         }
     }
+    
+    var btnKeyboard:UIButton
+        {
+        get{
+            if (_btnKeyboard == nil)
+            {
+                _btnKeyboard = UIButton()
+                _btnKeyboard?.setImage(UIImage(named: "camra_beauty_close"), for: UIControl.State.normal)
+                _btnKeyboard!.frame = CGRect(x:UIScreen.main.bounds.size.width*0.9-15,y: UIScreen.main.bounds.height-30, width:30,height: 30)
+                _btnKeyboard?.layer.borderWidth = 2
+                _btnKeyboard?.layer.borderColor = UIColor.white.cgColor
+                _btnKeyboard?.layer.cornerRadius = 15
+                _btnKeyboard?.addTarget(self, action: #selector(popKeyboard(sender:)), for: UIControl.Event.touchUpInside);
+            }
+            return _btnKeyboard!
+        }
+    }
+    
     func setButtonsEnable()
     {
         _btnClear?.isEnabled = canClear
@@ -405,6 +440,11 @@ class DrawView: UIView {
     @objc func clear(sender:UIButton){
         clear()
         setButtonsEnable()
+    }
+    
+    @objc func popKeyboard(sender:UIButton) {
+      let res =  becomeFirstResponder()
+        print(res)
     }
     
     @objc func setting(sender:UIButton){

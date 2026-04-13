@@ -92,13 +92,15 @@ class AdViewController: UIViewController {
         mediaVC.tabBarItem.image = UIImage(named: "media_black")?.withRenderingMode(.alwaysOriginal)
         mediaVC.tabBarItem.selectedImage = UIImage(named: "media_blue")?.withRenderingMode(.alwaysOriginal)
         mediaVC.tabBarItem.title = "多媒体&硬件"
+        mediaVC.navigationController?.isToolbarHidden = true
         let nav4 = UINavigationController(rootViewController: mediaVC)
         
         let projectVC = ProjectMenuViewController()
         projectVC.tabBarItem.image = UIImage(named: "project_black")?.withRenderingMode(.alwaysOriginal)
         projectVC.tabBarItem.selectedImage = UIImage(named: "project_blue")?.withRenderingMode(.alwaysOriginal)
         projectVC.tabBarItem.title = "独立项目"
-        
+        projectVC.navigationController?.isToolbarHidden = true
+
         let nav5 = UINavigationController(rootViewController: projectVC)
         tabbarCtl.viewControllers = [nav1,nav2,nav3,nav4,nav5]
         

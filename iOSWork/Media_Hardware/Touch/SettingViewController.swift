@@ -18,6 +18,7 @@ class SettingViewController: UIViewController {
     var lblSupportMaxTouches:UILabel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
         let lblTitle = UILabel(frame: CGRect(x:130,y:20,width: 60,height: 40))
         lblTitle.text = "设置"
         lblTitle.font = UIFont.systemFont(ofSize: 24)
