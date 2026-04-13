@@ -127,21 +127,14 @@ class GifCell: UICollectionViewCell {
     
     @objc func download() {
         guard let url = self.url?.absoluteString else {return}
-        MediaTool().downloadToImage(resources: [url]) { result in
-            switch result {
-            case .success(let array):
-                if array.count > 0 {
-                    MediaData(data: array[0])?.saveToAlbum(name: "iOSWork") { res in
-                        if res == .OK {
-                            Toast.showToast(msg: "保存成功")
-                        }
-                    }
-                }
-            case .fail(let int, let aFError):
-                Toast.showToast(msg: aFError.localizedDescription)
-            case .cancel:
-                break
+        MediaDownloader().download(sources: [url].map{.img($0)}) { imgs, err in
+            guard let imgs = imgs else {
+                Toast.showToast(msg: err?.localizedDescription ?? "")
+                return
+                
             }
+            imgs.saveToAlbum(albumName: "iOSWork")
+            Toast.showToast(msg: "保存成功")
         }
     }
     

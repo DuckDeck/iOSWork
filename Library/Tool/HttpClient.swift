@@ -8,6 +8,28 @@
 
 import Alamofire
 import UIKit
+
+final class IPServerTrustManager: ServerTrustManager {
+    override func serverTrustEvaluator(forHost host: String) -> ServerTrustEvaluating? {
+        if RegexTool(RegexTool.IPRegex).match(input: host) {
+            return ByIpTrustEvaluator()
+        }
+        else {
+            return DefaultTrustEvaluator()
+        }
+    }
+    
+    override init(allHostsMustBeEvaluated: Bool = true, evaluators: [String : ServerTrustEvaluating]) {
+        super.init(allHostsMustBeEvaluated: allHostsMustBeEvaluated, evaluators: evaluators)
+    }
+}
+
+final class ByIpTrustEvaluator: ServerTrustEvaluating {
+    public func evaluate(_ trust: SecTrust, forHost host: String) throws {
+        try trust.af.performDefaultValidation(forHost: host)
+    }
+}
+
 class HttpClient {
     fileprivate static var urlHandler: ((_ url: String)->String)?
     fileprivate static var httpHeaderHandler: ((_ header: HTTPHeaders)->HTTPHeaders)?
@@ -30,6 +52,50 @@ class HttpClient {
     
     static var netStatus = NetworkReachabilityManager.NetworkReachabilityStatus.reachable(.ethernetOrWiFi)
    
+    static let session : Session = {
+        var trust = [String:ServerTrustEvaluating]()
+        let tru  =  DisabledTrustEvaluator()
+        //接口白名单
+        trust["t2c4edxf.wegoab.com"] =  tru
+        trust["tspla6h7.wegoab.com"] =  tru
+        trust["tetcxipi.wegoab.com"] =  tru
+        trust["th5db18l.wegoab.com"] =  tru
+        trust["tfxym93z.wegoab.com"] =  tru
+        trust["t3vbpqf4.wegoab.com"] =  tru
+        trust["www.micbosscloud.com"] =  tru
+        trust["3b.wegoab.com"] =  tru
+        trust["3h.wegoab.com"] =  tru
+        trust["3f.wegoab.com"] =  tru
+        trust["3d.wegoab.com"] =  tru
+        trust["3e.wegoab.com"] =  tru
+        trust["3c.wegoab.com"] =  tru
+        trust["www.wsxcme.com"] = tru
+        trust["xdc1.szwego.com"] = tru
+        trust["www.tapbizz.cn"] = tru
+        trust["xcimg.szwego.com"] = tru
+        trust["wegoab.com"] = tru
+        trust["www.wegoab.com"] = tru
+        trust["www.tap-biz.cn"] = tru
+        trust["www.microboss.me"] = tru
+        trust["www.szwego.com"] = tru
+        trust["www.wegobiz.cn"] = tru
+        trust["www.tapbiz.cn"] = tru
+        trust["tifbhht0.wegoab.com"] = tru
+        trust["redirectdev.szwego.com"] = tru
+        trust["newimage-1251632793.cos.ap-guangzhou.myqcloud.com"] = tru
+        trust["tbfggv4k.wegoab.com"] = tru
+        trust["static.szwego.com"] = tru
+        trust["logs.szwego.com"] = tru
+        trust["t34ltrdl.wegoab.com"] = tru
+        trust["www.wxlookbook.com"] = tru
+        trust["ts7fi24e.wegoab.com"] = tru
+       
+        var manager = IPServerTrustManager(evaluators: trust)
+        let configuration = URLSessionConfiguration.af.default
+        manager = IPServerTrustManager(allHostsMustBeEvaluated: false, evaluators: trust)
+        return Session(configuration: configuration, serverTrustManager: manager)
+    }()
+    
     @objc static func registerHandler() {
         HttpClient.registerUrlHander { url in
             url

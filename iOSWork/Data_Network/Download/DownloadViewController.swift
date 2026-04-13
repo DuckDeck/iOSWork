@@ -35,24 +35,17 @@ class DownloadViewController:UIViewController{
     
     @objc func startDownload(){
 //        let urls = ["http://lovelive.ink:9001/video/RockNRoll.mkv","http://lovelive.ink:9001/img/16295348101.jpg","http://lovelive.ink:9001/img/16295368926.jpg","http://lovelive.ink:9001/img/1630211243z2.jpg"]
-        let urls = ["https://xcimg.szwego.com/20210116/a1610803638361_1135.jpg"]
+        let urls = ["https://xcimg.szwego.com/20210116/a1610803638361_1135.jpg","https://sns-webpic-qc.xhscdn.com/202604131403/0ed8fadac9828fe0b4e9955ce4687bc9/notes_pre_post/1040g3k031u51uln42ic04buq578sfe51i94evk0!nd_dft_wlteh_webp_3"]
         Toast.showLoading()
-        
-        MediaTool().downloadToImage(resources: urls) { result in
-            Toast.dismissLoading()
-            switch result {
-            case .success(let imgs):
-                MediaData(data: imgs[0])?.saveToAlbum(name: nil) { res in
-                    if res == .OK {
-                        Toast.showToast(msg: "保存成功")
-                    }
-                }
-            case .fail(let int, let error):
-                break
-            case .cancel:
-                break
+        MediaDownloader().download(sources: urls.map{.img($0)}) { imgs, err in
+            guard let imgs = imgs else {
+                Toast.showToast(msg: err?.localizedDescription ?? "")
+                return
+                
             }
+            imgs.saveToAlbum(albumName: "iOSWork")
         }
+
     }
 
     lazy var imgView: UIImageView = {

@@ -8,34 +8,6 @@
 import Foundation
 import Photos
 
-enum AlbumError: LocalizedError, Equatable {
-    /// 相册写入权限被拒绝/受限
-    case permissionDenied
-    /// 相册创建操作失败（performChangesAndWait 抛出异常）
-    case createFailed(String)
-    /// 创建相册后获取不到占位符（placeholder 为 nil）
-    case placeholderNotFound
-    /// 创建相册后无法获取新相册实例
-    case collectionFetchFailed
-    /// 未知错误
-    case unknown(String)
-    
-    // 实现 LocalizedError，返回用户可读的错误描述
-    var errorDescription: String? {
-        switch self {
-        case .permissionDenied:
-            return "相册写入权限被拒绝，请在设置中开启"
-        case .createFailed(let msg):
-            return "创建相册失败：\(msg)"
-        case .placeholderNotFound:
-            return "创建相册后未获取到占位符，无法定位新相册"
-        case .collectionFetchFailed:
-            return "创建相册后，无法获取新相册实例"
-        case .unknown(let msg):
-            return "未知错误：\(msg)"
-        }
-    }
-}
 
 extension PHAssetCollection {
     /// 查找/创建指定名称的相册（返回 Result 类型，带精准错误信息）

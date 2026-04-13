@@ -63,12 +63,14 @@ extension UIDevice {
         case "iPad7,11", "iPad7,12": return "iPad (7th generation)"
         case "iPad11,6", "iPad11,7": return "iPad (8th generation)"
         case "iPad12,1", "iPad12,2": return "iPad (9th generation)"
+        case "iPad13,18", "iPad13,19": return "iPad (10th generation)"
 
         // TODO: iPad Air
         case "iPad4,1", "iPad4,2", "iPad4,3": return "iPad Air"
         case "iPad5,3", "iPad5,4": return "iPad Air 2"
         case "iPad11,3", "iPad11,4": return "iPad Air (3rd generation)"
         case "iPad13,1", "iPad13,2": return "iPad Air (4rd generation)"
+        case "iPad13,16", "iPad13,17": return "iPad Air (5rd generation)"
 
         // TODO: iPad Pro
         case "iPad6,3", "iPad6,4": return "iPad Pro (9.7-inch)"
@@ -81,6 +83,8 @@ extension UIDevice {
         case "iPad8,5", "iPad8,6", "iPad8,7", "iPad8,8": return "iPad Pro (12.9-inch) (3rd generation)"
         case "iPad8,11", "iPad8,12": return "iPad Pro (12.9-inch) (4th generation)"
         case "iPad13,8", "iPad13,9", "iPad13,10", "iPad13,11": return "iPad Pro (12.9-inch) (5th generation)"
+        case "iPad14,3", "iPad14,4": return "iPad Pro (11-inch) (4nd generation)"
+        case "iPad14,5", "iPad14,6": return "iPad Pro (12.9-inch) (4nd generation)"
 
         // TODO: iPad mini
         case "iPad2,5", "iPad2,6", "iPad2,7": return "iPad mini"
@@ -125,6 +129,14 @@ extension UIDevice {
         case "iPhone14,2": return "iPhone 13 Pro"
         case "iPhone14,3": return "iPhone 13 Pro Max"
         case "iPhone14,6": return "iPhone SE (3rd generation)"
+        case "iPhone14,7": return "iPhone 14"
+        case "iPhone14,8": return "iPhone 14 Plus"
+        case "iPhone15,2": return "iPhone 14 Pro"
+        case "iPhone15,3": return "iPhone 14 Pro Max"
+        case "iPhone15,4": return "iPhone 15"
+        case "iPhone15,5": return "iPhone 15 Plus"
+        case "iPhone16,1": return "iPhone 15 Pro"
+        case "iPhone16,2": return "iPhone 15 Pro Max"
 
         case "AppleTV5,3": return "Apple TV"
         case "i386", "x86_64": return "iPhone Simulator"
@@ -187,6 +199,11 @@ extension UIDevice {
                 }
             }
         }
+    }
+    
+    static var availableMemory:Float{
+        let tmp = os_proc_available_memory() / 1024 / 1024
+        return Float(tmp)
     }
     
     static var carrierInfo: String {
