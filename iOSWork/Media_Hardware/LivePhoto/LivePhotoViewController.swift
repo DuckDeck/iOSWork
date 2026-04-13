@@ -76,6 +76,16 @@ class LivePhotoViewController: UIViewController, PHPickerViewControllerDelegate 
                 }
             }
         }
+//        LivePhoto().generate(from: nil, videoURL: videoURL) { _, resouce in
+//            if let source = resouce {
+//                  LivePhoto.saveToLibrary(source) { finish in
+//                      if finish {
+//                          Toast.showToast(msg: "保存成功")
+//                      }
+//                  }
+//              }
+//        }
+        
     }
 
     @objc func chooseOneImage() {

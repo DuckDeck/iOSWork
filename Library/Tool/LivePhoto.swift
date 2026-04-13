@@ -29,6 +29,15 @@ class LivePhoto {
             shared.generate(from: imageURL, videoURL: videoURL, progress: progress, completion: completion)
         }
     }
+    
+    func generate(from imageURL: URL?, videoURL: URL,  completion: @escaping (PHLivePhoto?, LivePhotoResources?) -> Void) {
+        let queue = DispatchQueue(label: "com.limit", attributes: .concurrent)
+        queue.async {
+            self.generate(from: imageURL, videoURL: videoURL, progress: {_ in
+            }, completion: completion)
+        }
+    }
+    
     /// Save a Live Photo to the Photo Library by passing the paired image and video.
     public class func saveToLibrary(_ resources: LivePhotoResources, completion: @escaping (Bool) -> Void) {
         PHPhotoLibrary.shared().performChanges({
@@ -104,6 +113,8 @@ class LivePhoto {
                         return
                     }
                     DispatchQueue.main.async {
+                        print("\(FileManager.default.fileExists(atPath: pairedImageURL.path))")
+                        print("\(FileManager.default.fileExists(atPath: pairedVideoURL.path))")
                         completion(livePhoto, (pairedImageURL, pairedVideoURL))
                     }
                 })

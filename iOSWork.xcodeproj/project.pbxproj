@@ -319,6 +319,10 @@
 		AE58466F2C155B7000F758EC /* CalFileSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58466D2C155B6200F758EC /* CalFileSize.swift */; };
 		AE5846702C155B7000F758EC /* CalFileSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58466D2C155B6200F758EC /* CalFileSize.swift */; };
 		AE5846712C155B7100F758EC /* CalFileSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE58466D2C155B6200F758EC /* CalFileSize.swift */; };
+		AE5F814C2F64F2EE0001FCE8 /* MediaDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F814B2F64F2EE0001FCE8 /* MediaDownloader.swift */; };
+		AE5F814D2F64F2EE0001FCE8 /* MediaDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F814B2F64F2EE0001FCE8 /* MediaDownloader.swift */; };
+		AE5F814E2F64F2EE0001FCE8 /* MediaDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F814B2F64F2EE0001FCE8 /* MediaDownloader.swift */; };
+		AE5F814F2F64F2EE0001FCE8 /* MediaDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5F814B2F64F2EE0001FCE8 /* MediaDownloader.swift */; };
 		AE61165B27410CF8008466AB /* TwoSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165A27410CF8008466AB /* TwoSideView.swift */; };
 		AE61165F27410F2C008466AB /* GrandSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165E27410F2C008466AB /* GrandSlider.swift */; };
 		AE61166027410F2F008466AB /* GrandSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE61165E27410F2C008466AB /* GrandSlider.swift */; };
@@ -742,9 +746,6 @@
 		AE6E5DCC273FC51C00523EA8 /* OptimizeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */; };
 		AE6E5DCF273FC5E500523EA8 /* FlowLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */; };
 		AE6F3CF02F5FC6B400EAFB78 /* UploadImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F3CEF2F5FC6B400EAFB78 /* UploadImageViewController.swift */; };
-		AE6F3CF62F60068200EAFB78 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F3CF52F60068200EAFB78 /* Uploader.swift */; };
-		AE6F3CF72F60068200EAFB78 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F3CF52F60068200EAFB78 /* Uploader.swift */; };
-		AE6F3CF82F60068200EAFB78 /* Uploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6F3CF52F60068200EAFB78 /* Uploader.swift */; };
 		AE6FED3C2A95C05F003C6626 /* DemoWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */; };
 		AE7090162CB69A14005F38F6 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7090152CB69A14005F38F6 /* LivePhoto.swift */; };
 		AE7090172CB69A14005F38F6 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7090152CB69A14005F38F6 /* LivePhoto.swift */; };
@@ -1467,6 +1468,7 @@
 		AE5846172C15515C00F758EC /* PreviewTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewTransitionViewController.swift; sourceTree = "<group>"; };
 		AE5846182C15515C00F758EC /* WebviewPreviewViewContoller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebviewPreviewViewContoller.swift; sourceTree = "<group>"; };
 		AE58466D2C155B6200F758EC /* CalFileSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalFileSize.swift; sourceTree = "<group>"; };
+		AE5F814B2F64F2EE0001FCE8 /* MediaDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDownloader.swift; sourceTree = "<group>"; };
 		AE61165A27410CF8008466AB /* TwoSideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoSideView.swift; sourceTree = "<group>"; };
 		AE61165E27410F2C008466AB /* GrandSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandSlider.swift; sourceTree = "<group>"; };
 		AE6116622741280B008466AB /* GradientLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLabel.swift; sourceTree = "<group>"; };
@@ -1738,7 +1740,6 @@
 		AE6E5DCB273FC51C00523EA8 /* OptimizeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizeTableViewController.swift; sourceTree = "<group>"; };
 		AE6E5DCE273FC5E500523EA8 /* FlowLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayoutViewController.swift; sourceTree = "<group>"; };
 		AE6F3CEF2F5FC6B400EAFB78 /* UploadImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageViewController.swift; sourceTree = "<group>"; };
-		AE6F3CF52F60068200EAFB78 /* Uploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uploader.swift; sourceTree = "<group>"; };
 		AE6FED3B2A95C05F003C6626 /* DemoWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWebViewController.swift; sourceTree = "<group>"; };
 		AE7090152CB69A14005F38F6 /* LivePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
 		AE7090182CB69B9E005F38F6 /* HWDebounce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWDebounce.h; sourceTree = "<group>"; };
@@ -2656,6 +2657,14 @@
 			path = FileBrowser;
 			sourceTree = "<group>";
 		};
+		AE5F814A2F64F2DB0001FCE8 /* MediaTool */ = {
+			isa = PBXGroup;
+			children = (
+				AE5F814B2F64F2EE0001FCE8 /* MediaDownloader.swift */,
+			);
+			path = MediaTool;
+			sourceTree = "<group>";
+		};
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2901,6 +2910,7 @@
 		AE62CB7427254DC9007D51CD /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				AE5F814A2F64F2DB0001FCE8 /* MediaTool */,
 				AE70901E2CB69B9E005F38F6 /* HWThrottle */,
 				AE12884C281CEC9D0049A5E4 /* calculator */,
 				AE62CB7B27254DD6007D51CD /* Auth.swift */,
@@ -2919,7 +2929,6 @@
 				AE257F902B9744F400AEEABB /* NetToolView.swift */,
 				AE7090152CB69A14005F38F6 /* LivePhoto.swift */,
 				AE96A5342CF7FC62004C2A00 /* VideoCreate.swift */,
-				AE6F3CF52F60068200EAFB78 /* Uploader.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -5185,7 +5194,6 @@
 				AE3FD5542F5EE80D00117C15 /* WKWebView+TYSnapshot.m in Sources */,
 				AE3FD5552F5EE80D00117C15 /* UIView+TYSnapshot.m in Sources */,
 				AE3FD5562F5EE80D00117C15 /* TYSnapshotAuxiliaryPDFTool.m in Sources */,
-				AE6F3CF72F60068200EAFB78 /* Uploader.swift in Sources */,
 				AE3FD5572F5EE80D00117C15 /* UITextView+TYSnapshot.m in Sources */,
 				AE3FD5582F5EE80D00117C15 /* UIScrollView+TYSnapshot.m in Sources */,
 				AE3FD5592F5EE80D00117C15 /* UIViewController+TYSnapshot.m in Sources */,
@@ -5205,6 +5213,7 @@
 				AE4D09272730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */,
 				AEE0113327425D8800C155D8 /* Piece.swift in Sources */,
 				AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */,
+				AE5F814E2F64F2EE0001FCE8 /* MediaDownloader.swift in Sources */,
 				AE62CB5827254947007D51CD /* UIView+Base.swift in Sources */,
 				AE62CBD427255C20007D51CD /* ImageBrowserViewController.swift in Sources */,
 				AE6E5DC3273FB6FF00523EA8 /* TouchTestViewController.swift in Sources */,
@@ -5453,6 +5462,7 @@
 				AEAE0EE72EC2024A00ED8786 /* ColorThief.swift in Sources */,
 				AE62CB4727254947007D51CD /* UITableView+Extension.swift in Sources */,
 				AEE010E52742569200C155D8 /* MJRefreshStateHeader.m in Sources */,
+				AE5F814C2F64F2EE0001FCE8 /* MediaDownloader.swift in Sources */,
 				AE62CB8227254DD7007D51CD /* Tool.swift in Sources */,
 				AE5846542C15515C00F758EC /* FileListViewController.swift in Sources */,
 				AEE010FA2742569200C155D8 /* MJRefreshComponent.m in Sources */,
@@ -5588,8 +5598,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEDF535729B437FC00094B6B /* FullkeyboardView.swift in Sources */,
+				AE5F814F2F64F2EE0001FCE8 /* MediaDownloader.swift in Sources */,
 				AE12888E281CED0A0049A5E4 /* token-array-validation.swift in Sources */,
-				AE6F3CF82F60068200EAFB78 /* Uploader.swift in Sources */,
 				AE9EE9F628083E2000EBE70A /* Shake.swift in Sources */,
 				AE1C4F37274341FC0097EAC1 /* Dict+Extension.swift in Sources */,
 				AEE3DB6127FC3AD8007B2B58 /* UIViewExtension.swift in Sources */,
@@ -5749,7 +5759,6 @@
 				AEF8665A274B6F5B002E33E5 /* Store.swift in Sources */,
 				AEE010DD2742569200C155D8 /* MJRefreshAutoNormalFooter.m in Sources */,
 				AE7090172CB69A14005F38F6 /* LivePhoto.swift in Sources */,
-				AE6F3CF62F60068200EAFB78 /* Uploader.swift in Sources */,
 				AE890D1027240DFC00FAB7D7 /* Global.swift in Sources */,
 				AE62CBC127255C20007D51CD /* TimerButton.swift in Sources */,
 				AE62CBCA27255C20007D51CD /* HintView.swift in Sources */,
@@ -5760,6 +5769,7 @@
 				AEE010BC2742569200C155D8 /* UIScrollView+MJExtension.m in Sources */,
 				AEE010C52742569200C155D8 /* UIView+MJExtension.m in Sources */,
 				20A9655B2903C6B2007F8526 /* UIView+Extension.swift in Sources */,
+				AE5F814D2F64F2EE0001FCE8 /* MediaDownloader.swift in Sources */,
 				AE12888B281CED0A0049A5E4 /* number.swift in Sources */,
 				20A965832903D3A8007F8526 /* PHAssetCollection+Extension.swift in Sources */,
 				AE72F538273EBDB10060456A /* CityChooseViewController+Delegate.swift in Sources */,

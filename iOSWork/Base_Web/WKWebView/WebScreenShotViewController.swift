@@ -52,12 +52,12 @@ class WebScreenShotViewController:UIViewController {
       //  webView.wAccessoryView = webView.doneAccessoryView
        // https://www.wsxcme.com/static/index.html?link_type=pc_login#/pc_login
      //   https://www.52pojie.cn/portal.php
-        webView.load(URLRequest(url: URL(string: "https://www.52pojie.cn/portal.php")!))
+        webView.load(URLRequest(url: URL(string: "https://t3vbpqf4.wegoab.com/static/index.html#/album/note/share/A202105081102297420001468/N202603241015290492001028")!))
         
     }
     
     @objc func screenShot() {
-       method1()
+       method3()
     }
     
     func method1() { // 原生的截图方式，没显示出来的视图会显示为黑色
@@ -143,8 +143,6 @@ class WebScreenShotViewController:UIViewController {
     
     lazy var congig1: WKWebViewConfiguration = {
         let v = WKWebViewConfiguration()
-//        v.setURLSchemeHandler(WKHttpHandler(), forURLScheme: "http")
-//        v.setURLSchemeHandler(WKHttpHandler(), forURLScheme: "https")
         return v
     }()
     
