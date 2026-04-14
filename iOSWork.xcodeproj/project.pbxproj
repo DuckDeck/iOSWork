@@ -202,6 +202,7 @@
 		AE2A1B302F8C884400E66B00 /* MediaDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A1B292F8C884400E66B00 /* MediaDownloader.swift */; };
 		AE2A1B312F8C884400E66B00 /* MediaSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A1B2A2F8C884400E66B00 /* MediaSaver.swift */; };
 		AE2A1B322F8C884400E66B00 /* MediaDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A1B292F8C884400E66B00 /* MediaDownloader.swift */; };
+		AE2A1B3A2F8CE99D00E66B00 /* HidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2A1B392F8CE99D00E66B00 /* HidViewController.swift */; };
 		AE313F26282E46DD00245791 /* KeyboardSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE313F25282E46DD00245791 /* KeyboardSettingView.swift */; };
 		AE35149B27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
 		AE35149C27CBB549000326F1 /* 5k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AE35149A27CBB549000326F1 /* 5k.jpg */; };
@@ -1397,6 +1398,7 @@
 		AE28B86527C501C000D399F3 /* KeyboardGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardGlobal.swift; sourceTree = "<group>"; };
 		AE2A1B292F8C884400E66B00 /* MediaDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDownloader.swift; sourceTree = "<group>"; };
 		AE2A1B2A2F8C884400E66B00 /* MediaSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSaver.swift; sourceTree = "<group>"; };
+		AE2A1B392F8CE99D00E66B00 /* HidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HidViewController.swift; sourceTree = "<group>"; };
 		AE313F25282E46DD00245791 /* KeyboardSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardSettingView.swift; sourceTree = "<group>"; };
 		AE35149A27CBB549000326F1 /* 5k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5k.jpg; sourceTree = "<group>"; };
 		AE35149D27CBB54D000326F1 /* 8k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8k.jpg; sourceTree = "<group>"; };
@@ -3389,6 +3391,7 @@
 				AE6E5DBE273FB6FF00523EA8 /* SettingViewController.swift */,
 				AE6E5DBC273FB6FF00523EA8 /* TouchTestViewController.swift */,
 				AE6E5DBA273FB6FF00523EA8 /* Trace.swift */,
+				AE2A1B392F8CE99D00E66B00 /* HidViewController.swift */,
 			);
 			path = Touch;
 			sourceTree = "<group>";
@@ -5218,6 +5221,7 @@
 				AE62CB4927254947007D51CD /* UIImageView+Extension.swift in Sources */,
 				AE62CACB272542DC007D51CD /* ShadowAudioPlayerView.swift in Sources */,
 				AEE0103827424A1000C155D8 /* VideoRecordViewController.swift in Sources */,
+				AE2A1B3A2F8CE99D00E66B00 /* HidViewController.swift in Sources */,
 				AE4D09272730338B00899D2C /* HttpInterceptWebViewController.swift in Sources */,
 				AEE0113327425D8800C155D8 /* Piece.swift in Sources */,
 				AEADA2CC273D66A700153D20 /* ShareViewController.swift in Sources */,
