@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -2057,7 +2057,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AE7B0B172E5F0AF000AF830D /* PDFHandle */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PDFHandle; sourceTree = "<group>"; };
+		AE7B0B172E5F0AF000AF830D /* PDFHandle */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+			);
+			explicitFileTypes = {
+			};
+			explicitFolders = (
+			);
+			path = PDFHandle;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -4561,8 +4571,6 @@
 			dependencies = (
 			);
 			name = SwiftUIWork;
-			packageProductDependencies = (
-			);
 			productName = SwiftUIWork;
 			productReference = AE7E743D2722528200F0C19C /* SwiftUIWork.app */;
 			productType = "com.apple.product-type.application";
@@ -4714,7 +4722,7 @@
 			);
 			mainGroup = AE7E7419272251E300F0C19C;
 			packageReferences = (
-				AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "../GrandKit" */,
+				AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "GrandKit" */,
 			);
 			productRefGroup = AE7E7423272251E300F0C19C /* Products */;
 			projectDirPath = "";
@@ -4956,13 +4964,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iOSWork/Pods-iOSWork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iOSWork/Pods-iOSWork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -5087,13 +5091,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftUIWork/Pods-SwiftUIWork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftUIWork/Pods-SwiftUIWork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -6713,7 +6713,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "../GrandKit" */ = {
+		AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "GrandKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../GrandKit;
 		};

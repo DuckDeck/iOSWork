@@ -10,7 +10,7 @@ class HidViewController:UIViewController {
     let hidView = HidView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "键盘", style: .plain, target: self, action: #selector(popKeyboard))
         
         
@@ -27,7 +27,7 @@ class HidViewController:UIViewController {
 
 class HidView:UIView, UIKeyInput {
     var lblX: CGFloat = 0
-    var lblY: CGFloat = 50
+    var lblY: CGFloat = 100
     
     var hasText: Bool {return true}
     
@@ -52,7 +52,7 @@ class HidView:UIView, UIKeyInput {
             addSubview(pointView)
             
             let lbl = UILabel()
-            lbl.text = "x:\(point.x), y:\(point.y)"
+            lbl.text = "x:\(Int(point.x)), y:\(Int(point.y))"
             lbl.textColor = color
             lbl.font = UIFont.systemFont(ofSize: 10)
             lbl.frame = CGRect(x: lblX, y: lblY, width: 100, height: 12)

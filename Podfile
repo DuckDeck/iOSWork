@@ -19,6 +19,7 @@ pod 'CocoaAsyncSocket', '7.6.5'
 pod 'PhoneNetSDK', '1.0.12'
 pod 'SSZipArchive'
 pod 'lottie-ios', '~> 3.4.0'
+pod 'OpenKuiklyIOSRender', '2.16.0'
 end
 
 target 'CLangWork' do
