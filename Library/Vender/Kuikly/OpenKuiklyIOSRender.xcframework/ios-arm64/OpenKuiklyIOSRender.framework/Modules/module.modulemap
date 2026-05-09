@@ -1,0 +1,6 @@
+framework module OpenKuiklyIOSRender {
+  umbrella header "OpenKuiklyIOSRender-umbrella.h"
+
+  export *
+  module * { export * }
+}

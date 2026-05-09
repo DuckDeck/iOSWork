@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -2334,6 +2334,13 @@
 			path = ImageIO;
 			sourceTree = "<group>";
 		};
+		AE05BB932FAC4154002887A0 /* Kuikly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Kuikly;
+			sourceTree = "<group>";
+		};
 		AE08AA8A27C6817D00EE0813 /* Download */ = {
 			isa = PBXGroup;
 			children = (
@@ -2755,6 +2762,7 @@
 		AE62C9EC272541F2007D51CD /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				AE05BB932FAC4154002887A0 /* Kuikly */,
 				AEAE0EE12EC2023500ED8786 /* ColorThief */,
 				AE71F2292C58EA1100DE980A /* mars */,
 				AE5846192C15515C00F758EC /* FileBrowser */,

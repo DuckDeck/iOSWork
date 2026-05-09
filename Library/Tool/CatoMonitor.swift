@@ -102,9 +102,16 @@ class RunLoopMonitor {
                         if self.timeoutCount < 3 {
                             continue
                         }
+                        let stackFrames = BackTrace.callStack(.main)
                         DispatchQueue.global().async {
                             print("卡顿了")
                             // 捕获堆栈进行上报
+                            
+                           
+                            for frame in stackFrames {
+                                print(frame.demangledSymbol)
+                            }
+                            
                         }
                     }
                 }
@@ -174,7 +181,8 @@ class BackTrace: NSObject {
 
     public static func callStack(_ thread: Thread) -> [StackFrame] {
         let pthread = machThread(from: thread)
-        return getCallStack(pthread_from_mach_thread_np(pthread)!) ?? []
+        guard  let threadT = pthread_from_mach_thread_np(pthread) else {return []}
+        return getCallStack(threadT) ?? []
     }
 
     static func machThread(from thread: Thread) -> thread_t {

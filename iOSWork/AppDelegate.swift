@@ -11,6 +11,8 @@ import Library
 import SwiftyBeaver
 import GrandKit
 import IQKeyboardManagerSwift
+//import Matrix
+import KSCrash
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -124,6 +126,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //        var arr = [1,3,4,5]
         //        arr.insert(9, at: 10)
+        
+        
+        
+//        atrix *matrix = [Matrix sharedInstance];
+//        MatrixBuilder *curBuilder = [[MatrixBuilder alloc] init];
+//        curBuilder.pluginListener = self; // pluginListener 回调 plugin 的相关事件
+//            
+//        WCCrashBlockMonitorPlugin *crashBlockPlugin = [[WCCrashBlockMonitorPlugin alloc] init];
+//        [curBuilder addPlugin:crashBlockPlugin]; // 添加卡顿和崩溃监控
+//            
+//        WCMemoryStatPlugin *memoryStatPlugin = [[WCMemoryStatPlugin alloc] init];
+//        [curBuilder addPlugin:memoryStatPlugin]; // 添加内存监控功能
+//
+//        WCFPSMonitorPlugin *fpsMonitorPlugin = [[WCFPSMonitorPlugin alloc] init];
+//        [curBuilder addPlugin:fpsMonitorPlugin]; // 添加 fps 监控功能
+//            
+//        [matrix addMatrixBuilder:curBuilder];
+//            
+//        [crashBlockPlugin start]; // 开启卡顿和崩溃监控
+//        [memoryStatPlugin start]; // 开启内存监控
+//        [fpsMonitorPlugin start]; // 开启 fps 监控
+//        let matrix = Matrix.sharedInstance() as! Matrix
+//        let builder = MatrixBuilder()
+//        builder.pluginListener = self
+//        let crashBlockPlugin = WCCrashBlockMonitorPlugin()
+//        builder.add(crashBlockPlugin)
+//        let memoryStatPlugin = WCMemoryStatPlugin()
+//        builder.add(memoryStatPlugin)
+//        let fpsMonitorPlugin = WCFPSMonitorPlugin()
+//        builder.add(fpsMonitorPlugin)
+//        matrix.add(builder)
+//        crashBlockPlugin.start()
+//        memoryStatPlugin.start()
+        
+        
+        let installation = CrashInstallationStandard.shared
+        installation.url = URL(string: "http://put.your.url.here")!
+
+        // Install the crash reporting system
+        let config = KSCrashConfiguration()
+        config.monitors = [.machException, .signal]
+        try? installation.install(with: config) // set `nil` for default config
+
+        // Optional: Add an alert confirmation (recommended for email installation)
+        installation.addConditionalAlert(
+            withTitle: "Crash Detected",
+            message: "The app crashed last time it was launched. Send a crash report?",
+            yesAnswer: "Sure!",
+            noAnswer: "No thanks"
+        )
+
+        
         return true
     }
     

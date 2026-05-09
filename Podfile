@@ -19,7 +19,10 @@ pod 'CocoaAsyncSocket', '7.6.5'
 pod 'PhoneNetSDK', '1.0.12'
 pod 'SSZipArchive'
 pod 'lottie-ios', '~> 3.4.0'
-pod 'OpenKuiklyIOSRender', '2.16.0'
+# Matrix (从 GitHub 指定 v2.0.6 tag 安装，包含卡顿监控、内存监控、FPS 监控等)
+#pod 'matrix-wechat', :git => 'https://github.com/Tencent/matrix.git', :tag => 'v2.0.6', :subspecs => ['matrixARC']
+
+pod 'KSCrash', '~> 2.5'
 end
 
 target 'CLangWork' do
