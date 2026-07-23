@@ -23,6 +23,8 @@ pod 'lottie-ios', '~> 3.4.0'
 #pod 'matrix-wechat', :git => 'https://github.com/Tencent/matrix.git', :tag => 'v2.0.6', :subspecs => ['matrixARC']
 
 pod 'KSCrash', '~> 2.5'
+pod 'KSCrash/BootTimeMonitor'
+pod 'KSCrash/DiscSpaceMonitor'
 end
 
 target 'CLangWork' do

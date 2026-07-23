@@ -10,9 +10,13 @@ PODS:
     - KRActivityIndicatorView (= 3.0.7)
   - KSCrash (2.5.1):
     - KSCrash/Installations (= 2.5.1)
+  - KSCrash/BootTimeMonitor (2.5.1):
+    - KSCrash/RecordingCore
   - KSCrash/Core (2.5.1)
   - KSCrash/DemangleFilter (2.5.1):
     - KSCrash/Recording
+  - KSCrash/DiscSpaceMonitor (2.5.1):
+    - KSCrash/RecordingCore
   - KSCrash/Filters (2.5.1):
     - KSCrash/Recording
     - KSCrash/RecordingCore
@@ -52,6 +56,8 @@ DEPENDENCIES:
   - Kingfisher (= 7.9.1)
   - KRProgressHUD (= 3.4.7)
   - KSCrash (~> 2.5)
+  - KSCrash/BootTimeMonitor
+  - KSCrash/DiscSpaceMonitor
   - LookinServer
   - lottie-ios (~> 3.4.0)
   - PhoneNetSDK (= 1.0.12)
@@ -103,6 +109,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 95caa047d2e7d636c23ee8bac624c2495b0aa5ce
+PODFILE CHECKSUM: f3e0c820fcde749ca9d286255d416bbf602a9af7
 
 COCOAPODS: 1.16.2

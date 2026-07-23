@@ -24,8 +24,9 @@ class TestKeyboardViewController: UIViewController {
         panelView.spacing = 10
         sc.addSubview(panelView)
         panelView.snp.makeConstraints { make in
-            make.left.top.bottom.equalTo(0)
-            make.width.equalTo(ScreenWidth)
+            make.top.bottom.equalTo(0)
+            make.left.equalTo(30)
+            make.width.equalTo(ScreenWidth - 60)
         }
         let input0 = UITextField()
         input0.placeholder = "我是通用输入框"
