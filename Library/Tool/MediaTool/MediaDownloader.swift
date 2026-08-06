@@ -196,6 +196,7 @@ private enum MediaDownloadedFileType {
 @objc(WGMediaFileDownloadToken)
 final class WGMediaFileDownloadToken: NSObject, URLSessionDownloadDelegate {
     typealias ProgressBlock = (Float) -> Void
+    typealias SpeedBlock = (Int64) -> Void
     typealias CompletionBlock = (MediaData?, MediaDownloadError?) -> Void
 
     private enum State {
@@ -209,8 +210,10 @@ final class WGMediaFileDownloadToken: NSObject, URLSessionDownloadDelegate {
     private static let fileCommitLock = NSLock()
     private let originUrl: String
     private let progressBlock: ProgressBlock?
+    private let speedBlock: SpeedBlock?
     private var completionBlock: CompletionBlock?
     private let stateLock = NSLock()
+    private let speedLock = NSLock()
     private var state: State = .idle
     private var session: URLSession?
     private var downloadTask: URLSessionDownloadTask?
@@ -220,10 +223,12 @@ final class WGMediaFileDownloadToken: NSObject, URLSessionDownloadDelegate {
     private var selfRetainer: WGMediaFileDownloadToken?
     /// 当前版本取消时不生成该数据，避免保留下载分片；后续启用续传时可接入 downloadTask(withResumeData:)。
     private(set) var resumeData: Data?
+    private var lastSpeedSample: (bytes: Int64, time: DispatchTime)?
 
-    init(url: String, progress: ProgressBlock?, completed: @escaping CompletionBlock) {
+    init(url: String, progress: ProgressBlock?, speed: SpeedBlock?, completed: @escaping CompletionBlock) {
         originUrl = url
         progressBlock = progress
+        speedBlock = speed
         completionBlock = completed
         super.init()
     }
@@ -239,6 +244,7 @@ final class WGMediaFileDownloadToken: NSObject, URLSessionDownloadDelegate {
         stateLock.unlock()
 
         reportProgress(0)
+        resetSpeedMeasurement()
         if originUrl.hasPrefix("file://"), let fileUrl = URL(string: originUrl), FileManager.default.fileExists(atPath: fileUrl.path) {
             startLocalFile(fileUrl)
         } else if FileManager.default.fileExists(atPath: originUrl) {
@@ -361,6 +367,7 @@ final class WGMediaFileDownloadToken: NSObject, URLSessionDownloadDelegate {
                 if totalBytes > 0 {
                     reportProgress(Float(writtenBytes) / Float(totalBytes))
                 }
+                reportSpeed(totalBytesWritten: writtenBytes)
             }
             commit(stagingUrl: stagingUrl, type: type)
         } catch {
@@ -425,6 +432,38 @@ final class WGMediaFileDownloadToken: NSObject, URLSessionDownloadDelegate {
         DispatchQueue.main.async { progressBlock(value) }
     }
 
+    private func resetSpeedMeasurement() {
+        speedLock.lock()
+        lastSpeedSample = (0, .now())
+        speedLock.unlock()
+    }
+
+    /// Reports an averaged transfer rate at most four times per second.
+    private func reportSpeed(totalBytesWritten: Int64) {
+        guard let speedBlock = speedBlock else { return }
+
+        let now = DispatchTime.now()
+        speedLock.lock()
+        guard let lastSample = lastSpeedSample else {
+            lastSpeedSample = (totalBytesWritten, now)
+            speedLock.unlock()
+            return
+        }
+
+        let elapsedNanoseconds = now.uptimeNanoseconds - lastSample.time.uptimeNanoseconds
+        guard elapsedNanoseconds >= 250_000_000 else {
+            speedLock.unlock()
+            return
+        }
+
+        let transferredBytes = max(0, totalBytesWritten - lastSample.bytes)
+        let bytesPerSecond = Int64(Double(transferredBytes) * 1_000_000_000 / Double(elapsedNanoseconds))
+        lastSpeedSample = (totalBytesWritten, now)
+        speedLock.unlock()
+
+        DispatchQueue.main.async { speedBlock(bytesPerSecond) }
+    }
+
     private func finish(data: MediaData?, error: MediaDownloadError?) {
         stateLock.lock()
         guard state != .finished else {
@@ -481,8 +520,10 @@ final class WGMediaFileDownloadToken: NSObject, URLSessionDownloadDelegate {
     }
 
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
-        guard totalBytesExpectedToWrite > 0 else { return }
-        reportProgress(Float(totalBytesWritten) / Float(totalBytesExpectedToWrite))
+        if totalBytesExpectedToWrite > 0 {
+            reportProgress(Float(totalBytesWritten) / Float(totalBytesExpectedToWrite))
+        }
+        reportSpeed(totalBytesWritten: totalBytesWritten)
     }
 
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
@@ -901,8 +942,8 @@ class MediaDownloader: NSObject {
     /// 统一下载图片、视频、PDF 与 ZIP，并依据响应 MIME 类型生成对应的 `MediaData`。
     /// - Returns: 可用于取消下载的任务 token。即使调用方不持有 token，任务也会执行到完成回调。
     @discardableResult
-    func downloadFile(url: String, progress: ((_ pro: Float) -> Void)? = nil, completed: @escaping ((_ data: MediaData?, _ err: MediaDownloadError?) -> Void)) -> WGMediaFileDownloadToken {
-        let token = WGMediaFileDownloadToken(url: url, progress: progress, completed: completed)
+    func downloadFile(url: String, progress: ((_ pro: Float) -> Void)? = nil, speed: ((_ bytesPerSecond: Int64) -> Void)? = nil, completed: @escaping ((_ data: MediaData?, _ err: MediaDownloadError?) -> Void)) -> WGMediaFileDownloadToken {
+        let token = WGMediaFileDownloadToken(url: url, progress: progress, speed: speed, completed: completed)
         token.start()
         return token
     }
@@ -1080,4 +1121,3 @@ final class WGMediaFileDownloader: NSObject {
         }
     }
 }
-

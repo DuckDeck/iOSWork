@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -881,6 +881,7 @@
 		AED0C2BB274E83F3007A3547 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AED0C2C9274E8511007A3547 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AED0C2CA274E8548007A3547 /* ShadowVideoPlayControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CABD272542DC007D51CD /* ShadowVideoPlayControlView.swift */; };
+		AEDD21F53024A5B800533BD0 /* FileDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDD21F43024A5B800533BD0 /* FileDownloadViewController.swift */; };
 		AEDF535529B437FC00094B6B /* FullKeyboardView+keyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535229B437FC00094B6B /* FullKeyboardView+keyInfo.swift */; };
 		AEDF535629B437FC00094B6B /* FullKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535329B437FC00094B6B /* FullKeyboardView+Touch.swift */; };
 		AEDF535729B437FC00094B6B /* FullkeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535429B437FC00094B6B /* FullkeyboardView.swift */; };
@@ -1849,6 +1850,7 @@
 		AEC9916A287442C4002879A0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		AEDD21F43024A5B800533BD0 /* FileDownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadViewController.swift; sourceTree = "<group>"; };
 		AEDF535229B437FC00094B6B /* FullKeyboardView+keyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+keyInfo.swift"; sourceTree = "<group>"; };
 		AEDF535329B437FC00094B6B /* FullKeyboardView+Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+Touch.swift"; sourceTree = "<group>"; };
 		AEDF535429B437FC00094B6B /* FullkeyboardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullkeyboardView.swift; sourceTree = "<group>"; };
@@ -2057,17 +2059,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		AE7B0B172E5F0AF000AF830D /* PDFHandle */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = PDFHandle;
-			sourceTree = "<group>";
-		};
+		AE7B0B172E5F0AF000AF830D /* PDFHandle */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PDFHandle; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2345,6 +2337,7 @@
 			isa = PBXGroup;
 			children = (
 				AE08AA8D27C684CB00EE0813 /* DownloadViewController.swift */,
+				AEDD21F43024A5B800533BD0 /* FileDownloadViewController.swift */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -4730,7 +4723,7 @@
 			);
 			mainGroup = AE7E7419272251E300F0C19C;
 			packageReferences = (
-				AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "GrandKit" */,
+				AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "../GrandKit" */,
 			);
 			productRefGroup = AE7E7423272251E300F0C19C /* Products */;
 			projectDirPath = "";
@@ -4972,9 +4965,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iOSWork/Pods-iOSWork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iOSWork/Pods-iOSWork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -5099,9 +5096,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftUIWork/Pods-SwiftUIWork-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SwiftUIWork/Pods-SwiftUIWork-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -5219,6 +5220,7 @@
 				AE3FD55A2F5EE80D00117C15 /* UIScrollView+TYSnapshotAuxiliary.m in Sources */,
 				AE3FD55B2F5EE80D00117C15 /* UIImage+TYSnapshot.m in Sources */,
 				AE3FD55C2F5EE80D00117C15 /* WKWebView+TYSnapshotAuxiliary.m in Sources */,
+				AEDD21F53024A5B800533BD0 /* FileDownloadViewController.swift in Sources */,
 				AE3FD55D2F5EE80D00117C15 /* TYSpellImage.m in Sources */,
 				AE3FD55E2F5EE80D00117C15 /* TYSnapshotAuxiliaryCache.m in Sources */,
 				AE3FD55F2F5EE80D00117C15 /* TYSnapshotManager.m in Sources */,
@@ -6721,7 +6723,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "GrandKit" */ = {
+		AE4C7E912D89775B008B3B34 /* XCLocalSwiftPackageReference "../GrandKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../GrandKit;
 		};

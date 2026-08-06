@@ -8,7 +8,7 @@
 import Foundation
 import Kingfisher
 class DataMenuViewController:BaseViewController{
-    var arrData = ["照片识别分类","文件下载","网络工具","沙盒文件","xlog日志解析","上传图片"]
+    var arrData = ["照片识别分类","图片下载","文件下载","网络工具","沙盒文件","xlog日志解析","上传图片"]
     var tbMenu = UITableView()
     var isHooked = false
 
@@ -58,22 +58,25 @@ extension DataMenuViewController:UITableViewDelegate,UITableViewDataSource{
             let vc = DownloadViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
-            
         case 2:
+            let vc = FileDownloadViewController()
+            vc.hidesBottomBarWhenPushed = true
+            navigationController?.pushViewController(vc, animated: true)
+        case 3:
             let vc = NetToolViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
             break
-        case 3:
+        case 4:
             let file = FileBrowser(initialPath: FileParser.sharedInstance.appSandboxURL,allowEditing: true,showCancelButton: true)
             file.modalPresentationStyle = .fullScreen
             present(file, animated: true, completion: nil)
             break
-        case 4:
+        case 5:
             let vc = XlogDecodeViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
-        case 5:
+        case 6:
             let vc = UploadImageViewController()
             vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
