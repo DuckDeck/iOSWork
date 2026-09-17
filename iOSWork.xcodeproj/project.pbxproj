@@ -881,6 +881,7 @@
 		AED0C2BB274E83F3007A3547 /* Library.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AE890D0327240DEC00FAB7D7 /* Library.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AED0C2C9274E8511007A3547 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE890D0F27240DFC00FAB7D7 /* Global.swift */; };
 		AED0C2CA274E8548007A3547 /* ShadowVideoPlayControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE62CABD272542DC007D51CD /* ShadowVideoPlayControlView.swift */; };
+		AEDABC303036E8C5000B804F /* MetricKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDABC2F3036E8C5000B804F /* MetricKit.framework */; };
 		AEDD21F53024A5B800533BD0 /* FileDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDD21F43024A5B800533BD0 /* FileDownloadViewController.swift */; };
 		AEDF535529B437FC00094B6B /* FullKeyboardView+keyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535229B437FC00094B6B /* FullKeyboardView+keyInfo.swift */; };
 		AEDF535629B437FC00094B6B /* FullKeyboardView+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDF535329B437FC00094B6B /* FullKeyboardView+Touch.swift */; };
@@ -1850,6 +1851,7 @@
 		AEC9916A287442C4002879A0 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		AECDC1592745E3090038BE68 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		AECDC15A2745E3090038BE68 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		AEDABC2F3036E8C5000B804F /* MetricKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetricKit.framework; path = System/Library/Frameworks/MetricKit.framework; sourceTree = SDKROOT; };
 		AEDD21F43024A5B800533BD0 /* FileDownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloadViewController.swift; sourceTree = "<group>"; };
 		AEDF535229B437FC00094B6B /* FullKeyboardView+keyInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+keyInfo.swift"; sourceTree = "<group>"; };
 		AEDF535329B437FC00094B6B /* FullKeyboardView+Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FullKeyboardView+Touch.swift"; sourceTree = "<group>"; };
@@ -2074,6 +2076,7 @@
 				AEF881502B551E7B0032492B /* libresolv.tbd in Frameworks */,
 				AE66E128275369D4006432FE /* libavformat.a in Frameworks */,
 				AEA0A11A27884A350044D012 /* GrandKit in Frameworks */,
+				AEDABC303036E8C5000B804F /* MetricKit.framework in Frameworks */,
 				AE890D0927240DEC00FAB7D7 /* Library.framework in Frameworks */,
 				AE4717AC2ADBF38900023738 /* libiconv.tbd in Frameworks */,
 				AE66E15427537947006432FE /* AVFoundation.framework in Frameworks */,
@@ -2686,6 +2689,7 @@
 		AE62C9B827253D68007D51CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEDABC2F3036E8C5000B804F /* MetricKit.framework */,
 				AE71F2262C58E87300DE980A /* libc++.tbd */,
 				AE71F2252C58E86200DE980A /* libz.tbd */,
 				AEF881532B551F290032492B /* libresolv.tbd */,

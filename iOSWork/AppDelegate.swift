@@ -13,6 +13,7 @@ import GrandKit
 import IQKeyboardManagerSwift
 //import Matrix
 import KSCrash
+import MetricKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -76,15 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        NSSetUncaughtExceptionHandler { exp in
-            print(exp.name)
-            print(exp.callStackReturnAddresses)
-            var errors = Store.AppErrors.Value
-            let err = AppError(name: exp.name.rawValue)
-            errors.append(err)
-            Store.AppErrors.Value = errors
-        }
-        registerSignalHandler()
         let log = SwiftyBeaver.self
         
         let dir = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ShadowEdge.iOSProject")!.appendingPathComponent("logs")
@@ -106,6 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         log.addDestination(console)
         log.addDestination(file)
+        // MetricKit 的报告由系统在后续启动时投递，注册要在日志目的地准备好之后完成。
+        MXMetricManager.shared.add(self)
         //        log.addDestination(cloud)
         //
         //        // Now let’s log!
@@ -234,3 +228,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: - MetricKit
+
+extension AppDelegate: MXMetricManagerSubscriber {
+    /// 系统在后台队列调用；写入原始 JSON，保留完整调用栈和设备/系统信息。
+    func didReceive(_ payloads: [MXDiagnosticPayload]) {
+        for payload in payloads {
+            SwiftyBeaver.error("[MetricKit][Diagnostic]\n\(prettyPrintedMetricKitJSON(payload.jsonRepresentation()))")
+        }
+    }
+
+    /// 记录启动、CPU、内存、退出等日常指标，便于与异常发生时间关联分析。
+    func didReceive(_ payloads: [MXMetricPayload]) {
+        for payload in payloads {
+            SwiftyBeaver.info("[MetricKit][Metric]\n\(prettyPrintedMetricKitJSON(payload.jsonRepresentation()))")
+        }
+    }
+
+    private func prettyPrintedMetricKitJSON(_ data: Data) -> String {
+        guard
+            let object = try? JSONSerialization.jsonObject(with: data),
+            let formattedData = try? JSONSerialization.data(
+                withJSONObject: object,
+                options: [.prettyPrinted, .sortedKeys]
+            ),
+            let formattedJSON = String(data: formattedData, encoding: .utf8)
+        else {
+            return String(data: data, encoding: .utf8) ?? "<无法读取 MetricKit JSON>"
+        }
+        return formattedJSON
+    }
+}
